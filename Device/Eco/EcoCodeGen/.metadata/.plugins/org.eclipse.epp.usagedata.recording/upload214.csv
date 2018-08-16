@@ -1,0 +1,26 @@
+what,kind,bundleId,bundleVersion,description,time
+activated,workbench,org.eclipse.ui.workbench,3.5.1.M20090826-0800a,"",1392873571723
+deactivated,workbench,org.eclipse.ui.workbench,3.5.1.M20090826-0800a,"",1392873579391
+activated,workbench,org.eclipse.ui.workbench,3.5.1.M20090826-0800a,"",1392873617084
+deactivated,workbench,org.eclipse.ui.workbench,3.5.1.M20090826-0800a,"",1392873618371
+deactivated,workbench,org.eclipse.ui.workbench,3.5.1.M20090826-0800a,"",1392873622404
+activated,workbench,org.eclipse.ui.workbench,3.5.1.M20090826-0800a,"",1392876306182
+opened,view,org.eclipse.ui.ide,3.5.1.M20090826-0800,"org.eclipse.ui.views.ProblemView",1392876310691
+executed,command,org.eclipse.ui,3.5.1.M20090902-1000,"org.eclipse.ui.file.save",1392876313209
+deactivated,workbench,org.eclipse.ui.workbench,3.5.1.M20090826-0800a,"",1392876317957
+activated,workbench,org.eclipse.ui.workbench,3.5.1.M20090826-0800a,"",1392876319915
+activated,view,org.eclipse.ui.navigator.resources,3.4.1.M20090826-0800,"org.eclipse.ui.navigator.ProjectExplorer",1392876326071
+opened,editor,org.eclipse.cdt.ui,5.1.1.200909110608,"org.eclipse.cdt.ui.editor.asm.AsmEditor",1392876327438
+activated,editor,org.eclipse.cdt.ui,5.1.1.200909110608,"org.eclipse.cdt.ui.editor.asm.AsmEditor",1392876327475
+deactivated,workbench,org.eclipse.ui.workbench,3.5.1.M20090826-0800a,"",1392876372692
+executed,command,org.eclipse.ui,3.5.1.M20090902-1000,"org.eclipse.ui.edit.findReplace",1392876372723
+activated,workbench,org.eclipse.ui.workbench,3.5.1.M20090826-0800a,"",1392876377480
+deactivated,workbench,org.eclipse.ui.workbench,3.5.1.M20090826-0800a,"",1392876379940
+activated,workbench,org.eclipse.ui.workbench,3.5.1.M20090826-0800a,"",1392876418077
+activated,view,org.eclipse.ui.navigator.resources,3.4.1.M20090826-0800,"org.eclipse.ui.navigator.ProjectExplorer",1392876421552
+opened,editor,org.eclipse.ui.editors,3.5.0.v20090527-2000,"org.eclipse.ui.DefaultTextEditor",1392876425271
+activated,editor,org.eclipse.ui.editors,3.5.0.v20090527-2000,"org.eclipse.ui.DefaultTextEditor",1392876425311
+deactivated,workbench,org.eclipse.ui.workbench,3.5.1.M20090826-0800a,"",1392876426684
+executed,command,org.eclipse.ui,3.5.1.M20090902-1000,"org.eclipse.ui.edit.findReplace",1392876426717
+executed,command,org.eclipse.ui,3.5.1.M20090902-1000,"org.eclipse.ui.edit.paste",1392876427008
+no handler,command,org.eclipse.ui,3.5.1.M20090902-1000,"org.eclipse.ui.edit.undo",1392876428567

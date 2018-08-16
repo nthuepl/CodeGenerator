@@ -1,0 +1,1194 @@
+///////////////////////////////////////////////////////////////////////////////
+//                                                                            /
+// IAR C/C++ Compiler V8.20.1.40829 for 8051            30/May/2014  17:59:42 /
+// Copyright 2004-2012 IAR Systems AB.                                        /
+//                                                                            /
+//    Core               =  plain                                             /
+//    Code model         =  banked                                            /
+//    Data model         =  large                                             /
+//    Calling convention =  xdata reentrant                                   /
+//    Constant location  =  data_rom                                          /
+//    Dptr setup         =  1,16                                              /
+//                                                                            /
+//    Source file        =  D:\NTHU\¬ã¨s\Important\ThesisCode\Code\GitLabClou /
+//                          d\NewEcoExec\codegenerator\Device\EcoBT\Component /
+//                          s\ble\host\gatt_uuid.c                            /
+//    Command line       =  -f D:\NTHU\¬ã¨s\Important\ThesisCode\Code\GitLabC /
+//                          loud\NewEcoExec\codegenerator\Device\EcoBT\Projec /
+//                          t\ble\CodeGenerator\CC2541DB\..\..\config\buildCo /
+//                          mponents.cfg (-DBROADCASTER_CFG=0x01              /
+//                          -DOBSERVER_CFG=0x02 -DPERIPHERAL_CFG=0x04         /
+//                          -DCENTRAL_CFG=0x08 -DADV_NCONN_CFG=0x01           /
+//                          -DADV_CONN_CFG=0x02 -DSCAN_CFG=0x04               /
+//                          -DINIT_CFG=0x08 -DADV_CFG=ADV_NCONN_CFG+ADV_CONN_ /
+//                          CFG -DLINK_CFG=ADV_CONN_CFG+INIT_CFG              /
+//                          -DFULL_CFG=INIT_CFG+SCAN_CFG+ADV_NCONN_CFG+ADV_CO /
+//                          NN_CFG) -f D:\NTHU\¬ã¨s\Important\ThesisCode\Code /
+//                          \GitLabCloud\NewEcoExec\codegenerator\Device\EcoB /
+//                          T\Project\ble\CodeGenerator\CC2541DB\buildConfig. /
+//                          cfg (-DHOST_CONFIG=PERIPHERAL_CFG                 /
+//                          -DGAP_PRIVACY_RECONNECT -DCC2541                  /
+//                          -DOAD_IMAGE_VERSION=0x0000                        /
+//                          "-DOAD_IMAGE_A_USER_ID='A', 'A', 'A', 'A'"        /
+//                          "-DOAD_IMAGE_B_USER_ID='B', 'B', 'B', 'B'")       /
+//                          D:\NTHU\¬ã¨s\Important\ThesisCode\Code\GitLabClou /
+//                          d\NewEcoExec\codegenerator\Device\EcoBT\Component /
+//                          s\ble\host\gatt_uuid.c -D INT_HEAP_LEN=900 -D     /
+//                          HALNODEBUG -D OSAL_CBTIMER_NUM_TASKS=1 -D         /
+//                          HAL_AES_DMA=TRUE -D HAL_DMA=TRUE -D               /
+//                          xPOWER_SAVING -D xPLUS_BROADCASTER -D             /
+//                          HAL_LCD=FALSE -D HAL_LED=TRUE -D HAL_ADC=TRUE     /
+//                          -lB D:\NTHU\¬ã¨s\Important\ThesisCode\Code\GitLab /
+//                          Cloud\NewEcoExec\codegenerator\Device\EcoBT\Proje /
+//                          ct\ble\CodeGenerator\CC2541DB\CC2541\List\ -o     /
+//                          D:\NTHU\¬ã¨s\Important\ThesisCode\Code\GitLabClou /
+//                          d\NewEcoExec\codegenerator\Device\EcoBT\Project\b /
+//                          le\CodeGenerator\CC2541DB\CC2541\Obj\ -e --debug  /
+//                          --core=plain --dptr=16,1 --data_model=large       /
+//                          --code_model=banked --calling_convention=xdata_re /
+//                          entrant --place_constants=data_rom                /
+//                          --nr_virtual_regs 16 -I                           /
+//                          D:\NTHU\¬ã¨s\Important\ThesisCode\Code\GitLabClou /
+//                          d\NewEcoExec\codegenerator\Device\EcoBT\Project\b /
+//                          le\CodeGenerator\CC2541DB\..\..\common\ -I        /
+//                          D:\NTHU\¬ã¨s\Important\ThesisCode\Code\GitLabClou /
+//                          d\NewEcoExec\codegenerator\Device\EcoBT\Project\b /
+//                          le\CodeGenerator\CC2541DB\..\..\include\ -I       /
+//                          D:\NTHU\¬ã¨s\Important\ThesisCode\Code\GitLabClou /
+//                          d\NewEcoExec\codegenerator\Device\EcoBT\Project\b /
+//                          le\CodeGenerator\CC2541DB\..\..\..\..\Components\ /
+//                          hal\include\ -I D:\NTHU\¬ã¨s\Important\ThesisCode /
+//                          \Code\GitLabCloud\NewEcoExec\codegenerator\Device /
+//                          \EcoBT\Project\ble\CodeGenerator\CC2541DB\..\..\. /
+//                          .\..\Components\hal\target\CC2540EB\ -I           /
+//                          D:\NTHU\¬ã¨s\Important\ThesisCode\Code\GitLabClou /
+//                          d\NewEcoExec\codegenerator\Device\EcoBT\Project\b /
+//                          le\CodeGenerator\CC2541DB\..\..\..\..\Components\ /
+//                          osal\include\ -I D:\NTHU\¬ã¨s\Important\ThesisCod /
+//                          e\Code\GitLabCloud\NewEcoExec\codegenerator\Devic /
+//                          e\EcoBT\Project\ble\CodeGenerator\CC2541DB\..\..\ /
+//                          ..\..\Components\services\saddr\ -I               /
+//                          D:\NTHU\¬ã¨s\Important\ThesisCode\Code\GitLabClou /
+//                          d\NewEcoExec\codegenerator\Device\EcoBT\Project\b /
+//                          le\CodeGenerator\CC2541DB\..\..\..\..\Components\ /
+//                          ble\include\ -I D:\NTHU\¬ã¨s\Important\ThesisCode /
+//                          \Code\GitLabCloud\NewEcoExec\codegenerator\Device /
+//                          \EcoBT\Project\ble\CodeGenerator\CC2541DB\..\..\. /
+//                          .\..\Components\ble\controller\phy\ -I            /
+//                          D:\NTHU\¬ã¨s\Important\ThesisCode\Code\GitLabClou /
+//                          d\NewEcoExec\codegenerator\Device\EcoBT\Project\b /
+//                          le\CodeGenerator\CC2541DB\..\..\..\..\Components\ /
+//                          ble\controller\include\ -I                        /
+//                          D:\NTHU\¬ã¨s\Important\ThesisCode\Code\GitLabClou /
+//                          d\NewEcoExec\codegenerator\Device\EcoBT\Project\b /
+//                          le\CodeGenerator\CC2541DB\..\..\..\..\Components\ /
+//                          ble\hci\ -I D:\NTHU\¬ã¨s\Important\ThesisCode\Cod /
+//                          e\GitLabCloud\NewEcoExec\codegenerator\Device\Eco /
+//                          BT\Project\ble\CodeGenerator\CC2541DB\..\..\..\.. /
+//                          \Components\ble\host\ -I                          /
+//                          D:\NTHU\¬ã¨s\Important\ThesisCode\Code\GitLabClou /
+//                          d\NewEcoExec\codegenerator\Device\EcoBT\Project\b /
+//                          le\CodeGenerator\CC2541DB\..\..\common\cc2540\    /
+//                          -I D:\NTHU\¬ã¨s\Important\ThesisCode\Code\GitLabC /
+//                          loud\NewEcoExec\codegenerator\Device\EcoBT\Projec /
+//                          t\ble\CodeGenerator\CC2541DB\..\..\common\npi\npi /
+//                          _np\ -I D:\NTHU\¬ã¨s\Important\ThesisCode\Code\Gi /
+//                          tLabCloud\NewEcoExec\codegenerator\Device\EcoBT\P /
+//                          roject\ble\CodeGenerator\CC2541DB\..\..\Profiles\ /
+//                          Roles\ -I D:\NTHU\¬ã¨s\Important\ThesisCode\Code\ /
+//                          GitLabCloud\NewEcoExec\codegenerator\Device\EcoBT /
+//                          \Project\ble\CodeGenerator\CC2541DB\..\..\Profile /
+//                          s\SimpleProfile\ -I D:\NTHU\¬ã¨s\Important\Thesis /
+//                          Code\Code\GitLabCloud\NewEcoExec\codegenerator\De /
+//                          vice\EcoBT\Project\ble\CodeGenerator\CC2541DB\..\ /
+//                          ..\Profiles\DevInfo\ -I                           /
+//                          D:\NTHU\¬ã¨s\Important\ThesisCode\Code\GitLabClou /
+//                          d\NewEcoExec\codegenerator\Device\EcoBT\Project\b /
+//                          le\CodeGenerator\CC2541DB\..\..\Profiles\Accelero /
+//                          meter\ -I D:\NTHU\¬ã¨s\Important\ThesisCode\Code\ /
+//                          GitLabCloud\NewEcoExec\codegenerator\Device\EcoBT /
+//                          \Project\ble\CodeGenerator\CC2541DB\..\..\Profile /
+//                          s\EcoExecGATTProfile\ -I                          /
+//                          D:\NTHU\¬ã¨s\Important\ThesisCode\Code\GitLabClou /
+//                          d\NewEcoExec\codegenerator\Device\EcoBT\Project\b /
+//                          le\CodeGenerator\CC2541DB\..\..\Profiles\timeserv /
+//                          ice\ -I D:\NTHU\¬ã¨s\Important\ThesisCode\Code\Gi /
+//                          tLabCloud\NewEcoExec\codegenerator\Device\EcoBT\P /
+//                          roject\ble\CodeGenerator\CC2541DB\..\..\Profiles\ /
+//                          Batt\ -I D:\NTHU\¬ã¨s\Important\ThesisCode\Code\G /
+//                          itLabCloud\NewEcoExec\codegenerator\Device\EcoBT\ /
+//                          Project\ble\CodeGenerator\CC2541DB\..\..\Profiles /
+//                          \HIDDev\ -I D:\NTHU\¬ã¨s\Important\ThesisCode\Cod /
+//                          e\GitLabCloud\NewEcoExec\codegenerator\Device\Eco /
+//                          BT\Project\ble\CodeGenerator\CC2541DB\..\..\Profi /
+//                          les\ScanParam\ -Ohz                               /
+//    List file          =  D:\NTHU\¬ã¨s\Important\ThesisCode\Code\GitLabClou /
+//                          d\NewEcoExec\codegenerator\Device\EcoBT\Project\b /
+//                          le\CodeGenerator\CC2541DB\CC2541\List\gatt_uuid.s /
+//                          51                                                /
+//                                                                            /
+//                                                                            /
+///////////////////////////////////////////////////////////////////////////////
+
+        NAME gatt_uuid
+
+        RSEG DOVERLAY:DATA:NOROOT(0)
+        RSEG IOVERLAY:IDATA:NOROOT(0)
+        RSEG ISTACK:IDATA:NOROOT(0)
+        RSEG PSTACK:XDATA:NOROOT(0)
+        RSEG XSTACK:XDATA:NOROOT(0)
+
+        EXTERN ?BANKED_ENTER_XDATA
+        EXTERN ?BANKED_LEAVE_XDATA
+        EXTERN ?BDISPATCH
+        EXTERN ?US_SWITCH_SPARSE
+        EXTERN ?V0
+
+        PUBLIC ??GATT_FindUUIDRec?relay
+        PUBLIC GATT_FindUUIDRec
+        PUBLIC addressServiceUUID
+        PUBLIC appearanceUUID
+        PUBLIC charAggFormatUUID
+        PUBLIC charExtPropsUUID
+        PUBLIC charFormatUUID
+        PUBLIC charUserDescUUID
+        PUBLIC characterUUID
+        PUBLIC clientCharCfgUUID
+        PUBLIC deviceNameUUID
+        PUBLIC extReportRefUUID
+        PUBLIC gapServiceUUID
+        PUBLIC gattServiceUUID
+        PUBLIC includeUUID
+        PUBLIC manuAddrUUID
+        PUBLIC manuNameUUID
+        PUBLIC manufactServiceUUID
+        PUBLIC periConnParamUUID
+        PUBLIC periPrivacyFlagUUID
+        PUBLIC primaryServiceUUID
+        PUBLIC reconnectAddrUUID
+        PUBLIC reportRefUUID
+        PUBLIC secondaryServiceUUID
+        PUBLIC serialNumUUID
+        PUBLIC servCharCfgUUID
+        PUBLIC serviceChangedUUID
+        PUBLIC validRangeUUID
+
+GATT_FindUUIDRec    SYMBOL "GATT_FindUUIDRec"
+??GATT_FindUUIDRec?relay SYMBOL "?relay", GATT_FindUUIDRec
+
+// D:\NTHU\¬ã¨s\Important\ThesisCode\Code\GitLabCloud\NewEcoExec\codegenerator\Device\EcoBT\Components\ble\host\gatt_uuid.c
+//    1 /**************************************************************************************************
+//    2   Filename:       gatt_uuid.c
+//    3   Revised:        $Date: 2009-06-29 16:20:52 -0700 (Mon, 29 Jun 2009) $
+//    4   Revision:       $Revision: 20240 $
+//    5 
+//    6   Description:    This file contains Generic Attribute Profile (GATT)
+//    7                   UUID types.
+//    8 
+//    9 
+//   10   Copyright 2011-2012 Texas Instruments Incorporated. All rights reserved.
+//   11 
+//   12   IMPORTANT: Your use of this Software is limited to those specific rights
+//   13   granted under the terms of a software license agreement between the user
+//   14   who downloaded the software, his/her employer (which must be your employer)
+//   15   and Texas Instruments Incorporated (the "License").  You may not use this
+//   16   Software unless you agree to abide by the terms of the License. The License
+//   17   limits your use, and you acknowledge, that the Software may not be modified,
+//   18   copied or distributed unless embedded on a Texas Instruments microcontroller
+//   19   or used solely and exclusively in conjunction with a Texas Instruments radio
+//   20   frequency transceiver, which is integrated into your product.  Other than for
+//   21   the foregoing purpose, you may not use, reproduce, copy, prepare derivative
+//   22   works of, modify, distribute, perform, display or sell this Software and/or
+//   23   its documentation for any purpose.
+//   24 
+//   25   YOU FURTHER ACKNOWLEDGE AND AGREE THAT THE SOFTWARE AND DOCUMENTATION ARE
+//   26   PROVIDED “AS IS” WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESS OR IMPLIED,
+//   27   INCLUDING WITHOUT LIMITATION, ANY WARRANTY OF MERCHANTABILITY, TITLE,
+//   28   NON-INFRINGEMENT AND FITNESS FOR A PARTICULAR PURPOSE. IN NO EVENT SHALL
+//   29   TEXAS INSTRUMENTS OR ITS LICENSORS BE LIABLE OR OBLIGATED UNDER CONTRACT,
+//   30   NEGLIGENCE, STRICT LIABILITY, CONTRIBUTION, BREACH OF WARRANTY, OR OTHER
+//   31   LEGAL EQUITABLE THEORY ANY DIRECT OR INDIRECT DAMAGES OR EXPENSES
+//   32   INCLUDING BUT NOT LIMITED TO ANY INCIDENTAL, SPECIAL, INDIRECT, PUNITIVE
+//   33   OR CONSEQUENTIAL DAMAGES, LOST PROFITS OR LOST DATA, COST OF PROCUREMENT
+//   34   OF SUBSTITUTE GOODS, TECHNOLOGY, SERVICES, OR ANY CLAIMS BY THIRD PARTIES
+//   35   (INCLUDING BUT NOT LIMITED TO ANY DEFENSE THEREOF), OR OTHER SIMILAR COSTS.
+//   36 
+//   37   Should you have any questions regarding your right to use this Software,
+//   38   contact Texas Instruments Incorporated at www.TI.com.
+//   39 **************************************************************************************************/
+//   40 
+//   41 
+//   42 /*********************************************************************
+//   43  * INCLUDES
+//   44  */
+//   45 #include "comdef.h"
+//   46 #include "OSAL.h"
+//   47 
+//   48 #include "gatt.h"
+//   49 #include "gatt_uuid.h"
+//   50 
+//   51 /*********************************************************************
+//   52  * MACROS
+//   53  */
+//   54 
+//   55 /*********************************************************************
+//   56  * CONSTANTS
+//   57  */
+//   58 
+//   59 /*********************************************************************
+//   60  * TYPEDEFS
+//   61  */
+//   62 
+//   63 /*********************************************************************
+//   64  * GLOBAL VARIABLES
+//   65  */
+//   66 
+//   67 /**
+//   68  * GATT Services
+//   69  */
+//   70 // Generic Access Profile Service UUID
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA16
+//   71 CONST uint8 gapServiceUUID[ATT_BT_UUID_SIZE] =
+gapServiceUUID:
+        DATA8
+        DB 0
+        DB 24
+//   72 {
+//   73   LO_UINT16( GAP_SERVICE_UUID ), HI_UINT16( GAP_SERVICE_UUID )
+//   74 };
+//   75 
+//   76 // Generic Attribute Profile Service UUID
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA16
+//   77 CONST uint8 gattServiceUUID[ATT_BT_UUID_SIZE] =
+gattServiceUUID:
+        DATA8
+        DB 1
+        DB 24
+//   78 {
+//   79   LO_UINT16( GATT_SERVICE_UUID ), HI_UINT16( GATT_SERVICE_UUID )
+//   80 };
+//   81 
+//   82 // Manufacturer Service UUID
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA16
+//   83 CONST uint8 manufactServiceUUID[ATT_BT_UUID_SIZE] =
+manufactServiceUUID:
+        DATA8
+        DB 5
+        DB 160
+//   84 {
+//   85   LO_UINT16( MANUFACT_SERVICE_UUID ), HI_UINT16( MANUFACT_SERVICE_UUID )
+//   86 };
+//   87 
+//   88 // Address Service UUID
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA16
+//   89 CONST uint8 addressServiceUUID[ATT_BT_UUID_SIZE] =
+addressServiceUUID:
+        DATA8
+        DB 6
+        DB 160
+//   90 {
+//   91   LO_UINT16( ADDRESS_SERVICE_UUID ), HI_UINT16( ADDRESS_SERVICE_UUID )
+//   92 };
+//   93 
+//   94 /**
+//   95  * GATT Attribute Types
+//   96  */
+//   97 // Primary Service UUID
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA16
+//   98 CONST uint8 primaryServiceUUID[ATT_BT_UUID_SIZE] =
+primaryServiceUUID:
+        DATA8
+        DB 0
+        DB 40
+//   99 {
+//  100   LO_UINT16( GATT_PRIMARY_SERVICE_UUID ), HI_UINT16( GATT_PRIMARY_SERVICE_UUID )
+//  101 };
+//  102 
+//  103 // Secondary Service UUID
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA16
+//  104 CONST uint8 secondaryServiceUUID[ATT_BT_UUID_SIZE] =
+secondaryServiceUUID:
+        DATA8
+        DB 1
+        DB 40
+//  105 {
+//  106   LO_UINT16( GATT_SECONDARY_SERVICE_UUID ), HI_UINT16( GATT_SECONDARY_SERVICE_UUID )
+//  107 };
+//  108 
+//  109 // Include UUID
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA16
+//  110 CONST uint8 includeUUID[ATT_BT_UUID_SIZE] =
+includeUUID:
+        DATA8
+        DB 2
+        DB 40
+//  111 {
+//  112   LO_UINT16( GATT_INCLUDE_UUID ), HI_UINT16( GATT_INCLUDE_UUID )
+//  113 };
+//  114 
+//  115 // Characteristic UUID
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA16
+//  116 CONST uint8 characterUUID[ATT_BT_UUID_SIZE] =
+characterUUID:
+        DATA8
+        DB 3
+        DB 40
+//  117 {
+//  118   LO_UINT16( GATT_CHARACTER_UUID ), HI_UINT16( GATT_CHARACTER_UUID )
+//  119 };
+//  120 
+//  121 /**
+//  122  * GATT Characteristic Descriptors
+//  123  */
+//  124 // Characteristic Extended Properties UUID
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA16
+//  125 CONST uint8 charExtPropsUUID[ATT_BT_UUID_SIZE] =
+charExtPropsUUID:
+        DATA8
+        DB 0
+        DB 41
+//  126 {
+//  127   LO_UINT16( GATT_CHAR_EXT_PROPS_UUID ), HI_UINT16( GATT_CHAR_EXT_PROPS_UUID )
+//  128 };
+//  129 
+//  130 // Characteristic User Description UUID
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA16
+//  131 CONST uint8 charUserDescUUID[ATT_BT_UUID_SIZE] =
+charUserDescUUID:
+        DATA8
+        DB 1
+        DB 41
+//  132 {
+//  133   LO_UINT16( GATT_CHAR_USER_DESC_UUID ), HI_UINT16( GATT_CHAR_USER_DESC_UUID )
+//  134 };
+//  135 
+//  136 // Client Characteristic Configuration UUID
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA16
+//  137 CONST uint8 clientCharCfgUUID[ATT_BT_UUID_SIZE] =
+clientCharCfgUUID:
+        DATA8
+        DB 2
+        DB 41
+//  138 {
+//  139   LO_UINT16( GATT_CLIENT_CHAR_CFG_UUID ), HI_UINT16( GATT_CLIENT_CHAR_CFG_UUID )
+//  140 };
+//  141 
+//  142 // Server Characteristic Configuration UUID
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA16
+//  143 CONST uint8 servCharCfgUUID[ATT_BT_UUID_SIZE] =
+servCharCfgUUID:
+        DATA8
+        DB 3
+        DB 41
+//  144 {
+//  145   LO_UINT16( GATT_SERV_CHAR_CFG_UUID ), HI_UINT16( GATT_SERV_CHAR_CFG_UUID )
+//  146 };
+//  147 
+//  148 // Characteristic Format UUID
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA16
+//  149 CONST uint8 charFormatUUID[ATT_BT_UUID_SIZE] =
+charFormatUUID:
+        DATA8
+        DB 4
+        DB 41
+//  150 {
+//  151   LO_UINT16( GATT_CHAR_FORMAT_UUID ), HI_UINT16( GATT_CHAR_FORMAT_UUID )
+//  152 };
+//  153 
+//  154 // Characteristic Aggregate Format UUID
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA16
+//  155 CONST uint8 charAggFormatUUID[ATT_BT_UUID_SIZE] =
+charAggFormatUUID:
+        DATA8
+        DB 5
+        DB 41
+//  156 {
+//  157   LO_UINT16( GATT_CHAR_AGG_FORMAT_UUID ), HI_UINT16( GATT_CHAR_AGG_FORMAT_UUID )
+//  158 };
+//  159 
+//  160 /**
+//  161  * GATT Characteristic Types
+//  162  */
+//  163 // Device Name UUID
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA16
+//  164 CONST uint8 deviceNameUUID[ATT_BT_UUID_SIZE] =
+deviceNameUUID:
+        DATA8
+        DB 0
+        DB 42
+//  165 {
+//  166   LO_UINT16( DEVICE_NAME_UUID ), HI_UINT16( DEVICE_NAME_UUID )
+//  167 };
+//  168 
+//  169 // Appearance UUID
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA16
+//  170 CONST uint8 appearanceUUID[ATT_BT_UUID_SIZE] =
+appearanceUUID:
+        DATA8
+        DB 1
+        DB 42
+//  171 {
+//  172   LO_UINT16( APPEARANCE_UUID ), HI_UINT16( APPEARANCE_UUID )
+//  173 };
+//  174 
+//  175 // Peripheral Privacy Flag UUID
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA16
+//  176 CONST uint8 periPrivacyFlagUUID[ATT_BT_UUID_SIZE] =
+periPrivacyFlagUUID:
+        DATA8
+        DB 2
+        DB 42
+//  177 {
+//  178   LO_UINT16( PERI_PRIVACY_FLAG_UUID ), HI_UINT16( PERI_PRIVACY_FLAG_UUID )
+//  179 };
+//  180 
+//  181 // Reconnection Address UUID
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA16
+//  182 CONST uint8 reconnectAddrUUID[ATT_BT_UUID_SIZE] =
+reconnectAddrUUID:
+        DATA8
+        DB 3
+        DB 42
+//  183 {
+//  184   LO_UINT16( RECONNECT_ADDR_UUID ), HI_UINT16( RECONNECT_ADDR_UUID )
+//  185 };
+//  186 
+//  187 // Peripheral Preferred Connection Parameters UUID
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA16
+//  188 CONST uint8 periConnParamUUID[ATT_BT_UUID_SIZE] =
+periConnParamUUID:
+        DATA8
+        DB 4
+        DB 42
+//  189 {
+//  190   LO_UINT16( PERI_CONN_PARAM_UUID ), HI_UINT16( PERI_CONN_PARAM_UUID )
+//  191 };
+//  192 
+//  193 // Service Changed UUID
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA16
+//  194 CONST uint8 serviceChangedUUID[ATT_BT_UUID_SIZE] =
+serviceChangedUUID:
+        DATA8
+        DB 5
+        DB 42
+//  195 {
+//  196   LO_UINT16( SERVICE_CHANGED_UUID ), HI_UINT16( SERVICE_CHANGED_UUID )
+//  197 };
+//  198 
+//  199 // Manufacturer Name UUID
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA16
+//  200 CONST uint8 manuNameUUID[ATT_BT_UUID_SIZE] =
+manuNameUUID:
+        DATA8
+        DB 8
+        DB 176
+//  201 {
+//  202   LO_UINT16( MANUFACT_NAME_UUID ), HI_UINT16( MANUFACT_NAME_UUID )
+//  203 };
+//  204 
+//  205 // Serial Number UUID
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA16
+//  206 CONST uint8 serialNumUUID[ATT_BT_UUID_SIZE] =
+serialNumUUID:
+        DATA8
+        DB 9
+        DB 176
+//  207 {
+//  208   LO_UINT16( SERIAL_NUM_UUID ), HI_UINT16( SERIAL_NUM_UUID )
+//  209 };
+//  210 
+//  211 // Manufacturer Address UUID
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA16
+//  212 CONST uint8 manuAddrUUID[ATT_BT_UUID_SIZE] =
+manuAddrUUID:
+        DATA8
+        DB 10
+        DB 176
+//  213 {
+//  214   LO_UINT16( MANUFACT_ADDR_UUID ), HI_UINT16(MANUFACT_ADDR_UUID )
+//  215 };
+//  216 
+//  217 // Valid Range UUID
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA16
+//  218 CONST uint8 validRangeUUID[ATT_BT_UUID_SIZE] =
+validRangeUUID:
+        DATA8
+        DB 6
+        DB 41
+//  219 {
+//  220   LO_UINT16( GATT_VALID_RANGE_UUID ), HI_UINT16( GATT_VALID_RANGE_UUID )
+//  221 };
+//  222 
+//  223 // External Report Reference Descriptor
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA16
+//  224 CONST uint8 extReportRefUUID[ATT_BT_UUID_SIZE] =
+extReportRefUUID:
+        DATA8
+        DB 7
+        DB 41
+//  225 {
+//  226   LO_UINT16( GATT_EXT_REPORT_REF_UUID ), HI_UINT16( GATT_EXT_REPORT_REF_UUID )
+//  227 };
+//  228 
+//  229 // Report Reference characteristic descriptor
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA16
+//  230 CONST uint8 reportRefUUID[ATT_BT_UUID_SIZE] =
+reportRefUUID:
+        DATA8
+        DB 8
+        DB 41
+//  231 {
+//  232   LO_UINT16( GATT_REPORT_REF_UUID ), HI_UINT16( GATT_REPORT_REF_UUID )
+//  233 };
+//  234 
+//  235 /*********************************************************************
+//  236  * GLOBAL FUNCTIONS
+//  237  */
+//  238 
+//  239 /*********************************************************************
+//  240  * LOCAL VARIABLES
+//  241  */
+//  242 
+//  243 /*********************************************************************
+//  244  * LOCAL FUNCTIONS
+//  245  */
+//  246 
+//  247 /*********************************************************************
+//  248  * API FUNCTIONS
+//  249  */
+//  250 
+//  251 /*********************************************************************
+//  252  * @fn      GATT_FindUUIDRec
+//  253  *
+//  254  * @brief   Find the UUID record for a given UUID.
+//  255  *
+//  256  * @param   pUUID - UUID to look for.
+//  257  * @param   len - length of UUID.
+//  258  *
+//  259  * @return  Pointer to UUID record. NULL, otherwise.
+//  260  */
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+//  261 const uint8 *GATT_FindUUIDRec( uint8 *pUUID, uint8 len )
+GATT_FindUUIDRec:
+        CODE
+//  262 {
+        MOV     A,#-0xa
+        LCALL   ?BANKED_ENTER_XDATA
+        ; Saved register size: 10
+        ; Auto size: 0
+//  263   const uint8 *pRec = NULL;
+        MOV     R4,#0x0
+        MOV     R5,#0x0
+//  264 
+//  265   if ( len == ATT_BT_UUID_SIZE )
+        MOV     A,#0x2
+        XRL     A,R1
+        JZ      $+5
+        LJMP    ??GATT_FindUUIDRec_0 & 0xFFFF
+//  266   {
+//  267     // 16-bit UUID
+//  268     uint16 uuid = BUILD_UINT16( pUUID[0], pUUID[1] );
+//  269     switch ( uuid )
+        MOV     DPL,R2
+        MOV     DPH,R3
+        MOVX    A,@DPTR
+        MOV     R6,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R3,A
+        MOV     A,R6
+        ADD     A,#0x0
+        MOV     ?V0 + 0,A
+        CLR     A
+        ADDC    A,R3
+        MOV     ?V0 + 1,A
+        MOV     R0,#?V0 + 0
+        LCALL   ?US_SWITCH_SPARSE
+`?<Jumptable for GATT_FindUUIDRec>_0`:
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DW        0
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DW        21
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DW        6144
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DW        ??GATT_FindUUIDRec_1
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DW        6145
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DW        ??GATT_FindUUIDRec_2
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DW        10240
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DW        ??GATT_FindUUIDRec_3
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DW        10241
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DW        ??GATT_FindUUIDRec_4
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DW        10242
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DW        ??GATT_FindUUIDRec_5
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DW        10243
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DW        ??GATT_FindUUIDRec_6
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DW        10496
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DW        ??GATT_FindUUIDRec_7
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DW        10497
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DW        ??GATT_FindUUIDRec_8
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DW        10498
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DW        ??GATT_FindUUIDRec_9
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DW        10499
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DW        ??GATT_FindUUIDRec_10
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DW        10500
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DW        ??GATT_FindUUIDRec_11
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DW        10501
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DW        ??GATT_FindUUIDRec_12
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DW        10502
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DW        ??GATT_FindUUIDRec_13
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DW        10503
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DW        ??GATT_FindUUIDRec_14
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DW        10504
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DW        ??GATT_FindUUIDRec_15
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DW        10752
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DW        ??GATT_FindUUIDRec_16
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DW        10753
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DW        ??GATT_FindUUIDRec_17
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DW        10754
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DW        ??GATT_FindUUIDRec_18
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DW        10755
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DW        ??GATT_FindUUIDRec_19
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DW        10756
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DW        ??GATT_FindUUIDRec_20
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DW        10757
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DW        ??GATT_FindUUIDRec_21
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DW        ??GATT_FindUUIDRec_0
+        CODE
+//  270     {
+//  271       /*** GATT Services ***/
+//  272 
+//  273       case GAP_SERVICE_UUID:
+//  274         pRec = gapServiceUUID;
+??GATT_FindUUIDRec_1:
+        MOV     R4,#gapServiceUUID & 0xff
+        MOV     R5,#(gapServiceUUID >> 8) & 0xff
+//  275         break;
+        SJMP    ??GATT_FindUUIDRec_0
+//  276 
+//  277       case GATT_SERVICE_UUID:
+//  278         pRec = gattServiceUUID;
+??GATT_FindUUIDRec_2:
+        MOV     R4,#gattServiceUUID & 0xff
+        MOV     R5,#(gattServiceUUID >> 8) & 0xff
+//  279         break;
+        SJMP    ??GATT_FindUUIDRec_0
+//  280 
+//  281       /*** GATT Attribute Types ***/
+//  282 
+//  283       case GATT_PRIMARY_SERVICE_UUID:
+//  284         pRec = primaryServiceUUID;
+??GATT_FindUUIDRec_3:
+        MOV     R4,#primaryServiceUUID & 0xff
+        MOV     R5,#(primaryServiceUUID >> 8) & 0xff
+//  285         break;
+        SJMP    ??GATT_FindUUIDRec_0
+//  286 
+//  287       case GATT_SECONDARY_SERVICE_UUID:
+//  288         pRec = secondaryServiceUUID;
+??GATT_FindUUIDRec_4:
+        MOV     R4,#secondaryServiceUUID & 0xff
+        MOV     R5,#(secondaryServiceUUID >> 8) & 0xff
+//  289         break;
+        SJMP    ??GATT_FindUUIDRec_0
+//  290 
+//  291       case GATT_INCLUDE_UUID:
+//  292         pRec = includeUUID;
+??GATT_FindUUIDRec_5:
+        MOV     R4,#includeUUID & 0xff
+        MOV     R5,#(includeUUID >> 8) & 0xff
+//  293         break;
+        SJMP    ??GATT_FindUUIDRec_0
+//  294 
+//  295       case GATT_CHARACTER_UUID:
+//  296         pRec = characterUUID;
+??GATT_FindUUIDRec_6:
+        MOV     R4,#characterUUID & 0xff
+        MOV     R5,#(characterUUID >> 8) & 0xff
+//  297         break;
+        SJMP    ??GATT_FindUUIDRec_0
+//  298 
+//  299       /*** GATT Characteristic Descriptors ***/
+//  300 
+//  301       case GATT_CHAR_EXT_PROPS_UUID:
+//  302         pRec = charExtPropsUUID;
+??GATT_FindUUIDRec_7:
+        MOV     R4,#charExtPropsUUID & 0xff
+        MOV     R5,#(charExtPropsUUID >> 8) & 0xff
+//  303         break;
+        SJMP    ??GATT_FindUUIDRec_0
+//  304 
+//  305       case GATT_CHAR_USER_DESC_UUID:
+//  306         pRec = charUserDescUUID;
+??GATT_FindUUIDRec_8:
+        MOV     R4,#charUserDescUUID & 0xff
+        MOV     R5,#(charUserDescUUID >> 8) & 0xff
+//  307         break;
+        SJMP    ??GATT_FindUUIDRec_0
+//  308 
+//  309       case GATT_CLIENT_CHAR_CFG_UUID:
+//  310         pRec = clientCharCfgUUID;
+??GATT_FindUUIDRec_9:
+        MOV     R4,#clientCharCfgUUID & 0xff
+        MOV     R5,#(clientCharCfgUUID >> 8) & 0xff
+//  311         break;
+        SJMP    ??GATT_FindUUIDRec_0
+//  312 
+//  313       case GATT_SERV_CHAR_CFG_UUID:
+//  314         pRec = servCharCfgUUID;
+??GATT_FindUUIDRec_10:
+        MOV     R4,#servCharCfgUUID & 0xff
+        MOV     R5,#(servCharCfgUUID >> 8) & 0xff
+//  315         break;
+        SJMP    ??GATT_FindUUIDRec_0
+//  316 
+//  317       case GATT_CHAR_FORMAT_UUID:
+//  318         pRec = charFormatUUID;
+??GATT_FindUUIDRec_11:
+        MOV     R4,#charFormatUUID & 0xff
+        MOV     R5,#(charFormatUUID >> 8) & 0xff
+//  319         break;
+        SJMP    ??GATT_FindUUIDRec_0
+//  320 
+//  321       case GATT_CHAR_AGG_FORMAT_UUID:
+//  322         pRec = charAggFormatUUID;
+??GATT_FindUUIDRec_12:
+        MOV     R4,#charAggFormatUUID & 0xff
+        MOV     R5,#(charAggFormatUUID >> 8) & 0xff
+//  323         break;
+        SJMP    ??GATT_FindUUIDRec_0
+//  324 
+//  325       case GATT_VALID_RANGE_UUID:
+//  326         pRec = validRangeUUID;
+??GATT_FindUUIDRec_13:
+        MOV     R4,#validRangeUUID & 0xff
+        MOV     R5,#(validRangeUUID >> 8) & 0xff
+//  327         break;
+        SJMP    ??GATT_FindUUIDRec_0
+//  328 
+//  329       case GATT_EXT_REPORT_REF_UUID:
+//  330         pRec = extReportRefUUID;
+??GATT_FindUUIDRec_14:
+        MOV     R4,#extReportRefUUID & 0xff
+        MOV     R5,#(extReportRefUUID >> 8) & 0xff
+//  331         break;
+        SJMP    ??GATT_FindUUIDRec_0
+//  332 
+//  333       case GATT_REPORT_REF_UUID:
+//  334         pRec = reportRefUUID;
+??GATT_FindUUIDRec_15:
+        MOV     R4,#reportRefUUID & 0xff
+        MOV     R5,#(reportRefUUID >> 8) & 0xff
+//  335         break;
+        SJMP    ??GATT_FindUUIDRec_0
+//  336 
+//  337       /*** GATT Characteristic Types ***/
+//  338 
+//  339       case DEVICE_NAME_UUID:
+//  340         pRec = deviceNameUUID;
+??GATT_FindUUIDRec_16:
+        MOV     R4,#deviceNameUUID & 0xff
+        MOV     R5,#(deviceNameUUID >> 8) & 0xff
+//  341         break;
+        SJMP    ??GATT_FindUUIDRec_0
+//  342 
+//  343       case APPEARANCE_UUID:
+//  344         pRec = appearanceUUID;
+??GATT_FindUUIDRec_17:
+        MOV     R4,#appearanceUUID & 0xff
+        MOV     R5,#(appearanceUUID >> 8) & 0xff
+//  345         break;
+        SJMP    ??GATT_FindUUIDRec_0
+//  346 
+//  347       case RECONNECT_ADDR_UUID:
+//  348         pRec = reconnectAddrUUID;
+??GATT_FindUUIDRec_19:
+        MOV     R4,#reconnectAddrUUID & 0xff
+        MOV     R5,#(reconnectAddrUUID >> 8) & 0xff
+//  349         break;
+        SJMP    ??GATT_FindUUIDRec_0
+//  350 
+//  351       case PERI_PRIVACY_FLAG_UUID:
+//  352         pRec = periPrivacyFlagUUID;
+??GATT_FindUUIDRec_18:
+        MOV     R4,#periPrivacyFlagUUID & 0xff
+        MOV     R5,#(periPrivacyFlagUUID >> 8) & 0xff
+//  353         break;
+        SJMP    ??GATT_FindUUIDRec_0
+//  354 
+//  355       case PERI_CONN_PARAM_UUID:
+//  356         pRec = periConnParamUUID;
+??GATT_FindUUIDRec_20:
+        MOV     R4,#periConnParamUUID & 0xff
+        MOV     R5,#(periConnParamUUID >> 8) & 0xff
+//  357         break;
+        SJMP    ??GATT_FindUUIDRec_0
+//  358 
+//  359       case SERVICE_CHANGED_UUID:
+//  360         pRec = serviceChangedUUID;
+??GATT_FindUUIDRec_21:
+        MOV     R4,#serviceChangedUUID & 0xff
+        MOV     R5,#(serviceChangedUUID >> 8) & 0xff
+//  361         break;
+//  362 
+//  363       /*** GATT Characteristic Descriptions ***/
+//  364 
+//  365       /*** GATT Characteristic Units ***/
+//  366 
+//  367       default:
+//  368         break;
+//  369     }
+//  370   }
+//  371   else if ( len == ATT_UUID_SIZE )
+//  372   {
+//  373     // 128-bit UUID
+//  374   }
+//  375 
+//  376   return ( pRec );
+??GATT_FindUUIDRec_0:
+        MOV     A,R4
+        MOV     R2,A
+        MOV     A,R5
+        MOV     R3,A
+        MOV     R7,#0x2
+        LJMP    ?BANKED_LEAVE_XDATA
+//  377 }
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??GATT_FindUUIDRec?relay:
+        CODE
+        LCALL   ?BDISPATCH
+        DATA24
+        DC24    GATT_FindUUIDRec
+
+        END
+//  378 
+//  379 /****************************************************************************
+//  380 ****************************************************************************/
+// 
+// 263 bytes in segment BANKED_CODE
+//   6 bytes in segment BANK_RELAYS
+//  52 bytes in segment XDATA_ROM_C
+// 
+// 269 bytes of CODE  memory
+//  52 bytes of CONST memory
+//
+//Errors: none
+//Warnings: none

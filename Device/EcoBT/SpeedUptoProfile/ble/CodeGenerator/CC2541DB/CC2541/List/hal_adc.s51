@@ -1,0 +1,694 @@
+///////////////////////////////////////////////////////////////////////////////
+//                                                                            /
+// IAR C/C++ Compiler V8.20.1.40829 for 8051            28/May/2014  18:44:04 /
+// Copyright 2004-2012 IAR Systems AB.                                        /
+//                                                                            /
+//    Core               =  plain                                             /
+//    Code model         =  banked                                            /
+//    Data model         =  large                                             /
+//    Calling convention =  xdata reentrant                                   /
+//    Constant location  =  data_rom                                          /
+//    Dptr setup         =  1,16                                              /
+//                                                                            /
+//    Source file        =  D:\NTHU\¬ã¨s\Important\ThesisCode\Code\GitLabClou /
+//                          d\NewEcoExec\codegenerator\Device\EcoBT\Component /
+//                          s\hal\target\CC2540EB\hal_adc.c                   /
+//    Command line       =  -f D:\NTHU\¬ã¨s\Important\ThesisCode\Code\GitLabC /
+//                          loud\NewEcoExec\codegenerator\Device\EcoBT\Projec /
+//                          t\ble\CodeGenerator\CC2541DB\..\..\config\buildCo /
+//                          mponents.cfg (-DBROADCASTER_CFG=0x01              /
+//                          -DOBSERVER_CFG=0x02 -DPERIPHERAL_CFG=0x04         /
+//                          -DCENTRAL_CFG=0x08 -DADV_NCONN_CFG=0x01           /
+//                          -DADV_CONN_CFG=0x02 -DSCAN_CFG=0x04               /
+//                          -DINIT_CFG=0x08 -DADV_CFG=ADV_NCONN_CFG+ADV_CONN_ /
+//                          CFG -DLINK_CFG=ADV_CONN_CFG+INIT_CFG              /
+//                          -DFULL_CFG=INIT_CFG+SCAN_CFG+ADV_NCONN_CFG+ADV_CO /
+//                          NN_CFG) -f D:\NTHU\¬ã¨s\Important\ThesisCode\Code /
+//                          \GitLabCloud\NewEcoExec\codegenerator\Device\EcoB /
+//                          T\Project\ble\CodeGenerator\CC2541DB\buildConfig. /
+//                          cfg (-DHOST_CONFIG=PERIPHERAL_CFG                 /
+//                          -DGAP_PRIVACY_RECONNECT -DCC2541                  /
+//                          -DOAD_IMAGE_VERSION=0x0000                        /
+//                          "-DOAD_IMAGE_A_USER_ID='A', 'A', 'A', 'A'"        /
+//                          "-DOAD_IMAGE_B_USER_ID='B', 'B', 'B', 'B'")       /
+//                          D:\NTHU\¬ã¨s\Important\ThesisCode\Code\GitLabClou /
+//                          d\NewEcoExec\codegenerator\Device\EcoBT\Component /
+//                          s\hal\target\CC2540EB\hal_adc.c -D                /
+//                          INT_HEAP_LEN=900 -D HALNODEBUG -D                 /
+//                          OSAL_CBTIMER_NUM_TASKS=1 -D HAL_AES_DMA=TRUE -D   /
+//                          HAL_DMA=TRUE -D xPOWER_SAVING -D                  /
+//                          xPLUS_BROADCASTER -D HAL_LCD=FALSE -D             /
+//                          HAL_LED=TRUE -D HAL_ADC=TRUE -lB                  /
+//                          D:\NTHU\¬ã¨s\Important\ThesisCode\Code\GitLabClou /
+//                          d\NewEcoExec\codegenerator\Device\EcoBT\Project\b /
+//                          le\CodeGenerator\CC2541DB\CC2541\List\ -o         /
+//                          D:\NTHU\¬ã¨s\Important\ThesisCode\Code\GitLabClou /
+//                          d\NewEcoExec\codegenerator\Device\EcoBT\Project\b /
+//                          le\CodeGenerator\CC2541DB\CC2541\Obj\ -e --debug  /
+//                          --core=plain --dptr=16,1 --data_model=large       /
+//                          --code_model=banked --calling_convention=xdata_re /
+//                          entrant --place_constants=data_rom                /
+//                          --nr_virtual_regs 16 -I                           /
+//                          D:\NTHU\¬ã¨s\Important\ThesisCode\Code\GitLabClou /
+//                          d\NewEcoExec\codegenerator\Device\EcoBT\Project\b /
+//                          le\CodeGenerator\CC2541DB\..\..\common\ -I        /
+//                          D:\NTHU\¬ã¨s\Important\ThesisCode\Code\GitLabClou /
+//                          d\NewEcoExec\codegenerator\Device\EcoBT\Project\b /
+//                          le\CodeGenerator\CC2541DB\..\..\include\ -I       /
+//                          D:\NTHU\¬ã¨s\Important\ThesisCode\Code\GitLabClou /
+//                          d\NewEcoExec\codegenerator\Device\EcoBT\Project\b /
+//                          le\CodeGenerator\CC2541DB\..\..\..\..\Components\ /
+//                          hal\include\ -I D:\NTHU\¬ã¨s\Important\ThesisCode /
+//                          \Code\GitLabCloud\NewEcoExec\codegenerator\Device /
+//                          \EcoBT\Project\ble\CodeGenerator\CC2541DB\..\..\. /
+//                          .\..\Components\hal\target\CC2540EB\ -I           /
+//                          D:\NTHU\¬ã¨s\Important\ThesisCode\Code\GitLabClou /
+//                          d\NewEcoExec\codegenerator\Device\EcoBT\Project\b /
+//                          le\CodeGenerator\CC2541DB\..\..\..\..\Components\ /
+//                          osal\include\ -I D:\NTHU\¬ã¨s\Important\ThesisCod /
+//                          e\Code\GitLabCloud\NewEcoExec\codegenerator\Devic /
+//                          e\EcoBT\Project\ble\CodeGenerator\CC2541DB\..\..\ /
+//                          ..\..\Components\services\saddr\ -I               /
+//                          D:\NTHU\¬ã¨s\Important\ThesisCode\Code\GitLabClou /
+//                          d\NewEcoExec\codegenerator\Device\EcoBT\Project\b /
+//                          le\CodeGenerator\CC2541DB\..\..\..\..\Components\ /
+//                          ble\include\ -I D:\NTHU\¬ã¨s\Important\ThesisCode /
+//                          \Code\GitLabCloud\NewEcoExec\codegenerator\Device /
+//                          \EcoBT\Project\ble\CodeGenerator\CC2541DB\..\..\. /
+//                          .\..\Components\ble\controller\phy\ -I            /
+//                          D:\NTHU\¬ã¨s\Important\ThesisCode\Code\GitLabClou /
+//                          d\NewEcoExec\codegenerator\Device\EcoBT\Project\b /
+//                          le\CodeGenerator\CC2541DB\..\..\..\..\Components\ /
+//                          ble\controller\include\ -I                        /
+//                          D:\NTHU\¬ã¨s\Important\ThesisCode\Code\GitLabClou /
+//                          d\NewEcoExec\codegenerator\Device\EcoBT\Project\b /
+//                          le\CodeGenerator\CC2541DB\..\..\..\..\Components\ /
+//                          ble\hci\ -I D:\NTHU\¬ã¨s\Important\ThesisCode\Cod /
+//                          e\GitLabCloud\NewEcoExec\codegenerator\Device\Eco /
+//                          BT\Project\ble\CodeGenerator\CC2541DB\..\..\..\.. /
+//                          \Components\ble\host\ -I                          /
+//                          D:\NTHU\¬ã¨s\Important\ThesisCode\Code\GitLabClou /
+//                          d\NewEcoExec\codegenerator\Device\EcoBT\Project\b /
+//                          le\CodeGenerator\CC2541DB\..\..\common\cc2540\    /
+//                          -I D:\NTHU\¬ã¨s\Important\ThesisCode\Code\GitLabC /
+//                          loud\NewEcoExec\codegenerator\Device\EcoBT\Projec /
+//                          t\ble\CodeGenerator\CC2541DB\..\..\common\npi\npi /
+//                          _np\ -I D:\NTHU\¬ã¨s\Important\ThesisCode\Code\Gi /
+//                          tLabCloud\NewEcoExec\codegenerator\Device\EcoBT\P /
+//                          roject\ble\CodeGenerator\CC2541DB\..\..\Profiles\ /
+//                          Roles\ -I D:\NTHU\¬ã¨s\Important\ThesisCode\Code\ /
+//                          GitLabCloud\NewEcoExec\codegenerator\Device\EcoBT /
+//                          \Project\ble\CodeGenerator\CC2541DB\..\..\Profile /
+//                          s\SimpleProfile\ -I D:\NTHU\¬ã¨s\Important\Thesis /
+//                          Code\Code\GitLabCloud\NewEcoExec\codegenerator\De /
+//                          vice\EcoBT\Project\ble\CodeGenerator\CC2541DB\..\ /
+//                          ..\Profiles\DevInfo\ -I                           /
+//                          D:\NTHU\¬ã¨s\Important\ThesisCode\Code\GitLabClou /
+//                          d\NewEcoExec\codegenerator\Device\EcoBT\Project\b /
+//                          le\CodeGenerator\CC2541DB\..\..\Profiles\Accelero /
+//                          meter\ -I D:\NTHU\¬ã¨s\Important\ThesisCode\Code\ /
+//                          GitLabCloud\NewEcoExec\codegenerator\Device\EcoBT /
+//                          \Project\ble\CodeGenerator\CC2541DB\..\..\Profile /
+//                          s\EcoExecGATTProfile\ -I                          /
+//                          D:\NTHU\¬ã¨s\Important\ThesisCode\Code\GitLabClou /
+//                          d\NewEcoExec\codegenerator\Device\EcoBT\Project\b /
+//                          le\CodeGenerator\CC2541DB\..\..\Profiles\timeserv /
+//                          ice\ -I D:\NTHU\¬ã¨s\Important\ThesisCode\Code\Gi /
+//                          tLabCloud\NewEcoExec\codegenerator\Device\EcoBT\P /
+//                          roject\ble\CodeGenerator\CC2541DB\..\..\Profiles\ /
+//                          Batt\ -I D:\NTHU\¬ã¨s\Important\ThesisCode\Code\G /
+//                          itLabCloud\NewEcoExec\codegenerator\Device\EcoBT\ /
+//                          Project\ble\CodeGenerator\CC2541DB\..\..\Profiles /
+//                          \HIDDev\ -I D:\NTHU\¬ã¨s\Important\ThesisCode\Cod /
+//                          e\GitLabCloud\NewEcoExec\codegenerator\Device\Eco /
+//                          BT\Project\ble\CodeGenerator\CC2541DB\..\..\Profi /
+//                          les\ScanParam\ -Ohz                               /
+//    List file          =  D:\NTHU\¬ã¨s\Important\ThesisCode\Code\GitLabClou /
+//                          d\NewEcoExec\codegenerator\Device\EcoBT\Project\b /
+//                          le\CodeGenerator\CC2541DB\CC2541\List\hal_adc.s51 /
+//                                                                            /
+//                                                                            /
+///////////////////////////////////////////////////////////////////////////////
+
+        NAME hal_adc
+
+        RSEG DOVERLAY:DATA:NOROOT(0)
+        RSEG IOVERLAY:IDATA:NOROOT(0)
+        RSEG ISTACK:IDATA:NOROOT(0)
+        RSEG PSTACK:XDATA:NOROOT(0)
+        RSEG XSTACK:XDATA:NOROOT(0)
+
+        EXTERN ?BANKED_ENTER_XDATA
+        EXTERN ?BANKED_LEAVE_XDATA
+        EXTERN ?BDISPATCH
+        EXTERN ?BRET
+        EXTERN ?SS_SHR
+        EXTERN ?V0
+        EXTERN __INIT_XDATA_Z
+
+        PUBLIC ??HalAdcCheckVdd?relay
+        PUBLIC ??HalAdcInit?relay
+        PUBLIC ??HalAdcRead?relay
+        PUBLIC ??HalAdcSetReference?relay
+        PUBWEAK ADCCON1
+        PUBWEAK ADCCON3
+        PUBWEAK ADCH
+        PUBWEAK ADCL
+        PUBLIC HalAdcCheckVdd
+        PUBLIC HalAdcInit
+        PUBLIC HalAdcRead
+        PUBLIC HalAdcSetReference
+        PUBWEAK _A_ADCCFG
+
+HalAdcCheckVdd      SYMBOL "HalAdcCheckVdd"
+??HalAdcCheckVdd?relay SYMBOL "?relay", HalAdcCheckVdd
+HalAdcInit          SYMBOL "HalAdcInit"
+??HalAdcInit?relay  SYMBOL "?relay", HalAdcInit
+HalAdcRead          SYMBOL "HalAdcRead"
+??HalAdcRead?relay  SYMBOL "?relay", HalAdcRead
+HalAdcSetReference  SYMBOL "HalAdcSetReference"
+??HalAdcSetReference?relay SYMBOL "?relay", HalAdcSetReference
+
+// D:\NTHU\¬ã¨s\Important\ThesisCode\Code\GitLabCloud\NewEcoExec\codegenerator\Device\EcoBT\Components\hal\target\CC2540EB\hal_adc.c
+//    1 /**************************************************************************************************
+//    2   Filename:       hal_adc.c
+//    3   Revised:        $Date: 2010-07-06 15:24:36 -0700 (Tue, 06 Jul 2010) $
+//    4   Revision:       $Revision: 22897 $
+//    5 
+//    6   Description:    This file contains the interface to the HAL ADC.
+//    7 
+//    8 
+//    9   Copyright 2006-2010 Texas Instruments Incorporated. All rights reserved.
+//   10 
+//   11   IMPORTANT: Your use of this Software is limited to those specific rights
+//   12   granted under the terms of a software license agreement between the user
+//   13   who downloaded the software, his/her employer (which must be your employer)
+//   14   and Texas Instruments Incorporated (the "License").  You may not use this
+//   15   Software unless you agree to abide by the terms of the License. The License
+//   16   limits your use, and you acknowledge, that the Software may not be modified,
+//   17   copied or distributed unless embedded on a Texas Instruments microcontroller
+//   18   or used solely and exclusively in conjunction with a Texas Instruments radio
+//   19   frequency transceiver, which is integrated into your product.  Other than for
+//   20   the foregoing purpose, you may not use, reproduce, copy, prepare derivative
+//   21   works of, modify, distribute, perform, display or sell this Software and/or
+//   22   its documentation for any purpose.
+//   23 
+//   24   YOU FURTHER ACKNOWLEDGE AND AGREE THAT THE SOFTWARE AND DOCUMENTATION ARE
+//   25   PROVIDED “AS IS” WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESS OR IMPLIED,
+//   26   INCLUDING WITHOUT LIMITATION, ANY WARRANTY OF MERCHANTABILITY, TITLE,
+//   27   NON-INFRINGEMENT AND FITNESS FOR A PARTICULAR PURPOSE. IN NO EVENT SHALL
+//   28   TEXAS INSTRUMENTS OR ITS LICENSORS BE LIABLE OR OBLIGATED UNDER CONTRACT,
+//   29   NEGLIGENCE, STRICT LIABILITY, CONTRIBUTION, BREACH OF WARRANTY, OR OTHER
+//   30   LEGAL EQUITABLE THEORY ANY DIRECT OR INDIRECT DAMAGES OR EXPENSES
+//   31   INCLUDING BUT NOT LIMITED TO ANY INCIDENTAL, SPECIAL, INDIRECT, PUNITIVE
+//   32   OR CONSEQUENTIAL DAMAGES, LOST PROFITS OR LOST DATA, COST OF PROCUREMENT
+//   33   OF SUBSTITUTE GOODS, TECHNOLOGY, SERVICES, OR ANY CLAIMS BY THIRD PARTIES
+//   34   (INCLUDING BUT NOT LIMITED TO ANY DEFENSE THEREOF), OR OTHER SIMILAR COSTS.
+//   35 
+//   36   Should you have any questions regarding your right to use this Software,
+//   37   contact Texas Instruments Incorporated at www.TI.com.
+//   38 **************************************************************************************************/
+//   39 
+//   40 /**************************************************************************************************
+//   41  *                                           INCLUDES
+//   42  **************************************************************************************************/
+//   43 
+//   44 #include  "hal_adc.h"
+
+        ASEGN SFR_AN:DATA:NOROOT,0b4H
+// unsigned char volatile __sfr ADCCON1
+ADCCON1:
+        DATA8
+        DS 1
+
+        ASEGN SFR_AN:DATA:NOROOT,0b6H
+// unsigned char volatile __sfr ADCCON3
+ADCCON3:
+        DATA8
+        DS 1
+
+        ASEGN SFR_AN:DATA:NOROOT,0baH
+// unsigned char volatile __sfr ADCL
+ADCL:
+        DATA8
+        DS 1
+
+        ASEGN SFR_AN:DATA:NOROOT,0bbH
+// unsigned char volatile __sfr ADCH
+ADCH:
+        DATA8
+        DS 1
+
+        ASEGN SFR_AN:DATA:NOROOT,0f2H
+// union <unnamed> volatile __sfr _A_ADCCFG
+_A_ADCCFG:
+        DATA8
+        DS 1
+//   45 #include  "hal_defs.h"
+//   46 #include  "hal_mcu.h"
+//   47 #include  "hal_types.h"
+//   48 
+//   49 /**************************************************************************************************
+//   50  *                                            CONSTANTS
+//   51  **************************************************************************************************/
+//   52 #define HAL_ADC_EOC         0x80    /* End of Conversion bit */
+//   53 #define HAL_ADC_START       0x40    /* Starts Conversion */
+//   54 
+//   55 #define HAL_ADC_STSEL_EXT   0x00    /* External Trigger */
+//   56 #define HAL_ADC_STSEL_FULL  0x10    /* Full Speed, No Trigger */
+//   57 #define HAL_ADC_STSEL_T1C0  0x20    /* Timer1, Channel 0 Compare Event Trigger */
+//   58 #define HAL_ADC_STSEL_ST    0x30    /* ADCCON1.ST =1 Trigger */
+//   59 
+//   60 #define HAL_ADC_RAND_NORM   0x00    /* Normal Operation */
+//   61 #define HAL_ADC_RAND_LFSR   0x04    /* Clock LFSR */
+//   62 #define HAL_ADC_RAND_SEED   0x08    /* Seed Modulator */
+//   63 #define HAL_ADC_RAND_STOP   0x0c    /* Stop Random Generator */
+//   64 #define HAL_ADC_RAND_BITS   0x0c    /* Bits [3:2] */
+//   65 
+//   66 #define HAL_ADC_DEC_064     0x00    /* Decimate by 64 : 8-bit resolution */
+//   67 #define HAL_ADC_DEC_128     0x10    /* Decimate by 128 : 10-bit resolution */
+//   68 #define HAL_ADC_DEC_256     0x20    /* Decimate by 256 : 12-bit resolution */
+//   69 #define HAL_ADC_DEC_512     0x30    /* Decimate by 512 : 14-bit resolution */
+//   70 #define HAL_ADC_DEC_BITS    0x30    /* Bits [5:4] */
+//   71 
+//   72 #define HAL_ADC_STSEL       HAL_ADC_STSEL_ST
+//   73 #define HAL_ADC_RAND_GEN    HAL_ADC_RAND_STOP
+//   74 #define HAL_ADC_REF_VOLT    HAL_ADC_REF_AVDD
+//   75 #define HAL_ADC_DEC_RATE    HAL_ADC_DEC_064
+//   76 #define HAL_ADC_SCHN        HAL_ADC_CHN_VDD3
+//   77 #define HAL_ADC_ECHN        HAL_ADC_CHN_GND
+//   78 
+//   79 /* ------------------------------------------------------------------------------------------------
+//   80  *                                       Local Variables
+//   81  * ------------------------------------------------------------------------------------------------
+//   82  */
+//   83 
+//   84 #if (HAL_ADC == TRUE)
+
+        RSEG XDATA_Z:XDATA:NOROOT(0)
+        DATA8
+//   85 static uint8 adcRef;
+adcRef:
+        DS 1
+        REQUIRE __INIT_XDATA_Z
+//   86 #endif
+//   87 
+//   88 /**************************************************************************************************
+//   89  * @fn      HalAdcInit
+//   90  *
+//   91  * @brief   Initialize ADC Service
+//   92  *
+//   93  * @param   None
+//   94  *
+//   95  * @return  None
+//   96  **************************************************************************************************/
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+//   97 void HalAdcInit (void)
+HalAdcInit:
+        CODE
+//   98 {
+        PUSH    DPL
+        PUSH    DPH
+        ; Saved register size: 2
+        ; Auto size: 0
+//   99 #if (HAL_ADC == TRUE)
+//  100   adcRef = HAL_ADC_REF_VOLT;
+        MOV     DPTR,#adcRef
+        MOV     A,#-0x80
+        REQUIRE ?Subroutine0
+        ; // Fall through to label ?Subroutine0
+//  101 #endif
+//  102 }
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+?Subroutine0:
+        MOVX    @DPTR,A
+        POP     DPH
+        POP     DPL
+        LJMP    ?BRET
+//  103 
+//  104 /**************************************************************************************************
+//  105  * @fn      HalAdcRead
+//  106  *
+//  107  * @brief   Read the ADC based on given channel and resolution
+//  108  *
+//  109  * @param   channel - channel where ADC will be read
+//  110  * @param   resolution - the resolution of the value
+//  111  *
+//  112  * @return  16 bit value of the ADC in offset binary format.
+//  113  *
+//  114  *          Note that the ADC is "bipolar", which means the GND (0V) level is mid-scale.
+//  115  *          Note2: This function assumes that ADCCON3 contains the voltage reference.
+//  116  **************************************************************************************************/
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+//  117 uint16 HalAdcRead (uint8 channel, uint8 resolution)
+HalAdcRead:
+        CODE
+//  118 {
+        MOV     A,#-0xa
+        LCALL   ?BANKED_ENTER_XDATA
+        ; Saved register size: 10
+        ; Auto size: 0
+        MOV     A,R1
+        MOV     R4,A
+        MOV     A,R2
+        MOV     R5,A
+//  119   int16  reading = 0;
+//  120 
+//  121 #if (HAL_ADC == TRUE)
+//  122   uint8   i, resbits;
+//  123   uint8  adcChannel = 1;
+        MOV     R1,#0x1
+//  124 
+//  125   /*
+//  126    * If Analog input channel is AIN0..AIN7, make sure corresponing P0 I/O pin is enabled.  The code
+//  127    * does NOT disable the pin at the end of this function.  I think it is better to leave the pin
+//  128    * enabled because the results will be more accurate.  Because of the inherent capacitance on the
+//  129    * pin, it takes time for the voltage on the pin to charge up to its steady-state level.  If
+//  130    * HalAdcRead() has to turn on the pin for every conversion, the results may show a lower voltage
+//  131    * than actuality because the pin did not have time to fully charge.
+//  132    */
+//  133   if (channel < 8)
+        MOV     A,R4
+        CLR     C
+        SUBB    A,#0x8
+        JNC     ??HalAdcRead_0
+//  134   {
+//  135     for (i=0; i < channel; i++)
+        MOV     R0,#0x0
+        SJMP    ??HalAdcRead_1
+//  136     {
+//  137       adcChannel <<= 1;
+??HalAdcRead_2:
+        MOV     A,R1
+        CLR     C
+        RLC     A
+        MOV     R1,A
+//  138     }
+        INC     R0
+??HalAdcRead_1:
+        MOV     A,R0
+        CLR     C
+        SUBB    A,R4
+        JC      ??HalAdcRead_2
+//  139   }
+//  140 
+//  141   /* Enable channel */
+//  142   ADCCFG |= adcChannel; /* analog perpheral I/O configuration. APCF[7:0] select P0.7~P0.0 as analog I/O */
+??HalAdcRead_0:
+        MOV     A,R1
+        ORL     0xf2,A
+//  143 //  switch( channel ){
+//  144 //  case 0:
+//  145 //    ADCCFG_0 = 1;
+//  146 //    break;
+//  147 //  case 1:
+//  148 //    ADCCFG_1 = 1;
+//  149 //    break;
+//  150 //  case 2:
+//  151 //    ADCCFG_2 = 1;
+//  152 //    break;
+//  153 //  case 3:
+//  154 //    ADCCFG_3 = 1;
+//  155 //    break;
+//  156 //  case 4:
+//  157 //    ADCCFG_5 = 1;
+//  158 //    break;
+//  159 //  case 6:
+//  160 //    ADCCFG_6 = 1;
+//  161 //    break;
+//  162 //  case 7:
+//  163 //    ADCCFG_7 = 1;
+//  164 //    break;
+//  165 //  case 0x0f:
+//  166 //    ADCCFG_1 = 1;
+//  167 //  }
+//  168   
+//  169   /* Convert resolution to decimation rate */
+//  170   switch (resolution)
+        MOV     A,R5
+        DEC     A
+        JZ      ??HalAdcRead_3
+        DEC     A
+        JZ      ??HalAdcRead_4
+        DEC     A
+        JZ      ??HalAdcRead_5
+        SJMP    ??HalAdcRead_6
+//  171   {
+//  172     case HAL_ADC_RESOLUTION_8:
+//  173       resbits = HAL_ADC_DEC_064;
+??HalAdcRead_3:
+        MOV     R2,#0x0
+//  174       break;
+        SJMP    ??HalAdcRead_7
+//  175     case HAL_ADC_RESOLUTION_10:
+//  176       resbits = HAL_ADC_DEC_128;
+??HalAdcRead_4:
+        MOV     R2,#0x10
+//  177       break;
+        SJMP    ??HalAdcRead_7
+//  178     case HAL_ADC_RESOLUTION_12:
+//  179       resbits = HAL_ADC_DEC_256;
+??HalAdcRead_5:
+        MOV     R2,#0x20
+//  180       break;
+        SJMP    ??HalAdcRead_7
+//  181     case HAL_ADC_RESOLUTION_14:
+//  182     default:
+//  183       resbits = HAL_ADC_DEC_512;
+??HalAdcRead_6:
+        MOV     R2,#0x30
+//  184       break;
+//  185   }
+//  186 
+//  187   /* writing to this register starts the extra conversion */
+//  188   ADCCON3 = channel | resbits | adcRef;
+??HalAdcRead_7:
+        MOV     DPTR,#adcRef
+        MOVX    A,@DPTR
+        MOV     R0,A
+        MOV     A,R4
+        ORL     A,R2
+        ORL     A,R0
+        MOV     0xb6,A
+//  189 
+//  190   
+//  191   /* Wait for the conversion to be done */
+//  192   while (!(ADCCON1 & HAL_ADC_EOC));
+??HalAdcRead_8:
+        MOV     A,0xb4
+        MOV     C,0xE0 /* A   */.7
+        JNC     ??HalAdcRead_8
+//  193 
+//  194   /* Disable channel after done conversion */
+//  195   ADCCFG &= (adcChannel ^ 0xFF);
+        MOV     A,#-0x1
+        XRL     A,R1
+        ANL     0xf2,A
+//  196 
+//  197   /* Read the result */
+//  198   reading = (int16) (ADCL);
+        MOV     A,0xba
+        MOV     ?V0 + 0,A
+//  199   reading |= (int16) (ADCH << 8);
+        MOV     A,0xbb
+        MOV     R2,?V0 + 0
+        MOV     R3,A
+//  200 
+//  201   /* Treat small negative as 0 */
+//  202   if (reading < 0)
+        CLR     C
+        SUBB    A,#0x0
+        MOV     C,0xD0 /* PSW */.2
+        XRL     A,PSW
+        RLC     A
+        JNC     ??HalAdcRead_9
+//  203     reading = 0;
+        MOV     R2,#0x0
+        MOV     R3,#0x0
+//  204 
+//  205   switch (resolution)
+??HalAdcRead_9:
+        MOV     A,R5
+        DEC     A
+        JZ      ??HalAdcRead_10
+        DEC     A
+        JZ      ??HalAdcRead_11
+        DEC     A
+        JZ      ??HalAdcRead_12
+        SJMP    ??HalAdcRead_13
+//  206   {
+//  207     case HAL_ADC_RESOLUTION_8:
+//  208       reading >>= 8;
+??HalAdcRead_10:
+        MOV     ?V0 + 0,R2
+        MOV     ?V0 + 1,R3
+        MOV     A,#0x8
+        SJMP    ??HalAdcRead_14
+//  209       break;
+//  210     case HAL_ADC_RESOLUTION_10:
+//  211       reading >>= 6;
+??HalAdcRead_11:
+        MOV     ?V0 + 0,R2
+        MOV     ?V0 + 1,R3
+        MOV     A,#0x6
+        SJMP    ??HalAdcRead_14
+//  212       break;
+//  213     case HAL_ADC_RESOLUTION_12:
+//  214       reading >>= 4;
+??HalAdcRead_12:
+        MOV     ?V0 + 0,R2
+        MOV     ?V0 + 1,R3
+        MOV     A,#0x4
+        SJMP    ??HalAdcRead_14
+//  215       break;
+//  216     case HAL_ADC_RESOLUTION_14:
+//  217     default:
+//  218       reading >>= 2;
+??HalAdcRead_13:
+        MOV     ?V0 + 0,R2
+        MOV     ?V0 + 1,R3
+        MOV     A,#0x2
+??HalAdcRead_14:
+        MOV     R0,#?V0 + 0
+        LCALL   ?SS_SHR
+        MOV     R2,?V0 + 0
+        MOV     R3,?V0 + 1
+//  219     break;
+//  220   }
+//  221 #else
+//  222   // unused arguments
+//  223   (void) channel;
+//  224   (void) resolution;
+//  225 #endif
+//  226 
+//  227   return ((uint16)reading);
+        MOV     R7,#0x2
+        LJMP    ?BANKED_LEAVE_XDATA
+        REQUIRE _A_ADCCFG
+        REQUIRE ADCCON3
+        REQUIRE ADCCON1
+        REQUIRE ADCL
+        REQUIRE ADCH
+//  228 }
+//  229 
+//  230 /**************************************************************************************************
+//  231  * @fn      HalAdcSetReference
+//  232  *
+//  233  * @brief   Sets the reference voltage for the ADC and initializes the service
+//  234  *
+//  235  * @param   reference - the reference voltage to be used by the ADC
+//  236  *
+//  237  * @return  none
+//  238  *
+//  239  **************************************************************************************************/
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+//  240 void HalAdcSetReference ( uint8 reference )
+HalAdcSetReference:
+        CODE
+//  241 {
+        PUSH    DPL
+        PUSH    DPH
+        ; Saved register size: 2
+        ; Auto size: 0
+//  242 #if (HAL_ADC == TRUE)
+//  243   adcRef = reference;
+        MOV     A,R1
+        MOV     DPTR,#adcRef
+        LJMP    ?Subroutine0 & 0xFFFF
+//  244 #endif
+//  245 }
+//  246 
+//  247 /*********************************************************************
+//  248  * @fn      HalAdcCheckVdd
+//  249  *
+//  250  * @brief   Check for minimum Vdd specified.
+//  251  *
+//  252  * @param   vdd - The board-specific Vdd reading to check for.
+//  253  *
+//  254  * @return  TRUE if the Vdd measured is greater than the 'vdd' minimum parameter;
+//  255  *          FALSE if not.
+//  256  *
+//  257  *********************************************************************/
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+//  258 bool HalAdcCheckVdd(uint8 vdd)
+HalAdcCheckVdd:
+        CODE
+//  259 {
+        ; Saved register size: 0
+        ; Auto size: 0
+        MOV     A,R1
+        MOV     R2,A
+//  260   ADCCON3 = 0x0F;
+        MOV     0xb6,#0xf
+//  261   while (!(ADCCON1 & 0x80));
+??HalAdcCheckVdd_0:
+        MOV     A,0xb4
+        MOV     C,0xE0 /* A   */.7
+        JNC     ??HalAdcCheckVdd_0
+//  262   return (ADCH > vdd);
+        MOV     A,0xbb
+        MOV     R0,A
+        MOV     A,R2
+        CLR     C
+        SUBB    A,R0
+        JNC     ??HalAdcCheckVdd_1
+        MOV     R1,#0x1
+        SJMP    ??HalAdcCheckVdd_2
+??HalAdcCheckVdd_1:
+        MOV     R1,#0x0
+??HalAdcCheckVdd_2:
+        LJMP    ?BRET
+        REQUIRE ADCCON3
+        REQUIRE ADCCON1
+        REQUIRE ADCH
+//  263 }
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??HalAdcInit?relay:
+        CODE
+        LCALL   ?BDISPATCH
+        DATA24
+        DC24    HalAdcInit
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??HalAdcRead?relay:
+        CODE
+        LCALL   ?BDISPATCH
+        DATA24
+        DC24    HalAdcRead
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??HalAdcSetReference?relay:
+        CODE
+        LCALL   ?BDISPATCH
+        DATA24
+        DC24    HalAdcSetReference
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??HalAdcCheckVdd?relay:
+        CODE
+        LCALL   ?BDISPATCH
+        DATA24
+        DC24    HalAdcCheckVdd
+
+        END
+//  264 
+//  265 /**************************************************************************************************
+//  266 **************************************************************************************************/
+// 
+// 216 bytes in segment BANKED_CODE
+//  24 bytes in segment BANK_RELAYS
+//   5 bytes in segment SFR_AN
+//   1 byte  in segment XDATA_Z
+// 
+// 240 bytes of CODE  memory
+//   0 bytes of DATA  memory (+ 5 bytes shared)
+//   1 byte  of XDATA memory
+//
+//Errors: none
+//Warnings: none

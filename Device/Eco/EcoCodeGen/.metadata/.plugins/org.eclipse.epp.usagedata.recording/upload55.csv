@@ -1,0 +1,26 @@
+what,kind,bundleId,bundleVersion,description,time
+java.vm.specification.version,sysinfo,,,"1.7",1390398812825
+java.vm.vendor,sysinfo,,,"Oracle Corporation",1390398812825
+java.vm.version,sysinfo,,,"24.51-b03",1390398812825
+deactivated,workbench,org.eclipse.ui.workbench,3.5.1.M20090826-0800a,"",1390398835400
+activated,workbench,org.eclipse.ui.workbench,3.5.1.M20090826-0800a,"",1390398835491
+deactivated,workbench,org.eclipse.ui.workbench,3.5.1.M20090826-0800a,"",1390398849158
+activated,workbench,org.eclipse.ui.workbench,3.5.1.M20090826-0800a,"",1390398913179
+deactivated,workbench,org.eclipse.ui.workbench,3.5.1.M20090826-0800a,"",1390398925815
+activated,workbench,org.eclipse.ui.workbench,3.5.1.M20090826-0800a,"",1390398941151
+activated,view,org.eclipse.ui.navigator.resources,3.4.1.M20090826-0800,"org.eclipse.ui.navigator.ProjectExplorer",1390398941206
+activated,editor,org.eclipse.cdt.ui,5.1.1.200909110608,"org.eclipse.cdt.ui.editor.CEditor",1390398942187
+started,bundle,org.eclipse.compare,3.5.0.I20090514-0808,"org.eclipse.compare",1390398979863
+executed,command,org.eclipse.cdt.ui,5.1.1.200909110608,"org.eclipse.cdt.ui.edit.opendecl",1390398981721
+executed,command,org.eclipse.cdt.ui,5.1.1.200909110608,"org.eclipse.cdt.ui.edit.open.call.hierarchy",1390398986843
+opened,view,org.eclipse.cdt.ui,5.1.1.200909110608,"org.eclipse.cdt.ui.callHierarchy",1390398987229
+activated,view,org.eclipse.cdt.ui,5.1.1.200909110608,"org.eclipse.cdt.ui.callHierarchy",1390398987280
+activated,editor,org.eclipse.cdt.ui,5.1.1.200909110608,"org.eclipse.cdt.ui.editor.CEditor",1390398988816
+executed,command,org.eclipse.cdt.ui,5.1.1.200909110608,"org.eclipse.cdt.ui.edit.open.type.hierarchy",1390398990079
+deactivated,workbench,org.eclipse.ui.workbench,3.5.1.M20090826-0800a,"",1390399002296
+executed,command,org.eclipse.ui.workbench.texteditor,3.5.0.v20090603,"org.eclipse.ui.edit.text.showInformation",1390399002328
+activated,workbench,org.eclipse.ui.workbench,3.5.1.M20090826-0800a,"",1390399004880
+deactivated,workbench,org.eclipse.ui.workbench,3.5.1.M20090826-0800a,"",1390399016067
+activated,workbench,org.eclipse.ui.workbench,3.5.1.M20090826-0800a,"",1390399017754
+deactivated,workbench,org.eclipse.ui.workbench,3.5.1.M20090826-0800a,"",1390399023963
+activated,workbench,org.eclipse.ui.workbench,3.5.1.M20090826-0800a,"",1390399031348

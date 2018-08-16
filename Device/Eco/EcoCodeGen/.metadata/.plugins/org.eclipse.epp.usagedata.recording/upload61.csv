@@ -1,0 +1,26 @@
+what,kind,bundleId,bundleVersion,description,time
+activated,workbench,org.eclipse.ui.workbench,3.5.1.M20090826-0800a,"",1390402646446
+executed,command,org.eclipse.ui,3.5.1.M20090902-1000,"org.eclipse.ui.file.save",1390402648230
+deactivated,workbench,org.eclipse.ui.workbench,3.5.1.M20090826-0800a,"",1390402649778
+activated,workbench,org.eclipse.ui.workbench,3.5.1.M20090826-0800a,"",1390402651147
+deactivated,workbench,org.eclipse.ui.workbench,3.5.1.M20090826-0800a,"",1390402654235
+activated,workbench,org.eclipse.ui.workbench,3.5.1.M20090826-0800a,"",1390402692437
+executed,command,org.eclipse.cdt.ui,5.1.1.200909110608,"org.eclipse.cdt.ui.edit.opendecl",1390402712121
+deactivated,workbench,org.eclipse.ui.workbench,3.5.1.M20090826-0800a,"",1390402715136
+activated,workbench,org.eclipse.ui.workbench,3.5.1.M20090826-0800a,"",1390402718916
+deactivated,workbench,org.eclipse.ui.workbench,3.5.1.M20090826-0800a,"",1390402718942
+activated,workbench,org.eclipse.ui.workbench,3.5.1.M20090826-0800a,"",1390402747259
+activated,view,org.eclipse.ui.console,3.4.0.v20090513,"org.eclipse.ui.console.ConsoleView",1390402769894
+error,log,,,"Variable references empty selection: ${project_loc}",1390402779478
+deactivated,workbench,org.eclipse.ui.workbench,3.5.1.M20090826-0800a,"",1390402779487
+activated,workbench,org.eclipse.ui.workbench,3.5.1.M20090826-0800a,"",1390402780973
+activated,view,org.eclipse.ui.navigator.resources,3.4.1.M20090826-0800,"org.eclipse.ui.navigator.ProjectExplorer",1390402783769
+deactivated,workbench,org.eclipse.ui.workbench,3.5.1.M20090826-0800a,"",1390402787271
+activated,workbench,org.eclipse.ui.workbench,3.5.1.M20090826-0800a,"",1390402798168
+deactivated,workbench,org.eclipse.ui.workbench,3.5.1.M20090826-0800a,"",1390402812096
+activated,workbench,org.eclipse.ui.workbench,3.5.1.M20090826-0800a,"",1390402813061
+deactivated,workbench,org.eclipse.ui.workbench,3.5.1.M20090826-0800a,"",1390455603972
+activated,workbench,org.eclipse.ui.workbench,3.5.1.M20090826-0800a,"",1390455607304
+deactivated,workbench,org.eclipse.ui.workbench,3.5.1.M20090826-0800a,"",1390455609303
+activated,workbench,org.eclipse.ui.workbench,3.5.1.M20090826-0800a,"",1390455642664
+activated,editor,org.eclipse.cdt.ui,5.1.1.200909110608,"org.eclipse.cdt.ui.editor.CEditor",1390455646379

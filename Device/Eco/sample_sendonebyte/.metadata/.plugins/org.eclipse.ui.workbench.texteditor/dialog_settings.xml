@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
+		<item value="void interrupt_rf() interrupt 10&#x0D;&#x0A;{&#x0D;&#x0A;&#x09;char i;&#x0D;&#x0A;&#x09;blink_led();&#x0D;&#x0A;&#x09;mdelay(500);&#x0D;&#x0A;&#x0D;&#x0A;&#x09;i=0;&#x0D;&#x0A;&#x09;while (DR1) {&#x0D;&#x0A;&#x09;&#x09;rf_buf[i++] = spi_write_then_read(0);&#x09;/* clock in data */&#x0D;&#x0A;&#x09;}&#x0D;&#x0A;&#x09;led_status = rf_buf[0];&#x0D;&#x0A;&#x09;/* clean up rf interrupt */&#x0D;&#x0A;&#x09;CE = 0;&#x0D;&#x0A;&#x09;EXIF &amp;= ~0x40;&#x0D;&#x0A;}" key="selection"/>
+		<list key="findhistory">
+			<item value="void interrupt_rf() interrupt 10"/>
+		</list>
+	</section>
+	<section name="org.eclipse.ui.texteditor.GotoLineAction$GotoLineDialog_dialogBounds">
+		<item value="349" key="DIALOG_Y_ORIGIN"/>
+		<item value="608" key="DIALOG_X_ORIGIN"/>
+	</section>
+</section>

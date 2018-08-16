@@ -1,0 +1,2092 @@
+///////////////////////////////////////////////////////////////////////////////
+//                                                                            /
+// IAR C/C++ Compiler V8.20.1.40829 for 8051            23/May/2014  20:10:33 /
+// Copyright 2004-2012 IAR Systems AB.                                        /
+//                                                                            /
+//    Core               =  plain                                             /
+//    Code model         =  banked                                            /
+//    Data model         =  large                                             /
+//    Calling convention =  xdata reentrant                                   /
+//    Constant location  =  data_rom                                          /
+//    Dptr setup         =  1,16                                              /
+//                                                                            /
+//    Source file        =  D:\NTHU\¬ã¨s\Important\ThesisCode\Code\GitLabClou /
+//                          d\NewEcoExec\codegenerator\Device\EcoBT\Project\b /
+//                          le\Profiles\SimpleProfile\simpleGATTprofile.c     /
+//    Command line       =  -f D:\NTHU\¬ã¨s\Important\ThesisCode\Code\GitLabC /
+//                          loud\NewEcoExec\codegenerator\Device\EcoBT\Projec /
+//                          t\ble\CodeGenerator\CC2540DB\..\..\config\buildCo /
+//                          mponents.cfg (-DBROADCASTER_CFG=0x01              /
+//                          -DOBSERVER_CFG=0x02 -DPERIPHERAL_CFG=0x04         /
+//                          -DCENTRAL_CFG=0x08 -DADV_NCONN_CFG=0x01           /
+//                          -DADV_CONN_CFG=0x02 -DSCAN_CFG=0x04               /
+//                          -DINIT_CFG=0x08 -DADV_CFG=ADV_NCONN_CFG+ADV_CONN_ /
+//                          CFG -DLINK_CFG=ADV_CONN_CFG+INIT_CFG              /
+//                          -DFULL_CFG=INIT_CFG+SCAN_CFG+ADV_NCONN_CFG+ADV_CO /
+//                          NN_CFG) -f D:\NTHU\¬ã¨s\Important\ThesisCode\Code /
+//                          \GitLabCloud\NewEcoExec\codegenerator\Device\EcoB /
+//                          T\Project\ble\CodeGenerator\CC2540DB\buildConfig. /
+//                          cfg (-DHOST_CONFIG=PERIPHERAL_CFG                 /
+//                          -DGAP_PRIVACY_RECONNECT)                          /
+//                          D:\NTHU\¬ã¨s\Important\ThesisCode\Code\GitLabClou /
+//                          d\NewEcoExec\codegenerator\Device\EcoBT\Project\b /
+//                          le\Profiles\SimpleProfile\simpleGATTprofile.c -D  /
+//                          INT_HEAP_LEN=900 -D HALNODEBUG -D                 /
+//                          OSAL_CBTIMER_NUM_TASKS=1 -D HAL_AES_DMA=TRUE -D   /
+//                          HAL_DMA=TRUE -D xPOWER_SAVING -D                  /
+//                          xPLUS_BROADCASTER -D HAL_LCD=FALSE -D             /
+//                          HAL_LED=TRUE -D HAL_ADC=TRUE -lB                  /
+//                          D:\NTHU\¬ã¨s\Important\ThesisCode\Code\GitLabClou /
+//                          d\NewEcoExec\codegenerator\Device\EcoBT\Project\b /
+//                          le\CodeGenerator\CC2540DB\CC2540\List\ -o         /
+//                          D:\NTHU\¬ã¨s\Important\ThesisCode\Code\GitLabClou /
+//                          d\NewEcoExec\codegenerator\Device\EcoBT\Project\b /
+//                          le\CodeGenerator\CC2540DB\CC2540\Obj\ -e --debug  /
+//                          --core=plain --dptr=16,1 --data_model=large       /
+//                          --code_model=banked --calling_convention=xdata_re /
+//                          entrant --place_constants=data_rom                /
+//                          --nr_virtual_regs 16 -I                           /
+//                          D:\NTHU\¬ã¨s\Important\ThesisCode\Code\GitLabClou /
+//                          d\NewEcoExec\codegenerator\Device\EcoBT\Project\b /
+//                          le\CodeGenerator\CC2540DB\..\..\common\ -I        /
+//                          D:\NTHU\¬ã¨s\Important\ThesisCode\Code\GitLabClou /
+//                          d\NewEcoExec\codegenerator\Device\EcoBT\Project\b /
+//                          le\CodeGenerator\CC2540DB\..\..\include\ -I       /
+//                          D:\NTHU\¬ã¨s\Important\ThesisCode\Code\GitLabClou /
+//                          d\NewEcoExec\codegenerator\Device\EcoBT\Project\b /
+//                          le\CodeGenerator\CC2540DB\..\..\..\..\Components\ /
+//                          hal\include\ -I D:\NTHU\¬ã¨s\Important\ThesisCode /
+//                          \Code\GitLabCloud\NewEcoExec\codegenerator\Device /
+//                          \EcoBT\Project\ble\CodeGenerator\CC2540DB\..\..\. /
+//                          .\..\Components\hal\target\CC2540EB\ -I           /
+//                          D:\NTHU\¬ã¨s\Important\ThesisCode\Code\GitLabClou /
+//                          d\NewEcoExec\codegenerator\Device\EcoBT\Project\b /
+//                          le\CodeGenerator\CC2540DB\..\..\..\..\Components\ /
+//                          osal\include\ -I D:\NTHU\¬ã¨s\Important\ThesisCod /
+//                          e\Code\GitLabCloud\NewEcoExec\codegenerator\Devic /
+//                          e\EcoBT\Project\ble\CodeGenerator\CC2540DB\..\..\ /
+//                          ..\..\Components\services\saddr\ -I               /
+//                          D:\NTHU\¬ã¨s\Important\ThesisCode\Code\GitLabClou /
+//                          d\NewEcoExec\codegenerator\Device\EcoBT\Project\b /
+//                          le\CodeGenerator\CC2540DB\..\..\..\..\Components\ /
+//                          ble\include\ -I D:\NTHU\¬ã¨s\Important\ThesisCode /
+//                          \Code\GitLabCloud\NewEcoExec\codegenerator\Device /
+//                          \EcoBT\Project\ble\CodeGenerator\CC2540DB\..\..\. /
+//                          .\..\Components\ble\controller\phy\ -I            /
+//                          D:\NTHU\¬ã¨s\Important\ThesisCode\Code\GitLabClou /
+//                          d\NewEcoExec\codegenerator\Device\EcoBT\Project\b /
+//                          le\CodeGenerator\CC2540DB\..\..\..\..\Components\ /
+//                          ble\controller\include\ -I                        /
+//                          D:\NTHU\¬ã¨s\Important\ThesisCode\Code\GitLabClou /
+//                          d\NewEcoExec\codegenerator\Device\EcoBT\Project\b /
+//                          le\CodeGenerator\CC2540DB\..\..\..\..\Components\ /
+//                          ble\hci\ -I D:\NTHU\¬ã¨s\Important\ThesisCode\Cod /
+//                          e\GitLabCloud\NewEcoExec\codegenerator\Device\Eco /
+//                          BT\Project\ble\CodeGenerator\CC2540DB\..\..\..\.. /
+//                          \Components\ble\host\ -I                          /
+//                          D:\NTHU\¬ã¨s\Important\ThesisCode\Code\GitLabClou /
+//                          d\NewEcoExec\codegenerator\Device\EcoBT\Project\b /
+//                          le\CodeGenerator\CC2540DB\..\..\common\cc2540\    /
+//                          -I D:\NTHU\¬ã¨s\Important\ThesisCode\Code\GitLabC /
+//                          loud\NewEcoExec\codegenerator\Device\EcoBT\Projec /
+//                          t\ble\CodeGenerator\CC2540DB\..\..\common\npi\npi /
+//                          _np\ -I D:\NTHU\¬ã¨s\Important\ThesisCode\Code\Gi /
+//                          tLabCloud\NewEcoExec\codegenerator\Device\EcoBT\P /
+//                          roject\ble\CodeGenerator\CC2540DB\..\..\Profiles\ /
+//                          Roles\ -I D:\NTHU\¬ã¨s\Important\ThesisCode\Code\ /
+//                          GitLabCloud\NewEcoExec\codegenerator\Device\EcoBT /
+//                          \Project\ble\CodeGenerator\CC2540DB\..\..\Profile /
+//                          s\SimpleProfile\ -I D:\NTHU\¬ã¨s\Important\Thesis /
+//                          Code\Code\GitLabCloud\NewEcoExec\codegenerator\De /
+//                          vice\EcoBT\Project\ble\CodeGenerator\CC2540DB\..\ /
+//                          ..\Profiles\DevInfo\ -I                           /
+//                          D:\NTHU\¬ã¨s\Important\ThesisCode\Code\GitLabClou /
+//                          d\NewEcoExec\codegenerator\Device\EcoBT\Project\b /
+//                          le\CodeGenerator\CC2540DB\..\..\Profiles\Accelero /
+//                          meter\ -I D:\NTHU\¬ã¨s\Important\ThesisCode\Code\ /
+//                          GitLabCloud\NewEcoExec\codegenerator\Device\EcoBT /
+//                          \Project\ble\CodeGenerator\CC2540DB\..\..\Profile /
+//                          s\EcoExecGATTProfile\ -I                          /
+//                          D:\NTHU\¬ã¨s\Important\ThesisCode\Code\GitLabClou /
+//                          d\NewEcoExec\codegenerator\Device\EcoBT\Project\b /
+//                          le\CodeGenerator\CC2540DB\..\..\Profiles\Batt\    /
+//                          -I D:\NTHU\¬ã¨s\Important\ThesisCode\Code\GitLabC /
+//                          loud\NewEcoExec\codegenerator\Device\EcoBT\Projec /
+//                          t\ble\CodeGenerator\CC2540DB\..\..\Profiles\HIDDe /
+//                          v\ -Ohz                                           /
+//    List file          =  D:\NTHU\¬ã¨s\Important\ThesisCode\Code\GitLabClou /
+//                          d\NewEcoExec\codegenerator\Device\EcoBT\Project\b /
+//                          le\CodeGenerator\CC2540DB\CC2540\List\simpleGATTp /
+//                          rofile.s51                                        /
+//                                                                            /
+//                                                                            /
+///////////////////////////////////////////////////////////////////////////////
+
+        NAME simpleGATTprofile
+
+        RSEG DOVERLAY:DATA:NOROOT(0)
+        RSEG IOVERLAY:IDATA:NOROOT(0)
+        RSEG ISTACK:IDATA:NOROOT(0)
+        RSEG PSTACK:XDATA:NOROOT(0)
+        RSEG XSTACK:XDATA:NOROOT(0)
+
+        EXTERN ?BANKED_ENTER_XDATA
+        EXTERN ?BANKED_LEAVE_XDATA
+        EXTERN ?BDISPATCH
+        EXTERN ?BRET
+        EXTERN ?CALL_IND
+        EXTERN ?DEALLOC_XSTACK8
+        EXTERN ?PUSH_XSTACK_I_ONE
+        EXTERN ?PUSH_XSTACK_I_TWO
+        EXTERN ?US_SWITCH_DENSE
+        EXTERN ?US_SWITCH_SPARSE
+        EXTERN ?V0
+        EXTERN ?XSTACK_DISP0_8
+        EXTERN __INIT_XDATA_I
+        EXTERN __INIT_XDATA_Z
+
+        PUBLIC ??SimpleProfile_AddService?relay
+        PUBLIC ??SimpleProfile_GetParameter?relay
+        PUBLIC ??SimpleProfile_RegisterAppCBs?relay
+        PUBLIC ??SimpleProfile_SetParameter?relay
+        PUBLIC SimpleProfile_AddService
+        PUBLIC SimpleProfile_GetParameter
+        PUBLIC SimpleProfile_RegisterAppCBs
+        PUBLIC SimpleProfile_SetParameter
+        PUBLIC simpleProfileCBs
+        PUBLIC simpleProfileServUUID
+        PUBLIC simpleProfilechar1UUID
+        PUBLIC simpleProfilechar2UUID
+        PUBLIC simpleProfilechar3UUID
+        PUBLIC simpleProfilechar4UUID
+        PUBLIC simpleProfilechar5UUID
+
+GATTServApp_InitCharCfg SYMBOL "GATTServApp_InitCharCfg"
+??GATTServApp_InitCharCfg?relay SYMBOL "?relay", GATTServApp_InitCharCfg
+GATTServApp_ProcessCCCWriteReq SYMBOL "GATTServApp_ProcessCCCWriteReq"
+??GATTServApp_ProcessCCCWriteReq?relay SYMBOL "?relay", GATTServApp_ProcessCCCWriteReq
+GATTServApp_ProcessCharCfg SYMBOL "GATTServApp_ProcessCharCfg"
+??GATTServApp_ProcessCharCfg?relay SYMBOL "?relay", GATTServApp_ProcessCharCfg
+GATTServApp_RegisterService SYMBOL "GATTServApp_RegisterService"
+??GATTServApp_RegisterService?relay SYMBOL "?relay", GATTServApp_RegisterService
+linkDB_Register     SYMBOL "linkDB_Register"
+??linkDB_Register?relay SYMBOL "?relay", linkDB_Register
+linkDB_State        SYMBOL "linkDB_State"
+??linkDB_State?relay SYMBOL "?relay", linkDB_State
+osal_memcpy         SYMBOL "osal_memcpy"
+??osal_memcpy?relay SYMBOL "?relay", osal_memcpy
+SimpleProfile_AddService SYMBOL "SimpleProfile_AddService"
+??SimpleProfile_AddService?relay SYMBOL "?relay", SimpleProfile_AddService
+SimpleProfile_GetParameter SYMBOL "SimpleProfile_GetParameter"
+??SimpleProfile_GetParameter?relay SYMBOL "?relay", SimpleProfile_GetParameter
+SimpleProfile_RegisterAppCBs SYMBOL "SimpleProfile_RegisterAppCBs"
+??SimpleProfile_RegisterAppCBs?relay SYMBOL "?relay", SimpleProfile_RegisterAppCBs
+SimpleProfile_SetParameter SYMBOL "SimpleProfile_SetParameter"
+??SimpleProfile_SetParameter?relay SYMBOL "?relay", SimpleProfile_SetParameter
+
+        EXTERN ??GATTServApp_InitCharCfg?relay
+        EXTERN ??GATTServApp_ProcessCCCWriteReq?relay
+        EXTERN ??GATTServApp_ProcessCharCfg?relay
+        EXTERN ??GATTServApp_RegisterService?relay
+        EXTERN ??linkDB_Register?relay
+        EXTERN ??linkDB_State?relay
+        EXTERN ??osal_memcpy?relay
+        EXTERN GATTServApp_InitCharCfg
+        EXTERN GATTServApp_ProcessCCCWriteReq
+        EXTERN GATTServApp_ProcessCharCfg
+        EXTERN GATTServApp_RegisterService
+        EXTERN charUserDescUUID
+        EXTERN characterUUID
+        EXTERN clientCharCfgUUID
+        EXTERN linkDB_Register
+        EXTERN linkDB_State
+        EXTERN osal_memcpy
+        EXTERN primaryServiceUUID
+
+// D:\NTHU\¬ã¨s\Important\ThesisCode\Code\GitLabCloud\NewEcoExec\codegenerator\Device\EcoBT\Project\ble\Profiles\SimpleProfile\simpleGATTprofile.c
+//    1 /**************************************************************************************************
+//    2   Filename:       simpleGATTprofile.c
+//    3   Revised:        $Date: 2010-08-06 08:56:11 -0700 (Fri, 06 Aug 2010) $
+//    4   Revision:       $Revision: 23333 $
+//    5 
+//    6   Description:    This file contains the Simple GATT profile sample GATT service 
+//    7                   profile for use with the BLE sample application.
+//    8 
+//    9   Copyright 2010 Texas Instruments Incorporated. All rights reserved.
+//   10 
+//   11   IMPORTANT: Your use of this Software is limited to those specific rights
+//   12   granted under the terms of a software license agreement between the user
+//   13   who downloaded the software, his/her employer (which must be your employer)
+//   14   and Texas Instruments Incorporated (the "License").  You may not use this
+//   15   Software unless you agree to abide by the terms of the License. The License
+//   16   limits your use, and you acknowledge, that the Software may not be modified,
+//   17   copied or distributed unless embedded on a Texas Instruments microcontroller
+//   18   or used solely and exclusively in conjunction with a Texas Instruments radio
+//   19   frequency transceiver, which is integrated into your product.  Other than for
+//   20   the foregoing purpose, you may not use, reproduce, copy, prepare derivative
+//   21   works of, modify, distribute, perform, display or sell this Software and/or
+//   22   its documentation for any purpose.
+//   23 
+//   24   YOU FURTHER ACKNOWLEDGE AND AGREE THAT THE SOFTWARE AND DOCUMENTATION ARE
+//   25   PROVIDED “AS IS” WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESS OR IMPLIED, 
+//   26   INCLUDING WITHOUT LIMITATION, ANY WARRANTY OF MERCHANTABILITY, TITLE, 
+//   27   NON-INFRINGEMENT AND FITNESS FOR A PARTICULAR PURPOSE. IN NO EVENT SHALL
+//   28   TEXAS INSTRUMENTS OR ITS LICENSORS BE LIABLE OR OBLIGATED UNDER CONTRACT,
+//   29   NEGLIGENCE, STRICT LIABILITY, CONTRIBUTION, BREACH OF WARRANTY, OR OTHER
+//   30   LEGAL EQUITABLE THEORY ANY DIRECT OR INDIRECT DAMAGES OR EXPENSES
+//   31   INCLUDING BUT NOT LIMITED TO ANY INCIDENTAL, SPECIAL, INDIRECT, PUNITIVE
+//   32   OR CONSEQUENTIAL DAMAGES, LOST PROFITS OR LOST DATA, COST OF PROCUREMENT
+//   33   OF SUBSTITUTE GOODS, TECHNOLOGY, SERVICES, OR ANY CLAIMS BY THIRD PARTIES
+//   34   (INCLUDING BUT NOT LIMITED TO ANY DEFENSE THEREOF), OR OTHER SIMILAR COSTS.
+//   35 
+//   36   Should you have any questions regarding your right to use this Software,
+//   37   contact Texas Instruments Incorporated at www.TI.com. 
+//   38 **************************************************************************************************/
+//   39 
+//   40 /*********************************************************************
+//   41  * INCLUDES
+//   42  */
+//   43 #include "bcomdef.h"
+//   44 #include "OSAL.h"
+//   45 #include "linkdb.h"
+//   46 #include "att.h"
+//   47 #include "gatt.h"
+//   48 #include "gatt_uuid.h"
+//   49 #include "gattservapp.h"
+//   50 #include "gapbondmgr.h"
+//   51 
+//   52 #include "simpleGATTprofile.h"
+//   53 
+//   54 /*********************************************************************
+//   55  * MACROS
+//   56  */
+//   57 
+//   58 /*********************************************************************
+//   59  * CONSTANTS
+//   60  */
+//   61 
+//   62 #define SERVAPP_NUM_ATTR_SUPPORTED        17
+//   63 
+//   64 /*********************************************************************
+//   65  * TYPEDEFS
+//   66  */
+//   67 
+//   68 /*********************************************************************
+//   69  * GLOBAL VARIABLES
+//   70  */
+//   71 // Simple GATT Profile Service UUID: 0xFFF0
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA16
+//   72 CONST uint8 simpleProfileServUUID[ATT_BT_UUID_SIZE] =
+simpleProfileServUUID:
+        DATA8
+        DB 240
+        DB 255
+//   73 { 
+//   74   LO_UINT16(SIMPLEPROFILE_SERV_UUID), HI_UINT16(SIMPLEPROFILE_SERV_UUID)
+//   75 };
+//   76 
+//   77 // Characteristic 1 UUID: 0xFFF1
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA16
+//   78 CONST uint8 simpleProfilechar1UUID[ATT_BT_UUID_SIZE] =
+simpleProfilechar1UUID:
+        DATA8
+        DB 241
+        DB 255
+//   79 { 
+//   80   LO_UINT16(SIMPLEPROFILE_CHAR1_UUID), HI_UINT16(SIMPLEPROFILE_CHAR1_UUID)
+//   81 };
+//   82 
+//   83 // Characteristic 2 UUID: 0xFFF2
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA16
+//   84 CONST uint8 simpleProfilechar2UUID[ATT_BT_UUID_SIZE] =
+simpleProfilechar2UUID:
+        DATA8
+        DB 242
+        DB 255
+//   85 { 
+//   86   LO_UINT16(SIMPLEPROFILE_CHAR2_UUID), HI_UINT16(SIMPLEPROFILE_CHAR2_UUID)
+//   87 };
+//   88 
+//   89 // Characteristic 3 UUID: 0xFFF3
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA16
+//   90 CONST uint8 simpleProfilechar3UUID[ATT_BT_UUID_SIZE] =
+simpleProfilechar3UUID:
+        DATA8
+        DB 243
+        DB 255
+//   91 { 
+//   92   LO_UINT16(SIMPLEPROFILE_CHAR3_UUID), HI_UINT16(SIMPLEPROFILE_CHAR3_UUID)
+//   93 };
+//   94 
+//   95 // Characteristic 4 UUID: 0xFFF4
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA16
+//   96 CONST uint8 simpleProfilechar4UUID[ATT_BT_UUID_SIZE] =
+simpleProfilechar4UUID:
+        DATA8
+        DB 244
+        DB 255
+//   97 { 
+//   98   LO_UINT16(SIMPLEPROFILE_CHAR4_UUID), HI_UINT16(SIMPLEPROFILE_CHAR4_UUID)
+//   99 };
+//  100 
+//  101 // Characteristic 5 UUID: 0xFFF5
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA16
+//  102 CONST uint8 simpleProfilechar5UUID[ATT_BT_UUID_SIZE] =
+simpleProfilechar5UUID:
+        DATA8
+        DB 245
+        DB 255
+//  103 { 
+//  104   LO_UINT16(SIMPLEPROFILE_CHAR5_UUID), HI_UINT16(SIMPLEPROFILE_CHAR5_UUID)
+//  105 };
+//  106 
+//  107 /*********************************************************************
+//  108  * EXTERNAL VARIABLES
+//  109  */
+//  110 
+//  111 /*********************************************************************
+//  112  * EXTERNAL FUNCTIONS
+//  113  */
+//  114 
+//  115 /*********************************************************************
+//  116  * LOCAL VARIABLES
+//  117  */
+//  118 
+
+        RSEG XDATA_Z:XDATA:NOROOT(0)
+        DATA16
+//  119 static simpleProfileCBs_t *simpleProfile_AppCBs = NULL;
+simpleProfile_AppCBs:
+        DS 2
+        REQUIRE __INIT_XDATA_Z
+//  120 
+//  121 /*********************************************************************
+//  122  * Profile Attributes - variables
+//  123  */
+//  124 
+//  125 // Simple Profile Service attribute
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA8
+//  126 static CONST gattAttrType_t simpleProfileService = { ATT_BT_UUID_SIZE, simpleProfileServUUID };
+simpleProfileService:
+        DB 2
+        DATA16
+        DW simpleProfileServUUID
+//  127 
+//  128 
+//  129 // Simple Profile Characteristic 1 Properties
+
+        RSEG XDATA_I:XDATA:NOROOT(0)
+//  130 static uint8 simpleProfileChar1Props = GATT_PROP_READ | GATT_PROP_WRITE;
+simpleProfileChar1Props:
+        DATA8
+        DS 1
+        REQUIRE `?<Initializer for simpleProfileChar1Props>`
+        REQUIRE __INIT_XDATA_I
+//  131 
+//  132 // Characteristic 1 Value
+
+        RSEG XDATA_Z:XDATA:NOROOT(0)
+        DATA8
+//  133 static uint8 simpleProfileChar1 = 0;
+simpleProfileChar1:
+        DS 1
+        REQUIRE __INIT_XDATA_Z
+//  134 
+//  135 // Simple Profile Characteristic 1 User Description
+
+        RSEG XDATA_I:XDATA:NOROOT(0)
+//  136 static uint8 simpleProfileChar1UserDesp[17] = "Characteristic 1\0";
+simpleProfileChar1UserDesp:
+        DATA8
+        DS 17
+        REQUIRE `?<Initializer for simpleProfileChar1UserDesp>`
+        REQUIRE __INIT_XDATA_I
+//  137 
+//  138 
+//  139 // Simple Profile Characteristic 2 Properties
+
+        RSEG XDATA_I:XDATA:NOROOT(0)
+//  140 static uint8 simpleProfileChar2Props = GATT_PROP_READ;
+simpleProfileChar2Props:
+        DATA8
+        DS 1
+        REQUIRE `?<Initializer for simpleProfileChar2Props>`
+        REQUIRE __INIT_XDATA_I
+//  141 
+//  142 // Characteristic 2 Value
+
+        RSEG XDATA_Z:XDATA:NOROOT(0)
+        DATA8
+//  143 static uint8 simpleProfileChar2 = 0;
+simpleProfileChar2:
+        DS 1
+        REQUIRE __INIT_XDATA_Z
+//  144 
+//  145 // Simple Profile Characteristic 2 User Description
+
+        RSEG XDATA_I:XDATA:NOROOT(0)
+//  146 static uint8 simpleProfileChar2UserDesp[17] = "Characteristic 2\0";
+simpleProfileChar2UserDesp:
+        DATA8
+        DS 17
+        REQUIRE `?<Initializer for simpleProfileChar2UserDesp>`
+        REQUIRE __INIT_XDATA_I
+//  147 
+//  148 
+//  149 // Simple Profile Characteristic 3 Properties
+
+        RSEG XDATA_I:XDATA:NOROOT(0)
+//  150 static uint8 simpleProfileChar3Props = GATT_PROP_WRITE;
+simpleProfileChar3Props:
+        DATA8
+        DS 1
+        REQUIRE `?<Initializer for simpleProfileChar3Props>`
+        REQUIRE __INIT_XDATA_I
+//  151 
+//  152 // Characteristic 3 Value
+
+        RSEG XDATA_Z:XDATA:NOROOT(0)
+        DATA8
+//  153 static uint8 simpleProfileChar3 = 0;
+simpleProfileChar3:
+        DS 1
+        REQUIRE __INIT_XDATA_Z
+//  154 
+//  155 // Simple Profile Characteristic 3 User Description
+
+        RSEG XDATA_I:XDATA:NOROOT(0)
+//  156 static uint8 simpleProfileChar3UserDesp[17] = "Characteristic 3\0";
+simpleProfileChar3UserDesp:
+        DATA8
+        DS 17
+        REQUIRE `?<Initializer for simpleProfileChar3UserDesp>`
+        REQUIRE __INIT_XDATA_I
+//  157 
+//  158 
+//  159 // Simple Profile Characteristic 4 Properties
+
+        RSEG XDATA_I:XDATA:NOROOT(0)
+//  160 static uint8 simpleProfileChar4Props = GATT_PROP_NOTIFY;
+simpleProfileChar4Props:
+        DATA8
+        DS 1
+        REQUIRE `?<Initializer for simpleProfileChar4Props>`
+        REQUIRE __INIT_XDATA_I
+//  161 
+//  162 // Characteristic 4 Value
+
+        RSEG XDATA_Z:XDATA:NOROOT(0)
+        DATA8
+//  163 static uint8 simpleProfileChar4 = 0;
+simpleProfileChar4:
+        DS 1
+        REQUIRE __INIT_XDATA_Z
+//  164 
+//  165 // Simple Profile Characteristic 4 Configuration Each client has its own
+//  166 // instantiation of the Client Characteristic Configuration. Reads of the
+//  167 // Client Characteristic Configuration only shows the configuration for
+//  168 // that client and writes only affect the configuration of that client.
+
+        RSEG XDATA_Z:XDATA:NOROOT(0)
+        DATA8
+//  169 static gattCharCfg_t simpleProfileChar4Config[GATT_MAX_NUM_CONN];
+simpleProfileChar4Config:
+        DS 6
+        REQUIRE __INIT_XDATA_Z
+//  170                                         
+//  171 // Simple Profile Characteristic 4 User Description
+
+        RSEG XDATA_I:XDATA:NOROOT(0)
+//  172 static uint8 simpleProfileChar4UserDesp[17] = "Characteristic 4\0";
+simpleProfileChar4UserDesp:
+        DATA8
+        DS 17
+        REQUIRE `?<Initializer for simpleProfileChar4UserDesp>`
+        REQUIRE __INIT_XDATA_I
+//  173 
+//  174 
+//  175 // Simple Profile Characteristic 5 Properties
+
+        RSEG XDATA_I:XDATA:NOROOT(0)
+//  176 static uint8 simpleProfileChar5Props = GATT_PROP_READ;
+simpleProfileChar5Props:
+        DATA8
+        DS 1
+        REQUIRE `?<Initializer for simpleProfileChar5Props>`
+        REQUIRE __INIT_XDATA_I
+//  177 
+//  178 // Characteristic 5 Value
+
+        RSEG XDATA_Z:XDATA:NOROOT(0)
+        DATA8
+//  179 static uint8 simpleProfileChar5[SIMPLEPROFILE_CHAR5_LEN] = { 0, 0, 0, 0, 0 };
+simpleProfileChar5:
+        DS 5
+        REQUIRE __INIT_XDATA_Z
+//  180 
+//  181 // Simple Profile Characteristic 5 User Description
+
+        RSEG XDATA_I:XDATA:NOROOT(0)
+//  182 static uint8 simpleProfileChar5UserDesp[17] = "Characteristic 5\0";
+simpleProfileChar5UserDesp:
+        DATA8
+        DS 17
+        REQUIRE `?<Initializer for simpleProfileChar5UserDesp>`
+        REQUIRE __INIT_XDATA_I
+//  183 
+//  184 
+//  185 /*********************************************************************
+//  186  * Profile Attributes - Table
+//  187  */
+//  188 
+
+        RSEG XDATA_I:XDATA:NOROOT(0)
+//  189 static gattAttribute_t simpleProfileAttrTbl[SERVAPP_NUM_ATTR_SUPPORTED] = 
+simpleProfileAttrTbl:
+        DATA8
+        DS 136
+        REQUIRE `?<Initializer for simpleProfileAttrTbl>`
+        REQUIRE __INIT_XDATA_I
+//  190 {
+//  191   // Simple Profile Service
+//  192   { 
+//  193     { ATT_BT_UUID_SIZE, primaryServiceUUID }, /* type */
+//  194     GATT_PERMIT_READ,                         /* permissions */
+//  195     0,                                        /* handle */
+//  196     (uint8 *)&simpleProfileService            /* pValue */
+//  197   },
+//  198 
+//  199     // Characteristic 1 Declaration
+//  200     { 
+//  201       { ATT_BT_UUID_SIZE, characterUUID },
+//  202       GATT_PERMIT_READ, 
+//  203       0,
+//  204       &simpleProfileChar1Props 
+//  205     },
+//  206 
+//  207       // Characteristic Value 1
+//  208       { 
+//  209         { ATT_BT_UUID_SIZE, simpleProfilechar1UUID },
+//  210         GATT_PERMIT_READ | GATT_PERMIT_WRITE, 
+//  211         0, 
+//  212         &simpleProfileChar1 
+//  213       },
+//  214 
+//  215       // Characteristic 1 User Description
+//  216       { 
+//  217         { ATT_BT_UUID_SIZE, charUserDescUUID },
+//  218         GATT_PERMIT_READ, 
+//  219         0, 
+//  220         simpleProfileChar1UserDesp 
+//  221       },      
+//  222 
+//  223     // Characteristic 2 Declaration
+//  224     { 
+//  225       { ATT_BT_UUID_SIZE, characterUUID },
+//  226       GATT_PERMIT_READ, 
+//  227       0,
+//  228       &simpleProfileChar2Props 
+//  229     },
+//  230 
+//  231       // Characteristic Value 2
+//  232       { 
+//  233         { ATT_BT_UUID_SIZE, simpleProfilechar2UUID },
+//  234         GATT_PERMIT_READ, 
+//  235         0, 
+//  236         &simpleProfileChar2 
+//  237       },
+//  238 
+//  239       // Characteristic 2 User Description
+//  240       { 
+//  241         { ATT_BT_UUID_SIZE, charUserDescUUID },
+//  242         GATT_PERMIT_READ, 
+//  243         0, 
+//  244         simpleProfileChar2UserDesp 
+//  245       },           
+//  246       
+//  247     // Characteristic 3 Declaration
+//  248     { 
+//  249       { ATT_BT_UUID_SIZE, characterUUID },
+//  250       GATT_PERMIT_READ, 
+//  251       0,
+//  252       &simpleProfileChar3Props 
+//  253     },
+//  254 
+//  255       // Characteristic Value 3
+//  256       { 
+//  257         { ATT_BT_UUID_SIZE, simpleProfilechar3UUID },
+//  258         GATT_PERMIT_WRITE, 
+//  259         0, 
+//  260         &simpleProfileChar3 
+//  261       },
+//  262 
+//  263       // Characteristic 3 User Description
+//  264       { 
+//  265         { ATT_BT_UUID_SIZE, charUserDescUUID },
+//  266         GATT_PERMIT_READ, 
+//  267         0, 
+//  268         simpleProfileChar3UserDesp 
+//  269       },
+//  270 
+//  271     // Characteristic 4 Declaration
+//  272     { 
+//  273       { ATT_BT_UUID_SIZE, characterUUID },
+//  274       GATT_PERMIT_READ, 
+//  275       0,
+//  276       &simpleProfileChar4Props 
+//  277     },
+//  278 
+//  279       // Characteristic Value 4
+//  280       { 
+//  281         { ATT_BT_UUID_SIZE, simpleProfilechar4UUID },
+//  282         0, 
+//  283         0, 
+//  284         &simpleProfileChar4 
+//  285       },
+//  286 
+//  287       // Characteristic 4 configuration
+//  288       { 
+//  289         { ATT_BT_UUID_SIZE, clientCharCfgUUID },
+//  290         GATT_PERMIT_READ | GATT_PERMIT_WRITE, 
+//  291         0, 
+//  292         (uint8 *)simpleProfileChar4Config 
+//  293       },
+//  294       
+//  295       // Characteristic 4 User Description
+//  296       { 
+//  297         { ATT_BT_UUID_SIZE, charUserDescUUID },
+//  298         GATT_PERMIT_READ, 
+//  299         0, 
+//  300         simpleProfileChar4UserDesp 
+//  301       },
+//  302       
+//  303     // Characteristic 5 Declaration
+//  304     { 
+//  305       { ATT_BT_UUID_SIZE, characterUUID },
+//  306       GATT_PERMIT_READ, 
+//  307       0,
+//  308       &simpleProfileChar5Props 
+//  309     },
+//  310 
+//  311       // Characteristic Value 5
+//  312       { 
+//  313         { ATT_BT_UUID_SIZE, simpleProfilechar5UUID },
+//  314         GATT_PERMIT_AUTHEN_READ, 
+//  315         0, 
+//  316         simpleProfileChar5 
+//  317       },
+//  318 
+//  319       // Characteristic 5 User Description
+//  320       { 
+//  321         { ATT_BT_UUID_SIZE, charUserDescUUID },
+//  322         GATT_PERMIT_READ, 
+//  323         0, 
+//  324         simpleProfileChar5UserDesp 
+//  325       },
+//  326 
+//  327 
+//  328 };
+//  329 
+//  330 
+//  331 /*********************************************************************
+//  332  * LOCAL FUNCTIONS
+//  333  */
+//  334 static uint8 simpleProfile_ReadAttrCB( uint16 connHandle, gattAttribute_t *pAttr, 
+//  335                             uint8 *pValue, uint8 *pLen, uint16 offset, uint8 maxLen );
+//  336 static bStatus_t simpleProfile_WriteAttrCB( uint16 connHandle, gattAttribute_t *pAttr,
+//  337                                  uint8 *pValue, uint8 len, uint16 offset );
+//  338 
+//  339 static void simpleProfile_HandleConnStatusCB( uint16 connHandle, uint8 changeType );
+//  340 
+//  341 
+//  342 /*********************************************************************
+//  343  * PROFILE CALLBACKS
+//  344  */
+//  345 // Simple Profile Service Callbacks
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA8
+//  346 CONST gattServiceCBs_t simpleProfileCBs =
+simpleProfileCBs:
+        DATA16
+        DW ??simpleProfile_ReadAttrCB?relay
+        DW ??simpleProfile_WriteAttrCB?relay
+        DW 0H
+//  347 {
+//  348   simpleProfile_ReadAttrCB,  // Read callback function pointer
+//  349   simpleProfile_WriteAttrCB, // Write callback function pointer
+//  350   NULL                       // Authorization callback function pointer
+//  351 };
+//  352 
+//  353 /*********************************************************************
+//  354  * PUBLIC FUNCTIONS
+//  355  */
+//  356 
+//  357 /*********************************************************************
+//  358  * @fn      SimpleProfile_AddService
+//  359  *
+//  360  * @brief   Initializes the Simple Profile service by registering
+//  361  *          GATT attributes with the GATT server.
+//  362  *
+//  363  * @param   services - services to add. This is a bit map and can
+//  364  *                     contain more than one service.
+//  365  *
+//  366  * @return  Success or Failure
+//  367  */
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+//  368 bStatus_t SimpleProfile_AddService( uint32 services )
+SimpleProfile_AddService:
+        CODE
+//  369 {
+        MOV     A,#-0xc
+        LCALL   ?BANKED_ENTER_XDATA
+        ; Saved register size: 12
+        ; Auto size: 0
+        MOV     ?V0 + 0,R2
+//  370   uint8 status = SUCCESS;
+        MOV     R6,#0x0
+//  371 
+//  372   // Initialize Client Characteristic Configuration attributes
+//  373   GATTServApp_InitCharCfg( INVALID_CONNHANDLE, simpleProfileChar4Config );
+        ; Setup parameters for call to function GATTServApp_InitCharCfg
+        MOV     R4,#simpleProfileChar4Config & 0xff
+        MOV     R5,#(simpleProfileChar4Config >> 8) & 0xff
+        MOV     R2,#-0x1
+        MOV     R3,#-0x1
+        LCALL   ??GATTServApp_InitCharCfg?relay
+//  374 
+//  375   // Register with Link DB to receive link status change callback
+//  376   VOID linkDB_Register( simpleProfile_HandleConnStatusCB );  
+        ; Setup parameters for call to function linkDB_Register
+        MOV     R2,#??simpleProfile_HandleConnStatusCB?relay & 0xff
+        MOV     R3,#(??simpleProfile_HandleConnStatusCB?relay >> 8) & 0xff
+        LCALL   ??linkDB_Register?relay
+//  377   
+//  378   if ( services & SIMPLEPROFILE_SERVICE )
+        MOV     A,?V0 + 0
+        MOV     C,0xE0 /* A   */.0
+        JNC     ??SimpleProfile_AddService_0
+//  379   {
+//  380     // Register GATT attribute list and CBs with GATT Server App
+//  381     status = GATTServApp_RegisterService( simpleProfileAttrTbl, 
+//  382                                           GATT_NUM_ATTRS( simpleProfileAttrTbl ),
+//  383                                           &simpleProfileCBs );
+        ; Setup parameters for call to function GATTServApp_RegisterService
+        MOV     ?V0 + 0,#simpleProfileCBs & 0xff
+        MOV     ?V0 + 1,#(simpleProfileCBs >> 8) & 0xff
+        MOV     R0,#?V0 + 0
+        LCALL   ?PUSH_XSTACK_I_TWO
+        MOV     R4,#0x11
+        MOV     R5,#0x0
+        MOV     R2,#simpleProfileAttrTbl & 0xff
+        MOV     R3,#(simpleProfileAttrTbl >> 8) & 0xff
+        LCALL   ??GATTServApp_RegisterService?relay
+        MOV     A,#0x2
+        LCALL   ?DEALLOC_XSTACK8
+        MOV     A,R1
+        MOV     R6,A
+//  384   }
+//  385 
+//  386   return ( status );
+??SimpleProfile_AddService_0:
+        REQUIRE ?Subroutine0
+        ; // Fall through to label ?Subroutine0
+//  387 }
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+?Subroutine0:
+        MOV     A,R6
+        MOV     R1,A
+        MOV     R7,#0x4
+        LJMP    ?BANKED_LEAVE_XDATA
+//  388 
+//  389 
+//  390 /*********************************************************************
+//  391  * @fn      SimpleProfile_RegisterAppCBs
+//  392  *
+//  393  * @brief   Registers the application callback function. Only call 
+//  394  *          this function once.
+//  395  *
+//  396  * @param   callbacks - pointer to application callbacks.
+//  397  *
+//  398  * @return  SUCCESS or bleAlreadyInRequestedMode
+//  399  */
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+//  400 bStatus_t SimpleProfile_RegisterAppCBs( simpleProfileCBs_t *appCallbacks )
+SimpleProfile_RegisterAppCBs:
+        CODE
+//  401 {
+        PUSH    DPL
+        PUSH    DPH
+        ; Saved register size: 2
+        ; Auto size: 0
+//  402   if ( appCallbacks )
+        MOV     A,R2
+        ORL     A,R3
+        JZ      ??SimpleProfile_RegisterAppCBs_0
+//  403   {
+//  404     simpleProfile_AppCBs = appCallbacks;
+        MOV     DPTR,#simpleProfile_AppCBs
+        MOV     A,R2
+        MOVX    @DPTR,A
+        INC     DPTR
+        MOV     A,R3
+        MOVX    @DPTR,A
+//  405     
+//  406     return ( SUCCESS );
+        MOV     R1,#0x0
+        SJMP    ??SimpleProfile_RegisterAppCBs_1
+//  407   }
+//  408   else
+//  409   {
+//  410     return ( bleAlreadyInRequestedMode );
+??SimpleProfile_RegisterAppCBs_0:
+        MOV     R1,#0x11
+??SimpleProfile_RegisterAppCBs_1:
+        POP     DPH
+        POP     DPL
+        LJMP    ?BRET
+//  411   }
+//  412 }
+//  413   
+//  414 
+//  415 /*********************************************************************
+//  416  * @fn      SimpleProfile_SetParameter
+//  417  *
+//  418  * @brief   Set a Simple Profile parameter.
+//  419  *
+//  420  * @param   param - Profile parameter ID
+//  421  * @param   len - length of data to right
+//  422  * @param   value - pointer to data to write.  This is dependent on
+//  423  *          the parameter ID and WILL be cast to the appropriate 
+//  424  *          data type (example: data type of uint16 will be cast to 
+//  425  *          uint16 pointer).
+//  426  *
+//  427  * @return  bStatus_t
+//  428  */
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+//  429 bStatus_t SimpleProfile_SetParameter( uint8 param, uint8 len, void *value )
+SimpleProfile_SetParameter:
+        CODE
+//  430 {
+        MOV     A,#-0xc
+        LCALL   ?BANKED_ENTER_XDATA
+        ; Saved register size: 12
+        ; Auto size: 0
+        MOV     A,R1
+        MOV     ?V0 + 0,R2
+//  431   bStatus_t ret = SUCCESS;
+        MOV     R6,#0x0
+//  432   switch ( param )
+        JZ      ??SimpleProfile_SetParameter_0
+        DEC     A
+        JZ      ??SimpleProfile_SetParameter_1
+        DEC     A
+        JZ      ??SimpleProfile_SetParameter_2
+        DEC     A
+        JZ      ??SimpleProfile_SetParameter_3
+        DEC     A
+        JZ      ??SimpleProfile_SetParameter_4
+        LJMP    ??SimpleProfile_SetParameter_5 & 0xFFFF
+//  433   {
+//  434     case SIMPLEPROFILE_CHAR1:
+//  435       if ( len == sizeof ( uint8 ) ) 
+??SimpleProfile_SetParameter_0:
+        MOV     A,#0x1
+        XRL     A,?V0 + 0
+        JZ      $+5
+        LJMP    ??SimpleProfile_SetParameter_6 & 0xFFFF
+//  436       {
+//  437         simpleProfileChar1 = *((uint8*)value);
+        MOV     DPL,R4
+        MOV     DPH,R5
+        MOVX    A,@DPTR
+        MOV     DPTR,#simpleProfileChar1
+        SJMP    ??SimpleProfile_SetParameter_7
+//  438       }
+//  439       else
+//  440       {
+//  441         ret = bleInvalidRange;
+//  442       }
+//  443       break;
+//  444 
+//  445     case SIMPLEPROFILE_CHAR2:
+//  446       if ( len == sizeof ( uint8 ) ) 
+??SimpleProfile_SetParameter_1:
+        MOV     A,#0x1
+        XRL     A,?V0 + 0
+        JNZ     ??SimpleProfile_SetParameter_6
+//  447       {
+//  448         simpleProfileChar2 = *((uint8*)value);
+        MOV     DPL,R4
+        MOV     DPH,R5
+        MOVX    A,@DPTR
+        MOV     DPTR,#simpleProfileChar2
+        SJMP    ??SimpleProfile_SetParameter_7
+//  449       }
+//  450       else
+//  451       {
+//  452         ret = bleInvalidRange;
+//  453       }
+//  454       break;
+//  455 
+//  456     case SIMPLEPROFILE_CHAR3:
+//  457       if ( len == sizeof ( uint8 ) ) 
+??SimpleProfile_SetParameter_2:
+        MOV     A,#0x1
+        XRL     A,?V0 + 0
+        JNZ     ??SimpleProfile_SetParameter_6
+//  458       {
+//  459         simpleProfileChar3 = *((uint8*)value);
+        MOV     DPL,R4
+        MOV     DPH,R5
+        MOVX    A,@DPTR
+        MOV     DPTR,#simpleProfileChar3
+??SimpleProfile_SetParameter_7:
+        MOVX    @DPTR,A
+        SJMP    ??SimpleProfile_SetParameter_8
+//  460       }
+//  461       else
+//  462       {
+//  463         ret = bleInvalidRange;
+//  464       }
+//  465       break;
+//  466 
+//  467     case SIMPLEPROFILE_CHAR4:
+//  468       if ( len == sizeof ( uint8 ) ) 
+??SimpleProfile_SetParameter_3:
+        MOV     A,#0x1
+        XRL     A,?V0 + 0
+        JNZ     ??SimpleProfile_SetParameter_6
+//  469       {
+//  470         simpleProfileChar4 = *((uint8*)value);
+        MOV     DPL,R4
+        MOV     DPH,R5
+        MOVX    A,@DPTR
+        MOV     DPTR,#simpleProfileChar4
+        MOVX    @DPTR,A
+//  471         
+//  472         // See if Notification has been enabled
+//  473         GATTServApp_ProcessCharCfg( simpleProfileChar4Config, &simpleProfileChar4, FALSE,
+//  474                                     simpleProfileAttrTbl, GATT_NUM_ATTRS( simpleProfileAttrTbl ),
+//  475                                     INVALID_TASK_ID );
+        ; Setup parameters for call to function GATTServApp_ProcessCharCfg
+        MOV     ?V0 + 1,#-0x1
+        MOV     R0,#?V0 + 1
+        LCALL   ?PUSH_XSTACK_I_ONE
+        MOV     ?V0 + 2,#0x11
+        MOV     ?V0 + 3,R6
+        MOV     R0,#?V0 + 2
+        LCALL   ?PUSH_XSTACK_I_TWO
+        MOV     ?V0 + 2,#simpleProfileAttrTbl & 0xff
+        MOV     ?V0 + 3,#(simpleProfileAttrTbl >> 8) & 0xff
+        MOV     R0,#?V0 + 2
+        LCALL   ?PUSH_XSTACK_I_TWO
+        MOV     R1,#0x0
+        MOV     R4,#simpleProfileChar4 & 0xff
+        MOV     R5,#(simpleProfileChar4 >> 8) & 0xff
+        MOV     R2,#simpleProfileChar4Config & 0xff
+        MOV     R3,#(simpleProfileChar4Config >> 8) & 0xff
+        LCALL   ??GATTServApp_ProcessCharCfg?relay
+        MOV     A,#0x5
+        LCALL   ?DEALLOC_XSTACK8
+        SJMP    ??SimpleProfile_SetParameter_8
+//  476       }
+//  477       else
+//  478       {
+//  479         ret = bleInvalidRange;
+//  480       }
+//  481       break;
+//  482 
+//  483     case SIMPLEPROFILE_CHAR5:
+//  484       if ( len == SIMPLEPROFILE_CHAR5_LEN ) 
+??SimpleProfile_SetParameter_4:
+        MOV     A,#0x5
+        XRL     A,?V0 + 0
+        JNZ     ??SimpleProfile_SetParameter_6
+//  485       {
+//  486         VOID osal_memcpy( simpleProfileChar5, value, SIMPLEPROFILE_CHAR5_LEN );
+        ; Setup parameters for call to function osal_memcpy
+        MOV     ?V0 + 2,#0x5
+        MOV     ?V0 + 3,R6
+        MOV     R0,#?V0 + 2
+        LCALL   ?PUSH_XSTACK_I_TWO
+        MOV     R2,#simpleProfileChar5 & 0xff
+        MOV     R3,#(simpleProfileChar5 >> 8) & 0xff
+        LCALL   ??osal_memcpy?relay
+        MOV     A,#0x2
+        LCALL   ?DEALLOC_XSTACK8
+        SJMP    ??SimpleProfile_SetParameter_8
+//  487       }
+//  488       else
+//  489       {
+//  490         ret = bleInvalidRange;
+??SimpleProfile_SetParameter_6:
+        MOV     R6,#0x18
+        SJMP    ??SimpleProfile_SetParameter_8
+//  491       }
+//  492       break;
+//  493       
+//  494     default:
+//  495       ret = INVALIDPARAMETER;
+??SimpleProfile_SetParameter_5:
+        INC     R6
+        INC     R6
+//  496       break;
+//  497   }
+//  498   
+//  499   return ( ret );
+??SimpleProfile_SetParameter_8:
+        LJMP    ?Subroutine0 & 0xFFFF
+//  500 }
+//  501 
+//  502 /*********************************************************************
+//  503  * @fn      SimpleProfile_GetParameter
+//  504  *
+//  505  * @brief   Get a Simple Profile parameter.
+//  506  *
+//  507  * @param   param - Profile parameter ID
+//  508  * @param   value - pointer to data to put.  This is dependent on
+//  509  *          the parameter ID and WILL be cast to the appropriate 
+//  510  *          data type (example: data type of uint16 will be cast to 
+//  511  *          uint16 pointer).
+//  512  *
+//  513  * @return  bStatus_t
+//  514  */
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+//  515 bStatus_t SimpleProfile_GetParameter( uint8 param, void *value )
+SimpleProfile_GetParameter:
+        CODE
+//  516 {
+        MOV     A,#-0xa
+        LCALL   ?BANKED_ENTER_XDATA
+        ; Saved register size: 10
+        ; Auto size: 0
+        MOV     A,R1
+//  517   bStatus_t ret = SUCCESS;
+        MOV     R6,#0x0
+//  518   switch ( param )
+        JZ      ??SimpleProfile_GetParameter_0
+        DEC     A
+        JZ      ??SimpleProfile_GetParameter_1
+        DEC     A
+        JZ      ??SimpleProfile_GetParameter_2
+        DEC     A
+        JZ      ??SimpleProfile_GetParameter_3
+        DEC     A
+        JZ      ??SimpleProfile_GetParameter_4
+        SJMP    ??SimpleProfile_GetParameter_5
+//  519   {
+//  520     case SIMPLEPROFILE_CHAR1:
+//  521       *((uint8*)value) = simpleProfileChar1;
+??SimpleProfile_GetParameter_0:
+        MOV     DPTR,#simpleProfileChar1
+        SJMP    ??SimpleProfile_GetParameter_6
+//  522       break;
+//  523 
+//  524     case SIMPLEPROFILE_CHAR2:
+//  525       *((uint8*)value) = simpleProfileChar2;
+??SimpleProfile_GetParameter_1:
+        MOV     DPTR,#simpleProfileChar2
+        SJMP    ??SimpleProfile_GetParameter_6
+//  526       break;      
+//  527 
+//  528     case SIMPLEPROFILE_CHAR3:
+//  529       *((uint8*)value) = simpleProfileChar3;
+??SimpleProfile_GetParameter_2:
+        MOV     DPTR,#simpleProfileChar3
+        SJMP    ??SimpleProfile_GetParameter_6
+//  530       break;  
+//  531 
+//  532     case SIMPLEPROFILE_CHAR4:
+//  533       *((uint8*)value) = simpleProfileChar4;
+??SimpleProfile_GetParameter_3:
+        MOV     DPTR,#simpleProfileChar4
+??SimpleProfile_GetParameter_6:
+        MOVX    A,@DPTR
+        MOV     DPL,R2
+        MOV     DPH,R3
+        MOVX    @DPTR,A
+//  534       break;
+        SJMP    ??SimpleProfile_GetParameter_7
+//  535 
+//  536     case SIMPLEPROFILE_CHAR5:
+//  537       VOID osal_memcpy( value, simpleProfileChar5, SIMPLEPROFILE_CHAR5_LEN );
+??SimpleProfile_GetParameter_4:
+        ; Setup parameters for call to function osal_memcpy
+        MOV     ?V0 + 0,#0x5
+        MOV     ?V0 + 1,R6
+        MOV     R0,#?V0 + 0
+        LCALL   ?PUSH_XSTACK_I_TWO
+        MOV     R4,#simpleProfileChar5 & 0xff
+        MOV     R5,#(simpleProfileChar5 >> 8) & 0xff
+        LCALL   ??osal_memcpy?relay
+        MOV     A,#0x2
+        LCALL   ?DEALLOC_XSTACK8
+//  538       break;      
+        SJMP    ??SimpleProfile_GetParameter_7
+//  539       
+//  540     default:
+//  541       ret = INVALIDPARAMETER;
+??SimpleProfile_GetParameter_5:
+        INC     R6
+        INC     R6
+//  542       break;
+//  543   }
+//  544   
+//  545   return ( ret );
+??SimpleProfile_GetParameter_7:
+        MOV     A,R6
+        MOV     R1,A
+        MOV     R7,#0x2
+        LJMP    ?BANKED_LEAVE_XDATA
+//  546 }
+//  547 
+//  548 /*********************************************************************
+//  549  * @fn          simpleProfile_ReadAttrCB
+//  550  *
+//  551  * @brief       Read an attribute.
+//  552  *
+//  553  * @param       connHandle - connection message was received on
+//  554  * @param       pAttr - pointer to attribute
+//  555  * @param       pValue - pointer to data to be read
+//  556  * @param       pLen - length of data to be read
+//  557  * @param       offset - offset of the first octet to be read
+//  558  * @param       maxLen - maximum length of data to be read
+//  559  *
+//  560  * @return      Success or Failure
+//  561  */
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+//  562 static uint8 simpleProfile_ReadAttrCB( uint16 connHandle, gattAttribute_t *pAttr, 
+simpleProfile_ReadAttrCB:
+        CODE
+//  563                             uint8 *pValue, uint8 *pLen, uint16 offset, uint8 maxLen )
+//  564 {
+        MOV     A,#-0xe
+        LCALL   ?BANKED_ENTER_XDATA
+        ; Saved register size: 14
+        ; Auto size: 0
+        MOV     A,#0x12
+        LCALL   ?XSTACK_DISP0_8
+        LCALL   ??Subroutine4_0 & 0xFFFF
+//  565   bStatus_t status = SUCCESS;
+??CrossCallReturnLabel_4:
+        MOV     ?V0 + 0,#0x0
+//  566 
+//  567   // If attribute permissions require authorization to read, return error
+//  568   if ( gattPermitAuthorRead( pAttr->permissions ) )
+        MOV     DPL,R4
+        MOV     DPH,R5
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     C,0xE0 /* A   */.4
+        JNC     ??simpleProfile_ReadAttrCB_0
+//  569   {
+//  570     // Insufficient authorization
+//  571     return ( ATT_ERR_INSUFFICIENT_AUTHOR );
+        MOV     R1,#0x8
+        LJMP    ??simpleProfile_ReadAttrCB_1 & 0xFFFF
+//  572   }
+//  573   
+//  574   // Make sure it's not a blob operation (no attributes in the profile are long)
+//  575   if ( offset > 0 )
+??simpleProfile_ReadAttrCB_0:
+        MOV     A,R0
+        ORL     A,R1
+        JZ      ??simpleProfile_ReadAttrCB_2
+//  576   {
+//  577     return ( ATT_ERR_ATTR_NOT_LONG );
+        MOV     R1,#0xb
+        LJMP    ??simpleProfile_ReadAttrCB_1 & 0xFFFF
+//  578   }
+??simpleProfile_ReadAttrCB_2:
+        MOV     A,#0x10
+        LCALL   ?XSTACK_DISP0_8
+        LCALL   ??Subroutine4_0 & 0xFFFF
+??CrossCallReturnLabel_5:
+        MOV     A,R0
+        MOV     R6,A
+        MOV     A,R1
+        MOV     R7,A
+//  579  
+//  580   if ( pAttr->type.len == ATT_BT_UUID_SIZE )
+        MOV     DPL,R4
+        MOV     DPH,R5
+        MOVX    A,@DPTR
+        XRL     A,#0x2
+        JZ      $+5
+        LJMP    ??simpleProfile_ReadAttrCB_3 & 0xFFFF
+//  581   {
+//  582     // 16-bit UUID
+//  583     uint16 uuid = BUILD_UINT16( pAttr->type.uuid[0], pAttr->type.uuid[1]);
+//  584     switch ( uuid )
+        LCALL   ?Subroutine2 & 0xFFFF
+??CrossCallReturnLabel_6:
+        MOV     ?V0 + 2,R0
+        MOV     ?V0 + 3,R1
+        MOV     A,R4
+        ADD     A,#0x6
+        MOV     R0,A
+        MOV     A,R5
+        ADDC    A,#0x0
+        MOV     R1,A
+        MOV     A,R0
+        MOV     R4,A
+        MOV     A,R1
+        MOV     R5,A
+        MOV     A,#0xe
+        LCALL   ?XSTACK_DISP0_8
+        MOVX    A,@DPTR
+        MOV     R2,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R3,A
+        MOV     DPL,?V0 + 2
+        MOV     DPH,?V0 + 3
+        LCALL   ?Subroutine1 & 0xFFFF
+??CrossCallReturnLabel_0:
+        MOV     ?V0 + 2,A
+        CLR     A
+        ADDC    A,R1
+        MOV     ?V0 + 3,A
+        MOV     R0,#?V0 + 2
+        LCALL   ?US_SWITCH_DENSE
+`?<Jumptable for simpleProfile_ReadAttrCB>_0`:
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DW        65521
+        DATA
+        DATA8
+        DATA
+        DATA8
+        DB        4
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DW        ??simpleProfile_ReadAttrCB_4
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DW        ??simpleProfile_ReadAttrCB_5
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DW        ??simpleProfile_ReadAttrCB_5
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DW        ??simpleProfile_ReadAttrCB_4
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DW        ??simpleProfile_ReadAttrCB_5
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DW        ??simpleProfile_ReadAttrCB_6
+        CODE
+//  585     {
+//  586       // No need for "GATT_SERVICE_UUID" or "GATT_CLIENT_CHAR_CFG_UUID" cases;
+//  587       // gattserverapp handles those reads
+//  588 
+//  589       // characteristics 1 and 2 have read permissions
+//  590       // characteritisc 3 does not have read permissions; therefore it is not
+//  591       //   included here
+//  592       // characteristic 4 does not have read permissions, but because it
+//  593       //   can be sent as a notification, it is included here
+//  594       case SIMPLEPROFILE_CHAR1_UUID:
+//  595       case SIMPLEPROFILE_CHAR2_UUID:
+//  596       case SIMPLEPROFILE_CHAR4_UUID:
+//  597         *pLen = 1;
+??simpleProfile_ReadAttrCB_5:
+        MOV     DPL,R6
+        MOV     DPH,R7
+        MOV     A,#0x1
+        MOVX    @DPTR,A
+//  598         pValue[0] = *pAttr->pValue;
+        MOV     DPL,R4
+        MOV     DPH,R5
+        LCALL   ?Subroutine3 & 0xFFFF
+??CrossCallReturnLabel_2:
+        MOV     DPL,R2
+        MOV     DPH,R3
+        MOVX    @DPTR,A
+//  599         break;
+        SJMP    ??simpleProfile_ReadAttrCB_7
+//  600 
+//  601       case SIMPLEPROFILE_CHAR5_UUID:
+//  602         *pLen = SIMPLEPROFILE_CHAR5_LEN;
+??simpleProfile_ReadAttrCB_6:
+        MOV     DPL,R6
+        MOV     DPH,R7
+        MOV     A,#0x5
+        MOVX    @DPTR,A
+//  603         VOID osal_memcpy( pValue, pAttr->pValue, SIMPLEPROFILE_CHAR5_LEN );
+        ; Setup parameters for call to function osal_memcpy
+        MOV     ?V0 + 2,A
+        MOV     ?V0 + 3,#0x0
+        MOV     R0,#?V0 + 2
+        LCALL   ?PUSH_XSTACK_I_TWO
+        MOV     DPL,R4
+        MOV     DPH,R5
+        MOVX    A,@DPTR
+        MOV     R4,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R5,A
+        LCALL   ??osal_memcpy?relay
+        MOV     A,#0x2
+        LCALL   ?DEALLOC_XSTACK8
+//  604         break;
+        SJMP    ??simpleProfile_ReadAttrCB_7
+//  605         
+//  606       default:
+//  607         // Should never get here! (characteristics 3 and 4 do not have read permissions)
+//  608         *pLen = 0;
+??simpleProfile_ReadAttrCB_4:
+        MOV     DPL,R6
+        MOV     DPH,R7
+        CLR     A
+        MOVX    @DPTR,A
+//  609         status = ATT_ERR_ATTR_NOT_FOUND;
+        MOV     ?V0 + 0,#0xa
+//  610         break;
+        SJMP    ??simpleProfile_ReadAttrCB_7
+//  611     }
+//  612   }
+//  613   else
+//  614   {
+//  615     // 128-bit UUID
+//  616     *pLen = 0;
+??simpleProfile_ReadAttrCB_3:
+        MOV     DPL,R6
+        MOV     DPH,R7
+        CLR     A
+        MOVX    @DPTR,A
+//  617     status = ATT_ERR_INVALID_HANDLE;
+        MOV     ?V0 + 0,#0x1
+//  618   }
+//  619 
+//  620   return ( status );
+??simpleProfile_ReadAttrCB_7:
+        MOV     R1,?V0 + 0
+??simpleProfile_ReadAttrCB_1:
+        MOV     R7,#0x6
+        LJMP    ?BANKED_LEAVE_XDATA
+//  621 }
+//  622 
+//  623 /*********************************************************************
+//  624  * @fn      simpleProfile_WriteAttrCB
+//  625  *
+//  626  * @brief   Validate attribute data prior to a write operation
+//  627  *
+//  628  * @param   connHandle - connection message was received on
+//  629  * @param   pAttr - pointer to attribute
+//  630  * @param   pValue - pointer to data to be written
+//  631  * @param   len - length of data
+//  632  * @param   offset - offset of the first octet to be written
+//  633  * @param   complete - whether this is the last packet
+//  634  * @param   oper - whether to validate and/or write attribute value  
+//  635  *
+//  636  * @return  Success or Failure
+//  637  */
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+//  638 static bStatus_t simpleProfile_WriteAttrCB( uint16 connHandle, gattAttribute_t *pAttr,
+simpleProfile_WriteAttrCB:
+        CODE
+//  639                                  uint8 *pValue, uint8 len, uint16 offset )
+//  640 {
+        MOV     A,#-0xf
+        LCALL   ?BANKED_ENTER_XDATA
+        ; Saved register size: 15
+        ; Auto size: 0
+        MOV     A,R1
+        MOV     R6,A
+//  641   bStatus_t status = SUCCESS;
+        MOV     R7,#0x0
+//  642   uint8 notifyApp = 0xFF;
+//  643   
+//  644   // If attribute permissions require authorization to write, return error
+//  645   if ( gattPermitAuthorWrite( pAttr->permissions ) )
+        MOV     DPL,R4
+        MOV     DPH,R5
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     C,0xE0 /* A   */.5
+        JNC     ??simpleProfile_WriteAttrCB_0
+//  646   {
+//  647     // Insufficient authorization
+//  648     return ( ATT_ERR_INSUFFICIENT_AUTHOR );
+        MOV     R1,#0x8
+        LJMP    ??simpleProfile_WriteAttrCB_1 & 0xFFFF
+//  649   }
+//  650   
+//  651   if ( pAttr->type.len == ATT_BT_UUID_SIZE )
+??simpleProfile_WriteAttrCB_0:
+        MOV     DPL,R4
+        MOV     DPH,R5
+        MOVX    A,@DPTR
+        XRL     A,#0x2
+        JZ      $+5
+        LJMP    ??simpleProfile_WriteAttrCB_2 & 0xFFFF
+//  652   {
+//  653     // 16-bit UUID
+//  654     uint16 uuid = BUILD_UINT16( pAttr->type.uuid[0], pAttr->type.uuid[1]);
+//  655     switch ( uuid )
+        LCALL   ?Subroutine2 & 0xFFFF
+??CrossCallReturnLabel_7:
+        MOV     A,#0xf
+        LCALL   ?XSTACK_DISP0_8
+        MOVX    A,@DPTR
+        MOV     ?V0 + 0,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     ?V0 + 1,A
+        MOV     A,#0x11
+        LCALL   ?XSTACK_DISP0_8
+        MOVX    A,@DPTR
+        MOV     ?V0 + 2,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     ?V0 + 3,A
+        MOV     DPL,R0
+        MOV     DPH,R1
+        LCALL   ?Subroutine1 & 0xFFFF
+??CrossCallReturnLabel_1:
+        CLR     A
+        ADDC    A,R1
+        MOV     ?V0 + 5,A
+        MOV     R0,#?V0 + 4
+        LCALL   ?US_SWITCH_SPARSE
+`?<Jumptable for simpleProfile_WriteAttrCB>_0`:
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DW        0
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DW        3
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DW        10498
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DW        ??simpleProfile_WriteAttrCB_3
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DW        65521
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DW        ??simpleProfile_WriteAttrCB_4
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DW        65523
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DW        ??simpleProfile_WriteAttrCB_4
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DW        ??simpleProfile_WriteAttrCB_5
+        CODE
+//  656     {
+//  657       case SIMPLEPROFILE_CHAR1_UUID:
+//  658       case SIMPLEPROFILE_CHAR3_UUID:
+//  659 
+//  660         //Validate the value
+//  661         // Make sure it's not a blob oper
+//  662         if ( offset == 0 )
+??simpleProfile_WriteAttrCB_4:
+        MOV     A,?V0 + 2
+        ORL     A,?V0 + 3
+        JNZ     ??simpleProfile_WriteAttrCB_6
+//  663         {
+//  664           if ( len != 1 )
+        MOV     A,#0x1
+        XRL     A,R6
+        JZ      ??simpleProfile_WriteAttrCB_7
+//  665           {
+//  666             status = ATT_ERR_INVALID_VALUE_SIZE;
+        MOV     R7,#0xd
+        SJMP    ??simpleProfile_WriteAttrCB_8
+//  667           }
+//  668         }
+//  669         else
+//  670         {
+//  671           status = ATT_ERR_ATTR_NOT_LONG;
+??simpleProfile_WriteAttrCB_6:
+        MOV     R7,#0xb
+        SJMP    ??simpleProfile_WriteAttrCB_8
+//  672         }
+//  673         
+//  674         //Write the value
+//  675         if ( status == SUCCESS )
+//  676         {
+//  677           uint8 *pCurValue = (uint8 *)pAttr->pValue;        
+//  678           *pCurValue = pValue[0];
+??simpleProfile_WriteAttrCB_7:
+        MOV     A,R4
+        ADD     A,#0x6
+        MOV     R0,A
+        MOV     A,R5
+        ADDC    A,#0x0
+        MOV     R1,A
+        MOV     DPL,?V0 + 0
+        MOV     DPH,?V0 + 1
+        MOVX    A,@DPTR
+        PUSH    A
+        MOV     DPL,R0
+        MOV     DPH,R1
+        MOVX    A,@DPTR
+        MOV     R2,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     DPH,A
+        MOV     DPL,R2
+        POP     A
+        MOVX    @DPTR,A
+//  679 
+//  680           if( pAttr->pValue == &simpleProfileChar1 )
+        MOV     DPL,R0
+        MOV     DPH,R1
+        MOVX    A,@DPTR
+        XRL     A,#simpleProfileChar1 & 0xff
+        JNZ     ??simpleProfile_WriteAttrCB_9
+        INC     DPTR
+        MOVX    A,@DPTR
+        XRL     A,#(simpleProfileChar1 >> 8) & 0xff
+??simpleProfile_WriteAttrCB_9:
+        JNZ     ??simpleProfile_WriteAttrCB_10
+//  681           {
+//  682             notifyApp = SIMPLEPROFILE_CHAR1;        
+        MOV     R1,#0x0
+??simpleProfile_WriteAttrCB_11:
+        MOV     DPTR,#simpleProfile_AppCBs
+        MOVX    A,@DPTR
+        MOV     R2,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R3,A
+        MOV     A,R2
+        ORL     A,R3
+        JZ      ??simpleProfile_WriteAttrCB_8
+        MOV     DPTR,#simpleProfile_AppCBs
+//  683           }
+        LCALL   ?Subroutine3 & 0xFFFF
+??CrossCallReturnLabel_3:
+        MOV     R2,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R3,A
+        MOV     DPL,R2
+        MOV     DPH,R3
+        MOV     A,DPL
+        ORL     A,DPH
+        JZ      ??simpleProfile_WriteAttrCB_8
+//  684           else
+//  685           {
+//  686             notifyApp = SIMPLEPROFILE_CHAR3;           
+//  687           }
+//  688         }
+//  689              
+//  690         break;
+//  691 
+//  692       case GATT_CLIENT_CHAR_CFG_UUID:
+//  693         status = GATTServApp_ProcessCCCWriteReq( connHandle, pAttr, pValue, len,
+//  694                                                  offset, GATT_CLIENT_CFG_NOTIFY );
+//  695         break;
+//  696         
+//  697       default:
+//  698         // Should never get here! (characteristics 2 and 4 do not have write permissions)
+//  699         status = ATT_ERR_ATTR_NOT_FOUND;
+//  700         break;
+//  701     }
+//  702   }
+//  703   else
+//  704   {
+//  705     // 128-bit UUID
+//  706     status = ATT_ERR_INVALID_HANDLE;
+//  707   }
+//  708 
+//  709   // If a charactersitic value changed then callback function to notify application of change
+//  710   if ( (notifyApp != 0xFF ) && simpleProfile_AppCBs && simpleProfile_AppCBs->pfnSimpleProfileChange )
+//  711   {
+//  712     simpleProfile_AppCBs->pfnSimpleProfileChange( notifyApp );  
+        ; Setup parameters for indirect call
+        LCALL   ?CALL_IND
+//  713   }
+//  714   
+//  715   return ( status );
+??simpleProfile_WriteAttrCB_8:
+        MOV     A,R7
+        MOV     R1,A
+??simpleProfile_WriteAttrCB_1:
+        MOV     R7,#0x7
+        LJMP    ?BANKED_LEAVE_XDATA
+??simpleProfile_WriteAttrCB_10:
+        MOV     R1,#0x2
+        SJMP    ??simpleProfile_WriteAttrCB_11
+??simpleProfile_WriteAttrCB_3:
+        ; Setup parameters for call to function GATTServApp_ProcessCCCWriteReq
+        MOV     ?V0 + 4,#0x1
+        MOV     ?V0 + 5,R7
+        MOV     R0,#?V0 + 4
+        LCALL   ?PUSH_XSTACK_I_TWO
+        MOV     R0,#?V0 + 2
+        LCALL   ?PUSH_XSTACK_I_TWO
+        MOV     R0,#?V0 + 0
+        LCALL   ?PUSH_XSTACK_I_TWO
+        MOV     A,R6
+        MOV     R1,A
+        LCALL   ??GATTServApp_ProcessCCCWriteReq?relay
+        MOV     A,#0x6
+        LCALL   ?DEALLOC_XSTACK8
+        MOV     A,R1
+        MOV     R7,A
+        SJMP    ??simpleProfile_WriteAttrCB_8
+??simpleProfile_WriteAttrCB_5:
+        MOV     R7,#0xa
+        SJMP    ??simpleProfile_WriteAttrCB_8
+??simpleProfile_WriteAttrCB_2:
+        INC     R7
+        SJMP    ??simpleProfile_WriteAttrCB_8
+//  716 }
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+?Subroutine3:
+        MOVX    A,@DPTR
+        MOV     R0,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     DPH,A
+        MOV     DPL,R0
+        MOVX    A,@DPTR
+        RET
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+?Subroutine2:
+        INC     DPTR
+        REQUIRE ??Subroutine4_0
+        ; // Fall through to label ??Subroutine4_0
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+??Subroutine4_0:
+        MOVX    A,@DPTR
+        MOV     R0,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R1,A
+        RET
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+?Subroutine1:
+        MOVX    A,@DPTR
+        MOV     ?V0 + 4,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R1,A
+        MOV     A,?V0 + 4
+        ADD     A,#0x0
+        RET
+//  717 
+//  718 /*********************************************************************
+//  719  * @fn          simpleProfile_HandleConnStatusCB
+//  720  *
+//  721  * @brief       Simple Profile link status change handler function.
+//  722  *
+//  723  * @param       connHandle - connection handle
+//  724  * @param       changeType - type of change
+//  725  *
+//  726  * @return      none
+//  727  */
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+//  728 static void simpleProfile_HandleConnStatusCB( uint16 connHandle, uint8 changeType )
+simpleProfile_HandleConnStatusCB:
+        CODE
+//  729 { 
+        MOV     A,#-0x9
+        LCALL   ?BANKED_ENTER_XDATA
+        ; Saved register size: 9
+        ; Auto size: 0
+        MOV     A,R2
+        MOV     R6,A
+        MOV     A,R3
+        MOV     R7,A
+        MOV     ?V0 + 0,R1
+//  730   // Make sure this is not loopback connection
+//  731   if ( connHandle != LOOPBACK_CONNHANDLE )
+        MOV     A,#-0x2
+        XRL     A,R6
+        JNZ     ??simpleProfile_HandleConnStatusCB_0
+        MOV     A,#-0x1
+        XRL     A,R7
+??simpleProfile_HandleConnStatusCB_0:
+        JZ      ??simpleProfile_HandleConnStatusCB_1
+//  732   {
+//  733     // Reset Client Char Config if connection has dropped
+//  734     if ( ( changeType == LINKDB_STATUS_UPDATE_REMOVED )      ||
+//  735          ( ( changeType == LINKDB_STATUS_UPDATE_STATEFLAGS ) && 
+//  736            ( !linkDB_Up( connHandle ) ) ) )
+        MOV     A,#0x1
+        XRL     A,?V0 + 0
+        JZ      ??simpleProfile_HandleConnStatusCB_2
+        MOV     A,#0x2
+        XRL     A,?V0 + 0
+        JNZ     ??simpleProfile_HandleConnStatusCB_1
+        ; Setup parameters for call to function linkDB_State
+        MOV     R1,#0x1
+        LCALL   ??linkDB_State?relay
+        MOV     A,R1
+        JNZ     ??simpleProfile_HandleConnStatusCB_1
+//  737     { 
+//  738       GATTServApp_InitCharCfg( connHandle, simpleProfileChar4Config );
+??simpleProfile_HandleConnStatusCB_2:
+        ; Setup parameters for call to function GATTServApp_InitCharCfg
+        MOV     R4,#simpleProfileChar4Config & 0xff
+        MOV     R5,#(simpleProfileChar4Config >> 8) & 0xff
+        MOV     A,R6
+        MOV     R2,A
+        MOV     A,R7
+        MOV     R3,A
+        LCALL   ??GATTServApp_InitCharCfg?relay
+//  739     }
+//  740   }
+//  741 }
+??simpleProfile_HandleConnStatusCB_1:
+        MOV     R7,#0x1
+        LJMP    ?BANKED_LEAVE_XDATA
+
+        RSEG XDATA_ID:CODE:NOROOT(0)
+`?<Initializer for simpleProfileChar1Props>`:
+        DATA8
+        DB 10
+
+        RSEG XDATA_ID:CODE:NOROOT(0)
+`?<Initializer for simpleProfileChar1UserDesp>`:
+        DB "Characteristic 1"
+
+        RSEG XDATA_ID:CODE:NOROOT(0)
+`?<Initializer for simpleProfileChar2Props>`:
+        DATA8
+        DB 2
+
+        RSEG XDATA_ID:CODE:NOROOT(0)
+`?<Initializer for simpleProfileChar2UserDesp>`:
+        DB "Characteristic 2"
+
+        RSEG XDATA_ID:CODE:NOROOT(0)
+`?<Initializer for simpleProfileChar3Props>`:
+        DATA8
+        DB 8
+
+        RSEG XDATA_ID:CODE:NOROOT(0)
+`?<Initializer for simpleProfileChar3UserDesp>`:
+        DB "Characteristic 3"
+
+        RSEG XDATA_ID:CODE:NOROOT(0)
+`?<Initializer for simpleProfileChar4Props>`:
+        DATA8
+        DB 16
+
+        RSEG XDATA_ID:CODE:NOROOT(0)
+`?<Initializer for simpleProfileChar4UserDesp>`:
+        DB "Characteristic 4"
+
+        RSEG XDATA_ID:CODE:NOROOT(0)
+`?<Initializer for simpleProfileChar5Props>`:
+        DATA8
+        DB 2
+
+        RSEG XDATA_ID:CODE:NOROOT(0)
+`?<Initializer for simpleProfileChar5UserDesp>`:
+        DB "Characteristic 5"
+
+        RSEG XDATA_ID:CODE:NOROOT(0)
+`?<Initializer for simpleProfileAttrTbl>`:
+        DATA8
+        DB 2
+        DATA16
+        DW primaryServiceUUID
+        DATA8
+        DB 1
+        DATA16
+        DW 0
+        DW simpleProfileService
+        DATA8
+        DB 2
+        DATA16
+        DW characterUUID
+        DATA8
+        DB 1
+        DATA16
+        DW 0
+        DW simpleProfileChar1Props
+        DATA8
+        DB 2
+        DATA16
+        DW simpleProfilechar1UUID
+        DATA8
+        DB 3
+        DATA16
+        DW 0
+        DW simpleProfileChar1
+        DATA8
+        DB 2
+        DATA16
+        DW charUserDescUUID
+        DATA8
+        DB 1
+        DATA16
+        DW 0
+        DW simpleProfileChar1UserDesp
+        DATA8
+        DB 2
+        DATA16
+        DW characterUUID
+        DATA8
+        DB 1
+        DATA16
+        DW 0
+        DW simpleProfileChar2Props
+        DATA8
+        DB 2
+        DATA16
+        DW simpleProfilechar2UUID
+        DATA8
+        DB 1
+        DATA16
+        DW 0
+        DW simpleProfileChar2
+        DATA8
+        DB 2
+        DATA16
+        DW charUserDescUUID
+        DATA8
+        DB 1
+        DATA16
+        DW 0
+        DW simpleProfileChar2UserDesp
+        DATA8
+        DB 2
+        DATA16
+        DW characterUUID
+        DATA8
+        DB 1
+        DATA16
+        DW 0
+        DW simpleProfileChar3Props
+        DATA8
+        DB 2
+        DATA16
+        DW simpleProfilechar3UUID
+        DATA8
+        DB 2
+        DATA16
+        DW 0
+        DW simpleProfileChar3
+        DATA8
+        DB 2
+        DATA16
+        DW charUserDescUUID
+        DATA8
+        DB 1
+        DATA16
+        DW 0
+        DW simpleProfileChar3UserDesp
+        DATA8
+        DB 2
+        DATA16
+        DW characterUUID
+        DATA8
+        DB 1
+        DATA16
+        DW 0
+        DW simpleProfileChar4Props
+        DATA8
+        DB 2
+        DATA16
+        DW simpleProfilechar4UUID
+        DATA8
+        DB 0
+        DATA16
+        DW 0
+        DW simpleProfileChar4
+        DATA8
+        DB 2
+        DATA16
+        DW clientCharCfgUUID
+        DATA8
+        DB 3
+        DATA16
+        DW 0
+        DW simpleProfileChar4Config
+        DATA8
+        DB 2
+        DATA16
+        DW charUserDescUUID
+        DATA8
+        DB 1
+        DATA16
+        DW 0
+        DW simpleProfileChar4UserDesp
+        DATA8
+        DB 2
+        DATA16
+        DW characterUUID
+        DATA8
+        DB 1
+        DATA16
+        DW 0
+        DW simpleProfileChar5Props
+        DATA8
+        DB 2
+        DATA16
+        DW simpleProfilechar5UUID
+        DATA8
+        DB 4
+        DATA16
+        DW 0
+        DW simpleProfileChar5
+        DATA8
+        DB 2
+        DATA16
+        DW charUserDescUUID
+        DATA8
+        DB 1
+        DATA16
+        DW 0
+        DW simpleProfileChar5UserDesp
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??SimpleProfile_AddService?relay:
+        CODE
+        LCALL   ?BDISPATCH
+        DATA24
+        DC24    SimpleProfile_AddService
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??SimpleProfile_RegisterAppCBs?relay:
+        CODE
+        LCALL   ?BDISPATCH
+        DATA24
+        DC24    SimpleProfile_RegisterAppCBs
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??SimpleProfile_SetParameter?relay:
+        CODE
+        LCALL   ?BDISPATCH
+        DATA24
+        DC24    SimpleProfile_SetParameter
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??SimpleProfile_GetParameter?relay:
+        CODE
+        LCALL   ?BDISPATCH
+        DATA24
+        DC24    SimpleProfile_GetParameter
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??simpleProfile_ReadAttrCB?relay:
+        CODE
+        LCALL   ?BDISPATCH
+        DATA24
+        DC24    simpleProfile_ReadAttrCB
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??simpleProfile_WriteAttrCB?relay:
+        CODE
+        LCALL   ?BDISPATCH
+        DATA24
+        DC24    simpleProfile_WriteAttrCB
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??simpleProfile_HandleConnStatusCB?relay:
+        CODE
+        LCALL   ?BDISPATCH
+        DATA24
+        DC24    simpleProfile_HandleConnStatusCB
+
+        END
+//  742 
+//  743 
+//  744 /*********************************************************************
+//  745 *********************************************************************/
+// 
+// 916 bytes in segment BANKED_CODE
+//  42 bytes in segment BANK_RELAYS
+// 226 bytes in segment XDATA_I
+// 226 bytes in segment XDATA_ID
+//  21 bytes in segment XDATA_ROM_C
+//  17 bytes in segment XDATA_Z
+// 
+// 1 184 bytes of CODE  memory
+//    21 bytes of CONST memory
+//   243 bytes of XDATA memory
+//
+//Errors: none
+//Warnings: none

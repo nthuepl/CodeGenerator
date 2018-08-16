@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<Project>
+  <Desktop>
+    <Static>
+      <Debug-Log>
+        
+        
+      <ColumnWidth0>20</ColumnWidth0><ColumnWidth1>1581</ColumnWidth1></Debug-Log>
+      <Build>
+        
+        
+        
+        
+      <ColumnWidth0>20</ColumnWidth0><ColumnWidth1>1185</ColumnWidth1><ColumnWidth2>316</ColumnWidth2><ColumnWidth3>79</ColumnWidth3></Build>
+      <Workspace>
+        <ColumnWidths>
+          
+          
+          
+          
+        <Column0>91</Column0><Column1>27</Column1><Column2>27</Column2><Column3>27</Column3></ColumnWidths>
+      </Workspace>
+      <Disassembly>
+        <col-names>
+          
+          
+        <item>Disassembly</item><item>_I0</item></col-names>
+        <col-widths>
+          
+          
+        <item>500</item><item>20</item></col-widths>
+        <DisasmHistory><item>0x068800</item><item>0x068000</item><item>.</item><item>0x06A000</item><item>0x060000</item></DisasmHistory>
+        
+        
+      <ShowCodeCoverage>1</ShowCodeCoverage><ShowInstrProfiling>1</ShowInstrProfiling></Disassembly>
+      <WATCH_1>
+        <expressions>
+          
+          
+          
+        <item>Message</item><item>notify</item><item>simpleBLEPeripheral_TaskID</item><item>accelEnabler</item><item>simpleBLEPeripheral_TaskID</item><item>timeout_value</item><item>event_id</item><item>ACCEL_READ_PERIOD</item><item>xDataSeg</item><item></item></expressions>
+        <col-names>
+          
+          
+          
+          
+        <item>Expression</item><item>Location</item><item>Type</item><item>Value</item></col-names>
+        <col-widths>
+          
+          
+          
+          
+        <item>100</item><item>150</item><item>100</item><item>140</item></col-widths>
+      </WATCH_1>
+    <Memory><FindDirection>1</FindDirection><FindAsHex>0</FindAsHex></Memory><Register/><STACK_2><col-names><item>Data</item><item>Frame</item><item>Location</item><item>Type</item><item>Value</item><item>Variable</item></col-names><col-widths><item>100</item><item>100</item><item>100</item><item>100</item><item>100</item><item>100</item></col-widths><PreferedWindows><Position>1</Position><ScreenPosX>0</ScreenPosX><ScreenPosY>0</ScreenPosY><Windows/></PreferedWindows><stack>XdataStack</stack><width>4</width><vars>1</vars><offset>0</offset></STACK_2><Breakpoints><PreferedWindows><Position>3</Position><ScreenPosX>0</ScreenPosX><ScreenPosY>0</ScreenPosY><Windows><Window><Factory>Debug-Log</Factory></Window><Window><Factory>Build</Factory></Window></Windows></PreferedWindows></Breakpoints><STACK_1><col-names><item>Data</item><item>Frame</item><item>Location</item><item>Type</item><item>Value</item><item>Variable</item></col-names><col-widths><item>100</item><item>100</item><item>100</item><item>100</item><item>100</item><item>100</item></col-widths><stack>XdataStack</stack><width>4</width><vars>1</vars><offset>0</offset></STACK_1></Static>
+    <Windows>
+      
+      
+      
+      
+    <Wnd0>
+        <Tabs>
+          <Tab>
+            <Identity>TabID-22575-12251</Identity>
+            <TabName>Debug Log</TabName>
+            <Factory>Debug-Log</Factory>
+            <Session/>
+          </Tab>
+          <Tab>
+            <Identity>TabID-22052-12261</Identity>
+            <TabName>Build</TabName>
+            <Factory>Build</Factory>
+            <Session/>
+          </Tab>
+        </Tabs>
+        
+      <SelectedTab>0</SelectedTab></Wnd0><Wnd1>
+        <Tabs>
+          <Tab>
+            <Identity>TabID-555-12254</Identity>
+            <TabName>Workspace</TabName>
+            <Factory>Workspace</Factory>
+            <Session>
+              
+            <NodeDict><ExpandedNode>SimpleBLEPeripheral</ExpandedNode><ExpandedNode>SimpleBLEPeripheral/APP</ExpandedNode><ExpandedNode>SimpleBLEPeripheral/PROFILES</ExpandedNode></NodeDict></Session>
+          </Tab>
+        </Tabs>
+        
+      <SelectedTab>0</SelectedTab></Wnd1><Wnd2>
+        <Tabs>
+          <Tab>
+            <Identity>TabID-11304-12257</Identity>
+            <TabName>Disassembly</TabName>
+            <Factory>Disassembly</Factory>
+            <Session/>
+          </Tab>
+        </Tabs>
+        
+      <SelectedTab>0</SelectedTab></Wnd2><Wnd3>
+        <Tabs>
+          <Tab>
+            <Identity>TabID-8690-12306</Identity>
+            <TabName>Watch 1</TabName>
+            <Factory>WATCH_1</Factory>
+          </Tab>
+        </Tabs>
+        
+      <SelectedTab>0</SelectedTab></Wnd3><Wnd4><Tabs><Tab><Identity>TabID-17076-19109</Identity><TabName>Memory</TabName><Factory>Memory</Factory><Session><ZoneNumber>0</ZoneNumber><SelectionAnchor>77</SelectionAnchor><SelectionEnd>77</SelectionEnd><UnitsPerGroup>1</UnitsPerGroup><EndianMode>0</EndianMode><DataCovEnabled>0</DataCovEnabled><DataCovShown>0</DataCovShown><AutoRefresh>0</AutoRefresh><HScroll>0</HScroll><VScroll>3</VScroll></Session></Tab></Tabs><SelectedTab>0</SelectedTab></Wnd4><Wnd5><Tabs><Tab><Identity>TabID-30614-32129</Identity><TabName>Register</TabName><Factory>Register</Factory><Session><REG1>0</REG1><REG2>0</REG2><Group>0</Group><States>0</States></Session></Tab></Tabs><SelectedTab>0</SelectedTab></Wnd5><Wnd10><Tabs><Tab><Identity>TabID-19691-15453</Identity><TabName>Stack 1</TabName><Factory>STACK_1</Factory><Session/></Tab></Tabs><SelectedTab>0</SelectedTab></Wnd10></Windows>
+    <Editor>
+      
+      
+      
+      
+    <Pane><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\..\Source\simpleBLEPeripheral.c</Filename><XPos>0</XPos><YPos>0</YPos><SelStart>0</SelStart><SelEnd>0</SelEnd><XPos2>0</XPos2><YPos2>199</YPos2><SelStart2>8977</SelStart2><SelEnd2>8977</SelEnd2></Tab><ActiveTab>0</ActiveTab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\..\..\Profiles\EcoExecGATTProfile\EcoExecGATTprofile.h</Filename><XPos>0</XPos><YPos>0</YPos><SelStart>0</SelStart><SelEnd>0</SelEnd><XPos2>0</XPos2><YPos2>0</YPos2><SelStart2>948</SelStart2><SelEnd2>952</SelEnd2></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\..\Source\SimpleBLEPeripheral_Main.c</Filename><XPos>0</XPos><YPos>0</YPos><SelStart>0</SelStart><SelEnd>0</SelEnd><XPos2>0</XPos2><YPos2>64</YPos2><SelStart2>3690</SelStart2><SelEnd2>3690</SelEnd2></Tab></Pane><ActivePane>0</ActivePane><Sizes><Pane><X>1000000</X><Y>1000000</Y></Pane></Sizes><SplitMode>1</SplitMode></Editor>
+    <Positions>
+      
+      
+      
+      
+      
+    <Top><Row0><Sizes><Toolbar-00f6d1f0><key>iaridepm.enu1</key></Toolbar-00f6d1f0></Sizes></Row0><Row1><Sizes><Toolbar-06025350><key>debuggergui.enu1</key></Toolbar-06025350></Sizes></Row1></Top><Left><Row0><Sizes><Wnd1><Rect><Top>-2</Top><Left>-2</Left><Bottom>610</Bottom><Right>182</Right><x>-2</x><y>-2</y><xscreen>7</xscreen><yscreen>22</yscreen><sizeHorzCX>3646</sizeHorzCX><sizeHorzCY>22044</sizeHorzCY><sizeVertCX>95833</sizeVertCX><sizeVertCY>613226</sizeVertCY></Rect></Wnd1></Sizes></Row0></Left><Right><Row0><Sizes><Wnd2><Rect><Top>-2</Top><Left>-2</Left><Bottom>610</Bottom><Right>582</Right><x>-2</x><y>-2</y><xscreen>7</xscreen><yscreen>22</yscreen><sizeHorzCX>3646</sizeHorzCX><sizeHorzCY>22044</sizeHorzCY><sizeVertCX>304167</sizeVertCX><sizeVertCY>613226</sizeVertCY></Rect></Wnd2></Sizes></Row0><Row1><Sizes><Wnd3><Rect><Top>-2</Top><Left>580</Left><Bottom>610</Bottom><Right>998</Right><x>580</x><y>-2</y><xscreen>7</xscreen><yscreen>22</yscreen><sizeHorzCX>3646</sizeHorzCX><sizeHorzCY>22044</sizeHorzCY><sizeVertCX>217708</sizeVertCX><sizeVertCY>613226</sizeVertCY></Rect></Wnd3></Sizes></Row1></Right><Bottom><Row0><Sizes><Wnd0><Rect><Top>-2</Top><Left>-2</Left><Bottom>120</Bottom><Right>1922</Right><x>-2</x><y>-2</y><xscreen>1924</xscreen><yscreen>122</yscreen><sizeHorzCX>1002083</sizeHorzCX><sizeHorzCY>122244</sizeHorzCY><sizeVertCX>3646</sizeVertCX><sizeVertCY>22044</sizeVertCY></Rect></Wnd0></Sizes></Row0><Row1><Sizes><Wnd4><Rect><Top>118</Top><Left>-2</Left><Bottom>319</Bottom><Right>920</Right><x>-2</x><y>118</y><xscreen>922</xscreen><yscreen>201</yscreen><sizeHorzCX>480208</sizeHorzCX><sizeHorzCY>201403</sizeHorzCY><sizeVertCX>5208</sizeVertCX><sizeVertCY>23046</sizeVertCY></Rect></Wnd4><Wnd5><Rect><Top>118</Top><Left>918</Left><Bottom>319</Bottom><Right>1426</Right><x>918</x><y>118</y><xscreen>508</xscreen><yscreen>201</yscreen><sizeHorzCX>264583</sizeHorzCX><sizeHorzCY>201403</sizeHorzCY><sizeVertCX>7813</sizeVertCX><sizeVertCY>85170</sizeVertCY></Rect></Wnd5><Wnd10><Rect><Top>118</Top><Left>1424</Left><Bottom>319</Bottom><Right>1922</Right><x>1424</x><y>118</y><xscreen>498</xscreen><yscreen>201</yscreen><sizeHorzCX>259375</sizeHorzCX><sizeHorzCY>201403</sizeHorzCY><sizeVertCX>104167</sizeVertCX><sizeVertCY>612224</sizeVertCY></Rect></Wnd10></Sizes></Row1></Bottom><Float><Sizes/></Float></Positions>
+  </Desktop>
+</Project>
+
+

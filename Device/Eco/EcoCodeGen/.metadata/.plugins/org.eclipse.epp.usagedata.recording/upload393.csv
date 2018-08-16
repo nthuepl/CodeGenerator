@@ -1,0 +1,12 @@
+what,kind,bundleId,bundleVersion,description,time
+stopped,bundle,org.eclipse.cdt.debug.mi.core,6.0.0.200909110608,"org.eclipse.cdt.debug.mi.core",1394786974204
+stopped,bundle,org.eclipse.cdt.dsf.gdb.ui,2.0.0.200909110608,"org.eclipse.cdt.dsf.gdb.ui",1394786974205
+stopped,bundle,org.eclipse.cdt.dsf.ui,2.0.1.200909110608,"org.eclipse.cdt.dsf.ui",1394786974207
+stopped,bundle,org.eclipse.cdt.launch,6.0.0.200909110608,"org.eclipse.cdt.launch",1394786974208
+stopped,bundle,org.eclipse.cdt.debug.ui,6.0.0.200909110608,"org.eclipse.cdt.debug.ui",1394786974208
+stopped,bundle,org.eclipse.cdt.dsf.gdb,2.0.0.200909110608,"org.eclipse.cdt.dsf.gdb",1394786974211
+stopped,bundle,org.eclipse.cdt.dsf,2.0.0.200909110608,"org.eclipse.cdt.dsf",1394786974212
+stopped,bundle,org.eclipse.cdt.debug.core,6.0.0.200909110608,"org.eclipse.cdt.debug.core",1394786974213
+stopped,bundle,org.eclipse.cdt.managedbuilder.ui,5.1.0.200909110608,"org.eclipse.cdt.managedbuilder.ui",1394786974214
+stopped,bundle,org.eclipse.cdt.make.ui,6.0.1.200909110608,"org.eclipse.cdt.make.ui",1394786974214
+stopped,bundle,EPL_E1_eclipse_plugin,2.0.0,"EPL_E1_eclipse_plugin",1394786974216

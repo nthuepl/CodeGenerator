@@ -1,0 +1,13 @@
+what,kind,bundleId,bundleVersion,description,time
+stopped,bundle,org.eclipse.cdt.launch,6.0.0.200909110608,"org.eclipse.cdt.launch",1392295718335
+stopped,bundle,org.eclipse.cdt.debug.ui,6.0.0.200909110608,"org.eclipse.cdt.debug.ui",1392295718335
+stopped,bundle,org.eclipse.cdt.dsf.gdb,2.0.0.200909110608,"org.eclipse.cdt.dsf.gdb",1392295718407
+stopped,bundle,org.eclipse.cdt.dsf,2.0.0.200909110608,"org.eclipse.cdt.dsf",1392295718458
+stopped,bundle,org.eclipse.cdt.debug.core,6.0.0.200909110608,"org.eclipse.cdt.debug.core",1392295718458
+stopped,bundle,org.eclipse.cdt.managedbuilder.ui,5.1.0.200909110608,"org.eclipse.cdt.managedbuilder.ui",1392295718528
+stopped,bundle,org.eclipse.cdt.make.ui,6.0.1.200909110608,"org.eclipse.cdt.make.ui",1392295718529
+stopped,bundle,EPL_E1_eclipse_plugin,2.0.0,"EPL_E1_eclipse_plugin",1392295718564
+stopped,bundle,EPL_EcoSD_eclipse_plugin,2.0.0,"EPL_EcoSD_eclipse_plugin",1392295718592
+stopped,bundle,EPL_LE1_eclipse_plugin,2.0.0,"EPL_LE1_eclipse_plugin",1392295718610
+stopped,bundle,EPL_LU1_eclipse_plugin,2.0.0,"EPL_LU1_eclipse_plugin",1392295718619
+stopped,bundle,net.sourceforge.eclipsesdcc,1.0.0,"net.sourceforge.eclipsesdcc",1392295718619

@@ -1,0 +1,366 @@
+///////////////////////////////////////////////////////////////////////////////
+//                                                                            /
+// IAR C/C++ Compiler V8.20.1.40829 for 8051            10/Jul/2014  13:44:08 /
+// Copyright 2004-2012 IAR Systems AB.                                        /
+//                                                                            /
+//    Core               =  plain                                             /
+//    Code model         =  banked                                            /
+//    Data model         =  large                                             /
+//    Calling convention =  xdata reentrant                                   /
+//    Constant location  =  data_rom                                          /
+//    Dptr setup         =  1,16                                              /
+//                                                                            /
+//    Source file        =  D:\NTHU\¬ã¨s\Important\ThesisCode\Code\GitLabClou /
+//                          d\NewEcoExec\codegenerator\Device\EcoBT\Component /
+//                          s\hal\target\CC2540EB\hal_crc.c                   /
+//    Command line       =  -f D:\NTHU\¬ã¨s\Important\ThesisCode\Code\GitLabC /
+//                          loud\NewEcoExec\codegenerator\Device\EcoBT\Projec /
+//                          t\ble\CodeGenerator\CC2541DB\..\..\config\buildCo /
+//                          mponents.cfg (-DBROADCASTER_CFG=0x01              /
+//                          -DOBSERVER_CFG=0x02 -DPERIPHERAL_CFG=0x04         /
+//                          -DCENTRAL_CFG=0x08 -DADV_NCONN_CFG=0x01           /
+//                          -DADV_CONN_CFG=0x02 -DSCAN_CFG=0x04               /
+//                          -DINIT_CFG=0x08 -DADV_CFG=ADV_NCONN_CFG+ADV_CONN_ /
+//                          CFG -DLINK_CFG=ADV_CONN_CFG+INIT_CFG              /
+//                          -DFULL_CFG=INIT_CFG+SCAN_CFG+ADV_NCONN_CFG+ADV_CO /
+//                          NN_CFG) -f D:\NTHU\¬ã¨s\Important\ThesisCode\Code /
+//                          \GitLabCloud\NewEcoExec\codegenerator\Device\EcoB /
+//                          T\Project\ble\CodeGenerator\CC2541DB\buildConfig. /
+//                          cfg (-DHOST_CONFIG=PERIPHERAL_CFG                 /
+//                          -DGAP_PRIVACY_RECONNECT -DCC2541                  /
+//                          -DOAD_IMAGE_VERSION=0x0000                        /
+//                          "-DOAD_IMAGE_A_USER_ID='A', 'A', 'A', 'A'"        /
+//                          "-DOAD_IMAGE_B_USER_ID='B', 'B', 'B', 'B'")       /
+//                          D:\NTHU\¬ã¨s\Important\ThesisCode\Code\GitLabClou /
+//                          d\NewEcoExec\codegenerator\Device\EcoBT\Component /
+//                          s\hal\target\CC2540EB\hal_crc.c -D                /
+//                          INT_HEAP_LEN=900 -D HALNODEBUG -D                 /
+//                          OSAL_CBTIMER_NUM_TASKS=1 -D HAL_AES_DMA=TRUE -D   /
+//                          HAL_DMA=TRUE -D xPOWER_SAVING -D                  /
+//                          xPLUS_BROADCASTER -D HAL_LCD=FALSE -D             /
+//                          HAL_LED=TRUE -D HAL_ADC=TRUE -lB                  /
+//                          D:\NTHU\¬ã¨s\Important\ThesisCode\Code\GitLabClou /
+//                          d\NewEcoExec\codegenerator\Device\EcoBT\Project\b /
+//                          le\CodeGenerator\CC2541DB\CC2541\List\ -o         /
+//                          D:\NTHU\¬ã¨s\Important\ThesisCode\Code\GitLabClou /
+//                          d\NewEcoExec\codegenerator\Device\EcoBT\Project\b /
+//                          le\CodeGenerator\CC2541DB\CC2541\Obj\ -e --debug  /
+//                          --core=plain --dptr=16,1 --data_model=large       /
+//                          --code_model=banked --calling_convention=xdata_re /
+//                          entrant --place_constants=data_rom                /
+//                          --nr_virtual_regs 16 -I                           /
+//                          D:\NTHU\¬ã¨s\Important\ThesisCode\Code\GitLabClou /
+//                          d\NewEcoExec\codegenerator\Device\EcoBT\Project\b /
+//                          le\CodeGenerator\CC2541DB\..\..\common\ -I        /
+//                          D:\NTHU\¬ã¨s\Important\ThesisCode\Code\GitLabClou /
+//                          d\NewEcoExec\codegenerator\Device\EcoBT\Project\b /
+//                          le\CodeGenerator\CC2541DB\..\..\include\ -I       /
+//                          D:\NTHU\¬ã¨s\Important\ThesisCode\Code\GitLabClou /
+//                          d\NewEcoExec\codegenerator\Device\EcoBT\Project\b /
+//                          le\CodeGenerator\CC2541DB\..\..\..\..\Components\ /
+//                          hal\include\ -I D:\NTHU\¬ã¨s\Important\ThesisCode /
+//                          \Code\GitLabCloud\NewEcoExec\codegenerator\Device /
+//                          \EcoBT\Project\ble\CodeGenerator\CC2541DB\..\..\. /
+//                          .\..\Components\hal\target\CC2540EB\ -I           /
+//                          D:\NTHU\¬ã¨s\Important\ThesisCode\Code\GitLabClou /
+//                          d\NewEcoExec\codegenerator\Device\EcoBT\Project\b /
+//                          le\CodeGenerator\CC2541DB\..\..\..\..\Components\ /
+//                          osal\include\ -I D:\NTHU\¬ã¨s\Important\ThesisCod /
+//                          e\Code\GitLabCloud\NewEcoExec\codegenerator\Devic /
+//                          e\EcoBT\Project\ble\CodeGenerator\CC2541DB\..\..\ /
+//                          ..\..\Components\services\saddr\ -I               /
+//                          D:\NTHU\¬ã¨s\Important\ThesisCode\Code\GitLabClou /
+//                          d\NewEcoExec\codegenerator\Device\EcoBT\Project\b /
+//                          le\CodeGenerator\CC2541DB\..\..\..\..\Components\ /
+//                          ble\include\ -I D:\NTHU\¬ã¨s\Important\ThesisCode /
+//                          \Code\GitLabCloud\NewEcoExec\codegenerator\Device /
+//                          \EcoBT\Project\ble\CodeGenerator\CC2541DB\..\..\. /
+//                          .\..\Components\ble\controller\phy\ -I            /
+//                          D:\NTHU\¬ã¨s\Important\ThesisCode\Code\GitLabClou /
+//                          d\NewEcoExec\codegenerator\Device\EcoBT\Project\b /
+//                          le\CodeGenerator\CC2541DB\..\..\..\..\Components\ /
+//                          ble\controller\include\ -I                        /
+//                          D:\NTHU\¬ã¨s\Important\ThesisCode\Code\GitLabClou /
+//                          d\NewEcoExec\codegenerator\Device\EcoBT\Project\b /
+//                          le\CodeGenerator\CC2541DB\..\..\..\..\Components\ /
+//                          ble\hci\ -I D:\NTHU\¬ã¨s\Important\ThesisCode\Cod /
+//                          e\GitLabCloud\NewEcoExec\codegenerator\Device\Eco /
+//                          BT\Project\ble\CodeGenerator\CC2541DB\..\..\..\.. /
+//                          \Components\ble\host\ -I                          /
+//                          D:\NTHU\¬ã¨s\Important\ThesisCode\Code\GitLabClou /
+//                          d\NewEcoExec\codegenerator\Device\EcoBT\Project\b /
+//                          le\CodeGenerator\CC2541DB\..\..\common\cc2540\    /
+//                          -I D:\NTHU\¬ã¨s\Important\ThesisCode\Code\GitLabC /
+//                          loud\NewEcoExec\codegenerator\Device\EcoBT\Projec /
+//                          t\ble\CodeGenerator\CC2541DB\..\..\common\npi\npi /
+//                          _np\ -I D:\NTHU\¬ã¨s\Important\ThesisCode\Code\Gi /
+//                          tLabCloud\NewEcoExec\codegenerator\Device\EcoBT\P /
+//                          roject\ble\CodeGenerator\CC2541DB\..\..\Profiles\ /
+//                          Roles\ -I D:\NTHU\¬ã¨s\Important\ThesisCode\Code\ /
+//                          GitLabCloud\NewEcoExec\codegenerator\Device\EcoBT /
+//                          \Project\ble\CodeGenerator\CC2541DB\..\..\Profile /
+//                          s\SimpleProfile\ -I D:\NTHU\¬ã¨s\Important\Thesis /
+//                          Code\Code\GitLabCloud\NewEcoExec\codegenerator\De /
+//                          vice\EcoBT\Project\ble\CodeGenerator\CC2541DB\..\ /
+//                          ..\Profiles\DevInfo\ -I                           /
+//                          D:\NTHU\¬ã¨s\Important\ThesisCode\Code\GitLabClou /
+//                          d\NewEcoExec\codegenerator\Device\EcoBT\Project\b /
+//                          le\CodeGenerator\CC2541DB\..\..\Profiles\Accelero /
+//                          meter\ -I D:\NTHU\¬ã¨s\Important\ThesisCode\Code\ /
+//                          GitLabCloud\NewEcoExec\codegenerator\Device\EcoBT /
+//                          \Project\ble\CodeGenerator\CC2541DB\..\..\Profile /
+//                          s\EcoExecGATTProfile\ -I                          /
+//                          D:\NTHU\¬ã¨s\Important\ThesisCode\Code\GitLabClou /
+//                          d\NewEcoExec\codegenerator\Device\EcoBT\Project\b /
+//                          le\CodeGenerator\CC2541DB\..\..\Profiles\timeserv /
+//                          ice\ -I D:\NTHU\¬ã¨s\Important\ThesisCode\Code\Gi /
+//                          tLabCloud\NewEcoExec\codegenerator\Device\EcoBT\P /
+//                          roject\ble\CodeGenerator\CC2541DB\..\..\Profiles\ /
+//                          Batt\ -I D:\NTHU\¬ã¨s\Important\ThesisCode\Code\G /
+//                          itLabCloud\NewEcoExec\codegenerator\Device\EcoBT\ /
+//                          Project\ble\CodeGenerator\CC2541DB\..\..\Profiles /
+//                          \HIDDev\ -I D:\NTHU\¬ã¨s\Important\ThesisCode\Cod /
+//                          e\GitLabCloud\NewEcoExec\codegenerator\Device\Eco /
+//                          BT\Project\ble\CodeGenerator\CC2541DB\..\..\Profi /
+//                          les\ScanParam\ -Ohz                               /
+//    List file          =  D:\NTHU\¬ã¨s\Important\ThesisCode\Code\GitLabClou /
+//                          d\NewEcoExec\codegenerator\Device\EcoBT\Project\b /
+//                          le\CodeGenerator\CC2541DB\CC2541\List\hal_crc.s51 /
+//                                                                            /
+//                                                                            /
+///////////////////////////////////////////////////////////////////////////////
+
+        NAME hal_crc
+
+        RSEG DOVERLAY:DATA:NOROOT(0)
+        RSEG IOVERLAY:IDATA:NOROOT(0)
+        RSEG ISTACK:IDATA:NOROOT(0)
+        RSEG PSTACK:XDATA:NOROOT(0)
+        RSEG XSTACK:XDATA:NOROOT(0)
+
+        EXTERN ?BDISPATCH
+        EXTERN ?BRET
+
+        PUBLIC ??HalCRCCalc?relay
+        PUBLIC ??HalCRCExec?relay
+        PUBLIC ??HalCRCInit?relay
+        PUBWEAK ADCCON1
+        PUBLIC HalCRCCalc
+        PUBLIC HalCRCExec
+        PUBLIC HalCRCInit
+        PUBWEAK RNDH
+        PUBWEAK RNDL
+
+HalCRCCalc          SYMBOL "HalCRCCalc"
+??HalCRCCalc?relay  SYMBOL "?relay", HalCRCCalc
+HalCRCExec          SYMBOL "HalCRCExec"
+??HalCRCExec?relay  SYMBOL "?relay", HalCRCExec
+HalCRCInit          SYMBOL "HalCRCInit"
+??HalCRCInit?relay  SYMBOL "?relay", HalCRCInit
+
+// D:\NTHU\¬ã¨s\Important\ThesisCode\Code\GitLabCloud\NewEcoExec\codegenerator\Device\EcoBT\Components\hal\target\CC2540EB\hal_crc.c
+//    1 /**************************************************************************************************
+//    2   Filename:       _hal_crc.c
+//    3   Revised:        $Date: 2012-12-04 18:36:53 -0800 (Tue, 04 Dec 2012) $
+//    4   Revision:       $Revision: 32433 $
+//    5 
+//    6   Description: This file defines the interface to the H/W CRC driver by LFSR.
+//    7 
+//    8 
+//    9   Copyright 2012 Texas Instruments Incorporated. All rights reserved.
+//   10 
+//   11   IMPORTANT: Your use of this Software is limited to those specific rights
+//   12   granted under the terms of a software license agreement between the user
+//   13   who downloaded the software, his/her employer (which must be your employer)
+//   14   and Texas Instruments Incorporated (the "License").  You may not use this
+//   15   Software unless you agree to abide by the terms of the License. The License
+//   16   limits your use, and you acknowledge, that the Software may not be modified,
+//   17   copied or distributed unless embedded on a Texas Instruments microcontroller
+//   18   or used solely and exclusively in conjunction with a Texas Instruments radio
+//   19   frequency transceiver, which is integrated into your product.  Other than for
+//   20   the foregoing purpose, you may not use, reproduce, copy, prepare derivative
+//   21   works of, modify, distribute, perform, display or sell this Software and/or
+//   22   its documentation for any purpose.
+//   23 
+//   24   YOU FURTHER ACKNOWLEDGE AND AGREE THAT THE SOFTWARE AND DOCUMENTATION ARE
+//   25   PROVIDED “AS IS” WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESS OR IMPLIED,
+//   26   INCLUDING WITHOUT LIMITATION, ANY WARRANTY OF MERCHANTABILITY, TITLE,
+//   27   NON-INFRINGEMENT AND FITNESS FOR A PARTICULAR PURPOSE. IN NO EVENT SHALL
+//   28   TEXAS INSTRUMENTS OR ITS LICENSORS BE LIABLE OR OBLIGATED UNDER CONTRACT,
+//   29   NEGLIGENCE, STRICT LIABILITY, CONTRIBUTION, BREACH OF WARRANTY, OR OTHER
+//   30   LEGAL EQUITABLE THEORY ANY DIRECT OR INDIRECT DAMAGES OR EXPENSES
+//   31   INCLUDING BUT NOT LIMITED TO ANY INCIDENTAL, SPECIAL, INDIRECT, PUNITIVE
+//   32   OR CONSEQUENTIAL DAMAGES, LOST PROFITS OR LOST DATA, COST OF PROCUREMENT
+//   33   OF SUBSTITUTE GOODS, TECHNOLOGY, SERVICES, OR ANY CLAIMS BY THIRD PARTIES
+//   34   (INCLUDING BUT NOT LIMITED TO ANY DEFENSE THEREOF), OR OTHER SIMILAR COSTS.
+//   35 
+//   36   Should you have any questions regarding your right to use this Software,
+//   37   contact Texas Instruments Incorporated at www.TI.com.
+//   38 **************************************************************************************************/
+//   39 
+//   40 /* ------------------------------------------------------------------------------------------------
+//   41  *                                          Includes
+//   42  * ------------------------------------------------------------------------------------------------
+//   43  */
+//   44 
+//   45 #include "hal_board.h"
+
+        ASEGN SFR_AN:DATA:NOROOT,0b4H
+// unsigned char volatile __sfr ADCCON1
+ADCCON1:
+        DATA8
+        DS 1
+
+        ASEGN SFR_AN:DATA:NOROOT,0bcH
+// unsigned char volatile __sfr RNDL
+RNDL:
+        DATA8
+        DS 1
+
+        ASEGN SFR_AN:DATA:NOROOT,0bdH
+// unsigned char volatile __sfr RNDH
+RNDH:
+        DATA8
+        DS 1
+//   46 #include "hal_crc.h"
+//   47 #include "hal_types.h"
+//   48 
+//   49 /**************************************************************************************************
+//   50  * @fn          HalCRCCalc
+//   51  *
+//   52  * @brief       Calculate the H/W CRC result.
+//   53  *
+//   54  * input parameters
+//   55  *
+//   56  * None.
+//   57  *
+//   58  * output parameters
+//   59  *
+//   60  * None.
+//   61  *
+//   62  * @return      The H/W CRC result.
+//   63  */
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+//   64 uint16 HalCRCCalc(void)
+HalCRCCalc:
+        CODE
+//   65 {
+        ; Saved register size: 0
+        ; Auto size: 0
+//   66   uint16 crc = RNDH;
+        MOV     A,0xbd
+//   67   crc = (crc << 8) | RNDL;
+//   68 
+//   69   return crc;
+        MOV     R1,A
+        MOV     A,0xbc
+        MOV     R2,A
+        MOV     A,R1
+        MOV     R3,A
+        LJMP    ?BRET
+        REQUIRE RNDH
+        REQUIRE RNDL
+//   70 }
+//   71 
+//   72 /**************************************************************************************************
+//   73  * @fn          HalCRCExec
+//   74  *
+//   75  * @brief       Execute the H/W CRC calculation on the input byte.
+//   76  *
+//   77  * input parameters
+//   78  *
+//   79  * @param       ch - The byte on which to execute the H/W CRC calculation.
+//   80  *
+//   81  * output parameters
+//   82  *
+//   83  * None.
+//   84  *
+//   85  * @return      None.
+//   86  */
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+//   87 void HalCRCExec(uint8 ch)
+HalCRCExec:
+        CODE
+//   88 {
+        ; Saved register size: 0
+        ; Auto size: 0
+//   89   RNDH = ch;
+        MOV     0xbd,R1
+//   90 }
+        LJMP    ?BRET
+        REQUIRE RNDH
+//   91 
+//   92 /**************************************************************************************************
+//   93  * @fn          HalCRCInit
+//   94  *
+//   95  * @brief       Initialize the H/W for a new CRC calculation.
+//   96  *
+//   97  * input parameters
+//   98  *
+//   99  * @param       seed - The CRC seed.
+//  100  *
+//  101  * output parameters
+//  102  *
+//  103  * None.
+//  104  *
+//  105  * @return      None.
+//  106  */
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+//  107 void HalCRCInit(uint16 seed)
+HalCRCInit:
+        CODE
+//  108 {
+        ; Saved register size: 0
+        ; Auto size: 0
+//  109   ADCCON1 &= 0xF3;  // CRC configuration of LRSR.
+        ANL     0xb4,#0xf3
+//  110 
+//  111   RNDL = HI_UINT16(seed);
+        MOV     A,R3
+        MOV     0xbc,A
+//  112   RNDL = LO_UINT16(seed);
+        MOV     A,R2
+        MOV     0xbc,A
+//  113 }
+        LJMP    ?BRET
+        REQUIRE ADCCON1
+        REQUIRE RNDL
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??HalCRCCalc?relay:
+        CODE
+        LCALL   ?BDISPATCH
+        DATA24
+        DC24    HalCRCCalc
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??HalCRCExec?relay:
+        CODE
+        LCALL   ?BDISPATCH
+        DATA24
+        DC24    HalCRCExec
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??HalCRCInit?relay:
+        CODE
+        LCALL   ?BDISPATCH
+        DATA24
+        DC24    HalCRCInit
+
+        END
+//  114 
+//  115 /**************************************************************************************************
+//  116 */
+// 
+// 28 bytes in segment BANKED_CODE
+// 18 bytes in segment BANK_RELAYS
+//  3 bytes in segment SFR_AN
+// 
+// 46 bytes of CODE memory
+//  0 bytes of DATA memory (+ 3 bytes shared)
+//
+//Errors: none
+//Warnings: none

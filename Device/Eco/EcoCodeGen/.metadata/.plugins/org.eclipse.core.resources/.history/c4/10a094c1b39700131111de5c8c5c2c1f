@@ -1,0 +1,3 @@
+src/BLINK_main.d src/BLINK_main.rel: ../src/BLINK_main.c \
+  C:/Program\ Files/EPL_LIB/E1_LIB/include/eco/reg24e1.h \
+  C:/Program\ Files/EPL_LIB/E1_LIB/include/eco/eco_sys.h

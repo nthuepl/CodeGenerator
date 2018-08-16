@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<Project>
+  <Desktop>
+    <Static>
+      <Debug-Log>
+        
+        
+      <ColumnWidth0>20</ColumnWidth0><ColumnWidth1>1581</ColumnWidth1></Debug-Log>
+      <Build>
+        
+        
+        
+        
+      <ColumnWidth0>20</ColumnWidth0><ColumnWidth1>1185</ColumnWidth1><ColumnWidth2>316</ColumnWidth2><ColumnWidth3>79</ColumnWidth3></Build>
+      <Workspace>
+        <ColumnWidths>
+          
+          
+          
+          
+        <Column0>81</Column0><Column1>27</Column1><Column2>27</Column2><Column3>27</Column3></ColumnWidths>
+      </Workspace>
+      <Disassembly>
+        <col-names>
+          
+          
+        <item>Disassembly</item><item>_I0</item></col-names>
+        <col-widths>
+          
+          
+        <item>500</item><item>20</item></col-widths>
+        <DisasmHistory><item>0x068800</item><item>0x068000</item><item>.</item><item>0x06A000</item><item>0x060000</item></DisasmHistory>
+        
+        
+      <ShowCodeCoverage>1</ShowCodeCoverage><ShowInstrProfiling>1</ShowInstrProfiling></Disassembly>
+      <WATCH_1>
+        <expressions>
+          
+          
+          
+        <item>Message</item><item>notify</item><item>simpleBLEPeripheral_TaskID</item><item>accelEnabler</item><item>simpleBLEPeripheral_TaskID</item><item>timeout_value</item><item>event_id</item><item>ACCEL_READ_PERIOD</item><item/></expressions>
+        <col-names>
+          
+          
+          
+          
+        <item>Expression</item><item>Location</item><item>Type</item><item>Value</item></col-names>
+        <col-widths>
+          
+          
+          
+          
+        <item>100</item><item>150</item><item>100</item><item>140</item></col-widths>
+      </WATCH_1>
+    <Memory><FindDirection>1</FindDirection><FindAsHex>0</FindAsHex></Memory><Register/><STACK_2><col-names><item>Data</item><item>Frame</item><item>Location</item><item>Type</item><item>Value</item><item>Variable</item></col-names><col-widths><item>100</item><item>100</item><item>100</item><item>100</item><item>100</item><item>100</item></col-widths><PreferedWindows><Position>1</Position><ScreenPosX>0</ScreenPosX><ScreenPosY>0</ScreenPosY><Windows/></PreferedWindows><stack>XdataStack</stack><width>4</width><vars>1</vars><offset>0</offset></STACK_2><Breakpoints><PreferedWindows><Position>3</Position><ScreenPosX>0</ScreenPosX><ScreenPosY>0</ScreenPosY><Windows><Window><Factory>Debug-Log</Factory></Window><Window><Factory>Build</Factory></Window></Windows></PreferedWindows></Breakpoints><STACK_1><col-names><item>Data</item><item>Frame</item><item>Location</item><item>Type</item><item>Value</item><item>Variable</item></col-names><col-widths><item>100</item><item>100</item><item>100</item><item>100</item><item>100</item><item>100</item></col-widths><stack>XdataStack</stack><width>4</width><vars>1</vars><offset>0</offset></STACK_1></Static>
+    <Windows>
+      
+      
+      
+      
+    <Wnd6>
+        <Tabs>
+          <Tab>
+            <Identity>TabID-22575-12251</Identity>
+            <TabName>Debug Log</TabName>
+            <Factory>Debug-Log</Factory>
+            <Session/>
+          </Tab>
+          <Tab>
+            <Identity>TabID-22052-12261</Identity>
+            <TabName>Build</TabName>
+            <Factory>Build</Factory>
+            <Session/>
+          </Tab>
+        </Tabs>
+        
+      <SelectedTab>0</SelectedTab></Wnd6><Wnd7>
+        <Tabs>
+          <Tab>
+            <Identity>TabID-555-12254</Identity>
+            <TabName>Workspace</TabName>
+            <Factory>Workspace</Factory>
+            <Session>
+              
+            <NodeDict><ExpandedNode>SimpleBLEPeripheral</ExpandedNode><ExpandedNode>SimpleBLEPeripheral/APP</ExpandedNode><ExpandedNode>SimpleBLEPeripheral/PROFILES</ExpandedNode></NodeDict></Session>
+          </Tab>
+        </Tabs>
+        
+      <SelectedTab>0</SelectedTab></Wnd7><Wnd8>
+        <Tabs>
+          <Tab>
+            <Identity>TabID-11304-12257</Identity>
+            <TabName>Disassembly</TabName>
+            <Factory>Disassembly</Factory>
+            <Session/>
+          </Tab>
+        </Tabs>
+        
+      <SelectedTab>0</SelectedTab></Wnd8><Wnd9>
+        <Tabs>
+          <Tab>
+            <Identity>TabID-8690-12306</Identity>
+            <TabName>Watch 1</TabName>
+            <Factory>WATCH_1</Factory>
+          </Tab>
+        </Tabs>
+        
+      <SelectedTab>0</SelectedTab></Wnd9><Wnd11><Tabs><Tab><Identity>TabID-17076-19109</Identity><TabName>Memory</TabName><Factory>Memory</Factory><Session><ZoneNumber>0</ZoneNumber><SelectionAnchor>77</SelectionAnchor><SelectionEnd>77</SelectionEnd><UnitsPerGroup>1</UnitsPerGroup><EndianMode>0</EndianMode><DataCovEnabled>0</DataCovEnabled><DataCovShown>0</DataCovShown><AutoRefresh>0</AutoRefresh><HScroll>0</HScroll><VScroll>3</VScroll></Session></Tab></Tabs><SelectedTab>0</SelectedTab></Wnd11><Wnd12><Tabs><Tab><Identity>TabID-30614-32129</Identity><TabName>Register</TabName><Factory>Register</Factory><Session><REG1>0</REG1><REG2>0</REG2><Group>0</Group><States>0</States></Session></Tab></Tabs><SelectedTab>0</SelectedTab></Wnd12><Wnd13><Tabs><Tab><Identity>TabID-19691-15453</Identity><TabName>Stack 1</TabName><Factory>STACK_1</Factory><Session/></Tab></Tabs><SelectedTab>0</SelectedTab></Wnd13></Windows>
+    <Editor>
+      
+      
+      
+      
+    <Pane><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\CC2540\List\SimpleBLEPeripheral.map</Filename><XPos>0</XPos><YPos>0</YPos><SelStart>0</SelStart><SelEnd>0</SelEnd><XPos2>0</XPos2><YPos2>2301</YPos2><SelStart2>0</SelStart2><SelEnd2>0</SelEnd2></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\..\Source\simpleBLEPeripheral.c</Filename><XPos>0</XPos><YPos>0</YPos><SelStart>0</SelStart><SelEnd>0</SelEnd><XPos2>0</XPos2><YPos2>1512</YPos2><SelStart2>47095</SelStart2><SelEnd2>47095</SelEnd2></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\..\Source\simpleBLEPeripheral.h</Filename><XPos>0</XPos><YPos>0</YPos><SelStart>0</SelStart><SelEnd>0</SelEnd><XPos2>0</XPos2><YPos2>46</YPos2><SelStart2>3116</SelStart2><SelEnd2>3130</SelEnd2></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\..\..\..\..\..\..\..\..\..\..\EPLGit\EcoCast\Device\EcoBT\Project\ble\CodeGenerator\Source\SimpleBLEPeripheral_Main.c</Filename><XPos>0</XPos><YPos>0</YPos><SelStart>0</SelStart><SelEnd>0</SelEnd><XPos2>0</XPos2><YPos2>64</YPos2><SelStart2>3690</SelStart2><SelEnd2>3690</SelEnd2></Tab><ActiveTab>3</ActiveTab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\..\..\..\..\..\..\..\..\..\..\EPLGit\EcoCast\Device\EcoBT\Components\osal\common\OSAL_Timers.c</Filename><XPos>0</XPos><YPos>0</YPos><SelStart>0</SelStart><SelEnd>0</SelEnd><XPos2>0</XPos2><YPos2>202</YPos2><SelStart2>8033</SelStart2><SelEnd2>8033</SelEnd2></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\..\..\Profiles\Roles\gap.c</Filename><XPos>0</XPos><YPos>0</YPos><SelStart>0</SelStart><SelEnd>0</SelEnd><XPos2>0</XPos2><YPos2>108</YPos2><SelStart2>0</SelStart2><SelEnd2>0</SelEnd2></Tab></Pane><ActivePane>0</ActivePane><Sizes><Pane><X>1000000</X><Y>1000000</Y></Pane></Sizes><SplitMode>1</SplitMode></Editor>
+    <Positions>
+      
+      
+      
+      
+      
+    <Top><Row0><Sizes><Toolbar-01d2d868><key>iaridepm.enu1</key></Toolbar-01d2d868></Sizes></Row0><Row1><Sizes><Toolbar-0dcf33d0><key>debuggergui.enu1</key></Toolbar-0dcf33d0></Sizes></Row1></Top><Left><Row0><Sizes><Wnd7><Rect><Top>-2</Top><Left>-2</Left><Bottom>581</Bottom><Right>172</Right><x>-2</x><y>-2</y><xscreen>7</xscreen><yscreen>21</yscreen><sizeHorzCX>3850</sizeHorzCX><sizeHorzCY>21967</sizeHorzCY><sizeVertCX>95710</sizeVertCX><sizeVertCY>609833</sizeVertCY></Rect></Wnd7></Sizes></Row0></Left><Right><Row0><Sizes><Wnd8><Rect><Top>-2</Top><Left>-2</Left><Bottom>581</Bottom><Right>551</Right><x>-2</x><y>-2</y><xscreen>7</xscreen><yscreen>21</yscreen><sizeHorzCX>3850</sizeHorzCX><sizeHorzCY>21967</sizeHorzCY><sizeVertCX>304180</sizeVertCX><sizeVertCY>609833</sizeVertCY></Rect></Wnd8></Sizes></Row0><Row1><Sizes><Wnd9><Rect><Top>-2</Top><Left>549</Left><Bottom>581</Bottom><Right>945</Right><x>549</x><y>-2</y><xscreen>7</xscreen><yscreen>21</yscreen><sizeHorzCX>3850</sizeHorzCX><sizeHorzCY>21967</sizeHorzCY><sizeVertCX>217822</sizeVertCX><sizeVertCY>609833</sizeVertCY></Rect></Wnd9></Sizes></Row1></Right><Bottom><Row0><Sizes><Wnd6><Rect><Top>-2</Top><Left>-2</Left><Bottom>115</Bottom><Right>1820</Right><x>-2</x><y>-2</y><xscreen>1822</xscreen><yscreen>117</yscreen><sizeHorzCX>1002200</sizeHorzCX><sizeHorzCY>122385</sizeHorzCY><sizeVertCX>3850</sizeVertCX><sizeVertCY>21967</sizeVertCY></Rect></Wnd6></Sizes></Row0><Row1><Sizes><Wnd11><Rect><Top>113</Top><Left>-2</Left><Bottom>306</Bottom><Right>871</Right><x>-2</x><y>113</y><xscreen>873</xscreen><yscreen>193</yscreen><sizeHorzCX>480198</sizeHorzCX><sizeHorzCY>201883</sizeHorzCY><sizeVertCX>4950</sizeVertCX><sizeVertCY>23013</sizeVertCY></Rect></Wnd11><Wnd12><Rect><Top>113</Top><Left>869</Left><Bottom>306</Bottom><Right>1350</Right><x>869</x><y>113</y><xscreen>481</xscreen><yscreen>193</yscreen><sizeHorzCX>264576</sizeHorzCX><sizeHorzCY>201883</sizeHorzCY><sizeVertCX>7701</sizeVertCX><sizeVertCY>84728</sizeVertCY></Rect></Wnd12><Wnd13><Rect><Top>113</Top><Left>1348</Left><Bottom>306</Bottom><Right>1820</Right><x>1348</x><y>113</y><xscreen>472</xscreen><yscreen>193</yscreen><sizeHorzCX>259626</sizeHorzCX><sizeHorzCY>201883</sizeHorzCY><sizeVertCX>103960</sizeVertCX><sizeVertCY>611925</sizeVertCY></Rect></Wnd13></Sizes></Row1></Bottom><Float><Sizes/></Float></Positions>
+  </Desktop>
+</Project>
+
+

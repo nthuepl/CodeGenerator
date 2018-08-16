@@ -1,0 +1,26 @@
+what,kind,bundleId,bundleVersion,description,time
+started,bundle,org.eclipse.update.core,3.2.300.v20090525,"org.eclipse.update.core",1390284390245
+started,bundle,org.eclipse.update.scheduler,3.2.200.v20081127,"org.eclipse.update.scheduler",1390284390246
+os,sysinfo,,,"win32",1390284390249
+arch,sysinfo,,,"x86",1390284390249
+ws,sysinfo,,,"win32",1390284390249
+locale,sysinfo,,,"zh_TW",1390284390249
+processors,sysinfo,,,"4",1390284390249
+java.runtime.name,sysinfo,,,"Java(TM) SE Runtime Environment",1390284390249
+java.runtime.version,sysinfo,,,"1.7.0_45-b18",1390284390249
+java.specification.name,sysinfo,,,"Java Platform API Specification",1390284390249
+java.specification.vendor,sysinfo,,,"Oracle Corporation",1390284390249
+java.specification.version,sysinfo,,,"1.7",1390284390249
+java.vendor,sysinfo,,,"Oracle Corporation",1390284390249
+java.version,sysinfo,,,"1.7.0_45",1390284390249
+java.vm.info,sysinfo,,,"mixed mode, sharing",1390284390249
+java.vm.name,sysinfo,,,"Java HotSpot(TM) Client VM",1390284390249
+java.vm.specification.name,sysinfo,,,"Java Virtual Machine Specification",1390284390249
+java.vm.specification.vendor,sysinfo,,,"Oracle Corporation",1390284390249
+java.vm.specification.version,sysinfo,,,"1.7",1390284390249
+java.vm.vendor,sysinfo,,,"Oracle Corporation",1390284390249
+java.vm.version,sysinfo,,,"24.45-b08",1390284390249
+started,bundle,org.eclipse.cdt.managedbuilder.ui,5.1.0.200909110608,"org.eclipse.cdt.managedbuilder.ui",1390284391749
+started,bundle,org.eclipse.cdt.managedbuilder.core,6.0.0.200909110608,"org.eclipse.cdt.managedbuilder.core",1390284391769
+started,bundle,org.eclipse.cdt.managedbuilder.gnu.ui,5.0.100.200909110608,"org.eclipse.cdt.managedbuilder.gnu.ui",1390284391932
+deactivated,workbench,org.eclipse.ui.workbench,3.5.1.M20090826-0800a,"",1390284392045

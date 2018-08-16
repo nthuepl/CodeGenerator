@@ -1,0 +1,26 @@
+what,kind,bundleId,bundleVersion,description,time
+started,bundle,org.eclipse.update.configurator,3.3.0.v20090312,"org.eclipse.update.configurator",1392865784162
+started,bundle,net.sourceforge.eclipsesdcc,1.0.0,"net.sourceforge.eclipsesdcc",1392865784183
+os,sysinfo,,,"win32",1392865784186
+arch,sysinfo,,,"x86",1392865784186
+ws,sysinfo,,,"win32",1392865784186
+locale,sysinfo,,,"zh_TW",1392865784186
+processors,sysinfo,,,"4",1392865784186
+java.runtime.name,sysinfo,,,"Java(TM) SE Runtime Environment",1392865784186
+java.runtime.version,sysinfo,,,"1.7.0_51-b13",1392865784186
+java.specification.name,sysinfo,,,"Java Platform API Specification",1392865784186
+java.specification.vendor,sysinfo,,,"Oracle Corporation",1392865784186
+java.specification.version,sysinfo,,,"1.7",1392865784186
+java.vendor,sysinfo,,,"Oracle Corporation",1392865784186
+java.version,sysinfo,,,"1.7.0_51",1392865784186
+java.vm.info,sysinfo,,,"mixed mode, sharing",1392865784186
+java.vm.name,sysinfo,,,"Java HotSpot(TM) Client VM",1392865784186
+java.vm.specification.name,sysinfo,,,"Java Virtual Machine Specification",1392865784186
+java.vm.specification.vendor,sysinfo,,,"Oracle Corporation",1392865784186
+java.vm.specification.version,sysinfo,,,"1.7",1392865784186
+java.vm.vendor,sysinfo,,,"Oracle Corporation",1392865784186
+java.vm.version,sysinfo,,,"24.51-b03",1392865784186
+started,bundle,org.eclipse.mylyn.tasks.ui,3.2.2.v20090912-0400-e3x,"org.eclipse.mylyn.tasks.ui",1392865784400
+started,bundle,org.eclipse.mylyn.team.ui,3.2.2.v20090912-0400-e3x,"org.eclipse.mylyn.team.ui",1392865784405
+started,bundle,org.eclipse.update.scheduler,3.2.200.v20081127,"org.eclipse.update.scheduler",1392865784412
+started,bundle,org.eclipse.update.core,3.2.300.v20090525,"org.eclipse.update.core",1392865784458

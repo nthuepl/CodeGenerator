@@ -1,0 +1,478 @@
+///////////////////////////////////////////////////////////////////////////////
+//                                                                            /
+// IAR C/C++ Compiler V8.20.1.40829 for 8051            23/May/2014  20:10:22 /
+// Copyright 2004-2012 IAR Systems AB.                                        /
+//                                                                            /
+//    Core               =  plain                                             /
+//    Code model         =  banked                                            /
+//    Data model         =  large                                             /
+//    Calling convention =  xdata reentrant                                   /
+//    Constant location  =  data_rom                                          /
+//    Dptr setup         =  1,16                                              /
+//                                                                            /
+//    Source file        =  D:\NTHU\研究\Important\ThesisCode\Code\GitLabClou /
+//                          d\NewEcoExec\codegenerator\Device\EcoBT\Project\b /
+//                          le\CodeGenerator\Source\epl_hal_spi.c             /
+//    Command line       =  -f D:\NTHU\研究\Important\ThesisCode\Code\GitLabC /
+//                          loud\NewEcoExec\codegenerator\Device\EcoBT\Projec /
+//                          t\ble\CodeGenerator\CC2540DB\..\..\config\buildCo /
+//                          mponents.cfg (-DBROADCASTER_CFG=0x01              /
+//                          -DOBSERVER_CFG=0x02 -DPERIPHERAL_CFG=0x04         /
+//                          -DCENTRAL_CFG=0x08 -DADV_NCONN_CFG=0x01           /
+//                          -DADV_CONN_CFG=0x02 -DSCAN_CFG=0x04               /
+//                          -DINIT_CFG=0x08 -DADV_CFG=ADV_NCONN_CFG+ADV_CONN_ /
+//                          CFG -DLINK_CFG=ADV_CONN_CFG+INIT_CFG              /
+//                          -DFULL_CFG=INIT_CFG+SCAN_CFG+ADV_NCONN_CFG+ADV_CO /
+//                          NN_CFG) -f D:\NTHU\研究\Important\ThesisCode\Code /
+//                          \GitLabCloud\NewEcoExec\codegenerator\Device\EcoB /
+//                          T\Project\ble\CodeGenerator\CC2540DB\buildConfig. /
+//                          cfg (-DHOST_CONFIG=PERIPHERAL_CFG                 /
+//                          -DGAP_PRIVACY_RECONNECT)                          /
+//                          D:\NTHU\研究\Important\ThesisCode\Code\GitLabClou /
+//                          d\NewEcoExec\codegenerator\Device\EcoBT\Project\b /
+//                          le\CodeGenerator\Source\epl_hal_spi.c -D          /
+//                          INT_HEAP_LEN=900 -D HALNODEBUG -D                 /
+//                          OSAL_CBTIMER_NUM_TASKS=1 -D HAL_AES_DMA=TRUE -D   /
+//                          HAL_DMA=TRUE -D xPOWER_SAVING -D                  /
+//                          xPLUS_BROADCASTER -D HAL_LCD=FALSE -D             /
+//                          HAL_LED=TRUE -D HAL_ADC=TRUE -lB                  /
+//                          D:\NTHU\研究\Important\ThesisCode\Code\GitLabClou /
+//                          d\NewEcoExec\codegenerator\Device\EcoBT\Project\b /
+//                          le\CodeGenerator\CC2540DB\CC2540\List\ -o         /
+//                          D:\NTHU\研究\Important\ThesisCode\Code\GitLabClou /
+//                          d\NewEcoExec\codegenerator\Device\EcoBT\Project\b /
+//                          le\CodeGenerator\CC2540DB\CC2540\Obj\ -e --debug  /
+//                          --core=plain --dptr=16,1 --data_model=large       /
+//                          --code_model=banked --calling_convention=xdata_re /
+//                          entrant --place_constants=data_rom                /
+//                          --nr_virtual_regs 16 -I                           /
+//                          D:\NTHU\研究\Important\ThesisCode\Code\GitLabClou /
+//                          d\NewEcoExec\codegenerator\Device\EcoBT\Project\b /
+//                          le\CodeGenerator\CC2540DB\..\..\common\ -I        /
+//                          D:\NTHU\研究\Important\ThesisCode\Code\GitLabClou /
+//                          d\NewEcoExec\codegenerator\Device\EcoBT\Project\b /
+//                          le\CodeGenerator\CC2540DB\..\..\include\ -I       /
+//                          D:\NTHU\研究\Important\ThesisCode\Code\GitLabClou /
+//                          d\NewEcoExec\codegenerator\Device\EcoBT\Project\b /
+//                          le\CodeGenerator\CC2540DB\..\..\..\..\Components\ /
+//                          hal\include\ -I D:\NTHU\研究\Important\ThesisCode /
+//                          \Code\GitLabCloud\NewEcoExec\codegenerator\Device /
+//                          \EcoBT\Project\ble\CodeGenerator\CC2540DB\..\..\. /
+//                          .\..\Components\hal\target\CC2540EB\ -I           /
+//                          D:\NTHU\研究\Important\ThesisCode\Code\GitLabClou /
+//                          d\NewEcoExec\codegenerator\Device\EcoBT\Project\b /
+//                          le\CodeGenerator\CC2540DB\..\..\..\..\Components\ /
+//                          osal\include\ -I D:\NTHU\研究\Important\ThesisCod /
+//                          e\Code\GitLabCloud\NewEcoExec\codegenerator\Devic /
+//                          e\EcoBT\Project\ble\CodeGenerator\CC2540DB\..\..\ /
+//                          ..\..\Components\services\saddr\ -I               /
+//                          D:\NTHU\研究\Important\ThesisCode\Code\GitLabClou /
+//                          d\NewEcoExec\codegenerator\Device\EcoBT\Project\b /
+//                          le\CodeGenerator\CC2540DB\..\..\..\..\Components\ /
+//                          ble\include\ -I D:\NTHU\研究\Important\ThesisCode /
+//                          \Code\GitLabCloud\NewEcoExec\codegenerator\Device /
+//                          \EcoBT\Project\ble\CodeGenerator\CC2540DB\..\..\. /
+//                          .\..\Components\ble\controller\phy\ -I            /
+//                          D:\NTHU\研究\Important\ThesisCode\Code\GitLabClou /
+//                          d\NewEcoExec\codegenerator\Device\EcoBT\Project\b /
+//                          le\CodeGenerator\CC2540DB\..\..\..\..\Components\ /
+//                          ble\controller\include\ -I                        /
+//                          D:\NTHU\研究\Important\ThesisCode\Code\GitLabClou /
+//                          d\NewEcoExec\codegenerator\Device\EcoBT\Project\b /
+//                          le\CodeGenerator\CC2540DB\..\..\..\..\Components\ /
+//                          ble\hci\ -I D:\NTHU\研究\Important\ThesisCode\Cod /
+//                          e\GitLabCloud\NewEcoExec\codegenerator\Device\Eco /
+//                          BT\Project\ble\CodeGenerator\CC2540DB\..\..\..\.. /
+//                          \Components\ble\host\ -I                          /
+//                          D:\NTHU\研究\Important\ThesisCode\Code\GitLabClou /
+//                          d\NewEcoExec\codegenerator\Device\EcoBT\Project\b /
+//                          le\CodeGenerator\CC2540DB\..\..\common\cc2540\    /
+//                          -I D:\NTHU\研究\Important\ThesisCode\Code\GitLabC /
+//                          loud\NewEcoExec\codegenerator\Device\EcoBT\Projec /
+//                          t\ble\CodeGenerator\CC2540DB\..\..\common\npi\npi /
+//                          _np\ -I D:\NTHU\研究\Important\ThesisCode\Code\Gi /
+//                          tLabCloud\NewEcoExec\codegenerator\Device\EcoBT\P /
+//                          roject\ble\CodeGenerator\CC2540DB\..\..\Profiles\ /
+//                          Roles\ -I D:\NTHU\研究\Important\ThesisCode\Code\ /
+//                          GitLabCloud\NewEcoExec\codegenerator\Device\EcoBT /
+//                          \Project\ble\CodeGenerator\CC2540DB\..\..\Profile /
+//                          s\SimpleProfile\ -I D:\NTHU\研究\Important\Thesis /
+//                          Code\Code\GitLabCloud\NewEcoExec\codegenerator\De /
+//                          vice\EcoBT\Project\ble\CodeGenerator\CC2540DB\..\ /
+//                          ..\Profiles\DevInfo\ -I                           /
+//                          D:\NTHU\研究\Important\ThesisCode\Code\GitLabClou /
+//                          d\NewEcoExec\codegenerator\Device\EcoBT\Project\b /
+//                          le\CodeGenerator\CC2540DB\..\..\Profiles\Accelero /
+//                          meter\ -I D:\NTHU\研究\Important\ThesisCode\Code\ /
+//                          GitLabCloud\NewEcoExec\codegenerator\Device\EcoBT /
+//                          \Project\ble\CodeGenerator\CC2540DB\..\..\Profile /
+//                          s\EcoExecGATTProfile\ -I                          /
+//                          D:\NTHU\研究\Important\ThesisCode\Code\GitLabClou /
+//                          d\NewEcoExec\codegenerator\Device\EcoBT\Project\b /
+//                          le\CodeGenerator\CC2540DB\..\..\Profiles\Batt\    /
+//                          -I D:\NTHU\研究\Important\ThesisCode\Code\GitLabC /
+//                          loud\NewEcoExec\codegenerator\Device\EcoBT\Projec /
+//                          t\ble\CodeGenerator\CC2540DB\..\..\Profiles\HIDDe /
+//                          v\ -Ohz                                           /
+//    List file          =  D:\NTHU\研究\Important\ThesisCode\Code\GitLabClou /
+//                          d\NewEcoExec\codegenerator\Device\EcoBT\Project\b /
+//                          le\CodeGenerator\CC2540DB\CC2540\List\epl_hal_spi /
+//                          .s51                                              /
+//                                                                            /
+//                                                                            /
+///////////////////////////////////////////////////////////////////////////////
+
+        NAME epl_hal_spi
+
+        RSEG DOVERLAY:DATA:NOROOT(0)
+        RSEG IOVERLAY:IDATA:NOROOT(0)
+        RSEG ISTACK:IDATA:NOROOT(0)
+        RSEG PSTACK:XDATA:NOROOT(0)
+        RSEG XSTACK:XDATA:NOROOT(0)
+
+        EXTERN ?BDISPATCH
+        EXTERN ?BRET
+        EXTERN __INIT_XDATA_Z
+
+        PUBLIC ??spiInit?relay
+        PUBLIC ??spiReadByte?relay
+        PUBLIC ??spiWriteByte?relay
+        PUBWEAK P1SEL
+        PUBWEAK PERCFG
+        PUBWEAK U1BAUD
+        PUBWEAK U1DBUF
+        PUBWEAK U1GCR
+        PUBWEAK _A_IEN0
+        PUBWEAK _A_TCON
+        PUBWEAK _A_U1CSR
+        PUBLIC spiInit
+        PUBLIC spiReadByte
+        PUBLIC spiWriteByte
+
+spiInit             SYMBOL "spiInit"
+??spiInit?relay     SYMBOL "?relay", spiInit
+spiReadByte         SYMBOL "spiReadByte"
+??spiReadByte?relay SYMBOL "?relay", spiReadByte
+spiWriteByte        SYMBOL "spiWriteByte"
+??spiWriteByte?relay SYMBOL "?relay", spiWriteByte
+
+// D:\NTHU\研究\Important\ThesisCode\Code\GitLabCloud\NewEcoExec\codegenerator\Device\EcoBT\Project\ble\CodeGenerator\Source\epl_hal_spi.c
+//    1 #if defined( CC2541) || defined( CC2541S )
+//    2 #include <ioCC2541.h>
+//    3 #else // CC2540
+//    4 #include <ioCC2540.h>
+
+        ASEGN SFR_AN:DATA:NOROOT,088H
+// union <unnamed> volatile __sfr _A_TCON
+_A_TCON:
+        DATA8
+        DS 1
+
+        ASEGN SFR_AN:DATA:NOROOT,0a8H
+// union <unnamed> volatile __sfr _A_IEN0
+_A_IEN0:
+        DATA8
+        DS 1
+
+        ASEGN SFR_AN:DATA:NOROOT,0f1H
+// unsigned char volatile __sfr PERCFG
+PERCFG:
+        DATA8
+        DS 1
+
+        ASEGN SFR_AN:DATA:NOROOT,0f4H
+// unsigned char volatile __sfr P1SEL
+P1SEL:
+        DATA8
+        DS 1
+
+        ASEGN SFR_AN:DATA:NOROOT,0f8H
+// union <unnamed> volatile __sfr _A_U1CSR
+_A_U1CSR:
+        DATA8
+        DS 1
+
+        ASEGN SFR_AN:DATA:NOROOT,0f9H
+// unsigned char volatile __sfr U1DBUF
+U1DBUF:
+        DATA8
+        DS 1
+
+        ASEGN SFR_AN:DATA:NOROOT,0faH
+// unsigned char volatile __sfr U1BAUD
+U1BAUD:
+        DATA8
+        DS 1
+
+        ASEGN SFR_AN:DATA:NOROOT,0fcH
+// unsigned char volatile __sfr U1GCR
+U1GCR:
+        DATA8
+        DS 1
+//    5 #endif // CC2541 || CC2541S
+//    6 
+//    7 #include "epl_hal_spi.h"
+//    8 
+//    9 #define SPI_CS P1_4
+//   10 #define SPI_MASTER 0x01
+//   11 #define SPI_SLAVE 0x02
+//   12 
+
+        RSEG XDATA_Z:XDATA:NOROOT(0)
+        DATA8
+//   13 static uint8 SPI_MODE;
+SPI_MODE:
+        DS 1
+        REQUIRE __INIT_XDATA_Z
+//   14 
+//   15 /** \brief	Write one byte to SPI interface
+//   16 *
+//   17 * Write one byte to SPI interface
+//   18 *
+//   19 * \param[in]       write
+//   20 *     Value to write
+//   21 */
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+//   22 void spiWriteByte(uint8 write)
+spiWriteByte:
+        CODE
+//   23 {
+        ; Saved register size: 0
+        ; Auto size: 0
+//   24   U1CSR &= ~0x02;                 /* Clear TX_BYTE */
+        CLR     0xf8.1
+//   25   U1DBUF = write;
+        MOV     0xf9,R1
+//   26   while (!(U1CSR & 0x02));        /* Wait for TX_BYTE to be set */
+??spiWriteByte_0:
+        MOV     C,0xf8.1
+        JNC     ??spiWriteByte_0
+//   27 }
+        LJMP    ?BRET
+        REQUIRE _A_U1CSR
+        REQUIRE U1DBUF
+//   28 
+//   29 /** \brief	Read one byte from SPI interface
+//   30 *
+//   31 * Read one byte from SPI interface
+//   32 *
+//   33 * \param[in]       read
+//   34 *     Read out value
+//   35 * \param[in]       write
+//   36 *     Value to write
+//   37 */
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+//   38 void spiReadByte(uint8 *read, uint8 write)
+spiReadByte:
+        CODE
+//   39 {
+        PUSH    DPL
+        PUSH    DPH
+        ; Saved register size: 2
+        ; Auto size: 0
+//   40   U1CSR &= ~0x02;                 /* Clear TX_BYTE */
+        CLR     0xf8.1
+//   41   U1DBUF = write;
+        MOV     0xf9,R1
+//   42   
+//   43   if( SPI_MODE == SPI_MASTER )
+        MOV     DPTR,#SPI_MODE
+        MOVX    A,@DPTR
+        XRL     A,#0x1
+        JNZ     ??spiReadByte_0
+//   44   {
+//   45     while (!(U1CSR & 0x02));        /* Master Mdoe Wait for TX_BYTE to be clear */
+??spiReadByte_1:
+        MOV     C,0xf8.1
+        JC      ??spiReadByte_2
+        SJMP    ??spiReadByte_1
+//   46   }
+//   47   else
+//   48   {
+//   49     while(!(U1CSR&0x04));           /* Slave Mdoe Wait for RX_BYTE to be clear */
+??spiReadByte_0:
+        MOV     C,0xf8.2
+        JNC     ??spiReadByte_0
+//   50   }
+//   51   *read = U1DBUF;
+??spiReadByte_2:
+        MOV     A,0xf9
+        MOV     DPL,R2
+        MOV     DPH,R3
+        MOVX    @DPTR,A
+//   52 }
+        REQUIRE ?Subroutine0
+        REQUIRE _A_U1CSR
+        REQUIRE U1DBUF
+        ; // Fall through to label ?Subroutine0
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+?Subroutine0:
+        POP     DPH
+        POP     DPL
+        LJMP    ?BRET
+//   53 
+//   54 /**
+//   55 *
+//   56 *       @brief Init SPI interface
+//   57 *
+//   58 */
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+//   59 void spiInit(uint8 MODE){
+spiInit:
+        CODE
+        PUSH    DPL
+        PUSH    DPH
+        ; Saved register size: 2
+        ; Auto size: 0
+//   60   
+//   61   SPI_MODE = MODE; 
+        MOV     A,R1
+        MOV     DPTR,#SPI_MODE
+        MOVX    @DPTR,A
+//   62   //*** Setup the SPI interface ***
+//   63   switch( SPI_MODE )
+        DEC     A
+        JZ      ??spiInit_0
+        DEC     A
+        JZ      ??spiInit_1
+        SJMP    ??spiInit_2
+//   64   {
+//   65   case SPI_MASTER:      
+//   66     U1CSR &= ~0xA0;   // SPI Master Mode
+??spiInit_0:
+        ANL     0xf8,#0x5f
+//   67     
+//   68     /* Negative clock polarity, Phase: data out on CPOL -> CPOL-inv
+//   69     *                                 data in on CPOL-inv -> CPOL 
+//   70     * MSB first*/
+//   71     U1GCR = 0x20;
+        MOV     0xfc,#0x20
+//   72     /* SCK frequency = 1MHz */
+//   73     U1GCR |= 0x0F;
+        ORL     0xfc,#0xf
+//   74     U1BAUD = 0x00;
+        MOV     0xfa,#0x0
+//   75     
+//   76     /**** Setup USART 1 SPI at alternate location 2 ***/
+//   77     /* USART 1 at alternate location 2 */
+//   78     PERCFG |= 0x02;
+        ORL     0xf1,#0x2
+//   79     /* Peripheral function on SCK, MISO and MOSI (P1_5-7) */
+//   80     P1SEL |= 0xE0;
+        ORL     0xf4,#0xe0
+//   81 	
+//   82 	
+//   83     /* Set P1_4 to a GPIO output for SSN */
+//   84 //    P1SEL &= 0xEF; /* 1110 1111 , 0 for GPIO */
+//   85 //    P1DIR |=0x10;  /* 0001 0000 , 1 for Output */
+//   86 //	
+//   87 //    SPI_CS = 0;
+//   88     
+//   89     break;
+        SJMP    ??spiInit_2
+//   90   case SPI_SLAVE:      
+//   91     U1CSR &= ~0x80;   /* SPI SLAVE Mode 0111 1111 */
+??spiInit_1:
+        CLR     0xf8.7
+//   92     U1CSR |= 0x20;
+        SETB    0xf8.5
+//   93     
+//   94     /* Negative clock polarity, Phase: data out on CPOL -> CPOL-inv
+//   95     *                                 data in on CPOL-inv -> CPOL
+//   96     * MSB first*/
+//   97     U1GCR = 0x20;
+        MOV     0xfc,#0x20
+//   98 
+//   99     
+//  100     /**** Setup USART 1 SPI at alternate location 2 ***/
+//  101     /* USART 1 at alternate location 2 */
+//  102     PERCFG |= 0x02;
+        ORL     0xf1,#0x2
+//  103     /* Peripheral function on SSN, SCK, MISO and MOSI (P1_4-7) */
+//  104     P1SEL |= 0xF0;
+        ORL     0xf4,#0xf0
+//  105     
+//  106     /*****Slave Rx complete Interrupt enable setting*****/
+//  107     URX1IF = 0x00;
+        CLR     0x88.7
+//  108     URX1IE = 0x01;
+        SETB    0xa8.3
+//  109     U1DBUF = 0x18;
+        MOV     0xf9,#0x18
+//  110     EA     = 1;       // enable all interrupt
+        SETB    0xa8.7
+//  111     
+//  112     break;
+//  113   default :
+//  114     return ;
+//  115   };
+??spiInit_2:
+        SJMP    ?Subroutine0
+        REQUIRE _A_U1CSR
+        REQUIRE U1GCR
+        REQUIRE U1BAUD
+        REQUIRE PERCFG
+        REQUIRE P1SEL
+        REQUIRE _A_TCON
+        REQUIRE _A_IEN0
+        REQUIRE U1DBUF
+//  116   
+//  117 }
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??spiWriteByte?relay:
+        CODE
+        LCALL   ?BDISPATCH
+        DATA24
+        DC24    spiWriteByte
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??spiReadByte?relay:
+        CODE
+        LCALL   ?BDISPATCH
+        DATA24
+        DC24    spiReadByte
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??spiInit?relay:
+        CODE
+        LCALL   ?BDISPATCH
+        DATA24
+        DC24    spiInit
+
+        END
+//  118 
+//  119 /***************************************************************************************************
+//  120 *                                    INTERRUPT SERVICE ROUTINE
+//  121 ***************************************************************************************************/
+//  122 /**
+//  123 * @brief   SPI 1 slave RX sevice route
+//  124 *
+//  125 * @param	None
+//  126 *
+//  127 * @return 	None
+//  128 */
+//  129 //HAL_ISR_FUNCTION( halSPI1RxIsr, URX1_VECTOR )
+//  130 //{
+//  131 //  static uint8 read = 0x00;
+//  132 //  
+//  133 //  spiReadByte( &read[read_idx], 0xF0);
+//  134 //  
+//  135 //}
+//  136 
+// 
+// 112 bytes in segment BANKED_CODE
+//  18 bytes in segment BANK_RELAYS
+//   8 bytes in segment SFR_AN
+//   1 byte  in segment XDATA_Z
+// 
+// 130 bytes of CODE  memory
+//   0 bytes of DATA  memory (+ 8 bytes shared)
+//   1 byte  of XDATA memory
+//
+//Errors: none
+//Warnings: none

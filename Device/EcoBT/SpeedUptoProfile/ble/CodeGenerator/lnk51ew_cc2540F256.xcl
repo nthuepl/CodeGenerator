@@ -1,0 +1,113 @@
+////////////////////////////////////////////////////////////////////////////////
+//    lnk51ew_CC2540F256.xcl: linker command file for IAR Embedded Workbench IDE
+//    Generated: Mon May 24 00:00:01 +0200 2010
+//
+////////////////////////////////////////////////////////////////////////////////
+//
+//  Segment limits
+//  ==============
+//
+//    IDATA
+//    -----
+-D_IDATA0_START=0x00
+-D_IDATA0_END=0xFF
+//
+//    PDATA
+//    -----
+// We select 256 bytes of (I)XDATA memory that can be used as PDATA (see also "PDATA page setup" below)
+-D_PDATA0_START=0x1E00
+-D_PDATA0_END=0x1EFF
+//
+//
+//    IXDATA
+//    ------
+-D_IXDATA0_START=0x0001       // Skip address 0x0000 (to avoid ambiguities with NULL pointer)
+-D_IXDATA0_END=0x1EFF         // CC2540F256 has 8 kB RAM (NOTE: 256 bytes are used for IDATA)
+//
+//
+//    XDATA
+//    -----
+-D_XDATA0_START=_IXDATA0_START
+-D_XDATA0_END=_IXDATA0_END
+//
+//    NEAR CODE
+//    ---------
+-D_CODE0_START=0x0000
+-D_CODE0_END=0xFFFF           // CC2540F256 has 256 kB code (flash), but can only use 64 kB without code banking
+//
+//  Special SFRs
+//  ============
+//
+//    Register bank setup
+//    -------------------
+-D?REGISTER_BANK=0x0          // Sets default register bank (0,1,2,3)
+-D_REGISTER_BANK_START=0x0    // Start address for default register bank (0x0, 0x8, 0x10, 0x18)
+//
+//    Virtual register setup
+//    ----------------------
+-D_BREG_START=0x00
+-D?VB=0x20
+-D?ESP=0x9B                   //Extended stack pointer register location
+////////////////////////////////////////////////////////////////////////////////
+//
+//  IDATA memory
+//  ============
+-Z(BIT)BREG=_BREG_START
+-Z(BIT)BIT_N=0-7F
+-Z(DATA)REGISTERS+8=_REGISTER_BANK_START
+-Z(DATA)BDATA_Z,BDATA_N,BDATA_I=20-2F
+-Z(DATA)VREG+_NR_OF_VIRTUAL_REGISTERS=08-7F
+-Z(DATA)PSP,XSP=08-7F
+-Z(DATA)DOVERLAY=08-7F
+-Z(DATA)DATA_I,DATA_Z,DATA_N=08-7F
+-U(IDATA)0-7F=(DATA)0-7F
+-Z(IDATA)IDATA_I,IDATA_Z,IDATA_N=08-_IDATA0_END
+-Z(IDATA)ISTACK+_IDATA_STACK_SIZE#08-_IDATA0_END
+-Z(IDATA)IOVERLAY=08-FF
+//
+//  ROM memory
+//  ==========
+//
+//    Top of memory
+//    -------------
+-Z(CODE)INTVEC=0
+-Z(CODE)CSTART=_CODE0_START-_CODE0_END
+//
+//    Initializers
+//    ------------
+-Z(CODE)BIT_ID,BDATA_ID,DATA_ID,IDATA_ID,IXDATA_ID,PDATA_ID,XDATA_ID=_CODE0_START-_CODE0_END
+//
+//    Program memory
+//    --------------
+-Z(CODE)RCODE,DIFUNCT,CODE_C,CODE_N,NEAR_CODE=_CODE0_START-_CODE0_END
+//
+//    Checksum
+//    --------
+-Z(CODE)CHECKSUM#_CODE0_END
+//
+//  XDATA memory
+//  ============
+//
+//    PDATA - data memory and stack
+//    -----------------------------
+-Z(XDATA)PDATA_Z,PDATA_I=_PDATA0_START-_PDATA0_END
+-P(XDATA)PDATA_N=_PDATA0_START-_PDATA0_END
+-Z(XDATA)PSTACK+_PDATA_STACK_SIZE=_PDATA0_START-_PDATA0_END
+//
+//    Stacks located in XDATA
+//    -----------------------
+-Z(XDATA)EXT_STACK+_EXTENDED_STACK_SIZE=_EXTENDED_STACK_START
+-Z(XDATA)XSTACK+_XDATA_STACK_SIZE=_XDATA0_START-_XDATA0_END
+//
+//    XDATA - data memory
+//    -------------------
+-Z(XDATA)IXDATA_Z,IXDATA_I=_IXDATA0_START-_IXDATA0_END
+-P(XDATA)IXDATA_N=_IXDATA0_START-_IXDATA0_END
+-Z(XDATA)XDATA_Z,XDATA_I=_XDATA0_START-_XDATA0_END
+-P(XDATA)XDATA_N=_XDATA0_START-_XDATA0_END
+-Z(XDATA)XDATA_HEAP+_XDATA_HEAP_SIZE=_XDATA0_START-_XDATA0_END
+-Z(CONST)XDATA_ROM_C=_XDATA0_START-_XDATA0_END
+//
+//  Core
+//  ====
+-cx51

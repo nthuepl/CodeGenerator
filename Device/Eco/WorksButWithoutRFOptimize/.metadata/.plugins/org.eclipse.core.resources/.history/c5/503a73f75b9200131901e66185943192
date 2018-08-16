@@ -1,0 +1,21 @@
+/*
+ * CodeGenerator.h
+ *
+ *  Created on: 2014/1/23
+ *      Author: NeoLai
+ */
+
+#ifndef CODEGENERATOR_H_
+#define CODEGENERATOR_H_
+
+
+
+
+
+
+void CodeGeneratorInit( void );
+
+
+
+
+#endif /* CODEGENERATOR_H_ */

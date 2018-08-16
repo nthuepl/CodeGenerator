@@ -1,0 +1,4166 @@
+///////////////////////////////////////////////////////////////////////////////
+//                                                                            /
+// IAR C/C++ Compiler V8.20.1.40829 for 8051            01/Jun/2014  01:55:11 /
+// Copyright 2004-2012 IAR Systems AB.                                        /
+//                                                                            /
+//    Core               =  plain                                             /
+//    Code model         =  banked                                            /
+//    Data model         =  large                                             /
+//    Calling convention =  xdata reentrant                                   /
+//    Constant location  =  data_rom                                          /
+//    Dptr setup         =  1,16                                              /
+//                                                                            /
+//    Source file        =  D:\NTHU\¬ã¨s\Important\ThesisCode\Code\GitLabClou /
+//                          d\NewEcoExec\codegenerator\Device\EcoBT\SpeedUpto /
+//                          Profile\ble\CodeGenerator\Source\simpleBLEPeriphe /
+//                          ral.c                                             /
+//    Command line       =  -f D:\NTHU\¬ã¨s\Important\ThesisCode\Code\GitLabC /
+//                          loud\NewEcoExec\codegenerator\Device\EcoBT\SpeedU /
+//                          ptoProfile\ble\CodeGenerator\CC2541DB\..\..\confi /
+//                          g\buildComponents.cfg (-DBROADCASTER_CFG=0x01     /
+//                          -DOBSERVER_CFG=0x02 -DPERIPHERAL_CFG=0x04         /
+//                          -DCENTRAL_CFG=0x08 -DADV_NCONN_CFG=0x01           /
+//                          -DADV_CONN_CFG=0x02 -DSCAN_CFG=0x04               /
+//                          -DINIT_CFG=0x08 -DADV_CFG=ADV_NCONN_CFG+ADV_CONN_ /
+//                          CFG -DLINK_CFG=ADV_CONN_CFG+INIT_CFG              /
+//                          -DFULL_CFG=INIT_CFG+SCAN_CFG+ADV_NCONN_CFG+ADV_CO /
+//                          NN_CFG) -f D:\NTHU\¬ã¨s\Important\ThesisCode\Code /
+//                          \GitLabCloud\NewEcoExec\codegenerator\Device\EcoB /
+//                          T\SpeedUptoProfile\ble\CodeGenerator\CC2541DB\bui /
+//                          ldConfig.cfg (-DHOST_CONFIG=PERIPHERAL_CFG        /
+//                          -DGAP_PRIVACY_RECONNECT -DCC2541                  /
+//                          -DOAD_IMAGE_VERSION=0x0000                        /
+//                          "-DOAD_IMAGE_A_USER_ID='A', 'A', 'A', 'A'"        /
+//                          "-DOAD_IMAGE_B_USER_ID='B', 'B', 'B', 'B'")       /
+//                          D:\NTHU\¬ã¨s\Important\ThesisCode\Code\GitLabClou /
+//                          d\NewEcoExec\codegenerator\Device\EcoBT\SpeedUpto /
+//                          Profile\ble\CodeGenerator\Source\simpleBLEPeriphe /
+//                          ral.c -D INT_HEAP_LEN=900 -D HALNODEBUG -D        /
+//                          OSAL_CBTIMER_NUM_TASKS=1 -D HAL_AES_DMA=TRUE -D   /
+//                          HAL_DMA=TRUE -D xPOWER_SAVING -D                  /
+//                          xPLUS_BROADCASTER -D HAL_LCD=FALSE -D             /
+//                          HAL_LED=TRUE -D HAL_ADC=TRUE -lB                  /
+//                          D:\NTHU\¬ã¨s\Important\ThesisCode\Code\GitLabClou /
+//                          d\NewEcoExec\codegenerator\Device\EcoBT\SpeedUpto /
+//                          Profile\ble\CodeGenerator\CC2541DB\CC2541\List\   /
+//                          -o D:\NTHU\¬ã¨s\Important\ThesisCode\Code\GitLabC /
+//                          loud\NewEcoExec\codegenerator\Device\EcoBT\SpeedU /
+//                          ptoProfile\ble\CodeGenerator\CC2541DB\CC2541\Obj\ /
+//                           -e --debug --core=plain --dptr=16,1              /
+//                          --data_model=large --code_model=banked            /
+//                          --calling_convention=xdata_reentrant              /
+//                          --place_constants=data_rom --nr_virtual_regs 16   /
+//                          -I D:\NTHU\¬ã¨s\Important\ThesisCode\Code\GitLabC /
+//                          loud\NewEcoExec\codegenerator\Device\EcoBT\SpeedU /
+//                          ptoProfile\ble\CodeGenerator\CC2541DB\..\..\commo /
+//                          n\ -I D:\NTHU\¬ã¨s\Important\ThesisCode\Code\GitL /
+//                          abCloud\NewEcoExec\codegenerator\Device\EcoBT\Spe /
+//                          edUptoProfile\ble\CodeGenerator\CC2541DB\..\..\in /
+//                          clude\ -I D:\NTHU\¬ã¨s\Important\ThesisCode\Code\ /
+//                          GitLabCloud\NewEcoExec\codegenerator\Device\EcoBT /
+//                          \SpeedUptoProfile\ble\CodeGenerator\CC2541DB\..\. /
+//                          .\..\..\Components\hal\include\ -I                /
+//                          D:\NTHU\¬ã¨s\Important\ThesisCode\Code\GitLabClou /
+//                          d\NewEcoExec\codegenerator\Device\EcoBT\SpeedUpto /
+//                          Profile\ble\CodeGenerator\CC2541DB\..\..\..\..\Co /
+//                          mponents\hal\target\CC2540EB\ -I                  /
+//                          D:\NTHU\¬ã¨s\Important\ThesisCode\Code\GitLabClou /
+//                          d\NewEcoExec\codegenerator\Device\EcoBT\SpeedUpto /
+//                          Profile\ble\CodeGenerator\CC2541DB\..\..\..\..\Co /
+//                          mponents\osal\include\ -I                         /
+//                          D:\NTHU\¬ã¨s\Important\ThesisCode\Code\GitLabClou /
+//                          d\NewEcoExec\codegenerator\Device\EcoBT\SpeedUpto /
+//                          Profile\ble\CodeGenerator\CC2541DB\..\..\..\..\Co /
+//                          mponents\services\saddr\ -I                       /
+//                          D:\NTHU\¬ã¨s\Important\ThesisCode\Code\GitLabClou /
+//                          d\NewEcoExec\codegenerator\Device\EcoBT\SpeedUpto /
+//                          Profile\ble\CodeGenerator\CC2541DB\..\..\..\..\Co /
+//                          mponents\ble\include\ -I                          /
+//                          D:\NTHU\¬ã¨s\Important\ThesisCode\Code\GitLabClou /
+//                          d\NewEcoExec\codegenerator\Device\EcoBT\SpeedUpto /
+//                          Profile\ble\CodeGenerator\CC2541DB\..\..\..\..\Co /
+//                          mponents\ble\controller\phy\ -I                   /
+//                          D:\NTHU\¬ã¨s\Important\ThesisCode\Code\GitLabClou /
+//                          d\NewEcoExec\codegenerator\Device\EcoBT\SpeedUpto /
+//                          Profile\ble\CodeGenerator\CC2541DB\..\..\..\..\Co /
+//                          mponents\ble\controller\include\ -I               /
+//                          D:\NTHU\¬ã¨s\Important\ThesisCode\Code\GitLabClou /
+//                          d\NewEcoExec\codegenerator\Device\EcoBT\SpeedUpto /
+//                          Profile\ble\CodeGenerator\CC2541DB\..\..\..\..\Co /
+//                          mponents\ble\hci\ -I D:\NTHU\¬ã¨s\Important\Thesi /
+//                          sCode\Code\GitLabCloud\NewEcoExec\codegenerator\D /
+//                          evice\EcoBT\SpeedUptoProfile\ble\CodeGenerator\CC /
+//                          2541DB\..\..\..\..\Components\ble\host\ -I        /
+//                          D:\NTHU\¬ã¨s\Important\ThesisCode\Code\GitLabClou /
+//                          d\NewEcoExec\codegenerator\Device\EcoBT\SpeedUpto /
+//                          Profile\ble\CodeGenerator\CC2541DB\..\..\common\c /
+//                          c2540\ -I D:\NTHU\¬ã¨s\Important\ThesisCode\Code\ /
+//                          GitLabCloud\NewEcoExec\codegenerator\Device\EcoBT /
+//                          \SpeedUptoProfile\ble\CodeGenerator\CC2541DB\..\. /
+//                          .\common\npi\npi_np\ -I                           /
+//                          D:\NTHU\¬ã¨s\Important\ThesisCode\Code\GitLabClou /
+//                          d\NewEcoExec\codegenerator\Device\EcoBT\SpeedUpto /
+//                          Profile\ble\CodeGenerator\CC2541DB\..\..\Profiles /
+//                          \Roles\ -I D:\NTHU\¬ã¨s\Important\ThesisCode\Code /
+//                          \GitLabCloud\NewEcoExec\codegenerator\Device\EcoB /
+//                          T\SpeedUptoProfile\ble\CodeGenerator\CC2541DB\..\ /
+//                          ..\Profiles\SimpleProfile\ -I                     /
+//                          D:\NTHU\¬ã¨s\Important\ThesisCode\Code\GitLabClou /
+//                          d\NewEcoExec\codegenerator\Device\EcoBT\SpeedUpto /
+//                          Profile\ble\CodeGenerator\CC2541DB\..\..\Profiles /
+//                          \DevInfo\ -I D:\NTHU\¬ã¨s\Important\ThesisCode\Co /
+//                          de\GitLabCloud\NewEcoExec\codegenerator\Device\Ec /
+//                          oBT\SpeedUptoProfile\ble\CodeGenerator\CC2541DB\. /
+//                          .\..\Profiles\Accelerometer\ -I                   /
+//                          D:\NTHU\¬ã¨s\Important\ThesisCode\Code\GitLabClou /
+//                          d\NewEcoExec\codegenerator\Device\EcoBT\SpeedUpto /
+//                          Profile\ble\CodeGenerator\CC2541DB\..\..\Profiles /
+//                          \EcoExecGATTProfile\ -I                           /
+//                          D:\NTHU\¬ã¨s\Important\ThesisCode\Code\GitLabClou /
+//                          d\NewEcoExec\codegenerator\Device\EcoBT\SpeedUpto /
+//                          Profile\ble\CodeGenerator\CC2541DB\..\..\Profiles /
+//                          \timeservice\ -I D:\NTHU\¬ã¨s\Important\ThesisCod /
+//                          e\Code\GitLabCloud\NewEcoExec\codegenerator\Devic /
+//                          e\EcoBT\SpeedUptoProfile\ble\CodeGenerator\CC2541 /
+//                          DB\..\..\Profiles\Batt\ -I                        /
+//                          D:\NTHU\¬ã¨s\Important\ThesisCode\Code\GitLabClou /
+//                          d\NewEcoExec\codegenerator\Device\EcoBT\SpeedUpto /
+//                          Profile\ble\CodeGenerator\CC2541DB\..\..\Profiles /
+//                          \HIDDev\ -I D:\NTHU\¬ã¨s\Important\ThesisCode\Cod /
+//                          e\GitLabCloud\NewEcoExec\codegenerator\Device\Eco /
+//                          BT\SpeedUptoProfile\ble\CodeGenerator\CC2541DB\.. /
+//                          \..\Profiles\ScanParam\ -Ohz                      /
+//    List file          =  D:\NTHU\¬ã¨s\Important\ThesisCode\Code\GitLabClou /
+//                          d\NewEcoExec\codegenerator\Device\EcoBT\SpeedUpto /
+//                          Profile\ble\CodeGenerator\CC2541DB\CC2541\List\si /
+//                          mpleBLEPeripheral.s51                             /
+//                                                                            /
+//                                                                            /
+///////////////////////////////////////////////////////////////////////////////
+
+        NAME simpleBLEPeripheral
+
+        RSEG DOVERLAY:DATA:NOROOT(0)
+        RSEG IOVERLAY:IDATA:NOROOT(0)
+        RSEG ISTACK:IDATA:NOROOT(0)
+        RSEG PSTACK:XDATA:NOROOT(0)
+        RSEG XSTACK:XDATA:NOROOT(0)
+
+        EXTERN ?ALLOC_XSTACK8
+        EXTERN ?BANKED_ENTER_XDATA
+        EXTERN ?BANKED_LEAVE_XDATA
+        EXTERN ?BDISPATCH
+        EXTERN ?BRET
+        EXTERN ?DEALLOC_XSTACK8
+        EXTERN ?INTERRUPT_ENTER_XSP
+        EXTERN ?INTERRUPT_LEAVE_XSP
+        EXTERN ?PUSH_XSTACK8_X_FOUR
+        EXTERN ?PUSH_XSTACK_I_ONE
+        EXTERN ?PUSH_XSTACK_I_TWO
+        EXTERN ?V0
+        EXTERN ?XLOAD_R2345
+        EXTERN ?XSP
+        EXTERN ?XSTACK_DISP0_8
+        EXTERN __INIT_XDATA_I
+        EXTERN __INIT_XDATA_Z
+
+        PUBLIC ??CodeGeneratorStartPoint?relay
+        PUBLIC ??CodeGenerator_EVT_1_CB?relay
+        PUBLIC ??CodeGenerator_EVT_2_CB?relay
+        PUBLIC ??CodeGenerator_EVT_3_CB?relay
+        PUBLIC ??CodeGenerator_EVT_4_CB?relay
+        PUBLIC ??SimpleBLEPeripheral_Init?relay
+        PUBLIC ??SimpleBLEPeripheral_ProcessEvent?relay
+        PUBLIC ??battProfileChangeCB?relay
+        PUBLIC ??cg_EVT_1_CB?relay
+        PUBLIC ??cg_EVT_2_CB?relay
+        PUBLIC ??cg_EVT_3_CB?relay
+        PUBLIC ??cg_EVT_4_CB?relay
+        PUBLIC ??cg_accelEnablerChangeCB?relay
+        PUBLIC ??cg_battProfileChangeCB?relay
+        PUBLIC ??cg_simpleProfileChangeCB?relay
+        PUBLIC ??cg_timeserviceChangeCB?relay
+        PUBWEAK `??halAlarmPort0Isr??INTVEC 107`
+        PUBWEAK `??halaccPort1Isr??INTVEC 123`
+        PUBLIC ??timeRead?relay
+        PUBLIC ??timeserviceChangeCB?relay
+        PUBLIC CodeGeneratorStartPoint
+        PUBLIC CodeGenerator_EVT_1_CB
+        PUBLIC CodeGenerator_EVT_2_CB
+        PUBLIC CodeGenerator_EVT_3_CB
+        PUBLIC CodeGenerator_EVT_4_CB
+        PUBWEAK MEMCTR
+        PUBWEAK P0IFG
+        PUBWEAK P1IFG
+        PUBWEAK P2DIR
+        PUBWEAK P2SEL
+        PUBLIC SimpleBLEPeripheral_Init
+        PUBLIC SimpleBLEPeripheral_ProcessEvent
+        PUBWEAK _A_IRCON
+        PUBWEAK _A_IRCON2
+        PUBWEAK __Constant_1388
+        PUBWEAK __Constant_1f4
+        PUBWEAK __Constant_3e8
+        PUBWEAK __Constant_64
+        PUBWEAK __Constant_ffffffff
+        PUBLIC battProfileChangeCB
+        PUBLIC cg_EVT_1_CB
+        PUBLIC cg_EVT_2_CB
+        PUBLIC cg_EVT_3_CB
+        PUBLIC cg_EVT_4_CB
+        PUBLIC cg_accelEnablerChangeCB
+        PUBLIC cg_battProfileChangeCB
+        PUBLIC cg_simpleProfileChangeCB
+        PUBLIC cg_timeserviceChangeCB
+        PUBLIC execution_ram_code
+        PUBLIC halAlarmPort0Isr
+        PUBLIC halaccPort1Isr
+        PUBLIC newAlarm
+        PUBLIC newDate
+        PUBLIC newTime
+        PUBLIC notify
+        PUBLIC timeRead
+        PUBLIC timeserviceChangeCB
+
+ATT_HandleValueNoti SYMBOL "ATT_HandleValueNoti"
+??ATT_HandleValueNoti?relay SYMBOL "?relay", ATT_HandleValueNoti
+Accel_AddService    SYMBOL "Accel_AddService"
+??Accel_AddService?relay SYMBOL "?relay", Accel_AddService
+Accel_GetParameter  SYMBOL "Accel_GetParameter"
+??Accel_GetParameter?relay SYMBOL "?relay", Accel_GetParameter
+Accel_RegisterAppCBs SYMBOL "Accel_RegisterAppCBs"
+??Accel_RegisterAppCBs?relay SYMBOL "?relay", Accel_RegisterAppCBs
+Accel_SetParameter  SYMBOL "Accel_SetParameter"
+??Accel_SetParameter?relay SYMBOL "?relay", Accel_SetParameter
+Batt_AddService     SYMBOL "Batt_AddService"
+??Batt_AddService?relay SYMBOL "?relay", Batt_AddService
+Batt_Register       SYMBOL "Batt_Register"
+??Batt_Register?relay SYMBOL "?relay", Batt_Register
+DevInfo_AddService  SYMBOL "DevInfo_AddService"
+??DevInfo_AddService?relay SYMBOL "?relay", DevInfo_AddService
+DevInfo_SetParameter SYMBOL "DevInfo_SetParameter"
+??DevInfo_SetParameter?relay SYMBOL "?relay", DevInfo_SetParameter
+EcoExecProfile_AddService SYMBOL "EcoExecProfile_AddService"
+??EcoExecProfile_AddService?relay SYMBOL "?relay", EcoExecProfile_AddService
+EcoExecProfile_RegisterAppCBs SYMBOL "EcoExecProfile_RegisterAppCBs"
+??EcoExecProfile_RegisterAppCBs?relay SYMBOL "?relay", EcoExecProfile_RegisterAppCBs
+GAPBondMgr_Register SYMBOL "GAPBondMgr_Register"
+??GAPBondMgr_Register?relay SYMBOL "?relay", GAPBondMgr_Register
+GAPBondMgr_SetParameter SYMBOL "GAPBondMgr_SetParameter"
+??GAPBondMgr_SetParameter?relay SYMBOL "?relay", GAPBondMgr_SetParameter
+GAPRole_GetParameter SYMBOL "GAPRole_GetParameter"
+??GAPRole_GetParameter?relay SYMBOL "?relay", GAPRole_GetParameter
+GAPRole_SetParameter SYMBOL "GAPRole_SetParameter"
+??GAPRole_SetParameter?relay SYMBOL "?relay", GAPRole_SetParameter
+GAPRole_StartDevice SYMBOL "GAPRole_StartDevice"
+??GAPRole_StartDevice?relay SYMBOL "?relay", GAPRole_StartDevice
+GAP_SetParamValue   SYMBOL "GAP_SetParamValue"
+??GAP_SetParamValue?relay SYMBOL "?relay", GAP_SetParamValue
+GATTServApp_AddService SYMBOL "GATTServApp_AddService"
+??GATTServApp_AddService?relay SYMBOL "?relay", GATTServApp_AddService
+GGS_AddService      SYMBOL "GGS_AddService"
+??GGS_AddService?relay SYMBOL "?relay", GGS_AddService
+GGS_SetParameter    SYMBOL "GGS_SetParameter"
+??GGS_SetParameter?relay SYMBOL "?relay", GGS_SetParameter
+HCI_EXT_ClkDivOnHaltCmd SYMBOL "HCI_EXT_ClkDivOnHaltCmd"
+??HCI_EXT_ClkDivOnHaltCmd?relay SYMBOL "?relay", HCI_EXT_ClkDivOnHaltCmd
+SimpleProfile_AddService SYMBOL "SimpleProfile_AddService"
+??SimpleProfile_AddService?relay SYMBOL "?relay", SimpleProfile_AddService
+SimpleProfile_GetParameter SYMBOL "SimpleProfile_GetParameter"
+??SimpleProfile_GetParameter?relay SYMBOL "?relay", SimpleProfile_GetParameter
+SimpleProfile_RegisterAppCBs SYMBOL "SimpleProfile_RegisterAppCBs"
+??SimpleProfile_RegisterAppCBs?relay SYMBOL "?relay", SimpleProfile_RegisterAppCBs
+SimpleProfile_SetParameter SYMBOL "SimpleProfile_SetParameter"
+??SimpleProfile_SetParameter?relay SYMBOL "?relay", SimpleProfile_SetParameter
+accInit             SYMBOL "accInit"
+??accInit?relay     SYMBOL "?relay", accInit
+accReadAcc          SYMBOL "accReadAcc"
+??accReadAcc?relay  SYMBOL "?relay", accReadAcc
+halProcessAlarmInterrupt SYMBOL "halProcessAlarmInterrupt"
+??halProcessAlarmInterrupt?relay SYMBOL "?relay", halProcessAlarmInterrupt
+halProcessFreeFallInterrupt SYMBOL "halProcessFreeFallInterrupt"
+??halProcessFreeFallInterrupt?relay SYMBOL "?relay", halProcessFreeFallInterrupt
+osal_msg_deallocate SYMBOL "osal_msg_deallocate"
+??osal_msg_deallocate?relay SYMBOL "?relay", osal_msg_deallocate
+osal_msg_receive    SYMBOL "osal_msg_receive"
+??osal_msg_receive?relay SYMBOL "?relay", osal_msg_receive
+osal_set_event      SYMBOL "osal_set_event"
+??osal_set_event?relay SYMBOL "?relay", osal_set_event
+osal_start_timerEx  SYMBOL "osal_start_timerEx"
+??osal_start_timerEx?relay SYMBOL "?relay", osal_start_timerEx
+osal_stop_timerEx   SYMBOL "osal_stop_timerEx"
+??osal_stop_timerEx?relay SYMBOL "?relay", osal_stop_timerEx
+rtcGetAlarm         SYMBOL "rtcGetAlarm"
+??rtcGetAlarm?relay SYMBOL "?relay", rtcGetAlarm
+rtcGetDate          SYMBOL "rtcGetDate"
+??rtcGetDate?relay  SYMBOL "?relay", rtcGetDate
+rtcGetTime          SYMBOL "rtcGetTime"
+??rtcGetTime?relay  SYMBOL "?relay", rtcGetTime
+rtcInit             SYMBOL "rtcInit"
+??rtcInit?relay     SYMBOL "?relay", rtcInit
+rtcSetAlarm         SYMBOL "rtcSetAlarm"
+??rtcSetAlarm?relay SYMBOL "?relay", rtcSetAlarm
+rtcSetDate          SYMBOL "rtcSetDate"
+??rtcSetDate?relay  SYMBOL "?relay", rtcSetDate
+rtcSetTime          SYMBOL "rtcSetTime"
+??rtcSetTime?relay  SYMBOL "?relay", rtcSetTime
+timeservice_AddService SYMBOL "timeservice_AddService"
+??timeservice_AddService?relay SYMBOL "?relay", timeservice_AddService
+timeservice_GetParameter SYMBOL "timeservice_GetParameter"
+??timeservice_GetParameter?relay SYMBOL "?relay", timeservice_GetParameter
+timeservice_RegisterAppCBs SYMBOL "timeservice_RegisterAppCBs"
+??timeservice_RegisterAppCBs?relay SYMBOL "?relay", timeservice_RegisterAppCBs
+timeservice_SetParameter SYMBOL "timeservice_SetParameter"
+??timeservice_SetParameter?relay SYMBOL "?relay", timeservice_SetParameter
+uartInit            SYMBOL "uartInit"
+??uartInit?relay    SYMBOL "?relay", uartInit
+uartWriteString     SYMBOL "uartWriteString"
+??uartWriteString?relay SYMBOL "?relay", uartWriteString
+CodeGeneratorStartPoint SYMBOL "CodeGeneratorStartPoint"
+??CodeGeneratorStartPoint?relay SYMBOL "?relay", CodeGeneratorStartPoint
+CodeGenerator_EVT_1_CB SYMBOL "CodeGenerator_EVT_1_CB"
+??CodeGenerator_EVT_1_CB?relay SYMBOL "?relay", CodeGenerator_EVT_1_CB
+CodeGenerator_EVT_2_CB SYMBOL "CodeGenerator_EVT_2_CB"
+??CodeGenerator_EVT_2_CB?relay SYMBOL "?relay", CodeGenerator_EVT_2_CB
+CodeGenerator_EVT_3_CB SYMBOL "CodeGenerator_EVT_3_CB"
+??CodeGenerator_EVT_3_CB?relay SYMBOL "?relay", CodeGenerator_EVT_3_CB
+CodeGenerator_EVT_4_CB SYMBOL "CodeGenerator_EVT_4_CB"
+??CodeGenerator_EVT_4_CB?relay SYMBOL "?relay", CodeGenerator_EVT_4_CB
+SimpleBLEPeripheral_Init SYMBOL "SimpleBLEPeripheral_Init"
+??SimpleBLEPeripheral_Init?relay SYMBOL "?relay", SimpleBLEPeripheral_Init
+SimpleBLEPeripheral_ProcessEvent SYMBOL "SimpleBLEPeripheral_ProcessEvent"
+??SimpleBLEPeripheral_ProcessEvent?relay SYMBOL "?relay", SimpleBLEPeripheral_ProcessEvent
+battProfileChangeCB SYMBOL "battProfileChangeCB"
+??battProfileChangeCB?relay SYMBOL "?relay", battProfileChangeCB
+cg_EVT_1_CB         SYMBOL "cg_EVT_1_CB"
+??cg_EVT_1_CB?relay SYMBOL "?relay", cg_EVT_1_CB
+cg_EVT_2_CB         SYMBOL "cg_EVT_2_CB"
+??cg_EVT_2_CB?relay SYMBOL "?relay", cg_EVT_2_CB
+cg_EVT_3_CB         SYMBOL "cg_EVT_3_CB"
+??cg_EVT_3_CB?relay SYMBOL "?relay", cg_EVT_3_CB
+cg_EVT_4_CB         SYMBOL "cg_EVT_4_CB"
+??cg_EVT_4_CB?relay SYMBOL "?relay", cg_EVT_4_CB
+cg_accelEnablerChangeCB SYMBOL "cg_accelEnablerChangeCB"
+??cg_accelEnablerChangeCB?relay SYMBOL "?relay", cg_accelEnablerChangeCB
+cg_battProfileChangeCB SYMBOL "cg_battProfileChangeCB"
+??cg_battProfileChangeCB?relay SYMBOL "?relay", cg_battProfileChangeCB
+cg_simpleProfileChangeCB SYMBOL "cg_simpleProfileChangeCB"
+??cg_simpleProfileChangeCB?relay SYMBOL "?relay", cg_simpleProfileChangeCB
+cg_timeserviceChangeCB SYMBOL "cg_timeserviceChangeCB"
+??cg_timeserviceChangeCB?relay SYMBOL "?relay", cg_timeserviceChangeCB
+halAlarmPort0Isr    SYMBOL "halAlarmPort0Isr"
+`??halAlarmPort0Isr??INTVEC 107` SYMBOL "??INTVEC 107", halAlarmPort0Isr
+halaccPort1Isr      SYMBOL "halaccPort1Isr"
+`??halaccPort1Isr??INTVEC 123` SYMBOL "??INTVEC 123", halaccPort1Isr
+timeRead            SYMBOL "timeRead"
+??timeRead?relay    SYMBOL "?relay", timeRead
+timeserviceChangeCB SYMBOL "timeserviceChangeCB"
+??timeserviceChangeCB?relay SYMBOL "?relay", timeserviceChangeCB
+
+        EXTERN ??ATT_HandleValueNoti?relay
+        EXTERN ??Accel_AddService?relay
+        EXTERN ??Accel_GetParameter?relay
+        EXTERN ??Accel_RegisterAppCBs?relay
+        EXTERN ??Accel_SetParameter?relay
+        EXTERN ??Batt_AddService?relay
+        EXTERN ??Batt_Register?relay
+        EXTERN ??DevInfo_AddService?relay
+        EXTERN ??DevInfo_SetParameter?relay
+        EXTERN ??EcoExecProfile_AddService?relay
+        EXTERN ??EcoExecProfile_RegisterAppCBs?relay
+        EXTERN ??GAPBondMgr_Register?relay
+        EXTERN ??GAPBondMgr_SetParameter?relay
+        EXTERN ??GAPRole_GetParameter?relay
+        EXTERN ??GAPRole_SetParameter?relay
+        EXTERN ??GAPRole_StartDevice?relay
+        EXTERN ??GAP_SetParamValue?relay
+        EXTERN ??GATTServApp_AddService?relay
+        EXTERN ??GGS_AddService?relay
+        EXTERN ??GGS_SetParameter?relay
+        EXTERN ??HCI_EXT_ClkDivOnHaltCmd?relay
+        EXTERN ??SimpleProfile_AddService?relay
+        EXTERN ??SimpleProfile_GetParameter?relay
+        EXTERN ??SimpleProfile_RegisterAppCBs?relay
+        EXTERN ??SimpleProfile_SetParameter?relay
+        EXTERN ??accInit?relay
+        EXTERN ??accReadAcc?relay
+        EXTERN ??halProcessAlarmInterrupt?relay
+        EXTERN ??halProcessFreeFallInterrupt?relay
+        EXTERN ??osal_msg_deallocate?relay
+        EXTERN ??osal_msg_receive?relay
+        EXTERN ??osal_set_event?relay
+        EXTERN ??osal_start_timerEx?relay
+        EXTERN ??osal_stop_timerEx?relay
+        EXTERN ??rtcGetAlarm?relay
+        EXTERN ??rtcGetDate?relay
+        EXTERN ??rtcGetTime?relay
+        EXTERN ??rtcInit?relay
+        EXTERN ??rtcSetAlarm?relay
+        EXTERN ??rtcSetDate?relay
+        EXTERN ??rtcSetTime?relay
+        EXTERN ??timeservice_AddService?relay
+        EXTERN ??timeservice_GetParameter?relay
+        EXTERN ??timeservice_RegisterAppCBs?relay
+        EXTERN ??timeservice_SetParameter?relay
+        EXTERN ??uartInit?relay
+        EXTERN ??uartWriteString?relay
+        EXTERN ATT_HandleValueNoti
+        EXTERN Accel_AddService
+        EXTERN Accel_GetParameter
+        EXTERN Accel_RegisterAppCBs
+        EXTERN Accel_SetParameter
+        EXTERN Batt_AddService
+        EXTERN Batt_Register
+        EXTERN DevInfo_AddService
+        EXTERN DevInfo_SetParameter
+        EXTERN EcoExecProfileConnHandle
+        EXTERN EcoExecProfile_AddService
+        EXTERN EcoExecProfile_RegisterAppCBs
+        EXTERN GAPBondMgr_Register
+        EXTERN GAPBondMgr_SetParameter
+        EXTERN GAPRole_GetParameter
+        EXTERN GAPRole_SetParameter
+        EXTERN GAPRole_StartDevice
+        EXTERN GAP_SetParamValue
+        EXTERN GATTServApp_AddService
+        EXTERN GGS_AddService
+        EXTERN GGS_SetParameter
+        EXTERN HCI_EXT_ClkDivOnHaltCmd
+        EXTERN SimpleProfile_AddService
+        EXTERN SimpleProfile_GetParameter
+        EXTERN SimpleProfile_RegisterAppCBs
+        EXTERN SimpleProfile_SetParameter
+        EXTERN accInit
+        EXTERN accReadAcc
+        EXTERN halProcessAlarmInterrupt
+        EXTERN halProcessFreeFallInterrupt
+        EXTERN osal_msg_deallocate
+        EXTERN osal_msg_receive
+        EXTERN osal_set_event
+        EXTERN osal_start_timerEx
+        EXTERN osal_stop_timerEx
+        EXTERN rtcGetAlarm
+        EXTERN rtcGetDate
+        EXTERN rtcGetTime
+        EXTERN rtcInit
+        EXTERN rtcSetAlarm
+        EXTERN rtcSetDate
+        EXTERN rtcSetTime
+        EXTERN timeservice_AddService
+        EXTERN timeservice_GetParameter
+        EXTERN timeservice_RegisterAppCBs
+        EXTERN timeservice_SetParameter
+        EXTERN uartInit
+        EXTERN uartWriteString
+
+// D:\NTHU\¬ã¨s\Important\ThesisCode\Code\GitLabCloud\NewEcoExec\codegenerator\Device\EcoBT\SpeedUptoProfile\ble\CodeGenerator\Source\simpleBLEPeripheral.c
+//    1 /**************************************************************************************************
+//    2   Filename:       simpleBLEPeripheral.c
+//    3   Revised:        $Date: 2010-08-06 08:56:11 -0700 (Fri, 06 Aug 2010) $
+//    4   Revision:       $Revision: 23333 $
+//    5 
+//    6   Description:    This file contains the Simple BLE Peripheral sample application
+//    7                   for use with the CC2540 Bluetooth Low Energy Protocol Stack.
+//    8 
+//    9   Copyright 2010 - 2012 Texas Instruments Incorporated. All rights reserved.
+//   10 
+//   11   IMPORTANT: Your use of this Software is limited to those specific rights
+//   12   granted under the terms of a software license agreement between the user
+//   13   who downloaded the software, his/her employer (which must be your employer)
+//   14   and Texas Instruments Incorporated (the "License").  You may not use this
+//   15   Software unless you agree to abide by the terms of the License. The License
+//   16   limits your use, and you acknowledge, that the Software may not be modified,
+//   17   copied or distributed unless embedded on a Texas Instruments microcontroller
+//   18   or used solely and exclusively in conjunction with a Texas Instruments radio
+//   19   frequency transceiver, which is integrated into your product.  Other than for
+//   20   the foregoing purpose, you may not use, reproduce, copy, prepare derivative
+//   21   works of, modify, distribute, perform, display or sell this Software and/or
+//   22   its documentation for any purpose.
+//   23 
+//   24   YOU FURTHER ACKNOWLEDGE AND AGREE THAT THE SOFTWARE AND DOCUMENTATION ARE
+//   25   PROVIDED “AS IS” WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESS OR IMPLIED,
+//   26   INCLUDING WITHOUT LIMITATION, ANY WARRANTY OF MERCHANTABILITY, TITLE,
+//   27   NON-INFRINGEMENT AND FITNESS FOR A PARTICULAR PURPOSE. IN NO EVENT SHALL
+//   28   TEXAS INSTRUMENTS OR ITS LICENSORS BE LIABLE OR OBLIGATED UNDER CONTRACT,
+//   29   NEGLIGENCE, STRICT LIABILITY, CONTRIBUTION, BREACH OF WARRANTY, OR OTHER
+//   30   LEGAL EQUITABLE THEORY ANY DIRECT OR INDIRECT DAMAGES OR EXPENSES
+//   31   INCLUDING BUT NOT LIMITED TO ANY INCIDENTAL, SPECIAL, INDIRECT, PUNITIVE
+//   32   OR CONSEQUENTIAL DAMAGES, LOST PROFITS OR LOST DATA, COST OF PROCUREMENT
+//   33   OF SUBSTITUTE GOODS, TECHNOLOGY, SERVICES, OR ANY CLAIMS BY THIRD PARTIES
+//   34   (INCLUDING BUT NOT LIMITED TO ANY DEFENSE THEREOF), OR OTHER SIMILAR COSTS.
+//   35 
+//   36   Should you have any questions regarding your right to use this Software,
+//   37   contact Texas Instruments Incorporated at www.TI.com.
+//   38 **************************************************************************************************/
+//   39 
+//   40 /*********************************************************************
+//   41  * INCLUDES
+//   42  */
+//   43 
+//   44 #include "bcomdef.h"
+//   45 #include "OSAL.h"
+//   46 #include "OSAL_PwrMgr.h"
+//   47 
+//   48 #include "OnBoard.h"
+
+        ASEGN SFR_AN:DATA:NOROOT,089H
+// unsigned char volatile __sfr P0IFG
+P0IFG:
+        DATA8
+        DS 1
+
+        ASEGN SFR_AN:DATA:NOROOT,08aH
+// unsigned char volatile __sfr P1IFG
+P1IFG:
+        DATA8
+        DS 1
+
+        ASEGN SFR_AN:DATA:NOROOT,0c0H
+// union <unnamed> volatile __sfr _A_IRCON
+_A_IRCON:
+        DATA8
+        DS 1
+
+        ASEGN SFR_AN:DATA:NOROOT,0c7H
+// unsigned char volatile __sfr MEMCTR
+MEMCTR:
+        DATA8
+        DS 1
+
+        ASEGN SFR_AN:DATA:NOROOT,0e8H
+// union <unnamed> volatile __sfr _A_IRCON2
+_A_IRCON2:
+        DATA8
+        DS 1
+
+        ASEGN SFR_AN:DATA:NOROOT,0f5H
+// unsigned char volatile __sfr P2SEL
+P2SEL:
+        DATA8
+        DS 1
+
+        ASEGN SFR_AN:DATA:NOROOT,0ffH
+// unsigned char volatile __sfr P2DIR
+P2DIR:
+        DATA8
+        DS 1
+//   49 #include "hal_adc.h"
+//   50 #include "hal_led.h"
+//   51 #include "hal_key.h"
+//   52 #include "hal_lcd.h"
+//   53 
+//   54 #include "gatt.h"
+//   55 
+//   56 #include "hci.h"
+//   57 
+//   58 #include "gapgattserver.h"
+//   59 #include "gattservapp.h"
+//   60 #include "devinfoservice.h"
+//   61 #include "simpleGATTprofile.h"
+//   62 
+//   63 #if defined( CC2540_MINIDK )
+//   64   #include "simplekeys.h"
+//   65 #endif
+//   66 
+//   67 #if defined ( PLUS_BROADCASTER )
+//   68   #include "peripheralBroadcaster.h"
+//   69 #else
+//   70   #include "peripheral.h"
+//   71 #endif
+//   72 
+//   73 #include "gapbondmgr.h"
+//   74 
+//   75 #include "simpleBLEPeripheral.h"
+//   76 
+//   77 #if defined FEATURE_OAD
+//   78   #include "oad.h"
+//   79   #include "oad_target.h"
+//   80 #endif
+//   81 
+//   82 #if (defined CC2541)|| (defined CC2541S)
+//   83 #include "epl_rtc_m41t62.h"
+//   84 #include "timeservice.h"
+//   85 #endif
+//   86 
+//   87 #include "epl_hal_uart.h"
+//   88 #include "accelerometer.h"
+//   89 
+//   90 /* code generator's Profile */
+//   91 #include "EcoExecGATTprofile.h"
+//   92 
+//   93 /* include for acceleratormeter */
+//   94 #include "epl_hal_spi.h"
+//   95 #include "epl_acc_lis331dl.h"
+//   96 #include "EcoExec.h"
+//   97 
+//   98 /* is not ready on lighting board right now */
+//   99 #include "battservice.h"
+//  100 
+//  101 /*********************************************************************
+//  102  * MACROS
+//  103  */
+//  104 
+//  105 /*********************************************************************
+//  106  * CONSTANTS
+//  107  */
+//  108 
+//  109 // How often to perform periodic event
+//  110 #define SBP_PERIODIC_EVT_PERIOD                   5000
+//  111 
+//  112 // What is the advertising interval when device is discoverable (units of 625us, 160=100ms)
+//  113 #define DEFAULT_ADVERTISING_INTERVAL          160
+//  114 
+//  115 // Whether to enable automatic parameter update request when a connection is formed
+//  116 #define DEFAULT_ENABLE_UPDATE_REQUEST         FALSE
+//  117 
+//  118 // Limited discoverable mode advertises for 30.72s, and then stops
+//  119 // General discoverable mode advertises indefinitely
+//  120 
+//  121 #if defined ( CC2540_MINIDK )
+//  122 #define DEFAULT_DISCOVERABLE_MODE             GAP_ADTYPE_FLAGS_LIMITED
+//  123 #else
+//  124 #define DEFAULT_DISCOVERABLE_MODE             GAP_ADTYPE_FLAGS_GENERAL
+//  125 #endif  // defined ( CC2540_MINIDK )
+//  126 
+//  127 // Minimum connection interval (units of 1.25ms, 80=100ms) if automatic parameter update request is enabled
+//  128 #define DEFAULT_DESIRED_MIN_CONN_INTERVAL     80
+//  129 
+//  130 // Maximum connection interval (units of 1.25ms, 800=1000ms) if automatic parameter update request is enabled
+//  131 #define DEFAULT_DESIRED_MAX_CONN_INTERVAL     800
+//  132 
+//  133 // Slave latency to use if automatic parameter update request is enabled
+//  134 #define DEFAULT_DESIRED_SLAVE_LATENCY         0
+//  135 
+//  136 // Supervision timeout value (units of 10ms, 1000=10s) if automatic parameter update request is enabled
+//  137 #define DEFAULT_DESIRED_CONN_TIMEOUT          1000
+//  138 
+//  139 // Company Identifier: Texas Instruments Inc. (13)
+//  140 #define TI_COMPANY_ID                         0x000D
+//  141 
+//  142 #define INVALID_CONNHANDLE                    0xFFFF
+//  143 
+//  144 // Length of bd addr as a string
+//  145 #define B_ADDR_STR_LEN                        15
+//  146 
+//  147 #if defined ( PLUS_BROADCASTER )
+//  148   #define ADV_IN_CONN_WAIT                    500 // delay 500 ms
+//  149 #endif
+//  150 
+//  151 // How often (in ms) to read the accelerometer
+//  152 #define ACCEL_READ_PERIOD             500
+//  153 
+//  154 // Minimum change in accelerometer before sending a notification
+//  155 #define ACCEL_CHANGE_THRESHOLD        15
+//  156 
+//  157 // Accelerometer Profile Parameters
+
+        RSEG XDATA_Z:XDATA:NOROOT(0)
+        DATA8
+//  158 static uint8 accelEnabler = FALSE;
+accelEnabler:
+        DS 1
+        REQUIRE __INIT_XDATA_Z
+//  159 
+//  160 #ifdef CC2541
+//  161 // How often (in ms) to read the time
+//  162 #define TIME_READ_PERIOD              1000
+//  163 
+//  164 // Time service Profile Parameters
+
+        RSEG XDATA_Z:XDATA:NOROOT(0)
+        DATA8
+//  165 static uint8 timeEnabler = FALSE;
+timeEnabler:
+        DS 1
+        REQUIRE __INIT_XDATA_Z
+//  166 
+
+        RSEG XDATA_Z:XDATA:NOROOT(0)
+        DATA8
+//  167 unsigned char newTime[TIME_LEN]={0};
+newTime:
+        DS 3
+        REQUIRE __INIT_XDATA_Z
+
+        RSEG XDATA_Z:XDATA:NOROOT(0)
+        DATA8
+//  168 unsigned char newDate[DATE_LEN]={0};
+newDate:
+        DS 5
+        REQUIRE __INIT_XDATA_Z
+
+        RSEG XDATA_Z:XDATA:NOROOT(0)
+        DATA8
+//  169 unsigned char newAlarm[ALARM_LEN]={0};
+newAlarm:
+        DS 6
+        REQUIRE __INIT_XDATA_Z
+//  170 #endif
+//  171 
+//  172 /*********************************************************************
+//  173  * TYPEDEFS
+//  174  */
+//  175 
+//  176 /*********************************************************************
+//  177  * GLOBAL VARIABLES
+//  178  */
+//  179 
+
+        RSEG XDATA_Z:XDATA:NOROOT(0)
+        DATA8
+//  180 attHandleValueNoti_t notify;
+notify:
+        DS 23
+        REQUIRE __INIT_XDATA_Z
+//  181 extern uint16 EcoExecProfileConnHandle;
+//  182 extern unsigned char Message[500];
+//  183 
+//  184 /*********************************************************************
+//  185  * EXTERNAL VARIABLES
+//  186  */
+//  187 
+//  188 /*********************************************************************
+//  189  * EXTERNAL FUNCTIONS
+//  190  */
+//  191 
+//  192 /*********************************************************************
+//  193  * LOCAL VARIABLES
+//  194  */
+
+        RSEG XDATA_Z:XDATA:NOROOT(0)
+        DATA8
+//  195 static uint8 simpleBLEPeripheral_TaskID;   // Task ID for internal task/event processing
+simpleBLEPeripheral_TaskID:
+        DS 1
+        REQUIRE __INIT_XDATA_Z
+//  196 
+
+        RSEG XDATA_Z:XDATA:NOROOT(0)
+        DATA8
+//  197 static gaprole_States_t gapProfileState = GAPROLE_INIT;
+gapProfileState:
+        DS 1
+        REQUIRE __INIT_XDATA_Z
+//  198 
+//  199 // GAP - SCAN RSP data (max size = 31 bytes)
+
+        RSEG XDATA_I:XDATA:NOROOT(0)
+//  200 static uint8 scanRspData[] =
+scanRspData:
+        DATA8
+        DS 21
+        REQUIRE `?<Initializer for scanRspData>`
+        REQUIRE __INIT_XDATA_I
+//  201 {
+//  202   // complete name
+//  203   0x0B,   // length of this data
+//  204   GAP_ADTYPE_LOCAL_NAME_COMPLETE,
+//  205   0x4E,   // 'N'
+//  206   0x65,   // 'e'
+//  207   0x6F,   // 'o'
+//  208   0x27,   // '''
+//  209   0x73,   // 's'
+//  210   0x20,   // ' '
+//  211   0x6E,   // 'n'
+//  212   0x6F,   // 'o'
+//  213   0x64,   // 'd'
+//  214   0x65,   // 'e'
+//  215 
+//  216   // connection interval range
+//  217   0x05,   // length of this data
+//  218   GAP_ADTYPE_SLAVE_CONN_INTERVAL_RANGE,
+//  219   LO_UINT16( DEFAULT_DESIRED_MIN_CONN_INTERVAL ),   // 100ms
+//  220   HI_UINT16( DEFAULT_DESIRED_MIN_CONN_INTERVAL ),
+//  221   LO_UINT16( DEFAULT_DESIRED_MAX_CONN_INTERVAL ),   // 1s
+//  222   HI_UINT16( DEFAULT_DESIRED_MAX_CONN_INTERVAL ),
+//  223 
+//  224   // Tx power level
+//  225   0x02,   // length of this data
+//  226   GAP_ADTYPE_POWER_LEVEL,
+//  227   0       // 0dBm
+//  228 };
+//  229 
+//  230 // GAP - Advertisement data (max size = 31 bytes, though this is
+//  231 // best kept short to conserve power while advertisting)
+
+        RSEG XDATA_I:XDATA:NOROOT(0)
+//  232 static uint8 advertData[] =
+advertData:
+        DATA8
+        DS 13
+        REQUIRE `?<Initializer for advertData>`
+        REQUIRE __INIT_XDATA_I
+//  233 {
+//  234   // Flags; this sets the device to use limited discoverable
+//  235   // mode (advertises for 30 seconds at a time) instead of general
+//  236   // discoverable mode (advertises indefinitely)
+//  237   0x02,   // length of this data
+//  238   GAP_ADTYPE_FLAGS,
+//  239   DEFAULT_DISCOVERABLE_MODE | GAP_ADTYPE_FLAGS_BREDR_NOT_SUPPORTED,
+//  240 
+//  241   // service UUID, to notify central devices what services are included
+//  242   // in this peripheral
+//  243   0x03,   // length of this data
+//  244   GAP_ADTYPE_16BIT_MORE,      // some of the UUID's, but not all
+//  245   LO_UINT16( SIMPLEPROFILE_SERV_UUID ),
+//  246   HI_UINT16( SIMPLEPROFILE_SERV_UUID ),
+//  247   5,
+//  248   GAP_ADTYPE_MANUFACTURER_SPECIFIC,
+//  249   '0',
+//  250   'c',
+//  251   'p',
+//  252   'l',
+//  253 };
+//  254 
+//  255 // GAP GATT Attributes
+
+        RSEG XDATA_I:XDATA:NOROOT(0)
+//  256 static uint8 attDeviceName[GAP_DEVICE_NAME_LEN] = "Neo's BLE Node";
+attDeviceName:
+        DATA8
+        DS 21
+        REQUIRE `?<Initializer for attDeviceName>`
+        REQUIRE __INIT_XDATA_I
+//  257 
+//  258 /*********************************************************************
+//  259  * LOCAL FUNCTIONS
+//  260  */
+//  261 static void simpleBLEPeripheral_ProcessOSALMsg( osal_event_hdr_t *pMsg );
+//  262 static void peripheralStateNotificationCB( gaprole_States_t newState );
+//  263 static void performPeriodicTask( void );
+//  264 static void simpleProfileChangeCB( uint8 paramID );
+//  265 
+//  266 static void EcoExecProfileChangeCB( uint8 paramID );
+//  267 static void accelEnablerChangeCB( void );
+//  268 static void accelRead( void );
+//  269 #ifdef CC2541
+//  270 void timeserviceChangeCB( uint8 paramID );
+//  271 void timeRead( void );
+//  272 #endif
+//  273 
+//  274 void CodeGeneratorStartPoint( void );
+//  275 void CodeGenerator_EVT_1_CB(void);
+//  276 void CodeGenerator_EVT_2_CB(void);
+//  277 void CodeGenerator_EVT_3_CB(void);
+//  278 void CodeGenerator_EVT_4_CB(void);
+//  279 void cg_accelProfileChangeCB( void );
+//  280 void cg_simpleProfileChangeCB( uint8 paramID );
+//  281 void cg_battProfileChangeCB( uint8 event );
+//  282 void cg_EVT_1_CB(void);
+//  283 void cg_EVT_2_CB(void);
+//  284 void cg_EVT_3_CB(void);
+//  285 void cg_EVT_4_CB(void);
+//  286 
+//  287 __near_func void execution_ram_code( void );
+//  288 
+//  289 #if defined( CC2540_MINIDK )
+//  290 static void simpleBLEPeripheral_HandleKeys( uint8 shift, uint8 keys );
+//  291 #endif
+//  292 
+//  293 #if (defined HAL_LCD) && (HAL_LCD == TRUE)
+//  294 static char *bdAddr2Str ( uint8 *pAddr );
+//  295 #endif // (defined HAL_LCD) && (HAL_LCD == TRUE)
+//  296 
+//  297 
+//  298 
+//  299 
+//  300 /*********************************************************************
+//  301  * PROFILE CALLBACKS
+//  302  */
+//  303 
+//  304 // GAP Role Callbacks
+
+        RSEG XDATA_I:XDATA:NOROOT(0)
+//  305 static gapRolesCBs_t simpleBLEPeripheral_PeripheralCBs =
+simpleBLEPeripheral_PeripheralCBs:
+        DATA32
+        DS 4
+        REQUIRE `?<Initializer for simpleBLEPeripheral_Peripher`
+        REQUIRE __INIT_XDATA_I
+//  306 {
+//  307   peripheralStateNotificationCB,  // Profile State Change Callbacks
+//  308   NULL                            // When a valid RSSI is read from controller (not used by application)
+//  309 };
+//  310 
+//  311 // GAP Bond Manager Callbacks
+
+        RSEG XDATA_Z:XDATA:NOROOT(0)
+        DATA32
+//  312 static gapBondCBs_t simpleBLEPeripheral_BondMgrCBs =
+simpleBLEPeripheral_BondMgrCBs:
+        DS 4
+        REQUIRE __INIT_XDATA_Z
+//  313 {
+//  314   NULL,                     // Passcode callback (not used by application)
+//  315   NULL                      // Pairing / Bonding state Callback (not used by application)
+//  316 };
+//  317 
+//  318 // Simple GATT Profile Callbacks
+
+        RSEG XDATA_I:XDATA:NOROOT(0)
+//  319 static simpleProfileCBs_t simpleBLEPeripheral_SimpleProfileCBs =
+simpleBLEPeripheral_SimpleProfileCBs:
+        DATA16
+        DS 2
+        REQUIRE `?<Initializer for simpleBLEPeripheral_SimplePr`
+        REQUIRE __INIT_XDATA_I
+//  320 {
+//  321   simpleProfileChangeCB    // Charactersitic value change callback
+//  322 };
+//  323 
+//  324 // EcoExec GATT Profile Callbacks
+
+        RSEG XDATA_I:XDATA:NOROOT(0)
+//  325 static EcoExecProfileCBs_t EcoExecProfileCBs =
+EcoExecProfileCBs:
+        DATA16
+        DS 2
+        REQUIRE `?<Initializer for EcoExecProfileCBs>`
+        REQUIRE __INIT_XDATA_I
+//  326 {
+//  327   EcoExecProfileChangeCB    // Charactersitic value change callback
+//  328 };
+//  329 
+//  330 // Accelerometer Profile Callbacks
+
+        RSEG XDATA_I:XDATA:NOROOT(0)
+//  331 static accelCBs_t accelerometerProfileCBs =
+accelerometerProfileCBs:
+        DATA16
+        DS 2
+        REQUIRE `?<Initializer for accelerometerProfileCBs>`
+        REQUIRE __INIT_XDATA_I
+//  332 {
+//  333   accelEnablerChangeCB     // Called when Enabler attribute changes
+//  334 };
+//  335 
+//  336 #ifdef CC2541
+//  337 // RTC Profile Callbacks
+
+        RSEG XDATA_I:XDATA:NOROOT(0)
+//  338 static timeserviceCBs_t timeserviceProfileCBs = 
+timeserviceProfileCBs:
+        DATA16
+        DS 2
+        REQUIRE `?<Initializer for timeserviceProfileCBs>`
+        REQUIRE __INIT_XDATA_I
+//  339 {
+//  340   timeserviceChangeCB       //  Called when Enabler attirbute chanes
+//  341 };
+//  342 #endif
+//  343 
+//  344 
+//  345 // Batt Profile Callbacks
+//  346 void battProfileChangeCB(uint8 event);
+//  347 
+//  348 /*********************************************************************
+//  349  * PUBLIC FUNCTIONS
+//  350  */
+//  351 
+//  352 /*********************************************************************
+//  353  * @fn      SimpleBLEPeripheral_Init
+//  354  *
+//  355  * @brief   Initialization function for the Simple BLE Peripheral App Task.
+//  356  *          This is called during initialization and should contain
+//  357  *          any application specific initialization (ie. hardware
+//  358  *          initialization/setup, table initialization, power up
+//  359  *          notificaiton ... ).
+//  360  *
+//  361  * @param   task_id - the ID assigned by OSAL.  This ID should be
+//  362  *                    used to send messages and set timers.
+//  363  *
+//  364  * @return  none
+//  365  */
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+//  366 void SimpleBLEPeripheral_Init( uint8 task_id )
+SimpleBLEPeripheral_Init:
+        CODE
+//  367 {
+        MOV     A,#-0x9
+        LCALL   ?BANKED_ENTER_XDATA
+        ; Saved register size: 9
+        ; Auto size: 20
+        MOV     A,#-0x14
+        LCALL   ?ALLOC_XSTACK8
+        MOV     A,R1
+//  368   simpleBLEPeripheral_TaskID = task_id;
+        MOV     DPTR,#simpleBLEPeripheral_TaskID
+        MOVX    @DPTR,A
+//  369   
+//  370   // Setup the GAP Peripheral Role Profile
+//  371   {
+//  372 
+//  373     #if defined( CC2540_MINIDK )
+//  374       // For the CC2540DK-MINI keyfob, device doesn't start advertising until button is pressed
+//  375       uint8 initial_advertising_enable = FALSE;
+//  376     #else
+//  377       // For other hardware platforms, device starts advertising upon initialization
+//  378       uint8 initial_advertising_enable = TRUE;
+        MOV     A,#0x5
+        LCALL   ?XSTACK_DISP0_8
+        MOV     A,#0x1
+        MOVX    @DPTR,A
+//  379     #endif
+//  380 
+//  381     // By setting this to zero, the device will go into the waiting state after
+//  382     // being discoverable for 30.72 second, and will not being advertising again
+//  383     // until the enabler is set back to TRUE
+//  384     uint16 gapRole_AdvertOffTime = 0;
+        MOV     A,#0xe
+        LCALL   ?XSTACK_DISP0_8
+        CLR     A
+        MOVX    @DPTR,A
+        INC     DPTR
+        MOVX    @DPTR,A
+//  385 
+//  386     uint8 enable_update_request = DEFAULT_ENABLE_UPDATE_REQUEST;
+        MOV     A,#0x4
+        LCALL   ?XSTACK_DISP0_8
+        CLR     A
+        MOVX    @DPTR,A
+//  387     uint16 desired_min_interval = DEFAULT_DESIRED_MIN_CONN_INTERVAL;
+        MOV     A,#0xc
+        LCALL   ?XSTACK_DISP0_8
+        MOV     A,#0x50
+        MOVX    @DPTR,A
+        INC     DPTR
+        CLR     A
+        MOVX    @DPTR,A
+//  388     uint16 desired_max_interval = DEFAULT_DESIRED_MAX_CONN_INTERVAL;
+        MOV     A,#0xa
+        LCALL   ?XSTACK_DISP0_8
+        MOV     A,#0x20
+        MOVX    @DPTR,A
+        INC     DPTR
+        MOV     A,#0x3
+        MOVX    @DPTR,A
+//  389     uint16 desired_slave_latency = DEFAULT_DESIRED_SLAVE_LATENCY;
+        MOV     A,#0x8
+        LCALL   ?XSTACK_DISP0_8
+        CLR     A
+        MOVX    @DPTR,A
+        INC     DPTR
+        MOVX    @DPTR,A
+//  390     uint16 desired_conn_timeout = DEFAULT_DESIRED_CONN_TIMEOUT;
+        MOV     A,#0x6
+        LCALL   ?XSTACK_DISP0_8
+        MOV     A,#-0x18
+        MOVX    @DPTR,A
+        INC     DPTR
+        MOV     A,#0x3
+        MOVX    @DPTR,A
+//  391 
+//  392     // Set the GAP Role Parameters
+//  393     GAPRole_SetParameter( GAPROLE_ADVERT_ENABLED, sizeof( uint8 ), &initial_advertising_enable );
+        ; Setup parameters for call to function GAPRole_SetParameter
+        MOV     A,#0x5
+        LCALL   ?XSTACK_DISP0_8
+        MOV     R4,DPL
+        MOV     R5,DPH
+        MOV     R1,#0x1
+        MOV     R2,#0x5
+        MOV     R3,#0x3
+        LCALL   ??GAPRole_SetParameter?relay
+//  394     GAPRole_SetParameter( GAPROLE_ADVERT_OFF_TIME, sizeof( uint16 ), &gapRole_AdvertOffTime );
+        ; Setup parameters for call to function GAPRole_SetParameter
+        MOV     A,#0xe
+        LCALL   ?XSTACK_DISP0_8
+        MOV     R4,DPL
+        MOV     R5,DPH
+        MOV     R1,#0x2
+        MOV     R2,#0x6
+        MOV     R3,#0x3
+        LCALL   ??GAPRole_SetParameter?relay
+//  395 
+//  396     GAPRole_SetParameter( GAPROLE_SCAN_RSP_DATA, sizeof ( scanRspData ), scanRspData );
+        ; Setup parameters for call to function GAPRole_SetParameter
+        MOV     R4,#scanRspData & 0xff
+        MOV     R5,#(scanRspData >> 8) & 0xff
+        MOV     R1,#0x15
+        MOV     R2,#0x8
+        MOV     R3,#0x3
+        LCALL   ??GAPRole_SetParameter?relay
+//  397     GAPRole_SetParameter( GAPROLE_ADVERT_DATA, sizeof( advertData ), advertData );
+        ; Setup parameters for call to function GAPRole_SetParameter
+        MOV     R4,#advertData & 0xff
+        MOV     R5,#(advertData >> 8) & 0xff
+        MOV     R1,#0xd
+        MOV     R2,#0x7
+        MOV     R3,#0x3
+        LCALL   ??GAPRole_SetParameter?relay
+//  398 
+//  399     GAPRole_SetParameter( GAPROLE_PARAM_UPDATE_ENABLE, sizeof( uint8 ), &enable_update_request );
+        ; Setup parameters for call to function GAPRole_SetParameter
+        MOV     A,#0x4
+        LCALL   ?XSTACK_DISP0_8
+        MOV     R4,DPL
+        MOV     R5,DPH
+        MOV     R1,#0x1
+        MOV     R2,#0x10
+        MOV     R3,#0x3
+        LCALL   ??GAPRole_SetParameter?relay
+//  400     GAPRole_SetParameter( GAPROLE_MIN_CONN_INTERVAL, sizeof( uint16 ), &desired_min_interval );
+        ; Setup parameters for call to function GAPRole_SetParameter
+        MOV     A,#0xc
+        LCALL   ?XSTACK_DISP0_8
+        MOV     R4,DPL
+        MOV     R5,DPH
+        MOV     R1,#0x2
+        MOV     R2,#0x11
+        MOV     R3,#0x3
+        LCALL   ??GAPRole_SetParameter?relay
+//  401     GAPRole_SetParameter( GAPROLE_MAX_CONN_INTERVAL, sizeof( uint16 ), &desired_max_interval );
+        ; Setup parameters for call to function GAPRole_SetParameter
+        MOV     A,#0xa
+        LCALL   ?XSTACK_DISP0_8
+        MOV     R4,DPL
+        MOV     R5,DPH
+        MOV     R1,#0x2
+        MOV     R2,#0x12
+        MOV     R3,#0x3
+        LCALL   ??GAPRole_SetParameter?relay
+//  402     GAPRole_SetParameter( GAPROLE_SLAVE_LATENCY, sizeof( uint16 ), &desired_slave_latency );
+        ; Setup parameters for call to function GAPRole_SetParameter
+        MOV     A,#0x8
+        LCALL   ?XSTACK_DISP0_8
+        MOV     R4,DPL
+        MOV     R5,DPH
+        MOV     R1,#0x2
+        MOV     R2,#0x13
+        MOV     R3,#0x3
+        LCALL   ??GAPRole_SetParameter?relay
+//  403     GAPRole_SetParameter( GAPROLE_TIMEOUT_MULTIPLIER, sizeof( uint16 ), &desired_conn_timeout );
+        ; Setup parameters for call to function GAPRole_SetParameter
+        MOV     A,#0x6
+        LCALL   ?XSTACK_DISP0_8
+        MOV     R4,DPL
+        MOV     R5,DPH
+        MOV     R1,#0x2
+        MOV     R2,#0x14
+        MOV     R3,#0x3
+        LCALL   ??GAPRole_SetParameter?relay
+//  404   }
+//  405 
+//  406   // Set the GAP Characteristics
+//  407   GGS_SetParameter( GGS_DEVICE_NAME_ATT, GAP_DEVICE_NAME_LEN, attDeviceName );
+        ; Setup parameters for call to function GGS_SetParameter
+        MOV     R4,#attDeviceName & 0xff
+        MOV     R5,#(attDeviceName >> 8) & 0xff
+        MOV     R2,#0x15
+        MOV     R1,#0x0
+        LCALL   ??GGS_SetParameter?relay
+//  408 
+//  409   // Set advertising interval
+//  410   {
+//  411     uint16 advInt = DEFAULT_ADVERTISING_INTERVAL;
+//  412 
+//  413     GAP_SetParamValue( TGAP_LIM_DISC_ADV_INT_MIN, advInt );
+        ; Setup parameters for call to function GAP_SetParamValue
+        MOV     R4,#-0x60
+        MOV     R5,#0x0
+        MOV     R2,#0x6
+        MOV     R3,#0x0
+        LCALL   ??GAP_SetParamValue?relay
+//  414     GAP_SetParamValue( TGAP_LIM_DISC_ADV_INT_MAX, advInt );
+        ; Setup parameters for call to function GAP_SetParamValue
+        MOV     R4,#-0x60
+        MOV     R5,#0x0
+        MOV     R2,#0x7
+        MOV     R3,#0x0
+        LCALL   ??GAP_SetParamValue?relay
+//  415     GAP_SetParamValue( TGAP_GEN_DISC_ADV_INT_MIN, advInt );
+        ; Setup parameters for call to function GAP_SetParamValue
+        MOV     R4,#-0x60
+        MOV     R5,#0x0
+        MOV     R2,#0x8
+        MOV     R3,#0x0
+        LCALL   ??GAP_SetParamValue?relay
+//  416     GAP_SetParamValue( TGAP_GEN_DISC_ADV_INT_MAX, advInt );
+        ; Setup parameters for call to function GAP_SetParamValue
+        MOV     R4,#-0x60
+        MOV     R5,#0x0
+        MOV     R2,#0x9
+        MOV     R3,#0x0
+        LCALL   ??GAP_SetParamValue?relay
+//  417   }
+//  418 
+//  419   // Setup the GAP Bond Manager
+//  420   {
+//  421     uint32 passkey = 0; // passkey "000000"
+        MOV     A,#0x10
+        LCALL   ?XSTACK_DISP0_8
+        CLR     A
+        MOVX    @DPTR,A
+        INC     DPTR
+        MOVX    @DPTR,A
+        INC     DPTR
+        MOVX    @DPTR,A
+        INC     DPTR
+        MOVX    @DPTR,A
+//  422     uint8 pairMode = GAPBOND_PAIRING_MODE_WAIT_FOR_REQ;
+        MOV     A,#0x3
+        LCALL   ?XSTACK_DISP0_8
+        MOV     A,#0x1
+        MOVX    @DPTR,A
+//  423     uint8 mitm = TRUE;
+        INC     A
+        LCALL   ?XSTACK_DISP0_8
+        MOV     A,#0x1
+        MOVX    @DPTR,A
+//  424     uint8 ioCap = GAPBOND_IO_CAP_DISPLAY_ONLY;
+        LCALL   ?XSTACK_DISP0_8
+        CLR     A
+        MOVX    @DPTR,A
+//  425     uint8 bonding = TRUE;
+        MOV     DPL,?XSP + 0
+        MOV     DPH,?XSP + 1
+        INC     A
+        MOVX    @DPTR,A
+//  426     GAPBondMgr_SetParameter( GAPBOND_DEFAULT_PASSCODE, sizeof ( uint32 ), &passkey );
+        ; Setup parameters for call to function GAPBondMgr_SetParameter
+        MOV     A,#0x10
+        LCALL   ?XSTACK_DISP0_8
+        MOV     R4,DPL
+        MOV     R5,DPH
+        MOV     R1,#0x4
+        MOV     R2,#0x8
+        MOV     R3,#0x4
+        LCALL   ??GAPBondMgr_SetParameter?relay
+//  427     GAPBondMgr_SetParameter( GAPBOND_PAIRING_MODE, sizeof ( uint8 ), &pairMode );
+        ; Setup parameters for call to function GAPBondMgr_SetParameter
+        MOV     A,#0x3
+        LCALL   ?XSTACK_DISP0_8
+        MOV     R4,DPL
+        MOV     R5,DPH
+        MOV     R1,#0x1
+        MOV     R2,#0x0
+        MOV     R3,#0x4
+        LCALL   ??GAPBondMgr_SetParameter?relay
+//  428     GAPBondMgr_SetParameter( GAPBOND_MITM_PROTECTION, sizeof ( uint8 ), &mitm );
+        ; Setup parameters for call to function GAPBondMgr_SetParameter
+        MOV     A,#0x2
+        LCALL   ?XSTACK_DISP0_8
+        MOV     R4,DPL
+        MOV     R5,DPH
+        MOV     R1,#0x1
+        MOV     R2,#0x2
+        MOV     R3,#0x4
+        LCALL   ??GAPBondMgr_SetParameter?relay
+//  429     GAPBondMgr_SetParameter( GAPBOND_IO_CAPABILITIES, sizeof ( uint8 ), &ioCap );
+        ; Setup parameters for call to function GAPBondMgr_SetParameter
+        MOV     A,#0x1
+        LCALL   ?XSTACK_DISP0_8
+        MOV     R4,DPL
+        MOV     R5,DPH
+        MOV     R1,#0x1
+        MOV     R2,#0x3
+        MOV     R3,#0x4
+        LCALL   ??GAPBondMgr_SetParameter?relay
+//  430     GAPBondMgr_SetParameter( GAPBOND_BONDING_ENABLED, sizeof ( uint8 ), &bonding );
+        ; Setup parameters for call to function GAPBondMgr_SetParameter
+        MOV     DPL,?XSP + 0
+        MOV     DPH,?XSP + 1
+        MOV     R4,DPL
+        MOV     R5,DPH
+        MOV     R1,#0x1
+        MOV     R2,#0x6
+        MOV     R3,#0x4
+        LCALL   ??GAPBondMgr_SetParameter?relay
+//  431   }
+//  432 
+//  433   // Initialize GATT attributes
+//  434   GGS_AddService( GATT_ALL_SERVICES );            // GAP
+        ; Setup parameters for call to function GGS_AddService
+        MOV     DPTR,#__Constant_ffffffff
+        LCALL   ?XLOAD_R2345
+        LCALL   ??GGS_AddService?relay
+//  435   GATTServApp_AddService( GATT_ALL_SERVICES );    // GATT attributes
+        ; Setup parameters for call to function GATTServApp_AddService
+        MOV     DPTR,#__Constant_ffffffff
+        LCALL   ?XLOAD_R2345
+        LCALL   ??GATTServApp_AddService?relay
+//  436   DevInfo_AddService();                           // Device Information Service
+        ; Setup parameters for call to function DevInfo_AddService
+        LCALL   ??DevInfo_AddService?relay
+//  437   SimpleProfile_AddService( GATT_ALL_SERVICES );  // Simple GATT Profile
+        ; Setup parameters for call to function SimpleProfile_AddService
+        MOV     DPTR,#__Constant_ffffffff
+        LCALL   ?XLOAD_R2345
+        LCALL   ??SimpleProfile_AddService?relay
+//  438   
+//  439   Accel_AddService( GATT_ALL_SERVICES );          // Accel GATT Profile
+        ; Setup parameters for call to function Accel_AddService
+        MOV     DPTR,#__Constant_ffffffff
+        LCALL   ?XLOAD_R2345
+        LCALL   ??Accel_AddService?relay
+//  440   EcoExecProfile_AddService( GATT_ALL_SERVICES ); // EcoExec GATT Profile
+        ; Setup parameters for call to function EcoExecProfile_AddService
+        MOV     DPTR,#__Constant_ffffffff
+        LCALL   ?XLOAD_R2345
+        LCALL   ??EcoExecProfile_AddService?relay
+//  441 #ifdef CC2541
+//  442   timeservice_AddService( GATT_ALL_SERVICES );    // Time GATT Profile
+        ; Setup parameters for call to function timeservice_AddService
+        MOV     DPTR,#__Constant_ffffffff
+        LCALL   ?XLOAD_R2345
+        LCALL   ??timeservice_AddService?relay
+//  443 #endif
+//  444   
+//  445   Batt_AddService( );                             // Battery GATT Profile
+        ; Setup parameters for call to function Batt_AddService
+        LCALL   ??Batt_AddService?relay
+//  446   
+//  447 #if defined FEATURE_OAD
+//  448   VOID OADTarget_AddService();                    // OAD Profile
+//  449 #endif
+//  450 
+//  451   // Register callback with SimpleGATTprofile
+//  452   VOID SimpleProfile_RegisterAppCBs( &simpleBLEPeripheral_SimpleProfileCBs );
+        ; Setup parameters for call to function SimpleProfile_RegisterAppCBs
+        MOV     R2,#simpleBLEPeripheral_SimpleProfileCBs & 0xff
+        MOV     R3,#(simpleBLEPeripheral_SimpleProfileCBs >> 8) & 0xff
+        LCALL   ??SimpleProfile_RegisterAppCBs?relay
+//  453   
+//  454   // Register callback with EcoExecGATTprofile
+//  455   VOID EcoExecProfile_RegisterAppCBs( &EcoExecProfileCBs );
+        ; Setup parameters for call to function EcoExecProfile_RegisterAppCBs
+        MOV     R2,#EcoExecProfileCBs & 0xff
+        MOV     R3,#(EcoExecProfileCBs >> 8) & 0xff
+        LCALL   ??EcoExecProfile_RegisterAppCBs?relay
+//  456   
+//  457   // Register callback with accelerometerprofile
+//  458   VOID Accel_RegisterAppCBs( &accelerometerProfileCBs );
+        ; Setup parameters for call to function Accel_RegisterAppCBs
+        MOV     R2,#accelerometerProfileCBs & 0xff
+        MOV     R3,#(accelerometerProfileCBs >> 8) & 0xff
+        LCALL   ??Accel_RegisterAppCBs?relay
+//  459   
+//  460 #ifdef CC2541
+//  461   // Register callback withe timeservice profile
+//  462   VOID timeservice_RegisterAppCBs( &timeserviceProfileCBs );
+        ; Setup parameters for call to function timeservice_RegisterAppCBs
+        MOV     R2,#timeserviceProfileCBs & 0xff
+        MOV     R3,#(timeserviceProfileCBs >> 8) & 0xff
+        LCALL   ??timeservice_RegisterAppCBs?relay
+//  463 #endif
+//  464   
+//  465   // Register callback withe timeservice profile
+//  466   VOID Batt_Register( battProfileChangeCB );
+        ; Setup parameters for call to function Batt_Register
+        MOV     R2,#??battProfileChangeCB?relay & 0xff
+        MOV     R3,#(??battProfileChangeCB?relay >> 8) & 0xff
+        LCALL   ??Batt_Register?relay
+//  467   
+//  468 
+//  469   // Enable clock divide on halt
+//  470   // This reduces active current while radio is active and CC254x MCU
+//  471   // is halted
+//  472   HCI_EXT_ClkDivOnHaltCmd( HCI_EXT_ENABLE_CLK_DIVIDE_ON_HALT );
+        ; Setup parameters for call to function HCI_EXT_ClkDivOnHaltCmd
+        MOV     R1,#0x1
+        LCALL   ??HCI_EXT_ClkDivOnHaltCmd?relay
+//  473 
+//  474 #if defined ( DC_DC_P0_7 )
+//  475 
+//  476   // Enable stack to toggle bypass control on TPS62730 (DC/DC converter)
+//  477   HCI_EXT_MapPmIoPortCmd( HCI_EXT_PM_IO_PORT_P0, HCI_EXT_PM_IO_PORT_PIN7 );
+//  478 
+//  479 #endif // defined ( DC_DC_P0_7 )
+//  480 
+//  481   // Setup a delayed profile startup
+//  482   osal_set_event( simpleBLEPeripheral_TaskID, SBP_START_DEVICE_EVT );
+        ; Setup parameters for call to function osal_set_event
+        MOV     R2,#0x1
+        MOV     R3,#0x0
+        MOV     DPTR,#simpleBLEPeripheral_TaskID
+        MOVX    A,@DPTR
+        MOV     R1,A
+        LCALL   ??osal_set_event?relay
+//  483 
+//  484 }
+        MOV     A,#0x14
+        REQUIRE ?Subroutine0
+        ; // Fall through to label ?Subroutine0
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+?Subroutine0:
+        LCALL   ?DEALLOC_XSTACK8
+        REQUIRE ??Subroutine9_0
+        ; // Fall through to label ??Subroutine9_0
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+??Subroutine9_0:
+        MOV     R7,#0x1
+        LJMP    ?BANKED_LEAVE_XDATA
+//  485 
+//  486 /*********************************************************************
+//  487  * @fn      SimpleBLEPeripheral_ProcessEvent
+//  488  *
+//  489  * @brief   Simple BLE Peripheral Application Task event processor.  This function
+//  490  *          is called to process all events for the task.  Events
+//  491  *          include timers, messages and any other user defined events.
+//  492  *
+//  493  * @param   task_id  - The OSAL assigned task ID.
+//  494  * @param   events - events to process.  This is a bit map and can
+//  495  *                   contain more than one event.
+//  496  *
+//  497  * @return  events not processed
+//  498  */
+//  499 
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+//  500 uint16 SimpleBLEPeripheral_ProcessEvent( uint8 task_id, uint16 events )
+SimpleBLEPeripheral_ProcessEvent:
+        CODE
+//  501 {
+        MOV     A,#-0xa
+        LCALL   ?BANKED_ENTER_XDATA
+        ; Saved register size: 10
+        ; Auto size: 1
+        MOV     A,#-0x1
+        LCALL   ?ALLOC_XSTACK8
+        MOV     A,R2
+        MOV     R6,A
+        MOV     A,R3
+        MOV     R7,A
+//  502 
+//  503   VOID task_id; // OSAL required parameter that isn't used in this function
+//  504 
+//  505   if ( events & SYS_EVENT_MSG )
+        ANL     A,#0x80
+        JZ      ??SimpleBLEPeripheral_ProcessEvent_0
+//  506   {
+//  507     uint8 *pMsg;
+//  508 
+//  509     if ( (pMsg = osal_msg_receive( simpleBLEPeripheral_TaskID )) != NULL )
+        ; Setup parameters for call to function osal_msg_receive
+        MOV     DPTR,#simpleBLEPeripheral_TaskID
+        MOVX    A,@DPTR
+        MOV     R1,A
+        LCALL   ??osal_msg_receive?relay
+        MOV     A,R2
+        ORL     A,R3
+        JZ      ??SimpleBLEPeripheral_ProcessEvent_1
+//  510     {
+//  511       simpleBLEPeripheral_ProcessOSALMsg( (osal_event_hdr_t *)pMsg );
+//  512 
+//  513       // Release the OSAL message
+//  514       VOID osal_msg_deallocate( pMsg );
+        ; Setup parameters for call to function osal_msg_deallocate
+        LCALL   ??osal_msg_deallocate?relay
+//  515     }
+//  516 
+//  517     // return unprocessed events
+//  518     return (events ^ SYS_EVENT_MSG);
+??SimpleBLEPeripheral_ProcessEvent_1:
+        MOV     A,R6
+        MOV     R2,A
+        MOV     A,R7
+        XRL     A,#0x80
+        LJMP    ??SimpleBLEPeripheral_ProcessEvent_2 & 0xFFFF
+//  519   }
+//  520 
+//  521   if ( events & SBP_START_DEVICE_EVT )
+??SimpleBLEPeripheral_ProcessEvent_0:
+        MOV     A,R6
+        MOV     C,0xE0 /* A   */.0
+        JNC     ??SimpleBLEPeripheral_ProcessEvent_3
+//  522   {
+//  523     
+//  524     // Start the Device
+//  525     VOID GAPRole_StartDevice( &simpleBLEPeripheral_PeripheralCBs );
+        ; Setup parameters for call to function GAPRole_StartDevice
+        MOV     R2,#simpleBLEPeripheral_PeripheralCBs & 0xff
+        MOV     R3,#(simpleBLEPeripheral_PeripheralCBs >> 8) & 0xff
+        LCALL   ??GAPRole_StartDevice?relay
+//  526 
+//  527     // Start Bond Manager
+//  528     VOID GAPBondMgr_Register( &simpleBLEPeripheral_BondMgrCBs );
+        ; Setup parameters for call to function GAPBondMgr_Register
+        MOV     R2,#simpleBLEPeripheral_BondMgrCBs & 0xff
+        MOV     R3,#(simpleBLEPeripheral_BondMgrCBs >> 8) & 0xff
+        LCALL   ??GAPBondMgr_Register?relay
+//  529 
+//  530     // Set timer for first periodic event
+//  531     osal_start_timerEx( simpleBLEPeripheral_TaskID, SBP_PERIODIC_EVT, SBP_PERIODIC_EVT_PERIOD );
+        ; Setup parameters for call to function osal_start_timerEx
+        MOV     DPTR,#__Constant_1388
+        LCALL   ?PUSH_XSTACK8_X_FOUR
+        MOV     R2,#0x2
+        MOV     R3,#0x0
+        MOV     DPTR,#simpleBLEPeripheral_TaskID
+        MOVX    A,@DPTR
+        MOV     R1,A
+        LCALL   ??osal_start_timerEx?relay
+        MOV     A,#0x4
+        LCALL   ?DEALLOC_XSTACK8
+//  532 osal_start_timerEx( simpleBLEPeripheral_TaskID, CODEGENERATOR_MAIN_EVT, 100 );
+        ; Setup parameters for call to function osal_start_timerEx
+        MOV     DPTR,#__Constant_64
+        LCALL   ?PUSH_XSTACK8_X_FOUR
+        MOV     R2,#0x0
+        MOV     R3,#0x4
+        MOV     DPTR,#simpleBLEPeripheral_TaskID
+        MOVX    A,@DPTR
+        MOV     R1,A
+        LCALL   ??osal_start_timerEx?relay
+        MOV     A,#0x4
+        LCALL   ?DEALLOC_XSTACK8
+//  533 #if defined( CC2541 ) || defined( CC2541S )
+//  534     P2SEL &= ~0x06;    /* Configure Port 2.1 2.2 as GPIO */
+        ANL     0xf5,#0xf9
+//  535     P2DIR |= 0x06;   /* set direction to 1 s output */
+        ORL     0xff,#0x6
+//  536 #else
+//  537     P0SEL &= ~0x30;    /* Configure Port 0.4 0.5 as GPIO */
+//  538     P0DIR |= 0x30;   /* set direction to 1 s output */
+//  539 #endif
+//  540     
+//  541 /*****************************************************************************/ 
+//  542     uartInit(HAL_UART_BR_57600);
+        ; Setup parameters for call to function uartInit
+        MOV     R2,#0x3
+        MOV     R3,#0x0
+        LCALL   ??uartInit?relay
+//  543     
+//  544     /* init CG notify packet */
+//  545     notify.handle = 0x004C;
+        MOV     DPTR,#notify
+        MOV     A,#0x4c
+        MOVX    @DPTR,A
+        INC     DPTR
+        CLR     A
+        MOVX    @DPTR,A
+//  546     notify.len    = 20;
+        INC     DPTR
+        MOV     A,#0x14
+        MOVX    @DPTR,A
+//  547 /*****************************************************************************/ 
+//  548     //CodeGeneratorStartPoint();
+//  549     return ( events ^ SBP_START_DEVICE_EVT );
+        MOV     A,R6
+        XRL     A,#0x1
+        LJMP    ??SimpleBLEPeripheral_ProcessEvent_4 & 0xFFFF
+//  550   }
+//  551   
+//  552 #if defined ( PLUS_BROADCASTER )
+//  553   if ( events & SBP_ADV_IN_CONNECTION_EVT )
+//  554   {
+//  555     uint8 turnOnAdv = TRUE;
+//  556     // Turn on advertising while in a connection
+//  557     GAPRole_SetParameter( GAPROLE_ADVERT_ENABLED, sizeof( uint8 ), &turnOnAdv );
+//  558     
+//  559     return (events ^ SBP_ADV_IN_CONNECTION_EVT);
+//  560   }
+//  561 #endif // PLUS_BROADCASTER
+//  562 
+//  563   /* RAM Code event */
+//  564   if( events & RAM_CODE_EVT )
+??SimpleBLEPeripheral_ProcessEvent_3:
+        ANL     A,#0x8
+        JZ      ??SimpleBLEPeripheral_ProcessEvent_5
+//  565   { 
+//  566 
+//  567     execution_ram_code();
+        ; Setup parameters for call to function execution_ram_code
+        LCALL   execution_ram_code & 0xFFFF
+//  568     
+//  569     /**
+//  570     * Notification
+//  571     */
+//  572     ATT_HandleValueNoti( EcoExecProfileConnHandle , &notify );
+        ; Setup parameters for call to function ATT_HandleValueNoti
+        MOV     R4,#notify & 0xff
+        MOV     R5,#(notify >> 8) & 0xff
+        MOV     DPTR,#EcoExecProfileConnHandle
+        MOVX    A,@DPTR
+        MOV     R2,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R3,A
+        LCALL   ??ATT_HandleValueNoti?relay
+//  573     
+//  574     return ( events ^ RAM_CODE_EVT );
+        MOV     A,R6
+        XRL     A,#0x8
+        LJMP    ??SimpleBLEPeripheral_ProcessEvent_4 & 0xFFFF
+//  575   }/* End RAM Code event */
+//  576   
+//  577   
+//  578   if ( events & ACCEL_READ_EVT )
+??SimpleBLEPeripheral_ProcessEvent_5:
+        MOV     A,R6
+        ANL     A,#0x20
+        JZ      ??SimpleBLEPeripheral_ProcessEvent_6
+//  579   {
+//  580     bStatus_t status = Accel_GetParameter( ACCEL_ENABLER, &accelEnabler );
+//  581     
+//  582     if (status == SUCCESS)
+        ; Setup parameters for call to function Accel_GetParameter
+        MOV     R2,#accelEnabler & 0xff
+        MOV     R3,#(accelEnabler >> 8) & 0xff
+        MOV     R1,#0x0
+        LCALL   ??Accel_GetParameter?relay
+        MOV     A,R1
+        JNZ     ??SimpleBLEPeripheral_ProcessEvent_7
+//  583     {
+//  584       if (accelEnabler)
+        MOV     DPTR,#accelEnabler
+        MOVX    A,@DPTR
+        JZ      ??SimpleBLEPeripheral_ProcessEvent_8
+//  585       {
+//  586         // Restart timer
+//  587         if (ACCEL_READ_PERIOD)
+//  588           osal_start_timerEx( simpleBLEPeripheral_TaskID, ACCEL_READ_EVT, ACCEL_READ_PERIOD );
+        ; Setup parameters for call to function osal_start_timerEx
+        MOV     DPTR,#__Constant_1f4
+        LCALL   ?PUSH_XSTACK8_X_FOUR
+        MOV     R2,#0x20
+        MOV     R3,#0x0
+        MOV     DPTR,#simpleBLEPeripheral_TaskID
+        MOVX    A,@DPTR
+        MOV     R1,A
+        LCALL   ??osal_start_timerEx?relay
+        MOV     A,#0x4
+        LCALL   ?DEALLOC_XSTACK8
+//  589         
+//  590         // Read accelerometer data
+//  591         accelRead();
+        ; Setup parameters for call to function accelRead
+        LCALL   ??accelRead?relay
+        SJMP    ??SimpleBLEPeripheral_ProcessEvent_7
+//  592       }
+//  593       else
+//  594       {
+//  595         // Stop the acceleromter
+//  596         osal_stop_timerEx( simpleBLEPeripheral_TaskID, ACCEL_READ_EVT);
+??SimpleBLEPeripheral_ProcessEvent_8:
+        ; Setup parameters for call to function osal_stop_timerEx
+        MOV     R2,#0x20
+        MOV     R3,#0x0
+        MOV     DPTR,#simpleBLEPeripheral_TaskID
+        MOVX    A,@DPTR
+        MOV     R1,A
+        LCALL   ??osal_stop_timerEx?relay
+//  597       }
+//  598     }
+//  599     else
+//  600     {
+//  601       //??
+//  602     }
+//  603     return (events ^ ACCEL_READ_EVT);
+??SimpleBLEPeripheral_ProcessEvent_7:
+        MOV     A,R6
+        XRL     A,#0x20
+        LJMP    ??SimpleBLEPeripheral_ProcessEvent_4 & 0xFFFF
+//  604   }
+//  605   
+//  606 #ifdef CC2541  
+//  607   if ( events & TIME_READ_EVT )
+??SimpleBLEPeripheral_ProcessEvent_6:
+        MOV     A,R6
+        ANL     A,#0x40
+        JZ      ??SimpleBLEPeripheral_ProcessEvent_9
+//  608   {
+//  609 
+//  610     bStatus_t status = timeservice_GetParameter( TIME_ENABLER, &timeEnabler );
+//  611     
+//  612     if (status == SUCCESS)
+        ; Setup parameters for call to function timeservice_GetParameter
+        MOV     R2,#timeEnabler & 0xff
+        MOV     R3,#(timeEnabler >> 8) & 0xff
+        MOV     R1,#0x0
+        LCALL   ??timeservice_GetParameter?relay
+        MOV     A,R1
+        JNZ     ??SimpleBLEPeripheral_ProcessEvent_10
+//  613     {
+//  614       if (timeEnabler)
+        MOV     DPTR,#timeEnabler
+        MOVX    A,@DPTR
+        JZ      ??SimpleBLEPeripheral_ProcessEvent_11
+//  615       {
+//  616         // Restart timer
+//  617         if (TIME_READ_PERIOD)
+//  618           osal_start_timerEx( simpleBLEPeripheral_TaskID, TIME_READ_EVT, TIME_READ_PERIOD );
+        ; Setup parameters for call to function osal_start_timerEx
+        MOV     DPTR,#__Constant_3e8
+        LCALL   ?PUSH_XSTACK8_X_FOUR
+        MOV     R2,#0x40
+        MOV     R3,#0x0
+        MOV     DPTR,#simpleBLEPeripheral_TaskID
+        MOVX    A,@DPTR
+        MOV     R1,A
+        LCALL   ??osal_start_timerEx?relay
+        MOV     A,#0x4
+        LCALL   ?DEALLOC_XSTACK8
+//  619         
+//  620         // Read accelerometer data
+//  621         timeRead();
+        ; Setup parameters for call to function timeRead
+        LCALL   ??timeRead?relay
+        SJMP    ??SimpleBLEPeripheral_ProcessEvent_10
+//  622       }
+//  623       else
+//  624       {
+//  625         // Stop the acceleromter
+//  626         osal_stop_timerEx( simpleBLEPeripheral_TaskID, TIME_READ_EVT);
+??SimpleBLEPeripheral_ProcessEvent_11:
+        ; Setup parameters for call to function osal_stop_timerEx
+        MOV     R2,#0x40
+        MOV     R3,#0x0
+        MOV     DPTR,#simpleBLEPeripheral_TaskID
+        MOVX    A,@DPTR
+        MOV     R1,A
+        LCALL   ??osal_stop_timerEx?relay
+//  627       }
+//  628     }
+//  629     else
+//  630     {
+//  631       //??
+//  632     }
+//  633 
+//  634     return (events ^ TIME_READ_EVT);
+??SimpleBLEPeripheral_ProcessEvent_10:
+        MOV     A,R6
+        XRL     A,#0x40
+        SJMP    ??SimpleBLEPeripheral_ProcessEvent_4
+//  635   }
+//  636 #endif  
+//  637   
+//  638   if ( events & SBP_PERIODIC_EVT )
+??SimpleBLEPeripheral_ProcessEvent_9:
+        MOV     A,R6
+        ANL     A,#0x2
+        JZ      ??SimpleBLEPeripheral_ProcessEvent_12
+//  639   {
+//  640     // Restart timer
+//  641     if ( SBP_PERIODIC_EVT_PERIOD )
+//  642     {
+//  643       osal_start_timerEx( simpleBLEPeripheral_TaskID, SBP_PERIODIC_EVT, SBP_PERIODIC_EVT_PERIOD );
+        ; Setup parameters for call to function osal_start_timerEx
+        MOV     DPTR,#__Constant_1388
+        LCALL   ?PUSH_XSTACK8_X_FOUR
+        MOV     R2,#0x2
+        MOV     R3,#0x0
+        MOV     DPTR,#simpleBLEPeripheral_TaskID
+        MOVX    A,@DPTR
+        MOV     R1,A
+        LCALL   ??osal_start_timerEx?relay
+        MOV     A,#0x4
+        LCALL   ?DEALLOC_XSTACK8
+//  644     }
+//  645     
+//  646     // Perform periodic application task
+//  647     performPeriodicTask();
+        ; Setup parameters for call to function SimpleProfile_GetParameter
+        MOV     DPL,?XSP + 0
+        MOV     DPH,?XSP + 1
+        MOV     R2,DPL
+        MOV     R3,DPH
+        MOV     R1,#0x2
+        LCALL   ??SimpleProfile_GetParameter?relay
+        MOV     A,R1
+        JNZ     ??SimpleBLEPeripheral_ProcessEvent_13
+        ; Setup parameters for call to function SimpleProfile_SetParameter
+        MOV     DPL,?XSP + 0
+        MOV     DPH,?XSP + 1
+        MOV     R4,DPL
+        MOV     R5,DPH
+        MOV     R2,#0x1
+        MOV     R1,#0x3
+        LCALL   ??SimpleProfile_SetParameter?relay
+//  648 
+//  649     return (events ^ SBP_PERIODIC_EVT);
+??SimpleBLEPeripheral_ProcessEvent_13:
+        MOV     A,R6
+        XRL     A,#0x2
+        SJMP    ??SimpleBLEPeripheral_ProcessEvent_4
+//  650   }
+//  651   
+//  652   #if (defined CC2541)|| (defined CC2541S)
+//  653   if( events & SET_TIME_EVT )
+??SimpleBLEPeripheral_ProcessEvent_12:
+        MOV     A,R6
+        ANL     A,#0x80
+        JZ      ??SimpleBLEPeripheral_ProcessEvent_14
+//  654   {
+//  655     timeservice_GetParameter( TIME, newTime);
+        ; Setup parameters for call to function timeservice_GetParameter
+        MOV     R2,#newTime & 0xff
+        MOV     R3,#(newTime >> 8) & 0xff
+        MOV     R1,#0x1
+        LCALL   ??timeservice_GetParameter?relay
+//  656     //newsecond, newminute, newhour
+//  657     rtcSetTime( newTime[2], newTime[1], newTime[0] );
+        ; Setup parameters for call to function rtcSetTime
+        MOV     DPTR,#newTime
+        MOVX    A,@DPTR
+        MOV     R3,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R2,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R1,A
+        LCALL   ??rtcSetTime?relay
+//  658     osal_start_timerEx( simpleBLEPeripheral_TaskID, TIME_READ_EVT, TIME_READ_PERIOD );
+        ; Setup parameters for call to function osal_start_timerEx
+        MOV     DPTR,#__Constant_3e8
+        LCALL   ?PUSH_XSTACK8_X_FOUR
+        MOV     R2,#0x40
+        MOV     R3,#0x0
+        MOV     DPTR,#simpleBLEPeripheral_TaskID
+        MOVX    A,@DPTR
+        MOV     R1,A
+        LCALL   ??osal_start_timerEx?relay
+        MOV     A,#0x4
+        LCALL   ?DEALLOC_XSTACK8
+//  659     return ( events ^ SET_TIME_EVT );
+        MOV     A,R6
+        XRL     A,#0x80
+??SimpleBLEPeripheral_ProcessEvent_4:
+        MOV     R2,A
+        MOV     A,R7
+        LJMP    ??SimpleBLEPeripheral_ProcessEvent_2 & 0xFFFF
+//  660   }
+//  661   
+//  662   if( events & SET_DATE_EVT )
+??SimpleBLEPeripheral_ProcessEvent_14:
+        MOV     A,R7
+        ANL     A,#0x1
+        JZ      ??SimpleBLEPeripheral_ProcessEvent_15
+//  663   {
+//  664     timeservice_GetParameter( DATE, newDate );
+        ; Setup parameters for call to function timeservice_GetParameter
+        MOV     R2,#newDate & 0xff
+        MOV     R3,#(newDate >> 8) & 0xff
+        MOV     R1,#0x2
+        LCALL   ??timeservice_GetParameter?relay
+//  665     rtcSetDate(newDate[0], newDate[1], newDate[2], newDate[3], newDate[4]);
+        ; Setup parameters for call to function rtcSetDate
+        MOV     DPTR,#newDate + 4
+        MOVX    A,@DPTR
+        MOV     R5,A
+        MOV     DPTR,#newDate + 3
+        MOVX    A,@DPTR
+        MOV     R4,A
+        MOV     DPTR,#newDate + 2
+        MOVX    A,@DPTR
+        MOV     R3,A
+        MOV     DPTR,#newDate + 1
+        MOVX    A,@DPTR
+        MOV     R2,A
+        MOV     DPTR,#newDate
+        MOVX    A,@DPTR
+        MOV     R1,A
+        LCALL   ??rtcSetDate?relay
+//  666     osal_start_timerEx( simpleBLEPeripheral_TaskID, TIME_READ_EVT, TIME_READ_PERIOD );
+        ; Setup parameters for call to function osal_start_timerEx
+        MOV     DPTR,#__Constant_3e8
+        LCALL   ?PUSH_XSTACK8_X_FOUR
+        MOV     R2,#0x40
+        MOV     R3,#0x0
+        MOV     DPTR,#simpleBLEPeripheral_TaskID
+        MOVX    A,@DPTR
+        MOV     R1,A
+        LCALL   ??osal_start_timerEx?relay
+        MOV     A,#0x4
+        LCALL   ?DEALLOC_XSTACK8
+//  667     return ( events ^ SET_DATE_EVT );
+        MOV     A,R6
+        MOV     R2,A
+        MOV     A,R7
+        XRL     A,#0x1
+        LJMP    ??SimpleBLEPeripheral_ProcessEvent_2 & 0xFFFF
+//  668   }
+//  669   
+//  670   if( events & SET_ALARM_EVT )
+??SimpleBLEPeripheral_ProcessEvent_15:
+        MOV     A,R7
+        ANL     A,#0x2
+        JZ      ??SimpleBLEPeripheral_ProcessEvent_16
+//  671   {
+//  672     timeservice_GetParameter( ALARM, &newAlarm);
+        ; Setup parameters for call to function timeservice_GetParameter
+        MOV     R2,#newAlarm & 0xff
+        MOV     R3,#(newAlarm >> 8) & 0xff
+        MOV     R1,#0x3
+        LCALL   ??timeservice_GetParameter?relay
+//  673     rtcSetAlarm( newAlarm[0], newAlarm[1], newAlarm[2], newAlarm[3], newAlarm[4], newAlarm[5] );
+        ; Setup parameters for call to function rtcSetAlarm
+        MOV     DPTR,#newAlarm + 5
+        MOVX    A,@DPTR
+        MOV     ?V0 + 0,A
+        MOV     R0,#?V0 + 0
+        LCALL   ?PUSH_XSTACK_I_ONE
+        MOV     DPTR,#newAlarm + 4
+        MOVX    A,@DPTR
+        MOV     R5,A
+        MOV     DPTR,#newAlarm + 3
+        MOVX    A,@DPTR
+        MOV     R4,A
+        MOV     DPTR,#newAlarm + 2
+        MOVX    A,@DPTR
+        MOV     R3,A
+        MOV     DPTR,#newAlarm + 1
+        MOVX    A,@DPTR
+        MOV     R2,A
+        MOV     DPTR,#newAlarm
+        MOVX    A,@DPTR
+        MOV     R1,A
+        LCALL   ??rtcSetAlarm?relay
+        MOV     A,#0x1
+        LCALL   ?DEALLOC_XSTACK8
+//  674     osal_start_timerEx( simpleBLEPeripheral_TaskID, TIME_READ_EVT, TIME_READ_PERIOD );
+        ; Setup parameters for call to function osal_start_timerEx
+        MOV     DPTR,#__Constant_3e8
+        LCALL   ?PUSH_XSTACK8_X_FOUR
+        MOV     R2,#0x40
+        MOV     R3,#0x0
+        MOV     DPTR,#simpleBLEPeripheral_TaskID
+        MOVX    A,@DPTR
+        MOV     R1,A
+        LCALL   ??osal_start_timerEx?relay
+        MOV     A,#0x4
+        LCALL   ?DEALLOC_XSTACK8
+//  675     return ( events ^ SET_ALARM_EVT );
+        MOV     A,R6
+        MOV     R2,A
+        MOV     A,R7
+        XRL     A,#0x2
+        SJMP    ??SimpleBLEPeripheral_ProcessEvent_2
+//  676   }
+//  677 #endif
+//  678   if( events & CODEGENERATOR_MAIN_EVT )
+??SimpleBLEPeripheral_ProcessEvent_16:
+        MOV     A,R7
+        ANL     A,#0x4
+        JZ      ??SimpleBLEPeripheral_ProcessEvent_17
+//  679   {
+//  680     asm("PUSH 6    \n" \ 
+//  681         "PUSH 7    \n" \ 
+//  682         "PUSH dpl  \n" \ 
+//  683         "PUSH dph  \n" );
+        PUSH 6    
+        PUSH 7    
+        PUSH dpl  
+        PUSH dph  
+//  684     CodeGeneratorStartPoint();	
+        ; Setup parameters for call to function CodeGeneratorStartPoint
+        LCALL   ??CodeGeneratorStartPoint?relay
+//  685     asm("POP dph \n" \ 
+//  686         "POP dpl \n" \ 
+//  687         "POP 7   \n" \ 
+//  688         "POP 6     " );
+        POP dph 
+        POP dpl 
+        POP 7   
+        POP 6     
+//  689     ATT_HandleValueNoti( EcoExecProfileConnHandle , &notify );
+        ; Setup parameters for call to function ATT_HandleValueNoti
+        MOV     R4,#notify & 0xff
+        MOV     R5,#(notify >> 8) & 0xff
+        MOV     DPTR,#EcoExecProfileConnHandle
+        MOVX    A,@DPTR
+        MOV     R2,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R3,A
+        LCALL   ??ATT_HandleValueNoti?relay
+//  690    
+//  691     return ( events ^ CODEGENERATOR_MAIN_EVT );
+        MOV     A,R6
+        MOV     R2,A
+        MOV     A,R7
+        XRL     A,#0x4
+        SJMP    ??SimpleBLEPeripheral_ProcessEvent_2
+//  692   }
+//  693   
+//  694   
+//  695   if( events & CODEGENERATOR_EVT_1 )
+??SimpleBLEPeripheral_ProcessEvent_17:
+        MOV     A,R7
+        ANL     A,#0x8
+        JZ      ??SimpleBLEPeripheral_ProcessEvent_18
+//  696   {
+//  697     CodeGenerator_EVT_1_CB();
+        ; Setup parameters for call to function CodeGenerator_EVT_1_CB
+        LCALL   ??CodeGenerator_EVT_1_CB?relay
+//  698     return ( events ^ CODEGENERATOR_EVT_1 );
+        MOV     A,R6
+        MOV     R2,A
+        MOV     A,R7
+        XRL     A,#0x8
+        SJMP    ??SimpleBLEPeripheral_ProcessEvent_2
+//  699   }
+//  700   
+//  701   
+//  702   if( events & CODEGENERATOR_EVT_2 )
+??SimpleBLEPeripheral_ProcessEvent_18:
+        MOV     A,R7
+        ANL     A,#0x10
+        JZ      ??SimpleBLEPeripheral_ProcessEvent_19
+//  703   {
+//  704     CodeGenerator_EVT_2_CB();
+        ; Setup parameters for call to function CodeGenerator_EVT_2_CB
+        LCALL   ??CodeGenerator_EVT_2_CB?relay
+//  705     return ( events ^ CODEGENERATOR_EVT_2 );
+        MOV     A,R6
+        MOV     R2,A
+        MOV     A,R7
+        XRL     A,#0x10
+        SJMP    ??SimpleBLEPeripheral_ProcessEvent_2
+//  706   }
+//  707   
+//  708   if( events & CODEGENERATOR_EVT_3 )
+??SimpleBLEPeripheral_ProcessEvent_19:
+        MOV     A,R7
+        ANL     A,#0x20
+        JZ      ??SimpleBLEPeripheral_ProcessEvent_20
+//  709   {
+//  710     CodeGenerator_EVT_3_CB();
+        ; Setup parameters for call to function CodeGenerator_EVT_3_CB
+        LCALL   ??CodeGenerator_EVT_3_CB?relay
+//  711     return ( events ^ CODEGENERATOR_EVT_3 );
+        MOV     A,R6
+        MOV     R2,A
+        MOV     A,R7
+        XRL     A,#0x20
+        SJMP    ??SimpleBLEPeripheral_ProcessEvent_2
+//  712   }
+//  713   
+//  714   if( events & CODEGENERATOR_EVT_4 )
+??SimpleBLEPeripheral_ProcessEvent_20:
+        MOV     A,R7
+        ANL     A,#0x40
+        JZ      ??SimpleBLEPeripheral_ProcessEvent_21
+//  715   {
+//  716     CodeGenerator_EVT_4_CB();
+        ; Setup parameters for call to function CodeGenerator_EVT_4_CB
+        LCALL   ??CodeGenerator_EVT_4_CB?relay
+//  717     return ( events ^ CODEGENERATOR_EVT_4 );
+        MOV     A,R6
+        MOV     R2,A
+        MOV     A,R7
+        XRL     A,#0x40
+??SimpleBLEPeripheral_ProcessEvent_2:
+        MOV     R3,A
+        SJMP    ??SimpleBLEPeripheral_ProcessEvent_22
+//  718   }
+//  719   // Discard unknown events
+//  720   return 0;
+??SimpleBLEPeripheral_ProcessEvent_21:
+        MOV     R2,#0x0
+        MOV     R3,#0x0
+??SimpleBLEPeripheral_ProcessEvent_22:
+        MOV     A,#0x1
+        REQUIRE ?Subroutine1
+        REQUIRE P2SEL
+        REQUIRE P2DIR
+        ; // Fall through to label ?Subroutine1
+//  721 }
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+?Subroutine1:
+        LCALL   ?DEALLOC_XSTACK8
+        REQUIRE ??Subroutine10_0
+        ; // Fall through to label ??Subroutine10_0
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+??Subroutine10_0:
+        MOV     R7,#0x2
+        LJMP    ?BANKED_LEAVE_XDATA
+//  722 
+//  723 /*********************************************************************
+//  724  * @fn      simpleBLEPeripheral_ProcessOSALMsg
+//  725  *
+//  726  * @brief   Process an incoming task message.
+//  727  *
+//  728  * @param   pMsg - message to process
+//  729  *
+//  730  * @return  none
+//  731  */
+//  732 static void simpleBLEPeripheral_ProcessOSALMsg( osal_event_hdr_t *pMsg )
+//  733 {
+//  734   switch ( pMsg->event )
+//  735   {
+//  736   #if defined( CC2540_MINIDK )
+//  737     case KEY_CHANGE:
+//  738       simpleBLEPeripheral_HandleKeys( ((keyChange_t *)pMsg)->state, ((keyChange_t *)pMsg)->keys );
+//  739       break;
+//  740   #endif // #if defined( CC2540_MINIDK )
+//  741 
+//  742   default:
+//  743     // do nothing
+//  744     break;
+//  745   }
+//  746 }
+//  747 
+//  748 #if defined( CC2540_MINIDK )
+//  749 /*********************************************************************
+//  750  * @fn      simpleBLEPeripheral_HandleKeys
+//  751  *
+//  752  * @brief   Handles all key events for this device.
+//  753  *
+//  754  * @param   shift - true if in shift/alt.
+//  755  * @param   keys - bit field for key events. Valid entries:
+//  756  *                 HAL_KEY_SW_2
+//  757  *                 HAL_KEY_SW_1
+//  758  *
+//  759  * @return  none
+//  760  */
+//  761 static void simpleBLEPeripheral_HandleKeys( uint8 shift, uint8 keys )
+//  762 {
+//  763   uint8 SK_Keys = 0;
+//  764 
+//  765   VOID shift;  // Intentionally unreferenced parameter
+//  766 
+//  767   if ( keys & HAL_KEY_SW_1 )
+//  768   {
+//  769     SK_Keys |= SK_KEY_LEFT;
+//  770   }
+//  771 
+//  772   if ( keys & HAL_KEY_SW_2 )
+//  773   {
+//  774     
+//  775     SK_Keys |= SK_KEY_RIGHT;
+//  776     
+//  777     // if device is not in a connection, pressing the right key should toggle
+//  778     // advertising on and off
+//  779     if( gapProfileState != GAPROLE_CONNECTED )
+//  780     {
+//  781       uint8 current_adv_enabled_status;
+//  782       uint8 new_adv_enabled_status;
+//  783       
+//  784       //Find the current GAP advertisement status
+//  785       GAPRole_GetParameter( GAPROLE_ADVERT_ENABLED, &current_adv_enabled_status );
+//  786       
+//  787       if( current_adv_enabled_status == FALSE )
+//  788       {
+//  789         new_adv_enabled_status = TRUE;
+//  790       }
+//  791       else
+//  792       {
+//  793         new_adv_enabled_status = FALSE;
+//  794       }
+//  795       
+//  796       //change the GAP advertisement status to opposite of current status
+//  797       GAPRole_SetParameter( GAPROLE_ADVERT_ENABLED, sizeof( uint8 ), &new_adv_enabled_status );
+//  798     }
+//  799     
+//  800   }
+//  801 
+//  802   // Set the value of the keys state to the Simple Keys Profile;
+//  803   // This will send out a notification of the keys state if enabled
+//  804   SK_SetParameter( SK_KEY_ATTR, sizeof ( uint8 ), &SK_Keys );
+//  805 }
+//  806 #endif // #if defined( CC2540_MINIDK )
+//  807 
+//  808 /*********************************************************************
+//  809  * @fn      peripheralStateNotificationCB
+//  810  *
+//  811  * @brief   Notification from the profile of a state change.
+//  812  *
+//  813  * @param   newState - new state
+//  814  *
+//  815  * @return  none
+//  816  */
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+//  817 static void peripheralStateNotificationCB( gaprole_States_t newState )
+peripheralStateNotificationCB:
+        CODE
+//  818 {
+        MOV     A,#-0x9
+        LCALL   ?BANKED_ENTER_XDATA
+        ; Saved register size: 9
+        ; Auto size: 14
+        MOV     A,#-0xe
+        LCALL   ?ALLOC_XSTACK8
+        MOV     A,R1
+        MOV     R6,A
+//  819   switch ( newState )
+        MOV     A,#0x1
+        XRL     A,R6
+        JZ      $+5
+        LJMP    ??peripheralStateNotificationCB_0 & 0xFFFF
+//  820   {
+//  821     case GAPROLE_STARTED:
+//  822       {
+//  823         uint8 ownAddress[B_ADDR_LEN];
+//  824         uint8 systemId[DEVINFO_SYSTEM_ID_LEN];
+//  825 
+//  826         GAPRole_GetParameter(GAPROLE_BD_ADDR, ownAddress);
+        ; Setup parameters for call to function GAPRole_GetParameter
+        MOV     A,#0x8
+        LCALL   ?XSTACK_DISP0_8
+        MOV     R4,DPL
+        MOV     R5,DPH
+        MOV     R2,#0x4
+        MOV     R3,#0x3
+        LCALL   ??GAPRole_GetParameter?relay
+//  827 
+//  828         // use 6 bytes of device address for 8 bytes of system ID value
+//  829         systemId[0] = ownAddress[0];
+        MOV     A,#0x8
+        LCALL   ?XSTACK_DISP0_8
+        MOVX    A,@DPTR
+        MOV     DPL,?XSP + 0
+        MOV     DPH,?XSP + 1
+        MOVX    @DPTR,A
+//  830         systemId[1] = ownAddress[1];
+        MOV     A,#0x9
+        LCALL   ?XSTACK_DISP0_8
+        MOVX    A,@DPTR
+        PUSH    A
+        MOV     A,#0x1
+        LCALL   ?XSTACK_DISP0_8
+        POP     A
+        MOVX    @DPTR,A
+//  831         systemId[2] = ownAddress[2];
+        MOV     A,#0xa
+        LCALL   ?XSTACK_DISP0_8
+        MOVX    A,@DPTR
+        PUSH    A
+        MOV     A,#0x2
+        LCALL   ?XSTACK_DISP0_8
+        POP     A
+        MOVX    @DPTR,A
+//  832 
+//  833         // set middle bytes to zero
+//  834         systemId[4] = 0x00;
+        MOV     A,#0x4
+        LCALL   ?XSTACK_DISP0_8
+        CLR     A
+        MOVX    @DPTR,A
+//  835         systemId[3] = 0x00;
+        MOV     A,#0x3
+        LCALL   ?XSTACK_DISP0_8
+        CLR     A
+        MOVX    @DPTR,A
+//  836 
+//  837         // shift three bytes up
+//  838         systemId[7] = ownAddress[5];
+        MOV     A,#0xd
+        LCALL   ?XSTACK_DISP0_8
+        MOVX    A,@DPTR
+        PUSH    A
+        MOV     A,#0x7
+        LCALL   ?XSTACK_DISP0_8
+        POP     A
+        MOVX    @DPTR,A
+//  839         systemId[6] = ownAddress[4];
+        MOV     A,#0xc
+        LCALL   ?XSTACK_DISP0_8
+        MOVX    A,@DPTR
+        PUSH    A
+        MOV     A,#0x6
+        LCALL   ?XSTACK_DISP0_8
+        POP     A
+        MOVX    @DPTR,A
+//  840         systemId[5] = ownAddress[3];
+        MOV     A,#0xb
+        LCALL   ?XSTACK_DISP0_8
+        MOVX    A,@DPTR
+        PUSH    A
+        MOV     A,#0x5
+        LCALL   ?XSTACK_DISP0_8
+        POP     A
+        MOVX    @DPTR,A
+//  841 
+//  842         DevInfo_SetParameter(DEVINFO_SYSTEM_ID, DEVINFO_SYSTEM_ID_LEN, systemId);
+        ; Setup parameters for call to function DevInfo_SetParameter
+        MOV     DPL,?XSP + 0
+        MOV     DPH,?XSP + 1
+        MOV     R4,DPL
+        MOV     R5,DPH
+        MOV     R2,#0x8
+        MOV     R1,#0x0
+        LCALL   ??DevInfo_SetParameter?relay
+//  843 
+//  844         #if (defined HAL_LCD) && (HAL_LCD == TRUE)
+//  845           // Display device address
+//  846           HalLcdWriteString( bdAddr2Str( ownAddress ),  HAL_LCD_LINE_2 );
+//  847           HalLcdWriteString( "Initialized",  HAL_LCD_LINE_3 );
+//  848         #endif // (defined HAL_LCD) && (HAL_LCD == TRUE)
+//  849       }
+//  850       break;
+//  851 
+//  852     case GAPROLE_ADVERTISING:
+//  853       {
+//  854         #if (defined HAL_LCD) && (HAL_LCD == TRUE)
+//  855           HalLcdWriteString( "Advertising",  HAL_LCD_LINE_3 );
+//  856         #endif // (defined HAL_LCD) && (HAL_LCD == TRUE)
+//  857       }
+//  858       break;
+//  859 
+//  860     case GAPROLE_CONNECTED:
+//  861       {
+//  862         #if (defined HAL_LCD) && (HAL_LCD == TRUE)
+//  863           HalLcdWriteString( "Connected",  HAL_LCD_LINE_3 );
+//  864         #endif // (defined HAL_LCD) && (HAL_LCD == TRUE)
+//  865       }
+//  866       break;
+//  867 
+//  868     case GAPROLE_WAITING:
+//  869       {
+//  870         #if (defined HAL_LCD) && (HAL_LCD == TRUE)
+//  871           HalLcdWriteString( "Disconnected",  HAL_LCD_LINE_3 );
+//  872         #endif // (defined HAL_LCD) && (HAL_LCD == TRUE)
+//  873       }
+//  874       break;
+//  875 
+//  876     case GAPROLE_WAITING_AFTER_TIMEOUT:
+//  877       {
+//  878         #if (defined HAL_LCD) && (HAL_LCD == TRUE)
+//  879           HalLcdWriteString( "Timed Out",  HAL_LCD_LINE_3 );
+//  880         #endif // (defined HAL_LCD) && (HAL_LCD == TRUE)
+//  881       }
+//  882       break;
+//  883 
+//  884     case GAPROLE_ERROR:
+//  885       {
+//  886         #if (defined HAL_LCD) && (HAL_LCD == TRUE)
+//  887           HalLcdWriteString( "Error",  HAL_LCD_LINE_3 );
+//  888         #endif // (defined HAL_LCD) && (HAL_LCD == TRUE)
+//  889       }
+//  890       break;
+//  891 
+//  892     default:
+//  893       {
+//  894         #if (defined HAL_LCD) && (HAL_LCD == TRUE)
+//  895           HalLcdWriteString( "",  HAL_LCD_LINE_3 );
+//  896         #endif // (defined HAL_LCD) && (HAL_LCD == TRUE)
+//  897       }
+//  898       break;
+//  899 
+//  900   }
+//  901 
+//  902   gapProfileState = newState;
+??peripheralStateNotificationCB_0:
+        MOV     A,R6
+        MOV     DPTR,#gapProfileState
+        MOVX    @DPTR,A
+//  903 
+//  904 #if !defined( CC2540_MINIDK )
+//  905   VOID gapProfileState;     // added to prevent compiler warning with
+//  906                             // "CC2540 Slave" configurations
+//  907 #endif
+//  908 
+//  909 
+//  910 }
+        MOV     A,#0xe
+        LJMP    ?Subroutine0 & 0xFFFF
+//  911 
+//  912 /*********************************************************************
+//  913  * @fn      performPeriodicTask
+//  914  *
+//  915  * @brief   Perform a periodic application task. This function gets
+//  916  *          called every five seconds as a result of the SBP_PERIODIC_EVT
+//  917  *          OSAL event. In this example, the value of the third
+//  918  *          characteristic in the SimpleGATTProfile service is retrieved
+//  919  *          from the profile, and then copied into the value of the
+//  920  *          the fourth characteristic.
+//  921  *
+//  922  * @param   none
+//  923  *
+//  924  * @return  none
+//  925  */
+//  926 static void performPeriodicTask( void )
+//  927 {
+//  928   uint8 valueToCopy;
+//  929   uint8 stat;
+//  930  
+//  931   // Call to retrieve the value of the third characteristic in the profile
+//  932   stat = SimpleProfile_GetParameter( SIMPLEPROFILE_CHAR3, &valueToCopy);
+//  933   if( stat == SUCCESS )
+//  934   {
+//  935     /*
+//  936      * Call to set that value of the fourth characteristic in the profile. Note
+//  937      * that if notifications of the fourth characteristic have been enabled by
+//  938      * a GATT client device, then a notification will be sent every time this
+//  939      * function is called.
+//  940      */
+//  941     SimpleProfile_SetParameter( SIMPLEPROFILE_CHAR4, sizeof(uint8), &valueToCopy);
+//  942   }
+//  943 #if defined( CC2540 )
+//  944 Batt_MeasLevel();
+//  945 #endif
+//  946 }
+//  947 
+//  948 #if (defined HAL_LCD) && (HAL_LCD == TRUE)
+//  949 /*********************************************************************
+//  950  * @fn      bdAddr2Str
+//  951  *
+//  952  * @brief   Convert Bluetooth address to string. Only needed when
+//  953  *          LCD display is used.
+//  954  *
+//  955  * @return  none
+//  956  */
+//  957 char *bdAddr2Str( uint8 *pAddr )
+//  958 {
+//  959   uint8       i;
+//  960   char        hex[] = "0123456789ABCDEF";
+//  961   static char str[B_ADDR_STR_LEN];
+//  962   char        *pStr = str;
+//  963 
+//  964   *pStr++ = '0';
+//  965   *pStr++ = 'x';
+//  966 
+//  967   // Start from end of addr
+//  968   pAddr += B_ADDR_LEN;
+//  969 
+//  970   for ( i = B_ADDR_LEN; i > 0; i-- )
+//  971   {
+//  972     *pStr++ = hex[*--pAddr >> 4];
+//  973     *pStr++ = hex[*pAddr & 0x0F];
+//  974   }
+//  975 
+//  976   *pStr = 0;
+//  977 
+//  978   return str;
+//  979 }
+//  980 #endif // (defined HAL_LCD) && (HAL_LCD == TRUE)
+//  981 
+//  982 /*********************************************************************
+//  983 *********************************************************************/
+//  984 
+//  985 /*********************************************************************
+//  986  * @fn      EcoExecProfileChangeCB
+//  987  *
+//  988  * @brief   Callback from EcoExecProfile indicating a value change
+//  989  *
+//  990  * @param   paramID - parameter ID of the value that was changed.
+//  991  *
+//  992  * @return  none
+//  993  */
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+//  994 static void EcoExecProfileChangeCB( uint8 paramID )
+EcoExecProfileChangeCB:
+        CODE
+//  995 {
+        MOV     A,#-0x9
+        LCALL   ?BANKED_ENTER_XDATA
+        ; Saved register size: 9
+        ; Auto size: 0
+        MOV     A,R1
+//  996   switch( paramID )
+        ADD     A,#0x56
+        JZ      ??EcoExecProfileChangeCB_0
+        ADD     A,#-0x11
+        JZ      ??EcoExecProfileChangeCB_1
+        ADD     A,#-0x11
+        JZ      ??EcoExecProfileChangeCB_2
+        SJMP    ??EcoExecProfileChangeCB_3
+//  997   {
+//  998   case RAMCODE_CALL:
+//  999     osal_start_timerEx( simpleBLEPeripheral_TaskID, RAM_CODE_EVT, 100);
+??EcoExecProfileChangeCB_0:
+        ; Setup parameters for call to function osal_start_timerEx
+        MOV     DPTR,#__Constant_64
+        LCALL   ?PUSH_XSTACK8_X_FOUR
+        MOV     R2,#0x8
+        MOV     R3,#0x0
+        MOV     DPTR,#simpleBLEPeripheral_TaskID
+        MOVX    A,@DPTR
+        MOV     R1,A
+        LCALL   ??osal_start_timerEx?relay
+        MOV     A,#0x4
+        LCALL   ?DEALLOC_XSTACK8
+// 1000     break;
+        SJMP    ??EcoExecProfileChangeCB_3
+// 1001   case FLASHCODE_CALL:
+// 1002     osal_set_event( simpleBLEPeripheral_TaskID, CODEGENERATOR_MAIN_EVT );
+??EcoExecProfileChangeCB_1:
+        ; Setup parameters for call to function osal_set_event
+        MOV     R2,#0x0
+        MOV     R3,#0x4
+        MOV     DPTR,#simpleBLEPeripheral_TaskID
+        MOVX    A,@DPTR
+        MOV     R1,A
+        LCALL   ??osal_set_event?relay
+// 1003     break;
+        SJMP    ??EcoExecProfileChangeCB_3
+// 1004   case STOP_CALLBACKS:
+// 1005     /***** stop all the user event timers before write flash *****/
+// 1006     osal_stop_timerEx( simpleBLEPeripheral_TaskID, CODEGENERATOR_EVT_1);
+??EcoExecProfileChangeCB_2:
+        ; Setup parameters for call to function osal_stop_timerEx
+        MOV     R2,#0x0
+        MOV     R3,#0x8
+        MOV     DPTR,#simpleBLEPeripheral_TaskID
+        MOVX    A,@DPTR
+        MOV     R1,A
+        LCALL   ??osal_stop_timerEx?relay
+// 1007     osal_stop_timerEx( simpleBLEPeripheral_TaskID, CODEGENERATOR_EVT_2);
+        ; Setup parameters for call to function osal_stop_timerEx
+        MOV     R2,#0x0
+        MOV     R3,#0x10
+        MOV     DPTR,#simpleBLEPeripheral_TaskID
+        MOVX    A,@DPTR
+        MOV     R1,A
+        LCALL   ??osal_stop_timerEx?relay
+// 1008     osal_stop_timerEx( simpleBLEPeripheral_TaskID, CODEGENERATOR_EVT_3);
+        ; Setup parameters for call to function osal_stop_timerEx
+        MOV     R2,#0x0
+        MOV     R3,#0x20
+        MOV     DPTR,#simpleBLEPeripheral_TaskID
+        MOVX    A,@DPTR
+        MOV     R1,A
+        LCALL   ??osal_stop_timerEx?relay
+// 1009     osal_stop_timerEx( simpleBLEPeripheral_TaskID, CODEGENERATOR_EVT_4);
+        ; Setup parameters for call to function osal_stop_timerEx
+        MOV     R2,#0x0
+        MOV     R3,#0x40
+        MOV     DPTR,#simpleBLEPeripheral_TaskID
+        MOVX    A,@DPTR
+        MOV     R1,A
+        LCALL   ??osal_stop_timerEx?relay
+// 1010     break;
+// 1011   default:
+// 1012     break;
+// 1013   }
+// 1014 }
+??EcoExecProfileChangeCB_3:
+        LJMP    ??Subroutine9_0 & 0xFFFF
+// 1015 
+// 1016 
+// 1017 /*********************************************************************
+// 1018  * @fn      accelRead
+// 1019  *
+// 1020  * @brief   Called by the application to read accelerometer data
+// 1021  *          and put data in accelerometer profile
+// 1022  *
+// 1023  * @param   none
+// 1024  *
+// 1025  * @return  none
+// 1026  */
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+// 1027 static void accelRead( void )
+accelRead:
+        CODE
+// 1028 {
+        MOV     A,#-0xa
+        LCALL   ?BANKED_ENTER_XDATA
+        ; Saved register size: 10
+        ; Auto size: 6
+        MOV     A,#-0x6
+        LCALL   ?ALLOC_XSTACK8
+// 1029 
+// 1030   static int16 x, y, z;
+// 1031   int16 new_x, new_y, new_z;
+// 1032 
+// 1033   // Read data for each axis of the accelerometer
+// 1034   accReadAcc(&new_x, &new_y, &new_z);
+        ; Setup parameters for call to function accReadAcc
+        MOV     DPL,?XSP + 0
+        MOV     DPH,?XSP + 1
+        MOV     ?V0 + 0,DPL
+        MOV     ?V0 + 1,DPH
+        MOV     R0,#?V0 + 0
+        LCALL   ?PUSH_XSTACK_I_TWO
+        MOV     A,#0x4
+        LCALL   ?XSTACK_DISP0_8
+        MOV     R4,DPL
+        MOV     R5,DPH
+        MOV     A,#0x6
+        LCALL   ?XSTACK_DISP0_8
+        MOV     R2,DPL
+        MOV     R3,DPH
+        LCALL   ??accReadAcc?relay
+        MOV     A,#0x2
+        LCALL   ?DEALLOC_XSTACK8
+// 1035 
+// 1036   // Check if x-axis value has changed by more than the threshold value and
+// 1037   // set profile parameter if it has (this will send a notification if enabled)
+// 1038   if( (x < (new_x-ACCEL_CHANGE_THRESHOLD)) || (x > (new_x+ACCEL_CHANGE_THRESHOLD)) )
+        MOV     A,#0x4
+        LCALL   ?XSTACK_DISP0_8
+        LCALL   ?Subroutine6 & 0xFFFF
+??CrossCallReturnLabel_6:
+        MOV     DPH,#(??x >> 8) & 0xff
+        MOV     DPL,#??x & 0xff
+        LCALL   ?Subroutine5 & 0xFFFF
+??CrossCallReturnLabel_3:
+        JC      ??accelRead_0
+        MOV     A,#0x4
+        LCALL   ?XSTACK_DISP0_8
+        LCALL   ?Subroutine7 & 0xFFFF
+??CrossCallReturnLabel_9:
+        MOV     DPTR,#??x
+        LCALL   ?Subroutine4 & 0xFFFF
+??CrossCallReturnLabel_0:
+        JNC     ??accelRead_1
+// 1039   {
+// 1040     x = new_x;
+??accelRead_0:
+        MOV     A,#0x4
+        LCALL   ?XSTACK_DISP0_8
+        LCALL   ?Subroutine8 & 0xFFFF
+??CrossCallReturnLabel_12:
+        MOV     DPTR,#??x
+        MOV     A,R0
+        MOVX    @DPTR,A
+        INC     DPTR
+        MOV     A,R1
+        MOVX    @DPTR,A
+// 1041     Accel_SetParameter(ACCEL_X_ATTR, 2, &x);
+        ; Setup parameters for call to function Accel_SetParameter
+        MOV     R4,#??x & 0xff
+        MOV     R5,#(??x >> 8) & 0xff
+        MOV     R2,#0x2
+        MOV     R1,#0x1
+        LCALL   ??Accel_SetParameter?relay
+// 1042   }
+// 1043   
+// 1044   // Check if y-axis value has changed by more than the threshold value and
+// 1045   // set profile parameter if it has (this will send a notification if enabled)
+// 1046   if( (y < (new_y-ACCEL_CHANGE_THRESHOLD)) || (y > (new_y+ACCEL_CHANGE_THRESHOLD)) )
+??accelRead_1:
+        MOV     A,#0x2
+        LCALL   ?XSTACK_DISP0_8
+        LCALL   ?Subroutine6 & 0xFFFF
+??CrossCallReturnLabel_7:
+        MOV     DPH,#(??y >> 8) & 0xff
+        MOV     DPL,#??y & 0xff
+        LCALL   ?Subroutine5 & 0xFFFF
+??CrossCallReturnLabel_4:
+        JC      ??accelRead_2
+        MOV     A,#0x2
+        LCALL   ?XSTACK_DISP0_8
+        LCALL   ?Subroutine7 & 0xFFFF
+??CrossCallReturnLabel_10:
+        MOV     DPTR,#??y
+        LCALL   ?Subroutine4 & 0xFFFF
+??CrossCallReturnLabel_1:
+        JNC     ??accelRead_3
+// 1047   {
+// 1048     y = new_y;
+??accelRead_2:
+        MOV     A,#0x2
+        LCALL   ?XSTACK_DISP0_8
+        LCALL   ?Subroutine8 & 0xFFFF
+??CrossCallReturnLabel_13:
+        MOV     DPTR,#??y
+        MOV     A,R0
+        MOVX    @DPTR,A
+        INC     DPTR
+        MOV     A,R1
+        MOVX    @DPTR,A
+// 1049     Accel_SetParameter(ACCEL_Y_ATTR, 2, &y);
+        ; Setup parameters for call to function Accel_SetParameter
+        MOV     R4,#??y & 0xff
+        MOV     R5,#(??y >> 8) & 0xff
+        MOV     R2,#0x2
+        MOV     R1,#0x2
+        LCALL   ??Accel_SetParameter?relay
+// 1050   }
+// 1051   
+// 1052   // Check if z-axis value has changed by more than the threshold value and
+// 1053   // set profile parameter if it has (this will send a notification if enabled)
+// 1054   if( (z < (new_z-ACCEL_CHANGE_THRESHOLD)) || (z > (new_z+ACCEL_CHANGE_THRESHOLD)) )
+??accelRead_3:
+        MOV     DPL,?XSP + 0
+        MOV     DPH,?XSP + 1
+        LCALL   ?Subroutine6 & 0xFFFF
+??CrossCallReturnLabel_8:
+        MOV     DPH,#(??z >> 8) & 0xff
+        MOV     DPL,#??z & 0xff
+        LCALL   ?Subroutine5 & 0xFFFF
+??CrossCallReturnLabel_5:
+        JC      ??accelRead_4
+        MOV     DPL,?XSP + 0
+        MOV     DPH,?XSP + 1
+        LCALL   ?Subroutine7 & 0xFFFF
+??CrossCallReturnLabel_11:
+        MOV     DPTR,#??z
+        LCALL   ?Subroutine4 & 0xFFFF
+??CrossCallReturnLabel_2:
+        JNC     ??accelRead_5
+// 1055   {
+// 1056     z = new_z;  
+??accelRead_4:
+        MOV     DPL,?XSP + 0
+        MOV     DPH,?XSP + 1
+        LCALL   ?Subroutine8 & 0xFFFF
+??CrossCallReturnLabel_14:
+        MOV     DPTR,#??z
+        MOV     A,R0
+        MOVX    @DPTR,A
+        INC     DPTR
+        MOV     A,R1
+        MOVX    @DPTR,A
+// 1057     Accel_SetParameter(ACCEL_Z_ATTR, 2, &z);
+        ; Setup parameters for call to function Accel_SetParameter
+        MOV     R4,#??z & 0xff
+        MOV     R5,#(??z >> 8) & 0xff
+        MOV     R2,#0x2
+        MOV     R1,#0x3
+        LCALL   ??Accel_SetParameter?relay
+// 1058   }
+// 1059 }
+??accelRead_5:
+        MOV     A,#0x6
+        LJMP    ?Subroutine1 & 0xFFFF
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+?Subroutine7:
+        MOVX    A,@DPTR
+        ADD     A,#0xf
+        MOV     R2,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        ADDC    A,#0x0
+        MOV     R3,A
+        RET
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+?Subroutine6:
+        MOVX    A,@DPTR
+        ADD     A,#-0xf
+        MOV     R0,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        ADDC    A,#-0x1
+        MOV     R1,A
+        RET
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+?Subroutine5:
+        CLR     C
+        MOVX    A,@DPTR
+        SUBB    A,R0
+        INC     DPTR
+        MOVX    A,@DPTR
+        SUBB    A,R1
+        MOV     C,0xD0 /* PSW */.2
+        XRL     A,PSW
+        RLC     A
+        RET
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+?Subroutine4:
+        LCALL   ?Subroutine8 & 0xFFFF
+??CrossCallReturnLabel_15:
+        CLR     C
+        MOV     A,R2
+        SUBB    A,R0
+        MOV     A,R3
+        SUBB    A,R1
+        MOV     C,0xD0 /* PSW */.2
+        XRL     A,PSW
+        RLC     A
+        RET
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+?Subroutine8:
+        MOVX    A,@DPTR
+        MOV     R0,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R1,A
+        RET
+
+        RSEG XDATA_Z:XDATA:NOROOT(0)
+        DATA16
+??x:
+        DS 2
+        REQUIRE __INIT_XDATA_Z
+
+        RSEG XDATA_Z:XDATA:NOROOT(0)
+        DATA16
+??y:
+        DS 2
+        REQUIRE __INIT_XDATA_Z
+
+        RSEG XDATA_Z:XDATA:NOROOT(0)
+        DATA16
+??z:
+        DS 2
+        REQUIRE __INIT_XDATA_Z
+// 1060 
+// 1061 
+// 1062 
+// 1063 
+// 1064 #ifdef CC2541
+// 1065 /*********************************************************************
+// 1066  * @fn      timeRead
+// 1067  *
+// 1068  * @brief   Called by the application to read time data
+// 1069  *          and put data in timeservice profile
+// 1070  *
+// 1071  * @param   none
+// 1072  *
+// 1073  * @return  none
+// 1074  */
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+// 1075 void timeRead( void )
+timeRead:
+        CODE
+// 1076 {  
+        MOV     A,#-0xa
+        LCALL   ?BANKED_ENTER_XDATA
+        ; Saved register size: 10
+        ; Auto size: 0
+// 1077   if (timeEnabler){
+        MOV     DPTR,#timeEnabler
+        MOVX    A,@DPTR
+        JNZ     $+5
+        LJMP    ??timeRead_0 & 0xFFFF
+// 1078     // Read time data of the time service
+// 1079     rtcGetTime( &newTime[0], &newTime[1], &newTime[2] );
+        ; Setup parameters for call to function rtcGetTime
+        MOV     ?V0 + 0,#(newTime + 2) & 0xff
+        MOV     ?V0 + 1,#((newTime + 2) >> 8) & 0xff
+        MOV     R0,#?V0 + 0
+        LCALL   ?PUSH_XSTACK_I_TWO
+        MOV     R4,#(newTime + 1) & 0xff
+        MOV     R5,#((newTime + 1) >> 8) & 0xff
+        MOV     R2,#newTime & 0xff
+        MOV     R3,#(newTime >> 8) & 0xff
+        LCALL   ??rtcGetTime?relay
+        MOV     A,#0x2
+        LCALL   ?DEALLOC_XSTACK8
+// 1080     rtcGetDate( &newDate[0], &newDate[1], &newDate[2], &newDate[3], &newDate[4] );
+        ; Setup parameters for call to function rtcGetDate
+        MOV     ?V0 + 0,#(newDate + 4) & 0xff
+        MOV     ?V0 + 1,#((newDate + 4) >> 8) & 0xff
+        MOV     R0,#?V0 + 0
+        LCALL   ?PUSH_XSTACK_I_TWO
+        MOV     ?V0 + 0,#(newDate + 3) & 0xff
+        MOV     ?V0 + 1,#((newDate + 3) >> 8) & 0xff
+        MOV     R0,#?V0 + 0
+        LCALL   ?PUSH_XSTACK_I_TWO
+        MOV     ?V0 + 0,#(newDate + 2) & 0xff
+        MOV     ?V0 + 1,#((newDate + 2) >> 8) & 0xff
+        MOV     R0,#?V0 + 0
+        LCALL   ?PUSH_XSTACK_I_TWO
+        MOV     R4,#(newDate + 1) & 0xff
+        MOV     R5,#((newDate + 1) >> 8) & 0xff
+        MOV     R2,#newDate & 0xff
+        MOV     R3,#(newDate >> 8) & 0xff
+        LCALL   ??rtcGetDate?relay
+        MOV     A,#0x6
+        LCALL   ?DEALLOC_XSTACK8
+// 1081     rtcGetAlarm( &newAlarm[0], &newAlarm[1], &newAlarm[2], &newAlarm[3], &newAlarm[4], &newAlarm[5] );
+        ; Setup parameters for call to function rtcGetAlarm
+        MOV     ?V0 + 0,#(newAlarm + 5) & 0xff
+        MOV     ?V0 + 1,#((newAlarm + 5) >> 8) & 0xff
+        MOV     R0,#?V0 + 0
+        LCALL   ?PUSH_XSTACK_I_TWO
+        MOV     ?V0 + 0,#(newAlarm + 4) & 0xff
+        MOV     ?V0 + 1,#((newAlarm + 4) >> 8) & 0xff
+        MOV     R0,#?V0 + 0
+        LCALL   ?PUSH_XSTACK_I_TWO
+        MOV     ?V0 + 0,#(newAlarm + 3) & 0xff
+        MOV     ?V0 + 1,#((newAlarm + 3) >> 8) & 0xff
+        MOV     R0,#?V0 + 0
+        LCALL   ?PUSH_XSTACK_I_TWO
+        MOV     ?V0 + 0,#(newAlarm + 2) & 0xff
+        MOV     ?V0 + 1,#((newAlarm + 2) >> 8) & 0xff
+        MOV     R0,#?V0 + 0
+        LCALL   ?PUSH_XSTACK_I_TWO
+        MOV     R4,#(newAlarm + 1) & 0xff
+        MOV     R5,#((newAlarm + 1) >> 8) & 0xff
+        MOV     R2,#newAlarm & 0xff
+        MOV     R3,#(newAlarm >> 8) & 0xff
+        LCALL   ??rtcGetAlarm?relay
+        MOV     A,#0x8
+        LCALL   ?DEALLOC_XSTACK8
+// 1082     
+// 1083     timeservice_SetParameter(TIME, TIME_LEN, newTime);
+        ; Setup parameters for call to function timeservice_SetParameter
+        MOV     R4,#newTime & 0xff
+        MOV     R5,#(newTime >> 8) & 0xff
+        MOV     R2,#0x3
+        MOV     R1,#0x1
+        LCALL   ??timeservice_SetParameter?relay
+// 1084     timeservice_SetParameter(DATE, DATE_LEN, newDate);
+        ; Setup parameters for call to function timeservice_SetParameter
+        MOV     R4,#newDate & 0xff
+        MOV     R5,#(newDate >> 8) & 0xff
+        MOV     R2,#0x5
+        MOV     R1,#0x2
+        LCALL   ??timeservice_SetParameter?relay
+// 1085     timeservice_SetParameter(ALARM, ALARM_LEN, newAlarm);
+        ; Setup parameters for call to function timeservice_SetParameter
+        MOV     R4,#newAlarm & 0xff
+        MOV     R5,#(newAlarm >> 8) & 0xff
+        MOV     R2,#0x6
+        MOV     R1,#0x3
+        LCALL   ??timeservice_SetParameter?relay
+// 1086   }
+// 1087 }
+??timeRead_0:
+        LJMP    ??Subroutine10_0 & 0xFFFF
+// 1088 #endif
+// 1089 
+// 1090 /**************************************************************************************************
+// 1091  * @fn      timePort0Isr
+// 1092  *
+// 1093  * @brief   Port0 ISR
+// 1094  *
+// 1095  * @param
+// 1096  *
+// 1097  * @return
+// 1098  **************************************************************************************************/
+
+        RSEG NEAR_CODE:CODE:NOROOT(0)
+// 1099 HAL_ISR_FUNCTION( halAlarmPort0Isr, P0INT_VECTOR )
+halAlarmPort0Isr:
+        CODE
+// 1100 {
+        PUSH    A
+        MOV     A,#-0xe
+        LCALL   ?INTERRUPT_ENTER_XSP
+        ; Saved register size: 14
+        ; Auto size: 0
+// 1101   if ( P0IFG & HAL_RTC_ALARM_BIT )
+        MOV     A,0x89
+        MOV     C,0xE0 /* A   */.0
+        JNC     ??halAlarmPort0Isr_0
+// 1102   {
+// 1103     halProcessAlarmInterrupt();
+        ; Setup parameters for call to function halProcessAlarmInterrupt
+        LCALL   ??halProcessAlarmInterrupt?relay
+// 1104   }
+// 1105   /*
+// 1106     Clear the CPU interrupt flag for Port_0
+// 1107     PxIFG has to be cleared before PxIF
+// 1108   */
+// 1109   P0IFG = 0;
+??halAlarmPort0Isr_0:
+        MOV     0x89,#0x0
+// 1110   P0IF = 0;
+        CLR     0xc0.5
+// 1111 }
+        REQUIRE ?Subroutine2
+        REQUIRE P0IFG
+        REQUIRE _A_IRCON
+        ; // Fall through to label ?Subroutine2
+
+        RSEG NEAR_CODE:CODE:NOROOT(0)
+?Subroutine2:
+        MOV     R7,#0x1
+        LJMP    ?INTERRUPT_LEAVE_XSP
+// 1112 
+// 1113 /**************************************************************************************************
+// 1114  * @fn      accPort1Isr
+// 1115  *
+// 1116  * @brief   Port0 ISR
+// 1117  *
+// 1118  * @param
+// 1119  *
+// 1120  * @return
+// 1121  **************************************************************************************************/
+
+        RSEG NEAR_CODE:CODE:NOROOT(0)
+// 1122 HAL_ISR_FUNCTION( halaccPort1Isr, P1INT_VECTOR )
+halaccPort1Isr:
+        CODE
+// 1123 {
+        PUSH    A
+        MOV     A,#-0xe
+        LCALL   ?INTERRUPT_ENTER_XSP
+        ; Saved register size: 14
+        ; Auto size: 0
+// 1124   if ( P1IFG & 0x04 )
+        MOV     A,0x8a
+        MOV     C,0xE0 /* A   */.2
+        JNC     ??halaccPort1Isr_0
+// 1125   {
+// 1126     halProcessFreeFallInterrupt();
+        ; Setup parameters for call to function halProcessFreeFallInterrupt
+        LCALL   ??halProcessFreeFallInterrupt?relay
+// 1127   }
+// 1128   /*
+// 1129     Clear the CPU interrupt flag for Port_1
+// 1130     PxIFG has to be cleared before PxIF
+// 1131   */
+// 1132   P1IFG = 0;
+??halaccPort1Isr_0:
+        MOV     0x8a,#0x0
+// 1133   P1IF = 0;
+        CLR     0xe8.3
+// 1134 }
+        SJMP    ?Subroutine2
+        REQUIRE P1IFG
+        REQUIRE _A_IRCON2
+// 1135 
+
+        RSEG NEAR_CODE:CODE:NOROOT(0)
+// 1136 __near_func void execution_ram_code( void )
+execution_ram_code:
+        CODE
+// 1137 {
+        ; Saved register size: 0
+        ; Auto size: 0
+// 1138   MEMCTR |= 0x08;
+        ORL     0xc7,#0x8
+// 1139   __asm("LCALL Message+8000h"); /* 0x8000 + Message */
+        LCALL Message+8000h
+// 1140   MEMCTR &= ~0x08;
+        ANL     0xc7,#0xf7
+// 1141 }
+        RET
+        REQUIRE MEMCTR
+// 1142 
+// 1143 
+// 1144 /******************************************  CODE GENERATOR ******************************************/
+// 1145 
+// 1146 
+// 1147 /*********************************************************************
+// 1148  * @fn      simpleProfileChangeCB
+// 1149  *
+// 1150  * @brief   Callback from SimpleBLEProfile indicating a value change
+// 1151  *
+// 1152  * @param   paramID - parameter ID of the value that was changed.
+// 1153  *
+// 1154  * @return  none
+// 1155  */
+// 1156 #pragma location="CODEGENERATOR_0"
+
+        RSEG CODEGENERATOR_0:CODE:NOROOT(0)
+// 1157 static void simpleProfileChangeCB( uint8 paramID )
+simpleProfileChangeCB:
+        CODE
+// 1158 {
+        ; Saved register size: 0
+        ; Auto size: 0
+// 1159   /* codegenerator_simpleProfileChangeCB( uint8 paramID ) */
+// 1160   asm("NOP \n" \ 
+// 1161       "NOP \n" \ 
+// 1162       "NOP \n" \ 
+// 1163       "NOP \n" \ 
+// 1164       "NOP \n" \ 
+// 1165       "NOP \n" \ 
+// 1166       "NOP \n" \ 
+// 1167       "NOP \n" \ 
+// 1168       "NOP \n" \ 
+// 1169       "NOP \n" );
+        NOP 
+        NOP 
+        NOP 
+        NOP 
+        NOP 
+        NOP 
+        NOP 
+        NOP 
+        NOP 
+        NOP 
+// 1170   asm( "LJMP cg_simpleProfileChangeCB-0x60000" ); /* segment 1 */
+        LJMP cg_simpleProfileChangeCB-0x60000
+// 1171   asm("NOP \n" \ 
+// 1172       "NOP \n" \ 
+// 1173       "NOP \n" \ 
+// 1174       "NOP \n" \ 
+// 1175       "NOP \n" \ 
+// 1176       "NOP \n" \ 
+// 1177       "NOP \n" \ 
+// 1178       "NOP \n" );
+        NOP 
+        NOP 
+        NOP 
+        NOP 
+        NOP 
+        NOP 
+        NOP 
+        NOP 
+// 1179   //codegenerator_simpleProfileChangeCB( paramID );
+// 1180 }
+        LJMP    ?BRET
+// 1181 
+// 1182 /*********************************************************************
+// 1183  * @fn      accelEnablerChangeCB
+// 1184  *
+// 1185  * @brief   Called by the Accelerometer Profile when the Enabler Attribute
+// 1186  *          is changed.
+// 1187  *
+// 1188  * @param   none
+// 1189  *
+// 1190  * @return  none
+// 1191  */
+// 1192 #pragma location="CODEGENERATOR_0"
+
+        RSEG CODEGENERATOR_0:CODE:NOROOT(0)
+// 1193 static void accelEnablerChangeCB( void )
+accelEnablerChangeCB:
+        CODE
+// 1194 {
+        ; Saved register size: 0
+        ; Auto size: 0
+// 1195   /* cg_accelEnablerChangeCB( void ) */
+// 1196   asm("NOP \n" \ 
+// 1197       "NOP \n" \ 
+// 1198       "NOP \n" \ 
+// 1199       "NOP \n" \ 
+// 1200       "NOP \n" \ 
+// 1201       "NOP \n" \ 
+// 1202       "NOP \n" \ 
+// 1203       "NOP \n" \ 
+// 1204       "NOP \n" \ 
+// 1205       "NOP \n" );
+        NOP 
+        NOP 
+        NOP 
+        NOP 
+        NOP 
+        NOP 
+        NOP 
+        NOP 
+        NOP 
+        NOP 
+// 1206   asm( "LJMP cg_accelEnablerChangeCB-0x60000" ); /* segment 1 */
+        LJMP cg_accelEnablerChangeCB-0x60000
+// 1207   asm("NOP \n" \ 
+// 1208     "NOP \n" \ 
+// 1209     "NOP \n" \ 
+// 1210     "NOP \n" \ 
+// 1211     "NOP \n" \ 
+// 1212     "NOP \n" \ 
+// 1213     "NOP \n" \ 
+// 1214     "NOP \n" );
+        NOP 
+        NOP 
+        NOP 
+        NOP 
+        NOP 
+        NOP 
+        NOP 
+        NOP 
+// 1215 }
+        LJMP    ?BRET
+// 1216 
+// 1217 /*********************************************************************
+// 1218  * @fn      battProfileChangeCB
+// 1219  *
+// 1220  * @brief   Callback from battserviceProfile indicating a value change
+// 1221  *
+// 1222  * @param   event - event of the value that was changed.
+// 1223  *
+// 1224  * @return  none
+// 1225  */
+// 1226 #pragma location="CODEGENERATOR_0"
+
+        RSEG CODEGENERATOR_0:CODE:NOROOT(0)
+// 1227 void battProfileChangeCB( uint8 event )
+battProfileChangeCB:
+        CODE
+// 1228 {
+        ; Saved register size: 0
+        ; Auto size: 0
+// 1229   /* codegenerator_simpleProfileChangeCB( uint8 event ) */
+// 1230   asm("NOP \n" \ 
+// 1231       "NOP \n" \ 
+// 1232       "NOP \n" \ 
+// 1233       "NOP \n" \ 
+// 1234       "NOP \n" \ 
+// 1235       "NOP \n" \ 
+// 1236       "NOP \n" \ 
+// 1237       "NOP \n" );
+        NOP 
+        NOP 
+        NOP 
+        NOP 
+        NOP 
+        NOP 
+        NOP 
+        NOP 
+// 1238   asm( "LJMP cg_battProfileChangeCB-0x60000" ); /* segment 1 */
+        LJMP cg_battProfileChangeCB-0x60000
+// 1239   asm("NOP \n" \ 
+// 1240     "NOP \n" \ 
+// 1241     "NOP \n" \ 
+// 1242     "NOP \n" \ 
+// 1243     "NOP \n" \ 
+// 1244     "NOP \n" \ 
+// 1245     "NOP \n" \ 
+// 1246     "NOP \n" );
+        NOP 
+        NOP 
+        NOP 
+        NOP 
+        NOP 
+        NOP 
+        NOP 
+        NOP 
+// 1247 }
+        LJMP    ?BRET
+// 1248 
+// 1249 #pragma location="CODEGENERATOR_0"
+
+        RSEG CODEGENERATOR_0:CODE:NOROOT(0)
+// 1250 void CodeGenerator_EVT_1_CB(void)
+CodeGenerator_EVT_1_CB:
+        CODE
+// 1251 {
+        ; Saved register size: 0
+        ; Auto size: 0
+// 1252   asm("NOP \n" \ 
+// 1253       "NOP \n" \ 
+// 1254       "NOP \n" \ 
+// 1255       "NOP \n" \ 
+// 1256       "NOP \n" \ 
+// 1257       "NOP \n" \ 
+// 1258       "NOP \n" \ 
+// 1259       "NOP \n" );
+        NOP 
+        NOP 
+        NOP 
+        NOP 
+        NOP 
+        NOP 
+        NOP 
+        NOP 
+// 1260   asm( "LJMP cg_EVT_1_CB-0x60000" ); /* segment 1 */
+        LJMP cg_EVT_1_CB-0x60000
+// 1261   asm("NOP \n" \ 
+// 1262     "NOP \n" \ 
+// 1263     "NOP \n" \ 
+// 1264     "NOP \n" \ 
+// 1265     "NOP \n" \ 
+// 1266     "NOP \n" \ 
+// 1267     "NOP \n" \ 
+// 1268     "NOP \n" );
+        NOP 
+        NOP 
+        NOP 
+        NOP 
+        NOP 
+        NOP 
+        NOP 
+        NOP 
+// 1269 }
+        LJMP    ?BRET
+// 1270 
+// 1271 #pragma location="CODEGENERATOR_0"
+
+        RSEG CODEGENERATOR_0:CODE:NOROOT(0)
+// 1272 void CodeGenerator_EVT_2_CB(void)
+CodeGenerator_EVT_2_CB:
+        CODE
+// 1273 {
+        ; Saved register size: 0
+        ; Auto size: 0
+// 1274   asm("NOP \n" \ 
+// 1275       "NOP \n" \ 
+// 1276       "NOP \n" \ 
+// 1277       "NOP \n" \ 
+// 1278       "NOP \n" \ 
+// 1279       "NOP \n" \ 
+// 1280       "NOP \n" \ 
+// 1281       "NOP \n" );
+        NOP 
+        NOP 
+        NOP 
+        NOP 
+        NOP 
+        NOP 
+        NOP 
+        NOP 
+// 1282   asm( "LJMP cg_EVT_2_CB-0x60000" ); /* segment 1 */
+        LJMP cg_EVT_2_CB-0x60000
+// 1283   asm("NOP \n" \ 
+// 1284     "NOP \n" \ 
+// 1285     "NOP \n" \ 
+// 1286     "NOP \n" \ 
+// 1287     "NOP \n" \ 
+// 1288     "NOP \n" \ 
+// 1289     "NOP \n" \ 
+// 1290     "NOP \n" );
+        NOP 
+        NOP 
+        NOP 
+        NOP 
+        NOP 
+        NOP 
+        NOP 
+        NOP 
+// 1291 }
+        LJMP    ?BRET
+// 1292 
+// 1293 #pragma location="CODEGENERATOR_0"
+
+        RSEG CODEGENERATOR_0:CODE:NOROOT(0)
+// 1294 void CodeGenerator_EVT_3_CB(void)
+CodeGenerator_EVT_3_CB:
+        CODE
+// 1295 {
+        ; Saved register size: 0
+        ; Auto size: 0
+// 1296   asm("NOP \n" \ 
+// 1297       "NOP \n" \ 
+// 1298       "NOP \n" \ 
+// 1299       "NOP \n" \ 
+// 1300       "NOP \n" \ 
+// 1301       "NOP \n" \ 
+// 1302       "NOP \n" \ 
+// 1303       "NOP \n" );
+        NOP 
+        NOP 
+        NOP 
+        NOP 
+        NOP 
+        NOP 
+        NOP 
+        NOP 
+// 1304   asm( "LJMP cg_EVT_3_CB-0x60000" ); /* segment 1 */
+        LJMP cg_EVT_3_CB-0x60000
+// 1305   asm("NOP \n" \ 
+// 1306     "NOP \n" \ 
+// 1307     "NOP \n" \ 
+// 1308     "NOP \n" \ 
+// 1309     "NOP \n" \ 
+// 1310     "NOP \n" \ 
+// 1311     "NOP \n" \ 
+// 1312     "NOP \n" );
+        NOP 
+        NOP 
+        NOP 
+        NOP 
+        NOP 
+        NOP 
+        NOP 
+        NOP 
+// 1313 }
+        LJMP    ?BRET
+// 1314 
+// 1315 #pragma location="CODEGENERATOR_0"
+
+        RSEG CODEGENERATOR_0:CODE:NOROOT(0)
+// 1316 void CodeGenerator_EVT_4_CB(void)
+CodeGenerator_EVT_4_CB:
+        CODE
+// 1317 {  
+        ; Saved register size: 0
+        ; Auto size: 0
+// 1318   asm("NOP \n" \ 
+// 1319       "NOP \n" \ 
+// 1320       "NOP \n" \ 
+// 1321       "NOP \n" \ 
+// 1322       "NOP \n" \ 
+// 1323       "NOP \n" \ 
+// 1324       "NOP \n" \ 
+// 1325       "NOP \n" );
+        NOP 
+        NOP 
+        NOP 
+        NOP 
+        NOP 
+        NOP 
+        NOP 
+        NOP 
+// 1326   asm( "LJMP cg_EVT_4_CB-0x60000" ); /* segment 1 */
+        LJMP cg_EVT_4_CB-0x60000
+// 1327   asm("NOP \n" \ 
+// 1328       "NOP \n" \ 
+// 1329       "NOP \n" \ 
+// 1330       "NOP \n" \ 
+// 1331       "NOP \n" \ 
+// 1332       "NOP \n" \ 
+// 1333       "NOP \n" \ 
+// 1334       "NOP \n" );
+        NOP 
+        NOP 
+        NOP 
+        NOP 
+        NOP 
+        NOP 
+        NOP 
+        NOP 
+// 1335 }
+        LJMP    ?BRET
+// 1336 
+// 1337 #ifdef CC2541
+// 1338 /*********************************************************************
+// 1339  * @fn      timeserviceChangeCB
+// 1340  *
+// 1341  * @brief   Callback from timeserviceProfile indicating a value change
+// 1342  *
+// 1343  * @param   paramID - parameter ID of the value that was changed.
+// 1344  *
+// 1345  * @return  none
+// 1346  */
+// 1347 #pragma location="CODEGENERATOR_0"
+
+        RSEG CODEGENERATOR_0:CODE:NOROOT(0)
+// 1348 void timeserviceChangeCB( uint8 paramID )
+timeserviceChangeCB:
+        CODE
+// 1349 {
+        ; Saved register size: 0
+        ; Auto size: 0
+// 1350   /* cg_timeserviceChangeCB( uint8 paramID ) */
+// 1351   asm("NOP \n" \ 
+// 1352       "NOP \n" \ 
+// 1353       "NOP \n" \ 
+// 1354       "NOP \n" \ 
+// 1355       "NOP \n" \ 
+// 1356       "NOP \n" \ 
+// 1357       "NOP \n" \ 
+// 1358       "NOP \n" \ 
+// 1359       "NOP \n" \ 
+// 1360       "NOP \n" );
+        NOP 
+        NOP 
+        NOP 
+        NOP 
+        NOP 
+        NOP 
+        NOP 
+        NOP 
+        NOP 
+        NOP 
+// 1361   asm( "LJMP cg_timeserviceChangeCB-0x60000" ); /* segment 1*/
+        LJMP cg_timeserviceChangeCB-0x60000
+// 1362   asm("NOP \n" \ 
+// 1363     "NOP \n" \ 
+// 1364     "NOP \n" \ 
+// 1365     "NOP \n" \ 
+// 1366     "NOP \n" \ 
+// 1367     "NOP \n" \ 
+// 1368     "NOP \n" \ 
+// 1369     "NOP \n" );
+        NOP 
+        NOP 
+        NOP 
+        NOP 
+        NOP 
+        NOP 
+        NOP 
+        NOP 
+// 1370 }
+        LJMP    ?BRET
+// 1371 #endif
+// 1372 
+// 1373 
+// 1374 
+// 1375 /*********************************************************************
+// 1376  * @fn      cg_simpleProfileChangeCB
+// 1377  *
+// 1378  * @brief   Callback from SimpleBLEProfile indicating a value change
+// 1379  *
+// 1380  * @param   paramID - parameter ID of the value that was changed.
+// 1381  *
+// 1382  * @return  none
+// 1383  */
+// 1384 
+// 1385 #pragma location="CODEGENERATOR_1"
+
+        RSEG CODEGENERATOR_1:CODE:NOROOT(0)
+// 1386 void cg_simpleProfileChangeCB( uint8 paramID )
+cg_simpleProfileChangeCB:
+        CODE
+// 1387 {
+        MOV     A,#-0x9
+        LCALL   ?BANKED_ENTER_XDATA
+        ; Saved register size: 9
+        ; Auto size: 1
+        MOV     A,#-0x1
+        LCALL   ?ALLOC_XSTACK8
+        MOV     A,R1
+// 1388   uint8 newValue;
+// 1389   
+// 1390   switch( paramID )
+        JZ      ??cg_simpleProfileChangeCB_0
+        ADD     A,#-0x2
+        JZ      ??cg_simpleProfileChangeCB_1
+        SJMP    ??cg_simpleProfileChangeCB_2
+// 1391   {
+// 1392   case SIMPLEPROFILE_CHAR1:
+// 1393     //SimpleProfile_GetParameter( SIMPLEPROFILE_CHAR1, &newValue );
+// 1394     uartWriteString("change simple profile char1.\n\r");
+??cg_simpleProfileChangeCB_0:
+        ; Setup parameters for call to function uartWriteString
+        MOV     R2,#`?<Constant "change simple profile...">` & 0xff
+        MOV     R3,#(`?<Constant "change simple profile...">` >> 8) & 0xff
+        LCALL   ??uartWriteString?relay
+// 1395     break;
+        SJMP    ??cg_simpleProfileChangeCB_2
+// 1396     
+// 1397   case SIMPLEPROFILE_CHAR3:
+// 1398     SimpleProfile_GetParameter( SIMPLEPROFILE_CHAR3, &newValue );
+??cg_simpleProfileChangeCB_1:
+        ; Setup parameters for call to function SimpleProfile_GetParameter
+        MOV     DPL,?XSP + 0
+        MOV     DPH,?XSP + 1
+        MOV     R2,DPL
+        MOV     R3,DPH
+        MOV     R1,#0x2
+        LCALL   ??SimpleProfile_GetParameter?relay
+// 1399     break;
+// 1400     
+// 1401   default:
+// 1402     // should not reach here!
+// 1403     break;
+// 1404   }
+// 1405 }
+??cg_simpleProfileChangeCB_2:
+        MOV     A,#0x1
+        LCALL   ?DEALLOC_XSTACK8
+        REQUIRE ?Subroutine3
+        ; // Fall through to label ?Subroutine3
+
+        RSEG CODEGENERATOR_1:CODE:NOROOT(0)
+?Subroutine3:
+        MOV     R7,#0x1
+        LJMP    ?BANKED_LEAVE_XDATA
+// 1406 
+// 1407 /*********************************************************************
+// 1408  * @fn      cg_accelEnablerChangeCB
+// 1409  *
+// 1410  * @brief   Called by the Accelerometer Profile when the Enabler Attribute
+// 1411  *          is changed.
+// 1412  *
+// 1413  * @param   none
+// 1414  *
+// 1415  * @return  none
+// 1416  */
+// 1417 #pragma location="CODEGENERATOR_1"
+
+        RSEG CODEGENERATOR_1:CODE:NOROOT(0)
+// 1418 void cg_accelEnablerChangeCB( void )
+cg_accelEnablerChangeCB:
+        CODE
+// 1419 {
+        PUSH    DPL
+        PUSH    DPH
+        ; Saved register size: 2
+        ; Auto size: 0
+// 1420   bStatus_t status = Accel_GetParameter( ACCEL_ENABLER, &accelEnabler );
+// 1421 
+// 1422   if (status == SUCCESS){
+        ; Setup parameters for call to function Accel_GetParameter
+        MOV     R2,#accelEnabler & 0xff
+        MOV     R3,#(accelEnabler >> 8) & 0xff
+        MOV     R1,#0x0
+        LCALL   ??Accel_GetParameter?relay
+        MOV     A,R1
+        JNZ     ??cg_accelEnablerChangeCB_0
+// 1423     if (accelEnabler){
+        MOV     DPTR,#accelEnabler
+        MOVX    A,@DPTR
+        JZ      ??cg_accelEnablerChangeCB_1
+// 1424       // Initialize accelerometer
+// 1425       accInit();
+        ; Setup parameters for call to function accInit
+        LCALL   ??accInit?relay
+// 1426 
+// 1427       // Setup timer for accelerometer task
+// 1428       osal_start_timerEx( simpleBLEPeripheral_TaskID, ACCEL_READ_EVT, ACCEL_READ_PERIOD );
+        ; Setup parameters for call to function osal_start_timerEx
+        MOV     DPTR,#__Constant_1f4
+        LCALL   ?PUSH_XSTACK8_X_FOUR
+        MOV     R2,#0x20
+        MOV     R3,#0x0
+        MOV     DPTR,#simpleBLEPeripheral_TaskID
+        MOVX    A,@DPTR
+        MOV     R1,A
+        LCALL   ??osal_start_timerEx?relay
+        MOV     A,#0x4
+        LCALL   ?DEALLOC_XSTACK8
+        SJMP    ??cg_accelEnablerChangeCB_0
+// 1429     } else {
+// 1430       // Stop the acceleromter
+// 1431       osal_stop_timerEx( simpleBLEPeripheral_TaskID, ACCEL_READ_EVT);
+??cg_accelEnablerChangeCB_1:
+        ; Setup parameters for call to function osal_stop_timerEx
+        MOV     R2,#0x20
+        MOV     R3,#0x0
+        MOV     DPTR,#simpleBLEPeripheral_TaskID
+        MOVX    A,@DPTR
+        MOV     R1,A
+        LCALL   ??osal_stop_timerEx?relay
+// 1432     }
+// 1433   } else {
+// 1434       //??
+// 1435   }
+// 1436 }
+??cg_accelEnablerChangeCB_0:
+        POP     DPH
+        POP     DPL
+        LJMP    ?BRET
+// 1437 
+// 1438 /*********************************************************************
+// 1439  * @fn      cg_battProfileChangeCB
+// 1440  *
+// 1441  * @brief   Callback from battserviceProfile indicating a value change
+// 1442  *
+// 1443  * @param   event - event of the value that was changed.
+// 1444  *
+// 1445  * @return  none
+// 1446  */
+// 1447 #pragma location="CODEGENERATOR_1"
+
+        RSEG CODEGENERATOR_1:CODE:NOROOT(0)
+// 1448 void cg_battProfileChangeCB( uint8 event )
+cg_battProfileChangeCB:
+        CODE
+// 1449 {
+        ; Saved register size: 0
+        ; Auto size: 0
+// 1450   switch( event ){
+// 1451   case BATT_LEVEL_NOTI_DISABLED:
+// 1452     break;
+// 1453   case BATT_LEVEL_NOTI_ENABLED:
+// 1454     break;
+// 1455   default:
+// 1456     break;
+// 1457   }
+// 1458 }
+        LJMP    ?BRET
+// 1459 
+// 1460 #pragma location="CODEGENERATOR_1"
+
+        RSEG CODEGENERATOR_1:CODE:NOROOT(0)
+// 1461 void cg_EVT_1_CB( void )
+cg_EVT_1_CB:
+        CODE
+// 1462 {
+        ; Saved register size: 0
+        ; Auto size: 0
+// 1463   
+// 1464 }
+        LJMP    ?BRET
+// 1465 
+// 1466 #pragma location="CODEGENERATOR_1"
+
+        RSEG CODEGENERATOR_1:CODE:NOROOT(0)
+// 1467 void cg_EVT_2_CB( void )
+cg_EVT_2_CB:
+        CODE
+// 1468 {
+        ; Saved register size: 0
+        ; Auto size: 0
+// 1469   
+// 1470 }
+        LJMP    ?BRET
+// 1471 
+// 1472 #pragma location="CODEGENERATOR_1"
+
+        RSEG CODEGENERATOR_1:CODE:NOROOT(0)
+// 1473 void cg_EVT_3_CB( void )
+cg_EVT_3_CB:
+        CODE
+// 1474 {
+        ; Saved register size: 0
+        ; Auto size: 0
+// 1475   
+// 1476 }
+        LJMP    ?BRET
+// 1477 
+// 1478 #pragma location="CODEGENERATOR_1"
+
+        RSEG CODEGENERATOR_1:CODE:NOROOT(0)
+// 1479 void cg_EVT_4_CB( void )
+cg_EVT_4_CB:
+        CODE
+// 1480 {
+        ; Saved register size: 0
+        ; Auto size: 0
+// 1481   
+// 1482 }
+        LJMP    ?BRET
+// 1483 
+// 1484 #ifdef CC2541
+// 1485 /*********************************************************************
+// 1486  * @fn      cg_timeserviceChangeCB
+// 1487  *
+// 1488  * @brief   Callback from timeserviceProfile indicating a value change
+// 1489  *
+// 1490  * @param   paramID - parameter ID of the value that was changed.
+// 1491  *
+// 1492  * @return  none
+// 1493  */
+// 1494 #pragma location="CODEGENERATOR_1"
+
+        RSEG CODEGENERATOR_1:CODE:NOROOT(0)
+// 1495 void cg_timeserviceChangeCB( uint8 paramID )
+cg_timeserviceChangeCB:
+        CODE
+// 1496 {
+        MOV     A,#-0x9
+        LCALL   ?BANKED_ENTER_XDATA
+        ; Saved register size: 9
+        ; Auto size: 0
+        MOV     A,R1
+// 1497   bStatus_t status;
+// 1498   switch( paramID ){
+        JZ      ??cg_timeserviceChangeCB_0
+        DEC     A
+        JZ      ??cg_timeserviceChangeCB_1
+        DEC     A
+        JNZ     $+5
+        LJMP    ??cg_timeserviceChangeCB_2 & 0xFFFF
+        DEC     A
+        JNZ     $+5
+        LJMP    ??cg_timeserviceChangeCB_3 & 0xFFFF
+        LJMP    ??cg_timeserviceChangeCB_4 & 0xFFFF
+// 1499   case TIME_ENABLER:
+// 1500     status = timeservice_GetParameter( TIME_ENABLER, &timeEnabler );
+// 1501     if (status == SUCCESS){
+??cg_timeserviceChangeCB_0:
+        ; Setup parameters for call to function timeservice_GetParameter
+        MOV     R2,#timeEnabler & 0xff
+        MOV     R3,#(timeEnabler >> 8) & 0xff
+        MOV     R1,#0x0
+        LCALL   ??timeservice_GetParameter?relay
+        MOV     A,R1
+        JZ      $+5
+        LJMP    ??cg_timeserviceChangeCB_4 & 0xFFFF
+// 1502       if (timeEnabler){
+        MOV     DPTR,#timeEnabler
+        MOVX    A,@DPTR
+        JZ      ??cg_timeserviceChangeCB_5
+// 1503         // Initialize RTC
+// 1504         rtcInit();
+        ; Setup parameters for call to function rtcInit
+        LCALL   ??rtcInit?relay
+// 1505         
+// 1506         /* uint8 alarmMonth, uint8 alarmDate, uint8 alarmHour , uint8 alarmMinutes, uint8 alarmSeconds, uint8 repeatMode */
+// 1507         rtcSetAlarm( 0x03, 0x17, 0x16, 0x23, 0x03, 0x01 );
+        ; Setup parameters for call to function rtcSetAlarm
+        MOV     ?V0 + 0,#0x1
+        MOV     R0,#?V0 + 0
+        LCALL   ?PUSH_XSTACK_I_ONE
+        MOV     R5,#0x3
+        MOV     R4,#0x23
+        MOV     R3,#0x16
+        MOV     R2,#0x17
+        MOV     R1,#0x3
+        LCALL   ??rtcSetAlarm?relay
+        MOV     A,#0x1
+        LCALL   ?DEALLOC_XSTACK8
+// 1508         rtcSetTime(0x00, 0x23, 0x16 ); /* uint8 second,uint8 minute, uint8 hour */
+        ; Setup parameters for call to function rtcSetTime
+        MOV     R3,#0x16
+        MOV     R2,#0x23
+        MOV     R1,#0x0
+        LCALL   ??rtcSetTime?relay
+// 1509         rtcSetDate(0x01, 0x17, 0x03, 0x14, 0x03); /* uint8 day, uint8 date, uint8 month, uint8 year, uint8 century */
+        ; Setup parameters for call to function rtcSetDate
+        MOV     R5,#0x3
+        MOV     R4,#0x14
+        MOV     R3,#0x3
+        MOV     R2,#0x17
+        MOV     R1,#0x1
+        LCALL   ??rtcSetDate?relay
+// 1510         // Setup timer for time servicetask
+// 1511         osal_start_timerEx( simpleBLEPeripheral_TaskID, TIME_READ_EVT, TIME_READ_PERIOD );
+        ; Setup parameters for call to function osal_start_timerEx
+        MOV     DPTR,#__Constant_3e8
+        LCALL   ?PUSH_XSTACK8_X_FOUR
+        MOV     R2,#0x40
+        SJMP    ??cg_timeserviceChangeCB_6
+// 1512       } else {
+// 1513         // Stop the time service
+// 1514         osal_stop_timerEx( simpleBLEPeripheral_TaskID, TIME_READ_EVT);
+??cg_timeserviceChangeCB_5:
+        ; Setup parameters for call to function osal_stop_timerEx
+        MOV     R2,#0x40
+        MOV     R3,#0x0
+        MOV     DPTR,#simpleBLEPeripheral_TaskID
+        MOVX    A,@DPTR
+        MOV     R1,A
+        LCALL   ??osal_stop_timerEx?relay
+        SJMP    ??cg_timeserviceChangeCB_4
+// 1515       }
+// 1516     } else {
+// 1517       //??
+// 1518     }
+// 1519     break;
+// 1520         
+// 1521   case TIME:
+// 1522     osal_stop_timerEx( simpleBLEPeripheral_TaskID, TIME_READ_EVT);
+??cg_timeserviceChangeCB_1:
+        ; Setup parameters for call to function osal_stop_timerEx
+        MOV     R2,#0x40
+        MOV     R3,#0x0
+        MOV     DPTR,#simpleBLEPeripheral_TaskID
+        MOVX    A,@DPTR
+        MOV     R1,A
+        LCALL   ??osal_stop_timerEx?relay
+// 1523     osal_start_timerEx( simpleBLEPeripheral_TaskID, SET_TIME_EVT, 500 );
+        ; Setup parameters for call to function osal_start_timerEx
+        MOV     DPTR,#__Constant_1f4
+        LCALL   ?PUSH_XSTACK8_X_FOUR
+        MOV     R2,#-0x80
+??cg_timeserviceChangeCB_6:
+        MOV     R3,#0x0
+        SJMP    ??cg_timeserviceChangeCB_7
+// 1524     break;
+// 1525     
+// 1526   case DATE:
+// 1527     osal_stop_timerEx( simpleBLEPeripheral_TaskID, TIME_READ_EVT);
+??cg_timeserviceChangeCB_2:
+        ; Setup parameters for call to function osal_stop_timerEx
+        MOV     R2,#0x40
+        MOV     R3,#0x0
+        MOV     DPTR,#simpleBLEPeripheral_TaskID
+        MOVX    A,@DPTR
+        MOV     R1,A
+        LCALL   ??osal_stop_timerEx?relay
+// 1528     osal_start_timerEx( simpleBLEPeripheral_TaskID, SET_DATE_EVT, 500 );
+        ; Setup parameters for call to function osal_start_timerEx
+        MOV     DPTR,#__Constant_1f4
+        LCALL   ?PUSH_XSTACK8_X_FOUR
+        MOV     R2,#0x0
+        MOV     R3,#0x1
+        SJMP    ??cg_timeserviceChangeCB_7
+// 1529     break;
+// 1530     
+// 1531   case ALARM:
+// 1532     osal_stop_timerEx( simpleBLEPeripheral_TaskID, TIME_READ_EVT);
+??cg_timeserviceChangeCB_3:
+        ; Setup parameters for call to function osal_stop_timerEx
+        MOV     R2,#0x40
+        MOV     R3,#0x0
+        MOV     DPTR,#simpleBLEPeripheral_TaskID
+        MOVX    A,@DPTR
+        MOV     R1,A
+        LCALL   ??osal_stop_timerEx?relay
+// 1533     osal_start_timerEx( simpleBLEPeripheral_TaskID, SET_ALARM_EVT, 500 );
+        ; Setup parameters for call to function osal_start_timerEx
+        MOV     DPTR,#__Constant_1f4
+        LCALL   ?PUSH_XSTACK8_X_FOUR
+        MOV     R2,#0x0
+        MOV     R3,#0x2
+??cg_timeserviceChangeCB_7:
+        MOV     DPTR,#simpleBLEPeripheral_TaskID
+        MOVX    A,@DPTR
+        MOV     R1,A
+        LCALL   ??osal_start_timerEx?relay
+        MOV     A,#0x4
+        LCALL   ?DEALLOC_XSTACK8
+// 1534     break;
+// 1535   }
+// 1536 }
+??cg_timeserviceChangeCB_4:
+        LJMP    ?Subroutine3 & 0xFFFF
+// 1537 #endif
+// 1538 
+// 1539 
+// 1540 /*********************************************************************
+// 1541  * @fn      CodeGeneratorStartPoint
+// 1542  *
+// 1543  * @brief   Code Generator main function entrance point
+// 1544  *
+// 1545  * @param   None
+// 1546  *
+// 1547  * @return  none
+// 1548  */
+// 1549 #pragma location="CODEGENERATOR_4"
+
+        RSEG CODEGENERATOR_4:CODE:NOROOT(0)
+// 1550 void CodeGeneratorStartPoint( void )
+CodeGeneratorStartPoint:
+        CODE
+// 1551 {
+        ; Saved register size: 0
+        ; Auto size: 0
+// 1552 // Setup Relay function
+// 1553 __asm("NOP");
+        NOP
+// 1554 }
+        LJMP    ?BRET
+
+        COMMON INTVEC:CODE:ROOT(0)
+        ORG 107
+`??halAlarmPort0Isr??INTVEC 107`:
+        LJMP       (halAlarmPort0Isr)
+
+        COMMON INTVEC:CODE:ROOT(0)
+        ORG 123
+`??halaccPort1Isr??INTVEC 123`:
+        LJMP       (halaccPort1Isr)
+
+        RSEG XDATA_ID:CODE:NOROOT(0)
+`?<Initializer for scanRspData>`:
+        DATA8
+        DB 11
+        DB 9
+        DB 78
+        DB 101
+        DB 111
+        DB 39
+        DB 115
+        DB 32
+        DB 110
+        DB 111
+        DB 100
+        DB 101
+        DB 5
+        DB 18
+        DB 80
+        DB 0
+        DB 32
+        DB 3
+        DB 2
+        DB 10
+        DB 0
+
+        RSEG XDATA_ID:CODE:NOROOT(0)
+`?<Initializer for advertData>`:
+        DATA8
+        DB 2
+        DB 1
+        DB 6
+        DB 3
+        DB 2
+        DB 240
+        DB 255
+        DB 5
+        DB 255
+        DB 48
+        DB 99
+        DB 112
+        DB 108
+
+        RSEG XDATA_ID:CODE:NOROOT(0)
+`?<Initializer for attDeviceName>`:
+        DB "Neo's BLE Node"
+        DB 0, 0, 0, 0, 0, 0
+
+        RSEG XDATA_ID:CODE:NOROOT(0)
+`?<Initializer for simpleBLEPeripheral_Peripher`:
+        DATA16
+        DW ??peripheralStateNotificationCB?relay
+        DW 0H
+
+        RSEG XDATA_ID:CODE:NOROOT(0)
+`?<Initializer for simpleBLEPeripheral_SimplePr`:
+        DATA16
+        DW ??simpleProfileChangeCB?relay
+
+        RSEG XDATA_ID:CODE:NOROOT(0)
+`?<Initializer for EcoExecProfileCBs>`:
+        DATA16
+        DW ??EcoExecProfileChangeCB?relay
+
+        RSEG XDATA_ID:CODE:NOROOT(0)
+`?<Initializer for accelerometerProfileCBs>`:
+        DATA16
+        DW ??accelEnablerChangeCB?relay
+
+        RSEG XDATA_ID:CODE:NOROOT(0)
+`?<Initializer for timeserviceProfileCBs>`:
+        DATA16
+        DW ??timeserviceChangeCB?relay
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??SimpleBLEPeripheral_Init?relay:
+        CODE
+        LCALL   ?BDISPATCH
+        DATA24
+        DC24    SimpleBLEPeripheral_Init
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??SimpleBLEPeripheral_ProcessEvent?relay:
+        CODE
+        LCALL   ?BDISPATCH
+        DATA24
+        DC24    SimpleBLEPeripheral_ProcessEvent
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??peripheralStateNotificationCB?relay:
+        CODE
+        LCALL   ?BDISPATCH
+        DATA24
+        DC24    peripheralStateNotificationCB
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??EcoExecProfileChangeCB?relay:
+        CODE
+        LCALL   ?BDISPATCH
+        DATA24
+        DC24    EcoExecProfileChangeCB
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??accelRead?relay:
+        CODE
+        LCALL   ?BDISPATCH
+        DATA24
+        DC24    accelRead
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??timeRead?relay:
+        CODE
+        LCALL   ?BDISPATCH
+        DATA24
+        DC24    timeRead
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??simpleProfileChangeCB?relay:
+        CODE
+        LCALL   ?BDISPATCH
+        DATA24
+        DC24    simpleProfileChangeCB
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??accelEnablerChangeCB?relay:
+        CODE
+        LCALL   ?BDISPATCH
+        DATA24
+        DC24    accelEnablerChangeCB
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??battProfileChangeCB?relay:
+        CODE
+        LCALL   ?BDISPATCH
+        DATA24
+        DC24    battProfileChangeCB
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??CodeGenerator_EVT_1_CB?relay:
+        CODE
+        LCALL   ?BDISPATCH
+        DATA24
+        DC24    CodeGenerator_EVT_1_CB
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??CodeGenerator_EVT_2_CB?relay:
+        CODE
+        LCALL   ?BDISPATCH
+        DATA24
+        DC24    CodeGenerator_EVT_2_CB
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??CodeGenerator_EVT_3_CB?relay:
+        CODE
+        LCALL   ?BDISPATCH
+        DATA24
+        DC24    CodeGenerator_EVT_3_CB
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??CodeGenerator_EVT_4_CB?relay:
+        CODE
+        LCALL   ?BDISPATCH
+        DATA24
+        DC24    CodeGenerator_EVT_4_CB
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??timeserviceChangeCB?relay:
+        CODE
+        LCALL   ?BDISPATCH
+        DATA24
+        DC24    timeserviceChangeCB
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??cg_simpleProfileChangeCB?relay:
+        CODE
+        LCALL   ?BDISPATCH
+        DATA24
+        DC24    cg_simpleProfileChangeCB
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??cg_accelEnablerChangeCB?relay:
+        CODE
+        LCALL   ?BDISPATCH
+        DATA24
+        DC24    cg_accelEnablerChangeCB
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??cg_battProfileChangeCB?relay:
+        CODE
+        LCALL   ?BDISPATCH
+        DATA24
+        DC24    cg_battProfileChangeCB
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??cg_EVT_1_CB?relay:
+        CODE
+        LCALL   ?BDISPATCH
+        DATA24
+        DC24    cg_EVT_1_CB
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??cg_EVT_2_CB?relay:
+        CODE
+        LCALL   ?BDISPATCH
+        DATA24
+        DC24    cg_EVT_2_CB
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??cg_EVT_3_CB?relay:
+        CODE
+        LCALL   ?BDISPATCH
+        DATA24
+        DC24    cg_EVT_3_CB
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??cg_EVT_4_CB?relay:
+        CODE
+        LCALL   ?BDISPATCH
+        DATA24
+        DC24    cg_EVT_4_CB
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??cg_timeserviceChangeCB?relay:
+        CODE
+        LCALL   ?BDISPATCH
+        DATA24
+        DC24    cg_timeserviceChangeCB
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??CodeGeneratorStartPoint?relay:
+        CODE
+        LCALL   ?BDISPATCH
+        DATA24
+        DC24    CodeGeneratorStartPoint
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA8
+`?<Constant "change simple profile...">`:
+        DB "change simple profile char1.\012\015"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA32
+__Constant_ffffffff:
+        DD 4294967295
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA32
+__Constant_1388:
+        DD 5000
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA32
+__Constant_64:
+        DD 100
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA32
+__Constant_1f4:
+        DD 500
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA32
+__Constant_3e8:
+        DD 1000
+
+        END
+// 
+// 2 021 bytes in segment BANKED_CODE
+//   138 bytes in segment BANK_RELAYS
+//   182 bytes in segment CODEGENERATOR_0
+//   345 bytes in segment CODEGENERATOR_1
+//     4 bytes in segment CODEGENERATOR_4
+//     6 bytes in segment INTVEC
+//    59 bytes in segment NEAR_CODE
+//     7 bytes in segment SFR_AN
+//    67 bytes in segment XDATA_I
+//    67 bytes in segment XDATA_ID
+//    51 bytes in segment XDATA_ROM_C
+//    51 bytes in segment XDATA_Z
+// 
+// 2 816 bytes of CODE  memory (+  6 bytes shared)
+//    31 bytes of CONST memory (+ 20 bytes shared)
+//     0 bytes of DATA  memory (+  7 bytes shared)
+//   118 bytes of XDATA memory
+//
+//Errors: none
+//Warnings: none

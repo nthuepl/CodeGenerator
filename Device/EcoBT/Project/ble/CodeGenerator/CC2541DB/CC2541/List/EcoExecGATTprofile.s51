@@ -1,0 +1,2298 @@
+///////////////////////////////////////////////////////////////////////////////
+//                                                                            /
+// IAR C/C++ Compiler V8.20.1.40829 for 8051            06/Aug/2014  16:12:00 /
+// Copyright 2004-2012 IAR Systems AB.                                        /
+//                                                                            /
+//    Core               =  plain                                             /
+//    Code model         =  banked                                            /
+//    Data model         =  large                                             /
+//    Calling convention =  xdata reentrant                                   /
+//    Constant location  =  data_rom                                          /
+//    Dptr setup         =  1,16                                              /
+//                                                                            /
+//    Source file        =  D:\NTHU\研究\Important\ThesisCode\Code\GitLabClou /
+//                          d\NewEcoExec\codegenerator\Device\EcoBT\Project\b /
+//                          le\Profiles\EcoExecGATTProfile\EcoExecGATTprofile /
+//                          .c                                                /
+//    Command line       =  -f D:\NTHU\研究\Important\ThesisCode\Code\GitLabC /
+//                          loud\NewEcoExec\codegenerator\Device\EcoBT\Projec /
+//                          t\ble\CodeGenerator\CC2541DB\..\..\config\buildCo /
+//                          mponents.cfg (-DBROADCASTER_CFG=0x01              /
+//                          -DOBSERVER_CFG=0x02 -DPERIPHERAL_CFG=0x04         /
+//                          -DCENTRAL_CFG=0x08 -DADV_NCONN_CFG=0x01           /
+//                          -DADV_CONN_CFG=0x02 -DSCAN_CFG=0x04               /
+//                          -DINIT_CFG=0x08 -DADV_CFG=ADV_NCONN_CFG+ADV_CONN_ /
+//                          CFG -DLINK_CFG=ADV_CONN_CFG+INIT_CFG              /
+//                          -DFULL_CFG=INIT_CFG+SCAN_CFG+ADV_NCONN_CFG+ADV_CO /
+//                          NN_CFG) -f D:\NTHU\研究\Important\ThesisCode\Code /
+//                          \GitLabCloud\NewEcoExec\codegenerator\Device\EcoB /
+//                          T\Project\ble\CodeGenerator\CC2541DB\buildConfig. /
+//                          cfg (-DHOST_CONFIG=PERIPHERAL_CFG                 /
+//                          -DGAP_PRIVACY_RECONNECT -DCC2541                  /
+//                          -DOAD_IMAGE_VERSION=0x0000                        /
+//                          "-DOAD_IMAGE_A_USER_ID='A', 'A', 'A', 'A'"        /
+//                          "-DOAD_IMAGE_B_USER_ID='B', 'B', 'B', 'B'")       /
+//                          D:\NTHU\研究\Important\ThesisCode\Code\GitLabClou /
+//                          d\NewEcoExec\codegenerator\Device\EcoBT\Project\b /
+//                          le\Profiles\EcoExecGATTProfile\EcoExecGATTprofile /
+//                          .c -D INT_HEAP_LEN=900 -D HALNODEBUG -D           /
+//                          OSAL_CBTIMER_NUM_TASKS=1 -D HAL_AES_DMA=TRUE -D   /
+//                          HAL_DMA=TRUE -D xPOWER_SAVING -D                  /
+//                          xPLUS_BROADCASTER -D HAL_LCD=FALSE -D             /
+//                          HAL_LED=TRUE -D HAL_ADC=TRUE -lB                  /
+//                          D:\NTHU\研究\Important\ThesisCode\Code\GitLabClou /
+//                          d\NewEcoExec\codegenerator\Device\EcoBT\Project\b /
+//                          le\CodeGenerator\CC2541DB\CC2541\List\ -o         /
+//                          D:\NTHU\研究\Important\ThesisCode\Code\GitLabClou /
+//                          d\NewEcoExec\codegenerator\Device\EcoBT\Project\b /
+//                          le\CodeGenerator\CC2541DB\CC2541\Obj\ -e --debug  /
+//                          --core=plain --dptr=16,1 --data_model=large       /
+//                          --code_model=banked --calling_convention=xdata_re /
+//                          entrant --place_constants=data_rom                /
+//                          --nr_virtual_regs 16 -I                           /
+//                          D:\NTHU\研究\Important\ThesisCode\Code\GitLabClou /
+//                          d\NewEcoExec\codegenerator\Device\EcoBT\Project\b /
+//                          le\CodeGenerator\CC2541DB\..\..\common\ -I        /
+//                          D:\NTHU\研究\Important\ThesisCode\Code\GitLabClou /
+//                          d\NewEcoExec\codegenerator\Device\EcoBT\Project\b /
+//                          le\CodeGenerator\CC2541DB\..\..\include\ -I       /
+//                          D:\NTHU\研究\Important\ThesisCode\Code\GitLabClou /
+//                          d\NewEcoExec\codegenerator\Device\EcoBT\Project\b /
+//                          le\CodeGenerator\CC2541DB\..\..\..\..\Components\ /
+//                          hal\include\ -I D:\NTHU\研究\Important\ThesisCode /
+//                          \Code\GitLabCloud\NewEcoExec\codegenerator\Device /
+//                          \EcoBT\Project\ble\CodeGenerator\CC2541DB\..\..\. /
+//                          .\..\Components\hal\target\CC2540EB\ -I           /
+//                          D:\NTHU\研究\Important\ThesisCode\Code\GitLabClou /
+//                          d\NewEcoExec\codegenerator\Device\EcoBT\Project\b /
+//                          le\CodeGenerator\CC2541DB\..\..\..\..\Components\ /
+//                          osal\include\ -I D:\NTHU\研究\Important\ThesisCod /
+//                          e\Code\GitLabCloud\NewEcoExec\codegenerator\Devic /
+//                          e\EcoBT\Project\ble\CodeGenerator\CC2541DB\..\..\ /
+//                          ..\..\Components\services\saddr\ -I               /
+//                          D:\NTHU\研究\Important\ThesisCode\Code\GitLabClou /
+//                          d\NewEcoExec\codegenerator\Device\EcoBT\Project\b /
+//                          le\CodeGenerator\CC2541DB\..\..\..\..\Components\ /
+//                          ble\include\ -I D:\NTHU\研究\Important\ThesisCode /
+//                          \Code\GitLabCloud\NewEcoExec\codegenerator\Device /
+//                          \EcoBT\Project\ble\CodeGenerator\CC2541DB\..\..\. /
+//                          .\..\Components\ble\controller\phy\ -I            /
+//                          D:\NTHU\研究\Important\ThesisCode\Code\GitLabClou /
+//                          d\NewEcoExec\codegenerator\Device\EcoBT\Project\b /
+//                          le\CodeGenerator\CC2541DB\..\..\..\..\Components\ /
+//                          ble\controller\include\ -I                        /
+//                          D:\NTHU\研究\Important\ThesisCode\Code\GitLabClou /
+//                          d\NewEcoExec\codegenerator\Device\EcoBT\Project\b /
+//                          le\CodeGenerator\CC2541DB\..\..\..\..\Components\ /
+//                          ble\hci\ -I D:\NTHU\研究\Important\ThesisCode\Cod /
+//                          e\GitLabCloud\NewEcoExec\codegenerator\Device\Eco /
+//                          BT\Project\ble\CodeGenerator\CC2541DB\..\..\..\.. /
+//                          \Components\ble\host\ -I                          /
+//                          D:\NTHU\研究\Important\ThesisCode\Code\GitLabClou /
+//                          d\NewEcoExec\codegenerator\Device\EcoBT\Project\b /
+//                          le\CodeGenerator\CC2541DB\..\..\common\cc2540\    /
+//                          -I D:\NTHU\研究\Important\ThesisCode\Code\GitLabC /
+//                          loud\NewEcoExec\codegenerator\Device\EcoBT\Projec /
+//                          t\ble\CodeGenerator\CC2541DB\..\..\common\npi\npi /
+//                          _np\ -I D:\NTHU\研究\Important\ThesisCode\Code\Gi /
+//                          tLabCloud\NewEcoExec\codegenerator\Device\EcoBT\P /
+//                          roject\ble\CodeGenerator\CC2541DB\..\..\Profiles\ /
+//                          Roles\ -I D:\NTHU\研究\Important\ThesisCode\Code\ /
+//                          GitLabCloud\NewEcoExec\codegenerator\Device\EcoBT /
+//                          \Project\ble\CodeGenerator\CC2541DB\..\..\Profile /
+//                          s\SimpleProfile\ -I D:\NTHU\研究\Important\Thesis /
+//                          Code\Code\GitLabCloud\NewEcoExec\codegenerator\De /
+//                          vice\EcoBT\Project\ble\CodeGenerator\CC2541DB\..\ /
+//                          ..\Profiles\DevInfo\ -I                           /
+//                          D:\NTHU\研究\Important\ThesisCode\Code\GitLabClou /
+//                          d\NewEcoExec\codegenerator\Device\EcoBT\Project\b /
+//                          le\CodeGenerator\CC2541DB\..\..\Profiles\Accelero /
+//                          meter\ -I D:\NTHU\研究\Important\ThesisCode\Code\ /
+//                          GitLabCloud\NewEcoExec\codegenerator\Device\EcoBT /
+//                          \Project\ble\CodeGenerator\CC2541DB\..\..\Profile /
+//                          s\EcoExecGATTProfile\ -I                          /
+//                          D:\NTHU\研究\Important\ThesisCode\Code\GitLabClou /
+//                          d\NewEcoExec\codegenerator\Device\EcoBT\Project\b /
+//                          le\CodeGenerator\CC2541DB\..\..\Profiles\timeserv /
+//                          ice\ -I D:\NTHU\研究\Important\ThesisCode\Code\Gi /
+//                          tLabCloud\NewEcoExec\codegenerator\Device\EcoBT\P /
+//                          roject\ble\CodeGenerator\CC2541DB\..\..\Profiles\ /
+//                          Batt\ -I D:\NTHU\研究\Important\ThesisCode\Code\G /
+//                          itLabCloud\NewEcoExec\codegenerator\Device\EcoBT\ /
+//                          Project\ble\CodeGenerator\CC2541DB\..\..\Profiles /
+//                          \HIDDev\ -I D:\NTHU\研究\Important\ThesisCode\Cod /
+//                          e\GitLabCloud\NewEcoExec\codegenerator\Device\Eco /
+//                          BT\Project\ble\CodeGenerator\CC2541DB\..\..\Profi /
+//                          les\ScanParam\ -Ohz                               /
+//    List file          =  D:\NTHU\研究\Important\ThesisCode\Code\GitLabClou /
+//                          d\NewEcoExec\codegenerator\Device\EcoBT\Project\b /
+//                          le\CodeGenerator\CC2541DB\CC2541\List\EcoExecGATT /
+//                          profile.s51                                       /
+//                                                                            /
+//                                                                            /
+///////////////////////////////////////////////////////////////////////////////
+
+        NAME EcoExecGATTprofile
+
+        RSEG DOVERLAY:DATA:NOROOT(0)
+        RSEG IOVERLAY:IDATA:NOROOT(0)
+        RSEG ISTACK:IDATA:NOROOT(0)
+        RSEG PSTACK:XDATA:NOROOT(0)
+        RSEG XSTACK:XDATA:NOROOT(0)
+
+        EXTERN ?BANKED_ENTER_XDATA
+        EXTERN ?BANKED_LEAVE_XDATA
+        EXTERN ?BDISPATCH
+        EXTERN ?BRET
+        EXTERN ?CALL_IND
+        EXTERN ?DEALLOC_XSTACK8
+        EXTERN ?PUSH_XSTACK_I_TWO
+        EXTERN ?US_SWITCH_DENSE
+        EXTERN ?US_SWITCH_SPARSE
+        EXTERN ?V0
+        EXTERN ?XSTACK_DISP0_8
+        EXTERN __INIT_XDATA_I
+        EXTERN __INIT_XDATA_Z
+
+        PUBLIC ??EcoExecProfile_AddService?relay
+        PUBLIC ??EcoExecProfile_GetParameter?relay
+        PUBLIC ??EcoExecProfile_RegisterAppCBs?relay
+        PUBLIC ??EcoExecProfile_SetParameter?relay
+        PUBLIC EcoExecProfileCBs
+        PUBLIC EcoExecProfileConnHandle
+        PUBLIC EcoExecProfileServUUID
+        PUBLIC EcoExecProfile_AddService
+        PUBLIC EcoExecProfile_GetParameter
+        PUBLIC EcoExecProfile_RegisterAppCBs
+        PUBLIC EcoExecProfile_SetParameter
+        PUBLIC EcoExecProfilechar1UUID
+        PUBLIC EcoExecProfilechar2UUID
+        PUBLIC EcoExecProfilechar3UUID
+        PUBLIC EcoExecProfilechar4UUID
+        PUBLIC EcoExecProfilechar5UUID
+
+GATTServApp_ProcessCCCWriteReq SYMBOL "GATTServApp_ProcessCCCWriteReq"
+??GATTServApp_ProcessCCCWriteReq?relay SYMBOL "?relay", GATTServApp_ProcessCCCWriteReq
+GATTServApp_RegisterService SYMBOL "GATTServApp_RegisterService"
+??GATTServApp_RegisterService?relay SYMBOL "?relay", GATTServApp_RegisterService
+linkDB_Register     SYMBOL "linkDB_Register"
+??linkDB_Register?relay SYMBOL "?relay", linkDB_Register
+linkDB_State        SYMBOL "linkDB_State"
+??linkDB_State?relay SYMBOL "?relay", linkDB_State
+osal_memcpy         SYMBOL "osal_memcpy"
+??osal_memcpy?relay SYMBOL "?relay", osal_memcpy
+EcoExecProfile_AddService SYMBOL "EcoExecProfile_AddService"
+??EcoExecProfile_AddService?relay SYMBOL "?relay", EcoExecProfile_AddService
+EcoExecProfile_GetParameter SYMBOL "EcoExecProfile_GetParameter"
+??EcoExecProfile_GetParameter?relay SYMBOL "?relay", EcoExecProfile_GetParameter
+EcoExecProfile_RegisterAppCBs SYMBOL "EcoExecProfile_RegisterAppCBs"
+??EcoExecProfile_RegisterAppCBs?relay SYMBOL "?relay", EcoExecProfile_RegisterAppCBs
+EcoExecProfile_SetParameter SYMBOL "EcoExecProfile_SetParameter"
+??EcoExecProfile_SetParameter?relay SYMBOL "?relay", EcoExecProfile_SetParameter
+
+        EXTERN ??GATTServApp_ProcessCCCWriteReq?relay
+        EXTERN ??GATTServApp_RegisterService?relay
+        EXTERN ??linkDB_Register?relay
+        EXTERN ??linkDB_State?relay
+        EXTERN ??osal_memcpy?relay
+        EXTERN GATTServApp_ProcessCCCWriteReq
+        EXTERN GATTServApp_RegisterService
+        EXTERN charUserDescUUID
+        EXTERN characterUUID
+        EXTERN linkDB_Register
+        EXTERN linkDB_State
+        EXTERN osal_memcpy
+        EXTERN primaryServiceUUID
+
+// D:\NTHU\研究\Important\ThesisCode\Code\GitLabCloud\NewEcoExec\codegenerator\Device\EcoBT\Project\ble\Profiles\EcoExecGATTProfile\EcoExecGATTprofile.c
+//    1 /**************************************************************************************************
+//    2   Filename:       EcoExecGATTprofile.c
+//    3   Revised:        
+//    4   Revision:       $Revision: 23333 $
+//    5 
+//    6   Description:    This file contains the Simple GATT profile sample GATT service 
+//    7                   profile for use with the BLE sample application.
+//    8 
+//    9   Copyright 2013 Lai Tong Kun, EPL, NTHU. All rights reserved.
+//   10 **************************************************************************************************/
+//   11 
+//   12 /*********************************************************************
+//   13  * INCLUDES
+//   14  */
+//   15 #include "bcomdef.h"
+//   16 #include "OSAL.h"
+//   17 #include "linkdb.h"
+//   18 #include "att.h"
+//   19 #include "gatt.h"
+//   20 #include "gatt_uuid.h"
+//   21 #include "gattservapp.h"
+//   22 #include "gapbondmgr.h"
+//   23 #include "hal_led.h"
+//   24 #include "EcoExecGATTprofile.h"
+//   25 
+//   26 /*********************************************************************
+//   27  * MACROS
+//   28  */
+//   29 
+//   30 /*********************************************************************
+//   31  * CONSTANTS
+//   32  */
+//   33 
+//   34 #define SERVAPP_NUM_ATTR_SUPPORTED        17
+//   35 
+//   36 /*********************************************************************
+//   37  * TYPEDEFS
+//   38  */
+//   39 
+//   40 /*********************************************************************
+//   41  * GLOBAL VARIABLES
+//   42  */
+//   43 
+
+        RSEG XDATA_I:XDATA:NOROOT(0)
+//   44 uint16 EcoExecProfileConnHandle = 0xFFFF;
+EcoExecProfileConnHandle:
+        DATA16
+        DS 2
+        REQUIRE `?<Initializer for EcoExecProfileConnHandle>`
+        REQUIRE __INIT_XDATA_I
+//   45    
+//   46 // EcoExec GATT Profile Service UUID: 0xFCF0
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA16
+//   47 CONST uint8 EcoExecProfileServUUID[ATT_BT_UUID_SIZE] =
+EcoExecProfileServUUID:
+        DATA8
+        DB 240
+        DB 252
+//   48 { 
+//   49   LO_UINT16(ECOEXECPROFILE_SERV_UUID), HI_UINT16(ECOEXECPROFILE_SERV_UUID)
+//   50 };
+//   51 
+//   52 // Characteristic 1 UUID: 0xFCF1 - f4 bytes Head file 
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA16
+//   53 CONST uint8 EcoExecProfilechar1UUID[ATT_BT_UUID_SIZE] =
+EcoExecProfilechar1UUID:
+        DATA8
+        DB 241
+        DB 252
+//   54 { 
+//   55   LO_UINT16(ECOEXECPROFILE_CHAR1_UUID), HI_UINT16(ECOEXECPROFILE_CHAR1_UUID)
+//   56 };
+//   57 
+//   58 // Characteristic 2 UUID: 0xFCF2 - 20 bytes code data
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA16
+//   59 CONST uint8 EcoExecProfilechar2UUID[ATT_BT_UUID_SIZE] =
+EcoExecProfilechar2UUID:
+        DATA8
+        DB 242
+        DB 252
+//   60 { 
+//   61   LO_UINT16(ECOEXECPROFILE_CHAR2_UUID), HI_UINT16(ECOEXECPROFILE_CHAR2_UUID)
+//   62 };
+//   63 
+//   64 // Characteristic 3 UUID: 0xFCF3 - uint16 FirstCodeMemoryAddress
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA16
+//   65 CONST uint8 EcoExecProfilechar3UUID[ATT_BT_UUID_SIZE] =
+EcoExecProfilechar3UUID:
+        DATA8
+        DB 243
+        DB 252
+//   66 { 
+//   67   LO_UINT16(ECOEXECPROFILE_CHAR3_UUID), HI_UINT16(ECOEXECPROFILE_CHAR3_UUID)
+//   68 };
+//   69 
+//   70 // Characteristic 4 UUID: 0xFCF4
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA16
+//   71 CONST uint8 EcoExecProfilechar4UUID[ATT_BT_UUID_SIZE] =
+EcoExecProfilechar4UUID:
+        DATA8
+        DB 244
+        DB 252
+//   72 { 
+//   73   LO_UINT16(ECOEXECPROFILE_CHAR4_UUID), HI_UINT16(ECOEXECPROFILE_CHAR4_UUID)
+//   74 };
+//   75 
+//   76 // Characteristic 5 UUID: 0xFCF5
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA16
+//   77 CONST uint8 EcoExecProfilechar5UUID[ATT_BT_UUID_SIZE] =
+EcoExecProfilechar5UUID:
+        DATA8
+        DB 245
+        DB 252
+//   78 { 
+//   79   LO_UINT16(ECOEXECPROFILE_CHAR5_UUID), HI_UINT16(ECOEXECPROFILE_CHAR5_UUID)
+//   80 };
+//   81 
+//   82 /*********************************************************************
+//   83  * EXTERNAL VARIABLES
+//   84  */
+//   85 
+//   86 /*********************************************************************
+//   87  * EXTERNAL FUNCTIONS
+//   88  */
+//   89 
+//   90 /*********************************************************************
+//   91  * LOCAL VARIABLES
+//   92  */
+//   93 
+
+        RSEG XDATA_Z:XDATA:NOROOT(0)
+        DATA16
+//   94 static EcoExecProfileCBs_t *EcoExecProfile_AppCBs = NULL;
+EcoExecProfile_AppCBs:
+        DS 2
+        REQUIRE __INIT_XDATA_Z
+//   95 
+//   96 /*********************************************************************
+//   97  * Profile Attributes - variables
+//   98  */
+//   99 
+//  100 // EcoExec Profile Service attribute
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA8
+//  101 static CONST gattAttrType_t EcoExecProfileService = { ATT_BT_UUID_SIZE, EcoExecProfileServUUID };
+EcoExecProfileService:
+        DB 2
+        DATA16
+        DW EcoExecProfileServUUID
+//  102 
+//  103 
+//  104 // EcoExec Profile Characteristic 1 Properties
+
+        RSEG XDATA_I:XDATA:NOROOT(0)
+//  105 static uint8 EcoExecProfileChar1Props = GATT_PROP_READ | GATT_PROP_WRITE;
+EcoExecProfileChar1Props:
+        DATA8
+        DS 1
+        REQUIRE `?<Initializer for EcoExecProfileChar1Props>`
+        REQUIRE __INIT_XDATA_I
+//  106 
+//  107 // Characteristic 1 Value
+
+        RSEG XDATA_Z:XDATA:NOROOT(0)
+        DATA32
+//  108 static uint8 EcoExecProfileChar1[4] = {0,0,0,0};
+EcoExecProfileChar1:
+        DS 4
+        REQUIRE __INIT_XDATA_Z
+//  109 
+//  110 // EcoExec Profile Characteristic 1 User Description
+
+        RSEG XDATA_I:XDATA:NOROOT(0)
+//  111 static uint8 EcoExecProfileChar1UserDesp[17] = "Head file\0";
+EcoExecProfileChar1UserDesp:
+        DATA8
+        DS 17
+        REQUIRE `?<Initializer for EcoExecProfileChar1UserDesp>`
+        REQUIRE __INIT_XDATA_I
+//  112 
+//  113 
+//  114 // EcoExec Profile Characteristic 2 Properties
+
+        RSEG XDATA_I:XDATA:NOROOT(0)
+//  115 static uint8 EcoExecProfileChar2Props = GATT_PROP_READ | GATT_PROP_WRITE;
+EcoExecProfileChar2Props:
+        DATA8
+        DS 1
+        REQUIRE `?<Initializer for EcoExecProfileChar2Props>`
+        REQUIRE __INIT_XDATA_I
+//  116 
+//  117 // Characteristic 2 Value
+
+        RSEG XDATA_Z:XDATA:NOROOT(0)
+        DATA8
+//  118 static uint8 EcoExecProfileChar2[ECOEXECPROFILE_CHAR2_LEN] = { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
+EcoExecProfileChar2:
+        DS 20
+        REQUIRE __INIT_XDATA_Z
+//  119 
+//  120 // EcoExec Profile Characteristic 2 User Description
+
+        RSEG XDATA_I:XDATA:NOROOT(0)
+//  121 static uint8 EcoExecProfileChar2UserDesp[17] = "Code data\0";
+EcoExecProfileChar2UserDesp:
+        DATA8
+        DS 17
+        REQUIRE `?<Initializer for EcoExecProfileChar2UserDesp>`
+        REQUIRE __INIT_XDATA_I
+//  122 
+//  123 
+//  124 // EcoExec Profile Characteristic 3 Properties
+
+        RSEG XDATA_I:XDATA:NOROOT(0)
+//  125 static uint8 EcoExecProfileChar3Props = GATT_PROP_WRITE;
+EcoExecProfileChar3Props:
+        DATA8
+        DS 1
+        REQUIRE `?<Initializer for EcoExecProfileChar3Props>`
+        REQUIRE __INIT_XDATA_I
+//  126 
+//  127 // Characteristic 3 Value
+
+        RSEG XDATA_Z:XDATA:NOROOT(0)
+        DATA16
+//  128 static uint8 EcoExecProfileChar3[2] = {0x00, 0x00};
+EcoExecProfileChar3:
+        DS 2
+        REQUIRE __INIT_XDATA_Z
+//  129 
+//  130 // EcoExec Profile Characteristic 3 User Description
+
+        RSEG XDATA_I:XDATA:NOROOT(0)
+//  131 static uint8 EcoExecProfileChar3UserDesp[17] = "FirstCodeLoc.\0";
+EcoExecProfileChar3UserDesp:
+        DATA8
+        DS 17
+        REQUIRE `?<Initializer for EcoExecProfileChar3UserDesp>`
+        REQUIRE __INIT_XDATA_I
+//  132 
+//  133 
+//  134 // EcoExec Profile Flash Code Flag Properties
+
+        RSEG XDATA_I:XDATA:NOROOT(0)
+//  135 static uint8 EcoExecProfileChar4Props = GATT_PROP_READ | GATT_PROP_WRITE;
+EcoExecProfileChar4Props:
+        DATA8
+        DS 1
+        REQUIRE `?<Initializer for EcoExecProfileChar4Props>`
+        REQUIRE __INIT_XDATA_I
+//  136 
+//  137 // Flash Code Flag Value
+
+        RSEG XDATA_Z:XDATA:NOROOT(0)
+        DATA8
+//  138 static uint8 EcoExecProfileChar4 = 0;
+EcoExecProfileChar4:
+        DS 1
+        REQUIRE __INIT_XDATA_Z
+//  139                                         
+//  140 // EcoExec Profile Flash Code Flag User Description
+
+        RSEG XDATA_I:XDATA:NOROOT(0)
+//  141 static uint8 EcoExecProfileChar4UserDesp[17] = "Flash Code Flag\0";
+EcoExecProfileChar4UserDesp:
+        DATA8
+        DS 17
+        REQUIRE `?<Initializer for EcoExecProfileChar4UserDesp>`
+        REQUIRE __INIT_XDATA_I
+//  142 
+//  143 
+//  144 // EcoExec Profile Flash Code Section Properties
+
+        RSEG XDATA_I:XDATA:NOROOT(0)
+//  145 static uint8 EcoExecProfileChar5Props = GATT_PROP_READ | GATT_PROP_WRITE;
+EcoExecProfileChar5Props:
+        DATA8
+        DS 1
+        REQUIRE `?<Initializer for EcoExecProfileChar5Props>`
+        REQUIRE __INIT_XDATA_I
+//  146 
+//  147 // Flash Code Section Value
+
+        RSEG XDATA_Z:XDATA:NOROOT(0)
+        DATA8
+//  148 static uint8 EcoExecProfileChar5 = 0;
+EcoExecProfileChar5:
+        DS 1
+        REQUIRE __INIT_XDATA_Z
+//  149 
+//  150 // EcoExec Profile Flash Code Section User Description
+
+        RSEG XDATA_I:XDATA:NOROOT(0)
+//  151 static uint8 EcoExecProfileChar5UserDesp[17] = "FlashCodeSection\0";
+EcoExecProfileChar5UserDesp:
+        DATA8
+        DS 17
+        REQUIRE `?<Initializer for EcoExecProfileChar5UserDesp>`
+        REQUIRE __INIT_XDATA_I
+//  152 
+//  153 
+//  154 /*********************************************************************
+//  155  * Profile Attributes - Table
+//  156  */
+//  157 
+
+        RSEG XDATA_I:XDATA:NOROOT(0)
+//  158 static gattAttribute_t EcoExecProfileAttrTbl[SERVAPP_NUM_ATTR_SUPPORTED] = 
+EcoExecProfileAttrTbl:
+        DATA8
+        DS 136
+        REQUIRE `?<Initializer for EcoExecProfileAttrTbl>`
+        REQUIRE __INIT_XDATA_I
+//  159 {
+//  160   // EcoExec Profile Service
+//  161   { 
+//  162     { ATT_BT_UUID_SIZE, primaryServiceUUID }, /* type */
+//  163     GATT_PERMIT_READ,                         /* permissions */
+//  164     0,                                        /* handle */
+//  165     (uint8 *)&EcoExecProfileService            /* pValue */
+//  166   },
+//  167 
+//  168     // Characteristic 1 Declaration
+//  169     { 
+//  170       { ATT_BT_UUID_SIZE, characterUUID },
+//  171       GATT_PERMIT_READ, 
+//  172       0,
+//  173       &EcoExecProfileChar1Props 
+//  174     },
+//  175 
+//  176       // Characteristic Value 1
+//  177       { 
+//  178         { ATT_BT_UUID_SIZE, EcoExecProfilechar1UUID },
+//  179         GATT_PERMIT_READ | GATT_PERMIT_WRITE, 
+//  180         0, 
+//  181         EcoExecProfileChar1 
+//  182       },
+//  183 
+//  184       // Characteristic 1 User Description
+//  185       { 
+//  186         { ATT_BT_UUID_SIZE, charUserDescUUID },
+//  187         GATT_PERMIT_READ, 
+//  188         0, 
+//  189         EcoExecProfileChar1UserDesp 
+//  190       },      
+//  191 
+//  192     // Characteristic 2 Declaration
+//  193     { 
+//  194       { ATT_BT_UUID_SIZE, characterUUID },
+//  195       GATT_PERMIT_READ | GATT_PERMIT_WRITE, 
+//  196       0,
+//  197       &EcoExecProfileChar2Props 
+//  198     },
+//  199 
+//  200       // Characteristic Value 2
+//  201       { 
+//  202         { ATT_BT_UUID_SIZE, EcoExecProfilechar2UUID },
+//  203         GATT_PERMIT_READ|GATT_PERMIT_WRITE, 
+//  204         0, 
+//  205         EcoExecProfileChar2 
+//  206       },
+//  207 
+//  208       // Characteristic 2 User Description
+//  209       { 
+//  210         { ATT_BT_UUID_SIZE, charUserDescUUID },
+//  211         GATT_PERMIT_READ, 
+//  212         0, 
+//  213         EcoExecProfileChar2UserDesp 
+//  214       },           
+//  215       
+//  216     // Characteristic 3 Declaration
+//  217     { 
+//  218       { ATT_BT_UUID_SIZE, characterUUID },
+//  219       GATT_PERMIT_READ, 
+//  220       0,
+//  221       &EcoExecProfileChar3Props 
+//  222     },
+//  223 
+//  224       // Characteristic Value 3
+//  225       { 
+//  226         { ATT_BT_UUID_SIZE, EcoExecProfilechar3UUID },
+//  227         GATT_PERMIT_READ|GATT_PERMIT_WRITE, 
+//  228         0, 
+//  229         EcoExecProfileChar3 
+//  230       },
+//  231 
+//  232       // Characteristic 3 User Description
+//  233       { 
+//  234         { ATT_BT_UUID_SIZE, charUserDescUUID },
+//  235         GATT_PERMIT_READ, 
+//  236         0, 
+//  237         EcoExecProfileChar3UserDesp 
+//  238       },
+//  239 
+//  240     // Flash Code Flag Declaration
+//  241     { 
+//  242       { ATT_BT_UUID_SIZE, characterUUID },
+//  243       GATT_PERMIT_READ, 
+//  244       0,
+//  245       &EcoExecProfileChar4Props 
+//  246     },
+//  247 
+//  248       // Flash Code Flag value
+//  249       { 
+//  250         { ATT_BT_UUID_SIZE, EcoExecProfilechar4UUID },
+//  251         GATT_PERMIT_READ|GATT_PERMIT_WRITE, 
+//  252         0, 
+//  253         &EcoExecProfileChar4 
+//  254       },
+//  255      
+//  256       // Flash Code Flag Description
+//  257       { 
+//  258         { ATT_BT_UUID_SIZE, charUserDescUUID },
+//  259         GATT_PERMIT_READ, 
+//  260         0, 
+//  261         EcoExecProfileChar4UserDesp 
+//  262       },
+//  263       
+//  264     // Characteristic 5 Declaration
+//  265     { 
+//  266       { ATT_BT_UUID_SIZE, characterUUID },
+//  267       GATT_PERMIT_READ, 
+//  268       0,
+//  269       &EcoExecProfileChar5Props 
+//  270     },
+//  271 
+//  272       // Characteristic Value 5
+//  273       { 
+//  274         { ATT_BT_UUID_SIZE, EcoExecProfilechar5UUID },
+//  275         GATT_PERMIT_READ|GATT_PERMIT_WRITE, 
+//  276         0, 
+//  277         &EcoExecProfileChar5 
+//  278       },
+//  279 
+//  280       // Characteristic 5 User Description
+//  281       { 
+//  282         { ATT_BT_UUID_SIZE, charUserDescUUID },
+//  283         GATT_PERMIT_READ, 
+//  284         0, 
+//  285         EcoExecProfileChar5UserDesp 
+//  286       },
+//  287 
+//  288 
+//  289 };
+//  290 
+//  291 
+//  292 /*********************************************************************
+//  293  * LOCAL FUNCTIONS
+//  294  */
+//  295 static uint8 EcoExecProfile_ReadAttrCB( uint16 connHandle, gattAttribute_t *pAttr, 
+//  296                             uint8 *pValue, uint8 *pLen, uint16 offset, uint8 maxLen );
+//  297 static bStatus_t EcoExecProfile_WriteAttrCB( uint16 connHandle, gattAttribute_t *pAttr,
+//  298                                  uint8 *pValue, uint8 len, uint16 offset );
+//  299 
+//  300 static void EcoExecProfile_HandleConnStatusCB( uint16 connHandle, uint8 changeType );
+//  301 
+//  302 
+//  303 /*********************************************************************
+//  304  * PROFILE CALLBACKS
+//  305  */
+//  306 // EcoExec Profile Service Callbacks
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA8
+//  307 CONST gattServiceCBs_t EcoExecProfileCBs =
+EcoExecProfileCBs:
+        DATA16
+        DW ??EcoExecProfile_ReadAttrCB?relay
+        DW ??EcoExecProfile_WriteAttrCB?relay
+        DW 0H
+//  308 {
+//  309   EcoExecProfile_ReadAttrCB,  // Read callback function pointer
+//  310   EcoExecProfile_WriteAttrCB, // Write callback function pointer
+//  311   NULL                       // Authorization callback function pointer
+//  312 };
+//  313 
+//  314 /*********************************************************************
+//  315  * PUBLIC FUNCTIONS
+//  316  */
+//  317 
+//  318 /*********************************************************************
+//  319  * @fn      EcoExecProfile_AddService
+//  320  *
+//  321  * @brief   Initializes the EcoExec Profile service by registering
+//  322  *          GATT attributes with the GATT server.
+//  323  *
+//  324  * @param   services - services to add. This is a bit map and can
+//  325  *                     contain more than one service.
+//  326  *
+//  327  * @return  Success or Failure
+//  328  */
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+//  329 bStatus_t EcoExecProfile_AddService( uint32 services )
+EcoExecProfile_AddService:
+        CODE
+//  330 {
+        MOV     A,#-0xc
+        LCALL   ?BANKED_ENTER_XDATA
+        ; Saved register size: 12
+        ; Auto size: 0
+        MOV     ?V0 + 0,R2
+//  331   uint8 status = SUCCESS;
+        MOV     R6,#0x0
+//  332 
+//  333   // Initialize Client Characteristic Configuration attributes
+//  334 
+//  335   // Register with Link DB to receive link status change callback
+//  336   VOID linkDB_Register( EcoExecProfile_HandleConnStatusCB );  
+        ; Setup parameters for call to function linkDB_Register
+        MOV     R2,#??EcoExecProfile_HandleConnStatusCB?relay & 0xff
+        MOV     R3,#(??EcoExecProfile_HandleConnStatusCB?relay >> 8) & 0xff
+        LCALL   ??linkDB_Register?relay
+//  337   
+//  338   if ( services & ECOEXECPROFILE_SERVICE )
+        MOV     A,?V0 + 0
+        MOV     C,0xE0 /* A   */.0
+        JNC     ??EcoExecProfile_AddService_0
+//  339   {
+//  340     // Register GATT attribute list and CBs with GATT Server App
+//  341     status = GATTServApp_RegisterService( EcoExecProfileAttrTbl, 
+//  342                                           GATT_NUM_ATTRS( EcoExecProfileAttrTbl ),
+//  343                                           &EcoExecProfileCBs );
+        ; Setup parameters for call to function GATTServApp_RegisterService
+        MOV     ?V0 + 0,#EcoExecProfileCBs & 0xff
+        MOV     ?V0 + 1,#(EcoExecProfileCBs >> 8) & 0xff
+        MOV     R0,#?V0 + 0
+        LCALL   ?PUSH_XSTACK_I_TWO
+        MOV     R4,#0x11
+        MOV     R5,#0x0
+        MOV     R2,#EcoExecProfileAttrTbl & 0xff
+        MOV     R3,#(EcoExecProfileAttrTbl >> 8) & 0xff
+        LCALL   ??GATTServApp_RegisterService?relay
+        MOV     A,#0x2
+        LCALL   ?DEALLOC_XSTACK8
+        MOV     A,R1
+        MOV     R6,A
+//  344   }
+//  345 
+//  346   return ( status );
+??EcoExecProfile_AddService_0:
+        REQUIRE ?Subroutine0
+        ; // Fall through to label ?Subroutine0
+//  347 }
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+?Subroutine0:
+        MOV     A,R6
+        MOV     R1,A
+        MOV     R7,#0x4
+        LJMP    ?BANKED_LEAVE_XDATA
+//  348 
+//  349 
+//  350 /*********************************************************************
+//  351  * @fn      EcoExecProfile_RegisterAppCBs
+//  352  *
+//  353  * @brief   Registers the application callback function. Only call 
+//  354  *          this function once.
+//  355  *
+//  356  * @param   callbacks - pointer to application callbacks.
+//  357  *
+//  358  * @return  SUCCESS or bleAlreadyInRequestedMode
+//  359  */
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+//  360 bStatus_t EcoExecProfile_RegisterAppCBs( EcoExecProfileCBs_t *appCallbacks )
+EcoExecProfile_RegisterAppCBs:
+        CODE
+//  361 {
+        PUSH    DPL
+        PUSH    DPH
+        ; Saved register size: 2
+        ; Auto size: 0
+//  362   if ( appCallbacks )
+        MOV     A,R2
+        ORL     A,R3
+        JZ      ??EcoExecProfile_RegisterAppCBs_0
+//  363   {
+//  364     EcoExecProfile_AppCBs = appCallbacks;
+        MOV     DPTR,#EcoExecProfile_AppCBs
+        MOV     A,R2
+        MOVX    @DPTR,A
+        INC     DPTR
+        MOV     A,R3
+        MOVX    @DPTR,A
+//  365     
+//  366     return ( SUCCESS );
+        MOV     R1,#0x0
+        SJMP    ??EcoExecProfile_RegisterAppCBs_1
+//  367   }
+//  368   else
+//  369   {
+//  370     return ( bleAlreadyInRequestedMode );
+??EcoExecProfile_RegisterAppCBs_0:
+        MOV     R1,#0x11
+??EcoExecProfile_RegisterAppCBs_1:
+        POP     DPH
+        POP     DPL
+        LJMP    ?BRET
+//  371   }
+//  372 }
+//  373   
+//  374 
+//  375 /*********************************************************************
+//  376  * @fn      EcoExecProfile_SetParameter
+//  377  *
+//  378  * @brief   Set a EcoExec Profile parameter.
+//  379  *
+//  380  * @param   param - Profile parameter ID
+//  381  * @param   len - length of data to right
+//  382  * @param   value - pointer to data to write.  This is dependent on
+//  383  *          the parameter ID and WILL be cast to the appropriate 
+//  384  *          data type (example: data type of uint16 will be cast to 
+//  385  *          uint16 pointer).
+//  386  *
+//  387  * @return  bStatus_t
+//  388  */
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+//  389 bStatus_t EcoExecProfile_SetParameter( uint8 param, uint8 len, void *value )
+EcoExecProfile_SetParameter:
+        CODE
+//  390 {
+        MOV     A,#-0xc
+        LCALL   ?BANKED_ENTER_XDATA
+        ; Saved register size: 12
+        ; Auto size: 0
+        MOV     A,R1
+        MOV     ?V0 + 0,R2
+//  391   bStatus_t ret = SUCCESS;
+        MOV     R6,#0x0
+//  392   switch ( param )
+        JZ      ??EcoExecProfile_SetParameter_0
+        DEC     A
+        JZ      ??EcoExecProfile_SetParameter_1
+        DEC     A
+        JZ      ??EcoExecProfile_SetParameter_2
+        DEC     A
+        JZ      ??EcoExecProfile_SetParameter_3
+        DEC     A
+        JZ      ??EcoExecProfile_SetParameter_4
+        SJMP    ??EcoExecProfile_SetParameter_5
+//  393   {
+//  394     case ECOEXECPROFILE_CHAR1:
+//  395       if ( len == ECOEXECPROFILE_CHAR1_LEN ) 
+??EcoExecProfile_SetParameter_0:
+        MOV     A,#0x4
+        XRL     A,?V0 + 0
+        JNZ     ??EcoExecProfile_SetParameter_6
+//  396       {
+//  397         VOID osal_memcpy( EcoExecProfileChar2, value, ECOEXECPROFILE_CHAR1_LEN );
+        ; Setup parameters for call to function osal_memcpy
+        MOV     ?V0 + 2,#0x4
+        SJMP    ??EcoExecProfile_SetParameter_7
+//  398       }
+//  399       else
+//  400       {
+//  401         ret = bleInvalidRange;
+//  402       }
+//  403       break;
+//  404 
+//  405     case ECOEXECPROFILE_CHAR2:
+//  406       if ( len == ECOEXECPROFILE_CHAR2_LEN ) 
+??EcoExecProfile_SetParameter_1:
+        MOV     A,#0x14
+        XRL     A,?V0 + 0
+        JNZ     ??EcoExecProfile_SetParameter_6
+//  407       {
+//  408         VOID osal_memcpy( EcoExecProfileChar2, value, ECOEXECPROFILE_CHAR2_LEN );
+        ; Setup parameters for call to function osal_memcpy
+        MOV     ?V0 + 2,#0x14
+??EcoExecProfile_SetParameter_7:
+        MOV     ?V0 + 3,R6
+        MOV     R0,#?V0 + 2
+        LCALL   ?PUSH_XSTACK_I_TWO
+        MOV     R2,#EcoExecProfileChar2 & 0xff
+        MOV     R3,#(EcoExecProfileChar2 >> 8) & 0xff
+        SJMP    ??EcoExecProfile_SetParameter_8
+//  409       }
+//  410       else
+//  411       {
+//  412         ret = bleInvalidRange;
+//  413       }
+//  414       break;
+//  415 
+//  416     case ECOEXECPROFILE_CHAR3:
+//  417       if ( len == ECOEXECPROFILE_CHAR3_LEN ) 
+??EcoExecProfile_SetParameter_2:
+        MOV     A,#0x2
+        XRL     A,?V0 + 0
+        JNZ     ??EcoExecProfile_SetParameter_6
+//  418       {
+//  419         VOID osal_memcpy( EcoExecProfileChar3, value, ECOEXECPROFILE_CHAR3_LEN );
+        ; Setup parameters for call to function osal_memcpy
+        MOV     ?V0 + 2,#0x2
+        MOV     ?V0 + 3,R6
+        MOV     R0,#?V0 + 2
+        LCALL   ?PUSH_XSTACK_I_TWO
+        MOV     R2,#EcoExecProfileChar3 & 0xff
+        MOV     R3,#(EcoExecProfileChar3 >> 8) & 0xff
+        SJMP    ??EcoExecProfile_SetParameter_8
+//  420       }
+//  421       else
+//  422       {
+//  423         ret = bleInvalidRange;
+//  424       }
+//  425       break;
+//  426 
+//  427     case ECOEXECPROFILE_CHAR4:
+//  428       if ( len == sizeof ( uint8 ) ) 
+??EcoExecProfile_SetParameter_3:
+        MOV     A,#0x1
+        XRL     A,?V0 + 0
+        JNZ     ??EcoExecProfile_SetParameter_6
+//  429       {
+//  430         EcoExecProfileChar4 = *((uint8*)value);
+        MOV     DPL,R4
+        MOV     DPH,R5
+        MOVX    A,@DPTR
+        MOV     DPTR,#EcoExecProfileChar4
+        MOVX    @DPTR,A
+        SJMP    ??EcoExecProfile_SetParameter_9
+//  431       }
+//  432       else
+//  433       {
+//  434         ret = bleInvalidRange;
+//  435       }
+//  436       break;
+//  437 
+//  438     case ECOEXECPROFILE_CHAR5:
+//  439       if ( len == ECOEXECPROFILE_CHAR5_LEN ) 
+??EcoExecProfile_SetParameter_4:
+        MOV     A,#0x1
+        XRL     A,?V0 + 0
+        JNZ     ??EcoExecProfile_SetParameter_6
+//  440       {
+//  441         VOID osal_memcpy( &EcoExecProfileChar5, value, ECOEXECPROFILE_CHAR5_LEN );
+        ; Setup parameters for call to function osal_memcpy
+        MOV     ?V0 + 2,#0x1
+        MOV     ?V0 + 3,R6
+        MOV     R0,#?V0 + 2
+        LCALL   ?PUSH_XSTACK_I_TWO
+        MOV     R2,#EcoExecProfileChar5 & 0xff
+        MOV     R3,#(EcoExecProfileChar5 >> 8) & 0xff
+??EcoExecProfile_SetParameter_8:
+        LCALL   ??osal_memcpy?relay
+        MOV     A,#0x2
+        LCALL   ?DEALLOC_XSTACK8
+        SJMP    ??EcoExecProfile_SetParameter_9
+//  442       }
+//  443       else
+//  444       {
+//  445         ret = bleInvalidRange;
+??EcoExecProfile_SetParameter_6:
+        MOV     R6,#0x18
+        SJMP    ??EcoExecProfile_SetParameter_9
+//  446       }
+//  447       break;
+//  448       
+//  449     default:
+//  450       ret = INVALIDPARAMETER;
+??EcoExecProfile_SetParameter_5:
+        INC     R6
+        INC     R6
+//  451       break;
+//  452   }
+//  453   
+//  454   return ( ret );
+??EcoExecProfile_SetParameter_9:
+        LJMP    ?Subroutine0 & 0xFFFF
+//  455 }
+//  456 
+//  457 /*********************************************************************
+//  458  * @fn      EcoExecProfile_GetParameter
+//  459  *
+//  460  * @brief   Get a EcoExec Profile parameter.
+//  461  *
+//  462  * @param   param - Profile parameter ID
+//  463  * @param   value - pointer to data to put.  This is dependent on
+//  464  *          the parameter ID and WILL be cast to the appropriate 
+//  465  *          data type (example: data type of uint16 will be cast to 
+//  466  *          uint16 pointer).
+//  467  *
+//  468  * @return  bStatus_t
+//  469  */
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+//  470 bStatus_t EcoExecProfile_GetParameter( uint8 param, void *value )
+EcoExecProfile_GetParameter:
+        CODE
+//  471 {
+        MOV     A,#-0xa
+        LCALL   ?BANKED_ENTER_XDATA
+        ; Saved register size: 10
+        ; Auto size: 0
+        MOV     A,R1
+//  472   bStatus_t ret = SUCCESS;
+        MOV     R6,#0x0
+//  473   switch ( param )
+        JZ      ??EcoExecProfile_GetParameter_0
+        DEC     A
+        JZ      ??EcoExecProfile_GetParameter_1
+        DEC     A
+        JZ      ??EcoExecProfile_GetParameter_2
+        DEC     A
+        JZ      ??EcoExecProfile_GetParameter_3
+        DEC     A
+        JZ      ??EcoExecProfile_GetParameter_4
+        SJMP    ??EcoExecProfile_GetParameter_5
+//  474   {
+//  475     case ECOEXECPROFILE_CHAR1:
+//  476       VOID osal_memcpy( value, EcoExecProfileChar1, ECOEXECPROFILE_CHAR1_LEN );
+??EcoExecProfile_GetParameter_0:
+        ; Setup parameters for call to function osal_memcpy
+        MOV     ?V0 + 0,#0x4
+        MOV     ?V0 + 1,R6
+        MOV     R0,#?V0 + 0
+        LCALL   ?PUSH_XSTACK_I_TWO
+        MOV     R4,#EcoExecProfileChar1 & 0xff
+        MOV     R5,#(EcoExecProfileChar1 >> 8) & 0xff
+        SJMP    ??EcoExecProfile_GetParameter_6
+//  477       //value = EcoExecProfileChar1;
+//  478       break;
+//  479 
+//  480     case ECOEXECPROFILE_CHAR2:
+//  481       VOID osal_memcpy( value, EcoExecProfileChar2, ECOEXECPROFILE_CHAR2_LEN );
+??EcoExecProfile_GetParameter_1:
+        ; Setup parameters for call to function osal_memcpy
+        MOV     ?V0 + 0,#0x14
+        MOV     ?V0 + 1,R6
+        MOV     R0,#?V0 + 0
+        LCALL   ?PUSH_XSTACK_I_TWO
+        MOV     R4,#EcoExecProfileChar2 & 0xff
+        MOV     R5,#(EcoExecProfileChar2 >> 8) & 0xff
+        SJMP    ??EcoExecProfile_GetParameter_6
+//  482       //value = EcoExecProfileChar2;
+//  483       break;      
+//  484 
+//  485     case ECOEXECPROFILE_CHAR3:
+//  486       VOID osal_memcpy( value, EcoExecProfileChar3, ECOEXECPROFILE_CHAR3_LEN );
+??EcoExecProfile_GetParameter_2:
+        ; Setup parameters for call to function osal_memcpy
+        MOV     ?V0 + 0,#0x2
+        MOV     ?V0 + 1,R6
+        MOV     R0,#?V0 + 0
+        LCALL   ?PUSH_XSTACK_I_TWO
+        MOV     R4,#EcoExecProfileChar3 & 0xff
+        MOV     R5,#(EcoExecProfileChar3 >> 8) & 0xff
+        SJMP    ??EcoExecProfile_GetParameter_6
+//  487       break;  
+//  488 
+//  489     case ECOEXECPROFILE_CHAR4:
+//  490       *((uint8*)value) = EcoExecProfileChar4;
+??EcoExecProfile_GetParameter_3:
+        MOV     DPTR,#EcoExecProfileChar4
+        MOVX    A,@DPTR
+        MOV     DPL,R2
+        MOV     DPH,R3
+        MOVX    @DPTR,A
+//  491       break;
+        SJMP    ??EcoExecProfile_GetParameter_7
+//  492 
+//  493     case ECOEXECPROFILE_CHAR5:
+//  494       VOID osal_memcpy( value, &EcoExecProfileChar5, ECOEXECPROFILE_CHAR5_LEN );
+??EcoExecProfile_GetParameter_4:
+        ; Setup parameters for call to function osal_memcpy
+        MOV     ?V0 + 0,#0x1
+        MOV     ?V0 + 1,R6
+        MOV     R0,#?V0 + 0
+        LCALL   ?PUSH_XSTACK_I_TWO
+        MOV     R4,#EcoExecProfileChar5 & 0xff
+        MOV     R5,#(EcoExecProfileChar5 >> 8) & 0xff
+??EcoExecProfile_GetParameter_6:
+        LCALL   ??osal_memcpy?relay
+        MOV     A,#0x2
+        LCALL   ?DEALLOC_XSTACK8
+//  495       break;      
+        SJMP    ??EcoExecProfile_GetParameter_7
+//  496       
+//  497     default:
+//  498       ret = INVALIDPARAMETER;
+??EcoExecProfile_GetParameter_5:
+        INC     R6
+        INC     R6
+//  499       break;
+//  500   }
+//  501   
+//  502   return ( ret );
+??EcoExecProfile_GetParameter_7:
+        MOV     A,R6
+        MOV     R1,A
+        MOV     R7,#0x2
+        LJMP    ?BANKED_LEAVE_XDATA
+//  503 }
+//  504 
+//  505 /*********************************************************************
+//  506  * @fn          EcoExecProfile_ReadAttrCB
+//  507  *
+//  508  * @brief       Read an attribute.
+//  509  *
+//  510  * @param       connHandle - connection message was received on
+//  511  * @param       pAttr - pointer to attribute
+//  512  * @param       pValue - pointer to data to be read
+//  513  * @param       pLen - length of data to be read
+//  514  * @param       offset - offset of the first octet to be read
+//  515  * @param       maxLen - maximum length of data to be read
+//  516  *
+//  517  * @return      Success or Failure
+//  518  */
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+//  519 static uint8 EcoExecProfile_ReadAttrCB( uint16 connHandle, gattAttribute_t *pAttr, 
+EcoExecProfile_ReadAttrCB:
+        CODE
+//  520                             uint8 *pValue, uint8 *pLen, uint16 offset, uint8 maxLen )
+//  521 {
+        MOV     A,#-0xe
+        LCALL   ?BANKED_ENTER_XDATA
+        ; Saved register size: 14
+        ; Auto size: 0
+        MOV     A,#0x12
+        LCALL   ?XSTACK_DISP0_8
+        LCALL   ??Subroutine4_0 & 0xFFFF
+//  522   bStatus_t status = SUCCESS;
+??CrossCallReturnLabel_6:
+        MOV     ?V0 + 0,#0x0
+//  523 
+//  524   // If attribute permissions require authorization to read, return error
+//  525   if ( gattPermitAuthorRead( pAttr->permissions ) )
+        MOV     DPL,R4
+        MOV     DPH,R5
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     C,0xE0 /* A   */.4
+        JNC     ??EcoExecProfile_ReadAttrCB_0
+//  526   {
+//  527     // Insufficient authorization
+//  528     return ( ATT_ERR_INSUFFICIENT_AUTHOR );
+        MOV     R1,#0x8
+        LJMP    ??EcoExecProfile_ReadAttrCB_1 & 0xFFFF
+//  529   }
+//  530   
+//  531   // Make sure it's not a blob operation (no attributes in the profile are long)
+//  532   if ( offset > 0 )
+??EcoExecProfile_ReadAttrCB_0:
+        MOV     A,R0
+        ORL     A,R1
+        JZ      ??EcoExecProfile_ReadAttrCB_2
+//  533   {
+//  534     return ( ATT_ERR_ATTR_NOT_LONG );
+        MOV     R1,#0xb
+        LJMP    ??EcoExecProfile_ReadAttrCB_1 & 0xFFFF
+//  535   }
+??EcoExecProfile_ReadAttrCB_2:
+        MOV     A,#0x10
+        LCALL   ?XSTACK_DISP0_8
+        LCALL   ??Subroutine4_0 & 0xFFFF
+??CrossCallReturnLabel_7:
+        MOV     A,R0
+        MOV     R6,A
+        MOV     A,R1
+        MOV     R7,A
+//  536  
+//  537   if ( pAttr->type.len == ATT_BT_UUID_SIZE )
+        MOV     DPL,R4
+        MOV     DPH,R5
+        MOVX    A,@DPTR
+        XRL     A,#0x2
+        JZ      $+5
+        LJMP    ??EcoExecProfile_ReadAttrCB_3 & 0xFFFF
+//  538   {
+//  539     // 16-bit UUID
+//  540     uint16 uuid = BUILD_UINT16( pAttr->type.uuid[0], pAttr->type.uuid[1]);
+//  541     switch ( uuid )
+        LCALL   ?Subroutine1 & 0xFFFF
+??CrossCallReturnLabel_10:
+        MOV     ?V0 + 2,R0
+        MOV     ?V0 + 3,R1
+        MOV     A,R4
+        ADD     A,#0x6
+        MOV     R0,A
+        MOV     A,R5
+        ADDC    A,#0x0
+        MOV     R1,A
+        MOV     A,R0
+        MOV     R4,A
+        MOV     A,R1
+        MOV     R5,A
+        MOV     A,#0xe
+        LCALL   ?XSTACK_DISP0_8
+        LCALL   ??Subroutine3_0 & 0xFFFF
+??CrossCallReturnLabel_0:
+        MOV     DPL,?V0 + 2
+        MOV     DPH,?V0 + 3
+        MOVX    A,@DPTR
+        MOV     ?V0 + 4,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R1,A
+        MOV     A,?V0 + 4
+        ADD     A,#0x0
+        MOV     ?V0 + 2,A
+        CLR     A
+        ADDC    A,R1
+        MOV     ?V0 + 3,A
+        MOV     R0,#?V0 + 2
+        LCALL   ?US_SWITCH_DENSE
+`?<Jumptable for EcoExecProfile_ReadAttrCB>_0`:
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DW        64753
+        DATA
+        DATA8
+        DATA
+        DATA8
+        DB        4
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DW        ??EcoExecProfile_ReadAttrCB_4
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DW        ??EcoExecProfile_ReadAttrCB_5
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DW        ??EcoExecProfile_ReadAttrCB_6
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DW        ??EcoExecProfile_ReadAttrCB_7
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DW        ??EcoExecProfile_ReadAttrCB_8
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DW        ??EcoExecProfile_ReadAttrCB_8
+        CODE
+//  542     {
+//  543       // No need for "GATT_SERVICE_UUID" or "GATT_CLIENT_CHAR_CFG_UUID" cases;
+//  544       // gattserverapp handles those reads
+//  545 
+//  546       // characteritisc 3 does not have read permissions; therefore it is not
+//  547       //   included here
+//  548       // characteristic 4 does not have read permissions, but because it
+//  549       //   can be sent as a notification, it is included here
+//  550       case ECOEXECPROFILE_CHAR1_UUID:
+//  551         *pLen = ECOEXECPROFILE_CHAR1_LEN;
+??EcoExecProfile_ReadAttrCB_5:
+        MOV     DPL,R6
+        MOV     DPH,R7
+        MOV     A,#0x4
+        SJMP    ??EcoExecProfile_ReadAttrCB_9
+//  552         VOID osal_memcpy( pValue, pAttr->pValue, ECOEXECPROFILE_CHAR1_LEN );
+//  553         break;
+//  554         
+//  555       case ECOEXECPROFILE_CHAR2_UUID:
+//  556         *pLen = ECOEXECPROFILE_CHAR2_LEN;
+??EcoExecProfile_ReadAttrCB_6:
+        MOV     DPL,R6
+        MOV     DPH,R7
+        MOV     A,#0x14
+        SJMP    ??EcoExecProfile_ReadAttrCB_9
+//  557         VOID osal_memcpy( pValue, pAttr->pValue, ECOEXECPROFILE_CHAR2_LEN );
+//  558         break;
+//  559         
+//  560       case ECOEXECPROFILE_CHAR3_UUID:
+//  561         *pLen = ECOEXECPROFILE_CHAR3_LEN;
+??EcoExecProfile_ReadAttrCB_7:
+        MOV     DPL,R6
+        MOV     DPH,R7
+        MOV     A,#0x2
+        SJMP    ??EcoExecProfile_ReadAttrCB_9
+//  562         VOID osal_memcpy( pValue, pAttr->pValue, ECOEXECPROFILE_CHAR3_LEN );
+//  563         break;
+//  564         
+//  565       case ECOEXECPROFILE_CHAR4_UUID:
+//  566         *pLen = ECOEXECPROFILE_CHAR4_LEN;
+//  567         VOID osal_memcpy( pValue, pAttr->pValue, ECOEXECPROFILE_CHAR4_LEN );
+//  568         break;
+//  569         
+//  570       case ECOEXECPROFILE_CHAR5_UUID:
+//  571         *pLen = ECOEXECPROFILE_CHAR5_LEN;
+??EcoExecProfile_ReadAttrCB_8:
+        MOV     DPL,R6
+        MOV     DPH,R7
+        MOV     A,#0x1
+??EcoExecProfile_ReadAttrCB_9:
+        MOVX    @DPTR,A
+//  572         VOID osal_memcpy( pValue, pAttr->pValue, ECOEXECPROFILE_CHAR5_LEN );
+        ; Setup parameters for call to function osal_memcpy
+        MOV     ?V0 + 2,A
+        MOV     ?V0 + 3,#0x0
+        MOV     R0,#?V0 + 2
+        LCALL   ?PUSH_XSTACK_I_TWO
+        MOV     DPL,R4
+        MOV     DPH,R5
+        MOVX    A,@DPTR
+        MOV     R4,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R5,A
+        LCALL   ??osal_memcpy?relay
+        MOV     A,#0x2
+        LCALL   ?DEALLOC_XSTACK8
+//  573         break;
+        SJMP    ??EcoExecProfile_ReadAttrCB_10
+//  574         
+//  575       default:
+//  576         // Should never get here! (characteristics 3 and 4 do not have read permissions)
+//  577         *pLen = 0;
+??EcoExecProfile_ReadAttrCB_4:
+        MOV     DPL,R6
+        MOV     DPH,R7
+        CLR     A
+        MOVX    @DPTR,A
+//  578         status = ATT_ERR_ATTR_NOT_FOUND;
+        MOV     ?V0 + 0,#0xa
+//  579         break;
+        SJMP    ??EcoExecProfile_ReadAttrCB_10
+//  580     }
+//  581   }
+//  582   else
+//  583   {
+//  584     // 128-bit UUID
+//  585     *pLen = 0;
+??EcoExecProfile_ReadAttrCB_3:
+        MOV     DPL,R6
+        MOV     DPH,R7
+        CLR     A
+        MOVX    @DPTR,A
+//  586     status = ATT_ERR_INVALID_HANDLE;
+        MOV     ?V0 + 0,#0x1
+//  587   }
+//  588 
+//  589   return ( status );
+??EcoExecProfile_ReadAttrCB_10:
+        MOV     R1,?V0 + 0
+??EcoExecProfile_ReadAttrCB_1:
+        MOV     R7,#0x6
+        LJMP    ?BANKED_LEAVE_XDATA
+//  590 }
+//  591 
+//  592 /*********************************************************************
+//  593  * @fn      EcoExecProfile_WriteAttrCB
+//  594  *
+//  595  * @brief   Validate attribute data prior to a write operation
+//  596  *
+//  597  * @param   connHandle - connection message was received on
+//  598  * @param   pAttr - pointer to attribute
+//  599  * @param   pValue - pointer to data to be written
+//  600  * @param   len - length of data
+//  601  * @param   offset - offset of the first octet to be written
+//  602  * @param   complete - whether this is the last packet
+//  603  * @param   oper - whether to validate and/or write attribute value  
+//  604  *
+//  605  * @return  Success or Failure
+//  606  */
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+//  607 static bStatus_t EcoExecProfile_WriteAttrCB( uint16 connHandle, gattAttribute_t *pAttr,
+EcoExecProfile_WriteAttrCB:
+        CODE
+//  608                                  uint8 *pValue, uint8 len, uint16 offset )
+//  609 {
+        MOV     A,#-0x10
+        LCALL   ?BANKED_ENTER_XDATA
+        ; Saved register size: 16
+        ; Auto size: 0
+        MOV     A,R2
+        MOV     R6,A
+        MOV     A,R3
+        MOV     R7,A
+        MOV     A,R4
+        MOV     R2,A
+        MOV     A,R5
+        MOV     R3,A
+        MOV     ?V0 + 0,R1
+//  610   bStatus_t status = SUCCESS;
+        MOV     ?V0 + 1,#0x0
+//  611   uint8 notifyApp = 0xFF;
+        MOV     R4,#-0x1
+//  612   
+//  613   // If attribute permissions require authorization to write, return error
+//  614   if ( gattPermitAuthorWrite( pAttr->permissions ) )
+        MOV     DPL,R2
+        MOV     DPH,R3
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     C,0xE0 /* A   */.5
+        JNC     ??EcoExecProfile_WriteAttrCB_0
+//  615   {
+//  616     // Insufficient authorization
+//  617     return ( ATT_ERR_INSUFFICIENT_AUTHOR );
+        MOV     R1,#0x8
+        LJMP    ??EcoExecProfile_WriteAttrCB_1 & 0xFFFF
+//  618   }
+//  619   
+//  620   if ( pAttr->type.len == ATT_BT_UUID_SIZE )
+??EcoExecProfile_WriteAttrCB_0:
+        MOV     DPL,R2
+        MOV     DPH,R3
+        MOVX    A,@DPTR
+        XRL     A,#0x2
+        JZ      $+5
+        LJMP    ??EcoExecProfile_WriteAttrCB_2 & 0xFFFF
+//  621   {
+//  622     // 16-bit UUID
+//  623     uint16 uuid = BUILD_UINT16( pAttr->type.uuid[0], pAttr->type.uuid[1]);
+//  624     switch ( uuid )
+        LCALL   ?Subroutine1 & 0xFFFF
+??CrossCallReturnLabel_11:
+        MOV     A,#0x10
+        LCALL   ?XSTACK_DISP0_8
+        MOVX    A,@DPTR
+        MOV     ?V0 + 4,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     ?V0 + 5,A
+        MOV     A,#0x12
+        LCALL   ?XSTACK_DISP0_8
+        MOVX    A,@DPTR
+        MOV     ?V0 + 2,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     ?V0 + 3,A
+        MOV     DPL,R0
+        MOV     DPH,R1
+        MOVX    A,@DPTR
+        MOV     ?V0 + 6,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R1,A
+        MOV     A,?V0 + 6
+        ADD     A,#0x0
+        CLR     A
+        ADDC    A,R1
+        MOV     ?V0 + 7,A
+        MOV     R0,#?V0 + 6
+        LCALL   ?US_SWITCH_SPARSE
+`?<Jumptable for EcoExecProfile_WriteAttrCB>_0`:
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DW        0
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DW        6
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DW        10498
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DW        ??EcoExecProfile_WriteAttrCB_3
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DW        64753
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DW        ??EcoExecProfile_WriteAttrCB_4
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DW        64754
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DW        ??EcoExecProfile_WriteAttrCB_5
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DW        64755
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DW        ??EcoExecProfile_WriteAttrCB_6
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DW        64756
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DW        ??EcoExecProfile_WriteAttrCB_7
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DW        64757
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DW        ??EcoExecProfile_WriteAttrCB_8
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DW        ??EcoExecProfile_WriteAttrCB_9
+        CODE
+//  625     {
+//  626       case ECOEXECPROFILE_CHAR1_UUID:
+//  627         //Validate the value
+//  628         // Make sure it's not a blob oper
+//  629         if ( offset == 0 )
+??EcoExecProfile_WriteAttrCB_4:
+        MOV     A,?V0 + 2
+        ORL     A,?V0 + 3
+        JNZ     ??EcoExecProfile_WriteAttrCB_10
+//  630         {
+//  631           if ( len != ECOEXECPROFILE_CHAR1_LEN )
+        MOV     A,#0x4
+        XRL     A,?V0 + 0
+        JZ      ??EcoExecProfile_WriteAttrCB_11
+//  632           {
+//  633             status = ATT_ERR_INVALID_VALUE_SIZE;
+        MOV     ?V0 + 1,#0xd
+        SJMP    ??EcoExecProfile_WriteAttrCB_12
+//  634           }
+//  635         }
+//  636         else
+//  637         {
+//  638           status = ATT_ERR_ATTR_NOT_LONG;
+??EcoExecProfile_WriteAttrCB_10:
+        MOV     ?V0 + 1,#0xb
+        SJMP    ??EcoExecProfile_WriteAttrCB_12
+//  639         }
+//  640         
+//  641         //Write the value
+//  642         if ( status == SUCCESS )
+//  643         {
+//  644           uint8 *pCurValue = (uint8 *)pAttr->pValue;        
+//  645           VOID osal_memcpy( pCurValue, pValue, ECOEXECPROFILE_CHAR1_LEN );
+??EcoExecProfile_WriteAttrCB_11:
+        ; Setup parameters for call to function osal_memcpy
+        MOV     ?V0 + 2,#0x4
+        MOV     ?V0 + 3,#0x0
+        MOV     R0,#?V0 + 2
+        LCALL   ?PUSH_XSTACK_I_TWO
+        LCALL   ?Subroutine2 & 0xFFFF
+??CrossCallReturnLabel_1:
+        LCALL   ??osal_memcpy?relay
+        MOV     A,#0x2
+        LCALL   ?DEALLOC_XSTACK8
+//  646           //if( pAttr->pValue == &EcoExecProfileChar1 )
+//  647           //{
+//  648             notifyApp = ECOEXECPROFILE_CHAR1;        
+        MOV     R4,#0x0
+//  649           //}
+//  650         }
+//  651         EcoExecProfileConnHandle = connHandle;  
+??EcoExecProfile_WriteAttrCB_12:
+        MOV     DPTR,#EcoExecProfileConnHandle
+        MOV     A,R6
+        MOVX    @DPTR,A
+        INC     DPTR
+        MOV     A,R7
+        MOVX    @DPTR,A
+//  652         break;
+//  653         
+//  654       case ECOEXECPROFILE_CHAR2_UUID:
+//  655         //Validate the value
+//  656         // Make sure it's not a blob oper
+//  657         if ( offset == 0 )
+//  658         {
+//  659           if ( len != ECOEXECPROFILE_CHAR2_LEN )
+//  660           {
+//  661             status = ATT_ERR_INVALID_VALUE_SIZE;
+//  662           }
+//  663         }
+//  664         else
+//  665         {
+//  666           status = ATT_ERR_ATTR_NOT_LONG;
+//  667         }
+//  668         
+//  669         //Write the value
+//  670         if ( status == SUCCESS )
+//  671         {
+//  672           uint8 *pCurValue = (uint8 *)pAttr->pValue;        
+//  673           VOID osal_memcpy( pCurValue, pValue, ECOEXECPROFILE_CHAR2_LEN );
+//  674           //if( pAttr->pValue == &EcoExecProfileChar1 )
+//  675           //{
+//  676             notifyApp = ECOEXECPROFILE_CHAR2;        
+//  677           //}
+//  678           EcoExecProfileConnHandle = connHandle;      
+//  679          
+//  680         }
+//  681         break;
+//  682         
+//  683       case ECOEXECPROFILE_CHAR3_UUID:
+//  684         //Validate the value
+//  685         // Make sure it's not a blob oper
+//  686         if ( offset == 0 )
+//  687         {
+//  688           if ( len != ECOEXECPROFILE_CHAR3_LEN )
+//  689           {
+//  690             status = ATT_ERR_INVALID_VALUE_SIZE;
+//  691           }
+//  692         }
+//  693         else
+//  694         {
+//  695           status = ATT_ERR_ATTR_NOT_LONG;
+//  696         }
+//  697         
+//  698         //Write the value
+//  699         if ( status == SUCCESS )
+//  700         {
+//  701           uint8 *pCurValue = (uint8 *)pAttr->pValue;        
+//  702           VOID osal_memcpy( pCurValue, pValue, ECOEXECPROFILE_CHAR3_LEN );
+//  703           //if( pAttr->pValue == &EcoExecProfileChar1 )
+//  704           //{
+//  705             notifyApp = ECOEXECPROFILE_CHAR3;        
+//  706           //}
+//  707           EcoExecProfileConnHandle = connHandle;      
+//  708          
+//  709         }
+//  710         break;
+//  711         
+//  712        case ECOEXECPROFILE_CHAR4_UUID:
+//  713         //Validate the value
+//  714         // Make sure it's not a blob oper
+//  715         if ( offset == 0 )
+//  716         {
+//  717           if ( len != ECOEXECPROFILE_CHAR4_LEN )
+//  718           {
+//  719             status = ATT_ERR_INVALID_VALUE_SIZE;
+//  720           }
+//  721         }
+//  722         else
+//  723         {
+//  724           status = ATT_ERR_ATTR_NOT_LONG;
+//  725         }
+//  726         
+//  727         //Write the value
+//  728         if ( status == SUCCESS )
+//  729         {
+//  730           uint8 *pCurValue = (uint8 *)pAttr->pValue;        
+//  731           VOID osal_memcpy( pCurValue, pValue, ECOEXECPROFILE_CHAR4_LEN );
+//  732           //if( pAttr->pValue == &EcoExecProfileChar1 )
+//  733           //{
+//  734             notifyApp = ECOEXECPROFILE_CHAR4;        
+//  735           //}
+//  736           EcoExecProfileConnHandle = connHandle;      
+//  737          
+//  738         }
+//  739         break;
+//  740         
+//  741     case ECOEXECPROFILE_CHAR5_UUID:
+//  742       //Validate the value
+//  743       // Make sure it's not a blob oper
+//  744       if ( offset == 0 )
+//  745       {
+//  746         if ( len != ECOEXECPROFILE_CHAR5_LEN )
+//  747         {
+//  748           status = ATT_ERR_INVALID_VALUE_SIZE;
+//  749         }
+//  750       }
+//  751       else
+//  752       {
+//  753         status = ATT_ERR_ATTR_NOT_LONG;
+//  754       }
+//  755       
+//  756       //Write the value
+//  757       if ( status == SUCCESS )
+//  758       {
+//  759         uint8 *pCurValue = (uint8 *)pAttr->pValue;        
+//  760         VOID osal_memcpy( pCurValue, pValue, ECOEXECPROFILE_CHAR5_LEN );
+//  761         //if( pAttr->pValue == &EcoExecProfileChar1 )
+//  762         //{
+//  763         notifyApp = ECOEXECPROFILE_CHAR5;        
+//  764         //}
+//  765         EcoExecProfileConnHandle = connHandle;      
+//  766         
+//  767       }
+//  768       break;
+//  769 
+//  770       case GATT_CLIENT_CHAR_CFG_UUID:
+//  771         status = GATTServApp_ProcessCCCWriteReq( connHandle, pAttr, pValue, len,
+//  772                                                  offset, GATT_CLIENT_CFG_NOTIFY );
+//  773         break;
+//  774         
+//  775       default:
+//  776         // Should never get here! (characteristics 2 and 4 do not have write permissions)
+//  777         status = ATT_ERR_ATTR_NOT_FOUND;
+//  778         break;
+//  779     }
+//  780   }
+//  781   else
+//  782   {
+//  783     // 128-bit UUID
+//  784     status = ATT_ERR_INVALID_HANDLE;
+//  785   }
+//  786 
+//  787   // If a characteristic value changed then callback function to notify application of change
+//  788   if ( (notifyApp != 0xFF ) && EcoExecProfile_AppCBs && EcoExecProfile_AppCBs->pfnEcoExecProfileChange )
+        MOV     A,#-0x1
+        XRL     A,R4
+        JZ      ??EcoExecProfile_WriteAttrCB_13
+??EcoExecProfile_WriteAttrCB_14:
+        MOV     DPTR,#EcoExecProfile_AppCBs
+        LCALL   ??Subroutine4_0 & 0xFFFF
+??CrossCallReturnLabel_8:
+        MOV     A,R0
+        ORL     A,R1
+        JZ      ??EcoExecProfile_WriteAttrCB_13
+        MOVX    A,@DPTR
+        MOV     DPH,A
+        MOV     DPL,R0
+        LCALL   ??Subroutine4_0 & 0xFFFF
+??CrossCallReturnLabel_9:
+        MOV     DPL,R0
+        MOV     DPH,R1
+        MOV     A,DPL
+        ORL     A,DPH
+        JZ      ??EcoExecProfile_WriteAttrCB_13
+//  789   {
+//  790     EcoExecProfile_AppCBs->pfnEcoExecProfileChange( notifyApp );  
+        ; Setup parameters for indirect call
+        MOV     A,R4
+        MOV     R1,A
+        LCALL   ?CALL_IND
+//  791   }
+//  792   
+//  793   return ( status );
+??EcoExecProfile_WriteAttrCB_13:
+        MOV     R1,?V0 + 1
+??EcoExecProfile_WriteAttrCB_1:
+        MOV     R7,#0x8
+        LJMP    ?BANKED_LEAVE_XDATA
+??EcoExecProfile_WriteAttrCB_5:
+        MOV     A,?V0 + 2
+        ORL     A,?V0 + 3
+        JZ      $+5
+        LJMP    ??EcoExecProfile_WriteAttrCB_15 & 0xFFFF
+        MOV     A,#0x14
+        XRL     A,?V0 + 0
+        JNZ     ??EcoExecProfile_WriteAttrCB_16
+        ; Setup parameters for call to function osal_memcpy
+        MOV     ?V0 + 2,#0x14
+        MOV     ?V0 + 3,#0x0
+        MOV     R0,#?V0 + 2
+        LCALL   ?PUSH_XSTACK_I_TWO
+        LCALL   ?Subroutine2 & 0xFFFF
+??CrossCallReturnLabel_2:
+        LCALL   ??osal_memcpy?relay
+        MOV     A,#0x2
+        LCALL   ?DEALLOC_XSTACK8
+        MOV     R4,#0x1
+??EcoExecProfile_WriteAttrCB_17:
+        MOV     DPTR,#EcoExecProfileConnHandle
+        MOV     A,R6
+        MOVX    @DPTR,A
+        INC     DPTR
+        MOV     A,R7
+        MOVX    @DPTR,A
+        SJMP    ??EcoExecProfile_WriteAttrCB_14
+??EcoExecProfile_WriteAttrCB_6:
+        MOV     A,?V0 + 2
+        ORL     A,?V0 + 3
+        JNZ     ??EcoExecProfile_WriteAttrCB_15
+        MOV     A,#0x2
+        XRL     A,?V0 + 0
+        JNZ     ??EcoExecProfile_WriteAttrCB_16
+        ; Setup parameters for call to function osal_memcpy
+        MOV     ?V0 + 2,#0x2
+        MOV     ?V0 + 3,#0x0
+        MOV     R0,#?V0 + 2
+        LCALL   ?PUSH_XSTACK_I_TWO
+        LCALL   ?Subroutine2 & 0xFFFF
+??CrossCallReturnLabel_3:
+        LCALL   ??osal_memcpy?relay
+        MOV     A,#0x2
+        LCALL   ?DEALLOC_XSTACK8
+        MOV     R4,#0x2
+        SJMP    ??EcoExecProfile_WriteAttrCB_17
+??EcoExecProfile_WriteAttrCB_7:
+        MOV     A,?V0 + 2
+        ORL     A,?V0 + 3
+        JNZ     ??EcoExecProfile_WriteAttrCB_15
+        MOV     A,#0x1
+        XRL     A,?V0 + 0
+        JNZ     ??EcoExecProfile_WriteAttrCB_16
+        ; Setup parameters for call to function osal_memcpy
+        MOV     ?V0 + 2,#0x1
+        MOV     ?V0 + 3,#0x0
+        MOV     R0,#?V0 + 2
+        LCALL   ?PUSH_XSTACK_I_TWO
+        LCALL   ?Subroutine2 & 0xFFFF
+??CrossCallReturnLabel_4:
+        LCALL   ??osal_memcpy?relay
+        MOV     A,#0x2
+        LCALL   ?DEALLOC_XSTACK8
+        MOV     R4,#0x3
+        SJMP    ??EcoExecProfile_WriteAttrCB_17
+??EcoExecProfile_WriteAttrCB_8:
+        MOV     A,?V0 + 2
+        ORL     A,?V0 + 3
+        JNZ     ??EcoExecProfile_WriteAttrCB_15
+        MOV     A,#0x1
+        XRL     A,?V0 + 0
+        JZ      ??EcoExecProfile_WriteAttrCB_18
+??EcoExecProfile_WriteAttrCB_16:
+        MOV     ?V0 + 1,#0xd
+        LJMP    ??EcoExecProfile_WriteAttrCB_13 & 0xFFFF
+??EcoExecProfile_WriteAttrCB_15:
+        MOV     ?V0 + 1,#0xb
+        LJMP    ??EcoExecProfile_WriteAttrCB_13 & 0xFFFF
+??EcoExecProfile_WriteAttrCB_18:
+        ; Setup parameters for call to function osal_memcpy
+        MOV     ?V0 + 2,#0x1
+        MOV     ?V0 + 3,#0x0
+        MOV     R0,#?V0 + 2
+        LCALL   ?PUSH_XSTACK_I_TWO
+        LCALL   ?Subroutine2 & 0xFFFF
+??CrossCallReturnLabel_5:
+        LCALL   ??osal_memcpy?relay
+        MOV     A,#0x2
+        LCALL   ?DEALLOC_XSTACK8
+        MOV     R4,#0x4
+        LJMP    ??EcoExecProfile_WriteAttrCB_17 & 0xFFFF
+??EcoExecProfile_WriteAttrCB_3:
+        ; Setup parameters for call to function GATTServApp_ProcessCCCWriteReq
+        MOV     ?V0 + 6,#0x1
+        MOV     ?V0 + 7,#0x0
+        MOV     R0,#?V0 + 6
+        LCALL   ?PUSH_XSTACK_I_TWO
+        MOV     R0,#?V0 + 2
+        LCALL   ?PUSH_XSTACK_I_TWO
+        MOV     R0,#?V0 + 4
+        LCALL   ?PUSH_XSTACK_I_TWO
+        MOV     R1,?V0 + 0
+        MOV     A,R2
+        MOV     R4,A
+        MOV     A,R6
+        MOV     R2,A
+        MOV     A,R7
+        MOV     R3,A
+        LCALL   ??GATTServApp_ProcessCCCWriteReq?relay
+        MOV     A,#0x6
+        LCALL   ?DEALLOC_XSTACK8
+        MOV     A,R1
+        MOV     ?V0 + 1,A
+        LJMP    ??EcoExecProfile_WriteAttrCB_13 & 0xFFFF
+??EcoExecProfile_WriteAttrCB_9:
+        MOV     ?V0 + 1,#0xa
+        LJMP    ??EcoExecProfile_WriteAttrCB_13 & 0xFFFF
+??EcoExecProfile_WriteAttrCB_2:
+        MOV     ?V0 + 1,#0x1
+        LJMP    ??EcoExecProfile_WriteAttrCB_13 & 0xFFFF
+//  794 }
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+?Subroutine2:
+        MOV     R4,?V0 + 4
+        MOV     R5,?V0 + 5
+        MOV     DPL,R2
+        MOV     DPH,R3
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        REQUIRE ??Subroutine3_0
+        ; // Fall through to label ??Subroutine3_0
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+??Subroutine3_0:
+        MOVX    A,@DPTR
+        MOV     R2,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R3,A
+        RET
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+?Subroutine1:
+        INC     DPTR
+        REQUIRE ??Subroutine4_0
+        ; // Fall through to label ??Subroutine4_0
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+??Subroutine4_0:
+        MOVX    A,@DPTR
+        MOV     R0,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R1,A
+        RET
+//  795 
+//  796 /*********************************************************************
+//  797  * @fn          EcoExecProfile_HandleConnStatusCB
+//  798  *
+//  799  * @brief       EcoExec Profile link status change handler function.
+//  800  *
+//  801  * @param       connHandle - connection handle
+//  802  * @param       changeType - type of change
+//  803  *
+//  804  * @return      none
+//  805  */
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+//  806 static void EcoExecProfile_HandleConnStatusCB( uint16 connHandle, uint8 changeType )
+EcoExecProfile_HandleConnStatusCB:
+        CODE
+//  807 { 
+        MOV     A,#-0x9
+        LCALL   ?BANKED_ENTER_XDATA
+        ; Saved register size: 9
+        ; Auto size: 0
+        MOV     A,R1
+        MOV     R6,A
+//  808   // Make sure this is not loopback connection
+//  809   if ( connHandle != LOOPBACK_CONNHANDLE )
+        MOV     A,#-0x2
+        XRL     A,R2
+        JNZ     ??EcoExecProfile_HandleConnStatusCB_0
+        MOV     A,#-0x1
+        XRL     A,R3
+??EcoExecProfile_HandleConnStatusCB_0:
+        JZ      ??EcoExecProfile_HandleConnStatusCB_1
+//  810   {
+//  811     // Reset Client Char Config if connection has dropped
+//  812     if ( ( changeType == LINKDB_STATUS_UPDATE_REMOVED )      ||
+//  813          ( ( changeType == LINKDB_STATUS_UPDATE_STATEFLAGS ) && 
+//  814            ( !linkDB_Up( connHandle ) ) ) )
+        MOV     A,#0x1
+        XRL     A,R6
+        JZ      ??EcoExecProfile_HandleConnStatusCB_1
+        MOV     A,#0x2
+        XRL     A,R6
+        JNZ     ??EcoExecProfile_HandleConnStatusCB_1
+        ; Setup parameters for call to function linkDB_State
+        MOV     R1,#0x1
+        LCALL   ??linkDB_State?relay
+//  815     { 
+//  816       
+//  817     }
+//  818   }
+//  819 }
+??EcoExecProfile_HandleConnStatusCB_1:
+        MOV     R7,#0x1
+        LJMP    ?BANKED_LEAVE_XDATA
+
+        RSEG XDATA_ID:CODE:NOROOT(0)
+`?<Initializer for EcoExecProfileConnHandle>`:
+        DATA16
+        DW 65535
+
+        RSEG XDATA_ID:CODE:NOROOT(0)
+`?<Initializer for EcoExecProfileChar1Props>`:
+        DATA8
+        DB 10
+
+        RSEG XDATA_ID:CODE:NOROOT(0)
+`?<Initializer for EcoExecProfileChar1UserDesp>`:
+        DB 48H, 65H, 61H, 64H, 20H, 66H, 69H, 6CH
+        DB 65H, 0, 0
+        DB 0, 0, 0, 0, 0, 0
+
+        RSEG XDATA_ID:CODE:NOROOT(0)
+`?<Initializer for EcoExecProfileChar2Props>`:
+        DATA8
+        DB 10
+
+        RSEG XDATA_ID:CODE:NOROOT(0)
+`?<Initializer for EcoExecProfileChar2UserDesp>`:
+        DB 43H, 6FH, 64H, 65H, 20H, 64H, 61H, 74H
+        DB 61H, 0, 0
+        DB 0, 0, 0, 0, 0, 0
+
+        RSEG XDATA_ID:CODE:NOROOT(0)
+`?<Initializer for EcoExecProfileChar3Props>`:
+        DATA8
+        DB 8
+
+        RSEG XDATA_ID:CODE:NOROOT(0)
+`?<Initializer for EcoExecProfileChar3UserDesp>`:
+        DB 46H, 69H, 72H, 73H, 74H, 43H, 6FH, 64H
+        DB 65H, 4CH, 6FH, 63H, 2EH, 0, 0
+        DB 0, 0
+
+        RSEG XDATA_ID:CODE:NOROOT(0)
+`?<Initializer for EcoExecProfileChar4Props>`:
+        DATA8
+        DB 10
+
+        RSEG XDATA_ID:CODE:NOROOT(0)
+`?<Initializer for EcoExecProfileChar4UserDesp>`:
+        DB 46H, 6CH, 61H, 73H, 68H, 20H, 43H, 6FH
+        DB 64H, 65H, 20H, 46H, 6CH, 61H, 67H, 0
+        DB 0
+
+        RSEG XDATA_ID:CODE:NOROOT(0)
+`?<Initializer for EcoExecProfileChar5Props>`:
+        DATA8
+        DB 10
+
+        RSEG XDATA_ID:CODE:NOROOT(0)
+`?<Initializer for EcoExecProfileChar5UserDesp>`:
+        DB "FlashCodeSection"
+
+        RSEG XDATA_ID:CODE:NOROOT(0)
+`?<Initializer for EcoExecProfileAttrTbl>`:
+        DATA8
+        DB 2
+        DATA16
+        DW primaryServiceUUID
+        DATA8
+        DB 1
+        DATA16
+        DW 0
+        DW EcoExecProfileService
+        DATA8
+        DB 2
+        DATA16
+        DW characterUUID
+        DATA8
+        DB 1
+        DATA16
+        DW 0
+        DW EcoExecProfileChar1Props
+        DATA8
+        DB 2
+        DATA16
+        DW EcoExecProfilechar1UUID
+        DATA8
+        DB 3
+        DATA16
+        DW 0
+        DW EcoExecProfileChar1
+        DATA8
+        DB 2
+        DATA16
+        DW charUserDescUUID
+        DATA8
+        DB 1
+        DATA16
+        DW 0
+        DW EcoExecProfileChar1UserDesp
+        DATA8
+        DB 2
+        DATA16
+        DW characterUUID
+        DATA8
+        DB 3
+        DATA16
+        DW 0
+        DW EcoExecProfileChar2Props
+        DATA8
+        DB 2
+        DATA16
+        DW EcoExecProfilechar2UUID
+        DATA8
+        DB 3
+        DATA16
+        DW 0
+        DW EcoExecProfileChar2
+        DATA8
+        DB 2
+        DATA16
+        DW charUserDescUUID
+        DATA8
+        DB 1
+        DATA16
+        DW 0
+        DW EcoExecProfileChar2UserDesp
+        DATA8
+        DB 2
+        DATA16
+        DW characterUUID
+        DATA8
+        DB 1
+        DATA16
+        DW 0
+        DW EcoExecProfileChar3Props
+        DATA8
+        DB 2
+        DATA16
+        DW EcoExecProfilechar3UUID
+        DATA8
+        DB 3
+        DATA16
+        DW 0
+        DW EcoExecProfileChar3
+        DATA8
+        DB 2
+        DATA16
+        DW charUserDescUUID
+        DATA8
+        DB 1
+        DATA16
+        DW 0
+        DW EcoExecProfileChar3UserDesp
+        DATA8
+        DB 2
+        DATA16
+        DW characterUUID
+        DATA8
+        DB 1
+        DATA16
+        DW 0
+        DW EcoExecProfileChar4Props
+        DATA8
+        DB 2
+        DATA16
+        DW EcoExecProfilechar4UUID
+        DATA8
+        DB 3
+        DATA16
+        DW 0
+        DW EcoExecProfileChar4
+        DATA8
+        DB 2
+        DATA16
+        DW charUserDescUUID
+        DATA8
+        DB 1
+        DATA16
+        DW 0
+        DW EcoExecProfileChar4UserDesp
+        DATA8
+        DB 2
+        DATA16
+        DW characterUUID
+        DATA8
+        DB 1
+        DATA16
+        DW 0
+        DW EcoExecProfileChar5Props
+        DATA8
+        DB 2
+        DATA16
+        DW EcoExecProfilechar5UUID
+        DATA8
+        DB 3
+        DATA16
+        DW 0
+        DW EcoExecProfileChar5
+        DATA8
+        DB 2
+        DATA16
+        DW charUserDescUUID
+        DATA8
+        DB 1
+        DATA16
+        DW 0
+        DW EcoExecProfileChar5UserDesp
+        DB 0, 0, 0, 0, 0, 0, 0, 0
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??EcoExecProfile_AddService?relay:
+        CODE
+        LCALL   ?BDISPATCH
+        DATA24
+        DC24    EcoExecProfile_AddService
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??EcoExecProfile_RegisterAppCBs?relay:
+        CODE
+        LCALL   ?BDISPATCH
+        DATA24
+        DC24    EcoExecProfile_RegisterAppCBs
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??EcoExecProfile_SetParameter?relay:
+        CODE
+        LCALL   ?BDISPATCH
+        DATA24
+        DC24    EcoExecProfile_SetParameter
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??EcoExecProfile_GetParameter?relay:
+        CODE
+        LCALL   ?BDISPATCH
+        DATA24
+        DC24    EcoExecProfile_GetParameter
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??EcoExecProfile_ReadAttrCB?relay:
+        CODE
+        LCALL   ?BDISPATCH
+        DATA24
+        DC24    EcoExecProfile_ReadAttrCB
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??EcoExecProfile_WriteAttrCB?relay:
+        CODE
+        LCALL   ?BDISPATCH
+        DATA24
+        DC24    EcoExecProfile_WriteAttrCB
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??EcoExecProfile_HandleConnStatusCB?relay:
+        CODE
+        LCALL   ?BDISPATCH
+        DATA24
+        DC24    EcoExecProfile_HandleConnStatusCB
+
+        END
+//  820 /*********************************************************************
+//  821 *********************************************************************/
+//  822 
+// 
+// 1 085 bytes in segment BANKED_CODE
+//    42 bytes in segment BANK_RELAYS
+//   228 bytes in segment XDATA_I
+//   228 bytes in segment XDATA_ID
+//    21 bytes in segment XDATA_ROM_C
+//    30 bytes in segment XDATA_Z
+// 
+// 1 355 bytes of CODE  memory
+//    21 bytes of CONST memory
+//   258 bytes of XDATA memory
+//
+//Errors: none
+//Warnings: none

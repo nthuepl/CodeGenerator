@@ -1,0 +1,26 @@
+what,kind,bundleId,bundleVersion,description,time
+os,sysinfo,,,"win32",1392273980382
+arch,sysinfo,,,"x86",1392273980382
+ws,sysinfo,,,"win32",1392273980382
+locale,sysinfo,,,"zh_TW",1392273980382
+processors,sysinfo,,,"4",1392273980382
+java.runtime.name,sysinfo,,,"Java(TM) SE Runtime Environment",1392273980382
+java.runtime.version,sysinfo,,,"1.7.0_51-b13",1392273980382
+java.specification.name,sysinfo,,,"Java Platform API Specification",1392273980382
+java.specification.vendor,sysinfo,,,"Oracle Corporation",1392273980382
+java.specification.version,sysinfo,,,"1.7",1392273980382
+java.vendor,sysinfo,,,"Oracle Corporation",1392273980382
+java.version,sysinfo,,,"1.7.0_51",1392273980382
+java.vm.info,sysinfo,,,"mixed mode, sharing",1392273980382
+java.vm.name,sysinfo,,,"Java HotSpot(TM) Client VM",1392273980382
+java.vm.specification.name,sysinfo,,,"Java Virtual Machine Specification",1392273980382
+java.vm.specification.vendor,sysinfo,,,"Oracle Corporation",1392273980382
+java.vm.specification.version,sysinfo,,,"1.7",1392273980382
+java.vm.vendor,sysinfo,,,"Oracle Corporation",1392273980382
+java.vm.version,sysinfo,,,"24.51-b03",1392273980382
+started,bundle,org.eclipse.mylyn.context.core,3.2.2.v20090912-0400-e3x,"org.eclipse.mylyn.context.core",1392273980457
+started,bundle,org.eclipse.mylyn.context.ui,3.2.2.v20090912-0400-e3x,"org.eclipse.mylyn.context.ui",1392273980473
+started,bundle,org.eclipse.mylyn.tasks.ui,3.2.2.v20090912-0400-e3x,"org.eclipse.mylyn.tasks.ui",1392273980554
+started,bundle,org.eclipse.mylyn.team.ui,3.2.2.v20090912-0400-e3x,"org.eclipse.mylyn.team.ui",1392273980727
+started,bundle,org.eclipse.update.scheduler,3.2.200.v20081127,"org.eclipse.update.scheduler",1392273981223
+started,bundle,org.eclipse.update.core,3.2.300.v20090525,"org.eclipse.update.core",1392273981360

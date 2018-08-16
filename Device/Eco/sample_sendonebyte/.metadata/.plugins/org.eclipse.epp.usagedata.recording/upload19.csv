@@ -1,0 +1,26 @@
+what,kind,bundleId,bundleVersion,description,time
+activated,workbench,org.eclipse.ui.workbench,3.5.1.M20090826-0800a,"",1390283316026
+activated,view,org.eclipse.ui.navigator.resources,3.4.1.M20090826-0800,"org.eclipse.ui.navigator.ProjectExplorer",1390283329315
+deactivated,workbench,org.eclipse.ui.workbench,3.5.1.M20090826-0800a,"",1390283331090
+activated,workbench,org.eclipse.ui.workbench,3.5.1.M20090826-0800a,"",1390283383871
+activated,editor,org.eclipse.cdt.ui,5.1.1.200909110608,"org.eclipse.cdt.ui.editor.CEditor",1390283384650
+deactivated,workbench,org.eclipse.ui.workbench,3.5.1.M20090826-0800a,"",1390283391790
+activated,workbench,org.eclipse.ui.workbench,3.5.1.M20090826-0800a,"",1390283396986
+executed,command,org.eclipse.ui,3.5.1.M20090902-1000,"org.eclipse.ui.file.properties",1390283396998
+deactivated,workbench,org.eclipse.ui.workbench,3.5.1.M20090826-0800a,"",1390283400596
+error,log,,,"Problems occurred when invoking code from plug-in: ""org.eclipse.jface"".",1390283458609
+error,log,,,"Problems occurred when invoking code from plug-in: ""org.eclipse.jface"".",1390283459999
+error,log,,,"Unhandled event loop exception",1390283464929
+error,log,,,"Problems occurred when invoking code from plug-in: ""org.eclipse.jface"".",1390283471517
+error,log,,,"Problems occurred when invoking code from plug-in: ""org.eclipse.jface"".",1390283472797
+activated,workbench,org.eclipse.ui.workbench,3.5.1.M20090826-0800a,"",1390283480123
+executed,command,org.eclipse.ui.ide,3.5.1.M20090826-0800,"org.eclipse.ui.project.properties",1390283480144
+activated,view,org.eclipse.ui.navigator.resources,3.4.1.M20090826-0800,"org.eclipse.ui.navigator.ProjectExplorer",1390283482241
+deactivated,workbench,org.eclipse.ui.workbench,3.5.1.M20090826-0800a,"",1390283483597
+activated,workbench,org.eclipse.ui.workbench,3.5.1.M20090826-0800a,"",1390283559191
+executed,command,org.eclipse.ui,3.5.1.M20090902-1000,"org.eclipse.ui.file.properties",1390283559216
+deactivated,workbench,org.eclipse.ui.workbench,3.5.1.M20090826-0800a,"",1390283564120
+activated,workbench,org.eclipse.ui.workbench,3.5.1.M20090826-0800a,"",1390283566389
+activated,editor,org.eclipse.cdt.ui,5.1.1.200909110608,"org.eclipse.cdt.ui.editor.CEditor",1390283566421
+executed,command,org.eclipse.ui,3.5.1.M20090902-1000,"org.eclipse.ui.edit.paste",1390283567302
+deactivated,workbench,org.eclipse.ui.workbench,3.5.1.M20090826-0800a,"",1390283573663

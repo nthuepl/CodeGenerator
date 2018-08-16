@@ -1,0 +1,518 @@
+///////////////////////////////////////////////////////////////////////////////
+//                                                                            /
+// IAR C/C++ Compiler V8.20.1.40829 for 8051            18/Jun/2014  16:46:24 /
+// Copyright 2004-2012 IAR Systems AB.                                        /
+//                                                                            /
+//    Core               =  plain                                             /
+//    Code model         =  banked                                            /
+//    Data model         =  large                                             /
+//    Calling convention =  xdata reentrant                                   /
+//    Constant location  =  data_rom                                          /
+//    Dptr setup         =  1,16                                              /
+//                                                                            /
+//    Source file        =  D:\NTHU\¬ã¨s\Important\ThesisCode\Code\GitLabClou /
+//                          d\NewEcoExec\codegenerator\Device\EcoBT\Project\b /
+//                          le\CodeGenerator\Source\OSAL_SimpleBLEPeripheral. /
+//                          c                                                 /
+//    Command line       =  -f D:\NTHU\¬ã¨s\Important\ThesisCode\Code\GitLabC /
+//                          loud\NewEcoExec\codegenerator\Device\EcoBT\Projec /
+//                          t\ble\CodeGenerator\CC2540DB\..\..\config\buildCo /
+//                          mponents.cfg (-DBROADCASTER_CFG=0x01              /
+//                          -DOBSERVER_CFG=0x02 -DPERIPHERAL_CFG=0x04         /
+//                          -DCENTRAL_CFG=0x08 -DADV_NCONN_CFG=0x01           /
+//                          -DADV_CONN_CFG=0x02 -DSCAN_CFG=0x04               /
+//                          -DINIT_CFG=0x08 -DADV_CFG=ADV_NCONN_CFG+ADV_CONN_ /
+//                          CFG -DLINK_CFG=ADV_CONN_CFG+INIT_CFG              /
+//                          -DFULL_CFG=INIT_CFG+SCAN_CFG+ADV_NCONN_CFG+ADV_CO /
+//                          NN_CFG) -f D:\NTHU\¬ã¨s\Important\ThesisCode\Code /
+//                          \GitLabCloud\NewEcoExec\codegenerator\Device\EcoB /
+//                          T\Project\ble\CodeGenerator\CC2540DB\buildConfig. /
+//                          cfg (-DHOST_CONFIG=PERIPHERAL_CFG                 /
+//                          -DGAP_PRIVACY_RECONNECT)                          /
+//                          D:\NTHU\¬ã¨s\Important\ThesisCode\Code\GitLabClou /
+//                          d\NewEcoExec\codegenerator\Device\EcoBT\Project\b /
+//                          le\CodeGenerator\Source\OSAL_SimpleBLEPeripheral. /
+//                          c -D INT_HEAP_LEN=900 -D HALNODEBUG -D            /
+//                          OSAL_CBTIMER_NUM_TASKS=1 -D HAL_AES_DMA=TRUE -D   /
+//                          HAL_DMA=TRUE -D xPOWER_SAVING -D                  /
+//                          xPLUS_BROADCASTER -D HAL_LCD=FALSE -D             /
+//                          HAL_LED=TRUE -D HAL_ADC=TRUE -lB                  /
+//                          D:\NTHU\¬ã¨s\Important\ThesisCode\Code\GitLabClou /
+//                          d\NewEcoExec\codegenerator\Device\EcoBT\Project\b /
+//                          le\CodeGenerator\CC2540DB\CC2540\List\ -o         /
+//                          D:\NTHU\¬ã¨s\Important\ThesisCode\Code\GitLabClou /
+//                          d\NewEcoExec\codegenerator\Device\EcoBT\Project\b /
+//                          le\CodeGenerator\CC2540DB\CC2540\Obj\ -e --debug  /
+//                          --core=plain --dptr=16,1 --data_model=large       /
+//                          --code_model=banked --calling_convention=xdata_re /
+//                          entrant --place_constants=data_rom                /
+//                          --nr_virtual_regs 16 -I                           /
+//                          D:\NTHU\¬ã¨s\Important\ThesisCode\Code\GitLabClou /
+//                          d\NewEcoExec\codegenerator\Device\EcoBT\Project\b /
+//                          le\CodeGenerator\CC2540DB\..\..\common\ -I        /
+//                          D:\NTHU\¬ã¨s\Important\ThesisCode\Code\GitLabClou /
+//                          d\NewEcoExec\codegenerator\Device\EcoBT\Project\b /
+//                          le\CodeGenerator\CC2540DB\..\..\include\ -I       /
+//                          D:\NTHU\¬ã¨s\Important\ThesisCode\Code\GitLabClou /
+//                          d\NewEcoExec\codegenerator\Device\EcoBT\Project\b /
+//                          le\CodeGenerator\CC2540DB\..\..\..\..\Components\ /
+//                          hal\include\ -I D:\NTHU\¬ã¨s\Important\ThesisCode /
+//                          \Code\GitLabCloud\NewEcoExec\codegenerator\Device /
+//                          \EcoBT\Project\ble\CodeGenerator\CC2540DB\..\..\. /
+//                          .\..\Components\hal\target\CC2540EB\ -I           /
+//                          D:\NTHU\¬ã¨s\Important\ThesisCode\Code\GitLabClou /
+//                          d\NewEcoExec\codegenerator\Device\EcoBT\Project\b /
+//                          le\CodeGenerator\CC2540DB\..\..\..\..\Components\ /
+//                          osal\include\ -I D:\NTHU\¬ã¨s\Important\ThesisCod /
+//                          e\Code\GitLabCloud\NewEcoExec\codegenerator\Devic /
+//                          e\EcoBT\Project\ble\CodeGenerator\CC2540DB\..\..\ /
+//                          ..\..\Components\services\saddr\ -I               /
+//                          D:\NTHU\¬ã¨s\Important\ThesisCode\Code\GitLabClou /
+//                          d\NewEcoExec\codegenerator\Device\EcoBT\Project\b /
+//                          le\CodeGenerator\CC2540DB\..\..\..\..\Components\ /
+//                          ble\include\ -I D:\NTHU\¬ã¨s\Important\ThesisCode /
+//                          \Code\GitLabCloud\NewEcoExec\codegenerator\Device /
+//                          \EcoBT\Project\ble\CodeGenerator\CC2540DB\..\..\. /
+//                          .\..\Components\ble\controller\phy\ -I            /
+//                          D:\NTHU\¬ã¨s\Important\ThesisCode\Code\GitLabClou /
+//                          d\NewEcoExec\codegenerator\Device\EcoBT\Project\b /
+//                          le\CodeGenerator\CC2540DB\..\..\..\..\Components\ /
+//                          ble\controller\include\ -I                        /
+//                          D:\NTHU\¬ã¨s\Important\ThesisCode\Code\GitLabClou /
+//                          d\NewEcoExec\codegenerator\Device\EcoBT\Project\b /
+//                          le\CodeGenerator\CC2540DB\..\..\..\..\Components\ /
+//                          ble\hci\ -I D:\NTHU\¬ã¨s\Important\ThesisCode\Cod /
+//                          e\GitLabCloud\NewEcoExec\codegenerator\Device\Eco /
+//                          BT\Project\ble\CodeGenerator\CC2540DB\..\..\..\.. /
+//                          \Components\ble\host\ -I                          /
+//                          D:\NTHU\¬ã¨s\Important\ThesisCode\Code\GitLabClou /
+//                          d\NewEcoExec\codegenerator\Device\EcoBT\Project\b /
+//                          le\CodeGenerator\CC2540DB\..\..\common\cc2540\    /
+//                          -I D:\NTHU\¬ã¨s\Important\ThesisCode\Code\GitLabC /
+//                          loud\NewEcoExec\codegenerator\Device\EcoBT\Projec /
+//                          t\ble\CodeGenerator\CC2540DB\..\..\common\npi\npi /
+//                          _np\ -I D:\NTHU\¬ã¨s\Important\ThesisCode\Code\Gi /
+//                          tLabCloud\NewEcoExec\codegenerator\Device\EcoBT\P /
+//                          roject\ble\CodeGenerator\CC2540DB\..\..\Profiles\ /
+//                          Roles\ -I D:\NTHU\¬ã¨s\Important\ThesisCode\Code\ /
+//                          GitLabCloud\NewEcoExec\codegenerator\Device\EcoBT /
+//                          \Project\ble\CodeGenerator\CC2540DB\..\..\Profile /
+//                          s\SimpleProfile\ -I D:\NTHU\¬ã¨s\Important\Thesis /
+//                          Code\Code\GitLabCloud\NewEcoExec\codegenerator\De /
+//                          vice\EcoBT\Project\ble\CodeGenerator\CC2540DB\..\ /
+//                          ..\Profiles\DevInfo\ -I                           /
+//                          D:\NTHU\¬ã¨s\Important\ThesisCode\Code\GitLabClou /
+//                          d\NewEcoExec\codegenerator\Device\EcoBT\Project\b /
+//                          le\CodeGenerator\CC2540DB\..\..\Profiles\Accelero /
+//                          meter\ -I D:\NTHU\¬ã¨s\Important\ThesisCode\Code\ /
+//                          GitLabCloud\NewEcoExec\codegenerator\Device\EcoBT /
+//                          \Project\ble\CodeGenerator\CC2540DB\..\..\Profile /
+//                          s\EcoExecGATTProfile\ -I                          /
+//                          D:\NTHU\¬ã¨s\Important\ThesisCode\Code\GitLabClou /
+//                          d\NewEcoExec\codegenerator\Device\EcoBT\Project\b /
+//                          le\CodeGenerator\CC2540DB\..\..\Profiles\Batt\    /
+//                          -I D:\NTHU\¬ã¨s\Important\ThesisCode\Code\GitLabC /
+//                          loud\NewEcoExec\codegenerator\Device\EcoBT\Projec /
+//                          t\ble\CodeGenerator\CC2540DB\..\..\Profiles\HIDDe /
+//                          v\ -Ohz                                           /
+//    List file          =  D:\NTHU\¬ã¨s\Important\ThesisCode\Code\GitLabClou /
+//                          d\NewEcoExec\codegenerator\Device\EcoBT\Project\b /
+//                          le\CodeGenerator\CC2540DB\CC2540\List\OSAL_Simple /
+//                          BLEPeripheral.s51                                 /
+//                                                                            /
+//                                                                            /
+///////////////////////////////////////////////////////////////////////////////
+
+        NAME OSAL_SimpleBLEPeripheral
+
+        RSEG DOVERLAY:DATA:NOROOT(0)
+        RSEG IOVERLAY:IDATA:NOROOT(0)
+        RSEG ISTACK:IDATA:NOROOT(0)
+        RSEG PSTACK:XDATA:NOROOT(0)
+        RSEG XSTACK:XDATA:NOROOT(0)
+
+        EXTERN ?BDISPATCH
+        EXTERN ?BRET
+        EXTERN __INIT_XDATA_Z
+
+        PUBLIC ??osalInitTasks?relay
+        PUBLIC osalInitTasks
+        PUBLIC tasksArr
+        PUBLIC tasksCnt
+        PUBLIC tasksEvents
+
+GAPBondMgr_Init     SYMBOL "GAPBondMgr_Init"
+??GAPBondMgr_Init?relay SYMBOL "?relay", GAPBondMgr_Init
+`?<Name GAPBondMgr_ProcessEv 2>` SYMBOL "GAPBondMgr_ProcessEvent"
+??GAPBondMgr_ProcessEvent?relay SYMBOL "?relay", `?<Name GAPBondMgr_ProcessEv 2>`
+GAPRole_Init        SYMBOL "GAPRole_Init"
+??GAPRole_Init?relay SYMBOL "?relay", GAPRole_Init
+`?<Name GAPRole_ProcessEvent 6>` SYMBOL "GAPRole_ProcessEvent"
+??GAPRole_ProcessEvent?relay SYMBOL "?relay", `?<Name GAPRole_ProcessEvent 6>`
+GAP_Init            SYMBOL "GAP_Init"
+??GAP_Init?relay    SYMBOL "?relay", GAP_Init
+`?<Name GAP_ProcessEvent 10>` SYMBOL "GAP_ProcessEvent"
+??GAP_ProcessEvent?relay SYMBOL "?relay", `?<Name GAP_ProcessEvent 10>`
+GATTServApp_Init    SYMBOL "GATTServApp_Init"
+??GATTServApp_Init?relay SYMBOL "?relay", GATTServApp_Init
+`?<Name GATTServApp_ProcessE 14>` SYMBOL "GATTServApp_ProcessEvent"
+??GATTServApp_ProcessEvent?relay SYMBOL "?relay", `?<Name GATTServApp_ProcessE 14>`
+GATT_Init           SYMBOL "GATT_Init"
+??GATT_Init?relay   SYMBOL "?relay", GATT_Init
+`?<Name GATT_ProcessEvent 18>` SYMBOL "GATT_ProcessEvent"
+??GATT_ProcessEvent?relay SYMBOL "?relay", `?<Name GATT_ProcessEvent 18>`
+HCI_Init            SYMBOL "HCI_Init"
+??HCI_Init?relay    SYMBOL "?relay", HCI_Init
+`?<Name HCI_ProcessEvent 22>` SYMBOL "HCI_ProcessEvent"
+??HCI_ProcessEvent?relay SYMBOL "?relay", `?<Name HCI_ProcessEvent 22>`
+Hal_Init            SYMBOL "Hal_Init"
+??Hal_Init?relay    SYMBOL "?relay", Hal_Init
+`?<Name Hal_ProcessEvent 26>` SYMBOL "Hal_ProcessEvent"
+??Hal_ProcessEvent?relay SYMBOL "?relay", `?<Name Hal_ProcessEvent 26>`
+L2CAP_Init          SYMBOL "L2CAP_Init"
+??L2CAP_Init?relay  SYMBOL "?relay", L2CAP_Init
+`?<Name L2CAP_ProcessEvent 30>` SYMBOL "L2CAP_ProcessEvent"
+??L2CAP_ProcessEvent?relay SYMBOL "?relay", `?<Name L2CAP_ProcessEvent 30>`
+LL_Init             SYMBOL "LL_Init"
+??LL_Init?relay     SYMBOL "?relay", LL_Init
+`?<Name LL_ProcessEvent 34>` SYMBOL "LL_ProcessEvent"
+??LL_ProcessEvent?relay SYMBOL "?relay", `?<Name LL_ProcessEvent 34>`
+SM_Init             SYMBOL "SM_Init"
+??SM_Init?relay     SYMBOL "?relay", SM_Init
+`?<Name SM_ProcessEvent 38>` SYMBOL "SM_ProcessEvent"
+??SM_ProcessEvent?relay SYMBOL "?relay", `?<Name SM_ProcessEvent 38>`
+SimpleBLEPeripheral_Init SYMBOL "SimpleBLEPeripheral_Init"
+??SimpleBLEPeripheral_Init?relay SYMBOL "?relay", SimpleBLEPeripheral_Init
+`?<Name SimpleBLEPeripheral_ 42>` SYMBOL "SimpleBLEPeripheral_ProcessEvent"
+??SimpleBLEPeripheral_ProcessEvent?relay SYMBOL "?relay", `?<Name SimpleBLEPeripheral_ 42>`
+osal_CbTimerInit    SYMBOL "osal_CbTimerInit"
+??osal_CbTimerInit?relay SYMBOL "?relay", osal_CbTimerInit
+`?<Name osal_CbTimerProcessE 46>` SYMBOL "osal_CbTimerProcessEvent"
+??osal_CbTimerProcessEvent?relay SYMBOL "?relay", `?<Name osal_CbTimerProcessE 46>`
+osal_mem_alloc      SYMBOL "osal_mem_alloc"
+??osal_mem_alloc?relay SYMBOL "?relay", osal_mem_alloc
+osal_memset         SYMBOL "osal_memset"
+??osal_memset?relay SYMBOL "?relay", osal_memset
+osalInitTasks       SYMBOL "osalInitTasks"
+??osalInitTasks?relay SYMBOL "?relay", osalInitTasks
+
+        EXTERN ??GAPBondMgr_Init?relay
+        EXTERN ??GAPBondMgr_ProcessEvent?relay
+        EXTERN ??GAPRole_Init?relay
+        EXTERN ??GAPRole_ProcessEvent?relay
+        EXTERN ??GAP_Init?relay
+        EXTERN ??GAP_ProcessEvent?relay
+        EXTERN ??GATTServApp_Init?relay
+        EXTERN ??GATTServApp_ProcessEvent?relay
+        EXTERN ??GATT_Init?relay
+        EXTERN ??GATT_ProcessEvent?relay
+        EXTERN ??HCI_Init?relay
+        EXTERN ??HCI_ProcessEvent?relay
+        EXTERN ??Hal_Init?relay
+        EXTERN ??Hal_ProcessEvent?relay
+        EXTERN ??L2CAP_Init?relay
+        EXTERN ??L2CAP_ProcessEvent?relay
+        EXTERN ??LL_Init?relay
+        EXTERN ??LL_ProcessEvent?relay
+        EXTERN ??SM_Init?relay
+        EXTERN ??SM_ProcessEvent?relay
+        EXTERN ??SimpleBLEPeripheral_Init?relay
+        EXTERN ??SimpleBLEPeripheral_ProcessEvent?relay
+        EXTERN ??osal_CbTimerInit?relay
+        EXTERN ??osal_CbTimerProcessEvent?relay
+        EXTERN ??osal_mem_alloc?relay
+        EXTERN ??osal_memset?relay
+        EXTERN GAPBondMgr_Init
+        EXTERN GAPRole_Init
+        EXTERN GAP_Init
+        EXTERN GATTServApp_Init
+        EXTERN GATT_Init
+        EXTERN HCI_Init
+        EXTERN Hal_Init
+        EXTERN L2CAP_Init
+        EXTERN LL_Init
+        EXTERN SM_Init
+        EXTERN SimpleBLEPeripheral_Init
+        EXTERN osal_CbTimerInit
+        EXTERN osal_mem_alloc
+        EXTERN osal_memset
+
+// D:\NTHU\¬ã¨s\Important\ThesisCode\Code\GitLabCloud\NewEcoExec\codegenerator\Device\EcoBT\Project\ble\CodeGenerator\Source\OSAL_SimpleBLEPeripheral.c
+//    1 /**************************************************************************************************
+//    2   Filename:       OSAL_SimpleBLEPeripheral.c
+//    3   Revised:        $Date: 2010-08-01 14:02:20 -0700 (Sun, 01 Aug 2010) $
+//    4   Revision:       $Revision: 23255 $
+//    5 
+//    6   Description:    This file contains function that allows user setup tasks
+//    7 
+//    8 
+//    9   Copyright 2010 - 2011 Texas Instruments Incorporated. All rights reserved.
+//   10 
+//   11   IMPORTANT: Your use of this Software is limited to those specific rights
+//   12   granted under the terms of a software license agreement between the user
+//   13   who downloaded the software, his/her employer (which must be your employer)
+//   14   and Texas Instruments Incorporated (the "License").  You may not use this
+//   15   Software unless you agree to abide by the terms of the License. The License
+//   16   limits your use, and you acknowledge, that the Software may not be modified,
+//   17   copied or distributed unless embedded on a Texas Instruments microcontroller
+//   18   or used solely and exclusively in conjunction with a Texas Instruments radio
+//   19   frequency transceiver, which is integrated into your product.  Other than for
+//   20   the foregoing purpose, you may not use, reproduce, copy, prepare derivative
+//   21   works of, modify, distribute, perform, display or sell this Software and/or
+//   22   its documentation for any purpose.
+//   23 
+//   24   YOU FURTHER ACKNOWLEDGE AND AGREE THAT THE SOFTWARE AND DOCUMENTATION ARE
+//   25   PROVIDED “AS IS" WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESS OR IMPLIED,
+//   26   INCLUDING WITHOUT LIMITATION, ANY WARRANTY OF MERCHANTABILITY, TITLE,
+//   27   NON-INFRINGEMENT AND FITNESS FOR A PARTICULAR PURPOSE. IN NO EVENT SHALL
+//   28   TEXAS INSTRUMENTS OR ITS LICENSORS BE LIABLE OR OBLIGATED UNDER CONTRACT,
+//   29   NEGLIGENCE, STRICT LIABILITY, CONTRIBUTION, BREACH OF WARRANTY, OR OTHER
+//   30   LEGAL EQUITABLE THEORY ANY DIRECT OR INDIRECT DAMAGES OR EXPENSES
+//   31   INCLUDING BUT NOT LIMITED TO ANY INCIDENTAL, SPECIAL, INDIRECT, PUNITIVE
+//   32   OR CONSEQUENTIAL DAMAGES, LOST PROFITS OR LOST DATA, COST OF PROCUREMENT
+//   33   OF SUBSTITUTE GOODS, TECHNOLOGY, SERVICES, OR ANY CLAIMS BY THIRD PARTIES
+//   34   (INCLUDING BUT NOT LIMITED TO ANY DEFENSE THEREOF), OR OTHER SIMILAR COSTS.
+//   35 
+//   36   Should you have any questions regarding your right to use this Software,
+//   37   contact Texas Instruments Incorporated at www.TI.com.
+//   38 **************************************************************************************************/
+//   39 
+//   40 /**************************************************************************************************
+//   41  *                                            INCLUDES
+//   42  **************************************************************************************************/
+//   43 #include "hal_types.h"
+//   44 #include "OSAL.h"
+//   45 #include "OSAL_Tasks.h"
+//   46 
+//   47 /* HAL */
+//   48 #include "hal_drivers.h"
+//   49 
+//   50 /* LL */
+//   51 #include "ll.h"
+//   52 
+//   53 /* HCI */
+//   54 #include "hci_tl.h"
+//   55 
+//   56 #if defined ( OSAL_CBTIMER_NUM_TASKS )
+//   57   #include "osal_cbTimer.h"
+//   58 #endif
+//   59 
+//   60 /* L2CAP */
+//   61 #include "l2cap.h"
+//   62 
+//   63 /* gap */
+//   64 #include "gap.h"
+//   65 #include "gapgattserver.h"
+//   66 #include "gapbondmgr.h"
+//   67 
+//   68 /* GATT */
+//   69 #include "gatt.h"
+//   70 
+//   71 #include "gattservapp.h"
+//   72 
+//   73 /* Profiles */
+//   74 #if defined ( PLUS_BROADCASTER )
+//   75   #include "peripheralBroadcaster.h"
+//   76 #else
+//   77   #include "peripheral.h"
+//   78 #endif
+//   79 
+//   80 /* Application */
+//   81 #include "simpleBLEPeripheral.h"
+//   82 
+//   83 /*********************************************************************
+//   84  * GLOBAL VARIABLES
+//   85  */
+//   86 
+//   87 // The order in this table must be identical to the task initialization calls below in osalInitTask.
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA8
+//   88 const pTaskEventHandlerFn tasksArr[] =
+tasksArr:
+        DATA16
+        DW ??LL_ProcessEvent?relay
+        DW ??Hal_ProcessEvent?relay
+        DW ??HCI_ProcessEvent?relay
+        DW ??osal_CbTimerProcessEvent?relay
+        DW ??L2CAP_ProcessEvent?relay
+        DW ??GAP_ProcessEvent?relay
+        DW ??GATT_ProcessEvent?relay
+        DW ??SM_ProcessEvent?relay
+        DW ??GAPRole_ProcessEvent?relay
+        DW ??GAPBondMgr_ProcessEvent?relay
+        DW ??GATTServApp_ProcessEvent?relay
+        DW ??SimpleBLEPeripheral_ProcessEvent?relay
+//   89 {
+//   90   LL_ProcessEvent,                                                  // task 0
+//   91   Hal_ProcessEvent,                                                 // task 1
+//   92   HCI_ProcessEvent,                                                 // task 2
+//   93 #if defined ( OSAL_CBTIMER_NUM_TASKS )
+//   94   OSAL_CBTIMER_PROCESS_EVENT( osal_CbTimerProcessEvent ),           // task 3
+//   95 #endif
+//   96   L2CAP_ProcessEvent,                                               // task 4
+//   97   GAP_ProcessEvent,                                                 // task 5
+//   98   GATT_ProcessEvent,                                                // task 6
+//   99   SM_ProcessEvent,                                                  // task 7
+//  100   GAPRole_ProcessEvent,                                             // task 8
+//  101   GAPBondMgr_ProcessEvent,                                          // task 9
+//  102   GATTServApp_ProcessEvent,                                         // task 10
+//  103   SimpleBLEPeripheral_ProcessEvent                                  // task 11
+//  104 };
+//  105 
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA8
+//  106 const uint8 tasksCnt = sizeof( tasksArr ) / sizeof( tasksArr[0] );
+tasksCnt:
+        DB 12
+
+        RSEG XDATA_Z:XDATA:NOROOT(0)
+        DATA16
+//  107 uint16 *tasksEvents;
+tasksEvents:
+        DS 2
+        REQUIRE __INIT_XDATA_Z
+//  108 
+//  109 /*********************************************************************
+//  110  * FUNCTIONS
+//  111  *********************************************************************/
+//  112 
+//  113 /*********************************************************************
+//  114  * @fn      osalInitTasks
+//  115  *
+//  116  * @brief   This function invokes the initialization function for each task.
+//  117  *
+//  118  * @param   void
+//  119  *
+//  120  * @return  none
+//  121  */
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+//  122 void osalInitTasks( void )
+osalInitTasks:
+        CODE
+//  123 {
+        PUSH    DPL
+        PUSH    DPH
+        ; Saved register size: 2
+        ; Auto size: 0
+//  124   uint8 taskID = 0;
+//  125 
+//  126   tasksEvents = (uint16 *)osal_mem_alloc( sizeof( uint16 ) * tasksCnt);
+        ; Setup parameters for call to function osal_mem_alloc
+        MOV     R2,#0x18
+        MOV     R3,#0x0
+        LCALL   ??osal_mem_alloc?relay
+        MOV     DPTR,#tasksEvents
+        MOV     A,R2
+        MOVX    @DPTR,A
+        INC     DPTR
+        MOV     A,R3
+        MOVX    @DPTR,A
+//  127   osal_memset( tasksEvents, 0, (sizeof( uint16 ) * tasksCnt));
+        ; Setup parameters for call to function osal_memset
+        MOV     R4,#0x18
+        MOV     R5,#0x0
+        MOV     R1,#0x0
+        LCALL   ??osal_memset?relay
+//  128 
+//  129   /* LL Task */
+//  130   LL_Init( taskID++ );
+        ; Setup parameters for call to function LL_Init
+        MOV     R1,#0x0
+        LCALL   ??LL_Init?relay
+//  131 
+//  132   /* Hal Task */
+//  133   Hal_Init( taskID++ );
+        ; Setup parameters for call to function Hal_Init
+        MOV     R1,#0x1
+        LCALL   ??Hal_Init?relay
+//  134 
+//  135   /* HCI Task */
+//  136   HCI_Init( taskID++ );
+        ; Setup parameters for call to function HCI_Init
+        MOV     R1,#0x2
+        LCALL   ??HCI_Init?relay
+//  137 
+//  138 #if defined ( OSAL_CBTIMER_NUM_TASKS )
+//  139   /* Callback Timer Tasks */
+//  140   osal_CbTimerInit( taskID );
+        ; Setup parameters for call to function osal_CbTimerInit
+        MOV     R1,#0x3
+        LCALL   ??osal_CbTimerInit?relay
+//  141   taskID += OSAL_CBTIMER_NUM_TASKS;
+//  142 #endif
+//  143 
+//  144   /* L2CAP Task */
+//  145   L2CAP_Init( taskID++ );
+        ; Setup parameters for call to function L2CAP_Init
+        MOV     R1,#0x4
+        LCALL   ??L2CAP_Init?relay
+//  146 
+//  147   /* GAP Task */
+//  148   GAP_Init( taskID++ );
+        ; Setup parameters for call to function GAP_Init
+        MOV     R1,#0x5
+        LCALL   ??GAP_Init?relay
+//  149 
+//  150   /* GATT Task */
+//  151   GATT_Init( taskID++ );
+        ; Setup parameters for call to function GATT_Init
+        MOV     R1,#0x6
+        LCALL   ??GATT_Init?relay
+//  152 
+//  153   /* SM Task */
+//  154   SM_Init( taskID++ );
+        ; Setup parameters for call to function SM_Init
+        MOV     R1,#0x7
+        LCALL   ??SM_Init?relay
+//  155 
+//  156   /* Profiles */
+//  157   GAPRole_Init( taskID++ );
+        ; Setup parameters for call to function GAPRole_Init
+        MOV     R1,#0x8
+        LCALL   ??GAPRole_Init?relay
+//  158   GAPBondMgr_Init( taskID++ );
+        ; Setup parameters for call to function GAPBondMgr_Init
+        MOV     R1,#0x9
+        LCALL   ??GAPBondMgr_Init?relay
+//  159 
+//  160   GATTServApp_Init( taskID++ );
+        ; Setup parameters for call to function GATTServApp_Init
+        MOV     R1,#0xa
+        LCALL   ??GATTServApp_Init?relay
+//  161 
+//  162   /* Application */
+//  163   SimpleBLEPeripheral_Init( taskID );
+        ; Setup parameters for call to function SimpleBLEPeripheral_Init
+        MOV     R1,#0xb
+        LCALL   ??SimpleBLEPeripheral_Init?relay
+//  164 }
+        POP     DPH
+        POP     DPL
+        LJMP    ?BRET
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??osalInitTasks?relay:
+        CODE
+        LCALL   ?BDISPATCH
+        DATA24
+        DC24    osalInitTasks
+
+        END
+//  165 
+//  166 /*********************************************************************
+//  167 *********************************************************************/
+// 
+// 95 bytes in segment BANKED_CODE
+//  6 bytes in segment BANK_RELAYS
+// 25 bytes in segment XDATA_ROM_C
+//  2 bytes in segment XDATA_Z
+// 
+// 101 bytes of CODE  memory
+//  25 bytes of CONST memory
+//   2 bytes of XDATA memory
+//
+//Errors: none
+//Warnings: none

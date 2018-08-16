@@ -1,0 +1,1676 @@
+///////////////////////////////////////////////////////////////////////////////
+//                                                                            /
+// IAR C/C++ Compiler V8.20.1.40829 for 8051            18/Jun/2014  16:46:26 /
+// Copyright 2004-2012 IAR Systems AB.                                        /
+//                                                                            /
+//    Core               =  plain                                             /
+//    Code model         =  banked                                            /
+//    Data model         =  large                                             /
+//    Calling convention =  xdata reentrant                                   /
+//    Constant location  =  data_rom                                          /
+//    Dptr setup         =  1,16                                              /
+//                                                                            /
+//    Source file        =  D:\NTHU\¬ã¨s\Important\ThesisCode\Code\GitLabClou /
+//                          d\NewEcoExec\codegenerator\Device\EcoBT\Project\b /
+//                          le\Profiles\Batt\battservice.c                    /
+//    Command line       =  -f D:\NTHU\¬ã¨s\Important\ThesisCode\Code\GitLabC /
+//                          loud\NewEcoExec\codegenerator\Device\EcoBT\Projec /
+//                          t\ble\CodeGenerator\CC2540DB\..\..\config\buildCo /
+//                          mponents.cfg (-DBROADCASTER_CFG=0x01              /
+//                          -DOBSERVER_CFG=0x02 -DPERIPHERAL_CFG=0x04         /
+//                          -DCENTRAL_CFG=0x08 -DADV_NCONN_CFG=0x01           /
+//                          -DADV_CONN_CFG=0x02 -DSCAN_CFG=0x04               /
+//                          -DINIT_CFG=0x08 -DADV_CFG=ADV_NCONN_CFG+ADV_CONN_ /
+//                          CFG -DLINK_CFG=ADV_CONN_CFG+INIT_CFG              /
+//                          -DFULL_CFG=INIT_CFG+SCAN_CFG+ADV_NCONN_CFG+ADV_CO /
+//                          NN_CFG) -f D:\NTHU\¬ã¨s\Important\ThesisCode\Code /
+//                          \GitLabCloud\NewEcoExec\codegenerator\Device\EcoB /
+//                          T\Project\ble\CodeGenerator\CC2540DB\buildConfig. /
+//                          cfg (-DHOST_CONFIG=PERIPHERAL_CFG                 /
+//                          -DGAP_PRIVACY_RECONNECT)                          /
+//                          D:\NTHU\¬ã¨s\Important\ThesisCode\Code\GitLabClou /
+//                          d\NewEcoExec\codegenerator\Device\EcoBT\Project\b /
+//                          le\Profiles\Batt\battservice.c -D                 /
+//                          INT_HEAP_LEN=900 -D HALNODEBUG -D                 /
+//                          OSAL_CBTIMER_NUM_TASKS=1 -D HAL_AES_DMA=TRUE -D   /
+//                          HAL_DMA=TRUE -D xPOWER_SAVING -D                  /
+//                          xPLUS_BROADCASTER -D HAL_LCD=FALSE -D             /
+//                          HAL_LED=TRUE -D HAL_ADC=TRUE -lB                  /
+//                          D:\NTHU\¬ã¨s\Important\ThesisCode\Code\GitLabClou /
+//                          d\NewEcoExec\codegenerator\Device\EcoBT\Project\b /
+//                          le\CodeGenerator\CC2540DB\CC2540\List\ -o         /
+//                          D:\NTHU\¬ã¨s\Important\ThesisCode\Code\GitLabClou /
+//                          d\NewEcoExec\codegenerator\Device\EcoBT\Project\b /
+//                          le\CodeGenerator\CC2540DB\CC2540\Obj\ -e --debug  /
+//                          --core=plain --dptr=16,1 --data_model=large       /
+//                          --code_model=banked --calling_convention=xdata_re /
+//                          entrant --place_constants=data_rom                /
+//                          --nr_virtual_regs 16 -I                           /
+//                          D:\NTHU\¬ã¨s\Important\ThesisCode\Code\GitLabClou /
+//                          d\NewEcoExec\codegenerator\Device\EcoBT\Project\b /
+//                          le\CodeGenerator\CC2540DB\..\..\common\ -I        /
+//                          D:\NTHU\¬ã¨s\Important\ThesisCode\Code\GitLabClou /
+//                          d\NewEcoExec\codegenerator\Device\EcoBT\Project\b /
+//                          le\CodeGenerator\CC2540DB\..\..\include\ -I       /
+//                          D:\NTHU\¬ã¨s\Important\ThesisCode\Code\GitLabClou /
+//                          d\NewEcoExec\codegenerator\Device\EcoBT\Project\b /
+//                          le\CodeGenerator\CC2540DB\..\..\..\..\Components\ /
+//                          hal\include\ -I D:\NTHU\¬ã¨s\Important\ThesisCode /
+//                          \Code\GitLabCloud\NewEcoExec\codegenerator\Device /
+//                          \EcoBT\Project\ble\CodeGenerator\CC2540DB\..\..\. /
+//                          .\..\Components\hal\target\CC2540EB\ -I           /
+//                          D:\NTHU\¬ã¨s\Important\ThesisCode\Code\GitLabClou /
+//                          d\NewEcoExec\codegenerator\Device\EcoBT\Project\b /
+//                          le\CodeGenerator\CC2540DB\..\..\..\..\Components\ /
+//                          osal\include\ -I D:\NTHU\¬ã¨s\Important\ThesisCod /
+//                          e\Code\GitLabCloud\NewEcoExec\codegenerator\Devic /
+//                          e\EcoBT\Project\ble\CodeGenerator\CC2540DB\..\..\ /
+//                          ..\..\Components\services\saddr\ -I               /
+//                          D:\NTHU\¬ã¨s\Important\ThesisCode\Code\GitLabClou /
+//                          d\NewEcoExec\codegenerator\Device\EcoBT\Project\b /
+//                          le\CodeGenerator\CC2540DB\..\..\..\..\Components\ /
+//                          ble\include\ -I D:\NTHU\¬ã¨s\Important\ThesisCode /
+//                          \Code\GitLabCloud\NewEcoExec\codegenerator\Device /
+//                          \EcoBT\Project\ble\CodeGenerator\CC2540DB\..\..\. /
+//                          .\..\Components\ble\controller\phy\ -I            /
+//                          D:\NTHU\¬ã¨s\Important\ThesisCode\Code\GitLabClou /
+//                          d\NewEcoExec\codegenerator\Device\EcoBT\Project\b /
+//                          le\CodeGenerator\CC2540DB\..\..\..\..\Components\ /
+//                          ble\controller\include\ -I                        /
+//                          D:\NTHU\¬ã¨s\Important\ThesisCode\Code\GitLabClou /
+//                          d\NewEcoExec\codegenerator\Device\EcoBT\Project\b /
+//                          le\CodeGenerator\CC2540DB\..\..\..\..\Components\ /
+//                          ble\hci\ -I D:\NTHU\¬ã¨s\Important\ThesisCode\Cod /
+//                          e\GitLabCloud\NewEcoExec\codegenerator\Device\Eco /
+//                          BT\Project\ble\CodeGenerator\CC2540DB\..\..\..\.. /
+//                          \Components\ble\host\ -I                          /
+//                          D:\NTHU\¬ã¨s\Important\ThesisCode\Code\GitLabClou /
+//                          d\NewEcoExec\codegenerator\Device\EcoBT\Project\b /
+//                          le\CodeGenerator\CC2540DB\..\..\common\cc2540\    /
+//                          -I D:\NTHU\¬ã¨s\Important\ThesisCode\Code\GitLabC /
+//                          loud\NewEcoExec\codegenerator\Device\EcoBT\Projec /
+//                          t\ble\CodeGenerator\CC2540DB\..\..\common\npi\npi /
+//                          _np\ -I D:\NTHU\¬ã¨s\Important\ThesisCode\Code\Gi /
+//                          tLabCloud\NewEcoExec\codegenerator\Device\EcoBT\P /
+//                          roject\ble\CodeGenerator\CC2540DB\..\..\Profiles\ /
+//                          Roles\ -I D:\NTHU\¬ã¨s\Important\ThesisCode\Code\ /
+//                          GitLabCloud\NewEcoExec\codegenerator\Device\EcoBT /
+//                          \Project\ble\CodeGenerator\CC2540DB\..\..\Profile /
+//                          s\SimpleProfile\ -I D:\NTHU\¬ã¨s\Important\Thesis /
+//                          Code\Code\GitLabCloud\NewEcoExec\codegenerator\De /
+//                          vice\EcoBT\Project\ble\CodeGenerator\CC2540DB\..\ /
+//                          ..\Profiles\DevInfo\ -I                           /
+//                          D:\NTHU\¬ã¨s\Important\ThesisCode\Code\GitLabClou /
+//                          d\NewEcoExec\codegenerator\Device\EcoBT\Project\b /
+//                          le\CodeGenerator\CC2540DB\..\..\Profiles\Accelero /
+//                          meter\ -I D:\NTHU\¬ã¨s\Important\ThesisCode\Code\ /
+//                          GitLabCloud\NewEcoExec\codegenerator\Device\EcoBT /
+//                          \Project\ble\CodeGenerator\CC2540DB\..\..\Profile /
+//                          s\EcoExecGATTProfile\ -I                          /
+//                          D:\NTHU\¬ã¨s\Important\ThesisCode\Code\GitLabClou /
+//                          d\NewEcoExec\codegenerator\Device\EcoBT\Project\b /
+//                          le\CodeGenerator\CC2540DB\..\..\Profiles\Batt\    /
+//                          -I D:\NTHU\¬ã¨s\Important\ThesisCode\Code\GitLabC /
+//                          loud\NewEcoExec\codegenerator\Device\EcoBT\Projec /
+//                          t\ble\CodeGenerator\CC2540DB\..\..\Profiles\HIDDe /
+//                          v\ -Ohz                                           /
+//    List file          =  D:\NTHU\¬ã¨s\Important\ThesisCode\Code\GitLabClou /
+//                          d\NewEcoExec\codegenerator\Device\EcoBT\Project\b /
+//                          le\CodeGenerator\CC2540DB\CC2540\List\battservice /
+//                          .s51                                              /
+//                                                                            /
+//                                                                            /
+///////////////////////////////////////////////////////////////////////////////
+
+        NAME battservice
+
+        RSEG DOVERLAY:DATA:NOROOT(0)
+        RSEG IOVERLAY:IDATA:NOROOT(0)
+        RSEG ISTACK:IDATA:NOROOT(0)
+        RSEG PSTACK:XDATA:NOROOT(0)
+        RSEG XSTACK:XDATA:NOROOT(0)
+
+        EXTERN ?ALLOC_XSTACK8
+        EXTERN ?BANKED_ENTER_XDATA
+        EXTERN ?BANKED_LEAVE_XDATA
+        EXTERN ?BDISPATCH
+        EXTERN ?BRET
+        EXTERN ?CALL_IND
+        EXTERN ?DEALLOC_XSTACK8
+        EXTERN ?PUSH_XSTACK_I_TWO
+        EXTERN ?US_DIV_MOD
+        EXTERN ?V0
+        EXTERN ?XSP
+        EXTERN ?XSTACK_DISP0_8
+        EXTERN __INIT_XDATA_I
+        EXTERN __INIT_XDATA_Z
+
+        PUBLIC ??Batt_AddService?relay
+        PUBLIC ??Batt_GetParameter?relay
+        PUBLIC ??Batt_HandleConnStatusCB?relay
+        PUBLIC ??Batt_MeasLevel?relay
+        PUBLIC ??Batt_Register?relay
+        PUBLIC ??Batt_SetParameter?relay
+        PUBLIC Batt_AddService
+        PUBLIC Batt_GetParameter
+        PUBLIC Batt_HandleConnStatusCB
+        PUBLIC Batt_MeasLevel
+        PUBLIC Batt_Register
+        PUBLIC Batt_SetParameter
+        PUBLIC battCBs
+        PUBLIC battLevelUUID
+        PUBLIC battServUUID
+
+GATTServApp_InitCharCfg SYMBOL "GATTServApp_InitCharCfg"
+??GATTServApp_InitCharCfg?relay SYMBOL "?relay", GATTServApp_InitCharCfg
+GATTServApp_ProcessCCCWriteReq SYMBOL "GATTServApp_ProcessCCCWriteReq"
+??GATTServApp_ProcessCCCWriteReq?relay SYMBOL "?relay", GATTServApp_ProcessCCCWriteReq
+GATTServApp_ReadCharCfg SYMBOL "GATTServApp_ReadCharCfg"
+??GATTServApp_ReadCharCfg?relay SYMBOL "?relay", GATTServApp_ReadCharCfg
+GATTServApp_RegisterService SYMBOL "GATTServApp_RegisterService"
+??GATTServApp_RegisterService?relay SYMBOL "?relay", GATTServApp_RegisterService
+GATT_Notification   SYMBOL "GATT_Notification"
+??GATT_Notification?relay SYMBOL "?relay", GATT_Notification
+HalAdcRead          SYMBOL "HalAdcRead"
+??HalAdcRead?relay  SYMBOL "?relay", HalAdcRead
+HalAdcSetReference  SYMBOL "HalAdcSetReference"
+??HalAdcSetReference?relay SYMBOL "?relay", HalAdcSetReference
+linkDB_PerformFunc  SYMBOL "linkDB_PerformFunc"
+??linkDB_PerformFunc?relay SYMBOL "?relay", linkDB_PerformFunc
+linkDB_State        SYMBOL "linkDB_State"
+??linkDB_State?relay SYMBOL "?relay", linkDB_State
+osal_memcpy         SYMBOL "osal_memcpy"
+??osal_memcpy?relay SYMBOL "?relay", osal_memcpy
+Batt_AddService     SYMBOL "Batt_AddService"
+??Batt_AddService?relay SYMBOL "?relay", Batt_AddService
+Batt_GetParameter   SYMBOL "Batt_GetParameter"
+??Batt_GetParameter?relay SYMBOL "?relay", Batt_GetParameter
+Batt_HandleConnStatusCB SYMBOL "Batt_HandleConnStatusCB"
+??Batt_HandleConnStatusCB?relay SYMBOL "?relay", Batt_HandleConnStatusCB
+Batt_MeasLevel      SYMBOL "Batt_MeasLevel"
+??Batt_MeasLevel?relay SYMBOL "?relay", Batt_MeasLevel
+Batt_Register       SYMBOL "Batt_Register"
+??Batt_Register?relay SYMBOL "?relay", Batt_Register
+Batt_SetParameter   SYMBOL "Batt_SetParameter"
+??Batt_SetParameter?relay SYMBOL "?relay", Batt_SetParameter
+
+        EXTERN ??GATTServApp_InitCharCfg?relay
+        EXTERN ??GATTServApp_ProcessCCCWriteReq?relay
+        EXTERN ??GATTServApp_ReadCharCfg?relay
+        EXTERN ??GATTServApp_RegisterService?relay
+        EXTERN ??GATT_Notification?relay
+        EXTERN ??HalAdcRead?relay
+        EXTERN ??HalAdcSetReference?relay
+        EXTERN ??linkDB_PerformFunc?relay
+        EXTERN ??linkDB_State?relay
+        EXTERN ??osal_memcpy?relay
+        EXTERN GATTServApp_InitCharCfg
+        EXTERN GATTServApp_ProcessCCCWriteReq
+        EXTERN GATTServApp_ReadCharCfg
+        EXTERN GATTServApp_RegisterService
+        EXTERN GATT_Notification
+        EXTERN HalAdcRead
+        EXTERN HalAdcSetReference
+        EXTERN characterUUID
+        EXTERN clientCharCfgUUID
+        EXTERN linkDB_PerformFunc
+        EXTERN linkDB_State
+        EXTERN osal_memcpy
+        EXTERN primaryServiceUUID
+        EXTERN reportRefUUID
+
+// D:\NTHU\¬ã¨s\Important\ThesisCode\Code\GitLabCloud\NewEcoExec\codegenerator\Device\EcoBT\Project\ble\Profiles\Batt\battservice.c
+//    1 /**************************************************************************************************
+//    2   Filename:       battservice.c
+//    3   Revised:        $Date $
+//    4   Revision:       $Revision $
+//    5 
+//    6   Description:    This file contains the Battery service.
+//    7 
+//    8   Copyright 2012 Texas Instruments Incorporated. All rights reserved.
+//    9 
+//   10   IMPORTANT: Your use of this Software is limited to those specific rights
+//   11   granted under the terms of a software license agreement between the user
+//   12   who downloaded the software, his/her employer (which must be your employer)
+//   13   and Texas Instruments Incorporated (the "License").  You may not use this
+//   14   Software unless you agree to abide by the terms of the License. The License
+//   15   limits your use, and you acknowledge, that the Software may not be modified,
+//   16   copied or distributed unless embedded on a Texas Instruments microcontroller
+//   17   or used solely and exclusively in conjunction with a Texas Instruments radio
+//   18   frequency transceiver, which is integrated into your product.  Other than for
+//   19   the foregoing purpose, you may not use, reproduce, copy, prepare derivative
+//   20   works of, modify, distribute, perform, display or sell this Software and/or
+//   21   its documentation for any purpose.
+//   22 
+//   23   YOU FURTHER ACKNOWLEDGE AND AGREE THAT THE SOFTWARE AND DOCUMENTATION ARE
+//   24   PROVIDED “AS IS” WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESS OR IMPLIED,
+//   25   INCLUDING WITHOUT LIMITATION, ANY WARRANTY OF MERCHANTABILITY, TITLE,
+//   26   NON-INFRINGEMENT AND FITNESS FOR A PARTICULAR PURPOSE. IN NO EVENT SHALL
+//   27   TEXAS INSTRUMENTS OR ITS LICENSORS BE LIABLE OR OBLIGATED UNDER CONTRACT,
+//   28   NEGLIGENCE, STRICT LIABILITY, CONTRIBUTION, BREACH OF WARRANTY, OR OTHER
+//   29   LEGAL EQUITABLE THEORY ANY DIRECT OR INDIRECT DAMAGES OR EXPENSES
+//   30   INCLUDING BUT NOT LIMITED TO ANY INCIDENTAL, SPECIAL, INDIRECT, PUNITIVE
+//   31   OR CONSEQUENTIAL DAMAGES, LOST PROFITS OR LOST DATA, COST OF PROCUREMENT
+//   32   OF SUBSTITUTE GOODS, TECHNOLOGY, SERVICES, OR ANY CLAIMS BY THIRD PARTIES
+//   33   (INCLUDING BUT NOT LIMITED TO ANY DEFENSE THEREOF), OR OTHER SIMILAR COSTS.
+//   34 
+//   35   Should you have any questions regarding your right to use this Software,
+//   36   contact Texas Instruments Incorporated at www.TI.com.
+//   37 **************************************************************************************************/
+//   38 
+//   39 /*********************************************************************
+//   40  * INCLUDES
+//   41  */
+//   42 #include "bcomdef.h"
+//   43 #include "OSAL.h"
+//   44 #include "hal_adc.h"
+//   45 #include "linkdb.h"
+//   46 #include "att.h"
+//   47 #include "gatt.h"
+//   48 #include "gatt_uuid.h"
+//   49 #include "gattservapp.h"
+//   50 #include "hid_uuid.h"
+//   51 #include "hiddev.h"
+//   52 
+//   53 #include "battservice.h"
+//   54 
+//   55 /*********************************************************************
+//   56  * MACROS
+//   57  */
+//   58 
+//   59 /*********************************************************************
+//   60  * CONSTANTS
+//   61  */
+//   62 
+//   63 // ADC voltage levels
+//   64 #define BATT_ADC_LEVEL_3V           409
+//   65 #define BATT_ADC_LEVEL_2V           273
+//   66 
+//   67 #define BATT_LEVEL_VALUE_IDX        2 // Position of battery level in attribute array
+//   68 #define BATT_LEVEL_VALUE_CCCD_IDX   3 // Position of battery level CCCD in attribute array
+//   69 
+//   70 /*********************************************************************
+//   71  * TYPEDEFS
+//   72  */
+//   73 
+//   74 /*********************************************************************
+//   75  * GLOBAL VARIABLES
+//   76  */
+//   77 // Battery service
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA16
+//   78 CONST uint8 battServUUID[ATT_BT_UUID_SIZE] =
+battServUUID:
+        DATA8
+        DB 15
+        DB 24
+//   79 {
+//   80   LO_UINT16(BATT_SERVICE_UUID), HI_UINT16(BATT_SERVICE_UUID)
+//   81 };
+//   82 
+//   83 // Battery level characteristic
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA16
+//   84 CONST uint8 battLevelUUID[ATT_BT_UUID_SIZE] =
+battLevelUUID:
+        DATA8
+        DB 25
+        DB 42
+//   85 {
+//   86   LO_UINT16(BATT_LEVEL_UUID), HI_UINT16(BATT_LEVEL_UUID)
+//   87 };
+//   88 
+//   89 /*********************************************************************
+//   90  * EXTERNAL VARIABLES
+//   91  */
+//   92 
+//   93 /*********************************************************************
+//   94  * EXTERNAL FUNCTIONS
+//   95  */
+//   96 
+//   97 /*********************************************************************
+//   98  * LOCAL VARIABLES
+//   99  */
+//  100 
+//  101 // Application callback
+
+        RSEG XDATA_Z:XDATA:NOROOT(0)
+        DATA16
+//  102 static battServiceCB_t battServiceCB;
+battServiceCB:
+        DS 2
+        REQUIRE __INIT_XDATA_Z
+//  103 
+//  104 // Critical battery level setting
+
+        RSEG XDATA_Z:XDATA:NOROOT(0)
+        DATA8
+//  105 static uint8 battCriticalLevel;
+battCriticalLevel:
+        DS 1
+        REQUIRE __INIT_XDATA_Z
+//  106 
+//  107 /*********************************************************************
+//  108  * Profile Attributes - variables
+//  109  */
+//  110 
+//  111 // Battery Service attribute
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA8
+//  112 static CONST gattAttrType_t battService = { ATT_BT_UUID_SIZE, battServUUID };
+battService:
+        DB 2
+        DATA16
+        DW battServUUID
+//  113 
+//  114 // Battery level characteristic
+
+        RSEG XDATA_I:XDATA:NOROOT(0)
+//  115 static uint8 battLevelProps = GATT_PROP_READ | GATT_PROP_NOTIFY;
+battLevelProps:
+        DATA8
+        DS 1
+        REQUIRE `?<Initializer for battLevelProps>`
+        REQUIRE __INIT_XDATA_I
+
+        RSEG XDATA_I:XDATA:NOROOT(0)
+//  116 static uint8 battLevel = 100;
+battLevel:
+        DATA8
+        DS 1
+        REQUIRE `?<Initializer for battLevel>`
+        REQUIRE __INIT_XDATA_I
+
+        RSEG XDATA_Z:XDATA:NOROOT(0)
+        DATA8
+//  117 static gattCharCfg_t battLevelClientCharCfg[GATT_MAX_NUM_CONN];
+battLevelClientCharCfg:
+        DS 6
+        REQUIRE __INIT_XDATA_Z
+//  118 
+//  119 // HID Report Reference characteristic descriptor, battery level
+
+        RSEG XDATA_I:XDATA:NOROOT(0)
+//  120 static uint8 hidReportRefBattLevel[HID_REPORT_REF_LEN] =
+hidReportRefBattLevel:
+        DATA16
+        DS 2
+        REQUIRE `?<Initializer for hidReportRefBattLevel>`
+        REQUIRE __INIT_XDATA_I
+//  121              { HID_RPT_ID_BATT_LEVEL_IN, HID_REPORT_TYPE_INPUT };
+//  122 
+//  123 /*********************************************************************
+//  124  * Profile Attributes - Table
+//  125  */
+//  126 
+
+        RSEG XDATA_I:XDATA:NOROOT(0)
+//  127 static gattAttribute_t battAttrTbl[] =
+battAttrTbl:
+        DATA8
+        DS 40
+        REQUIRE `?<Initializer for battAttrTbl>`
+        REQUIRE __INIT_XDATA_I
+//  128 {
+//  129   // Battery Service
+//  130   {
+//  131     { ATT_BT_UUID_SIZE, primaryServiceUUID }, /* type */
+//  132     GATT_PERMIT_READ,                         /* permissions */
+//  133     0,                                        /* handle */
+//  134     (uint8 *)&battService                     /* pValue */
+//  135   },
+//  136 
+//  137     // Battery Level Declaration
+//  138     {
+//  139       { ATT_BT_UUID_SIZE, characterUUID },
+//  140       GATT_PERMIT_READ,
+//  141       0,
+//  142       &battLevelProps
+//  143     },
+//  144 
+//  145       // Battery Level Value
+//  146       {
+//  147         { ATT_BT_UUID_SIZE, battLevelUUID },
+//  148         GATT_PERMIT_READ,
+//  149         0,
+//  150         &battLevel
+//  151       },
+//  152 
+//  153       // Battery Level Client Characteristic Configuration
+//  154       {
+//  155         { ATT_BT_UUID_SIZE, clientCharCfgUUID },
+//  156         GATT_PERMIT_READ | GATT_PERMIT_WRITE,
+//  157         0,
+//  158         (uint8 *) &battLevelClientCharCfg
+//  159       },
+//  160 
+//  161       // HID Report Reference characteristic descriptor, batter level input
+//  162       {
+//  163         { ATT_BT_UUID_SIZE, reportRefUUID },
+//  164         GATT_PERMIT_READ,
+//  165         0,
+//  166         hidReportRefBattLevel
+//  167       }
+//  168 };
+//  169 
+//  170 
+//  171 /*********************************************************************
+//  172  * LOCAL FUNCTIONS
+//  173  */
+//  174 static uint8 battReadAttrCB( uint16 connHandle, gattAttribute_t *pAttr,
+//  175                              uint8 *pValue, uint8 *pLen, uint16 offset, uint8 maxLen );
+//  176 static bStatus_t battWriteAttrCB( uint16 connHandle, gattAttribute_t *pAttr,
+//  177                                   uint8 *pValue, uint8 len, uint16 offset );
+//  178 static void battNotifyCB( linkDBItem_t *pLinkItem );
+//  179 static uint8 battMeasure( void );
+//  180 static void battNotifyLevel( void );
+//  181 
+//  182 /*********************************************************************
+//  183  * PROFILE CALLBACKS
+//  184  */
+//  185 // Battery Service Callbacks
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA8
+//  186 CONST gattServiceCBs_t battCBs =
+battCBs:
+        DATA16
+        DW ??battReadAttrCB?relay
+        DW ??battWriteAttrCB?relay
+        DW 0H
+//  187 {
+//  188   battReadAttrCB,  // Read callback function pointer
+//  189   battWriteAttrCB, // Write callback function pointer
+//  190   NULL             // Authorization callback function pointer
+//  191 };
+//  192 
+//  193 /*********************************************************************
+//  194  * PUBLIC FUNCTIONS
+//  195  */
+//  196 
+//  197 /*********************************************************************
+//  198  * @fn      Batt_AddService
+//  199  *
+//  200  * @brief   Initializes the Battery Service by registering
+//  201  *          GATT attributes with the GATT server.
+//  202  *
+//  203  * @return  Success or Failure
+//  204  */
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+//  205 bStatus_t Batt_AddService( void )
+Batt_AddService:
+        CODE
+//  206 {
+        MOV     A,#-0xa
+        LCALL   ?BANKED_ENTER_XDATA
+        ; Saved register size: 10
+        ; Auto size: 0
+//  207   uint8 status = SUCCESS;
+//  208 
+//  209   // Initialize Client Characteristic Configuration attributes
+//  210   GATTServApp_InitCharCfg( INVALID_CONNHANDLE, battLevelClientCharCfg );
+        ; Setup parameters for call to function GATTServApp_InitCharCfg
+        MOV     R4,#battLevelClientCharCfg & 0xff
+        MOV     R5,#(battLevelClientCharCfg >> 8) & 0xff
+        MOV     R2,#-0x1
+        MOV     R3,#-0x1
+        LCALL   ??GATTServApp_InitCharCfg?relay
+//  211 
+//  212   // Register GATT attribute list and CBs with GATT Server App
+//  213   status = GATTServApp_RegisterService( battAttrTbl,
+//  214                                         GATT_NUM_ATTRS( battAttrTbl ),
+//  215                                         &battCBs );
+//  216 
+//  217   return ( status );
+        ; Setup parameters for call to function GATTServApp_RegisterService
+        MOV     ?V0 + 0,#battCBs & 0xff
+        MOV     ?V0 + 1,#(battCBs >> 8) & 0xff
+        MOV     R0,#?V0 + 0
+        LCALL   ?PUSH_XSTACK_I_TWO
+        MOV     R4,#0x5
+        MOV     R5,#0x0
+        MOV     R2,#battAttrTbl & 0xff
+        MOV     R3,#(battAttrTbl >> 8) & 0xff
+        LCALL   ??GATTServApp_RegisterService?relay
+        MOV     A,#0x2
+        LCALL   ?DEALLOC_XSTACK8
+        REQUIRE ?Subroutine0
+        ; // Fall through to label ?Subroutine0
+//  218 }
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+?Subroutine0:
+        MOV     R7,#0x2
+        LJMP    ?BANKED_LEAVE_XDATA
+//  219 
+//  220 /*********************************************************************
+//  221  * @fn      Batt_Register
+//  222  *
+//  223  * @brief   Register a callback function with the Battery Service.
+//  224  *
+//  225  * @param   pfnServiceCB - Callback function.
+//  226  *
+//  227  * @return  None.
+//  228  */
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+//  229 extern void Batt_Register( battServiceCB_t pfnServiceCB )
+Batt_Register:
+        CODE
+//  230 {
+        PUSH    DPL
+        PUSH    DPH
+        ; Saved register size: 2
+        ; Auto size: 0
+//  231   battServiceCB = pfnServiceCB;
+        MOV     DPTR,#battServiceCB
+        MOV     A,R2
+        MOVX    @DPTR,A
+        INC     DPTR
+        MOV     A,R3
+        MOVX    @DPTR,A
+//  232 }
+        REQUIRE ?Subroutine1
+        ; // Fall through to label ?Subroutine1
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+?Subroutine1:
+        POP     DPH
+        POP     DPL
+        LJMP    ?BRET
+//  233 
+//  234 /*********************************************************************
+//  235  * @fn      Batt_SetParameter
+//  236  *
+//  237  * @brief   Set a Battery Service parameter.
+//  238  *
+//  239  * @param   param - Profile parameter ID
+//  240  * @param   len - length of data to right
+//  241  * @param   value - pointer to data to write.  This is dependent on
+//  242  *          the parameter ID and WILL be cast to the appropriate
+//  243  *          data type (example: data type of uint16 will be cast to
+//  244  *          uint16 pointer).
+//  245  *
+//  246  * @return  bStatus_t
+//  247  */
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+//  248 bStatus_t Batt_SetParameter( uint8 param, uint8 len, void *value )
+Batt_SetParameter:
+        CODE
+//  249 {
+        MOV     A,#-0x9
+        LCALL   ?BANKED_ENTER_XDATA
+        ; Saved register size: 9
+        ; Auto size: 0
+        MOV     A,R1
+        MOV     R7,A
+//  250   bStatus_t ret = SUCCESS;
+        MOV     R6,#0x0
+//  251 
+//  252   switch ( param )
+        MOV     A,#0x1
+        XRL     A,R7
+        JNZ     ??Batt_SetParameter_0
+//  253   {
+//  254     case BATT_PARAM_CRITICAL_LEVEL:
+//  255       battCriticalLevel = *((uint8*)value);
+        MOV     DPL,R4
+        MOV     DPH,R5
+        MOVX    A,@DPTR
+        MOV     DPTR,#battCriticalLevel
+        MOVX    @DPTR,A
+//  256 
+//  257       // If below the critical level and critical state not set, notify it
+//  258       if ( battLevel < battCriticalLevel )
+        MOV     R0,A
+        MOV     DPTR,#battLevel
+        MOVX    A,@DPTR
+        CLR     C
+        SUBB    A,R0
+        JNC     ??Batt_SetParameter_1
+//  259       {
+//  260         battNotifyLevel();
+        ; Setup parameters for call to function linkDB_PerformFunc
+        MOV     R2,#??battNotifyCB?relay & 0xff
+        MOV     R3,#(??battNotifyCB?relay >> 8) & 0xff
+        LCALL   ??linkDB_PerformFunc?relay
+//  261       }
+        SJMP    ??Batt_SetParameter_1
+//  262       break;
+//  263 
+//  264     default:
+//  265       ret = INVALIDPARAMETER;
+??Batt_SetParameter_0:
+        INC     R6
+        INC     R6
+//  266       break;
+//  267   }
+//  268 
+//  269   return ( ret );
+??Batt_SetParameter_1:
+        MOV     A,R6
+        LJMP    ?Subroutine2 & 0xFFFF
+//  270 }
+//  271 
+//  272 /*********************************************************************
+//  273  * @fn      Batt_GetParameter
+//  274  *
+//  275  * @brief   Get a Battery Service parameter.
+//  276  *
+//  277  * @param   param - Profile parameter ID
+//  278  * @param   value - pointer to data to get.  This is dependent on
+//  279  *          the parameter ID and WILL be cast to the appropriate
+//  280  *          data type (example: data type of uint16 will be cast to
+//  281  *          uint16 pointer).
+//  282  *
+//  283  * @return  bStatus_t
+//  284  */
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+//  285 bStatus_t Batt_GetParameter( uint8 param, void *value )
+Batt_GetParameter:
+        CODE
+//  286 {
+        MOV     A,#-0x9
+        LCALL   ?BANKED_ENTER_XDATA
+        ; Saved register size: 9
+        ; Auto size: 0
+        MOV     A,R1
+//  287   bStatus_t ret = SUCCESS;
+        MOV     R4,#0x0
+//  288   switch ( param )
+        JZ      ??Batt_GetParameter_0
+        DEC     A
+        JZ      ??Batt_GetParameter_1
+        DEC     A
+        JZ      ??Batt_GetParameter_2
+        DEC     A
+        JZ      ??Batt_GetParameter_3
+        SJMP    ??Batt_GetParameter_4
+//  289   {
+//  290     case BATT_PARAM_LEVEL:
+//  291       *((uint8*)value) = battLevel;
+??Batt_GetParameter_0:
+        MOV     DPTR,#battLevel
+        SJMP    ??Batt_GetParameter_5
+//  292       break;
+//  293 
+//  294     case BATT_PARAM_CRITICAL_LEVEL:
+//  295       *((uint8*)value) = battCriticalLevel;
+??Batt_GetParameter_1:
+        MOV     DPTR,#battCriticalLevel
+??Batt_GetParameter_5:
+        MOVX    A,@DPTR
+        MOV     DPL,R2
+        MOV     DPH,R3
+        SJMP    ??Batt_GetParameter_6
+//  296       break;
+//  297 
+//  298     case BATT_PARAM_SERVICE_HANDLE:
+//  299       *((uint16*)value) = GATT_SERVICE_HANDLE( battAttrTbl );
+??Batt_GetParameter_2:
+        MOV     DPTR,#battAttrTbl + 4
+        LCALL   ?Subroutine3 & 0xFFFF
+??CrossCallReturnLabel_0:
+        SJMP    ??Batt_GetParameter_6
+//  300       break;
+//  301 
+//  302     case BATT_PARAM_BATT_LEVEL_IN_REPORT:
+//  303       {
+//  304         hidRptMap_t *pRpt = (hidRptMap_t *)value;
+//  305 
+//  306         pRpt->id = hidReportRefBattLevel[0];
+??Batt_GetParameter_3:
+        MOV     DPTR,#hidReportRefBattLevel
+        LCALL   ?Subroutine6 & 0xFFFF
+??CrossCallReturnLabel_9:
+        MOVX    @DPTR,A
+//  307         pRpt->type = hidReportRefBattLevel[1];
+        MOV     DPTR,#hidReportRefBattLevel + 1
+        LCALL   ?Subroutine6 & 0xFFFF
+??CrossCallReturnLabel_10:
+        INC     DPTR
+        MOVX    @DPTR,A
+//  308         pRpt->handle = battAttrTbl[BATT_LEVEL_VALUE_IDX].handle;
+        MOV     DPTR,#battAttrTbl + 20
+        LCALL   ?Subroutine3 & 0xFFFF
+??CrossCallReturnLabel_1:
+        MOVX    @DPTR,A
+//  309         pRpt->cccdHandle = battAttrTbl[BATT_LEVEL_VALUE_CCCD_IDX].handle;
+        MOV     DPTR,#battAttrTbl + 28
+        LCALL   ?Subroutine5 & 0xFFFF
+??CrossCallReturnLabel_4:
+        MOV     DPL,R2
+        MOV     DPH,R3
+        INC     DPTR
+        INC     DPTR
+        MOV     A,R0
+        MOVX    @DPTR,A
+        INC     DPTR
+        MOV     A,R1
+        MOVX    @DPTR,A
+//  310         pRpt->mode = HID_PROTOCOL_MODE_REPORT;
+        MOV     DPL,R2
+        MOV     DPH,R3
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        MOV     A,#0x1
+??Batt_GetParameter_6:
+        MOVX    @DPTR,A
+//  311       }
+//  312       break;
+        SJMP    ??Batt_GetParameter_7
+//  313 
+//  314     default:
+//  315       ret = INVALIDPARAMETER;
+??Batt_GetParameter_4:
+        INC     R4
+        INC     R4
+//  316       break;
+//  317   }
+//  318 
+//  319   return ( ret );
+??Batt_GetParameter_7:
+        MOV     A,R4
+        LJMP    ?Subroutine2 & 0xFFFF
+//  320 }
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+?Subroutine6:
+        MOVX    A,@DPTR
+        MOV     DPL,R2
+        MOV     DPH,R3
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        RET
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+?Subroutine3:
+        MOVX    A,@DPTR
+        MOV     R0,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R1,A
+        MOV     DPL,R2
+        MOV     DPH,R3
+        MOV     A,R0
+        MOVX    @DPTR,A
+        INC     DPTR
+        MOV     A,R1
+        RET
+//  321 
+//  322 /*********************************************************************
+//  323  * @fn          Batt_MeasLevel
+//  324  *
+//  325  * @brief       Measure the battery level and update the battery
+//  326  *              level value in the service characteristics.  If
+//  327  *              the battery level-state characteristic is configured
+//  328  *              for notification and the battery level has changed
+//  329  *              since the last measurement, then a notification
+//  330  *              will be sent.
+//  331  *
+//  332  * @return      Success
+//  333  */
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+//  334 bStatus_t Batt_MeasLevel( void )
+Batt_MeasLevel:
+        CODE
+//  335 {
+        PUSH    DPL
+        PUSH    DPH
+        ; Saved register size: 2
+        ; Auto size: 0
+//  336   uint8 level;
+//  337 
+//  338   level = battMeasure();
+        ; Setup parameters for call to function battMeasure
+        LCALL   ??battMeasure?relay
+//  339 
+//  340   // If level has gone down
+//  341   if (level < battLevel)
+        MOV     DPTR,#battLevel
+        MOVX    A,@DPTR
+        MOV     R0,A
+        MOV     A,R1
+        CLR     C
+        SUBB    A,R0
+        JNC     ??Batt_MeasLevel_0
+//  342   {
+//  343     // Update level
+//  344     battLevel = level;
+        MOV     A,R1
+        MOVX    @DPTR,A
+//  345 
+//  346     // Send a notification
+//  347     battNotifyLevel();
+        ; Setup parameters for call to function linkDB_PerformFunc
+        MOV     R2,#??battNotifyCB?relay & 0xff
+        MOV     R3,#(??battNotifyCB?relay >> 8) & 0xff
+        LCALL   ??linkDB_PerformFunc?relay
+//  348   }
+//  349 
+//  350   return SUCCESS;
+??Batt_MeasLevel_0:
+        MOV     R1,#0x0
+        LJMP    ?Subroutine1 & 0xFFFF
+//  351 }
+//  352 
+//  353 /*********************************************************************
+//  354  * @fn          battReadAttrCB
+//  355  *
+//  356  * @brief       Read an attribute.
+//  357  *
+//  358  * @param       connHandle - connection message was received on
+//  359  * @param       pAttr - pointer to attribute
+//  360  * @param       pValue - pointer to data to be read
+//  361  * @param       pLen - length of data to be read
+//  362  * @param       offset - offset of the first octet to be read
+//  363  * @param       maxLen - maximum length of data to be read
+//  364  *
+//  365  * @return      Success or Failure
+//  366  */
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+//  367 static uint8 battReadAttrCB( uint16 connHandle, gattAttribute_t *pAttr,
+battReadAttrCB:
+        CODE
+//  368                              uint8 *pValue, uint8 *pLen, uint16 offset, uint8 maxLen )
+//  369 {
+        MOV     A,#-0xb
+        LCALL   ?BANKED_ENTER_XDATA
+        ; Saved register size: 11
+        ; Auto size: 0
+        MOV     A,#0xf
+        LCALL   ?XSTACK_DISP0_8
+        LCALL   ?Subroutine5 & 0xFFFF
+//  370   bStatus_t status = SUCCESS;
+??CrossCallReturnLabel_5:
+        MOV     ?V0 + 2,#0x0
+//  371 
+//  372   // Make sure it's not a blob operation (no attributes in the profile are long)
+//  373   if ( offset > 0 )
+        MOV     A,R0
+        ORL     A,R1
+        JZ      ??battReadAttrCB_0
+//  374   {
+//  375     return ( ATT_ERR_ATTR_NOT_LONG );
+        MOV     R1,#0xb
+        LJMP    ??battReadAttrCB_1 & 0xFFFF
+//  376   }
+//  377 
+//  378   uint16 uuid = BUILD_UINT16( pAttr->type.uuid[0], pAttr->type.uuid[1] );
+??battReadAttrCB_0:
+        LCALL   ?Subroutine4 & 0xFFFF
+??CrossCallReturnLabel_2:
+        MOV     R2,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R1,A
+        MOV     A,R2
+        ADD     A,#0x0
+        CLR     A
+        ADDC    A,R1
+        MOV     R3,A
+        MOV     A,#0xb
+        LCALL   ?XSTACK_DISP0_8
+        MOVX    A,@DPTR
+        MOV     R6,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R7,A
+        MOV     A,#0xd
+        LCALL   ?XSTACK_DISP0_8
+        LCALL   ?Subroutine5 & 0xFFFF
+??CrossCallReturnLabel_6:
+        MOV     ?V0 + 0,R0
+        MOV     ?V0 + 1,R1
+//  379 
+//  380   // Measure battery level if reading level
+//  381   if ( uuid == BATT_LEVEL_UUID )
+        MOV     A,#0x19
+        XRL     A,R2
+        JNZ     ??battReadAttrCB_2
+        MOV     A,#0x2a
+        XRL     A,R3
+??battReadAttrCB_2:
+        JNZ     ??battReadAttrCB_3
+//  382   {
+//  383     uint8 level;
+//  384 
+//  385     level = battMeasure();
+        ; Setup parameters for call to function battMeasure
+        LCALL   ??battMeasure?relay
+//  386 
+//  387     // If level has gone down
+//  388     if (level < battLevel)
+        MOV     DPTR,#battLevel
+        MOVX    A,@DPTR
+        MOV     R0,A
+        MOV     A,R1
+        CLR     C
+        SUBB    A,R0
+        JNC     ??battReadAttrCB_4
+//  389     {
+//  390       // Update level
+//  391       battLevel = level;
+        MOV     A,R1
+        MOVX    @DPTR,A
+//  392     }
+//  393 
+//  394     *pLen = 1;
+??battReadAttrCB_4:
+        MOV     DPL,?V0 + 0
+        MOV     DPH,?V0 + 1
+        MOV     A,#0x1
+        MOVX    @DPTR,A
+//  395     pValue[0] = battLevel;
+        MOV     DPTR,#battLevel
+        MOVX    A,@DPTR
+        MOV     DPL,R6
+        MOV     DPH,R7
+        MOVX    @DPTR,A
+        SJMP    ??battReadAttrCB_5
+//  396   }
+//  397   else if ( uuid == GATT_REPORT_REF_UUID )
+??battReadAttrCB_3:
+        MOV     A,#0x8
+        XRL     A,R2
+        JNZ     ??battReadAttrCB_6
+        MOV     A,#0x29
+        XRL     A,R3
+??battReadAttrCB_6:
+        JNZ     ??battReadAttrCB_7
+//  398   {
+//  399     *pLen = HID_REPORT_REF_LEN;
+        MOV     DPL,R0
+        MOV     DPH,R1
+        MOV     A,#0x2
+        MOVX    @DPTR,A
+//  400     osal_memcpy( pValue, pAttr->pValue, HID_REPORT_REF_LEN );
+        ; Setup parameters for call to function osal_memcpy
+        MOV     ?V0 + 0,A
+        MOV     ?V0 + 1,#0x0
+        MOV     R0,#?V0 + 0
+        LCALL   ?PUSH_XSTACK_I_TWO
+        MOV     DPL,R4
+        MOV     DPH,R5
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R4,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R5,A
+        MOV     A,R6
+        MOV     R2,A
+        MOV     A,R7
+        MOV     R3,A
+        LCALL   ??osal_memcpy?relay
+        MOV     A,#0x2
+        LCALL   ?DEALLOC_XSTACK8
+        SJMP    ??battReadAttrCB_5
+//  401   }
+//  402   else
+//  403   {
+//  404     status = ATT_ERR_ATTR_NOT_FOUND;
+??battReadAttrCB_7:
+        MOV     ?V0 + 2,#0xa
+//  405   }
+//  406 
+//  407   return ( status );
+??battReadAttrCB_5:
+        MOV     R1,?V0 + 2
+??battReadAttrCB_1:
+        MOV     R7,#0x3
+        LJMP    ?BANKED_LEAVE_XDATA
+//  408 }
+//  409 
+//  410 /*********************************************************************
+//  411  * @fn      battWriteAttrCB
+//  412  *
+//  413  * @brief   Validate attribute data prior to a write operation
+//  414  *
+//  415  * @param   connHandle - connection message was received on
+//  416  * @param   pAttr - pointer to attribute
+//  417  * @param   pValue - pointer to data to be written
+//  418  * @param   len - length of data
+//  419  * @param   offset - offset of the first octet to be written
+//  420  * @param   complete - whether this is the last packet
+//  421  * @param   oper - whether to validate and/or write attribute value
+//  422  *
+//  423  * @return  Success or Failure
+//  424  */
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+//  425 static bStatus_t battWriteAttrCB( uint16 connHandle, gattAttribute_t *pAttr,
+battWriteAttrCB:
+        CODE
+//  426                                   uint8 *pValue, uint8 len, uint16 offset )
+//  427 {
+        MOV     A,#-0xe
+        LCALL   ?BANKED_ENTER_XDATA
+        ; Saved register size: 14
+        ; Auto size: 0
+        MOV     A,R1
+        MOV     R6,A
+        MOV     A,#0x10
+        LCALL   ?XSTACK_DISP0_8
+        MOVX    A,@DPTR
+        MOV     ?V0 + 0,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     ?V0 + 1,A
+//  428   bStatus_t status = SUCCESS;
+//  429 
+//  430   uint16 uuid = BUILD_UINT16( pAttr->type.uuid[0], pAttr->type.uuid[1]);
+//  431   switch ( uuid )
+        LCALL   ?Subroutine4 & 0xFFFF
+??CrossCallReturnLabel_3:
+        MOV     ?V0 + 2,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R1,A
+        MOV     R0,?V0 + 2
+        MOV     A,#0x2
+        XRL     A,R0
+        JNZ     ??battWriteAttrCB_0
+        MOV     A,#0x29
+        XRL     A,R1
+??battWriteAttrCB_0:
+        JNZ     ??battWriteAttrCB_1
+        MOV     A,#0xe
+        LCALL   ?XSTACK_DISP0_8
+        MOVX    A,@DPTR
+        MOV     ?V0 + 2,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     ?V0 + 3,A
+//  432   {
+//  433     case GATT_CLIENT_CHAR_CFG_UUID:
+//  434       status = GATTServApp_ProcessCCCWriteReq( connHandle, pAttr, pValue, len,
+//  435                                                offset, GATT_CLIENT_CFG_NOTIFY );
+        ; Setup parameters for call to function GATTServApp_ProcessCCCWriteReq
+        MOV     ?V0 + 4,#0x1
+        MOV     ?V0 + 5,#0x0
+        MOV     R0,#?V0 + 4
+        LCALL   ?PUSH_XSTACK_I_TWO
+        MOV     R0,#?V0 + 0
+        LCALL   ?PUSH_XSTACK_I_TWO
+        MOV     R0,#?V0 + 2
+        LCALL   ?PUSH_XSTACK_I_TWO
+        MOV     A,R6
+        MOV     R1,A
+        LCALL   ??GATTServApp_ProcessCCCWriteReq?relay
+        MOV     A,#0x6
+        LCALL   ?DEALLOC_XSTACK8
+        MOV     A,R1
+        MOV     R7,A
+//  436       if ( status == SUCCESS )
+        JNZ     ??battWriteAttrCB_2
+//  437       {
+//  438         uint16 charCfg = BUILD_UINT16( pValue[0], pValue[1] );
+//  439 
+//  440         if ( battServiceCB )
+        MOV     DPTR,#battServiceCB
+        LCALL   ?Subroutine5 & 0xFFFF
+??CrossCallReturnLabel_7:
+        MOV     A,R0
+        ORL     A,R1
+        JZ      ??battWriteAttrCB_2
+//  441         {
+//  442           (*battServiceCB)( (charCfg == GATT_CFG_NO_OPERATION) ?
+//  443                             BATT_LEVEL_NOTI_DISABLED :
+//  444                             BATT_LEVEL_NOTI_ENABLED);
+        MOV     DPL,?V0 + 2
+        MOV     DPH,?V0 + 3
+        MOVX    A,@DPTR
+        MOV     R2,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R1,A
+        MOV     A,R2
+        ORL     A,R1
+        JNZ     ??battWriteAttrCB_3
+        MOV     R1,#0x2
+        SJMP    ??battWriteAttrCB_4
+??battWriteAttrCB_3:
+        MOV     R1,#0x1
+??battWriteAttrCB_4:
+        ; Setup parameters for indirect call
+        MOV     DPTR,#battServiceCB + 1
+        MOVX    A,@DPTR
+        MOV     DPH,A
+        MOV     DPL,R0
+        LCALL   ?CALL_IND
+        SJMP    ??battWriteAttrCB_2
+//  445         }
+//  446       }
+//  447       break;
+//  448 
+//  449     default:
+//  450       status = ATT_ERR_ATTR_NOT_FOUND;
+??battWriteAttrCB_1:
+        MOV     R7,#0xa
+//  451       break;
+//  452   }
+//  453 
+//  454   return ( status );
+??battWriteAttrCB_2:
+        MOV     A,R7
+        MOV     R1,A
+        MOV     R7,#0x6
+        LJMP    ?BANKED_LEAVE_XDATA
+//  455 }
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+?Subroutine5:
+        MOVX    A,@DPTR
+        MOV     R0,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R1,A
+        RET
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+?Subroutine4:
+        MOV     DPL,R4
+        MOV     DPH,R5
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R0,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R1,A
+        MOV     DPL,R0
+        MOV     DPH,R1
+        MOVX    A,@DPTR
+        RET
+//  456 
+//  457 /*********************************************************************
+//  458  * @fn          battNotifyCB
+//  459  *
+//  460  * @brief       Send a notification of the level state characteristic.
+//  461  *
+//  462  * @param       connHandle - linkDB item
+//  463  *
+//  464  * @return      None.
+//  465  */
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+//  466 static void battNotifyCB( linkDBItem_t *pLinkItem )
+battNotifyCB:
+        CODE
+//  467 {
+        MOV     A,#-0x9
+        LCALL   ?BANKED_ENTER_XDATA
+        ; Saved register size: 9
+        ; Auto size: 23
+        MOV     A,#-0x17
+        LCALL   ?ALLOC_XSTACK8
+//  468   if ( pLinkItem->stateFlags & LINK_CONNECTED )
+        MOV     DPL,R2
+        MOV     DPH,R3
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     C,0xE0 /* A   */.0
+        JNC     ??battNotifyCB_0
+//  469   {
+//  470     uint16 value = GATTServApp_ReadCharCfg( pLinkItem->connectionHandle,
+//  471                                             battLevelClientCharCfg );
+//  472     if ( value & GATT_CLIENT_CFG_NOTIFY )
+        MOV     DPL,R2
+        MOV     DPH,R3
+        INC     DPTR
+        MOV     R6,DPL
+        MOV     R7,DPH
+        ; Setup parameters for call to function GATTServApp_ReadCharCfg
+        MOV     R4,#battLevelClientCharCfg & 0xff
+        MOV     R5,#(battLevelClientCharCfg >> 8) & 0xff
+        MOVX    A,@DPTR
+        MOV     R2,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R3,A
+        LCALL   ??GATTServApp_ReadCharCfg?relay
+        MOV     A,R2
+        MOV     C,0xE0 /* A   */.0
+        JNC     ??battNotifyCB_0
+//  473     {
+//  474       attHandleValueNoti_t noti;
+//  475 
+//  476       noti.handle = battAttrTbl[BATT_LEVEL_VALUE_IDX].handle;
+        MOV     DPTR,#battAttrTbl + 20
+        LCALL   ?Subroutine5 & 0xFFFF
+??CrossCallReturnLabel_8:
+        MOV     DPL,?XSP + 0
+        MOV     DPH,?XSP + 1
+        MOV     A,R0
+        MOVX    @DPTR,A
+        INC     DPTR
+        MOV     A,R1
+        MOVX    @DPTR,A
+//  477       noti.len = 1;
+        MOV     A,#0x2
+        LCALL   ?XSTACK_DISP0_8
+        MOV     A,#0x1
+        MOVX    @DPTR,A
+//  478       noti.value[0] = battLevel;
+        MOV     DPTR,#battLevel
+        MOVX    A,@DPTR
+        PUSH    A
+        MOV     A,#0x3
+        LCALL   ?XSTACK_DISP0_8
+        POP     A
+        MOVX    @DPTR,A
+//  479 
+//  480       GATT_Notification( pLinkItem->connectionHandle, &noti, FALSE );
+        ; Setup parameters for call to function GATT_Notification
+        MOV     R1,#0x0
+        MOV     DPL,?XSP + 0
+        MOV     DPH,?XSP + 1
+        MOV     R4,DPL
+        MOV     R5,DPH
+        MOV     DPL,R6
+        MOV     DPH,R7
+        MOVX    A,@DPTR
+        MOV     R2,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R3,A
+        LCALL   ??GATT_Notification?relay
+//  481     }
+//  482   }
+//  483 }
+??battNotifyCB_0:
+        MOV     A,#0x17
+        LCALL   ?DEALLOC_XSTACK8
+        SJMP    ??Subroutine7_0
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+?Subroutine2:
+        MOV     R1,A
+        REQUIRE ??Subroutine7_0
+        ; // Fall through to label ??Subroutine7_0
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+??Subroutine7_0:
+        MOV     R7,#0x1
+        LJMP    ?BANKED_LEAVE_XDATA
+//  484 
+//  485 /*********************************************************************
+//  486  * @fn      battMeasure
+//  487  *
+//  488  * @brief   Measure the battery level with the ADC and return
+//  489  *          it as a percentage 0-100%.
+//  490  *
+//  491  * @return  Battery level.
+//  492  */
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+//  493 static uint8 battMeasure( void )
+battMeasure:
+        CODE
+//  494 {
+        MOV     A,#-0xa
+        LCALL   ?BANKED_ENTER_XDATA
+        ; Saved register size: 10
+        ; Auto size: 0
+//  495   uint16 adc;
+//  496   uint8 percent;
+//  497 
+//  498   /**
+//  499    * Battery level conversion from ADC to a percentage:
+//  500    *
+//  501    * The maximum ADC value for the battery voltage level is 511 for a
+//  502    * 10-bit conversion.  The ADC value is references vs. 1.25v and
+//  503    * this maximum value corresponds to a voltage of 3.75v.
+//  504    *
+//  505    * For a coin cell battery 3.0v = 100%.  The minimum operating
+//  506    * voltage of the CC2540 is 2.0v so 2.0v = 0%.
+//  507    *
+//  508    * To convert a voltage to an ADC value use:
+//  509    *
+//  510    *   (v/3)/1.25 * 511 = adc
+//  511    *
+//  512    * 3.0v = 409 ADC
+//  513    * 2.0v = 273 ADC
+//  514    *
+//  515    * We need to map ADC values from 409-273 to 100%-0%.
+//  516    *
+//  517    * Normalize the ADC values to zero:
+//  518    *
+//  519    * 409 - 273 = 136
+//  520    *
+//  521    * And convert ADC range to percentage range:
+//  522    *
+//  523    * percent/adc = 100/136 = 25/34
+//  524    *
+//  525    * Resulting in the final equation, with round:
+//  526    *
+//  527    * percent = ((adc - 273) * 25) + 33 / 34
+//  528    */
+//  529 
+//  530   // Configure ADC and perform a read
+//  531   HalAdcSetReference( HAL_ADC_REF_125V );
+        ; Setup parameters for call to function HalAdcSetReference
+        MOV     R1,#0x0
+        LCALL   ??HalAdcSetReference?relay
+//  532   adc = HalAdcRead( HAL_ADC_CHANNEL_VDD, HAL_ADC_RESOLUTION_10 );
+        ; Setup parameters for call to function HalAdcRead
+        MOV     R2,#0x2
+        MOV     R1,#0xf
+        LCALL   ??HalAdcRead?relay
+        MOV     ?V0 + 0,R2
+        MOV     ?V0 + 1,R3
+        MOV     R0,?V0 + 0
+        MOV     R1,?V0 + 1
+//  533 
+//  534   if (adc >= BATT_ADC_LEVEL_3V)
+        CLR     C
+        MOV     A,R0
+        SUBB    A,#-0x67
+        MOV     A,R1
+        SUBB    A,#0x1
+        JC      ??battMeasure_0
+//  535   {
+//  536     percent = 100;
+        MOV     R1,#0x64
+        SJMP    ??battMeasure_1
+//  537   }
+//  538   else if (adc <= BATT_ADC_LEVEL_2V)
+??battMeasure_0:
+        CLR     C
+        MOV     A,R0
+        SUBB    A,#0x12
+        MOV     A,R1
+        SUBB    A,#0x1
+        JNC     ??battMeasure_2
+//  539   {
+//  540     percent = 0;
+        MOV     R1,#0x0
+        SJMP    ??battMeasure_1
+//  541   }
+//  542   else
+//  543   {
+//  544     percent = (uint8) ((((adc - BATT_ADC_LEVEL_2V) * 25) + 33) / 34);
+??battMeasure_2:
+        MOV     A,R0
+        MOV     B,#0x19
+        MUL     AB
+        MOV     R0,A
+        MOV     R2,B
+        MOV     B,#0x19
+        MOV     A,R1
+        MUL     AB
+        ADD     A,R2
+        MOV     R1,A
+        MOV     A,R0
+        ADD     A,#0x78
+        MOV     R0,A
+        MOV     A,R1
+        ADDC    A,#-0x1b
+        MOV     R1,A
+        MOV     R2,#0x22
+        MOV     R3,#0x0
+        LCALL   ?US_DIV_MOD
+        MOV     A,R0
+        MOV     R1,A
+//  545   }
+//  546 
+//  547   return percent;
+??battMeasure_1:
+        LJMP    ?Subroutine0 & 0xFFFF
+//  548 }
+//  549 
+//  550 /*********************************************************************
+//  551  * @fn      battNotifyLevelState
+//  552  *
+//  553  * @brief   Send a notification of the battery level state
+//  554  *          characteristic if a connection is established.
+//  555  *
+//  556  * @return  None.
+//  557  */
+//  558 static void battNotifyLevel( void )
+//  559 {
+//  560   // Execute linkDB callback to send notification
+//  561   linkDB_PerformFunc( battNotifyCB );
+//  562 }
+//  563 
+//  564 /*********************************************************************
+//  565  * @fn          Batt_HandleConnStatusCB
+//  566  *
+//  567  * @brief       Battery Service link status change handler function.
+//  568  *
+//  569  * @param       connHandle - connection handle
+//  570  * @param       changeType - type of change
+//  571  *
+//  572  * @return      none
+//  573  */
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+//  574 void Batt_HandleConnStatusCB( uint16 connHandle, uint8 changeType )
+Batt_HandleConnStatusCB:
+        CODE
+//  575 {
+        MOV     A,#-0x9
+        LCALL   ?BANKED_ENTER_XDATA
+        ; Saved register size: 9
+        ; Auto size: 0
+        MOV     A,R2
+        MOV     R6,A
+        MOV     A,R3
+        MOV     R7,A
+        MOV     ?V0 + 0,R1
+//  576   // Make sure this is not loopback connection
+//  577   if ( connHandle != LOOPBACK_CONNHANDLE )
+        MOV     A,#-0x2
+        XRL     A,R6
+        JNZ     ??Batt_HandleConnStatusCB_0
+        MOV     A,#-0x1
+        XRL     A,R7
+??Batt_HandleConnStatusCB_0:
+        JZ      ??Batt_HandleConnStatusCB_1
+//  578   {
+//  579     // Reset Client Char Config if connection has dropped
+//  580     if ( ( changeType == LINKDB_STATUS_UPDATE_REMOVED )      ||
+//  581          ( ( changeType == LINKDB_STATUS_UPDATE_STATEFLAGS ) &&
+//  582            ( !linkDB_Up( connHandle ) ) ) )
+        MOV     A,#0x1
+        XRL     A,?V0 + 0
+        JZ      ??Batt_HandleConnStatusCB_2
+        MOV     A,#0x2
+        XRL     A,?V0 + 0
+        JNZ     ??Batt_HandleConnStatusCB_1
+        ; Setup parameters for call to function linkDB_State
+        MOV     R1,#0x1
+        LCALL   ??linkDB_State?relay
+        MOV     A,R1
+        JNZ     ??Batt_HandleConnStatusCB_1
+//  583     {
+//  584       GATTServApp_InitCharCfg( connHandle, battLevelClientCharCfg );
+??Batt_HandleConnStatusCB_2:
+        ; Setup parameters for call to function GATTServApp_InitCharCfg
+        MOV     R4,#battLevelClientCharCfg & 0xff
+        MOV     R5,#(battLevelClientCharCfg >> 8) & 0xff
+        MOV     A,R6
+        MOV     R2,A
+        MOV     A,R7
+        MOV     R3,A
+        LCALL   ??GATTServApp_InitCharCfg?relay
+//  585     }
+//  586   }
+//  587 }
+??Batt_HandleConnStatusCB_1:
+        LJMP    ??Subroutine7_0 & 0xFFFF
+
+        RSEG XDATA_ID:CODE:NOROOT(0)
+`?<Initializer for battLevelProps>`:
+        DATA8
+        DB 18
+
+        RSEG XDATA_ID:CODE:NOROOT(0)
+`?<Initializer for battLevel>`:
+        DATA8
+        DB 100
+
+        RSEG XDATA_ID:CODE:NOROOT(0)
+`?<Initializer for hidReportRefBattLevel>`:
+        DATA8
+        DB 4
+        DB 1
+
+        RSEG XDATA_ID:CODE:NOROOT(0)
+`?<Initializer for battAttrTbl>`:
+        DATA8
+        DB 2
+        DATA16
+        DW primaryServiceUUID
+        DATA8
+        DB 1
+        DATA16
+        DW 0
+        DW battService
+        DATA8
+        DB 2
+        DATA16
+        DW characterUUID
+        DATA8
+        DB 1
+        DATA16
+        DW 0
+        DW battLevelProps
+        DATA8
+        DB 2
+        DATA16
+        DW battLevelUUID
+        DATA8
+        DB 1
+        DATA16
+        DW 0
+        DW battLevel
+        DATA8
+        DB 2
+        DATA16
+        DW clientCharCfgUUID
+        DATA8
+        DB 3
+        DATA16
+        DW 0
+        DW battLevelClientCharCfg
+        DATA8
+        DB 2
+        DATA16
+        DW reportRefUUID
+        DATA8
+        DB 1
+        DATA16
+        DW 0
+        DW hidReportRefBattLevel
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??Batt_AddService?relay:
+        CODE
+        LCALL   ?BDISPATCH
+        DATA24
+        DC24    Batt_AddService
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??Batt_Register?relay:
+        CODE
+        LCALL   ?BDISPATCH
+        DATA24
+        DC24    Batt_Register
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??Batt_SetParameter?relay:
+        CODE
+        LCALL   ?BDISPATCH
+        DATA24
+        DC24    Batt_SetParameter
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??Batt_GetParameter?relay:
+        CODE
+        LCALL   ?BDISPATCH
+        DATA24
+        DC24    Batt_GetParameter
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??Batt_MeasLevel?relay:
+        CODE
+        LCALL   ?BDISPATCH
+        DATA24
+        DC24    Batt_MeasLevel
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??battReadAttrCB?relay:
+        CODE
+        LCALL   ?BDISPATCH
+        DATA24
+        DC24    battReadAttrCB
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??battWriteAttrCB?relay:
+        CODE
+        LCALL   ?BDISPATCH
+        DATA24
+        DC24    battWriteAttrCB
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??battNotifyCB?relay:
+        CODE
+        LCALL   ?BDISPATCH
+        DATA24
+        DC24    battNotifyCB
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??battMeasure?relay:
+        CODE
+        LCALL   ?BDISPATCH
+        DATA24
+        DC24    battMeasure
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??Batt_HandleConnStatusCB?relay:
+        CODE
+        LCALL   ?BDISPATCH
+        DATA24
+        DC24    Batt_HandleConnStatusCB
+
+        END
+//  588 
+//  589 
+//  590 /*********************************************************************
+//  591 *********************************************************************/
+// 
+// 870 bytes in segment BANKED_CODE
+//  60 bytes in segment BANK_RELAYS
+//  44 bytes in segment XDATA_I
+//  44 bytes in segment XDATA_ID
+//  13 bytes in segment XDATA_ROM_C
+//   9 bytes in segment XDATA_Z
+// 
+// 974 bytes of CODE  memory
+//  13 bytes of CONST memory
+//  53 bytes of XDATA memory
+//
+//Errors: none
+//Warnings: none

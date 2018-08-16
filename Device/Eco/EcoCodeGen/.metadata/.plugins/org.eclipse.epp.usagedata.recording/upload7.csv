@@ -1,0 +1,26 @@
+what,kind,bundleId,bundleVersion,description,time
+activated,workbench,org.eclipse.ui.workbench,3.5.1.M20090826-0800a,"",1390282045664
+activated,view,org.eclipse.ui.navigator.resources,3.4.1.M20090826-0800,"org.eclipse.ui.navigator.ProjectExplorer",1390282054510
+deactivated,workbench,org.eclipse.ui.workbench,3.5.1.M20090826-0800a,"",1390282061377
+error,log,,,"Problems occurred when invoking code from plug-in: ""org.eclipse.jface"".",1390282073431
+error,log,,,"Problems occurred when invoking code from plug-in: ""org.eclipse.jface"".",1390282074728
+error,log,,,"Problems occurred when invoking code from plug-in: ""org.eclipse.jface"".",1390282077411
+error,log,,,"Problems occurred when invoking code from plug-in: ""org.eclipse.jface"".",1390282078712
+activated,workbench,org.eclipse.ui.workbench,3.5.1.M20090826-0800a,"",1390282085714
+executed,command,org.eclipse.ui,3.5.1.M20090902-1000,"org.eclipse.ui.file.properties",1390282085738
+deactivated,workbench,org.eclipse.ui.workbench,3.5.1.M20090826-0800a,"",1390282089268
+error,log,,,"Problems occurred when invoking code from plug-in: ""org.eclipse.jface"".",1390282106268
+error,log,,,"Problems occurred when invoking code from plug-in: ""org.eclipse.jface"".",1390282107630
+error,log,,,"Problems occurred when invoking code from plug-in: ""org.eclipse.jface"".",1390282110679
+error,log,,,"Problems occurred when invoking code from plug-in: ""org.eclipse.jface"".",1390282111752
+activated,workbench,org.eclipse.ui.workbench,3.5.1.M20090826-0800a,"",1390282115966
+executed,command,org.eclipse.ui,3.5.1.M20090902-1000,"org.eclipse.ui.file.properties",1390282115989
+activated,editor,org.eclipse.ui.editors,3.5.0.v20090527-2000,"org.eclipse.ui.DefaultTextEditor",1390282116814
+deactivated,workbench,org.eclipse.ui.workbench,3.5.1.M20090826-0800a,"",1390282130079
+activated,workbench,org.eclipse.ui.workbench,3.5.1.M20090826-0800a,"",1390282130577
+deactivated,workbench,org.eclipse.ui.workbench,3.5.1.M20090826-0800a,"",1390282132590
+activated,workbench,org.eclipse.ui.workbench,3.5.1.M20090826-0800a,"",1390282133000
+deactivated,workbench,org.eclipse.ui.workbench,3.5.1.M20090826-0800a,"",1390282134702
+activated,workbench,org.eclipse.ui.workbench,3.5.1.M20090826-0800a,"",1390282135092
+activated,view,org.eclipse.ui.ide,3.5.1.M20090826-0800,"org.eclipse.ui.views.ProblemView",1390282135866
+activated,editor,org.eclipse.ui.editors,3.5.0.v20090527-2000,"org.eclipse.ui.DefaultTextEditor",1390282139175

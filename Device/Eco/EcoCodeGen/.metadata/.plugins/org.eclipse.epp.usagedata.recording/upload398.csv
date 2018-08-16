@@ -1,0 +1,26 @@
+what,kind,bundleId,bundleVersion,description,time
+java.vm.specification.version,sysinfo,,,"1.7",1394786992018
+java.vm.vendor,sysinfo,,,"Oracle Corporation",1394786992018
+java.vm.version,sysinfo,,,"24.51-b03",1394786992018
+deactivated,workbench,org.eclipse.ui.workbench,3.5.1.M20090826-0800a,"",1394786992639
+activated,workbench,org.eclipse.ui.workbench,3.5.1.M20090826-0800a,"",1394786993376
+opened,view,org.eclipse.ui.ide,3.5.1.M20090826-0800,"org.eclipse.ui.views.ProblemView",1394786996699
+executed,command,org.eclipse.ui,3.5.1.M20090902-1000,"org.eclipse.ui.edit.delete",1394786998322
+executed,command,org.eclipse.ui,3.5.1.M20090902-1000,"org.eclipse.ui.file.save",1394787003786
+deactivated,workbench,org.eclipse.ui.workbench,3.5.1.M20090826-0800a,"",1394787004880
+activated,workbench,org.eclipse.ui.workbench,3.5.1.M20090826-0800a,"",1394787006463
+deactivated,workbench,org.eclipse.ui.workbench,3.5.1.M20090826-0800a,"",1394787028983
+activated,workbench,org.eclipse.ui.workbench,3.5.1.M20090826-0800a,"",1394787030339
+closed,workbench,org.eclipse.ui.workbench,3.5.1.M20090826-0800a,"",1394787030453
+stopped,bundle,org.eclipse.cdt.debug.mi.ui,6.0.0.200909110608,"org.eclipse.cdt.debug.mi.ui",1394787030650
+stopped,bundle,org.eclipse.cdt.debug.mi.core,6.0.0.200909110608,"org.eclipse.cdt.debug.mi.core",1394787030651
+stopped,bundle,org.eclipse.cdt.dsf.gdb.ui,2.0.0.200909110608,"org.eclipse.cdt.dsf.gdb.ui",1394787030652
+stopped,bundle,org.eclipse.cdt.dsf.ui,2.0.1.200909110608,"org.eclipse.cdt.dsf.ui",1394787030653
+stopped,bundle,org.eclipse.cdt.launch,6.0.0.200909110608,"org.eclipse.cdt.launch",1394787030654
+stopped,bundle,org.eclipse.cdt.debug.ui,6.0.0.200909110608,"org.eclipse.cdt.debug.ui",1394787030654
+stopped,bundle,org.eclipse.cdt.dsf.gdb,2.0.0.200909110608,"org.eclipse.cdt.dsf.gdb",1394787030655
+stopped,bundle,org.eclipse.cdt.dsf,2.0.0.200909110608,"org.eclipse.cdt.dsf",1394787030655
+stopped,bundle,org.eclipse.cdt.debug.core,6.0.0.200909110608,"org.eclipse.cdt.debug.core",1394787030657
+stopped,bundle,org.eclipse.cdt.managedbuilder.ui,5.1.0.200909110608,"org.eclipse.cdt.managedbuilder.ui",1394787030659
+stopped,bundle,org.eclipse.cdt.make.ui,6.0.1.200909110608,"org.eclipse.cdt.make.ui",1394787030659
+stopped,bundle,EPL_E1_eclipse_plugin,2.0.0,"EPL_E1_eclipse_plugin",1394787030660

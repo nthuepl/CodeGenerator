@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">
+		<item value="269" key="DIALOG_WIDTH"/>
+		<item value="245" key="DIALOG_Y_ORIGIN"/>
+		<item value="387" key="DIALOG_HEIGHT"/>
+		<item value="931" key="DIALOG_X_ORIGIN"/>
+		<item value="1|微軟正黑體|9.0|0|WINDOWS|1|-12|0|0|0|400|0|0|0|1|0|0|0|0|微軟正黑體" key="DIALOG_FONT_NAME"/>
+	</section>
+	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
+		<item value="false" key="wrap"/>
+		<item value="false" key="isRegEx"/>
+		<item value="false" key="casesensitive"/>
+		<item value="false" key="incremental"/>
+		<item value="false" key="wholeword"/>
+		<item value="__sbit __at" key="selection"/>
+		<list key="findhistory">
+			<item value="sbit at"/>
+			<item value="sfr at"/>
+			<item value="code_segment--;"/>
+			<item value="counte"/>
+			<item value="packet_len"/>
+			<item value="i"/>
+			<item value="index"/>
+			<item value="//&#x09;&#x09;&#x09;if( prev_cmd == &apos;c&apos; ){"/>
+		</list>
+		<list key="replacehistory">
+			<item value="__sbit __at"/>
+			<item value="__sfr __at"/>
+			<item value="Message"/>
+		</list>
+	</section>
+	<section name="org.eclipse.ui.texteditor.GotoLineAction$GotoLineDialog_dialogBounds">
+		<item value="349" key="DIALOG_Y_ORIGIN"/>
+		<item value="608" key="DIALOG_X_ORIGIN"/>
+	</section>
+</section>

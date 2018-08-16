@@ -1,0 +1,50 @@
+[Stack]
+FillEnabled=0
+OverflowWarningsEnabled=1
+WarningThreshold=90
+SpWarningsEnabled=1
+WarnLogOnly=1
+UseTrigger=1
+TriggerName=main
+LimitSize=0
+ByteLimit=50
+[DebugChecksum]
+Checksum=1489755702
+[CallStack]
+ShowArgs=0
+[Disassembly]
+MixedMode=1
+[Log file]
+LoggingEnabled=_ 0
+LogFile=_ ""
+Category=_ 0
+[TermIOLog]
+LoggingEnabled=_ 0
+LogFile=_ ""
+[Breakpoints]
+Bp0=_ "STD_CODE" "LogicalCode:0x2FCA2" 0 0 0 0 "" 0 ""
+Bp1=_ "STD_CODE" "LogicalCode:0x6A10A" 0 0 0 0 "" 0 ""
+Bp2=_ "STD_CODE" "LogicalCode:0x6A0D0" 0 0 0 0 "" 0 ""
+Bp3=_ "STD_CODE" "{$PROJ_DIR$}.33.3" 0 0 0 0 "" 0 ""
+Bp4=_ "STD_CODE" "LogicalCode:0x6A093" 0 0 0 0 "" 0 ""
+Bp5=_ "STD_CODE" "LogicalCode:0x6A045" 0 0 0 0 "" 0 ""
+Bp6=_ "STD_CODE" "LogicalCode:0x2B3A9" 0 0 0 0 "" 0 ""
+Bp7=_ "STD_CODE" "LogicalCode:0x6A0A2" 0 0 0 0 "" 0 ""
+Bp8=_ "STD_CODE" "LogicalCode:0x68020" 0 0 0 0 "" 0 ""
+Bp9=_ "STD_CODE" "LogicalCode:0x6800A" 0 0 0 0 "" 0 ""
+Bp10=_ "STD_CODE" "{$PROJ_DIR$\..\..\Profiles\SimpleProfile\simpleGATTprofile.c}.737.5" 0 0 0 0 "" 0 ""
+Bp11=_ "STD_CODE" "LogicalCode:0x6882C" 0 0 0 0 "" 0 ""
+Bp12=_ "STD_CODE" "LogicalCode:0x68817" 0 0 0 0 "" 0 ""
+Bp13=_ "STD_CODE" "LogicalCode:0x68046" 0 0 0 0 "" 0 ""
+Bp14=_ "STD_CODE" "LogicalCode:0x6A05D" 0 0 0 0 "" 0 ""
+Bp15=_ "STD_CODE" "LogicalCode:0x6880F" 0 0 0 0 "" 0 ""
+Bp16=_ "STD_CODE" "{$PROJ_DIR$\..\Source\simpleBLEPeripheral.c}.1260.4" 1 0 0 0 "" 0 ""
+Bp17=_ "STD_CODE" "LogicalCode:0x6892F" 0 0 0 0 "" 0 ""
+Bp18=_ "STD_CODE" "{$PROJ_DIR$\..\Source\simpleBLEPeripheral.c}.684.6" 1 0 0 0 "" 0 ""
+Count=19
+[ChipconEmu]
+Stop timers on halt=0
+Leave target running=1
+[Aliases]
+Count=0
+SuppressDialog=0

@@ -1,0 +1,1234 @@
+///////////////////////////////////////////////////////////////////////////////
+//                                                                            /
+// IAR C/C++ Compiler V8.20.1.40829 for 8051            10/Jul/2014  13:44:12 /
+// Copyright 2004-2012 IAR Systems AB.                                        /
+//                                                                            /
+//    Core               =  plain                                             /
+//    Code model         =  banked                                            /
+//    Data model         =  large                                             /
+//    Calling convention =  xdata reentrant                                   /
+//    Constant location  =  data_rom                                          /
+//    Dptr setup         =  1,16                                              /
+//                                                                            /
+//    Source file        =  D:\NTHU\¬ã¨s\Important\ThesisCode\Code\GitLabClou /
+//                          d\NewEcoExec\codegenerator\Device\EcoBT\Project\b /
+//                          le\Profiles\ScanParam\scanparamservice.c          /
+//    Command line       =  -f D:\NTHU\¬ã¨s\Important\ThesisCode\Code\GitLabC /
+//                          loud\NewEcoExec\codegenerator\Device\EcoBT\Projec /
+//                          t\ble\CodeGenerator\CC2541DB\..\..\config\buildCo /
+//                          mponents.cfg (-DBROADCASTER_CFG=0x01              /
+//                          -DOBSERVER_CFG=0x02 -DPERIPHERAL_CFG=0x04         /
+//                          -DCENTRAL_CFG=0x08 -DADV_NCONN_CFG=0x01           /
+//                          -DADV_CONN_CFG=0x02 -DSCAN_CFG=0x04               /
+//                          -DINIT_CFG=0x08 -DADV_CFG=ADV_NCONN_CFG+ADV_CONN_ /
+//                          CFG -DLINK_CFG=ADV_CONN_CFG+INIT_CFG              /
+//                          -DFULL_CFG=INIT_CFG+SCAN_CFG+ADV_NCONN_CFG+ADV_CO /
+//                          NN_CFG) -f D:\NTHU\¬ã¨s\Important\ThesisCode\Code /
+//                          \GitLabCloud\NewEcoExec\codegenerator\Device\EcoB /
+//                          T\Project\ble\CodeGenerator\CC2541DB\buildConfig. /
+//                          cfg (-DHOST_CONFIG=PERIPHERAL_CFG                 /
+//                          -DGAP_PRIVACY_RECONNECT -DCC2541                  /
+//                          -DOAD_IMAGE_VERSION=0x0000                        /
+//                          "-DOAD_IMAGE_A_USER_ID='A', 'A', 'A', 'A'"        /
+//                          "-DOAD_IMAGE_B_USER_ID='B', 'B', 'B', 'B'")       /
+//                          D:\NTHU\¬ã¨s\Important\ThesisCode\Code\GitLabClou /
+//                          d\NewEcoExec\codegenerator\Device\EcoBT\Project\b /
+//                          le\Profiles\ScanParam\scanparamservice.c -D       /
+//                          INT_HEAP_LEN=900 -D HALNODEBUG -D                 /
+//                          OSAL_CBTIMER_NUM_TASKS=1 -D HAL_AES_DMA=TRUE -D   /
+//                          HAL_DMA=TRUE -D xPOWER_SAVING -D                  /
+//                          xPLUS_BROADCASTER -D HAL_LCD=FALSE -D             /
+//                          HAL_LED=TRUE -D HAL_ADC=TRUE -lB                  /
+//                          D:\NTHU\¬ã¨s\Important\ThesisCode\Code\GitLabClou /
+//                          d\NewEcoExec\codegenerator\Device\EcoBT\Project\b /
+//                          le\CodeGenerator\CC2541DB\CC2541\List\ -o         /
+//                          D:\NTHU\¬ã¨s\Important\ThesisCode\Code\GitLabClou /
+//                          d\NewEcoExec\codegenerator\Device\EcoBT\Project\b /
+//                          le\CodeGenerator\CC2541DB\CC2541\Obj\ -e --debug  /
+//                          --core=plain --dptr=16,1 --data_model=large       /
+//                          --code_model=banked --calling_convention=xdata_re /
+//                          entrant --place_constants=data_rom                /
+//                          --nr_virtual_regs 16 -I                           /
+//                          D:\NTHU\¬ã¨s\Important\ThesisCode\Code\GitLabClou /
+//                          d\NewEcoExec\codegenerator\Device\EcoBT\Project\b /
+//                          le\CodeGenerator\CC2541DB\..\..\common\ -I        /
+//                          D:\NTHU\¬ã¨s\Important\ThesisCode\Code\GitLabClou /
+//                          d\NewEcoExec\codegenerator\Device\EcoBT\Project\b /
+//                          le\CodeGenerator\CC2541DB\..\..\include\ -I       /
+//                          D:\NTHU\¬ã¨s\Important\ThesisCode\Code\GitLabClou /
+//                          d\NewEcoExec\codegenerator\Device\EcoBT\Project\b /
+//                          le\CodeGenerator\CC2541DB\..\..\..\..\Components\ /
+//                          hal\include\ -I D:\NTHU\¬ã¨s\Important\ThesisCode /
+//                          \Code\GitLabCloud\NewEcoExec\codegenerator\Device /
+//                          \EcoBT\Project\ble\CodeGenerator\CC2541DB\..\..\. /
+//                          .\..\Components\hal\target\CC2540EB\ -I           /
+//                          D:\NTHU\¬ã¨s\Important\ThesisCode\Code\GitLabClou /
+//                          d\NewEcoExec\codegenerator\Device\EcoBT\Project\b /
+//                          le\CodeGenerator\CC2541DB\..\..\..\..\Components\ /
+//                          osal\include\ -I D:\NTHU\¬ã¨s\Important\ThesisCod /
+//                          e\Code\GitLabCloud\NewEcoExec\codegenerator\Devic /
+//                          e\EcoBT\Project\ble\CodeGenerator\CC2541DB\..\..\ /
+//                          ..\..\Components\services\saddr\ -I               /
+//                          D:\NTHU\¬ã¨s\Important\ThesisCode\Code\GitLabClou /
+//                          d\NewEcoExec\codegenerator\Device\EcoBT\Project\b /
+//                          le\CodeGenerator\CC2541DB\..\..\..\..\Components\ /
+//                          ble\include\ -I D:\NTHU\¬ã¨s\Important\ThesisCode /
+//                          \Code\GitLabCloud\NewEcoExec\codegenerator\Device /
+//                          \EcoBT\Project\ble\CodeGenerator\CC2541DB\..\..\. /
+//                          .\..\Components\ble\controller\phy\ -I            /
+//                          D:\NTHU\¬ã¨s\Important\ThesisCode\Code\GitLabClou /
+//                          d\NewEcoExec\codegenerator\Device\EcoBT\Project\b /
+//                          le\CodeGenerator\CC2541DB\..\..\..\..\Components\ /
+//                          ble\controller\include\ -I                        /
+//                          D:\NTHU\¬ã¨s\Important\ThesisCode\Code\GitLabClou /
+//                          d\NewEcoExec\codegenerator\Device\EcoBT\Project\b /
+//                          le\CodeGenerator\CC2541DB\..\..\..\..\Components\ /
+//                          ble\hci\ -I D:\NTHU\¬ã¨s\Important\ThesisCode\Cod /
+//                          e\GitLabCloud\NewEcoExec\codegenerator\Device\Eco /
+//                          BT\Project\ble\CodeGenerator\CC2541DB\..\..\..\.. /
+//                          \Components\ble\host\ -I                          /
+//                          D:\NTHU\¬ã¨s\Important\ThesisCode\Code\GitLabClou /
+//                          d\NewEcoExec\codegenerator\Device\EcoBT\Project\b /
+//                          le\CodeGenerator\CC2541DB\..\..\common\cc2540\    /
+//                          -I D:\NTHU\¬ã¨s\Important\ThesisCode\Code\GitLabC /
+//                          loud\NewEcoExec\codegenerator\Device\EcoBT\Projec /
+//                          t\ble\CodeGenerator\CC2541DB\..\..\common\npi\npi /
+//                          _np\ -I D:\NTHU\¬ã¨s\Important\ThesisCode\Code\Gi /
+//                          tLabCloud\NewEcoExec\codegenerator\Device\EcoBT\P /
+//                          roject\ble\CodeGenerator\CC2541DB\..\..\Profiles\ /
+//                          Roles\ -I D:\NTHU\¬ã¨s\Important\ThesisCode\Code\ /
+//                          GitLabCloud\NewEcoExec\codegenerator\Device\EcoBT /
+//                          \Project\ble\CodeGenerator\CC2541DB\..\..\Profile /
+//                          s\SimpleProfile\ -I D:\NTHU\¬ã¨s\Important\Thesis /
+//                          Code\Code\GitLabCloud\NewEcoExec\codegenerator\De /
+//                          vice\EcoBT\Project\ble\CodeGenerator\CC2541DB\..\ /
+//                          ..\Profiles\DevInfo\ -I                           /
+//                          D:\NTHU\¬ã¨s\Important\ThesisCode\Code\GitLabClou /
+//                          d\NewEcoExec\codegenerator\Device\EcoBT\Project\b /
+//                          le\CodeGenerator\CC2541DB\..\..\Profiles\Accelero /
+//                          meter\ -I D:\NTHU\¬ã¨s\Important\ThesisCode\Code\ /
+//                          GitLabCloud\NewEcoExec\codegenerator\Device\EcoBT /
+//                          \Project\ble\CodeGenerator\CC2541DB\..\..\Profile /
+//                          s\EcoExecGATTProfile\ -I                          /
+//                          D:\NTHU\¬ã¨s\Important\ThesisCode\Code\GitLabClou /
+//                          d\NewEcoExec\codegenerator\Device\EcoBT\Project\b /
+//                          le\CodeGenerator\CC2541DB\..\..\Profiles\timeserv /
+//                          ice\ -I D:\NTHU\¬ã¨s\Important\ThesisCode\Code\Gi /
+//                          tLabCloud\NewEcoExec\codegenerator\Device\EcoBT\P /
+//                          roject\ble\CodeGenerator\CC2541DB\..\..\Profiles\ /
+//                          Batt\ -I D:\NTHU\¬ã¨s\Important\ThesisCode\Code\G /
+//                          itLabCloud\NewEcoExec\codegenerator\Device\EcoBT\ /
+//                          Project\ble\CodeGenerator\CC2541DB\..\..\Profiles /
+//                          \HIDDev\ -I D:\NTHU\¬ã¨s\Important\ThesisCode\Cod /
+//                          e\GitLabCloud\NewEcoExec\codegenerator\Device\Eco /
+//                          BT\Project\ble\CodeGenerator\CC2541DB\..\..\Profi /
+//                          les\ScanParam\ -Ohz                               /
+//    List file          =  D:\NTHU\¬ã¨s\Important\ThesisCode\Code\GitLabClou /
+//                          d\NewEcoExec\codegenerator\Device\EcoBT\Project\b /
+//                          le\CodeGenerator\CC2541DB\CC2541\List\scanparamse /
+//                          rvice.s51                                         /
+//                                                                            /
+//                                                                            /
+///////////////////////////////////////////////////////////////////////////////
+
+        NAME scanparamservice
+
+        RSEG DOVERLAY:DATA:NOROOT(0)
+        RSEG IOVERLAY:IDATA:NOROOT(0)
+        RSEG ISTACK:IDATA:NOROOT(0)
+        RSEG PSTACK:XDATA:NOROOT(0)
+        RSEG XSTACK:XDATA:NOROOT(0)
+
+        EXTERN ?ALLOC_XSTACK8
+        EXTERN ?BANKED_ENTER_XDATA
+        EXTERN ?BANKED_LEAVE_XDATA
+        EXTERN ?BDISPATCH
+        EXTERN ?BRET
+        EXTERN ?CALL_IND
+        EXTERN ?DEALLOC_XSTACK8
+        EXTERN ?PUSH_XSTACK_I_TWO
+        EXTERN ?V0
+        EXTERN ?XSP
+        EXTERN ?XSTACK_DISP0_8
+        EXTERN __INIT_XDATA_I
+        EXTERN __INIT_XDATA_Z
+
+        PUBLIC ??ScanParam_AddService?relay
+        PUBLIC ??ScanParam_GetParameter?relay
+        PUBLIC ??ScanParam_HandleConnStatusCB?relay
+        PUBLIC ??ScanParam_RefreshNotify?relay
+        PUBLIC ??ScanParam_Register?relay
+        PUBLIC ??ScanParam_SetParameter?relay
+        PUBLIC ScanParam_AddService
+        PUBLIC ScanParam_GetParameter
+        PUBLIC ScanParam_HandleConnStatusCB
+        PUBLIC ScanParam_RefreshNotify
+        PUBLIC ScanParam_Register
+        PUBLIC ScanParam_SetParameter
+        PUBLIC scanIntervalWindowUUID
+        PUBLIC scanParamCBs
+        PUBLIC scanParamRefreshUUID
+        PUBLIC scanParamServUUID
+
+GATTServApp_InitCharCfg SYMBOL "GATTServApp_InitCharCfg"
+??GATTServApp_InitCharCfg?relay SYMBOL "?relay", GATTServApp_InitCharCfg
+GATTServApp_ProcessCCCWriteReq SYMBOL "GATTServApp_ProcessCCCWriteReq"
+??GATTServApp_ProcessCCCWriteReq?relay SYMBOL "?relay", GATTServApp_ProcessCCCWriteReq
+GATTServApp_ReadCharCfg SYMBOL "GATTServApp_ReadCharCfg"
+??GATTServApp_ReadCharCfg?relay SYMBOL "?relay", GATTServApp_ReadCharCfg
+GATTServApp_RegisterService SYMBOL "GATTServApp_RegisterService"
+??GATTServApp_RegisterService?relay SYMBOL "?relay", GATTServApp_RegisterService
+GATT_Notification   SYMBOL "GATT_Notification"
+??GATT_Notification?relay SYMBOL "?relay", GATT_Notification
+linkDB_State        SYMBOL "linkDB_State"
+??linkDB_State?relay SYMBOL "?relay", linkDB_State
+osal_memcpy         SYMBOL "osal_memcpy"
+??osal_memcpy?relay SYMBOL "?relay", osal_memcpy
+ScanParam_AddService SYMBOL "ScanParam_AddService"
+??ScanParam_AddService?relay SYMBOL "?relay", ScanParam_AddService
+ScanParam_GetParameter SYMBOL "ScanParam_GetParameter"
+??ScanParam_GetParameter?relay SYMBOL "?relay", ScanParam_GetParameter
+ScanParam_HandleConnStatusCB SYMBOL "ScanParam_HandleConnStatusCB"
+??ScanParam_HandleConnStatusCB?relay SYMBOL "?relay", ScanParam_HandleConnStatusCB
+ScanParam_RefreshNotify SYMBOL "ScanParam_RefreshNotify"
+??ScanParam_RefreshNotify?relay SYMBOL "?relay", ScanParam_RefreshNotify
+ScanParam_Register  SYMBOL "ScanParam_Register"
+??ScanParam_Register?relay SYMBOL "?relay", ScanParam_Register
+ScanParam_SetParameter SYMBOL "ScanParam_SetParameter"
+??ScanParam_SetParameter?relay SYMBOL "?relay", ScanParam_SetParameter
+
+        EXTERN ??GATTServApp_InitCharCfg?relay
+        EXTERN ??GATTServApp_ProcessCCCWriteReq?relay
+        EXTERN ??GATTServApp_ReadCharCfg?relay
+        EXTERN ??GATTServApp_RegisterService?relay
+        EXTERN ??GATT_Notification?relay
+        EXTERN ??linkDB_State?relay
+        EXTERN ??osal_memcpy?relay
+        EXTERN GATTServApp_InitCharCfg
+        EXTERN GATTServApp_ProcessCCCWriteReq
+        EXTERN GATTServApp_ReadCharCfg
+        EXTERN GATTServApp_RegisterService
+        EXTERN GATT_Notification
+        EXTERN characterUUID
+        EXTERN clientCharCfgUUID
+        EXTERN linkDB_State
+        EXTERN osal_memcpy
+        EXTERN primaryServiceUUID
+
+// D:\NTHU\¬ã¨s\Important\ThesisCode\Code\GitLabCloud\NewEcoExec\codegenerator\Device\EcoBT\Project\ble\Profiles\ScanParam\scanparamservice.c
+//    1 /**************************************************************************************************
+//    2   Filename:       scanparamservice.c
+//    3   Revised:        $Date: 2011-12-16 15:46:52 -0800 (Fri, 16 Dec 2011) $
+//    4   Revision:       $Revision: 58 $
+//    5 
+//    6   Description:    This file contains the Scan Parameters Service.
+//    7 
+//    8  Copyright 2011 Texas Instruments Incorporated. All rights reserved.
+//    9 
+//   10   IMPORTANT: Your use of this Software is limited to those specific rights
+//   11   granted under the terms of a software license agreement between the user
+//   12   who downloaded the software, his/her employer (which must be your employer)
+//   13   and Texas Instruments Incorporated (the "License").  You may not use this
+//   14   Software unless you agree to abide by the terms of the License. The License
+//   15   limits your use, and you acknowledge, that the Software may not be modified,
+//   16   copied or distributed unless embedded on a Texas Instruments microcontroller
+//   17   or used solely and exclusively in conjunction with a Texas Instruments radio
+//   18   frequency transceiver, which is integrated into your product.  Other than for
+//   19   the foregoing purpose, you may not use, reproduce, copy, prepare derivative
+//   20   works of, modify, distribute, perform, display or sell this Software and/or
+//   21   its documentation for any purpose.
+//   22 
+//   23   YOU FURTHER ACKNOWLEDGE AND AGREE THAT THE SOFTWARE AND DOCUMENTATION ARE
+//   24   PROVIDED “AS IS” WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESS OR IMPLIED,
+//   25   INCLUDING WITHOUT LIMITATION, ANY WARRANTY OF MERCHANTABILITY, TITLE,
+//   26   NON-INFRINGEMENT AND FITNESS FOR A PARTICULAR PURPOSE. IN NO EVENT SHALL
+//   27   TEXAS INSTRUMENTS OR ITS LICENSORS BE LIABLE OR OBLIGATED UNDER CONTRACT,
+//   28   NEGLIGENCE, STRICT LIABILITY, CONTRIBUTION, BREACH OF WARRANTY, OR OTHER
+//   29   LEGAL EQUITABLE THEORY ANY DIRECT OR INDIRECT DAMAGES OR EXPENSES
+//   30   INCLUDING BUT NOT LIMITED TO ANY INCIDENTAL, SPECIAL, INDIRECT, PUNITIVE
+//   31   OR CONSEQUENTIAL DAMAGES, LOST PROFITS OR LOST DATA, COST OF PROCUREMENT
+//   32   OF SUBSTITUTE GOODS, TECHNOLOGY, SERVICES, OR ANY CLAIMS BY THIRD PARTIES
+//   33   (INCLUDING BUT NOT LIMITED TO ANY DEFENSE THEREOF), OR OTHER SIMILAR COSTS.
+//   34 
+//   35   Should you have any questions regarding your right to use this Software,
+//   36   contact Texas Instruments Incorporated at www.TI.com.
+//   37 **************************************************************************************************/
+//   38 
+//   39 /*********************************************************************
+//   40  * INCLUDES
+//   41  */
+//   42 #include "bcomdef.h"
+//   43 #include "OSAL.h"
+//   44 #include "att.h"
+//   45 #include "gatt.h"
+//   46 #include "gatt_uuid.h"
+//   47 #include "gattservapp.h"
+//   48 #include "gapbondmgr.h"
+//   49 #include "linkdb.h"
+//   50 #include "scanparamservice.h"
+//   51 
+//   52 /*********************************************************************
+//   53  * MACROS
+//   54  */
+//   55 
+//   56 /*********************************************************************
+//   57  * CONSTANTS
+//   58  */
+//   59 
+//   60 /*********************************************************************
+//   61  * TYPEDEFS
+//   62  */
+//   63 
+//   64 /*********************************************************************
+//   65  * GLOBAL VARIABLES
+//   66  */
+//   67 // Scan parameters service
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA16
+//   68 CONST uint8 scanParamServUUID[ATT_BT_UUID_SIZE] =
+scanParamServUUID:
+        DATA8
+        DB 19
+        DB 24
+//   69 {
+//   70   LO_UINT16(SCAN_PARAM_SERVICE_UUID), HI_UINT16(SCAN_PARAM_SERVICE_UUID)
+//   71 };
+//   72 
+//   73 // Scan interval window characteristic
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA16
+//   74 CONST uint8 scanIntervalWindowUUID[ATT_BT_UUID_SIZE] =
+scanIntervalWindowUUID:
+        DATA8
+        DB 79
+        DB 42
+//   75 {
+//   76   LO_UINT16(SCAN_INTERVAL_WINDOW_UUID), HI_UINT16(SCAN_INTERVAL_WINDOW_UUID)
+//   77 };
+//   78 
+//   79 // Scan parameter refresh characteristic
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA16
+//   80 CONST uint8 scanParamRefreshUUID[ATT_BT_UUID_SIZE] =
+scanParamRefreshUUID:
+        DATA8
+        DB 49
+        DB 42
+//   81 {
+//   82   LO_UINT16(SCAN_PARAM_REFRESH_UUID), HI_UINT16(SCAN_PARAM_REFRESH_UUID)
+//   83 };
+//   84 
+//   85 
+//   86 /*********************************************************************
+//   87  * EXTERNAL VARIABLES
+//   88  */
+//   89 
+//   90 /*********************************************************************
+//   91  * EXTERNAL FUNCTIONS
+//   92  */
+//   93 
+//   94 /*********************************************************************
+//   95  * LOCAL VARIABLES
+//   96  */
+//   97 
+//   98 // Application callback
+
+        RSEG XDATA_Z:XDATA:NOROOT(0)
+        DATA16
+//   99 static scanParamServiceCB_t scanParamServiceCB;
+scanParamServiceCB:
+        DS 2
+        REQUIRE __INIT_XDATA_Z
+//  100 
+//  101 /*********************************************************************
+//  102  * Profile Attributes - variables
+//  103  */
+//  104 
+//  105 // Scan Parameters Service attribute
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA8
+//  106 static CONST gattAttrType_t scanParamService = { ATT_BT_UUID_SIZE, scanParamServUUID };
+scanParamService:
+        DB 2
+        DATA16
+        DW scanParamServUUID
+//  107 
+//  108 // Scan Interval Window characteristic
+
+        RSEG XDATA_I:XDATA:NOROOT(0)
+//  109 static uint8 scanIntervalWindowProps = GATT_PROP_WRITE_NO_RSP;
+scanIntervalWindowProps:
+        DATA8
+        DS 1
+        REQUIRE `?<Initializer for scanIntervalWindowProps>`
+        REQUIRE __INIT_XDATA_I
+
+        RSEG XDATA_Z:XDATA:NOROOT(0)
+        DATA32
+//  110 static uint8 scanIntervalWindow[SCAN_INTERVAL_WINDOW_CHAR_LEN];
+scanIntervalWindow:
+        DS 4
+        REQUIRE __INIT_XDATA_Z
+//  111 
+//  112 // Scan Parameter Refresh characteristic
+
+        RSEG XDATA_I:XDATA:NOROOT(0)
+//  113 static uint8 scanParamRefreshProps = GATT_PROP_NOTIFY;
+scanParamRefreshProps:
+        DATA8
+        DS 1
+        REQUIRE `?<Initializer for scanParamRefreshProps>`
+        REQUIRE __INIT_XDATA_I
+
+        RSEG XDATA_Z:XDATA:NOROOT(0)
+        DATA8
+//  114 static uint8 scanParamRefresh[SCAN_PARAM_REFRESH_LEN];
+scanParamRefresh:
+        DS 1
+        REQUIRE __INIT_XDATA_Z
+
+        RSEG XDATA_Z:XDATA:NOROOT(0)
+        DATA8
+//  115 static gattCharCfg_t scanParamRefreshClientCharCfg[GATT_MAX_NUM_CONN];
+scanParamRefreshClientCharCfg:
+        DS 6
+        REQUIRE __INIT_XDATA_Z
+//  116 
+//  117 /*********************************************************************
+//  118  * Profile Attributes - Table
+//  119  */
+//  120 
+
+        RSEG XDATA_I:XDATA:NOROOT(0)
+//  121 static gattAttribute_t scanParamAttrTbl[] =
+scanParamAttrTbl:
+        DATA8
+        DS 48
+        REQUIRE `?<Initializer for scanParamAttrTbl>`
+        REQUIRE __INIT_XDATA_I
+//  122 {
+//  123   // Scan Parameters Service attribute
+//  124   {
+//  125     { ATT_BT_UUID_SIZE, primaryServiceUUID }, /* type */
+//  126     GATT_PERMIT_READ,                         /* permissions */
+//  127     0,                                        /* handle */
+//  128     (uint8 *)&scanParamService                /* pValue */
+//  129   },
+//  130 
+//  131     // Scan Interval Window declaration
+//  132     {
+//  133       { ATT_BT_UUID_SIZE, characterUUID },
+//  134       GATT_PERMIT_READ,
+//  135       0,
+//  136       &scanIntervalWindowProps
+//  137     },
+//  138 
+//  139       // Scan Interval Window characteristic
+//  140       {
+//  141         { ATT_BT_UUID_SIZE, scanIntervalWindowUUID },
+//  142         GATT_PERMIT_WRITE,
+//  143         0,
+//  144         scanIntervalWindow
+//  145       },
+//  146 
+//  147     // Scan Parameter Refresh declaration
+//  148     {
+//  149       { ATT_BT_UUID_SIZE, characterUUID },
+//  150       GATT_PERMIT_READ,
+//  151       0,
+//  152       &scanParamRefreshProps
+//  153     },
+//  154 
+//  155     // Scan Parameter Refresh characteristic
+//  156       {
+//  157         { ATT_BT_UUID_SIZE, scanParamRefreshUUID },
+//  158         0,
+//  159         0,
+//  160         scanParamRefresh
+//  161       },
+//  162 
+//  163       // Scan Parameter Refresh characteristic client characteristic configuration
+//  164       {
+//  165         { ATT_BT_UUID_SIZE, clientCharCfgUUID },
+//  166         GATT_PERMIT_READ | GATT_PERMIT_WRITE,
+//  167         0,
+//  168         (uint8 *) &scanParamRefreshClientCharCfg
+//  169       }
+//  170 };
+//  171 
+//  172 // Attribute index enumeration-- these indexes match array elements above
+//  173 enum
+//  174 {
+//  175   SCAN_PARAM_SERVICE_IDX,           // Scan Parameters Service
+//  176   SCAN_PARAM_INTERVAL_DECL_IDX,     // Scan Interval Window declaration
+//  177   SCAN_PARAM_INTERVAL_IDX,          // Scan Interval Window characteristic
+//  178   SCAN_PARAM_REFRESH_DECL_IDX,      // Scan Parameter Refresh declaration
+//  179   SCAN_PARAM_REFRESH_IDX,           // Scan Parameter Refresh characteristic
+//  180   SCAN_PARAM_REFRESH_CCCD_IDX       // Scan Parameter Refresh characteristic client characteristic configuration
+//  181 };
+//  182 
+//  183 
+//  184 /*********************************************************************
+//  185  * LOCAL FUNCTIONS
+//  186  */
+//  187 static bStatus_t scanParamWriteAttrCB( uint16 connHandle, gattAttribute_t *pAttr,
+//  188                                        uint8 *pValue, uint8 len, uint16 offset );
+//  189 static uint8 scanParamReadAttrCB( uint16 connHandle, gattAttribute_t *pAttr,
+//  190                                   uint8 *pValue, uint8 *pLen, uint16 offset, uint8 maxLen );
+//  191 
+//  192 /*********************************************************************
+//  193  * PROFILE CALLBACKS
+//  194  */
+//  195 
+//  196 // Service Callbacks
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA8
+//  197 CONST gattServiceCBs_t scanParamCBs =
+scanParamCBs:
+        DATA16
+        DW ??scanParamReadAttrCB?relay
+        DW ??scanParamWriteAttrCB?relay
+        DW 0H
+//  198 {
+//  199   scanParamReadAttrCB,  // Read callback function pointer
+//  200   scanParamWriteAttrCB, // Write callback function pointer
+//  201   NULL                  // Authorization callback function pointer
+//  202 };
+//  203 
+//  204 /*********************************************************************
+//  205  * PUBLIC FUNCTIONS
+//  206  */
+//  207 
+//  208 /*********************************************************************
+//  209  * @fn      ScanParam_AddService
+//  210  *
+//  211  * @brief   Initializes the Battery Service by registering
+//  212  *          GATT attributes with the GATT server.
+//  213  *
+//  214  * @return  Success or Failure
+//  215  */
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+//  216 bStatus_t ScanParam_AddService( void )
+ScanParam_AddService:
+        CODE
+//  217 {
+        MOV     A,#-0xa
+        LCALL   ?BANKED_ENTER_XDATA
+        ; Saved register size: 10
+        ; Auto size: 0
+//  218   uint8 status = SUCCESS;
+//  219 
+//  220   // Initialize Client Characteristic Configuration attributes
+//  221   GATTServApp_InitCharCfg( INVALID_CONNHANDLE, scanParamRefreshClientCharCfg );
+        ; Setup parameters for call to function GATTServApp_InitCharCfg
+        MOV     R4,#scanParamRefreshClientCharCfg & 0xff
+        MOV     R5,#(scanParamRefreshClientCharCfg >> 8) & 0xff
+        MOV     R2,#-0x1
+        MOV     R3,#-0x1
+        LCALL   ??GATTServApp_InitCharCfg?relay
+//  222 
+//  223   // Register GATT attribute list and CBs with GATT Server App
+//  224   status = GATTServApp_RegisterService( scanParamAttrTbl, GATT_NUM_ATTRS( scanParamAttrTbl ),
+//  225                                         &scanParamCBs );
+//  226 
+//  227   return ( status );
+        ; Setup parameters for call to function GATTServApp_RegisterService
+        MOV     ?V0 + 0,#scanParamCBs & 0xff
+        MOV     ?V0 + 1,#(scanParamCBs >> 8) & 0xff
+        MOV     R0,#?V0 + 0
+        LCALL   ?PUSH_XSTACK_I_TWO
+        MOV     R4,#0x6
+        MOV     R5,#0x0
+        MOV     R2,#scanParamAttrTbl & 0xff
+        MOV     R3,#(scanParamAttrTbl >> 8) & 0xff
+        LCALL   ??GATTServApp_RegisterService?relay
+        MOV     A,#0x2
+        LCALL   ?DEALLOC_XSTACK8
+        MOV     R7,#0x2
+        LJMP    ?BANKED_LEAVE_XDATA
+//  228 }
+//  229 
+//  230 /*********************************************************************
+//  231  * @fn      ScanParam_Register
+//  232  *
+//  233  * @brief   Register a callback function with the Battery Service.
+//  234  *
+//  235  * @param   pfnServiceCB - Callback function.
+//  236  *
+//  237  * @return  None.
+//  238  */
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+//  239 extern void ScanParam_Register( scanParamServiceCB_t pfnServiceCB )
+ScanParam_Register:
+        CODE
+//  240 {
+        PUSH    DPL
+        PUSH    DPH
+        ; Saved register size: 2
+        ; Auto size: 0
+//  241   scanParamServiceCB = pfnServiceCB;
+        MOV     DPTR,#scanParamServiceCB
+        MOV     A,R2
+        MOVX    @DPTR,A
+        INC     DPTR
+        MOV     A,R3
+        MOVX    @DPTR,A
+//  242 }
+        POP     DPH
+        POP     DPL
+        LJMP    ?BRET
+//  243 
+//  244 /*********************************************************************
+//  245  * @fn      ScanParam_SetParameter
+//  246  *
+//  247  * @brief   Set a Battery Service parameter.
+//  248  *
+//  249  * @param   param - Profile parameter ID
+//  250  * @param   len - length of data to right
+//  251  * @param   value - pointer to data to write.  This is dependent on
+//  252  *          the parameter ID and WILL be cast to the appropriate
+//  253  *          data type (example: data type of uint16 will be cast to
+//  254  *          uint16 pointer).
+//  255  *
+//  256  * @return  bStatus_t
+//  257  */
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+//  258 bStatus_t ScanParam_SetParameter( uint8 param, uint8 len, void *value )
+ScanParam_SetParameter:
+        CODE
+//  259 {
+        ; Saved register size: 0
+        ; Auto size: 0
+//  260   bStatus_t ret = SUCCESS;
+//  261 
+//  262   switch ( param )
+//  263   {
+//  264     default:
+//  265       ret = INVALIDPARAMETER;
+//  266       break;
+//  267   }
+//  268 
+//  269   return ( ret );
+        MOV     R1,#0x2
+        LJMP    ?BRET
+//  270 }
+//  271 
+//  272 /*********************************************************************
+//  273  * @fn      ScanParam_GetParameter
+//  274  *
+//  275  * @brief   Get a Battery Service parameter.
+//  276  *
+//  277  * @param   param - Profile parameter ID
+//  278  * @param   value - pointer to data to get.  This is dependent on
+//  279  *          the parameter ID and WILL be cast to the appropriate
+//  280  *          data type (example: data type of uint16 will be cast to
+//  281  *          uint16 pointer).
+//  282  *
+//  283  * @return  bStatus_t
+//  284  */
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+//  285 bStatus_t ScanParam_GetParameter( uint8 param, void *value )
+ScanParam_GetParameter:
+        CODE
+//  286 {
+        MOV     A,#-0x9
+        LCALL   ?BANKED_ENTER_XDATA
+        ; Saved register size: 9
+        ; Auto size: 0
+        MOV     A,R1
+//  287   bStatus_t ret = SUCCESS;
+        MOV     R1,#0x0
+//  288   switch ( param )
+        JZ      ??ScanParam_GetParameter_0
+        DEC     A
+        JZ      ??ScanParam_GetParameter_1
+        SJMP    ??ScanParam_GetParameter_2
+//  289   {
+//  290     case SCAN_PARAM_PARAM_INTERVAL:
+//  291       *((uint16*)value) = BUILD_UINT16(scanIntervalWindow[0],
+//  292                                        scanIntervalWindow[1]);
+??ScanParam_GetParameter_0:
+        MOV     DPTR,#scanIntervalWindow
+        SJMP    ??ScanParam_GetParameter_3
+//  293       break;
+//  294 
+//  295     case SCAN_PARAM_PARAM_WINDOW:
+//  296       *((uint16*)value) = BUILD_UINT16(scanIntervalWindow[2],
+//  297                                        scanIntervalWindow[3]);
+??ScanParam_GetParameter_1:
+        MOV     DPTR,#scanIntervalWindow + 2
+??ScanParam_GetParameter_3:
+        MOVX    A,@DPTR
+        MOV     R6,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R5,A
+        MOV     A,R6
+        MOV     DPL,R2
+        MOV     DPH,R3
+        MOVX    @DPTR,A
+        INC     DPTR
+        MOV     A,R5
+        MOVX    @DPTR,A
+//  298       break;
+        SJMP    ??ScanParam_GetParameter_4
+//  299 
+//  300     default:
+//  301       ret = INVALIDPARAMETER;
+??ScanParam_GetParameter_2:
+        INC     R1
+        INC     R1
+//  302       break;
+//  303   }
+//  304 
+//  305   return ( ret );
+??ScanParam_GetParameter_4:
+        REQUIRE ?Subroutine0
+        ; // Fall through to label ?Subroutine0
+//  306 }
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+?Subroutine0:
+        MOV     R7,#0x1
+        LJMP    ?BANKED_LEAVE_XDATA
+//  307 
+//  308 /*********************************************************************
+//  309  * @fn      ScanParam_RefreshNotify
+//  310  *
+//  311  * @brief   Notify the peer to refresh the scan parameters.
+//  312  *
+//  313  * @param   connHandle - connection handle
+//  314  *
+//  315  * @return  None
+//  316  */
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+//  317 void ScanParam_RefreshNotify( uint16 connHandle )
+ScanParam_RefreshNotify:
+        CODE
+//  318 {
+        MOV     A,#-0x9
+        LCALL   ?BANKED_ENTER_XDATA
+        ; Saved register size: 9
+        ; Auto size: 23
+        MOV     A,#-0x17
+        LCALL   ?ALLOC_XSTACK8
+        MOV     A,R2
+        MOV     R6,A
+        MOV     A,R3
+        MOV     R7,A
+//  319   attHandleValueNoti_t  noti;
+//  320   uint16 value;
+//  321 
+//  322   value  = GATTServApp_ReadCharCfg( connHandle, scanParamRefreshClientCharCfg );
+//  323 
+//  324   if ( value & GATT_CLIENT_CFG_NOTIFY )
+        ; Setup parameters for call to function GATTServApp_ReadCharCfg
+        MOV     R4,#scanParamRefreshClientCharCfg & 0xff
+        MOV     R5,#(scanParamRefreshClientCharCfg >> 8) & 0xff
+        LCALL   ??GATTServApp_ReadCharCfg?relay
+        MOV     A,R2
+        MOV     C,0xE0 /* A   */.0
+        JNC     ??ScanParam_RefreshNotify_0
+//  325   {
+//  326     // send notification
+//  327     noti.handle = scanParamAttrTbl[SCAN_PARAM_REFRESH_CCCD_IDX].handle;
+        MOV     DPTR,#scanParamAttrTbl + 44
+        MOVX    A,@DPTR
+        MOV     R0,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R1,A
+        MOV     DPL,?XSP + 0
+        MOV     DPH,?XSP + 1
+        MOV     A,R0
+        MOVX    @DPTR,A
+        INC     DPTR
+        MOV     A,R1
+        MOVX    @DPTR,A
+//  328     noti.len = SCAN_PARAM_REFRESH_LEN;
+        MOV     A,#0x2
+        LCALL   ?XSTACK_DISP0_8
+        MOV     A,#0x1
+        MOVX    @DPTR,A
+//  329     noti.value[0] = SCAN_PARAM_REFRESH_REQ;
+        MOV     A,#0x3
+        LCALL   ?XSTACK_DISP0_8
+        CLR     A
+        MOVX    @DPTR,A
+//  330     GATT_Notification( connHandle, &noti, FALSE );
+        ; Setup parameters for call to function GATT_Notification
+        MOV     R1,A
+        MOV     DPL,?XSP + 0
+        MOV     DPH,?XSP + 1
+        MOV     R4,DPL
+        MOV     R5,DPH
+        MOV     A,R6
+        MOV     R2,A
+        MOV     A,R7
+        MOV     R3,A
+        LCALL   ??GATT_Notification?relay
+//  331   }
+//  332 }
+??ScanParam_RefreshNotify_0:
+        MOV     A,#0x17
+        LCALL   ?DEALLOC_XSTACK8
+        SJMP    ?Subroutine0
+//  333 
+//  334 /*********************************************************************
+//  335  * @fn          scanParamReadAttrCB
+//  336  *
+//  337  * @brief       GATT read callback.
+//  338  *
+//  339  * @param       connHandle - connection message was received on
+//  340  * @param       pAttr - pointer to attribute
+//  341  * @param       pValue - pointer to data to be read
+//  342  * @param       pLen - length of data to be read
+//  343  * @param       offset - offset of the first octet to be read
+//  344  * @param       maxLen - maximum length of data to be read
+//  345  *
+//  346  * @return      Success or Failure
+//  347  */
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+//  348 static uint8 scanParamReadAttrCB( uint16 connHandle, gattAttribute_t *pAttr,
+scanParamReadAttrCB:
+        CODE
+//  349                                   uint8 *pValue, uint8 *pLen, uint16 offset, uint8 maxLen )
+//  350 {
+        ; Saved register size: 0
+        ; Auto size: 0
+//  351   bStatus_t   status = SUCCESS;
+//  352 
+//  353   return ( status );
+        MOV     R1,#0x0
+        LJMP    ?BRET
+//  354 }
+//  355 
+//  356 /*********************************************************************
+//  357  * @fn      scanParamWriteAttrCB
+//  358  *
+//  359  * @brief   Validate attribute data prior to a write operation
+//  360  *
+//  361  * @param   connHandle - connection message was received on
+//  362  * @param   pAttr - pointer to attribute
+//  363  * @param   pValue - pointer to data to be written
+//  364  * @param   len - length of data
+//  365  * @param   offset - offset of the first octet to be written
+//  366  * @param   complete - whether this is the last packet
+//  367  * @param   oper - whether to validate and/or write attribute value
+//  368  *
+//  369  * @return  Success or Failure
+//  370  */
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+//  371 static bStatus_t scanParamWriteAttrCB( uint16 connHandle, gattAttribute_t *pAttr,
+scanParamWriteAttrCB:
+        CODE
+//  372                                   uint8 *pValue, uint8 len, uint16 offset )
+//  373 {
+        MOV     A,#-0xe
+        LCALL   ?BANKED_ENTER_XDATA
+        ; Saved register size: 14
+        ; Auto size: 0
+        MOV     A,R4
+        MOV     R6,A
+        MOV     A,R5
+        MOV     R7,A
+        MOV     ?V0 + 0,R1
+        MOV     A,#0x10
+        LCALL   ?XSTACK_DISP0_8
+        MOVX    A,@DPTR
+        MOV     R0,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R1,A
+//  374   bStatus_t status = SUCCESS;
+        MOV     ?V0 + 1,#0x0
+//  375 
+//  376   // Make sure it's not a blob operation (no attributes in the profile are long)
+//  377   if ( offset > 0 )
+        MOV     A,R0
+        ORL     A,R1
+        JZ      ??scanParamWriteAttrCB_0
+//  378   {
+//  379     return ( ATT_ERR_ATTR_NOT_LONG );
+        MOV     R1,#0xb
+        LJMP    ??scanParamWriteAttrCB_1 & 0xFFFF
+//  380   }
+//  381 
+//  382   uint16 uuid = BUILD_UINT16( pAttr->type.uuid[0], pAttr->type.uuid[1]);
+??scanParamWriteAttrCB_0:
+        MOV     DPL,R6
+        MOV     DPH,R7
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R0,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R1,A
+        MOV     DPL,R0
+        MOV     DPH,R1
+        MOVX    A,@DPTR
+        MOV     R4,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R1,A
+        MOV     A,R4
+        MOV     R0,A
+        MOV     A,#0xe
+        LCALL   ?XSTACK_DISP0_8
+        MOVX    A,@DPTR
+        MOV     ?V0 + 2,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     ?V0 + 3,A
+//  383 
+//  384   // Only one writeable attribute
+//  385   if ( uuid == SCAN_INTERVAL_WINDOW_UUID )
+        MOV     A,#0x4f
+        XRL     A,R0
+        JNZ     ??scanParamWriteAttrCB_2
+        MOV     A,#0x2a
+        XRL     A,R1
+??scanParamWriteAttrCB_2:
+        JNZ     ??scanParamWriteAttrCB_3
+//  386   {
+//  387     // require encryption
+//  388     if ( linkDB_Encrypted( connHandle ) == FALSE )
+        ; Setup parameters for call to function linkDB_State
+        MOV     R1,#0x10
+        LCALL   ??linkDB_State?relay
+        MOV     A,R1
+        JNZ     ??scanParamWriteAttrCB_4
+//  389     {
+//  390       return ( ATT_ERR_INSUFFICIENT_ENCRYPT );
+        MOV     R1,#0xf
+        SJMP    ??scanParamWriteAttrCB_1
+//  391     }
+//  392 
+//  393     if ( len == SCAN_INTERVAL_WINDOW_CHAR_LEN )
+??scanParamWriteAttrCB_4:
+        MOV     A,#0x4
+        XRL     A,?V0 + 0
+        JNZ     ??scanParamWriteAttrCB_5
+//  394     {
+//  395       uint16 interval = BUILD_UINT16( pValue[0], pValue[1] );
+//  396       uint16 window = BUILD_UINT16( pValue[0], pValue[1] );
+//  397 
+//  398       // Validate values
+//  399       if ( window <= interval )
+//  400       {
+//  401         osal_memcpy( pAttr->pValue, pValue, len );
+        ; Setup parameters for call to function osal_memcpy
+        MOV     ?V0 + 4,#0x4
+        MOV     ?V0 + 5,#0x0
+        MOV     R0,#?V0 + 4
+        LCALL   ?PUSH_XSTACK_I_TWO
+        MOV     R4,?V0 + 2
+        MOV     R5,?V0 + 3
+        MOV     DPL,R6
+        MOV     DPH,R7
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R2,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R3,A
+        LCALL   ??osal_memcpy?relay
+        MOV     A,#0x2
+        LCALL   ?DEALLOC_XSTACK8
+//  402 
+//  403         (*scanParamServiceCB)( SCAN_INTERVAL_WINDOW_SET );
+        ; Setup parameters for indirect call
+        MOV     R1,#0x1
+        MOV     DPTR,#scanParamServiceCB
+        MOVX    A,@DPTR
+        MOV     R0,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     DPH,A
+        MOV     DPL,R0
+        LCALL   ?CALL_IND
+        SJMP    ??scanParamWriteAttrCB_6
+//  404       }
+//  405       else
+//  406       {
+//  407         status = ATT_ERR_INVALID_VALUE;
+//  408       }
+//  409     }
+//  410     else
+//  411     {
+//  412       status = ATT_ERR_INVALID_VALUE_SIZE;
+??scanParamWriteAttrCB_5:
+        MOV     ?V0 + 1,#0xd
+        SJMP    ??scanParamWriteAttrCB_6
+//  413     }
+//  414   }
+//  415   else if ( uuid == GATT_CLIENT_CHAR_CFG_UUID )
+??scanParamWriteAttrCB_3:
+        MOV     A,#0x2
+        XRL     A,R0
+        JNZ     ??scanParamWriteAttrCB_7
+        MOV     A,#0x29
+        XRL     A,R1
+??scanParamWriteAttrCB_7:
+        JNZ     ??scanParamWriteAttrCB_8
+//  416   {
+//  417     status = GATTServApp_ProcessCCCWriteReq( connHandle, pAttr, pValue, len,
+//  418                                              offset, GATT_CLIENT_CFG_NOTIFY );
+        ; Setup parameters for call to function GATTServApp_ProcessCCCWriteReq
+        MOV     ?V0 + 4,#0x1
+        MOV     ?V0 + 5,#0x0
+        MOV     R0,#?V0 + 4
+        LCALL   ?PUSH_XSTACK_I_TWO
+        CLR     A
+        MOV     ?V0 + 4,A
+        MOV     R0,#?V0 + 4
+        LCALL   ?PUSH_XSTACK_I_TWO
+        MOV     R0,#?V0 + 2
+        LCALL   ?PUSH_XSTACK_I_TWO
+        MOV     R1,?V0 + 0
+        MOV     A,R6
+        MOV     R4,A
+        LCALL   ??GATTServApp_ProcessCCCWriteReq?relay
+        MOV     A,#0x6
+        LCALL   ?DEALLOC_XSTACK8
+        MOV     A,R1
+        MOV     ?V0 + 1,A
+        SJMP    ??scanParamWriteAttrCB_6
+//  419   }
+//  420   else
+//  421   {
+//  422     status = ATT_ERR_ATTR_NOT_FOUND;
+??scanParamWriteAttrCB_8:
+        MOV     ?V0 + 1,#0xa
+//  423   }
+//  424 
+//  425   return ( status );
+??scanParamWriteAttrCB_6:
+        MOV     R1,?V0 + 1
+??scanParamWriteAttrCB_1:
+        MOV     R7,#0x6
+        LJMP    ?BANKED_LEAVE_XDATA
+//  426 }
+//  427 
+//  428 /*********************************************************************
+//  429  * @fn          ScanParam_HandleConnStatusCB
+//  430  *
+//  431  * @brief       Service link status change handler function.
+//  432  *
+//  433  * @param       connHandle - connection handle
+//  434  * @param       changeType - type of change
+//  435  *
+//  436  * @return      none
+//  437  */
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+//  438 void ScanParam_HandleConnStatusCB( uint16 connHandle, uint8 changeType )
+ScanParam_HandleConnStatusCB:
+        CODE
+//  439 {
+        MOV     A,#-0x9
+        LCALL   ?BANKED_ENTER_XDATA
+        ; Saved register size: 9
+        ; Auto size: 0
+        MOV     A,R2
+        MOV     R6,A
+        MOV     A,R3
+        MOV     R7,A
+        MOV     ?V0 + 0,R1
+//  440   // Make sure this is not loopback connection
+//  441   if ( connHandle != LOOPBACK_CONNHANDLE )
+        MOV     A,#-0x2
+        XRL     A,R6
+        JNZ     ??ScanParam_HandleConnStatusCB_0
+        MOV     A,#-0x1
+        XRL     A,R7
+??ScanParam_HandleConnStatusCB_0:
+        JZ      ??ScanParam_HandleConnStatusCB_1
+//  442   {
+//  443     // Reset Client Char Config if connection has dropped
+//  444     if ( ( changeType == LINKDB_STATUS_UPDATE_REMOVED )      ||
+//  445          ( ( changeType == LINKDB_STATUS_UPDATE_STATEFLAGS ) &&
+//  446            ( !linkDB_Up( connHandle ) ) ) )
+        MOV     A,#0x1
+        XRL     A,?V0 + 0
+        JZ      ??ScanParam_HandleConnStatusCB_2
+        MOV     A,#0x2
+        XRL     A,?V0 + 0
+        JNZ     ??ScanParam_HandleConnStatusCB_1
+        ; Setup parameters for call to function linkDB_State
+        MOV     R1,#0x1
+        LCALL   ??linkDB_State?relay
+        MOV     A,R1
+        JNZ     ??ScanParam_HandleConnStatusCB_1
+//  447     {
+//  448       GATTServApp_InitCharCfg( connHandle, scanParamRefreshClientCharCfg );
+??ScanParam_HandleConnStatusCB_2:
+        ; Setup parameters for call to function GATTServApp_InitCharCfg
+        MOV     R4,#scanParamRefreshClientCharCfg & 0xff
+        MOV     R5,#(scanParamRefreshClientCharCfg >> 8) & 0xff
+        MOV     A,R6
+        MOV     R2,A
+        MOV     A,R7
+        MOV     R3,A
+        LCALL   ??GATTServApp_InitCharCfg?relay
+//  449     }
+//  450   }
+//  451 }
+??ScanParam_HandleConnStatusCB_1:
+        LJMP    ?Subroutine0 & 0xFFFF
+
+        RSEG XDATA_ID:CODE:NOROOT(0)
+`?<Initializer for scanIntervalWindowProps>`:
+        DATA8
+        DB 4
+
+        RSEG XDATA_ID:CODE:NOROOT(0)
+`?<Initializer for scanParamRefreshProps>`:
+        DATA8
+        DB 16
+
+        RSEG XDATA_ID:CODE:NOROOT(0)
+`?<Initializer for scanParamAttrTbl>`:
+        DATA8
+        DB 2
+        DATA16
+        DW primaryServiceUUID
+        DATA8
+        DB 1
+        DATA16
+        DW 0
+        DW scanParamService
+        DATA8
+        DB 2
+        DATA16
+        DW characterUUID
+        DATA8
+        DB 1
+        DATA16
+        DW 0
+        DW scanIntervalWindowProps
+        DATA8
+        DB 2
+        DATA16
+        DW scanIntervalWindowUUID
+        DATA8
+        DB 2
+        DATA16
+        DW 0
+        DW scanIntervalWindow
+        DATA8
+        DB 2
+        DATA16
+        DW characterUUID
+        DATA8
+        DB 1
+        DATA16
+        DW 0
+        DW scanParamRefreshProps
+        DATA8
+        DB 2
+        DATA16
+        DW scanParamRefreshUUID
+        DATA8
+        DB 0
+        DATA16
+        DW 0
+        DW scanParamRefresh
+        DATA8
+        DB 2
+        DATA16
+        DW clientCharCfgUUID
+        DATA8
+        DB 3
+        DATA16
+        DW 0
+        DW scanParamRefreshClientCharCfg
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??ScanParam_AddService?relay:
+        CODE
+        LCALL   ?BDISPATCH
+        DATA24
+        DC24    ScanParam_AddService
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??ScanParam_Register?relay:
+        CODE
+        LCALL   ?BDISPATCH
+        DATA24
+        DC24    ScanParam_Register
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??ScanParam_SetParameter?relay:
+        CODE
+        LCALL   ?BDISPATCH
+        DATA24
+        DC24    ScanParam_SetParameter
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??ScanParam_GetParameter?relay:
+        CODE
+        LCALL   ?BDISPATCH
+        DATA24
+        DC24    ScanParam_GetParameter
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??ScanParam_RefreshNotify?relay:
+        CODE
+        LCALL   ?BDISPATCH
+        DATA24
+        DC24    ScanParam_RefreshNotify
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??scanParamReadAttrCB?relay:
+        CODE
+        LCALL   ?BDISPATCH
+        DATA24
+        DC24    scanParamReadAttrCB
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??scanParamWriteAttrCB?relay:
+        CODE
+        LCALL   ?BDISPATCH
+        DATA24
+        DC24    scanParamWriteAttrCB
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??ScanParam_HandleConnStatusCB?relay:
+        CODE
+        LCALL   ?BDISPATCH
+        DATA24
+        DC24    ScanParam_HandleConnStatusCB
+
+        END
+// 
+// 479 bytes in segment BANKED_CODE
+//  48 bytes in segment BANK_RELAYS
+//  50 bytes in segment XDATA_I
+//  50 bytes in segment XDATA_ID
+//  15 bytes in segment XDATA_ROM_C
+//  13 bytes in segment XDATA_Z
+// 
+// 577 bytes of CODE  memory
+//  15 bytes of CONST memory
+//  63 bytes of XDATA memory
+//
+//Errors: none
+//Warnings: none

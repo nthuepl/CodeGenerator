@@ -1,0 +1,15 @@
+/*
+ * BLINK_main.c
+ *
+ *  Created on: 2014/2/17
+ *      Author: NeoLai
+ */
+
+#include <eco/reg24e1.h>
+#include <eco/eco_sys.h>
+
+void main(void){
+
+	blink_led();
+
+}

@@ -1,0 +1,12 @@
+what,kind,bundleId,bundleVersion,description,time
+stopped,bundle,EPL_E1_eclipse_plugin,2.0.0,"EPL_E1_eclipse_plugin",1392545391740
+stopped,bundle,EPL_EcoSD_eclipse_plugin,2.0.0,"EPL_EcoSD_eclipse_plugin",1392545391750
+stopped,bundle,EPL_LE1_eclipse_plugin,2.0.0,"EPL_LE1_eclipse_plugin",1392545391750
+stopped,bundle,EPL_LU1_eclipse_plugin,2.0.0,"EPL_LU1_eclipse_plugin",1392545391750
+stopped,bundle,net.sourceforge.eclipsesdcc,1.0.0,"net.sourceforge.eclipsesdcc",1392545391750
+stopped,bundle,org.eclipse.cdt.managedbuilder.gnu.ui,5.0.100.200909110608,"org.eclipse.cdt.managedbuilder.gnu.ui",1392545391750
+stopped,bundle,org.eclipse.cdt.managedbuilder.core,6.0.0.200909110608,"org.eclipse.cdt.managedbuilder.core",1392545391750
+stopped,bundle,org.eclipse.cdt.make.core,6.0.0.200909110608,"org.eclipse.cdt.make.core",1392545391750
+stopped,bundle,org.eclipse.cdt.mylyn.ui,1.0.100.200909110608,"org.eclipse.cdt.mylyn.ui",1392545391760
+stopped,bundle,org.eclipse.cdt.ui,5.1.1.200909110608,"org.eclipse.cdt.ui",1392545391760
+stopped,bundle,org.eclipse.cdt.core,5.1.1.200909110608,"org.eclipse.cdt.core",1392545391760

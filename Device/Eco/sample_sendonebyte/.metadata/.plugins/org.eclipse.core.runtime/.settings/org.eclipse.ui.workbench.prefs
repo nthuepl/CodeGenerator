@@ -1,0 +1,5 @@
+#Thu Jan 23 14:33:10 CST 2014
+resourcetypes=<?xml version\="1.0" encoding\="UTF-8"?>\r\n<editors version\="3.1">\r\n<info extension\="html" name\="*">\r\n<editor id\="org.eclipse.ui.browser.editorSupport"/>\r\n</info>\r\n<info extension\="htm" name\="*">\r\n<editor id\="org.eclipse.ui.browser.editorSupport"/>\r\n</info>\r\n<info extension\="shtml" name\="*">\r\n<editor id\="org.eclipse.ui.browser.editorSupport"/>\r\n</info>\r\n</editors>
+eclipse.preferences.version=1
+editors=<?xml version\="1.0" encoding\="UTF-8"?>\r\n<editors>\r\n<descriptor id\="org.eclipse.ui.browser.editorSupport" image\="$nl$/icons/obj16/internal_browser.gif" internal\="false" label\="Web Browser" launcher\="org.eclipse.ui.internal.browser.BrowserLauncher" openMode\="4" open_in_place\="false" plugin\="org.eclipse.ui.browser"/>\r\n</editors>
+ENABLED_DECORATORS=org.eclipse.cdt.ui.indexedFiles\:false,org.eclipse.mylyn.context.ui.decorator.interest\:true,org.eclipse.mylyn.tasks.ui.decorators.task\:true,org.eclipse.mylyn.team.ui.changeset.decorator\:true,org.eclipse.team.cvs.ui.decorator\:true,org.eclipse.ui.LinkedResourceDecorator\:true,org.eclipse.ui.ContentTypeDecorator\:true,

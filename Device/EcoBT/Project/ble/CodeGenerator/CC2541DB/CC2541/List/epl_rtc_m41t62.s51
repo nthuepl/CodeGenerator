@@ -1,0 +1,1523 @@
+///////////////////////////////////////////////////////////////////////////////
+//                                                                            /
+// IAR C/C++ Compiler V8.20.1.40829 for 8051            10/Jul/2014  13:44:14 /
+// Copyright 2004-2012 IAR Systems AB.                                        /
+//                                                                            /
+//    Core               =  plain                                             /
+//    Code model         =  banked                                            /
+//    Data model         =  large                                             /
+//    Calling convention =  xdata reentrant                                   /
+//    Constant location  =  data_rom                                          /
+//    Dptr setup         =  1,16                                              /
+//                                                                            /
+//    Source file        =  D:\NTHU\研究\Important\ThesisCode\Code\GitLabClou /
+//                          d\NewEcoExec\codegenerator\Device\EcoBT\Project\b /
+//                          le\CodeGenerator\Source\epl_rtc_m41t62.c          /
+//    Command line       =  -f D:\NTHU\研究\Important\ThesisCode\Code\GitLabC /
+//                          loud\NewEcoExec\codegenerator\Device\EcoBT\Projec /
+//                          t\ble\CodeGenerator\CC2541DB\..\..\config\buildCo /
+//                          mponents.cfg (-DBROADCASTER_CFG=0x01              /
+//                          -DOBSERVER_CFG=0x02 -DPERIPHERAL_CFG=0x04         /
+//                          -DCENTRAL_CFG=0x08 -DADV_NCONN_CFG=0x01           /
+//                          -DADV_CONN_CFG=0x02 -DSCAN_CFG=0x04               /
+//                          -DINIT_CFG=0x08 -DADV_CFG=ADV_NCONN_CFG+ADV_CONN_ /
+//                          CFG -DLINK_CFG=ADV_CONN_CFG+INIT_CFG              /
+//                          -DFULL_CFG=INIT_CFG+SCAN_CFG+ADV_NCONN_CFG+ADV_CO /
+//                          NN_CFG) -f D:\NTHU\研究\Important\ThesisCode\Code /
+//                          \GitLabCloud\NewEcoExec\codegenerator\Device\EcoB /
+//                          T\Project\ble\CodeGenerator\CC2541DB\buildConfig. /
+//                          cfg (-DHOST_CONFIG=PERIPHERAL_CFG                 /
+//                          -DGAP_PRIVACY_RECONNECT -DCC2541                  /
+//                          -DOAD_IMAGE_VERSION=0x0000                        /
+//                          "-DOAD_IMAGE_A_USER_ID='A', 'A', 'A', 'A'"        /
+//                          "-DOAD_IMAGE_B_USER_ID='B', 'B', 'B', 'B'")       /
+//                          D:\NTHU\研究\Important\ThesisCode\Code\GitLabClou /
+//                          d\NewEcoExec\codegenerator\Device\EcoBT\Project\b /
+//                          le\CodeGenerator\Source\epl_rtc_m41t62.c -D       /
+//                          INT_HEAP_LEN=900 -D HALNODEBUG -D                 /
+//                          OSAL_CBTIMER_NUM_TASKS=1 -D HAL_AES_DMA=TRUE -D   /
+//                          HAL_DMA=TRUE -D xPOWER_SAVING -D                  /
+//                          xPLUS_BROADCASTER -D HAL_LCD=FALSE -D             /
+//                          HAL_LED=TRUE -D HAL_ADC=TRUE -lB                  /
+//                          D:\NTHU\研究\Important\ThesisCode\Code\GitLabClou /
+//                          d\NewEcoExec\codegenerator\Device\EcoBT\Project\b /
+//                          le\CodeGenerator\CC2541DB\CC2541\List\ -o         /
+//                          D:\NTHU\研究\Important\ThesisCode\Code\GitLabClou /
+//                          d\NewEcoExec\codegenerator\Device\EcoBT\Project\b /
+//                          le\CodeGenerator\CC2541DB\CC2541\Obj\ -e --debug  /
+//                          --core=plain --dptr=16,1 --data_model=large       /
+//                          --code_model=banked --calling_convention=xdata_re /
+//                          entrant --place_constants=data_rom                /
+//                          --nr_virtual_regs 16 -I                           /
+//                          D:\NTHU\研究\Important\ThesisCode\Code\GitLabClou /
+//                          d\NewEcoExec\codegenerator\Device\EcoBT\Project\b /
+//                          le\CodeGenerator\CC2541DB\..\..\common\ -I        /
+//                          D:\NTHU\研究\Important\ThesisCode\Code\GitLabClou /
+//                          d\NewEcoExec\codegenerator\Device\EcoBT\Project\b /
+//                          le\CodeGenerator\CC2541DB\..\..\include\ -I       /
+//                          D:\NTHU\研究\Important\ThesisCode\Code\GitLabClou /
+//                          d\NewEcoExec\codegenerator\Device\EcoBT\Project\b /
+//                          le\CodeGenerator\CC2541DB\..\..\..\..\Components\ /
+//                          hal\include\ -I D:\NTHU\研究\Important\ThesisCode /
+//                          \Code\GitLabCloud\NewEcoExec\codegenerator\Device /
+//                          \EcoBT\Project\ble\CodeGenerator\CC2541DB\..\..\. /
+//                          .\..\Components\hal\target\CC2540EB\ -I           /
+//                          D:\NTHU\研究\Important\ThesisCode\Code\GitLabClou /
+//                          d\NewEcoExec\codegenerator\Device\EcoBT\Project\b /
+//                          le\CodeGenerator\CC2541DB\..\..\..\..\Components\ /
+//                          osal\include\ -I D:\NTHU\研究\Important\ThesisCod /
+//                          e\Code\GitLabCloud\NewEcoExec\codegenerator\Devic /
+//                          e\EcoBT\Project\ble\CodeGenerator\CC2541DB\..\..\ /
+//                          ..\..\Components\services\saddr\ -I               /
+//                          D:\NTHU\研究\Important\ThesisCode\Code\GitLabClou /
+//                          d\NewEcoExec\codegenerator\Device\EcoBT\Project\b /
+//                          le\CodeGenerator\CC2541DB\..\..\..\..\Components\ /
+//                          ble\include\ -I D:\NTHU\研究\Important\ThesisCode /
+//                          \Code\GitLabCloud\NewEcoExec\codegenerator\Device /
+//                          \EcoBT\Project\ble\CodeGenerator\CC2541DB\..\..\. /
+//                          .\..\Components\ble\controller\phy\ -I            /
+//                          D:\NTHU\研究\Important\ThesisCode\Code\GitLabClou /
+//                          d\NewEcoExec\codegenerator\Device\EcoBT\Project\b /
+//                          le\CodeGenerator\CC2541DB\..\..\..\..\Components\ /
+//                          ble\controller\include\ -I                        /
+//                          D:\NTHU\研究\Important\ThesisCode\Code\GitLabClou /
+//                          d\NewEcoExec\codegenerator\Device\EcoBT\Project\b /
+//                          le\CodeGenerator\CC2541DB\..\..\..\..\Components\ /
+//                          ble\hci\ -I D:\NTHU\研究\Important\ThesisCode\Cod /
+//                          e\GitLabCloud\NewEcoExec\codegenerator\Device\Eco /
+//                          BT\Project\ble\CodeGenerator\CC2541DB\..\..\..\.. /
+//                          \Components\ble\host\ -I                          /
+//                          D:\NTHU\研究\Important\ThesisCode\Code\GitLabClou /
+//                          d\NewEcoExec\codegenerator\Device\EcoBT\Project\b /
+//                          le\CodeGenerator\CC2541DB\..\..\common\cc2540\    /
+//                          -I D:\NTHU\研究\Important\ThesisCode\Code\GitLabC /
+//                          loud\NewEcoExec\codegenerator\Device\EcoBT\Projec /
+//                          t\ble\CodeGenerator\CC2541DB\..\..\common\npi\npi /
+//                          _np\ -I D:\NTHU\研究\Important\ThesisCode\Code\Gi /
+//                          tLabCloud\NewEcoExec\codegenerator\Device\EcoBT\P /
+//                          roject\ble\CodeGenerator\CC2541DB\..\..\Profiles\ /
+//                          Roles\ -I D:\NTHU\研究\Important\ThesisCode\Code\ /
+//                          GitLabCloud\NewEcoExec\codegenerator\Device\EcoBT /
+//                          \Project\ble\CodeGenerator\CC2541DB\..\..\Profile /
+//                          s\SimpleProfile\ -I D:\NTHU\研究\Important\Thesis /
+//                          Code\Code\GitLabCloud\NewEcoExec\codegenerator\De /
+//                          vice\EcoBT\Project\ble\CodeGenerator\CC2541DB\..\ /
+//                          ..\Profiles\DevInfo\ -I                           /
+//                          D:\NTHU\研究\Important\ThesisCode\Code\GitLabClou /
+//                          d\NewEcoExec\codegenerator\Device\EcoBT\Project\b /
+//                          le\CodeGenerator\CC2541DB\..\..\Profiles\Accelero /
+//                          meter\ -I D:\NTHU\研究\Important\ThesisCode\Code\ /
+//                          GitLabCloud\NewEcoExec\codegenerator\Device\EcoBT /
+//                          \Project\ble\CodeGenerator\CC2541DB\..\..\Profile /
+//                          s\EcoExecGATTProfile\ -I                          /
+//                          D:\NTHU\研究\Important\ThesisCode\Code\GitLabClou /
+//                          d\NewEcoExec\codegenerator\Device\EcoBT\Project\b /
+//                          le\CodeGenerator\CC2541DB\..\..\Profiles\timeserv /
+//                          ice\ -I D:\NTHU\研究\Important\ThesisCode\Code\Gi /
+//                          tLabCloud\NewEcoExec\codegenerator\Device\EcoBT\P /
+//                          roject\ble\CodeGenerator\CC2541DB\..\..\Profiles\ /
+//                          Batt\ -I D:\NTHU\研究\Important\ThesisCode\Code\G /
+//                          itLabCloud\NewEcoExec\codegenerator\Device\EcoBT\ /
+//                          Project\ble\CodeGenerator\CC2541DB\..\..\Profiles /
+//                          \HIDDev\ -I D:\NTHU\研究\Important\ThesisCode\Cod /
+//                          e\GitLabCloud\NewEcoExec\codegenerator\Device\Eco /
+//                          BT\Project\ble\CodeGenerator\CC2541DB\..\..\Profi /
+//                          les\ScanParam\ -Ohz                               /
+//    List file          =  D:\NTHU\研究\Important\ThesisCode\Code\GitLabClou /
+//                          d\NewEcoExec\codegenerator\Device\EcoBT\Project\b /
+//                          le\CodeGenerator\CC2541DB\CC2541\List\epl_rtc_m41 /
+//                          t62.s51                                           /
+//                                                                            /
+//                                                                            /
+///////////////////////////////////////////////////////////////////////////////
+
+        NAME epl_rtc_m41t62
+
+        RSEG DOVERLAY:DATA:NOROOT(0)
+        RSEG IOVERLAY:IDATA:NOROOT(0)
+        RSEG ISTACK:IDATA:NOROOT(0)
+        RSEG PSTACK:XDATA:NOROOT(0)
+        RSEG XSTACK:XDATA:NOROOT(0)
+
+        EXTERN ?ALLOC_XSTACK8
+        EXTERN ?BANKED_ENTER_XDATA
+        EXTERN ?BANKED_LEAVE_XDATA
+        EXTERN ?BDISPATCH
+        EXTERN ?BRET
+        EXTERN ?DEALLOC_XSTACK8
+        EXTERN ?MOVE_LONG8_XDATA_XDATA
+        EXTERN ?V0
+        EXTERN ?XSP
+        EXTERN ?XSTACK_DISP0_8
+        EXTERN __INIT_XDATA_I
+
+        PUBLIC ??rtcGetAlarm?relay
+        PUBLIC ??rtcGetAlarmStatus?relay
+        PUBLIC ??rtcGetDate?relay
+        PUBLIC ??rtcGetTime?relay
+        PUBLIC ??rtcInit?relay
+        PUBLIC ??rtcReadDateAndTime?relay
+        PUBLIC ??rtcSetAlarm?relay
+        PUBLIC ??rtcSetDate?relay
+        PUBLIC ??rtcSetTime?relay
+        PUBWEAK P0DIR
+        PUBWEAK P0IEN
+        PUBWEAK P0IFG
+        PUBWEAK P0SEL
+        PUBWEAK PICTL
+        PUBWEAK _A_IEN0
+        PUBWEAK _A_IEN1
+        PUBWEAK _A_IRCON
+        PUBLIC rtcGetAlarm
+        PUBLIC rtcGetAlarmStatus
+        PUBLIC rtcGetDate
+        PUBLIC rtcGetTime
+        PUBLIC rtcInit
+        PUBLIC rtcReadDateAndTime
+        PUBLIC rtcSetAlarm
+        PUBLIC rtcSetDate
+        PUBLIC rtcSetTime
+        PUBLIC slaveAddress
+
+HalI2CInit          SYMBOL "HalI2CInit"
+??HalI2CInit?relay  SYMBOL "?relay", HalI2CInit
+HalI2CRead          SYMBOL "HalI2CRead"
+??HalI2CRead?relay  SYMBOL "?relay", HalI2CRead
+HalI2CWrite         SYMBOL "HalI2CWrite"
+??HalI2CWrite?relay SYMBOL "?relay", HalI2CWrite
+rtcGetAlarm         SYMBOL "rtcGetAlarm"
+??rtcGetAlarm?relay SYMBOL "?relay", rtcGetAlarm
+rtcGetAlarmStatus   SYMBOL "rtcGetAlarmStatus"
+??rtcGetAlarmStatus?relay SYMBOL "?relay", rtcGetAlarmStatus
+rtcGetDate          SYMBOL "rtcGetDate"
+??rtcGetDate?relay  SYMBOL "?relay", rtcGetDate
+rtcGetTime          SYMBOL "rtcGetTime"
+??rtcGetTime?relay  SYMBOL "?relay", rtcGetTime
+rtcInit             SYMBOL "rtcInit"
+??rtcInit?relay     SYMBOL "?relay", rtcInit
+rtcReadDateAndTime  SYMBOL "rtcReadDateAndTime"
+??rtcReadDateAndTime?relay SYMBOL "?relay", rtcReadDateAndTime
+rtcSetAlarm         SYMBOL "rtcSetAlarm"
+??rtcSetAlarm?relay SYMBOL "?relay", rtcSetAlarm
+rtcSetDate          SYMBOL "rtcSetDate"
+??rtcSetDate?relay  SYMBOL "?relay", rtcSetDate
+rtcSetTime          SYMBOL "rtcSetTime"
+??rtcSetTime?relay  SYMBOL "?relay", rtcSetTime
+
+        EXTERN ??HalI2CInit?relay
+        EXTERN ??HalI2CRead?relay
+        EXTERN ??HalI2CWrite?relay
+        EXTERN HalI2CInit
+        EXTERN HalI2CRead
+        EXTERN HalI2CWrite
+
+// D:\NTHU\研究\Important\ThesisCode\Code\GitLabCloud\NewEcoExec\codegenerator\Device\EcoBT\Project\ble\CodeGenerator\Source\epl_rtc_m41t62.c
+//    1 /**************************************************************************************************
+//    2   Filename:       epl_rtc_m41t62.c
+//    3   Revised:        $Date: 2012-12-16$
+//    4   Revision:       $ TONG KUN LAI$
+//    5 
+//    6   Description:    Control of the RTC on the EcoBT board.
+//    7 
+//    8   Copyright 2012 EPL NTHU. All rights reserved.
+//    9 
+//   10 **************************************************************************************************/
+//   11 #if defined( CC2541) || defined( CC2541S )
+//   12 #include <ioCC2541.h>
+
+        ASEGN SFR_AN:DATA:NOROOT,089H
+// unsigned char volatile __sfr P0IFG
+P0IFG:
+        DATA8
+        DS 1
+
+        ASEGN SFR_AN:DATA:NOROOT,08cH
+// unsigned char volatile __sfr PICTL
+PICTL:
+        DATA8
+        DS 1
+
+        ASEGN SFR_AN:DATA:NOROOT,0a8H
+// union <unnamed> volatile __sfr _A_IEN0
+_A_IEN0:
+        DATA8
+        DS 1
+
+        ASEGN SFR_AN:DATA:NOROOT,0abH
+// unsigned char volatile __sfr P0IEN
+P0IEN:
+        DATA8
+        DS 1
+
+        ASEGN SFR_AN:DATA:NOROOT,0b8H
+// union <unnamed> volatile __sfr _A_IEN1
+_A_IEN1:
+        DATA8
+        DS 1
+
+        ASEGN SFR_AN:DATA:NOROOT,0c0H
+// union <unnamed> volatile __sfr _A_IRCON
+_A_IRCON:
+        DATA8
+        DS 1
+
+        ASEGN SFR_AN:DATA:NOROOT,0f3H
+// unsigned char volatile __sfr P0SEL
+P0SEL:
+        DATA8
+        DS 1
+
+        ASEGN SFR_AN:DATA:NOROOT,0fdH
+// unsigned char volatile __sfr P0DIR
+P0DIR:
+        DATA8
+        DS 1
+//   13 #else // CC2540
+//   14 #include <ioCC2540.h>
+//   15 #endif // CC2541 || CC2541S
+//   16 
+//   17 #include "gatt.h"
+//   18 
+//   19 //rtc
+//   20 #include "hal_i2c.h"
+//   21 #include "epl_rtc_m41t62.h"
+//   22 
+//   23 /*****local variable*****/
+//   24 
+
+        RSEG XDATA_I:XDATA:NOROOT(0)
+//   25 uint8 slaveAddress = 0x68; // 1101000 0
+slaveAddress:
+        DATA8
+        DS 1
+        REQUIRE `?<Initializer for slaveAddress>`
+        REQUIRE __INIT_XDATA_I
+//   26 
+//   27 /** \brief  This is will initialize I2C interface and M41T62 RTC
+//   28 * \param[in]       void
+//   29 */
+//   30 
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+//   31 void rtcInit(void)
+rtcInit:
+        CODE
+//   32 {  
+        PUSH    DPL
+        PUSH    DPH
+        ; Saved register size: 2
+        ; Auto size: 2
+        MOV     A,#-0x2
+        LCALL   ?ALLOC_XSTACK8
+//   33   HalI2CInit(slaveAddress,i2cClock_197KHZ); 
+        ; Setup parameters for call to function HalI2CInit
+        MOV     R2,#0x3
+        MOV     DPTR,#slaveAddress
+        MOVX    A,@DPTR
+        MOV     R1,A
+        LCALL   ??HalI2CInit?relay
+//   34   
+//   35 //  P2SEL &= 0xFD;
+//   36 //  P2DIR |= 0x02;
+//   37 //  P2_1 = 1;
+//   38   /*****Alarm interrupt setting*****/
+//   39   P0SEL &= 0xFE;        // port 0.0 as GPIO
+        ANL     0xf3,#0xfe
+//   40   P0DIR &= 0xFE;        // port 0.0 as input
+        ANL     0xfd,#0xfe
+//   41   PICTL |= 0x01;        // port interrupt control, 0 rising edge, 1 falling edge
+        ORL     0x8c,#0x1
+//   42   P0IEN |= 0x01;        // IOC module, prot 0 interrupt mask, 0 interrupts are disabled, 1 interrupt s are enabled.
+        ORL     0xab,#0x1
+//   43   P0IE   = 1;           // CPU module, prot 0 interrupt mask, 0 interrupts are disabled, 1 interrupt s are enabled.
+        SETB    0xb8.5
+//   44   P0IFG  = 0x00;        // P0 interrupt Flag Status
+        MOV     0x89,#0x0
+//   45   P0IF   = 0;           // port 0 interrupt status flag
+        CLR     0xc0.5
+//   46   EA     = 1;           // enable interrupt
+        SETB    0xa8.7
+//   47   
+//   48 
+//   49 
+//   50   uint8 start_rtc[2] = {RTC_M41T62_FLAGS,0x00};
+        MOV     DPTR,#`?<Constant {15, 0}>`
+        PUSH    DPL
+        MOV     DPL,?XSP + 0
+        MOV     DPH,?XSP + 1
+        MOV     R4,DPL
+        MOV     R5,DPH
+        MOV     DPH,#(`?<Constant {15, 0}>` >> 8) & 0xff
+        POP     DPL
+        MOV     A,#0x2
+        LCALL   ?MOVE_LONG8_XDATA_XDATA
+//   51   HalI2CWrite(2,start_rtc);
+        ; Setup parameters for call to function HalI2CWrite
+        MOV     DPL,?XSP + 0
+        MOV     DPH,?XSP + 1
+        MOV     R2,DPL
+        MOV     R3,DPH
+        MOV     R1,#0x2
+        LCALL   ??HalI2CWrite?relay
+//   52   
+//   53 
+//   54 } //  rtcInit function end
+        REQUIRE ?Subroutine0
+        REQUIRE P0SEL
+        REQUIRE P0DIR
+        REQUIRE PICTL
+        REQUIRE P0IEN
+        REQUIRE _A_IEN1
+        REQUIRE P0IFG
+        REQUIRE _A_IRCON
+        REQUIRE _A_IEN0
+        ; // Fall through to label ?Subroutine0
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+?Subroutine0:
+        MOV     A,#0x2
+        LCALL   ?DEALLOC_XSTACK8
+        POP     DPH
+        POP     DPL
+        LJMP    ?BRET
+//   55 
+//   56 /** \brief	Write the Time data to M41T62 RTC
+//   57 *
+//   58 * Write the Time data to M41T62 RTC
+//   59 *
+//   60 * \param[in]       hour
+//   61 *     hour data to write
+//   62 * \param[in]       minute
+//   63 *     minute data to write
+//   64 * \param[in]       second
+//   65 *     second data to write
+//   66 */
+//   67  
+//   68 
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+//   69 void rtcSetTime(uint8 second,uint8 minute,uint8 hour)
+rtcSetTime:
+        CODE
+//   70 {
+        MOV     A,#-0x9
+        LCALL   ?BANKED_ENTER_XDATA
+        ; Saved register size: 9
+        ; Auto size: 4
+        MOV     A,#-0x4
+        LCALL   ?ALLOC_XSTACK8
+//   71   uint8 set_time[4] = {RTC_M41T62_SECONDS,second,minute,hour};
+        MOV     DPL,?XSP + 0
+        MOV     DPH,?XSP + 1
+        MOV     R4,DPL
+        MOV     R5,DPH
+        MOV     DPH,#(`?<Constant {1, 0, 0, 0}>` >> 8) & 0xff
+        MOV     DPL,#`?<Constant {1, 0, 0, 0}>` & 0xff
+        MOV     A,#0x4
+        LCALL   ?MOVE_LONG8_XDATA_XDATA
+        MOV     A,#0x1
+        LCALL   ?XSTACK_DISP0_8
+        MOV     A,R1
+        MOVX    @DPTR,A
+        MOV     A,#0x2
+        LCALL   ?XSTACK_DISP0_8
+        MOV     A,R2
+        MOVX    @DPTR,A
+        MOV     A,#0x3
+        LCALL   ?XSTACK_DISP0_8
+        MOV     A,R3
+        LCALL   ?Subroutine10 & 0xFFFF
+//   72   HalI2CWrite(4,set_time);
+??CrossCallReturnLabel_17:
+        MOV     R1,#0x4
+        LCALL   ??HalI2CWrite?relay
+//   73 
+//   74 } // end function rtcSetTime
+        MOV     A,#0x4
+        LCALL   ?DEALLOC_XSTACK8
+        MOV     R7,#0x1
+        LJMP    ?BANKED_LEAVE_XDATA
+//   75 
+//   76 /** \brief	Read Time data to M41T62 RTC
+//   77 *
+//   78 * Read the Time data to M41T62 RTC
+//   79 *
+//   80 * \param[in]       hour
+//   81 *     parameter for read  hour data of rtc
+//   82 * \param[in]       minute
+//   83 *     parameter for read  minute data of rtc 
+//   84 * \param[in]       second
+//   85 *     parameter for read  second data of rtc 
+//   86 */
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+//   87 void rtcGetTime( uint8* hour, uint8* minute, uint8* second )
+rtcGetTime:
+        CODE
+//   88 {
+        MOV     A,#-0xc
+        LCALL   ?BANKED_ENTER_XDATA
+        ; Saved register size: 12
+        ; Auto size: 4
+        MOV     A,#-0x4
+        LCALL   ?ALLOC_XSTACK8
+        MOV     ?V0 + 2,R2
+        MOV     ?V0 + 3,R3
+        MOV     A,R4
+        MOV     R6,A
+        MOV     A,R5
+        MOV     R7,A
+        MOV     A,#0x10
+        LCALL   ?XSTACK_DISP0_8
+        LCALL   ?Subroutine3 & 0xFFFF
+//   89   uint8 get_time[3] = {0,0,0};
+??CrossCallReturnLabel_0:
+        LCALL   ?XSTACK_DISP0_8
+        MOV     R4,DPL
+        MOV     R5,DPH
+        MOV     DPH,#(`?<Constant {0, 0, 0}>` >> 8) & 0xff
+        MOV     DPL,#`?<Constant {0, 0, 0}>` & 0xff
+        MOV     A,#0x3
+        LCALL   ?MOVE_LONG8_XDATA_XDATA
+//   90   uint8 reg_addr = RTC_M41T62_SECONDS;
+        MOV     DPL,?XSP + 0
+        MOV     DPH,?XSP + 1
+        INC     A
+        MOVX    @DPTR,A
+//   91   
+//   92   HalI2CWrite(1,&reg_addr);
+        ; Setup parameters for call to function HalI2CWrite
+        MOV     R2,DPL
+        MOV     R3,DPH
+        MOV     R1,A
+        LCALL   ??HalI2CWrite?relay
+//   93   HalI2CRead(3,get_time);
+        ; Setup parameters for call to function HalI2CRead
+        MOV     A,#0x1
+        LCALL   ?XSTACK_DISP0_8
+        MOV     R2,DPL
+        MOV     R3,DPH
+        MOV     R1,#0x3
+        LCALL   ??HalI2CRead?relay
+//   94    
+//   95   *hour = get_time[2];
+        MOV     A,#0x3
+        LCALL   ?XSTACK_DISP0_8
+        LCALL   ?Subroutine6 & 0xFFFF
+//   96   *minute = get_time[1];
+??CrossCallReturnLabel_9:
+        MOV     A,#0x2
+        LCALL   ?XSTACK_DISP0_8
+        MOVX    A,@DPTR
+        MOV     DPL,R6
+        MOV     DPH,R7
+        MOVX    @DPTR,A
+//   97   *second = get_time[0];
+        MOV     A,#0x1
+        LCALL   ?XSTACK_DISP0_8
+        LCALL   ?Subroutine8 & 0xFFFF
+//   98   
+//   99 } // end function rtcGetTime
+??CrossCallReturnLabel_13:
+        MOV     A,#0x4
+        LCALL   ?DEALLOC_XSTACK8
+        MOV     R7,#0x4
+        LJMP    ?BANKED_LEAVE_XDATA
+//  100 
+//  101 
+//  102 /** \brief	Write Date data to M41T62 RTC
+//  103 *
+//  104 * Write the Date data to M41T62 RTC
+//  105 *
+//  106 * \param[in]              day
+//  107 *     dat data to write
+//  108 * \param[in]              date
+//  109 *     date data to write
+//  110 * \param[in]              month
+//  111 *     month data to write
+//  112 * \param[in]              year
+//  113 *     year data to write
+//  114 * \param[in]              century
+//  115 *     century data to write
+//  116 */
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+//  117 void rtcSetDate(uint8 day, uint8 date, uint8 month, uint8 year, uint8 century)
+rtcSetDate:
+        CODE
+//  118 {
+        MOV     A,#-0xb
+        LCALL   ?BANKED_ENTER_XDATA
+        ; Saved register size: 11
+        ; Auto size: 5
+        MOV     A,#-0x5
+        LCALL   ?ALLOC_XSTACK8
+        MOV     A,R1
+        MOV     R6,A
+        MOV     A,R2
+        MOV     R7,A
+        MOV     ?V0 + 0,R3
+        MOV     ?V0 + 1,R4
+        MOV     ?V0 + 2,R5
+//  119   day = 0x07&day; 
+//  120   date = date&0x3F;
+//  121   month = (0x1F&month) + (century<<6);
+//  122   uint8 set_date[5] = {RTC_M41T62_DAY, day, date, month, year};
+        MOV     DPL,?XSP + 0
+        MOV     DPH,?XSP + 1
+        MOV     R4,DPL
+        MOV     R5,DPH
+        MOV     DPH,#(`?<Constant {4, 0, 0, 0, 0}>` >> 8) & 0xff
+        MOV     DPL,#`?<Constant {4, 0, 0, 0, 0}>` & 0xff
+        MOV     A,#0x5
+        LCALL   ?MOVE_LONG8_XDATA_XDATA
+        MOV     A,#0x7
+        ANL     A,R6
+        PUSH    A
+        MOV     A,#0x1
+        LCALL   ?XSTACK_DISP0_8
+        POP     A
+        MOVX    @DPTR,A
+        MOV     A,#0x3f
+        ANL     A,R7
+        PUSH    A
+        MOV     A,#0x2
+        LCALL   ?XSTACK_DISP0_8
+        POP     A
+        MOVX    @DPTR,A
+        MOV     A,?V0 + 2
+        SWAP    A
+        RLC     A
+        RLC     A
+        ANL     A,#0xc0
+        MOV     R0,A
+        MOV     A,#0x1f
+        ANL     A,?V0 + 0
+        ADD     A,R0
+        PUSH    A
+        MOV     A,#0x3
+        LCALL   ?XSTACK_DISP0_8
+        POP     A
+        MOVX    @DPTR,A
+        MOV     A,#0x4
+        LCALL   ?XSTACK_DISP0_8
+        MOV     A,?V0 + 1
+        LCALL   ?Subroutine10 & 0xFFFF
+//  123   HalI2CWrite(5,set_date);
+??CrossCallReturnLabel_18:
+        MOV     R1,#0x5
+        LCALL   ??HalI2CWrite?relay
+//  124   
+//  125 } // end function rtcSetDate
+        MOV     A,#0x5
+        REQUIRE ?Subroutine1
+        ; // Fall through to label ?Subroutine1
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+?Subroutine1:
+        LCALL   ?DEALLOC_XSTACK8
+        MOV     R7,#0x3
+        LJMP    ?BANKED_LEAVE_XDATA
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+?Subroutine10:
+        MOVX    @DPTR,A
+        ; Setup parameters for call to function HalI2CWrite
+        ; Setup parameters for call to function HalI2CWrite
+        ; Setup parameters for call to function HalI2CWrite
+        MOV     DPL,?XSP + 0
+        MOV     DPH,?XSP + 1
+        MOV     R2,DPL
+        MOV     R3,DPH
+        RET
+//  126 
+//  127 
+//  128 /** \brief	Read da data to M41T62 RTC
+//  129 *
+//  130 * Read the Time data to M41T62 RTC
+//  131 *
+//  132 * \param[in]       day
+//  133 *     parameter for read  day data of rtc
+//  134 * \param[in]       date
+//  135 *     parameter for read  date data of rtc
+//  136 * \param[in]       month
+//  137 *     parameter for read  month data of rtc
+//  138 * \param[in]       year
+//  139 *     parameter for read  year data of rtc
+//  140 * \param[in]       century
+//  141 *     parameter for read  century data of rtc
+//  142 */
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+//  143 void rtcGetDate(uint8* day, uint8* date, uint8* month, uint8* year, uint8* century )
+rtcGetDate:
+        CODE
+//  144 {
+        MOV     A,#-0x10
+        LCALL   ?BANKED_ENTER_XDATA
+        ; Saved register size: 16
+        ; Auto size: 5
+        MOV     A,#-0x5
+        LCALL   ?ALLOC_XSTACK8
+        MOV     ?V0 + 6,R2
+        MOV     ?V0 + 7,R3
+        MOV     ?V0 + 4,R4
+        MOV     ?V0 + 5,R5
+        MOV     A,#0x15
+        LCALL   ?XSTACK_DISP0_8
+        LCALL   ?Subroutine4 & 0xFFFF
+??CrossCallReturnLabel_3:
+        MOV     A,#0x17
+        LCALL   ?XSTACK_DISP0_8
+        MOVX    A,@DPTR
+        MOV     R6,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R7,A
+        MOV     A,#0x19
+        LCALL   ?XSTACK_DISP0_8
+        LCALL   ?Subroutine3 & 0xFFFF
+//  145   uint8 get_date[4] = {0,0,0,0};
+??CrossCallReturnLabel_1:
+        LCALL   ?XSTACK_DISP0_8
+        MOV     R4,DPL
+        MOV     R5,DPH
+        MOV     DPH,#(`?<Constant {0, 0, 0, 0}>` >> 8) & 0xff
+        MOV     DPL,#`?<Constant {0, 0, 0, 0}>` & 0xff
+        MOV     A,#0x4
+        LCALL   ?MOVE_LONG8_XDATA_XDATA
+//  146   uint8 reg_addr = RTC_M41T62_DAY;
+        MOV     DPL,?XSP + 0
+        MOV     DPH,?XSP + 1
+        MOV     A,#0x4
+        LCALL   ?Subroutine11 & 0xFFFF
+//  147   
+//  148   HalI2CWrite(1,&reg_addr); 
+??CrossCallReturnLabel_20:
+        LCALL   ??HalI2CWrite?relay
+//  149   HalI2CRead(4,get_date);
+        ; Setup parameters for call to function HalI2CRead
+        MOV     A,#0x1
+        LCALL   ?XSTACK_DISP0_8
+        MOV     R2,DPL
+        MOV     R3,DPH
+        MOV     R1,#0x4
+        LCALL   ??HalI2CRead?relay
+//  150    
+//  151   *year = get_date[3];
+        MOV     A,#0x4
+        LCALL   ?XSTACK_DISP0_8
+        LCALL   ?Subroutine7 & 0xFFFF
+//  152   *month = (get_date[2]&0x1F);
+??CrossCallReturnLabel_11:
+        LCALL   ?XSTACK_DISP0_8
+        MOVX    A,@DPTR
+        ANL     A,#0x1f
+        MOV     DPL,?V0 + 2
+        MOV     DPH,?V0 + 3
+        MOVX    @DPTR,A
+//  153   *date = get_date[1];
+        MOV     A,#0x2
+        LCALL   ?XSTACK_DISP0_8
+        LCALL   ?Subroutine9 & 0xFFFF
+//  154   *day = (get_date[0]&0x0F);
+??CrossCallReturnLabel_15:
+        MOV     A,#0x1
+        LCALL   ?XSTACK_DISP0_8
+        MOVX    A,@DPTR
+        ANL     A,#0xf
+        MOV     DPL,?V0 + 6
+        MOV     DPH,?V0 + 7
+        MOVX    @DPTR,A
+//  155   *century = ((get_date[2]>>6)&0x03);
+        MOV     A,#0x3
+        LCALL   ?XSTACK_DISP0_8
+        MOVX    A,@DPTR
+        SWAP    A
+        RRC     A
+        RRC     A
+        ANL     A,#0x3
+        MOV     DPL,?V0 + 0
+        MOV     DPH,?V0 + 1
+        MOVX    @DPTR,A
+//  156   //*century = 0x11;
+//  157 } // end function rtcGetDate
+        MOV     A,#0x5
+        REQUIRE ?Subroutine2
+        ; // Fall through to label ?Subroutine2
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+?Subroutine2:
+        LCALL   ?DEALLOC_XSTACK8
+        MOV     R7,#0x8
+        LJMP    ?BANKED_LEAVE_XDATA
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+?Subroutine3:
+        MOVX    A,@DPTR
+        MOV     ?V0 + 0,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     ?V0 + 1,A
+        MOV     A,#0x1
+        RET
+//  158 
+//  159 
+//  160 /** \brief	Read Time and Date data to M41T62 RTC
+//  161 *
+//  162 * Read the Time and Date data to M41T62 RTC
+//  163 *
+//  164 * \param[in]       hour
+//  165 *     parameter for read  hour data of rtc
+//  166 * \param[in]       minute
+//  167 *     parameter for read  minute data of rtc 
+//  168 * \param[in]       second
+//  169 *     parameter for read  second data of rtc 
+//  170 * \param[in]       day
+//  171 *     parameter for read  day data of rtc
+//  172 * \param[in]       date
+//  173 *     parameter for read  date data of rtc
+//  174 * \param[in]       month
+//  175 *     parameter for read  month data of rtc
+//  176 * \param[in]       year
+//  177 *     parameter for read  year data of rtc
+//  178 * \param[in]       century
+//  179 *     parameter for read  century data of rtc
+//  180 */
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+//  181 void rtcReadDateAndTime(uint8* year, uint8* month, uint8* date, uint8* day
+rtcReadDateAndTime:
+        CODE
+//  182                         , uint8* hour, uint8* minute, uint8* second)
+//  183 {
+        MOV     A,#-0x14
+        LCALL   ?BANKED_ENTER_XDATA
+        ; Saved register size: 20
+        ; Auto size: 8
+        MOV     A,#-0x8
+        LCALL   ?ALLOC_XSTACK8
+        MOV     ?V0 + 10,R2
+        MOV     ?V0 + 11,R3
+        MOV     ?V0 + 8,R4
+        MOV     ?V0 + 9,R5
+        MOV     A,#0x1c
+        LCALL   ?XSTACK_DISP0_8
+        MOVX    A,@DPTR
+        MOV     ?V0 + 6,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     ?V0 + 7,A
+        MOV     A,#0x1e
+        LCALL   ?XSTACK_DISP0_8
+        MOVX    A,@DPTR
+        MOV     ?V0 + 4,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     ?V0 + 5,A
+        MOV     A,#0x20
+        LCALL   ?XSTACK_DISP0_8
+        LCALL   ?Subroutine4 & 0xFFFF
+??CrossCallReturnLabel_4:
+        MOV     A,#0x22
+        LCALL   ?XSTACK_DISP0_8
+        MOVX    A,@DPTR
+        MOV     R6,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R7,A
+        MOV     A,#0x24
+        LCALL   ?XSTACK_DISP0_8
+        LCALL   ?Subroutine3 & 0xFFFF
+//  184   uint8 date_and_time[7] = {0,0,0,0,0,0,0};
+??CrossCallReturnLabel_2:
+        LCALL   ?XSTACK_DISP0_8
+        MOV     R4,DPL
+        MOV     R5,DPH
+        MOV     DPH,#(`?<Constant {0, 0, 0, 0, 0, 0, 0}>` >> 8) & 0xff
+        MOV     DPL,#`?<Constant {0, 0, 0, 0, 0, 0, 0}>` & 0xff
+        MOV     A,#0x7
+        LCALL   ?MOVE_LONG8_XDATA_XDATA
+//  185   uint8 reg_addr = RTC_M41T62_SECONDS;
+        MOV     DPL,?XSP + 0
+        MOV     DPH,?XSP + 1
+        INC     A
+        MOVX    @DPTR,A
+//  186   
+//  187   HalI2CWrite(1,&reg_addr); 
+        ; Setup parameters for call to function HalI2CWrite
+        MOV     R2,DPL
+        MOV     R3,DPH
+        MOV     R1,A
+        LCALL   ??HalI2CWrite?relay
+//  188   HalI2CRead(7,date_and_time);
+        ; Setup parameters for call to function HalI2CRead
+        MOV     A,#0x1
+        LCALL   ?XSTACK_DISP0_8
+        MOV     R2,DPL
+        MOV     R3,DPH
+        MOV     R1,#0x7
+        LCALL   ??HalI2CRead?relay
+//  189    
+//  190   *second = date_and_time[0];
+        MOV     A,#0x1
+        LCALL   ?XSTACK_DISP0_8
+        LCALL   ?Subroutine8 & 0xFFFF
+//  191   *minute = date_and_time[1];
+??CrossCallReturnLabel_14:
+        MOV     A,#0x2
+        LCALL   ?XSTACK_DISP0_8
+        LCALL   ?Subroutine7 & 0xFFFF
+//  192   *hour = date_and_time[2];
+??CrossCallReturnLabel_12:
+        LCALL   ?XSTACK_DISP0_8
+        LCALL   ?Subroutine6 & 0xFFFF
+//  193   *day = date_and_time[3];
+??CrossCallReturnLabel_10:
+        MOV     A,#0x4
+        LCALL   ?XSTACK_DISP0_8
+        LCALL   ?Subroutine9 & 0xFFFF
+//  194   *date = date_and_time[4];
+??CrossCallReturnLabel_16:
+        MOV     A,#0x5
+        LCALL   ?XSTACK_DISP0_8
+        MOVX    A,@DPTR
+        MOV     DPL,?V0 + 6
+        MOV     DPH,?V0 + 7
+        MOVX    @DPTR,A
+//  195   *month = date_and_time[5];
+        MOV     A,#0x6
+        LCALL   ?XSTACK_DISP0_8
+        MOVX    A,@DPTR
+        MOV     DPL,?V0 + 8
+        MOV     DPH,?V0 + 9
+        MOVX    @DPTR,A
+//  196   *year = date_and_time[6];
+        MOV     A,#0x7
+        LCALL   ?XSTACK_DISP0_8
+        MOVX    A,@DPTR
+        MOV     DPL,?V0 + 10
+        MOV     DPH,?V0 + 11
+        MOVX    @DPTR,A
+//  197   
+//  198 } // end rtcReadDateAndTime function
+        MOV     A,#0x8
+        LCALL   ?DEALLOC_XSTACK8
+        MOV     R7,#0xc
+        LJMP    ?BANKED_LEAVE_XDATA
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+?Subroutine9:
+        MOVX    A,@DPTR
+        MOV     DPL,?V0 + 4
+        MOV     DPH,?V0 + 5
+        MOVX    @DPTR,A
+        RET
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+?Subroutine8:
+        MOVX    A,@DPTR
+        MOV     DPL,?V0 + 0
+        MOV     DPH,?V0 + 1
+        MOVX    @DPTR,A
+        RET
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+?Subroutine7:
+        MOVX    A,@DPTR
+        MOV     DPL,R6
+        MOV     DPH,R7
+        MOVX    @DPTR,A
+        MOV     A,#0x3
+        RET
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+?Subroutine6:
+        MOVX    A,@DPTR
+        MOV     DPL,?V0 + 2
+        MOV     DPH,?V0 + 3
+        MOVX    @DPTR,A
+        RET
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+?Subroutine4:
+        MOVX    A,@DPTR
+        MOV     ?V0 + 2,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     ?V0 + 3,A
+        RET
+//  199 
+//  200 
+//  201 /** \brief	Enable the alarm of M41T62 RTC
+//  202 *
+//  203 * write the Time and Date data to the alarm of M41T62 RTC
+//  204 *
+//  205 * \param[in]              alramMonth 01~12
+//  206 *     alramMonth data to write
+//  207 * \param[in]              alarmDate 01~31
+//  208 *     alarmDate data to write
+//  209 * \param[in]              alarmHour 00~23
+//  210 *     alarmHour data to write
+//  211 * \param[in]              alarmMinutes 00~59
+//  212 *     alarmMinutes data to write
+//  213 * \param[in]              alarmSeconds 00~59
+//  214 *     alarmSeconds data to write
+//  215 */
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+//  216 void rtcSetAlarm( uint8 alarmMonth, uint8 alarmDate, uint8 alarmHour
+rtcSetAlarm:
+        CODE
+//  217                   , uint8 alarmMinutes, uint8 alarmSeconds, uint8 repeatMode )
+//  218 {
+        MOV     A,#-0xb
+        LCALL   ?BANKED_ENTER_XDATA
+        ; Saved register size: 11
+        ; Auto size: 6
+        MOV     A,#-0x6
+        LCALL   ?ALLOC_XSTACK8
+        MOV     A,R1
+        MOV     R6,A
+        MOV     A,R2
+        MOV     R7,A
+        MOV     ?V0 + 0,R3
+        MOV     ?V0 + 1,R4
+        MOV     ?V0 + 2,R5
+//  219   
+//  220   uint8 rpt1 = repeatMode;
+//  221   uint8 rpt2 = repeatMode;
+//  222   uint8 rpt3 = repeatMode;
+//  223   uint8 rpt4 = repeatMode;
+//  224   uint8 rpt5 = repeatMode;
+//  225   rpt5 = ( rpt5&0x10 ) << 2;  // 0001 0000 >> 0100 0000
+//  226   rpt4 = ( rpt4&0x08 ) << 4;  // 0000 1000 >> 1000 0000
+//  227   rpt3 = ( rpt3&0x04 ) << 5;  // 0000 0100 >> 1000 0000
+//  228   rpt2 = ( rpt2&0x02 ) << 6;  // 0000 0010 >> 1000 0000
+//  229   rpt1 = ( rpt1&0x01 ) << 7;  // 0000 0001 >> 1000 0000
+//  230   
+//  231   uint8 set_alarm[6] = {RTC_M41T62_ALARM_MONTH, (0x80 | alarmMonth) , rpt4 + rpt5 + ( 0x3F & alarmDate ) , rpt3 + ( 0x3F & alarmHour )  , rpt2 + ( 0x7F & alarmMinutes ) , rpt1 + ( 0x7F & alarmSeconds )};
+        MOV     DPL,?XSP + 0
+        MOV     DPH,?XSP + 1
+        MOV     R4,DPL
+        MOV     R5,DPH
+        MOV     DPH,#(`?<Constant {10, 0, 0, 0, 0, 0}>` >> 8) & 0xff
+        MOV     DPL,#`?<Constant {10, 0, 0, 0, 0, 0}>` & 0xff
+        MOV     A,#0x6
+        LCALL   ?MOVE_LONG8_XDATA_XDATA
+        MOV     A,#-0x80
+        ORL     A,R6
+        PUSH    A
+        MOV     A,#0x1
+        LCALL   ?XSTACK_DISP0_8
+        POP     A
+        MOVX    @DPTR,A
+        MOV     A,#0x11
+        LCALL   ?XSTACK_DISP0_8
+        MOVX    A,@DPTR
+        MOV     R2,A
+        MOV     A,#0x3f
+        ANL     A,R7
+        MOV     R1,A
+        MOV     A,R2
+        MOV     C,0xE0 /* A   */.4
+        CLR     A
+        RLC     A
+        SWAP    A
+        RLC     A
+        RLC     A
+        MOV     R0,A
+        MOV     A,R2
+        MOV     C,0xE0 /* A   */.3
+        CLR     A
+        RLC     A
+        RRC     A
+        RRC     A
+        ADD     A,R0
+        ADD     A,R1
+        PUSH    A
+        MOV     A,#0x2
+        LCALL   ?XSTACK_DISP0_8
+        POP     A
+        MOVX    @DPTR,A
+        MOV     A,#0x3f
+        ANL     A,?V0 + 0
+        MOV     R0,A
+        MOV     A,R2
+        MOV     C,0xE0 /* A   */.2
+        CLR     A
+        RLC     A
+        RRC     A
+        RRC     A
+        ADD     A,R0
+        PUSH    A
+        MOV     A,#0x3
+        LCALL   ?XSTACK_DISP0_8
+        POP     A
+        MOVX    @DPTR,A
+        MOV     A,#0x7f
+        ANL     A,?V0 + 1
+        MOV     R0,A
+        MOV     A,R2
+        MOV     C,0xE0 /* A   */.1
+        CLR     A
+        RLC     A
+        RRC     A
+        RRC     A
+        ADD     A,R0
+        PUSH    A
+        MOV     A,#0x4
+        LCALL   ?XSTACK_DISP0_8
+        POP     A
+        MOVX    @DPTR,A
+        MOV     A,#0x7f
+        ANL     A,?V0 + 2
+        MOV     R0,A
+        MOV     A,R2
+        MOV     C,0xE0 /* A   */.0
+        CLR     A
+        RLC     A
+        RRC     A
+        RRC     A
+        ADD     A,R0
+        PUSH    A
+        MOV     A,#0x5
+        LCALL   ?XSTACK_DISP0_8
+        POP     A
+        LCALL   ?Subroutine10 & 0xFFFF
+//  232   
+//  233   HalI2CWrite(6,set_alarm);
+??CrossCallReturnLabel_19:
+        MOV     R1,#0x6
+        LCALL   ??HalI2CWrite?relay
+//  234   
+//  235 //  rtcGetAlarmStatus();
+//  236 } // end function rtcSetAlarm
+        MOV     A,#0x6
+        LJMP    ?Subroutine1 & 0xFFFF
+//  237 
+//  238 
+//  239 /** \brief	read the alarm of M41T62 RTC
+//  240 *
+//  241 * read the Time and Date data to the alarm of M41T62 RTC
+//  242 *
+//  243 * \param[in]              alramMonth
+//  244 *     alramMonth data to read
+//  245 * \param[in]              alarmDate
+//  246 *     alarmDate data to read
+//  247 * \param[in]              alarmHour
+//  248 *     alarmHour data to read
+//  249 * \param[in]              alarmMinutes
+//  250 *     alarmMinutes data to read
+//  251 * \param[in]              alarmSeconds
+//  252 *     alarmSeconds data to read
+//  253 */
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+//  254 void rtcGetAlarm( unsigned char* alarmMonth, unsigned char* alarmDate, unsigned char* alarmHour
+rtcGetAlarm:
+        CODE
+//  255                  , unsigned char* alarmMinutes, unsigned char* alarmSeconds, unsigned char* alarmReMode )
+//  256 {
+        MOV     A,#-0x10
+        LCALL   ?BANKED_ENTER_XDATA
+        ; Saved register size: 16
+        ; Auto size: 6
+        MOV     A,#-0x6
+        LCALL   ?ALLOC_XSTACK8
+        MOV     ?V0 + 6,R2
+        MOV     ?V0 + 7,R3
+        MOV     ?V0 + 4,R4
+        MOV     ?V0 + 5,R5
+        MOV     A,#0x16
+        LCALL   ?XSTACK_DISP0_8
+        LCALL   ?Subroutine4 & 0xFFFF
+??CrossCallReturnLabel_5:
+        MOV     A,#0x18
+        LCALL   ?XSTACK_DISP0_8
+        MOVX    A,@DPTR
+        MOV     R6,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R7,A
+        MOV     A,#0x1a
+        LCALL   ?XSTACK_DISP0_8
+        MOVX    A,@DPTR
+        MOV     ?V0 + 0,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     ?V0 + 1,A
+//  257   uint8 get_alarm[5] = {0,0,0,0,0};
+        MOV     DPL,?XSP + 0
+        MOV     DPH,?XSP + 1
+        MOV     R4,DPL
+        MOV     R5,DPH
+        MOV     DPH,#(`?<Constant {0, 0, 0, 0, 0}>` >> 8) & 0xff
+        MOV     DPL,#`?<Constant {0, 0, 0, 0, 0}>` & 0xff
+        MOV     A,#0x5
+        LCALL   ?MOVE_LONG8_XDATA_XDATA
+//  258   uint8 reg_addr = RTC_M41T62_ALARM_MONTH;
+        MOV     A,#0x5
+        LCALL   ?XSTACK_DISP0_8
+        MOV     A,#0xa
+        LCALL   ?Subroutine11 & 0xFFFF
+//  259   
+//  260   HalI2CWrite(1,&reg_addr); 
+??CrossCallReturnLabel_21:
+        LCALL   ??HalI2CWrite?relay
+//  261   HalI2CRead(5,get_alarm);
+        ; Setup parameters for call to function HalI2CRead
+        MOV     DPL,?XSP + 0
+        MOV     DPH,?XSP + 1
+        MOV     R2,DPL
+        MOV     R3,DPH
+        MOV     R1,#0x5
+        LCALL   ??HalI2CRead?relay
+//  262    
+//  263   *alarmMonth = get_alarm[0]&0x1F;
+        MOV     DPL,?XSP + 0
+        MOV     DPH,?XSP + 1
+        MOVX    A,@DPTR
+        ANL     A,#0x1f
+        MOV     DPL,?V0 + 6
+        MOV     DPH,?V0 + 7
+        MOVX    @DPTR,A
+//  264   *alarmDate = get_alarm[1]&0x3F;
+        MOV     A,#0x1
+        LCALL   ?XSTACK_DISP0_8
+        MOVX    A,@DPTR
+        ANL     A,#0x3f
+        MOV     DPL,?V0 + 4
+        MOV     DPH,?V0 + 5
+        MOVX    @DPTR,A
+//  265   *alarmHour = get_alarm[2]&0x3F;
+        MOV     A,#0x2
+        LCALL   ?XSTACK_DISP0_8
+        MOVX    A,@DPTR
+        ANL     A,#0x3f
+        MOV     DPL,?V0 + 2
+        MOV     DPH,?V0 + 3
+        MOVX    @DPTR,A
+//  266   *alarmMinutes = get_alarm[3]&0x7F;
+        MOV     A,#0x3
+        LCALL   ?XSTACK_DISP0_8
+        MOVX    A,@DPTR
+        ANL     A,#0x7f
+        MOV     DPL,R6
+        MOV     DPH,R7
+        MOVX    @DPTR,A
+//  267   *alarmSeconds = get_alarm[4]&0x7F;
+        MOV     A,#0x4
+        LCALL   ?XSTACK_DISP0_8
+        MOVX    A,@DPTR
+        ANL     A,#0x7f
+        MOV     DPL,?V0 + 0
+        MOV     DPH,?V0 + 1
+        MOVX    @DPTR,A
+        MOV     A,#0x1c
+        LCALL   ?XSTACK_DISP0_8
+        MOVX    A,@DPTR
+        MOV     R0,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R1,A
+//  268   
+//  269   *alarmReMode = 0x00;
+        MOV     DPL,R0
+        MOV     DPH,R1
+        CLR     A
+        MOVX    @DPTR,A
+//  270   
+//  271   /* rpt bit 5 */
+//  272   *alarmReMode += ((get_alarm[1]&0x40)>>2);
+        INC     A
+        LCALL   ?XSTACK_DISP0_8
+        MOVX    A,@DPTR
+        MOV     C,0xE0 /* A   */.6
+        CLR     A
+        RLC     A
+        SWAP    A
+        MOV     DPL,R0
+        MOV     DPH,R1
+        MOVX    @DPTR,A
+//  273     /* rpt bit 4 */
+//  274   *alarmReMode += ((get_alarm[1]&0x80)>>4);
+        MOV     A,#0x1
+        LCALL   ?XSTACK_DISP0_8
+        LCALL   ?Subroutine5 & 0xFFFF
+??CrossCallReturnLabel_6:
+        RLC     A
+        RLC     A
+        MOV     R2,A
+        MOV     DPL,R0
+        MOV     DPH,R1
+        MOVX    A,@DPTR
+        ADD     A,R2
+        MOVX    @DPTR,A
+//  275     /* rpt bit 3 */
+//  276   *alarmReMode += ((get_alarm[2]&0x80)>>5);
+        MOV     A,#0x2
+        LCALL   ?XSTACK_DISP0_8
+        LCALL   ?Subroutine5 & 0xFFFF
+??CrossCallReturnLabel_7:
+        RLC     A
+        MOV     R2,A
+        MOV     DPL,R0
+        MOV     DPH,R1
+        MOVX    A,@DPTR
+        ADD     A,R2
+        MOVX    @DPTR,A
+//  277     /* rpt bit 2 */
+//  278   *alarmReMode += ((get_alarm[3]&0x80)>>6);
+        MOV     A,#0x3
+        LCALL   ?XSTACK_DISP0_8
+        LCALL   ?Subroutine5 & 0xFFFF
+??CrossCallReturnLabel_8:
+        MOV     R2,A
+        MOV     DPL,R0
+        MOV     DPH,R1
+        MOVX    A,@DPTR
+        ADD     A,R2
+        MOVX    @DPTR,A
+//  279     /* rpt bit 1 */
+//  280   *alarmReMode += ((get_alarm[4]&0x80)>>7);
+        MOV     A,#0x4
+        LCALL   ?XSTACK_DISP0_8
+        MOVX    A,@DPTR
+        MOV     C,0xE0 /* A   */.7
+        CLR     A
+        RLC     A
+        MOV     R2,A
+        MOV     DPL,R0
+        MOV     DPH,R1
+        MOVX    A,@DPTR
+        ADD     A,R2
+        MOVX    @DPTR,A
+//  281     
+//  282     
+//  283 } // end function rtcGetAlarm
+        MOV     A,#0x6
+        LJMP    ?Subroutine2 & 0xFFFF
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+?Subroutine11:
+        MOVX    @DPTR,A
+        ; Setup parameters for call to function HalI2CWrite
+        ; Setup parameters for call to function HalI2CWrite
+        ; Setup parameters for call to function HalI2CWrite
+        MOV     R2,DPL
+        MOV     R3,DPH
+        MOV     R1,#0x1
+        RET
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+?Subroutine5:
+        MOVX    A,@DPTR
+        MOV     C,0xE0 /* A   */.7
+        CLR     A
+        RLC     A
+        RLC     A
+        RET
+//  284 
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+//  285 uint8 rtcGetAlarmStatus( void )
+rtcGetAlarmStatus:
+        CODE
+//  286 {
+        PUSH    DPL
+        PUSH    DPH
+        ; Saved register size: 2
+        ; Auto size: 2
+        MOV     A,#-0x2
+        LCALL   ?ALLOC_XSTACK8
+//  287   
+//  288   uint8 get_alstatus = 0xFF;
+        MOV     DPL,?XSP + 0
+        MOV     DPH,?XSP + 1
+        MOV     A,#-0x1
+        MOVX    @DPTR,A
+//  289   uint8 reg_addr = RTC_M41T62_FLAGS;
+        MOV     A,#0x1
+        LCALL   ?XSTACK_DISP0_8
+        MOV     A,#0xf
+        LCALL   ?Subroutine11 & 0xFFFF
+//  290   
+//  291   HalI2CWrite(1,&reg_addr); 
+??CrossCallReturnLabel_22:
+        LCALL   ??HalI2CWrite?relay
+//  292   HalI2CRead(1,&get_alstatus);
+        ; Setup parameters for call to function HalI2CRead
+        MOV     DPL,?XSP + 0
+        MOV     DPH,?XSP + 1
+        MOV     R2,DPL
+        MOV     R3,DPH
+        MOV     R1,#0x1
+        LCALL   ??HalI2CRead?relay
+//  293    
+//  294   return get_alstatus;
+        MOV     DPL,?XSP + 0
+        MOV     DPH,?XSP + 1
+        MOVX    A,@DPTR
+        MOV     R1,A
+        LJMP    ?Subroutine0 & 0xFFFF
+//  295   
+//  296 } // end function rtcGetAlarmStatus
+
+        RSEG XDATA_ID:CODE:NOROOT(0)
+`?<Initializer for slaveAddress>`:
+        DATA8
+        DB 104
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??rtcInit?relay:
+        CODE
+        LCALL   ?BDISPATCH
+        DATA24
+        DC24    rtcInit
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??rtcSetTime?relay:
+        CODE
+        LCALL   ?BDISPATCH
+        DATA24
+        DC24    rtcSetTime
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??rtcGetTime?relay:
+        CODE
+        LCALL   ?BDISPATCH
+        DATA24
+        DC24    rtcGetTime
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??rtcSetDate?relay:
+        CODE
+        LCALL   ?BDISPATCH
+        DATA24
+        DC24    rtcSetDate
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??rtcGetDate?relay:
+        CODE
+        LCALL   ?BDISPATCH
+        DATA24
+        DC24    rtcGetDate
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??rtcReadDateAndTime?relay:
+        CODE
+        LCALL   ?BDISPATCH
+        DATA24
+        DC24    rtcReadDateAndTime
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??rtcSetAlarm?relay:
+        CODE
+        LCALL   ?BDISPATCH
+        DATA24
+        DC24    rtcSetAlarm
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??rtcGetAlarm?relay:
+        CODE
+        LCALL   ?BDISPATCH
+        DATA24
+        DC24    rtcGetAlarm
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??rtcGetAlarmStatus?relay:
+        CODE
+        LCALL   ?BDISPATCH
+        DATA24
+        DC24    rtcGetAlarmStatus
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA16
+`?<Constant {15, 0}>`:
+        DATA8
+        DB 15
+        DB 0
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA32
+`?<Constant {1, 0, 0, 0}>`:
+        DATA8
+        DB 1
+        DB 0
+        DB 0
+        DB 0
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA8
+`?<Constant {0, 0, 0}>`:
+        DB 0
+        DB 0
+        DB 0
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA8
+`?<Constant {4, 0, 0, 0, 0}>`:
+        DB 4
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA32
+`?<Constant {0, 0, 0, 0}>`:
+        DATA8
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA8
+`?<Constant {0, 0, 0, 0, 0, 0, 0}>`:
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA8
+`?<Constant {10, 0, 0, 0, 0, 0}>`:
+        DB 10
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA8
+`?<Constant {0, 0, 0, 0, 0}>`:
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+
+        END
+//  297 
+//  298 
+// 
+// 1 332 bytes in segment BANKED_CODE
+//    54 bytes in segment BANK_RELAYS
+//     8 bytes in segment SFR_AN
+//     1 byte  in segment XDATA_I
+//     1 byte  in segment XDATA_ID
+//    36 bytes in segment XDATA_ROM_C
+// 
+// 1 387 bytes of CODE  memory
+//    36 bytes of CONST memory
+//     0 bytes of DATA  memory (+ 8 bytes shared)
+//     1 byte  of XDATA memory
+//
+//Errors: none
+//Warnings: none

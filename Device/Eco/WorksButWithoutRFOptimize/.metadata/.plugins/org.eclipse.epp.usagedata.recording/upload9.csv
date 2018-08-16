@@ -1,0 +1,26 @@
+what,kind,bundleId,bundleVersion,description,time
+activated,workbench,org.eclipse.ui.workbench,3.5.1.M20090826-0800a,"",1390282417787
+activated,view,org.eclipse.ui.navigator.resources,3.4.1.M20090826-0800,"org.eclipse.ui.navigator.ProjectExplorer",1390282426838
+deactivated,workbench,org.eclipse.ui.workbench,3.5.1.M20090826-0800a,"",1390282435930
+error,log,,,"Problems occurred when invoking code from plug-in: ""org.eclipse.jface"".",1390282439160
+error,log,,,"Problems occurred when invoking code from plug-in: ""org.eclipse.jface"".",1390282440654
+activated,workbench,org.eclipse.ui.workbench,3.5.1.M20090826-0800a,"",1390282442637
+executed,command,org.eclipse.ui,3.5.1.M20090902-1000,"org.eclipse.ui.file.properties",1390282442661
+deactivated,workbench,org.eclipse.ui.workbench,3.5.1.M20090826-0800a,"",1390282454549
+activated,workbench,org.eclipse.ui.workbench,3.5.1.M20090826-0800a,"",1390282468979
+activated,editor,org.eclipse.ui.editors,3.5.0.v20090527-2000,"org.eclipse.ui.DefaultTextEditor",1390282471383
+activated,view,org.eclipse.ui.console,3.4.0.v20090513,"org.eclipse.ui.console.ConsoleView",1390282474724
+deactivated,workbench,org.eclipse.ui.workbench,3.5.1.M20090826-0800a,"",1390282558512
+activated,workbench,org.eclipse.ui.workbench,3.5.1.M20090826-0800a,"",1390282823323
+activated,editor,org.eclipse.ui.editors,3.5.0.v20090527-2000,"org.eclipse.ui.DefaultTextEditor",1390282823352
+executed,command,org.eclipse.ui,3.5.1.M20090902-1000,"org.eclipse.ui.file.save",1390282826889
+deactivated,workbench,org.eclipse.ui.workbench,3.5.1.M20090826-0800a,"",1390282828798
+activated,workbench,org.eclipse.ui.workbench,3.5.1.M20090826-0800a,"",1390282828844
+deactivated,workbench,org.eclipse.ui.workbench,3.5.1.M20090826-0800a,"",1390282828861
+activated,workbench,org.eclipse.ui.workbench,3.5.1.M20090826-0800a,"",1390282830710
+deactivated,workbench,org.eclipse.ui.workbench,3.5.1.M20090826-0800a,"",1390282832766
+activated,workbench,org.eclipse.ui.workbench,3.5.1.M20090826-0800a,"",1390282833150
+activated,view,org.eclipse.ui.console,3.4.0.v20090513,"org.eclipse.ui.console.ConsoleView",1390282847979
+activated,view,org.eclipse.ui.navigator.resources,3.4.1.M20090826-0800,"org.eclipse.ui.navigator.ProjectExplorer",1390282863185
+activated,editor,org.eclipse.ui.editors,3.5.0.v20090527-2000,"org.eclipse.ui.DefaultTextEditor",1390282863665
+executed,command,,,"AUTOGEN:::org.eclipse.ui.texteditor.ruler.actions/org.eclipse.ui.texteditor.SelectRulerAction",1390282868080

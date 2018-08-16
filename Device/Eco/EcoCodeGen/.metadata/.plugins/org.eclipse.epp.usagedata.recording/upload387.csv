@@ -1,0 +1,17 @@
+what,kind,bundleId,bundleVersion,description,time
+deactivated,workbench,org.eclipse.ui.workbench,3.5.1.M20090826-0800a,"",1394780958425
+activated,workbench,org.eclipse.ui.workbench,3.5.1.M20090826-0800a,"",1394780959828
+deactivated,workbench,org.eclipse.ui.workbench,3.5.1.M20090826-0800a,"",1394780966728
+activated,workbench,org.eclipse.ui.workbench,3.5.1.M20090826-0800a,"",1394780976938
+deactivated,workbench,org.eclipse.ui.workbench,3.5.1.M20090826-0800a,"",1394780984706
+activated,workbench,org.eclipse.ui.workbench,3.5.1.M20090826-0800a,"",1394781017347
+deactivated,workbench,org.eclipse.ui.workbench,3.5.1.M20090826-0800a,"",1394781022862
+activated,workbench,org.eclipse.ui.workbench,3.5.1.M20090826-0800a,"",1394781024086
+closed,workbench,org.eclipse.ui.workbench,3.5.1.M20090826-0800a,"",1394781024254
+stopped,bundle,org.eclipse.cdt.debug.mi.ui,6.0.0.200909110608,"org.eclipse.cdt.debug.mi.ui",1394781025321
+stopped,bundle,org.eclipse.cdt.debug.mi.core,6.0.0.200909110608,"org.eclipse.cdt.debug.mi.core",1394781025321
+stopped,bundle,org.eclipse.cdt.dsf.gdb.ui,2.0.0.200909110608,"org.eclipse.cdt.dsf.gdb.ui",1394781025369
+stopped,bundle,org.eclipse.cdt.dsf.ui,2.0.1.200909110608,"org.eclipse.cdt.dsf.ui",1394781025388
+stopped,bundle,org.eclipse.cdt.launch,6.0.0.200909110608,"org.eclipse.cdt.launch",1394781025389
+stopped,bundle,org.eclipse.cdt.debug.ui,6.0.0.200909110608,"org.eclipse.cdt.debug.ui",1394781025389
+stopped,bundle,org.eclipse.cdt.dsf.gdb,2.0.0.200909110608,"org.eclipse.cdt.dsf.gdb",1394781025430

@@ -1,0 +1,2446 @@
+///////////////////////////////////////////////////////////////////////////////
+//                                                                            /
+// IAR C/C++ Compiler V8.20.1.40829 for 8051            23/May/2014  20:10:21 /
+// Copyright 2004-2012 IAR Systems AB.                                        /
+//                                                                            /
+//    Core               =  plain                                             /
+//    Code model         =  banked                                            /
+//    Data model         =  large                                             /
+//    Calling convention =  xdata reentrant                                   /
+//    Constant location  =  data_rom                                          /
+//    Dptr setup         =  1,16                                              /
+//                                                                            /
+//    Source file        =  D:\NTHU\¬ã¨s\Important\ThesisCode\Code\GitLabClou /
+//                          d\NewEcoExec\codegenerator\Device\EcoBT\Component /
+//                          s\osal\mcu\cc2540\osal_snv.c                      /
+//    Command line       =  -f D:\NTHU\¬ã¨s\Important\ThesisCode\Code\GitLabC /
+//                          loud\NewEcoExec\codegenerator\Device\EcoBT\Projec /
+//                          t\ble\CodeGenerator\CC2540DB\..\..\config\buildCo /
+//                          mponents.cfg (-DBROADCASTER_CFG=0x01              /
+//                          -DOBSERVER_CFG=0x02 -DPERIPHERAL_CFG=0x04         /
+//                          -DCENTRAL_CFG=0x08 -DADV_NCONN_CFG=0x01           /
+//                          -DADV_CONN_CFG=0x02 -DSCAN_CFG=0x04               /
+//                          -DINIT_CFG=0x08 -DADV_CFG=ADV_NCONN_CFG+ADV_CONN_ /
+//                          CFG -DLINK_CFG=ADV_CONN_CFG+INIT_CFG              /
+//                          -DFULL_CFG=INIT_CFG+SCAN_CFG+ADV_NCONN_CFG+ADV_CO /
+//                          NN_CFG) -f D:\NTHU\¬ã¨s\Important\ThesisCode\Code /
+//                          \GitLabCloud\NewEcoExec\codegenerator\Device\EcoB /
+//                          T\Project\ble\CodeGenerator\CC2540DB\buildConfig. /
+//                          cfg (-DHOST_CONFIG=PERIPHERAL_CFG                 /
+//                          -DGAP_PRIVACY_RECONNECT)                          /
+//                          D:\NTHU\¬ã¨s\Important\ThesisCode\Code\GitLabClou /
+//                          d\NewEcoExec\codegenerator\Device\EcoBT\Component /
+//                          s\osal\mcu\cc2540\osal_snv.c -D INT_HEAP_LEN=900  /
+//                          -D HALNODEBUG -D OSAL_CBTIMER_NUM_TASKS=1 -D      /
+//                          HAL_AES_DMA=TRUE -D HAL_DMA=TRUE -D               /
+//                          xPOWER_SAVING -D xPLUS_BROADCASTER -D             /
+//                          HAL_LCD=FALSE -D HAL_LED=TRUE -D HAL_ADC=TRUE     /
+//                          -lB D:\NTHU\¬ã¨s\Important\ThesisCode\Code\GitLab /
+//                          Cloud\NewEcoExec\codegenerator\Device\EcoBT\Proje /
+//                          ct\ble\CodeGenerator\CC2540DB\CC2540\List\ -o     /
+//                          D:\NTHU\¬ã¨s\Important\ThesisCode\Code\GitLabClou /
+//                          d\NewEcoExec\codegenerator\Device\EcoBT\Project\b /
+//                          le\CodeGenerator\CC2540DB\CC2540\Obj\ -e --debug  /
+//                          --core=plain --dptr=16,1 --data_model=large       /
+//                          --code_model=banked --calling_convention=xdata_re /
+//                          entrant --place_constants=data_rom                /
+//                          --nr_virtual_regs 16 -I                           /
+//                          D:\NTHU\¬ã¨s\Important\ThesisCode\Code\GitLabClou /
+//                          d\NewEcoExec\codegenerator\Device\EcoBT\Project\b /
+//                          le\CodeGenerator\CC2540DB\..\..\common\ -I        /
+//                          D:\NTHU\¬ã¨s\Important\ThesisCode\Code\GitLabClou /
+//                          d\NewEcoExec\codegenerator\Device\EcoBT\Project\b /
+//                          le\CodeGenerator\CC2540DB\..\..\include\ -I       /
+//                          D:\NTHU\¬ã¨s\Important\ThesisCode\Code\GitLabClou /
+//                          d\NewEcoExec\codegenerator\Device\EcoBT\Project\b /
+//                          le\CodeGenerator\CC2540DB\..\..\..\..\Components\ /
+//                          hal\include\ -I D:\NTHU\¬ã¨s\Important\ThesisCode /
+//                          \Code\GitLabCloud\NewEcoExec\codegenerator\Device /
+//                          \EcoBT\Project\ble\CodeGenerator\CC2540DB\..\..\. /
+//                          .\..\Components\hal\target\CC2540EB\ -I           /
+//                          D:\NTHU\¬ã¨s\Important\ThesisCode\Code\GitLabClou /
+//                          d\NewEcoExec\codegenerator\Device\EcoBT\Project\b /
+//                          le\CodeGenerator\CC2540DB\..\..\..\..\Components\ /
+//                          osal\include\ -I D:\NTHU\¬ã¨s\Important\ThesisCod /
+//                          e\Code\GitLabCloud\NewEcoExec\codegenerator\Devic /
+//                          e\EcoBT\Project\ble\CodeGenerator\CC2540DB\..\..\ /
+//                          ..\..\Components\services\saddr\ -I               /
+//                          D:\NTHU\¬ã¨s\Important\ThesisCode\Code\GitLabClou /
+//                          d\NewEcoExec\codegenerator\Device\EcoBT\Project\b /
+//                          le\CodeGenerator\CC2540DB\..\..\..\..\Components\ /
+//                          ble\include\ -I D:\NTHU\¬ã¨s\Important\ThesisCode /
+//                          \Code\GitLabCloud\NewEcoExec\codegenerator\Device /
+//                          \EcoBT\Project\ble\CodeGenerator\CC2540DB\..\..\. /
+//                          .\..\Components\ble\controller\phy\ -I            /
+//                          D:\NTHU\¬ã¨s\Important\ThesisCode\Code\GitLabClou /
+//                          d\NewEcoExec\codegenerator\Device\EcoBT\Project\b /
+//                          le\CodeGenerator\CC2540DB\..\..\..\..\Components\ /
+//                          ble\controller\include\ -I                        /
+//                          D:\NTHU\¬ã¨s\Important\ThesisCode\Code\GitLabClou /
+//                          d\NewEcoExec\codegenerator\Device\EcoBT\Project\b /
+//                          le\CodeGenerator\CC2540DB\..\..\..\..\Components\ /
+//                          ble\hci\ -I D:\NTHU\¬ã¨s\Important\ThesisCode\Cod /
+//                          e\GitLabCloud\NewEcoExec\codegenerator\Device\Eco /
+//                          BT\Project\ble\CodeGenerator\CC2540DB\..\..\..\.. /
+//                          \Components\ble\host\ -I                          /
+//                          D:\NTHU\¬ã¨s\Important\ThesisCode\Code\GitLabClou /
+//                          d\NewEcoExec\codegenerator\Device\EcoBT\Project\b /
+//                          le\CodeGenerator\CC2540DB\..\..\common\cc2540\    /
+//                          -I D:\NTHU\¬ã¨s\Important\ThesisCode\Code\GitLabC /
+//                          loud\NewEcoExec\codegenerator\Device\EcoBT\Projec /
+//                          t\ble\CodeGenerator\CC2540DB\..\..\common\npi\npi /
+//                          _np\ -I D:\NTHU\¬ã¨s\Important\ThesisCode\Code\Gi /
+//                          tLabCloud\NewEcoExec\codegenerator\Device\EcoBT\P /
+//                          roject\ble\CodeGenerator\CC2540DB\..\..\Profiles\ /
+//                          Roles\ -I D:\NTHU\¬ã¨s\Important\ThesisCode\Code\ /
+//                          GitLabCloud\NewEcoExec\codegenerator\Device\EcoBT /
+//                          \Project\ble\CodeGenerator\CC2540DB\..\..\Profile /
+//                          s\SimpleProfile\ -I D:\NTHU\¬ã¨s\Important\Thesis /
+//                          Code\Code\GitLabCloud\NewEcoExec\codegenerator\De /
+//                          vice\EcoBT\Project\ble\CodeGenerator\CC2540DB\..\ /
+//                          ..\Profiles\DevInfo\ -I                           /
+//                          D:\NTHU\¬ã¨s\Important\ThesisCode\Code\GitLabClou /
+//                          d\NewEcoExec\codegenerator\Device\EcoBT\Project\b /
+//                          le\CodeGenerator\CC2540DB\..\..\Profiles\Accelero /
+//                          meter\ -I D:\NTHU\¬ã¨s\Important\ThesisCode\Code\ /
+//                          GitLabCloud\NewEcoExec\codegenerator\Device\EcoBT /
+//                          \Project\ble\CodeGenerator\CC2540DB\..\..\Profile /
+//                          s\EcoExecGATTProfile\ -I                          /
+//                          D:\NTHU\¬ã¨s\Important\ThesisCode\Code\GitLabClou /
+//                          d\NewEcoExec\codegenerator\Device\EcoBT\Project\b /
+//                          le\CodeGenerator\CC2540DB\..\..\Profiles\Batt\    /
+//                          -I D:\NTHU\¬ã¨s\Important\ThesisCode\Code\GitLabC /
+//                          loud\NewEcoExec\codegenerator\Device\EcoBT\Projec /
+//                          t\ble\CodeGenerator\CC2540DB\..\..\Profiles\HIDDe /
+//                          v\ -Ohz                                           /
+//    List file          =  D:\NTHU\¬ã¨s\Important\ThesisCode\Code\GitLabClou /
+//                          d\NewEcoExec\codegenerator\Device\EcoBT\Project\b /
+//                          le\CodeGenerator\CC2540DB\CC2540\List\osal_snv.s5 /
+//                          1                                                 /
+//                                                                            /
+//                                                                            /
+///////////////////////////////////////////////////////////////////////////////
+
+        NAME osal_snv
+
+        RSEG DOVERLAY:DATA:NOROOT(0)
+        RSEG IOVERLAY:IDATA:NOROOT(0)
+        RSEG ISTACK:IDATA:NOROOT(0)
+        RSEG PSTACK:XDATA:NOROOT(0)
+        RSEG XSTACK:XDATA:NOROOT(0)
+
+        EXTERN ?ALLOC_XSTACK8
+        EXTERN ?BANKED_ENTER_XDATA
+        EXTERN ?BANKED_LEAVE_XDATA
+        EXTERN ?BDISPATCH
+        EXTERN ?BRET
+        EXTERN ?DEALLOC_XSTACK8
+        EXTERN ?L_EQ_X
+        EXTERN ?L_MOV_X
+        EXTERN ?PUSH_XSTACK_I_ONE
+        EXTERN ?PUSH_XSTACK_I_TWO
+        EXTERN ?S_DIV_MOD
+        EXTERN ?S_SHL
+        EXTERN ?US_SHR
+        EXTERN ?V0
+        EXTERN ?XSP
+        EXTERN ?XSTACK_DISP0_8
+        EXTERN __INIT_XDATA_Z
+
+        PUBLIC ??osal_snv_init?relay
+        PUBLIC ??osal_snv_read?relay
+        PUBLIC ??osal_snv_write?relay
+        PUBWEAK __Constant_100000
+        PUBWEAK __Constant_ffffffff
+        PUBLIC _nvBuf
+        PUBLIC osal_snv_init
+        PUBLIC osal_snv_read
+        PUBLIC osal_snv_write
+
+HalFlashErase       SYMBOL "HalFlashErase"
+??HalFlashErase?relay SYMBOL "?relay", HalFlashErase
+HalFlashRead        SYMBOL "HalFlashRead"
+??HalFlashRead?relay SYMBOL "?relay", HalFlashRead
+HalFlashWrite       SYMBOL "HalFlashWrite"
+??HalFlashWrite?relay SYMBOL "?relay", HalFlashWrite
+osal_memcmp         SYMBOL "osal_memcmp"
+??osal_memcmp?relay SYMBOL "?relay", osal_memcmp
+osal_snv_init       SYMBOL "osal_snv_init"
+??osal_snv_init?relay SYMBOL "?relay", osal_snv_init
+osal_snv_read       SYMBOL "osal_snv_read"
+??osal_snv_read?relay SYMBOL "?relay", osal_snv_read
+osal_snv_write      SYMBOL "osal_snv_write"
+??osal_snv_write?relay SYMBOL "?relay", osal_snv_write
+
+        EXTERN ??HalFlashErase?relay
+        EXTERN ??HalFlashRead?relay
+        EXTERN ??HalFlashWrite?relay
+        EXTERN ??osal_memcmp?relay
+        EXTERN HalFlashErase
+        EXTERN HalFlashRead
+        EXTERN HalFlashWrite
+        EXTERN osal_memcmp
+
+// D:\NTHU\¬ã¨s\Important\ThesisCode\Code\GitLabCloud\NewEcoExec\codegenerator\Device\EcoBT\Components\osal\mcu\cc2540\osal_snv.c
+//    1 /**************************************************************************************************
+//    2   Filename:       osal_snv.c
+//    3   Revised:        $Date: 2012-10-31 08:33:49 -0700 (Wed, 31 Oct 2012) $
+//    4   Revision:       $Revision: 31988 $
+//    5 
+//    6   Description:    This module contains the OSAL simple non-volatile memory functions.
+//    7 
+//    8 
+//    9   Copyright 2009-2012 Texas Instruments Incorporated. All rights reserved.
+//   10 
+//   11   IMPORTANT: Your use of this Software is limited to those specific rights
+//   12   granted under the terms of a software license agreement between the user
+//   13   who downloaded the software, his/her employer (which must be your employer)
+//   14   and Texas Instruments Incorporated (the "License").  You may not use this
+//   15   Software unless you agree to abide by the terms of the License. The License
+//   16   limits your use, and you acknowledge, that the Software may not be modified,
+//   17   copied or distributed unless embedded on a Texas Instruments microcontroller
+//   18   or used solely and exclusively in conjunction with a Texas Instruments radio
+//   19   frequency transceiver, which is integrated into your product.  Other than for
+//   20   the foregoing purpose, you may not use, reproduce, copy, prepare derivative
+//   21   works of, modify, distribute, perform, display or sell this Software and/or
+//   22   its documentation for any purpose.
+//   23 
+//   24   YOU FURTHER ACKNOWLEDGE AND AGREE THAT THE SOFTWARE AND DOCUMENTATION ARE
+//   25   PROVIDED “AS IS” WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESS OR IMPLIED,
+//   26   INCLUDING WITHOUT LIMITATION, ANY WARRANTY OF MERCHANTABILITY, TITLE,
+//   27   NON-INFRINGEMENT AND FITNESS FOR A PARTICULAR PURPOSE. IN NO EVENT SHALL
+//   28   TEXAS INSTRUMENTS OR ITS LICENSORS BE LIABLE OR OBLIGATED UNDER CONTRACT,
+//   29   NEGLIGENCE, STRICT LIABILITY, CONTRIBUTION, BREACH OF WARRANTY, OR OTHER
+//   30   LEGAL EQUITABLE THEORY ANY DIRECT OR INDIRECT DAMAGES OR EXPENSES
+//   31   INCLUDING BUT NOT LIMITED TO ANY INCIDENTAL, SPECIAL, INDIRECT, PUNITIVE
+//   32   OR CONSEQUENTIAL DAMAGES, LOST PROFITS OR LOST DATA, COST OF PROCUREMENT
+//   33   OF SUBSTITUTE GOODS, TECHNOLOGY, SERVICES, OR ANY CLAIMS BY THIRD PARTIES
+//   34   (INCLUDING BUT NOT LIMITED TO ANY DEFENSE THEREOF), OR OTHER SIMILAR COSTS.
+//   35 
+//   36   Should you have any questions regarding your right to use this Software,
+//   37   contact Texas Instruments Incorporated at www.TI.com.
+//   38 **************************************************************************************************/
+//   39 
+//   40 /*********************************************************************
+//   41  * INCLUDES
+//   42  */
+//   43 
+//   44 #include "hal_adc.h"
+//   45 #include "hal_flash.h"
+//   46 #include "hal_types.h"
+//   47 #include "comdef.h"
+//   48 #include "OSAL.h"
+//   49 #include "osal_snv.h"
+//   50 #include "hal_assert.h"
+//   51 #include "saddr.h"
+//   52 
+//   53 #ifdef OSAL_SNV_UINT16_ID
+//   54 # error "This OSAL SNV implementation does not support the extended ID space"
+//   55 #endif
+//   56 
+//   57 /*********************************************************************
+//   58  * CONSTANTS
+//   59  */
+//   60 
+//   61 // NV page configuration
+//   62 #define OSAL_NV_PAGE_SIZE       HAL_FLASH_PAGE_SIZE
+//   63 #define OSAL_NV_PAGES_USED      HAL_NV_PAGE_CNT
+//   64 #define OSAL_NV_PAGE_BEG        HAL_NV_PAGE_BEG
+//   65 #define OSAL_NV_PAGE_END       (OSAL_NV_PAGE_BEG + OSAL_NV_PAGES_USED - 1)
+//   66 
+//   67 // Default byte value when flash is erased
+//   68 #define OSAL_NV_ERASED          0xFF
+//   69 
+//   70 // NV page header size in bytes
+//   71 #define OSAL_NV_PAGE_HDR_SIZE  4
+//   72 
+//   73 // In case pages 0-1 are ever used, define a null page value.
+//   74 #define OSAL_NV_PAGE_NULL       0
+//   75 
+//   76 // In case item Id 0 is ever used, define a null item value.
+//   77 #define OSAL_NV_ITEM_NULL       0
+//   78 
+//   79 // Length in bytes of a flash word
+//   80 #define OSAL_NV_WORD_SIZE       HAL_FLASH_WORD_SIZE
+//   81 
+//   82 // NV page header offset within a page
+//   83 #define OSAL_NV_PAGE_HDR_OFFSET 0
+//   84 
+//   85 
+//   86 // Flag in a length field of an item header to indicate validity
+//   87 // of the length field
+//   88 #define OSAL_NV_INVALID_LEN_MARK 0x8000
+//   89 
+//   90 // Flag in an ID field of an item header to indicate validity of
+//   91 // the identifier field
+//   92 #define OSAL_NV_INVALID_ID_MARK  0x8000
+//   93 
+//   94 
+//   95 // Bit difference between active page state indicator value and
+//   96 // transfer page state indicator value
+//   97 #define OSAL_NV_ACTIVE_XFER_DIFF  0x00100000
+//   98 
+//   99 // active page state indicator value
+//  100 #define OSAL_NV_ACTIVE_PAGE_STATE OSAL_NV_ACTIVE_XFER_DIFF
+//  101 
+//  102 // transfer page state indicator value
+//  103 #define OSAL_NV_XFER_PAGE_STATE   (OSAL_NV_ACTIVE_PAGE_STATE ^ OSAL_NV_ACTIVE_XFER_DIFF)
+//  104 
+//  105 /*********************************************************************
+//  106  * MACROS
+//  107  */
+//  108 
+//  109 // Macro to check supply voltage
+//  110 #if (defined HAL_MCU_CC2530 || defined HAL_MCU_CC2531)
+//  111 # define  OSAL_NV_CHECK_BUS_VOLTAGE  (HalAdcCheckVdd(VDD_MIN_FLASH))
+//  112 #elif defined HAL_MCU_CC2533
+//  113 # define  OSAL_NV_CHECK_BUS_VOLTAGE  (HalBatMonRead( HAL_BATMON_MIN_FLASH ))
+//  114 #else
+//  115 // The radio chip does not support voltage monitoring
+//  116 # define  OSAL_NV_CHECK_BUS_VOLTAGE TRUE
+//  117 #endif
+//  118 
+//  119 /*********************************************************************
+//  120  * TYPEDEFS
+//  121  */
+//  122 
+//  123 // NV item header structure
+//  124 typedef struct
+//  125 {
+//  126   uint16 id;
+//  127   uint16 len;
+//  128 } osalNvItemHdr_t;
+//  129 // Note that osalSnvId_t and osalSnvLen_t cannot be bigger than uint16
+//  130 
+//  131 /*********************************************************************
+//  132  * EXTERNAL FUNCTIONS
+//  133  */
+//  134 
+//  135 extern bool HalAdcCheckVdd(uint8 limit);
+//  136 
+//  137 /*********************************************************************
+//  138  * GLOBAL VARIABLES
+//  139  */
+//  140 
+//  141 #ifndef OAD_KEEP_NV_PAGES
+//  142 // When NV pages are to remain intact during OAD download,
+//  143 // the image itself should not include NV pages.
+//  144 #pragma location="BLENV_ADDRESS_SPACE"
+
+        RSEG BLENV_ADDRESS_SPACE:XDATA:REORDER:NOROOT(0)
+        DATA8
+//  145 __no_init uint8 _nvBuf[OSAL_NV_PAGES_USED * OSAL_NV_PAGE_SIZE];
+_nvBuf:
+        DS 4096
+//  146 #pragma required=_nvBuf
+//  147 #endif // OAD_KEEP_NV_PAGES
+//  148 
+//  149 #if defined MAKE_CRC_SHDW
+//  150 #pragma location="CRC_SHDW"
+//  151 const CODE uint16 _crcShdw = 0xFFFF;
+//  152 #pragma required=_crcShdw
+//  153 #endif
+//  154 
+//  155 /*********************************************************************
+//  156  * LOCAL VARIABLES
+//  157  */
+//  158 
+//  159 // active page
+
+        RSEG XDATA_Z:XDATA:NOROOT(0)
+        DATA8
+//  160 static uint8 activePg;
+activePg:
+        DS 1
+        REQUIRE __INIT_XDATA_Z
+        REQUIRE _nvBuf
+//  161 
+//  162 // active page offset
+
+        RSEG XDATA_Z:XDATA:NOROOT(0)
+        DATA16
+//  163 static uint16 pgOff;
+pgOff:
+        DS 2
+        REQUIRE __INIT_XDATA_Z
+//  164 
+//  165 // flag to indicate that an error has occurred while writing to or erasing the
+//  166 // flash device. Once this flag indicates failure, it is unsafe to attempt
+//  167 // another write or erase.
+
+        RSEG XDATA_Z:XDATA:NOROOT(0)
+        DATA8
+//  168 static uint8 failF;
+failF:
+        DS 1
+        REQUIRE __INIT_XDATA_Z
+//  169 
+//  170 /*********************************************************************
+//  171  * LOCAL FUNCTIONS
+//  172  */
+//  173 
+//  174 static uint8  initNV( void );
+//  175 
+//  176 static void   setActivePage( uint8 pg );
+//  177 static void   setXferPage(void);
+//  178 static void   erasePage( uint8 pg );
+//  179 static void   cleanErasedPage( uint8 pg );
+//  180 static void   findOffset( void );
+//  181 static void   compactPage( uint8 pg );
+//  182 
+//  183 static void   writeWord( uint8 pg, uint16 offset, uint8 *pBuf );
+//  184 static void   writeWordM( uint8 pg, uint16 offset, uint8 *pBuf, osalSnvLen_t cnt );
+//  185 
+//  186 
+//  187 // NOTE: Triggering erase upon power up may cause fast aging of the flash device
+//  188 //       if there is power switch debounce issue, etc.
+//  189 //       Improvement of this is to add a certain delay upon power up before
+//  190 //       osal_nv_init() is called.
+//  191 
+//  192 /*********************************************************************
+//  193  * @fn      initNV
+//  194  *
+//  195  * @brief   Initialize the NV flash pages.
+//  196  *
+//  197  * @param   none
+//  198  *
+//  199  * @return  TRUE if initialization succeeds. FALSE, otherwise.
+//  200  */
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+//  201 static uint8 initNV( void )
+initNV:
+        CODE
+//  202 {
+        MOV     A,#-0xc
+        LCALL   ?BANKED_ENTER_XDATA
+        ; Saved register size: 12
+        ; Auto size: 4
+        MOV     A,#-0x4
+        LCALL   ?ALLOC_XSTACK8
+//  203   uint32 pgHdr;
+//  204   uint8 xferPg = OSAL_NV_PAGE_NULL;
+        MOV     R6,#0x0
+//  205   uint8 pg;
+//  206 
+//  207   failF = FALSE;
+        MOV     DPTR,#failF
+        CLR     A
+        MOVX    @DPTR,A
+//  208   activePg = OSAL_NV_PAGE_NULL;
+        MOV     DPTR,#activePg
+        MOVX    @DPTR,A
+//  209 
+//  210   // Pick active page and clean up erased page if necessary
+//  211   for ( pg = OSAL_NV_PAGE_BEG; pg <= OSAL_NV_PAGE_END; pg++ )
+        MOV     R7,#0x7d
+//  212   {
+//  213     HalFlashRead(pg, OSAL_NV_PAGE_HDR_OFFSET, (uint8 *)(&pgHdr), OSAL_NV_PAGE_HDR_SIZE);
+??initNV_0:
+        ; Setup parameters for call to function HalFlashRead
+        MOV     ?V0 + 0,#0x4
+        MOV     ?V0 + 1,#0x0
+        MOV     R0,#?V0 + 0
+        LCALL   ?PUSH_XSTACK_I_TWO
+        MOV     A,#0x2
+        LCALL   ?XSTACK_DISP0_8
+        MOV     R4,DPL
+        MOV     R5,DPH
+        MOV     R2,#0x0
+        MOV     R3,#0x0
+        MOV     A,R7
+        MOV     R1,A
+        LCALL   ??HalFlashRead?relay
+        MOV     A,#0x2
+        LCALL   ?DEALLOC_XSTACK8
+//  214 
+//  215     if ( pgHdr == OSAL_NV_ACTIVE_PAGE_STATE)
+        MOV     DPTR,#__Constant_100000
+        MOV     R0,#?V0 + 0
+        LCALL   ?L_MOV_X
+        MOV     DPL,?XSP + 0
+        MOV     DPH,?XSP + 1
+        MOV     R0,#?V0 + 0
+        LCALL   ?L_EQ_X
+        JNZ     ??initNV_1
+//  216     {
+//  217       if (activePg != OSAL_NV_PAGE_NULL)
+        MOV     DPTR,#activePg
+        MOVX    A,@DPTR
+        JZ      ??initNV_2
+//  218       {
+//  219         // Both pages are active only when power failed during flash erase and
+//  220         // with very low probability.
+//  221         // As it is hard (code size intensive) to figure out which page is the real active page,
+//  222         // and theoretically impossible as well in lowest probability, erase both pages
+//  223         // in this case
+//  224         cleanErasedPage(activePg);
+        ; Setup parameters for call to function cleanErasedPage
+        MOV     R1,A
+        LCALL   ??cleanErasedPage?relay
+//  225         cleanErasedPage(pg);
+        ; Setup parameters for call to function cleanErasedPage
+        MOV     A,R7
+        MOV     R1,A
+        LCALL   ??cleanErasedPage?relay
+//  226         activePg = OSAL_NV_PAGE_NULL;
+        MOV     DPTR,#activePg
+        CLR     A
+        SJMP    ??initNV_3
+//  227       }
+//  228       else
+//  229       {
+//  230         activePg = pg;
+??initNV_2:
+        MOV     A,R7
+??initNV_3:
+        MOVX    @DPTR,A
+        SJMP    ??initNV_4
+//  231       }
+//  232     }
+//  233     else if ( pgHdr == OSAL_NV_XFER_PAGE_STATE)
+??initNV_1:
+        MOV     DPL,?XSP + 0
+        MOV     DPH,?XSP + 1
+        MOV     R0,#?V0 + 0
+        LCALL   ?L_MOV_X
+        MOV     A,?V0 + 0
+        ORL     A,?V0 + 1
+        ORL     A,?V0 + 2
+        ORL     A,?V0 + 3
+        JNZ     ??initNV_5
+//  234     {
+//  235       xferPg = pg;
+        MOV     A,R7
+        MOV     R6,A
+        SJMP    ??initNV_4
+//  236     }
+//  237     else
+//  238     {
+//  239       // Erase this page if it is not erased.
+//  240       // This is to ensure that any page that were in the middle of
+//  241       // compacting gets erased.
+//  242       cleanErasedPage(pg);
+??initNV_5:
+        ; Setup parameters for call to function cleanErasedPage
+        MOV     A,R7
+        MOV     R1,A
+        LCALL   ??cleanErasedPage?relay
+//  243     }
+//  244   }
+??initNV_4:
+        INC     R7
+        MOV     A,R7
+        CLR     C
+        SUBB    A,#0x7f
+        JC      ??initNV_0
+//  245 
+//  246   if (activePg == OSAL_NV_PAGE_NULL)
+        MOV     DPTR,#activePg
+        MOVX    A,@DPTR
+        JNZ     ??initNV_6
+//  247   {
+//  248     if (xferPg == OSAL_NV_PAGE_NULL)
+        MOV     A,R6
+        JNZ     ??initNV_7
+//  249     {
+//  250       // Both pages are erased. This must be initial state.
+//  251       // Pick one page as active page.
+//  252       setActivePage(OSAL_NV_PAGE_BEG);
+        ; Setup parameters for call to function setActivePage
+        MOV     R1,#0x7d
+        LCALL   ??setActivePage?relay
+//  253       pgOff = OSAL_NV_PAGE_HDR_SIZE;
+        MOV     DPTR,#pgOff
+        MOV     A,#0x4
+        MOVX    @DPTR,A
+        INC     DPTR
+        CLR     A
+        MOVX    @DPTR,A
+//  254 
+//  255       // If setting active page from a completely erased page failed,
+//  256       // it is not recommended to operate any further.
+//  257       // Other cases, even if non-active page is corrupt, NV module can still read
+//  258       // the active page content and hence this function could return TRUE.
+//  259       return (!failF);
+        MOV     DPTR,#failF
+        MOVX    A,@DPTR
+        JZ      ??initNV_8
+        MOV     R1,#0x0
+        SJMP    ??initNV_9
+//  260     }
+//  261     else
+//  262     {
+//  263       // Compacting a page hasn't completed in previous power cycle.
+//  264       // Complete the compacting.
+//  265       activePg = xferPg;
+??initNV_7:
+        MOVX    @DPTR,A
+//  266       findOffset();
+        ; Setup parameters for call to function findOffset
+        LCALL   ??findOffset?relay
+//  267 
+//  268       compactPage(xferPg);
+        ; Setup parameters for call to function compactPage
+        MOV     A,R6
+        MOV     R1,A
+        LCALL   ??compactPage?relay
+        SJMP    ??initNV_8
+//  269     }
+//  270   }
+//  271   else
+//  272   {
+//  273     if (xferPg != OSAL_NV_PAGE_NULL)
+??initNV_6:
+        MOV     A,R6
+        JZ      ??initNV_10
+//  274     {
+//  275       // Compacting has completed except for the final step of erasing
+//  276       // the xferPage.
+//  277       erasePage(xferPg);
+        ; Setup parameters for call to function erasePage
+        MOV     R1,A
+        LCALL   ??erasePage?relay
+//  278     }
+//  279 
+//  280     // find the active page offset to write a new variable location item
+//  281     findOffset();
+??initNV_10:
+        ; Setup parameters for call to function findOffset
+        LCALL   ??findOffset?relay
+//  282   }
+//  283 
+//  284   return TRUE;
+??initNV_8:
+        MOV     R1,#0x1
+??initNV_9:
+        LJMP    ?Subroutine0 & 0xFFFF
+//  285 }
+//  286 
+//  287 /*********************************************************************
+//  288  * @fn      setActivePage
+//  289  *
+//  290  * @brief   Set page header active state to be active.
+//  291  *
+//  292  * @param   pg - Valid NV page to activate.
+//  293  *
+//  294  * @return  none
+//  295  */
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+//  296 static void setActivePage( uint8 pg )
+setActivePage:
+        CODE
+//  297 {
+        MOV     A,#-0x9
+        LCALL   ?BANKED_ENTER_XDATA
+        ; Saved register size: 9
+        ; Auto size: 4
+        MOV     A,#-0x4
+        LCALL   ?ALLOC_XSTACK8
+        MOV     A,R1
+        MOV     R6,A
+//  298   uint32 pgHdr;
+//  299 
+//  300   pgHdr = OSAL_NV_ACTIVE_PAGE_STATE;
+        MOV     DPL,?XSP + 0
+        MOV     DPH,?XSP + 1
+        CLR     A
+        MOVX    @DPTR,A
+        INC     DPTR
+        MOVX    @DPTR,A
+        INC     DPTR
+        MOV     A,#0x10
+        MOVX    @DPTR,A
+        INC     DPTR
+        CLR     A
+        LCALL   ?Subroutine10 & 0xFFFF
+//  301 
+//  302   writeWord( pg, OSAL_NV_PAGE_HDR_OFFSET, (uint8*) &pgHdr );
+??CrossCallReturnLabel_14:
+        MOV     R2,A
+        MOV     R3,A
+        LCALL   ??writeWord?relay
+//  303   if (!failF)
+        MOV     DPTR,#failF
+        MOVX    A,@DPTR
+        JNZ     ??setActivePage_0
+//  304   {
+//  305     activePg = pg;
+        MOV     A,R6
+        MOV     DPTR,#activePg
+        MOVX    @DPTR,A
+//  306   }
+//  307 }
+??setActivePage_0:
+        MOV     A,#0x4
+        LCALL   ?DEALLOC_XSTACK8
+        MOV     R7,#0x1
+        LJMP    ?BANKED_LEAVE_XDATA
+//  308 
+//  309 /*********************************************************************
+//  310  * @fn      setXferPage
+//  311  *
+//  312  * @brief   Set active page header state to be transfer state.
+//  313  *
+//  314  * @param   none
+//  315  *
+//  316  * @return  none
+//  317  */
+//  318 static void setXferPage(void)
+//  319 {
+//  320   uint32 pgHdr;
+//  321 
+//  322   // erase difference bit between active state and xfer state
+//  323   pgHdr = OSAL_NV_XFER_PAGE_STATE;
+//  324 
+//  325   writeWord( activePg, OSAL_NV_PAGE_HDR_OFFSET, (uint8*)&pgHdr );
+//  326 }
+//  327 
+//  328 /*********************************************************************
+//  329  * @fn      erasePage
+//  330  *
+//  331  * @brief   Erases a page in Flash.
+//  332  *
+//  333  * @param   pg - Valid NV page to erase.
+//  334  *
+//  335  * @return  none
+//  336  */
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+//  337 static void erasePage( uint8 pg )
+erasePage:
+        CODE
+//  338 {
+        MOV     A,#-0xc
+        LCALL   ?BANKED_ENTER_XDATA
+        ; Saved register size: 12
+        ; Auto size: 1
+        MOV     A,#-0x1
+        LCALL   ?ALLOC_XSTACK8
+        MOV     ?V0 + 0,R1
+//  339   if ( !OSAL_NV_CHECK_BUS_VOLTAGE || failF)
+        MOV     DPTR,#failF
+        MOVX    A,@DPTR
+        JNZ     ??erasePage_0
+//  340   {
+//  341     failF = TRUE;
+//  342     return;
+//  343   }
+//  344 
+//  345   HalFlashErase(pg);
+        ; Setup parameters for call to function HalFlashErase
+        LCALL   ??HalFlashErase?relay
+//  346 
+//  347   {
+//  348     // Verify the erase operation
+//  349     uint16 offset;
+//  350     uint8 tmp;
+//  351 
+//  352     for (offset = 0; offset < OSAL_NV_PAGE_SIZE; offset ++)
+        MOV     R6,#0x0
+        MOV     R7,#0x0
+//  353     {
+//  354       HalFlashRead(pg, offset, &tmp, 1);
+??erasePage_1:
+        ; Setup parameters for call to function HalFlashRead
+        MOV     ?V0 + 2,#0x1
+        MOV     ?V0 + 3,#0x0
+        MOV     R0,#?V0 + 2
+        LCALL   ?PUSH_XSTACK_I_TWO
+        MOV     A,#0x2
+        LCALL   ?XSTACK_DISP0_8
+        MOV     R4,DPL
+        MOV     R5,DPH
+        MOV     A,R6
+        MOV     R2,A
+        MOV     A,R7
+        MOV     R3,A
+        MOV     R1,?V0 + 0
+        LCALL   ??HalFlashRead?relay
+        MOV     A,#0x2
+        LCALL   ?DEALLOC_XSTACK8
+//  355       if (tmp != OSAL_NV_ERASED)
+        MOV     DPL,?XSP + 0
+        MOV     DPH,?XSP + 1
+        MOVX    A,@DPTR
+        CPL     A
+        JZ      ??erasePage_2
+//  356       {
+//  357         failF = TRUE;
+??erasePage_0:
+        MOV     DPTR,#failF
+        MOV     A,#0x1
+        MOVX    @DPTR,A
+//  358         break;
+        SJMP    ??erasePage_3
+//  359       }
+//  360     }
+??erasePage_2:
+        LCALL   ?Subroutine5 & 0xFFFF
+//  361   }
+??CrossCallReturnLabel_0:
+        JC      ??erasePage_1
+??erasePage_3:
+        REQUIRE ?Subroutine2
+        ; // Fall through to label ?Subroutine2
+//  362 }
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+?Subroutine2:
+        MOV     A,#0x1
+        SJMP    ??Subroutine11_0
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+?Subroutine0:
+        MOV     A,#0x4
+        REQUIRE ??Subroutine11_0
+        ; // Fall through to label ??Subroutine11_0
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+??Subroutine11_0:
+        LCALL   ?DEALLOC_XSTACK8
+        REQUIRE ??Subroutine12_0
+        ; // Fall through to label ??Subroutine12_0
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+??Subroutine12_0:
+        MOV     R7,#0x4
+        LJMP    ?BANKED_LEAVE_XDATA
+//  363 
+//  364 /*********************************************************************
+//  365  * @fn      cleanErasedPage
+//  366  *
+//  367  * @brief   Erases a page in Flash if the page is not completely erased.
+//  368  *
+//  369  * @param   pg - Valid NV page to erase.
+//  370  *
+//  371  * @return  none
+//  372  */
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+//  373 static void cleanErasedPage( uint8 pg )
+cleanErasedPage:
+        CODE
+//  374 {
+        MOV     A,#-0xc
+        LCALL   ?BANKED_ENTER_XDATA
+        ; Saved register size: 12
+        ; Auto size: 1
+        MOV     A,#-0x1
+        LCALL   ?ALLOC_XSTACK8
+        MOV     ?V0 + 0,R1
+//  375   uint8 buf;
+//  376   uint16 offset;
+//  377 
+//  378   for (offset = 0; offset < OSAL_NV_PAGE_SIZE; offset ++)
+        MOV     R6,#0x0
+        MOV     R7,#0x0
+//  379   {
+//  380     HalFlashRead(pg, offset, &buf, 1);
+??cleanErasedPage_0:
+        ; Setup parameters for call to function HalFlashRead
+        MOV     ?V0 + 2,#0x1
+        MOV     ?V0 + 3,#0x0
+        MOV     R0,#?V0 + 2
+        LCALL   ?PUSH_XSTACK_I_TWO
+        MOV     A,#0x2
+        LCALL   ?XSTACK_DISP0_8
+        MOV     R4,DPL
+        MOV     R5,DPH
+        MOV     A,R6
+        MOV     R2,A
+        MOV     A,R7
+        MOV     R3,A
+        MOV     R1,?V0 + 0
+        LCALL   ??HalFlashRead?relay
+        MOV     A,#0x2
+        LCALL   ?DEALLOC_XSTACK8
+//  381     if (buf != OSAL_NV_ERASED)
+        MOV     DPL,?XSP + 0
+        MOV     DPH,?XSP + 1
+        MOVX    A,@DPTR
+        CPL     A
+        JZ      ??cleanErasedPage_1
+//  382     {
+//  383       erasePage(pg);
+        ; Setup parameters for call to function erasePage
+        MOV     R1,?V0 + 0
+        LCALL   ??erasePage?relay
+//  384       break;
+        SJMP    ??cleanErasedPage_2
+//  385     }
+//  386   }
+??cleanErasedPage_1:
+        LCALL   ?Subroutine5 & 0xFFFF
+??CrossCallReturnLabel_1:
+        JC      ??cleanErasedPage_0
+//  387 }
+??cleanErasedPage_2:
+        SJMP    ?Subroutine2
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+?Subroutine5:
+        MOV     A,R6
+        ADD     A,#0x1
+        INC     R6
+        MOV     A,R7
+        ADDC    A,#0x0
+        MOV     R7,A
+        CLR     C
+        SUBB    A,#0x8
+        RET
+//  388 
+//  389 /*********************************************************************
+//  390  * @fn      findOffset
+//  391  *
+//  392  * @brief   find an offset of an empty space in active page
+//  393  *          where to write a new item to.
+//  394  *
+//  395  * @param   None
+//  396  *
+//  397  * @return  none
+//  398  */
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+//  399 static void findOffset(void)
+findOffset:
+        CODE
+//  400 {
+        MOV     A,#-0xc
+        LCALL   ?BANKED_ENTER_XDATA
+        ; Saved register size: 12
+        ; Auto size: 4
+        MOV     A,#-0x4
+        LCALL   ?ALLOC_XSTACK8
+//  401   uint16 offset;
+//  402   for (offset = OSAL_NV_PAGE_SIZE - OSAL_NV_WORD_SIZE;
+        MOV     R6,#-0x4
+        MOV     R7,#0x7
+//  403        offset >= OSAL_NV_PAGE_HDR_SIZE;
+//  404        offset -= OSAL_NV_WORD_SIZE)
+//  405   {
+//  406     uint32 tmp;
+//  407 
+//  408     HalFlashRead(activePg, offset, (uint8 *)&tmp, OSAL_NV_WORD_SIZE);
+??findOffset_0:
+        ; Setup parameters for call to function HalFlashRead
+        MOV     ?V0 + 0,#0x4
+        MOV     ?V0 + 1,#0x0
+        MOV     R0,#?V0 + 0
+        LCALL   ?PUSH_XSTACK_I_TWO
+        MOV     A,#0x2
+        LCALL   ?XSTACK_DISP0_8
+        MOV     R4,DPL
+        MOV     R5,DPH
+        MOV     A,R6
+        MOV     R2,A
+        MOV     A,R7
+        MOV     R3,A
+        MOV     DPTR,#activePg
+        MOVX    A,@DPTR
+        MOV     R1,A
+        LCALL   ??HalFlashRead?relay
+        MOV     A,#0x2
+        LCALL   ?DEALLOC_XSTACK8
+//  409     if (tmp != 0xFFFFFFFF)
+        MOV     DPTR,#__Constant_ffffffff
+        MOV     R0,#?V0 + 0
+        LCALL   ?L_MOV_X
+        MOV     DPL,?XSP + 0
+        MOV     DPH,?XSP + 1
+        MOV     R0,#?V0 + 0
+        LCALL   ?L_EQ_X
+        JNZ     ??findOffset_1
+//  410     {
+//  411       break;
+//  412     }
+//  413   }
+        MOV     A,R6
+        ADD     A,#-0x4
+        MOV     R6,A
+        MOV     A,R7
+        LCALL   ?Subroutine7 & 0xFFFF
+??CrossCallReturnLabel_4:
+        JNC     ??findOffset_0
+//  414   pgOff = offset + OSAL_NV_WORD_SIZE;
+??findOffset_1:
+        LCALL   ?Subroutine8 & 0xFFFF
+??CrossCallReturnLabel_7:
+        MOV     A,R0
+        MOVX    @DPTR,A
+        INC     DPTR
+        MOV     A,R1
+        MOVX    @DPTR,A
+//  415 }
+        LJMP    ?Subroutine0 & 0xFFFF
+//  416 
+//  417 /*********************************************************************
+//  418  * @fn      findItem
+//  419  *
+//  420  * @brief   find a valid item from a designated page and offset
+//  421  *
+//  422  * @param   pg       - NV page
+//  423  * @param   offset   - offset in the NV page from where to start
+//  424  *                     search up.
+//  425  *                     Usually this paramter is set to the empty space
+//  426  *                     offset.
+//  427  * @param   id       - NV item ID to search for
+//  428  *
+//  429  * @return  offset of the item, 0 when not found
+//  430  */
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+//  431 static uint16 findItem(uint8 pg, uint16 offset, osalSnvId_t id)
+findItem:
+        CODE
+//  432 {
+        MOV     A,#-0xc
+        LCALL   ?BANKED_ENTER_XDATA
+        ; Saved register size: 12
+        ; Auto size: 4
+        MOV     A,#-0x4
+        LCALL   ?ALLOC_XSTACK8
+        MOV     ?V0 + 1,R1
+        MOV     A,R2
+        MOV     R6,A
+        MOV     A,R3
+        MOV     R7,A
+        MOV     ?V0 + 0,R4
+//  433   offset -= OSAL_NV_WORD_SIZE;
+//  434 
+//  435   while (offset >= OSAL_NV_PAGE_HDR_SIZE)
+//  436   {
+//  437     osalNvItemHdr_t hdr;
+//  438 
+//  439     HalFlashRead(pg, offset, (uint8 *) &hdr, OSAL_NV_WORD_SIZE);
+//  440 
+//  441     if (hdr.id == id)
+//  442     {
+//  443       // item found
+//  444       // length field could be corrupt. Mask invalid length mark.
+//  445       uint8 len = hdr.len & ~OSAL_NV_INVALID_LEN_MARK;
+//  446       return offset - len;
+//  447     }
+//  448     else if (hdr.len & OSAL_NV_INVALID_LEN_MARK)
+//  449     {
+//  450       offset -= OSAL_NV_WORD_SIZE;
+??findItem_0:
+        MOV     A,R6
+        ADD     A,#-0x4
+        MOV     R6,A
+        MOV     A,R7
+//  451     }
+??findItem_1:
+        LCALL   ?Subroutine7 & 0xFFFF
+??CrossCallReturnLabel_5:
+        JC      ??findItem_2
+        ; Setup parameters for call to function HalFlashRead
+        MOV     ?V0 + 2,#0x4
+        MOV     ?V0 + 3,#0x0
+        MOV     R0,#?V0 + 2
+        LCALL   ?PUSH_XSTACK_I_TWO
+        MOV     A,#0x2
+        LCALL   ?XSTACK_DISP0_8
+        MOV     R4,DPL
+        MOV     R5,DPH
+        MOV     A,R6
+        MOV     R2,A
+        MOV     A,R7
+        MOV     R3,A
+        MOV     R1,?V0 + 1
+        LCALL   ??HalFlashRead?relay
+        MOV     A,#0x2
+        LCALL   ?DEALLOC_XSTACK8
+        MOV     A,#0x2
+        LCALL   ?XSTACK_DISP0_8
+        MOVX    A,@DPTR
+        MOV     R0,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R1,A
+        MOV     DPL,?XSP + 0
+        MOV     DPH,?XSP + 1
+        MOV     ?V0 + 2,?V0 + 0
+        MOVX    A,@DPTR
+        XRL     A,?V0 + 2
+        JNZ     ??findItem_3
+        INC     DPTR
+        MOVX    A,@DPTR
+??findItem_3:
+        JNZ     ??findItem_4
+        MOV     A,R6
+        CLR     C
+        SUBB    A,R0
+        MOV     R2,A
+        MOV     A,R7
+        SUBB    A,#0x0
+        MOV     R3,A
+        SJMP    ??findItem_5
+??findItem_4:
+        MOV     A,R1
+        ANL     A,#0x80
+        JNZ     ??findItem_0
+//  452     else
+//  453     {
+//  454       // valid length field
+//  455       if (hdr.len + OSAL_NV_WORD_SIZE <= offset)
+        MOV     A,R0
+        ADD     A,#0x4
+        MOV     R2,A
+        MOV     A,R1
+        ADDC    A,#0x0
+        MOV     R3,A
+        CLR     C
+        MOV     A,R6
+        SUBB    A,R2
+        MOV     A,R7
+        SUBB    A,R3
+        JC      ??findItem_2
+//  456       {
+//  457         // valid length
+//  458         offset -= hdr.len + OSAL_NV_WORD_SIZE;
+        MOV     A,R6
+        CLR     C
+        SUBB    A,R0
+        MOV     R0,A
+        MOV     A,R7
+        SUBB    A,R1
+        MOV     R1,A
+        MOV     A,R0
+        ADD     A,#-0x4
+        MOV     R6,A
+        MOV     A,R1
+        SJMP    ??findItem_1
+//  459       }
+//  460       else
+//  461       {
+//  462         // active page is corrupt
+//  463         // This could happen if NV initialization failed upon failure to erase
+//  464         // page and active page is set to uncleanly erased page.
+//  465         HAL_ASSERT_FORCED();
+//  466         return 0;
+//  467       }
+//  468     }
+//  469   }
+//  470   return 0;
+??findItem_2:
+        MOV     R2,#0x0
+        MOV     R3,#0x0
+??findItem_5:
+        LJMP    ?Subroutine0 & 0xFFFF
+//  471 }
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+?Subroutine7:
+        ADDC    A,#-0x1
+        MOV     R7,A
+        CLR     C
+        MOV     A,R6
+        SUBB    A,#0x4
+        MOV     A,R7
+        SUBB    A,#0x0
+        RET
+//  472 
+//  473 /*********************************************************************
+//  474  * @fn      writeItem
+//  475  *
+//  476  * @brief   Write a data item to NV. Function can write an entire item to NV
+//  477  *
+//  478  * @param   pg     - Page number
+//  479  * @param   offset - offset within the NV page where to write the new item
+//  480  * @param   id     - NV item ID
+//  481  * @param   alignedLen - Length of data to write, alinged in flash word
+//  482  *                       boundary
+//  483  * @param  *pBuf   - Data to write.
+//  484  *
+//  485  * @return  none
+//  486  */
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+//  487 static void writeItem( uint8 pg, uint16 offset, osalSnvId_t id, uint16 alignedLen, uint8 *pBuf )
+writeItem:
+        CODE
+//  488 {
+        MOV     A,#-0x14
+        LCALL   ?BANKED_ENTER_XDATA
+        ; Saved register size: 20
+        ; Auto size: 4
+        MOV     A,#-0x4
+        LCALL   ?ALLOC_XSTACK8
+        MOV     ?V0 + 2,R1
+        MOV     A,R2
+        MOV     R6,A
+        MOV     A,R3
+        MOV     R7,A
+        MOV     ?V0 + 3,R4
+//  489   osalNvItemHdr_t hdr;
+//  490 
+//  491   hdr.id = 0xFFFF;
+        MOV     DPL,?XSP + 0
+        MOV     DPH,?XSP + 1
+        MOV     A,#-0x1
+        MOVX    @DPTR,A
+        INC     DPTR
+        MOVX    @DPTR,A
+        MOV     A,#0x18
+        LCALL   ?XSTACK_DISP0_8
+        MOVX    A,@DPTR
+        MOV     ?V0 + 4,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     ?V0 + 5,A
+//  492   hdr.len = alignedLen | OSAL_NV_INVALID_LEN_MARK;
+        ORL     A,#0x80
+        MOV     R1,A
+        MOV     A,#0x2
+        LCALL   ?XSTACK_DISP0_8
+        MOV     A,?V0 + 4
+        MOVX    @DPTR,A
+        INC     DPTR
+        MOV     A,R1
+        MOVX    @DPTR,A
+//  493 
+//  494   // Write the len portion of the header first
+//  495   writeWord(pg, offset + alignedLen, (uint8 *) &hdr);
+        MOV     A,R6
+        ADD     A,?V0 + 4
+        MOV     ?V0 + 0,A
+        MOV     A,R7
+        ADDC    A,?V0 + 5
+        MOV     ?V0 + 1,A
+        ; Setup parameters for call to function writeWord
+        MOV     DPL,?XSP + 0
+        MOV     DPH,?XSP + 1
+        MOV     R4,DPL
+        MOV     R5,DPH
+        MOV     R2,?V0 + 0
+        MOV     R3,A
+        MOV     R1,?V0 + 2
+        LCALL   ??writeWord?relay
+//  496 
+//  497   // remove invalid len mark
+//  498   hdr.len &= ~OSAL_NV_INVALID_LEN_MARK;
+        MOV     A,#0x2
+        LCALL   ?XSTACK_DISP0_8
+        LCALL   ?Subroutine3 & 0xFFFF
+//  499   writeWord(pg, offset + alignedLen, (uint8 *) &hdr);
+??CrossCallReturnLabel_11:
+        LCALL   ??writeWord?relay
+//  500 
+//  501   // Copy over the data
+//  502   writeWordM(pg, offset, pBuf, alignedLen / OSAL_NV_WORD_SIZE);
+        MOV     A,#0x2
+        MOV     R0,#?V0 + 4
+        LCALL   ?US_SHR
+        MOV     A,?V0 + 4
+        MOV     ?V0 + 6,A
+        MOV     DPTR,#failF
+        MOVX    A,@DPTR
+        JNZ     ??writeItem_0
+        MOV     A,#0x1a
+        LCALL   ?XSTACK_DISP0_8
+        MOVX    A,@DPTR
+        MOV     ?V0 + 4,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     ?V0 + 5,A
+        ; Setup parameters for call to function HalFlashWrite
+        MOV     ?V0 + 8,?V0 + 6
+        MOV     ?V0 + 9,#0x0
+        MOV     R0,#?V0 + 8
+        LCALL   ?PUSH_XSTACK_I_TWO
+        MOV     R4,?V0 + 4
+        MOV     R5,?V0 + 5
+        MOV     ?V0 + 8,R6
+        MOV     ?V0 + 9,R7
+        MOV     A,#0x2
+        MOV     R0,#?V0 + 8
+        LCALL   ?US_SHR
+        MOV     ?V0 + 10,?V0 + 2
+        MOV     ?V0 + 11,A
+        MOV     A,#0x9
+        MOV     R0,#?V0 + 10
+        LCALL   ?S_SHL
+        MOV     A,?V0 + 8
+        ADD     A,#0x0
+        MOV     R2,A
+        MOV     A,?V0 + 9
+        ADDC    A,?V0 + 11
+        MOV     R3,A
+        LCALL   ??HalFlashWrite?relay
+        MOV     A,#0x2
+        LCALL   ?DEALLOC_XSTACK8
+        ; Setup parameters for call to function verifyWordM
+        MOV     R0,#?V0 + 6
+        LCALL   ?PUSH_XSTACK_I_ONE
+        MOV     R4,?V0 + 4
+        MOV     R5,?V0 + 5
+        MOV     A,R6
+        MOV     R2,A
+        MOV     A,R7
+        MOV     R3,A
+        MOV     R1,?V0 + 2
+        LCALL   ??verifyWordM?relay
+        MOV     A,#0x1
+        LCALL   ?DEALLOC_XSTACK8
+//  503 
+//  504   // value is valid. Write header except for the most significant bit.
+//  505   hdr.id = id | OSAL_NV_INVALID_ID_MARK;
+??writeItem_0:
+        MOV     ?V0 + 4,?V0 + 3
+        MOV     A,?V0 + 4
+        MOV     DPL,?XSP + 0
+        MOV     DPH,?XSP + 1
+        MOVX    @DPTR,A
+        INC     DPTR
+        MOV     A,#-0x80
+        LCALL   ??Subroutine13_0 & 0xFFFF
+//  506   writeWord(pg, offset + alignedLen, (uint8 *) &hdr);
+??CrossCallReturnLabel_13:
+        LCALL   ??writeWord?relay
+//  507 
+//  508   // write the most significant bit
+//  509   hdr.id &= ~OSAL_NV_INVALID_ID_MARK;
+        MOV     DPL,?XSP + 0
+        MOV     DPH,?XSP + 1
+        LCALL   ?Subroutine3 & 0xFFFF
+//  510   writeWord(pg, offset + alignedLen, (uint8 *) &hdr);
+??CrossCallReturnLabel_12:
+        LCALL   ??writeWord?relay
+//  511 }
+        MOV     A,#0x4
+        LCALL   ?DEALLOC_XSTACK8
+        MOV     R7,#0xc
+        LJMP    ?BANKED_LEAVE_XDATA
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+?Subroutine3:
+        INC     DPTR
+        MOVX    A,@DPTR
+        ANL     A,#0x7f
+        REQUIRE ??Subroutine13_0
+        ; // Fall through to label ??Subroutine13_0
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+??Subroutine13_0:
+        LCALL   ?Subroutine10 & 0xFFFF
+??CrossCallReturnLabel_15:
+        MOV     R2,?V0 + 0
+        MOV     R3,?V0 + 1
+        MOV     R1,?V0 + 2
+        RET
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+?Subroutine10:
+        MOVX    @DPTR,A
+        ; Setup parameters for call to function writeWord
+        ; Setup parameters for call to function writeWord
+        ; Setup parameters for call to function writeWord
+        ; Setup parameters for call to function writeWord
+        MOV     DPL,?XSP + 0
+        MOV     DPH,?XSP + 1
+        MOV     R4,DPL
+        MOV     R5,DPH
+        RET
+//  512 
+//  513 /*********************************************************************
+//  514  * @fn      xferItem
+//  515  *
+//  516  * @brief   Copy an NV item from the active page to a designated page.
+//  517  *
+//  518  * @param   pg         - NV page where to copy the item to.
+//  519  * @param   offset     - NV page offset where to copy the item to.
+//  520  * @param   alignedLen - Length of data to write, aligned in flash word
+//  521  *                       boundary.
+//  522  * @param   srcOff     - NV page offset of the original data in active page
+//  523  *
+//  524  * @return  none.
+//  525  */
+//  526 static void xferItem( uint8 pg, uint16 offset, uint16 alignedLen, uint16 srcOff )
+//  527 {
+//  528   uint8 tmp[OSAL_NV_WORD_SIZE];
+//  529   uint16 i = 0;
+//  530 
+//  531   // Copy over the data
+//  532   while (i <= alignedLen)
+//  533   {
+//  534     HalFlashRead(activePg, srcOff + i, tmp, OSAL_NV_WORD_SIZE);
+//  535     writeWord(pg, offset + i, tmp);
+//  536 
+//  537     i += OSAL_NV_WORD_SIZE;
+//  538   }
+//  539 }
+//  540 
+//  541 /*********************************************************************
+//  542  * @fn      compactPage
+//  543  *
+//  544  * @brief   Compacts the page specified.
+//  545  *
+//  546  * @param   srcPg - Valid NV page to compact from.
+//  547  *                  The page must have changed its state (header) to xfer state
+//  548  *                  prior to this function call. This function will not
+//  549  *                  modify the state of its header to xfer state before starting
+//  550  *                  to compact.
+//  551  *
+//  552  * @return  none.
+//  553  */
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+//  554 static void compactPage( uint8 srcPg )
+compactPage:
+        CODE
+//  555 {
+        MOV     A,#-0x16
+        LCALL   ?BANKED_ENTER_XDATA
+        ; Saved register size: 22
+        ; Auto size: 8
+        MOV     A,#-0x8
+        LCALL   ?ALLOC_XSTACK8
+        MOV     ?V0 + 8,R1
+//  556   uint16 srcOff, dstOff;
+//  557   uint8 dstPg;
+//  558   osalSnvId_t lastId = (osalSnvId_t) 0xFFFF;
+        MOV     ?V0 + 5,#-0x1
+//  559 
+//  560   dstPg = (srcPg == OSAL_NV_PAGE_BEG)? OSAL_NV_PAGE_END : OSAL_NV_PAGE_BEG;
+        MOV     A,#0x7d
+        XRL     A,?V0 + 8
+        JNZ     ??compactPage_0
+        MOV     ?V0 + 4,#0x7e
+        SJMP    ??compactPage_1
+??compactPage_0:
+        MOV     ?V0 + 4,#0x7d
+//  561 
+//  562   dstOff = OSAL_NV_PAGE_HDR_SIZE;
+??compactPage_1:
+        MOV     ?V0 + 2,#0x4
+        MOV     ?V0 + 3,#0x0
+//  563 
+//  564   // Read from the latest value
+//  565   srcOff = pgOff - sizeof(osalNvItemHdr_t);
+        MOV     DPTR,#pgOff
+        MOVX    A,@DPTR
+        ADD     A,#-0x4
+        MOV     R6,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        LJMP    ??compactPage_2 & 0xFFFF
+//  566 
+//  567   while (srcOff >= OSAL_NV_PAGE_HDR_SIZE)
+//  568   {
+//  569     osalNvItemHdr_t hdr;
+//  570 
+//  571     if (failF)
+//  572     {
+//  573       // Failure during transfer item will make next findItem error prone.
+//  574       return;
+//  575     }
+//  576 
+//  577     HalFlashRead(srcPg, srcOff, (uint8 *) &hdr, OSAL_NV_WORD_SIZE);
+//  578 
+//  579     if (hdr.id == 0xFFFF)
+//  580     {
+//  581       // Invalid entry. Skip this one.
+//  582       if (hdr.len & OSAL_NV_INVALID_LEN_MARK)
+//  583       {
+//  584         srcOff -= OSAL_NV_WORD_SIZE;
+//  585       }
+//  586       else
+//  587       {
+//  588         if (hdr.len + OSAL_NV_WORD_SIZE <= srcOff)
+//  589         {
+//  590           srcOff -= hdr.len + OSAL_NV_WORD_SIZE;
+//  591         }
+//  592         else
+//  593         {
+//  594           // invalid length. Source page must be a corrupt page.
+//  595           // This is possible only if the NV initialization failed upon erasing
+//  596           // what is selected as active page.
+//  597           // This is supposed to be a very rare case, as power should be
+//  598           // shutdown exactly during erase and then the page header is
+//  599           // still retained as either the Xfer or the Active state.
+//  600 
+//  601           // For production code, it might be useful to attempt to erase the page
+//  602           // so that at next power cycle at least the device is runnable
+//  603           // (with all entries removed).
+//  604           // However, it might be still better not to attempt erasing the page
+//  605           // just to see if this very rare case actually happened.
+//  606           //erasePage(srcPg);
+//  607 
+//  608           HAL_ASSERT_FORCED();
+//  609           return;
+//  610         }
+//  611       }
+//  612 
+//  613       continue;
+//  614     }
+//  615 
+//  616     // Consider only valid item
+//  617     if (!(hdr.id & OSAL_NV_INVALID_ID_MARK) && hdr.id != lastId)
+??compactPage_3:
+        MOV     DPL,?XSP + 0
+        MOV     DPH,?XSP + 1
+        INC     DPTR
+        MOVX    A,@DPTR
+        ANL     A,#0x80
+        JZ      $+5
+        LJMP    ??compactPage_4 & 0xFFFF
+        MOV     DPL,?XSP + 0
+        MOV     DPH,?XSP + 1
+        MOV     ?V0 + 0,?V0 + 5
+        MOVX    A,@DPTR
+        XRL     A,?V0 + 0
+        JNZ     ??compactPage_5
+        INC     DPTR
+        MOVX    A,@DPTR
+??compactPage_5:
+        JNZ     $+5
+        LJMP    ??compactPage_4 & 0xFFFF
+//  618     {
+//  619       // lastId is used to speed up compacting in case the same item ID
+//  620       // items were neighboring each other contiguously.
+//  621       lastId = (osalSnvId_t) hdr.id;
+        MOV     DPL,?XSP + 0
+        MOV     DPH,?XSP + 1
+        MOVX    A,@DPTR
+        MOV     ?V0 + 5,A
+//  622 
+//  623       // Check if the latest value of the item was already written
+//  624       if (findItem(dstPg, dstOff, lastId) == 0)
+        ; Setup parameters for call to function findItem
+        MOV     R4,A
+        MOV     R2,?V0 + 2
+        MOV     R3,?V0 + 3
+        MOV     R1,?V0 + 4
+        LCALL   ??findItem?relay
+        MOV     ?V0 + 1,R3
+        MOV     A,R2
+        ORL     A,?V0 + 1
+        JZ      $+5
+        LJMP    ??compactPage_4 & 0xFFFF
+//  625       {
+//  626         // This item was not copied over yet.
+//  627         // This must be the latest value.
+//  628         // Write the latest value to the destination page
+//  629 
+//  630         xferItem(dstPg, dstOff, hdr.len, srcOff - hdr.len);
+        MOV     A,#0x2
+        LCALL   ?XSTACK_DISP0_8
+        LCALL   ?Subroutine6 & 0xFFFF
+??CrossCallReturnLabel_2:
+        MOV     ?V0 + 0,A
+        MOV     A,R7
+        SUBB    A,R1
+        MOV     ?V0 + 1,A
+        MOV     ?V0 + 12,R0
+        MOV     ?V0 + 13,R1
+        MOV     ?V0 + 6,#0x0
+        MOV     ?V0 + 7,#0x0
+??compactPage_6:
+        ; Setup parameters for call to function HalFlashRead
+        MOV     ?V0 + 10,#0x4
+        MOV     ?V0 + 11,#0x0
+        MOV     R0,#?V0 + 10
+        LCALL   ?PUSH_XSTACK_I_TWO
+        MOV     A,#0x6
+        LCALL   ?XSTACK_DISP0_8
+        MOV     R4,DPL
+        MOV     R5,DPH
+        MOV     A,?V0 + 0
+        ADD     A,?V0 + 6
+        MOV     R2,A
+        MOV     A,?V0 + 1
+        ADDC    A,?V0 + 7
+        MOV     R3,A
+        MOV     DPTR,#activePg
+        MOVX    A,@DPTR
+        MOV     R1,A
+        LCALL   ??HalFlashRead?relay
+        MOV     A,#0x2
+        LCALL   ?DEALLOC_XSTACK8
+        ; Setup parameters for call to function writeWord
+        MOV     A,#0x4
+        LCALL   ?XSTACK_DISP0_8
+        MOV     R4,DPL
+        MOV     R5,DPH
+        MOV     A,?V0 + 2
+        ADD     A,?V0 + 6
+        MOV     R2,A
+        MOV     A,?V0 + 3
+        ADDC    A,?V0 + 7
+        MOV     R3,A
+        MOV     R1,?V0 + 4
+        LCALL   ??writeWord?relay
+        MOV     A,?V0 + 6
+        ADD     A,#0x4
+        MOV     ?V0 + 6,A
+        MOV     A,?V0 + 7
+        ADDC    A,#0x0
+        MOV     ?V0 + 7,A
+        CLR     C
+        MOV     A,?V0 + 12
+        SUBB    A,?V0 + 6
+        MOV     A,?V0 + 13
+        SUBB    A,?V0 + 7
+        JNC     ??compactPage_6
+//  631 
+//  632         dstOff += hdr.len + OSAL_NV_WORD_SIZE;
+        MOV     A,#0x2
+        LCALL   ?XSTACK_DISP0_8
+        MOVX    A,@DPTR
+        ADD     A,#0x4
+        MOV     R0,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        ADDC    A,#0x0
+        MOV     R1,A
+        MOV     A,?V0 + 2
+        ADD     A,R0
+        MOV     ?V0 + 2,A
+        MOV     A,?V0 + 3
+        ADDC    A,R1
+        MOV     ?V0 + 3,A
+//  633       }
+//  634     }
+//  635     srcOff -= hdr.len + OSAL_NV_WORD_SIZE;
+??compactPage_4:
+        MOV     A,#0x2
+        LCALL   ?XSTACK_DISP0_8
+        LCALL   ?Subroutine6 & 0xFFFF
+??CrossCallReturnLabel_3:
+        MOV     R0,A
+        MOV     A,R7
+        SUBB    A,R1
+        MOV     R1,A
+        MOV     A,R0
+        ADD     A,#-0x4
+        MOV     R6,A
+        MOV     A,R1
+??compactPage_2:
+        LCALL   ?Subroutine7 & 0xFFFF
+??CrossCallReturnLabel_6:
+        JC      ??compactPage_7
+        MOV     DPTR,#failF
+        MOVX    A,@DPTR
+        JNZ     ??compactPage_8
+        ; Setup parameters for call to function HalFlashRead
+        MOV     ?V0 + 0,#0x4
+        MOV     ?V0 + 1,#0x0
+        MOV     R0,#?V0 + 0
+        LCALL   ?PUSH_XSTACK_I_TWO
+        MOV     A,#0x2
+        LCALL   ?XSTACK_DISP0_8
+        MOV     R4,DPL
+        MOV     R5,DPH
+        MOV     A,R6
+        MOV     R2,A
+        MOV     A,R7
+        MOV     R3,A
+        MOV     R1,?V0 + 8
+        LCALL   ??HalFlashRead?relay
+        MOV     A,#0x2
+        LCALL   ?DEALLOC_XSTACK8
+        MOV     DPL,?XSP + 0
+        MOV     DPH,?XSP + 1
+        MOVX    A,@DPTR
+        CPL     A
+        JNZ     ??compactPage_9
+        INC     DPTR
+        MOVX    A,@DPTR
+        CPL     A
+??compactPage_9:
+        JZ      $+5
+        LJMP    ??compactPage_3 & 0xFFFF
+        MOV     A,#0x2
+        LCALL   ?XSTACK_DISP0_8
+        MOVX    A,@DPTR
+        MOV     R0,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R1,A
+        ANL     A,#0x80
+        JZ      ??compactPage_10
+        MOV     A,R6
+        ADD     A,#-0x4
+        MOV     R6,A
+        MOV     A,R7
+        SJMP    ??compactPage_2
+??compactPage_10:
+        LCALL   ?Subroutine9 & 0xFFFF
+//  636   }
+??CrossCallReturnLabel_9:
+        MOV     A,R6
+        SUBB    A,R0
+        MOV     A,R7
+        SUBB    A,R1
+        JC      ??compactPage_8
+        SJMP    ??compactPage_4
+//  637 
+//  638   // All items copied.
+//  639   // Activate the new page
+//  640   setActivePage(dstPg);
+??compactPage_7:
+        ; Setup parameters for call to function setActivePage
+        MOV     R1,?V0 + 4
+        LCALL   ??setActivePage?relay
+//  641 
+//  642   if (!failF)
+        MOV     DPTR,#failF
+        MOVX    A,@DPTR
+        JNZ     ??compactPage_11
+//  643   {
+//  644     pgOff = dstOff; // update active page offset
+        MOV     DPTR,#pgOff
+        MOV     A,?V0 + 2
+        MOVX    @DPTR,A
+        INC     DPTR
+        MOV     A,?V0 + 3
+        MOVX    @DPTR,A
+//  645   }
+//  646 
+//  647   // Erase the currently active page
+//  648   erasePage(srcPg);
+??compactPage_11:
+        ; Setup parameters for call to function erasePage
+        MOV     R1,?V0 + 8
+        LCALL   ??erasePage?relay
+//  649 }
+??compactPage_8:
+        MOV     A,#0x8
+        LCALL   ?DEALLOC_XSTACK8
+        MOV     R7,#0xe
+        LJMP    ?BANKED_LEAVE_XDATA
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+?Subroutine6:
+        MOVX    A,@DPTR
+        MOV     R0,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R1,A
+        MOV     A,R6
+        CLR     C
+        SUBB    A,R0
+        RET
+//  650 
+//  651 /*********************************************************************
+//  652  * @fn      verifyWordM
+//  653  *
+//  654  * @brief   verify the written word.
+//  655  *
+//  656  * @param   pg - A valid NV Flash page.
+//  657  * @param   offset - A valid offset into the page.
+//  658  * @param   pBuf - Pointer to source buffer.
+//  659  * @param   cnt - Number of 4-byte blocks to verify.
+//  660  *
+//  661  * @return  none
+//  662  */
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+//  663 static void verifyWordM( uint8 pg, uint16 offset, uint8 *pBuf, osalSnvLen_t cnt )
+verifyWordM:
+        CODE
+//  664 {
+        MOV     A,#-0x10
+        LCALL   ?BANKED_ENTER_XDATA
+        ; Saved register size: 16
+        ; Auto size: 4
+        MOV     A,#-0x4
+        LCALL   ?ALLOC_XSTACK8
+        MOV     ?V0 + 3,R1
+        MOV     ?V0 + 0,R2
+        MOV     ?V0 + 1,R3
+        MOV     A,R4
+        MOV     R6,A
+        MOV     A,R5
+        MOV     R7,A
+        MOV     A,#0x14
+        LCALL   ?XSTACK_DISP0_8
+        MOVX    A,@DPTR
+        MOV     ?V0 + 2,A
+        SJMP    ??verifyWordM_0
+//  665   uint8 tmp[OSAL_NV_WORD_SIZE];
+//  666 
+//  667   while (cnt--)
+//  668   {
+//  669     // Reading byte per byte will reduce code size but will slow down
+//  670     // and not sure it will meet the timing requirements.
+//  671     HalFlashRead(pg, offset, tmp, OSAL_NV_WORD_SIZE);
+//  672     if (FALSE == osal_memcmp(tmp, pBuf, OSAL_NV_WORD_SIZE))
+//  673     {
+//  674       failF = TRUE;
+//  675       return;
+//  676     }
+//  677     offset += OSAL_NV_WORD_SIZE;
+??verifyWordM_1:
+        MOV     A,?V0 + 0
+        ADD     A,#0x4
+        MOV     ?V0 + 0,A
+        MOV     A,?V0 + 1
+        ADDC    A,#0x0
+        MOV     ?V0 + 1,A
+//  678     pBuf += OSAL_NV_WORD_SIZE;
+        MOV     A,R6
+        ADD     A,#0x4
+        MOV     R6,A
+        MOV     A,R7
+        ADDC    A,#0x0
+        MOV     R7,A
+??verifyWordM_0:
+        MOV     ?V0 + 4,?V0 + 2
+        MOV     A,#-0x1
+        ADD     A,?V0 + 4
+        MOV     ?V0 + 2,A
+        INC     A
+        JZ      ??verifyWordM_2
+        ; Setup parameters for call to function HalFlashRead
+        MOV     ?V0 + 6,#0x4
+        MOV     ?V0 + 7,#0x0
+        MOV     R0,#?V0 + 6
+        LCALL   ?PUSH_XSTACK_I_TWO
+        MOV     A,#0x2
+        LCALL   ?XSTACK_DISP0_8
+        MOV     R4,DPL
+        MOV     R5,DPH
+        MOV     R2,?V0 + 0
+        MOV     R3,?V0 + 1
+        MOV     R1,?V0 + 3
+        LCALL   ??HalFlashRead?relay
+        MOV     A,#0x2
+        LCALL   ?DEALLOC_XSTACK8
+        ; Setup parameters for call to function osal_memcmp
+        MOV     R0,#?V0 + 6
+        LCALL   ?PUSH_XSTACK_I_TWO
+        MOV     A,R6
+        MOV     R4,A
+        MOV     A,R7
+        MOV     R5,A
+        MOV     A,#0x2
+        LCALL   ?XSTACK_DISP0_8
+        MOV     R2,DPL
+        MOV     R3,DPH
+        LCALL   ??osal_memcmp?relay
+        MOV     A,#0x2
+        LCALL   ?DEALLOC_XSTACK8
+        MOV     A,R1
+        JNZ     ??verifyWordM_1
+        MOV     DPTR,#failF
+        MOV     A,#0x1
+        MOVX    @DPTR,A
+??verifyWordM_2:
+        MOV     A,#0x4
+        LCALL   ?DEALLOC_XSTACK8
+        MOV     R7,#0x8
+        LJMP    ?BANKED_LEAVE_XDATA
+//  679   }
+//  680 }
+//  681 
+//  682 /*********************************************************************
+//  683  * @fn      writeWord
+//  684  *
+//  685  * @brief   Writes a Flash-WORD to NV.
+//  686  *
+//  687  * @param   pg - A valid NV Flash page.
+//  688  * @param   offset - A valid offset into the page.
+//  689  * @param   pBuf - Pointer to source buffer.
+//  690  *
+//  691  * @return  none
+//  692  */
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+//  693 static void writeWord( uint8 pg, uint16 offset, uint8 *pBuf )
+writeWord:
+        CODE
+//  694 {
+        MOV     A,#-0xf
+        LCALL   ?BANKED_ENTER_XDATA
+        ; Saved register size: 15
+        ; Auto size: 0
+        MOV     ?V0 + 6,R1
+        MOV     ?V0 + 0,R2
+        MOV     ?V0 + 1,R3
+        MOV     A,R4
+        MOV     R6,A
+        MOV     A,R5
+        MOV     R7,A
+//  695   uint16 addr = (offset >> 2) + ((uint16)pg << 9);
+//  696 
+//  697   if ( !failF )
+        MOV     DPTR,#failF
+        MOVX    A,@DPTR
+        JNZ     ??writeWord_0
+//  698   {
+//  699     HalFlashWrite(addr, pBuf, 1);
+        ; Setup parameters for call to function HalFlashWrite
+        MOV     ?V0 + 2,#0x1
+        MOV     ?V0 + 3,#0x0
+        MOV     R0,#?V0 + 2
+        LCALL   ?PUSH_XSTACK_I_TWO
+        MOV     ?V0 + 2,R2
+        MOV     ?V0 + 3,R3
+        MOV     A,#0x2
+        MOV     R0,#?V0 + 2
+        LCALL   ?US_SHR
+        MOV     ?V0 + 4,R1
+        MOV     ?V0 + 5,A
+        MOV     A,#0x9
+        MOV     R0,#?V0 + 4
+        LCALL   ?S_SHL
+        MOV     A,?V0 + 2
+        ADD     A,#0x0
+        MOV     R2,A
+        MOV     A,?V0 + 3
+        ADDC    A,?V0 + 5
+        MOV     R3,A
+        LCALL   ??HalFlashWrite?relay
+        MOV     A,#0x2
+        LCALL   ?DEALLOC_XSTACK8
+//  700     verifyWordM(pg, offset, pBuf, 1);
+        ; Setup parameters for call to function verifyWordM
+        MOV     ?V0 + 2,#0x1
+        MOV     R0,#?V0 + 2
+        LCALL   ?PUSH_XSTACK_I_ONE
+        MOV     A,R6
+        MOV     R4,A
+        MOV     A,R7
+        MOV     R5,A
+        MOV     R2,?V0 + 0
+        MOV     R3,?V0 + 1
+        MOV     R1,?V0 + 6
+        LCALL   ??verifyWordM?relay
+        MOV     A,#0x1
+        LCALL   ?DEALLOC_XSTACK8
+//  701   }
+//  702 }
+??writeWord_0:
+        REQUIRE ?Subroutine1
+        ; // Fall through to label ?Subroutine1
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+?Subroutine1:
+        MOV     R7,#0x7
+        LJMP    ?BANKED_LEAVE_XDATA
+//  703 
+//  704 /*********************************************************************
+//  705  * @fn      writeWordM
+//  706  *
+//  707  * @brief   Writes multiple Flash-WORDs to NV.
+//  708  *
+//  709  * @param   pg - A valid NV Flash page.
+//  710  * @param   offset - A valid offset into the page.
+//  711  * @param   buf - Pointer to source buffer.
+//  712  * @param   cnt - Number of 4-byte blocks to write.
+//  713  *
+//  714  * @return  none
+//  715  */
+//  716 static void writeWordM( uint8 pg, uint16 offset, uint8 *buf, osalSnvLen_t cnt )
+//  717 {
+//  718   uint16 addr = (offset >> 2) + ((uint16)pg << 9);
+//  719 
+//  720   if ( !failF )
+//  721   {
+//  722     HalFlashWrite(addr, buf, cnt);
+//  723     verifyWordM(pg, offset, buf, cnt);
+//  724   }
+//  725 }
+//  726 
+//  727 /*********************************************************************
+//  728  * @fn      osal_snv_init
+//  729  *
+//  730  * @brief   Initialize NV service.
+//  731  *
+//  732  * @return  SUCCESS if initialization succeeds. FAILURE, otherwise.
+//  733  */
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+//  734 uint8 osal_snv_init( void )
+osal_snv_init:
+        CODE
+//  735 {
+        PUSH    DPL
+        PUSH    DPH
+        ; Saved register size: 2
+        ; Auto size: 0
+//  736   if (!initNV())
+        ; Setup parameters for call to function initNV
+        LCALL   ??initNV?relay
+        MOV     A,R1
+        JNZ     ??osal_snv_init_0
+//  737   {
+//  738     // NV initialization failed
+//  739     HAL_ASSERT_FORCED();
+//  740 
+//  741     return FAILURE;
+        MOV     R1,#0x1
+        SJMP    ??osal_snv_init_1
+//  742   }
+//  743 
+//  744   return SUCCESS;
+??osal_snv_init_0:
+        MOV     R1,#0x0
+??osal_snv_init_1:
+        POP     DPH
+        POP     DPL
+        LJMP    ?BRET
+//  745 }
+//  746 
+//  747 /*********************************************************************
+//  748  * @fn      osal_snv_write
+//  749  *
+//  750  * @brief   Write a data item to NV.
+//  751  *
+//  752  * @param   id  - Valid NV item Id.
+//  753  * @param   len - Length of data to write.
+//  754  * @param   *pBuf - Data to write.
+//  755  *
+//  756  * @return  SUCCESS if successful, NV_OPER_FAILED if failed.
+//  757  */
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+//  758 uint8 osal_snv_write( osalSnvId_t id, osalSnvLen_t len, void *pBuf )
+osal_snv_write:
+        CODE
+//  759 {
+        MOV     A,#-0xf
+        LCALL   ?BANKED_ENTER_XDATA
+        ; Saved register size: 15
+        ; Auto size: 5
+        MOV     A,#-0x5
+        LCALL   ?ALLOC_XSTACK8
+        MOV     ?V0 + 1,R1
+        MOV     ?V0 + 0,R2
+        MOV     ?V0 + 2,R4
+        MOV     ?V0 + 3,R5
+//  760   uint16 alignedLen;
+//  761 
+//  762   {
+//  763     uint16 offset = findItem(activePg, pgOff, id);
+        ; Setup parameters for call to function findItem
+        LCALL   ?Subroutine4 & 0xFFFF
+??CrossCallReturnLabel_17:
+        LCALL   ??findItem?relay
+        MOV     ?V0 + 4,R2
+        MOV     ?V0 + 5,R3
+        MOV     R6,?V0 + 4
+        MOV     R7,?V0 + 5
+//  764 
+//  765     if (offset > 0)
+        MOV     A,R6
+        ORL     A,R7
+        JZ      ??osal_snv_write_0
+//  766     {
+//  767       uint8 tmp;
+//  768       osalSnvLen_t i;
+//  769 
+//  770       for (i = 0; i < len; i++)
+        MOV     ?V0 + 6,#0x0
+        SJMP    ??osal_snv_write_1
+//  771       {
+//  772         HalFlashRead(activePg, offset, &tmp, 1);
+??osal_snv_write_2:
+        ; Setup parameters for call to function HalFlashRead
+        MOV     ?V0 + 4,#0x1
+        MOV     ?V0 + 5,#0x0
+        MOV     R0,#?V0 + 4
+        LCALL   ?PUSH_XSTACK_I_TWO
+        MOV     A,#0x2
+        LCALL   ?XSTACK_DISP0_8
+        MOV     R4,DPL
+        MOV     R5,DPH
+        MOV     A,R6
+        MOV     R2,A
+        MOV     A,R7
+        MOV     R3,A
+        MOV     DPTR,#activePg
+        MOVX    A,@DPTR
+        MOV     R1,A
+        LCALL   ??HalFlashRead?relay
+        MOV     A,#0x2
+        LCALL   ?DEALLOC_XSTACK8
+//  773         if (tmp != ((uint8 *)pBuf)[i])
+        MOV     DPL,?XSP + 0
+        MOV     DPH,?XSP + 1
+        MOVX    A,@DPTR
+        MOV     R0,A
+        MOV     ?V0 + 4,?V0 + 6
+        MOV     A,?V0 + 2
+        ADD     A,?V0 + 4
+        MOV     DPL,A
+        MOV     A,?V0 + 3
+        ADDC    A,#0x0
+        MOV     DPH,A
+        MOVX    A,@DPTR
+        XRL     A,R0
+        JNZ     ??osal_snv_write_0
+//  774         {
+//  775           break;
+//  776         }
+//  777         offset++;
+        MOV     A,R6
+        ADD     A,#0x1
+        INC     R6
+        MOV     A,R7
+        ADDC    A,#0x0
+        MOV     R7,A
+//  778       }
+        INC     ?V0 + 6
+??osal_snv_write_1:
+        MOV     A,?V0 + 6
+        CLR     C
+        SUBB    A,?V0 + 0
+        JC      ??osal_snv_write_2
+//  779 
+//  780       if (i == len)
+        MOV     A,?V0 + 0
+        XRL     A,?V0 + 6
+        JNZ     $+5
+        LJMP    ??osal_snv_write_3 & 0xFFFF
+//  781       {
+//  782         // Changed value is the same value as before.
+//  783         // Return here instead of re-writing the same value to NV.
+//  784         return SUCCESS;
+//  785       }
+//  786     }
+//  787   }
+//  788 
+//  789   alignedLen = ((len + OSAL_NV_WORD_SIZE - 1) / OSAL_NV_WORD_SIZE) * OSAL_NV_WORD_SIZE;
+??osal_snv_write_0:
+        MOV     ?V0 + 4,?V0 + 0
+        MOV     A,?V0 + 4
+        ADD     A,#0x3
+        MOV     R0,A
+        CLR     A
+        ADDC    A,#0x0
+        MOV     R1,A
+        MOV     R2,#0x4
+        MOV     R3,#0x0
+        LCALL   ?S_DIV_MOD
+        MOV     ?V0 + 4,R0
+        MOV     ?V0 + 5,R1
+        MOV     A,#0x2
+        MOV     R0,#?V0 + 4
+        LCALL   ?S_SHL
+        MOV     R6,?V0 + 4
+        MOV     R7,?V0 + 5
+//  790 
+//  791   if ( pgOff + alignedLen + OSAL_NV_WORD_SIZE > OSAL_NV_PAGE_SIZE )
+        MOV     DPTR,#pgOff
+        MOVX    A,@DPTR
+        ADD     A,R6
+        MOV     R0,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        ADDC    A,R7
+        MOV     R1,A
+        LCALL   ?Subroutine9 & 0xFFFF
+??CrossCallReturnLabel_10:
+        MOV     A,R0
+        SUBB    A,#0x1
+        MOV     A,R1
+        SUBB    A,#0x8
+        JC      ??osal_snv_write_4
+//  792   {
+//  793     setXferPage();
+        MOV     A,#0x1
+        LCALL   ?XSTACK_DISP0_8
+        CLR     A
+        MOVX    @DPTR,A
+        INC     DPTR
+        MOVX    @DPTR,A
+        INC     DPTR
+        MOVX    @DPTR,A
+        INC     DPTR
+        MOVX    @DPTR,A
+        ; Setup parameters for call to function writeWord
+        INC     A
+        LCALL   ?XSTACK_DISP0_8
+        MOV     R4,DPL
+        MOV     R5,DPH
+        MOV     R2,#0x0
+        MOV     R3,#0x0
+        MOV     DPTR,#activePg
+        MOVX    A,@DPTR
+        MOV     R1,A
+        LCALL   ??writeWord?relay
+//  794     compactPage(activePg);
+        ; Setup parameters for call to function compactPage
+        MOV     DPTR,#activePg
+        MOVX    A,@DPTR
+        MOV     R1,A
+        LCALL   ??compactPage?relay
+//  795   }
+//  796 
+//  797   // pBuf shall be referenced beyond its valid length to save code size.
+//  798   writeItem(activePg, pgOff, id, alignedLen, pBuf);
+??osal_snv_write_4:
+        ; Setup parameters for call to function writeItem
+        MOV     R0,#?V0 + 2
+        LCALL   ?PUSH_XSTACK_I_TWO
+        MOV     ?V0 + 2,R6
+        MOV     ?V0 + 3,R7
+        MOV     R0,#?V0 + 2
+        LCALL   ?PUSH_XSTACK_I_TWO
+        LCALL   ?Subroutine4 & 0xFFFF
+??CrossCallReturnLabel_18:
+        LCALL   ??writeItem?relay
+        MOV     A,#0x4
+        LCALL   ?DEALLOC_XSTACK8
+//  799   if (failF)
+        MOV     DPTR,#failF
+        MOVX    A,@DPTR
+        JZ      ??osal_snv_write_5
+//  800   {
+//  801     return NV_OPER_FAILED;
+        MOV     R1,#0xa
+        SJMP    ??osal_snv_write_6
+//  802   }
+//  803 
+//  804   pgOff += alignedLen + OSAL_NV_WORD_SIZE;
+??osal_snv_write_5:
+        LCALL   ?Subroutine8 & 0xFFFF
+??CrossCallReturnLabel_8:
+        MOVX    A,@DPTR
+        ADD     A,R0
+        MOVX    @DPTR,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        ADDC    A,R1
+        MOVX    @DPTR,A
+//  805 
+//  806   return SUCCESS;
+??osal_snv_write_3:
+        MOV     R1,#0x0
+??osal_snv_write_6:
+        MOV     A,#0x5
+        LCALL   ?DEALLOC_XSTACK8
+        LJMP    ?Subroutine1 & 0xFFFF
+//  807 }
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+?Subroutine9:
+        MOV     A,R0
+        ADD     A,#0x4
+        MOV     R0,A
+        MOV     A,R1
+        ADDC    A,#0x0
+        MOV     R1,A
+        CLR     C
+        RET
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+?Subroutine8:
+        MOV     A,R6
+        ADD     A,#0x4
+        MOV     R0,A
+        MOV     A,R7
+        ADDC    A,#0x0
+        MOV     R1,A
+        MOV     DPTR,#pgOff
+        RET
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+?Subroutine4:
+        MOV     R4,?V0 + 1
+        REQUIRE ??Subroutine14_0
+        ; // Fall through to label ??Subroutine14_0
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+??Subroutine14_0:
+        MOV     DPTR,#pgOff
+        MOVX    A,@DPTR
+        MOV     R2,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R3,A
+        MOV     DPTR,#activePg
+        MOVX    A,@DPTR
+        MOV     R1,A
+        RET
+//  808 
+//  809 /*********************************************************************
+//  810  * @fn      osal_snv_read
+//  811  *
+//  812  * @brief   Read data from NV.
+//  813  *
+//  814  * @param   id  - Valid NV item Id.
+//  815  * @param   len - Length of data to read.
+//  816  * @param   *pBuf - Data is read into this buffer.
+//  817  *
+//  818  * @return  SUCCESS if successful.
+//  819  *          Otherwise, NV_OPER_FAILED for failure.
+//  820  */
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+//  821 uint8 osal_snv_read( osalSnvId_t id, osalSnvLen_t len, void *pBuf )
+osal_snv_read:
+        CODE
+//  822 {
+        MOV     A,#-0xc
+        LCALL   ?BANKED_ENTER_XDATA
+        ; Saved register size: 12
+        ; Auto size: 0
+        MOV     ?V0 + 2,R1
+        MOV     ?V0 + 3,R2
+        MOV     A,R4
+        MOV     R6,A
+        MOV     A,R5
+        MOV     R7,A
+//  823   uint16 offset = findItem(activePg, pgOff, id);
+        ; Setup parameters for call to function findItem
+        MOV     R4,?V0 + 2
+        LCALL   ??Subroutine14_0 & 0xFFFF
+??CrossCallReturnLabel_16:
+        LCALL   ??findItem?relay
+//  824 
+//  825   if (offset != 0)
+        MOV     A,R2
+        ORL     A,R3
+        JZ      ??osal_snv_read_0
+//  826   {
+//  827     HalFlashRead(activePg, offset, pBuf, len);
+        ; Setup parameters for call to function HalFlashRead
+        MOV     ?V0 + 0,?V0 + 3
+        MOV     ?V0 + 1,#0x0
+        MOV     R0,#?V0 + 0
+        LCALL   ?PUSH_XSTACK_I_TWO
+        MOV     A,R6
+        MOV     R4,A
+        MOV     A,R7
+        MOV     R5,A
+        MOV     DPTR,#activePg
+        MOVX    A,@DPTR
+        MOV     R1,A
+        LCALL   ??HalFlashRead?relay
+        MOV     A,#0x2
+        LCALL   ?DEALLOC_XSTACK8
+//  828     return SUCCESS;
+        MOV     R1,#0x0
+        SJMP    ??osal_snv_read_1
+//  829   }
+//  830   return NV_OPER_FAILED;
+??osal_snv_read_0:
+        MOV     R1,#0xa
+??osal_snv_read_1:
+        LJMP    ??Subroutine12_0 & 0xFFFF
+//  831 }
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA32
+__Constant_100000:
+        DD 1048576
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA32
+__Constant_ffffffff:
+        DD 4294967295
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??initNV?relay:
+        CODE
+        LCALL   ?BDISPATCH
+        DATA24
+        DC24    initNV
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??setActivePage?relay:
+        CODE
+        LCALL   ?BDISPATCH
+        DATA24
+        DC24    setActivePage
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??erasePage?relay:
+        CODE
+        LCALL   ?BDISPATCH
+        DATA24
+        DC24    erasePage
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??cleanErasedPage?relay:
+        CODE
+        LCALL   ?BDISPATCH
+        DATA24
+        DC24    cleanErasedPage
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??findOffset?relay:
+        CODE
+        LCALL   ?BDISPATCH
+        DATA24
+        DC24    findOffset
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??findItem?relay:
+        CODE
+        LCALL   ?BDISPATCH
+        DATA24
+        DC24    findItem
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??writeItem?relay:
+        CODE
+        LCALL   ?BDISPATCH
+        DATA24
+        DC24    writeItem
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??compactPage?relay:
+        CODE
+        LCALL   ?BDISPATCH
+        DATA24
+        DC24    compactPage
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??verifyWordM?relay:
+        CODE
+        LCALL   ?BDISPATCH
+        DATA24
+        DC24    verifyWordM
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??writeWord?relay:
+        CODE
+        LCALL   ?BDISPATCH
+        DATA24
+        DC24    writeWord
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??osal_snv_init?relay:
+        CODE
+        LCALL   ?BDISPATCH
+        DATA24
+        DC24    osal_snv_init
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??osal_snv_write?relay:
+        CODE
+        LCALL   ?BDISPATCH
+        DATA24
+        DC24    osal_snv_write
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??osal_snv_read?relay:
+        CODE
+        LCALL   ?BDISPATCH
+        DATA24
+        DC24    osal_snv_read
+
+        END
+//  832 
+//  833 
+//  834 /*********************************************************************
+//  835 *********************************************************************/
+// 
+// 2 010 bytes in segment BANKED_CODE
+//    78 bytes in segment BANK_RELAYS
+// 4 096 bytes in segment BLENV_ADDRESS_SPACE
+//     8 bytes in segment XDATA_ROM_C
+//     4 bytes in segment XDATA_Z
+// 
+// 2 088 bytes of CODE  memory
+//     0 bytes of CONST memory (+ 8 bytes shared)
+// 4 100 bytes of XDATA memory
+//
+//Errors: none
+//Warnings: none

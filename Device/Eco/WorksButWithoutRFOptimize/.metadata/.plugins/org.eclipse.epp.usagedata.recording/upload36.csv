@@ -1,0 +1,26 @@
+what,kind,bundleId,bundleVersion,description,time
+deactivated,workbench,org.eclipse.ui.workbench,3.5.1.M20090826-0800a,"",1390285431134
+activated,workbench,org.eclipse.ui.workbench,3.5.1.M20090826-0800a,"",1390285449536
+activated,view,org.eclipse.ui.console,3.4.0.v20090513,"org.eclipse.ui.console.ConsoleView",1390285452595
+error,log,,,"Variable references empty selection: ${project_loc}",1390285493054
+deactivated,workbench,org.eclipse.ui.workbench,3.5.1.M20090826-0800a,"",1390285493060
+activated,workbench,org.eclipse.ui.workbench,3.5.1.M20090826-0800a,"",1390285494590
+activated,view,org.eclipse.ui.navigator.resources,3.4.1.M20090826-0800,"org.eclipse.ui.navigator.ProjectExplorer",1390285495906
+deactivated,workbench,org.eclipse.ui.workbench,3.5.1.M20090826-0800a,"",1390285499398
+activated,workbench,org.eclipse.ui.workbench,3.5.1.M20090826-0800a,"",1390285499820
+deactivated,workbench,org.eclipse.ui.workbench,3.5.1.M20090826-0800a,"",1390285567982
+activated,workbench,org.eclipse.ui.workbench,3.5.1.M20090826-0800a,"",1390285663032
+deactivated,workbench,org.eclipse.ui.workbench,3.5.1.M20090826-0800a,"",1390285663570
+activated,workbench,org.eclipse.ui.workbench,3.5.1.M20090826-0800a,"",1390285664897
+closed,workbench,org.eclipse.ui.workbench,3.5.1.M20090826-0800a,"",1390285665024
+stopped,bundle,org.eclipse.cdt.debug.mi.ui,6.0.0.200909110608,"org.eclipse.cdt.debug.mi.ui",1390285665233
+stopped,bundle,org.eclipse.cdt.debug.mi.core,6.0.0.200909110608,"org.eclipse.cdt.debug.mi.core",1390285665233
+stopped,bundle,org.eclipse.cdt.dsf.gdb.ui,2.0.0.200909110608,"org.eclipse.cdt.dsf.gdb.ui",1390285665233
+stopped,bundle,org.eclipse.cdt.dsf.ui,2.0.1.200909110608,"org.eclipse.cdt.dsf.ui",1390285665233
+stopped,bundle,org.eclipse.cdt.launch,6.0.0.200909110608,"org.eclipse.cdt.launch",1390285665233
+stopped,bundle,org.eclipse.cdt.debug.ui,6.0.0.200909110608,"org.eclipse.cdt.debug.ui",1390285665233
+stopped,bundle,org.eclipse.cdt.dsf.gdb,2.0.0.200909110608,"org.eclipse.cdt.dsf.gdb",1390285665233
+stopped,bundle,org.eclipse.cdt.dsf,2.0.0.200909110608,"org.eclipse.cdt.dsf",1390285665234
+stopped,bundle,org.eclipse.cdt.debug.core,6.0.0.200909110608,"org.eclipse.cdt.debug.core",1390285665234
+stopped,bundle,org.eclipse.cdt.managedbuilder.ui,5.1.0.200909110608,"org.eclipse.cdt.managedbuilder.ui",1390285665234
+stopped,bundle,org.eclipse.cdt.make.ui,6.0.1.200909110608,"org.eclipse.cdt.make.ui",1390285665234

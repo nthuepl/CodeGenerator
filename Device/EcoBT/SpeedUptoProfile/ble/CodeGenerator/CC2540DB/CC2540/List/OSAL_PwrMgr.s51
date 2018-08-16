@@ -1,0 +1,480 @@
+///////////////////////////////////////////////////////////////////////////////
+//                                                                            /
+// IAR C/C++ Compiler V8.20.1.40829 for 8051            23/May/2014  20:10:24 /
+// Copyright 2004-2012 IAR Systems AB.                                        /
+//                                                                            /
+//    Core               =  plain                                             /
+//    Code model         =  banked                                            /
+//    Data model         =  large                                             /
+//    Calling convention =  xdata reentrant                                   /
+//    Constant location  =  data_rom                                          /
+//    Dptr setup         =  1,16                                              /
+//                                                                            /
+//    Source file        =  D:\NTHU\¬ã¨s\Important\ThesisCode\Code\GitLabClou /
+//                          d\NewEcoExec\codegenerator\Device\EcoBT\Component /
+//                          s\osal\common\OSAL_PwrMgr.c                       /
+//    Command line       =  -f D:\NTHU\¬ã¨s\Important\ThesisCode\Code\GitLabC /
+//                          loud\NewEcoExec\codegenerator\Device\EcoBT\Projec /
+//                          t\ble\CodeGenerator\CC2540DB\..\..\config\buildCo /
+//                          mponents.cfg (-DBROADCASTER_CFG=0x01              /
+//                          -DOBSERVER_CFG=0x02 -DPERIPHERAL_CFG=0x04         /
+//                          -DCENTRAL_CFG=0x08 -DADV_NCONN_CFG=0x01           /
+//                          -DADV_CONN_CFG=0x02 -DSCAN_CFG=0x04               /
+//                          -DINIT_CFG=0x08 -DADV_CFG=ADV_NCONN_CFG+ADV_CONN_ /
+//                          CFG -DLINK_CFG=ADV_CONN_CFG+INIT_CFG              /
+//                          -DFULL_CFG=INIT_CFG+SCAN_CFG+ADV_NCONN_CFG+ADV_CO /
+//                          NN_CFG) -f D:\NTHU\¬ã¨s\Important\ThesisCode\Code /
+//                          \GitLabCloud\NewEcoExec\codegenerator\Device\EcoB /
+//                          T\Project\ble\CodeGenerator\CC2540DB\buildConfig. /
+//                          cfg (-DHOST_CONFIG=PERIPHERAL_CFG                 /
+//                          -DGAP_PRIVACY_RECONNECT)                          /
+//                          D:\NTHU\¬ã¨s\Important\ThesisCode\Code\GitLabClou /
+//                          d\NewEcoExec\codegenerator\Device\EcoBT\Component /
+//                          s\osal\common\OSAL_PwrMgr.c -D INT_HEAP_LEN=900   /
+//                          -D HALNODEBUG -D OSAL_CBTIMER_NUM_TASKS=1 -D      /
+//                          HAL_AES_DMA=TRUE -D HAL_DMA=TRUE -D               /
+//                          xPOWER_SAVING -D xPLUS_BROADCASTER -D             /
+//                          HAL_LCD=FALSE -D HAL_LED=TRUE -D HAL_ADC=TRUE     /
+//                          -lB D:\NTHU\¬ã¨s\Important\ThesisCode\Code\GitLab /
+//                          Cloud\NewEcoExec\codegenerator\Device\EcoBT\Proje /
+//                          ct\ble\CodeGenerator\CC2540DB\CC2540\List\ -o     /
+//                          D:\NTHU\¬ã¨s\Important\ThesisCode\Code\GitLabClou /
+//                          d\NewEcoExec\codegenerator\Device\EcoBT\Project\b /
+//                          le\CodeGenerator\CC2540DB\CC2540\Obj\ -e --debug  /
+//                          --core=plain --dptr=16,1 --data_model=large       /
+//                          --code_model=banked --calling_convention=xdata_re /
+//                          entrant --place_constants=data_rom                /
+//                          --nr_virtual_regs 16 -I                           /
+//                          D:\NTHU\¬ã¨s\Important\ThesisCode\Code\GitLabClou /
+//                          d\NewEcoExec\codegenerator\Device\EcoBT\Project\b /
+//                          le\CodeGenerator\CC2540DB\..\..\common\ -I        /
+//                          D:\NTHU\¬ã¨s\Important\ThesisCode\Code\GitLabClou /
+//                          d\NewEcoExec\codegenerator\Device\EcoBT\Project\b /
+//                          le\CodeGenerator\CC2540DB\..\..\include\ -I       /
+//                          D:\NTHU\¬ã¨s\Important\ThesisCode\Code\GitLabClou /
+//                          d\NewEcoExec\codegenerator\Device\EcoBT\Project\b /
+//                          le\CodeGenerator\CC2540DB\..\..\..\..\Components\ /
+//                          hal\include\ -I D:\NTHU\¬ã¨s\Important\ThesisCode /
+//                          \Code\GitLabCloud\NewEcoExec\codegenerator\Device /
+//                          \EcoBT\Project\ble\CodeGenerator\CC2540DB\..\..\. /
+//                          .\..\Components\hal\target\CC2540EB\ -I           /
+//                          D:\NTHU\¬ã¨s\Important\ThesisCode\Code\GitLabClou /
+//                          d\NewEcoExec\codegenerator\Device\EcoBT\Project\b /
+//                          le\CodeGenerator\CC2540DB\..\..\..\..\Components\ /
+//                          osal\include\ -I D:\NTHU\¬ã¨s\Important\ThesisCod /
+//                          e\Code\GitLabCloud\NewEcoExec\codegenerator\Devic /
+//                          e\EcoBT\Project\ble\CodeGenerator\CC2540DB\..\..\ /
+//                          ..\..\Components\services\saddr\ -I               /
+//                          D:\NTHU\¬ã¨s\Important\ThesisCode\Code\GitLabClou /
+//                          d\NewEcoExec\codegenerator\Device\EcoBT\Project\b /
+//                          le\CodeGenerator\CC2540DB\..\..\..\..\Components\ /
+//                          ble\include\ -I D:\NTHU\¬ã¨s\Important\ThesisCode /
+//                          \Code\GitLabCloud\NewEcoExec\codegenerator\Device /
+//                          \EcoBT\Project\ble\CodeGenerator\CC2540DB\..\..\. /
+//                          .\..\Components\ble\controller\phy\ -I            /
+//                          D:\NTHU\¬ã¨s\Important\ThesisCode\Code\GitLabClou /
+//                          d\NewEcoExec\codegenerator\Device\EcoBT\Project\b /
+//                          le\CodeGenerator\CC2540DB\..\..\..\..\Components\ /
+//                          ble\controller\include\ -I                        /
+//                          D:\NTHU\¬ã¨s\Important\ThesisCode\Code\GitLabClou /
+//                          d\NewEcoExec\codegenerator\Device\EcoBT\Project\b /
+//                          le\CodeGenerator\CC2540DB\..\..\..\..\Components\ /
+//                          ble\hci\ -I D:\NTHU\¬ã¨s\Important\ThesisCode\Cod /
+//                          e\GitLabCloud\NewEcoExec\codegenerator\Device\Eco /
+//                          BT\Project\ble\CodeGenerator\CC2540DB\..\..\..\.. /
+//                          \Components\ble\host\ -I                          /
+//                          D:\NTHU\¬ã¨s\Important\ThesisCode\Code\GitLabClou /
+//                          d\NewEcoExec\codegenerator\Device\EcoBT\Project\b /
+//                          le\CodeGenerator\CC2540DB\..\..\common\cc2540\    /
+//                          -I D:\NTHU\¬ã¨s\Important\ThesisCode\Code\GitLabC /
+//                          loud\NewEcoExec\codegenerator\Device\EcoBT\Projec /
+//                          t\ble\CodeGenerator\CC2540DB\..\..\common\npi\npi /
+//                          _np\ -I D:\NTHU\¬ã¨s\Important\ThesisCode\Code\Gi /
+//                          tLabCloud\NewEcoExec\codegenerator\Device\EcoBT\P /
+//                          roject\ble\CodeGenerator\CC2540DB\..\..\Profiles\ /
+//                          Roles\ -I D:\NTHU\¬ã¨s\Important\ThesisCode\Code\ /
+//                          GitLabCloud\NewEcoExec\codegenerator\Device\EcoBT /
+//                          \Project\ble\CodeGenerator\CC2540DB\..\..\Profile /
+//                          s\SimpleProfile\ -I D:\NTHU\¬ã¨s\Important\Thesis /
+//                          Code\Code\GitLabCloud\NewEcoExec\codegenerator\De /
+//                          vice\EcoBT\Project\ble\CodeGenerator\CC2540DB\..\ /
+//                          ..\Profiles\DevInfo\ -I                           /
+//                          D:\NTHU\¬ã¨s\Important\ThesisCode\Code\GitLabClou /
+//                          d\NewEcoExec\codegenerator\Device\EcoBT\Project\b /
+//                          le\CodeGenerator\CC2540DB\..\..\Profiles\Accelero /
+//                          meter\ -I D:\NTHU\¬ã¨s\Important\ThesisCode\Code\ /
+//                          GitLabCloud\NewEcoExec\codegenerator\Device\EcoBT /
+//                          \Project\ble\CodeGenerator\CC2540DB\..\..\Profile /
+//                          s\EcoExecGATTProfile\ -I                          /
+//                          D:\NTHU\¬ã¨s\Important\ThesisCode\Code\GitLabClou /
+//                          d\NewEcoExec\codegenerator\Device\EcoBT\Project\b /
+//                          le\CodeGenerator\CC2540DB\..\..\Profiles\Batt\    /
+//                          -I D:\NTHU\¬ã¨s\Important\ThesisCode\Code\GitLabC /
+//                          loud\NewEcoExec\codegenerator\Device\EcoBT\Projec /
+//                          t\ble\CodeGenerator\CC2540DB\..\..\Profiles\HIDDe /
+//                          v\ -Ohz                                           /
+//    List file          =  D:\NTHU\¬ã¨s\Important\ThesisCode\Code\GitLabClou /
+//                          d\NewEcoExec\codegenerator\Device\EcoBT\Project\b /
+//                          le\CodeGenerator\CC2540DB\CC2540\List\OSAL_PwrMgr /
+//                          .s51                                              /
+//                                                                            /
+//                                                                            /
+///////////////////////////////////////////////////////////////////////////////
+
+        NAME OSAL_PwrMgr
+
+        RSEG DOVERLAY:DATA:NOROOT(0)
+        RSEG IOVERLAY:IDATA:NOROOT(0)
+        RSEG ISTACK:IDATA:NOROOT(0)
+        RSEG PSTACK:XDATA:NOROOT(0)
+        RSEG XSTACK:XDATA:NOROOT(0)
+
+        EXTERN ?BANKED_ENTER_XDATA
+        EXTERN ?BANKED_LEAVE_XDATA
+        EXTERN ?BDISPATCH
+        EXTERN ?BRET
+        EXTERN ?S_SHL
+        EXTERN ?V0
+        EXTERN __INIT_XDATA_Z
+
+        PUBLIC ??osal_pwrmgr_device?relay
+        PUBLIC ??osal_pwrmgr_init?relay
+        PUBLIC ??osal_pwrmgr_task_state?relay
+        PUBLIC osal_pwrmgr_device
+        PUBLIC osal_pwrmgr_init
+        PUBLIC osal_pwrmgr_task_state
+        PUBLIC pwrmgr_attribute
+
+osal_pwrmgr_device  SYMBOL "osal_pwrmgr_device"
+??osal_pwrmgr_device?relay SYMBOL "?relay", osal_pwrmgr_device
+osal_pwrmgr_init    SYMBOL "osal_pwrmgr_init"
+??osal_pwrmgr_init?relay SYMBOL "?relay", osal_pwrmgr_init
+osal_pwrmgr_task_state SYMBOL "osal_pwrmgr_task_state"
+??osal_pwrmgr_task_state?relay SYMBOL "?relay", osal_pwrmgr_task_state
+
+        EXTERN tasksCnt
+
+// D:\NTHU\¬ã¨s\Important\ThesisCode\Code\GitLabCloud\NewEcoExec\codegenerator\Device\EcoBT\Components\osal\common\OSAL_PwrMgr.c
+//    1 /**************************************************************************************************
+//    2   Filename:       OSAL_pwrmgr.c
+//    3   Revised:        $Date: 2011-09-16 19:09:24 -0700 (Fri, 16 Sep 2011) $
+//    4   Revision:       $Revision: 27618 $
+//    5 
+//    6   Description:    This file contains the OSAL Power Management API.
+//    7 
+//    8 
+//    9   Copyright 2004-2011 Texas Instruments Incorporated. All rights reserved.
+//   10 
+//   11   IMPORTANT: Your use of this Software is limited to those specific rights
+//   12   granted under the terms of a software license agreement between the user
+//   13   who downloaded the software, his/her employer (which must be your employer)
+//   14   and Texas Instruments Incorporated (the "License").  You may not use this
+//   15   Software unless you agree to abide by the terms of the License. The License
+//   16   limits your use, and you acknowledge, that the Software may not be modified,
+//   17   copied or distributed unless embedded on a Texas Instruments microcontroller
+//   18   or used solely and exclusively in conjunction with a Texas Instruments radio
+//   19   frequency transceiver, which is integrated into your product.  Other than for
+//   20   the foregoing purpose, you may not use, reproduce, copy, prepare derivative
+//   21   works of, modify, distribute, perform, display or sell this Software and/or
+//   22   its documentation for any purpose.
+//   23 
+//   24   YOU FURTHER ACKNOWLEDGE AND AGREE THAT THE SOFTWARE AND DOCUMENTATION ARE
+//   25   PROVIDED “AS IS” WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESS OR IMPLIED, 
+//   26   INCLUDING WITHOUT LIMITATION, ANY WARRANTY OF MERCHANTABILITY, TITLE, 
+//   27   NON-INFRINGEMENT AND FITNESS FOR A PARTICULAR PURPOSE. IN NO EVENT SHALL
+//   28   TEXAS INSTRUMENTS OR ITS LICENSORS BE LIABLE OR OBLIGATED UNDER CONTRACT,
+//   29   NEGLIGENCE, STRICT LIABILITY, CONTRIBUTION, BREACH OF WARRANTY, OR OTHER
+//   30   LEGAL EQUITABLE THEORY ANY DIRECT OR INDIRECT DAMAGES OR EXPENSES
+//   31   INCLUDING BUT NOT LIMITED TO ANY INCIDENTAL, SPECIAL, INDIRECT, PUNITIVE
+//   32   OR CONSEQUENTIAL DAMAGES, LOST PROFITS OR LOST DATA, COST OF PROCUREMENT
+//   33   OF SUBSTITUTE GOODS, TECHNOLOGY, SERVICES, OR ANY CLAIMS BY THIRD PARTIES
+//   34   (INCLUDING BUT NOT LIMITED TO ANY DEFENSE THEREOF), OR OTHER SIMILAR COSTS.
+//   35 
+//   36   Should you have any questions regarding your right to use this Software,
+//   37   contact Texas Instruments Incorporated at www.TI.com. 
+//   38 **************************************************************************************************/
+//   39 
+//   40 /*********************************************************************
+//   41  * INCLUDES
+//   42  */
+//   43 
+//   44 #include "comdef.h"
+//   45 #include "OnBoard.h"
+//   46 #include "OSAL.h"
+//   47 #include "OSAL_Tasks.h"
+//   48 #include "OSAL_Timers.h"
+//   49 #include "OSAL_PwrMgr.h"
+//   50 
+//   51 /*********************************************************************
+//   52  * MACROS
+//   53  */
+//   54 
+//   55 /*********************************************************************
+//   56  * CONSTANTS
+//   57  */
+//   58 
+//   59 /*********************************************************************
+//   60  * TYPEDEFS
+//   61  */
+//   62 
+//   63 /*********************************************************************
+//   64  * GLOBAL VARIABLES
+//   65  */
+//   66 
+//   67 /* This global variable stores the power management attributes.
+//   68  */
+
+        RSEG XDATA_Z:XDATA:NOROOT(0)
+        DATA8
+//   69 pwrmgr_attribute_t pwrmgr_attribute;
+pwrmgr_attribute:
+        DS 7
+        REQUIRE __INIT_XDATA_Z
+//   70 
+//   71 /*********************************************************************
+//   72  * EXTERNAL VARIABLES
+//   73  */
+//   74 
+//   75 /*********************************************************************
+//   76  * EXTERNAL FUNCTIONS
+//   77  */
+//   78 
+//   79 /*********************************************************************
+//   80  * LOCAL VARIABLES
+//   81  */
+//   82 
+//   83 /*********************************************************************
+//   84  * LOCAL FUNCTION PROTOTYPES
+//   85  */
+//   86 
+//   87 /*********************************************************************
+//   88  * FUNCTIONS
+//   89  *********************************************************************/
+//   90 
+//   91 /*********************************************************************
+//   92  * @fn      osal_pwrmgr_init
+//   93  *
+//   94  * @brief   Initialize the power management system.
+//   95  *
+//   96  * @param   none.
+//   97  *
+//   98  * @return  none.
+//   99  */
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+//  100 void osal_pwrmgr_init( void )
+osal_pwrmgr_init:
+        CODE
+//  101 {
+        PUSH    DPL
+        PUSH    DPH
+        ; Saved register size: 2
+        ; Auto size: 0
+//  102   pwrmgr_attribute.pwrmgr_device = PWRMGR_ALWAYS_ON; // Default to no power conservation.
+        MOV     DPTR,#pwrmgr_attribute + 6
+        CLR     A
+        MOVX    @DPTR,A
+//  103   pwrmgr_attribute.pwrmgr_task_state = 0;            // Cleared.  All set to conserve
+        MOV     DPTR,#pwrmgr_attribute
+        MOVX    @DPTR,A
+        INC     DPTR
+        REQUIRE ?Subroutine0
+        ; // Fall through to label ?Subroutine0
+//  104 }
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+?Subroutine0:
+        MOVX    @DPTR,A
+        POP     DPH
+        POP     DPL
+        LJMP    ?BRET
+//  105 
+//  106 /*********************************************************************
+//  107  * @fn      osal_pwrmgr_device
+//  108  *
+//  109  * @brief   Sets the device power characteristic.
+//  110  *
+//  111  * @param   pwrmgr_device - type of power devices. With PWRMGR_ALWAYS_ON
+//  112  *          selection, there is no power savings and the device is most
+//  113  *          likely on mains power. The PWRMGR_BATTERY selection allows the
+//  114  *          HAL sleep manager to enter sleep.
+//  115  *
+//  116  * @return  none
+//  117  */
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+//  118 void osal_pwrmgr_device( uint8 pwrmgr_device )
+osal_pwrmgr_device:
+        CODE
+//  119 {
+        PUSH    DPL
+        PUSH    DPH
+        ; Saved register size: 2
+        ; Auto size: 0
+//  120   pwrmgr_attribute.pwrmgr_device = pwrmgr_device;
+        MOV     A,R1
+        MOV     DPTR,#pwrmgr_attribute + 6
+        SJMP    ?Subroutine0
+//  121 }
+//  122 
+//  123 /*********************************************************************
+//  124  * @fn      osal_pwrmgr_task_state
+//  125  *
+//  126  * @brief   This function is called by each task to state whether or
+//  127  *          not this task wants to conserve power.
+//  128  *
+//  129  * @param   task_id - calling task ID.
+//  130  *          state - whether the calling task wants to
+//  131  *          conserve power or not.
+//  132  *
+//  133  * @return  SUCCESS if task complete
+//  134  */
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+//  135 uint8 osal_pwrmgr_task_state( uint8 task_id, uint8 state )
+osal_pwrmgr_task_state:
+        CODE
+//  136 {
+        MOV     A,#-0xa
+        LCALL   ?BANKED_ENTER_XDATA
+        ; Saved register size: 10
+        ; Auto size: 0
+        MOV     A,R1
+        MOV     R3,A
+//  137   if ( task_id >= tasksCnt )
+        MOV     DPTR,#tasksCnt
+        MOVX    A,@DPTR
+        MOV     R0,A
+        MOV     A,R3
+        CLR     C
+        SUBB    A,R0
+        JC      ??osal_pwrmgr_task_state_0
+//  138     return ( INVALID_TASK );
+        MOV     R1,#0x3
+        SJMP    ??osal_pwrmgr_task_state_1
+//  139 
+//  140   if ( state == PWRMGR_CONSERVE )
+??osal_pwrmgr_task_state_0:
+        MOV     ?V0 + 0,#0x1
+        MOV     ?V0 + 1,#0x0
+        MOV     A,R3
+        MOV     R0,#?V0 + 0
+        LCALL   ?S_SHL
+        MOV     R4,?V0 + 0
+        MOV     R5,?V0 + 1
+        MOV     A,R2
+        JNZ     ??osal_pwrmgr_task_state_2
+//  141   {
+//  142     // Clear the task state flag
+//  143     pwrmgr_attribute.pwrmgr_task_state &= ~(1 << task_id );
+        MOV     A,R4
+        CPL     A
+        MOV     R0,A
+        MOV     A,R5
+        CPL     A
+        MOV     R1,A
+        MOV     DPTR,#pwrmgr_attribute
+        MOVX    A,@DPTR
+        ANL     A,R0
+        MOVX    @DPTR,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        ANL     A,R1
+        SJMP    ??osal_pwrmgr_task_state_3
+//  144   }
+//  145   else
+//  146   {
+//  147     // Set the task state flag
+//  148     pwrmgr_attribute.pwrmgr_task_state |= (1 << task_id);
+??osal_pwrmgr_task_state_2:
+        MOV     DPTR,#pwrmgr_attribute
+        MOVX    A,@DPTR
+        ORL     A,R4
+        MOVX    @DPTR,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        ORL     A,R5
+??osal_pwrmgr_task_state_3:
+        MOVX    @DPTR,A
+//  149   }
+//  150 
+//  151   return ( SUCCESS );
+        MOV     R1,#0x0
+??osal_pwrmgr_task_state_1:
+        MOV     R7,#0x2
+        LJMP    ?BANKED_LEAVE_XDATA
+//  152 }
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??osal_pwrmgr_init?relay:
+        CODE
+        LCALL   ?BDISPATCH
+        DATA24
+        DC24    osal_pwrmgr_init
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??osal_pwrmgr_device?relay:
+        CODE
+        LCALL   ?BDISPATCH
+        DATA24
+        DC24    osal_pwrmgr_device
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??osal_pwrmgr_task_state?relay:
+        CODE
+        LCALL   ?BDISPATCH
+        DATA24
+        DC24    osal_pwrmgr_task_state
+
+        END
+//  153 
+//  154 #if defined( POWER_SAVING )
+//  155 /*********************************************************************
+//  156  * @fn      osal_pwrmgr_powerconserve
+//  157  *
+//  158  * @brief   This function is called from the main OSAL loop when there are
+//  159  *          no events scheduled and shouldn't be called from anywhere else.
+//  160  *
+//  161  * @param   none.
+//  162  *
+//  163  * @return  none.
+//  164  */
+//  165 void osal_pwrmgr_powerconserve( void )
+//  166 {
+//  167   uint32        next;
+//  168   halIntState_t intState;
+//  169 
+//  170   // Should we even look into power conservation
+//  171   if ( pwrmgr_attribute.pwrmgr_device != PWRMGR_ALWAYS_ON )
+//  172   {
+//  173     // Are all tasks in agreement to conserve
+//  174     if ( pwrmgr_attribute.pwrmgr_task_state == 0 )
+//  175     {
+//  176       // Hold off interrupts.
+//  177       HAL_ENTER_CRITICAL_SECTION( intState );
+//  178 
+//  179       // Get next time-out
+//  180       next = osal_next_timeout();
+//  181 
+//  182       // Re-enable interrupts.
+//  183       HAL_EXIT_CRITICAL_SECTION( intState );
+//  184 
+//  185       // Put the processor into sleep mode
+//  186       OSAL_SET_CPU_INTO_SLEEP( next );
+//  187     }
+//  188   }
+//  189 }
+//  190 #endif /* POWER_SAVING */
+//  191 
+//  192 /*********************************************************************
+//  193 *********************************************************************/
+// 
+// 106 bytes in segment BANKED_CODE
+//  18 bytes in segment BANK_RELAYS
+//   7 bytes in segment XDATA_Z
+// 
+// 124 bytes of CODE  memory
+//   7 bytes of XDATA memory
+//
+//Errors: none
+//Warnings: none

@@ -1,0 +1,2210 @@
+///////////////////////////////////////////////////////////////////////////////
+//                                                                            /
+// IAR C/C++ Compiler V8.20.1.40829 for 8051            23/May/2014  20:10:25 /
+// Copyright 2004-2012 IAR Systems AB.                                        /
+//                                                                            /
+//    Core               =  plain                                             /
+//    Code model         =  banked                                            /
+//    Data model         =  large                                             /
+//    Calling convention =  xdata reentrant                                   /
+//    Constant location  =  data_rom                                          /
+//    Dptr setup         =  1,16                                              /
+//                                                                            /
+//    Source file        =  D:\NTHU\¬ã¨s\Important\ThesisCode\Code\GitLabClou /
+//                          d\NewEcoExec\codegenerator\Device\EcoBT\Project\b /
+//                          le\Profiles\Accelerometer\accelerometer.c         /
+//    Command line       =  -f D:\NTHU\¬ã¨s\Important\ThesisCode\Code\GitLabC /
+//                          loud\NewEcoExec\codegenerator\Device\EcoBT\Projec /
+//                          t\ble\CodeGenerator\CC2540DB\..\..\config\buildCo /
+//                          mponents.cfg (-DBROADCASTER_CFG=0x01              /
+//                          -DOBSERVER_CFG=0x02 -DPERIPHERAL_CFG=0x04         /
+//                          -DCENTRAL_CFG=0x08 -DADV_NCONN_CFG=0x01           /
+//                          -DADV_CONN_CFG=0x02 -DSCAN_CFG=0x04               /
+//                          -DINIT_CFG=0x08 -DADV_CFG=ADV_NCONN_CFG+ADV_CONN_ /
+//                          CFG -DLINK_CFG=ADV_CONN_CFG+INIT_CFG              /
+//                          -DFULL_CFG=INIT_CFG+SCAN_CFG+ADV_NCONN_CFG+ADV_CO /
+//                          NN_CFG) -f D:\NTHU\¬ã¨s\Important\ThesisCode\Code /
+//                          \GitLabCloud\NewEcoExec\codegenerator\Device\EcoB /
+//                          T\Project\ble\CodeGenerator\CC2540DB\buildConfig. /
+//                          cfg (-DHOST_CONFIG=PERIPHERAL_CFG                 /
+//                          -DGAP_PRIVACY_RECONNECT)                          /
+//                          D:\NTHU\¬ã¨s\Important\ThesisCode\Code\GitLabClou /
+//                          d\NewEcoExec\codegenerator\Device\EcoBT\Project\b /
+//                          le\Profiles\Accelerometer\accelerometer.c -D      /
+//                          INT_HEAP_LEN=900 -D HALNODEBUG -D                 /
+//                          OSAL_CBTIMER_NUM_TASKS=1 -D HAL_AES_DMA=TRUE -D   /
+//                          HAL_DMA=TRUE -D xPOWER_SAVING -D                  /
+//                          xPLUS_BROADCASTER -D HAL_LCD=FALSE -D             /
+//                          HAL_LED=TRUE -D HAL_ADC=TRUE -lB                  /
+//                          D:\NTHU\¬ã¨s\Important\ThesisCode\Code\GitLabClou /
+//                          d\NewEcoExec\codegenerator\Device\EcoBT\Project\b /
+//                          le\CodeGenerator\CC2540DB\CC2540\List\ -o         /
+//                          D:\NTHU\¬ã¨s\Important\ThesisCode\Code\GitLabClou /
+//                          d\NewEcoExec\codegenerator\Device\EcoBT\Project\b /
+//                          le\CodeGenerator\CC2540DB\CC2540\Obj\ -e --debug  /
+//                          --core=plain --dptr=16,1 --data_model=large       /
+//                          --code_model=banked --calling_convention=xdata_re /
+//                          entrant --place_constants=data_rom                /
+//                          --nr_virtual_regs 16 -I                           /
+//                          D:\NTHU\¬ã¨s\Important\ThesisCode\Code\GitLabClou /
+//                          d\NewEcoExec\codegenerator\Device\EcoBT\Project\b /
+//                          le\CodeGenerator\CC2540DB\..\..\common\ -I        /
+//                          D:\NTHU\¬ã¨s\Important\ThesisCode\Code\GitLabClou /
+//                          d\NewEcoExec\codegenerator\Device\EcoBT\Project\b /
+//                          le\CodeGenerator\CC2540DB\..\..\include\ -I       /
+//                          D:\NTHU\¬ã¨s\Important\ThesisCode\Code\GitLabClou /
+//                          d\NewEcoExec\codegenerator\Device\EcoBT\Project\b /
+//                          le\CodeGenerator\CC2540DB\..\..\..\..\Components\ /
+//                          hal\include\ -I D:\NTHU\¬ã¨s\Important\ThesisCode /
+//                          \Code\GitLabCloud\NewEcoExec\codegenerator\Device /
+//                          \EcoBT\Project\ble\CodeGenerator\CC2540DB\..\..\. /
+//                          .\..\Components\hal\target\CC2540EB\ -I           /
+//                          D:\NTHU\¬ã¨s\Important\ThesisCode\Code\GitLabClou /
+//                          d\NewEcoExec\codegenerator\Device\EcoBT\Project\b /
+//                          le\CodeGenerator\CC2540DB\..\..\..\..\Components\ /
+//                          osal\include\ -I D:\NTHU\¬ã¨s\Important\ThesisCod /
+//                          e\Code\GitLabCloud\NewEcoExec\codegenerator\Devic /
+//                          e\EcoBT\Project\ble\CodeGenerator\CC2540DB\..\..\ /
+//                          ..\..\Components\services\saddr\ -I               /
+//                          D:\NTHU\¬ã¨s\Important\ThesisCode\Code\GitLabClou /
+//                          d\NewEcoExec\codegenerator\Device\EcoBT\Project\b /
+//                          le\CodeGenerator\CC2540DB\..\..\..\..\Components\ /
+//                          ble\include\ -I D:\NTHU\¬ã¨s\Important\ThesisCode /
+//                          \Code\GitLabCloud\NewEcoExec\codegenerator\Device /
+//                          \EcoBT\Project\ble\CodeGenerator\CC2540DB\..\..\. /
+//                          .\..\Components\ble\controller\phy\ -I            /
+//                          D:\NTHU\¬ã¨s\Important\ThesisCode\Code\GitLabClou /
+//                          d\NewEcoExec\codegenerator\Device\EcoBT\Project\b /
+//                          le\CodeGenerator\CC2540DB\..\..\..\..\Components\ /
+//                          ble\controller\include\ -I                        /
+//                          D:\NTHU\¬ã¨s\Important\ThesisCode\Code\GitLabClou /
+//                          d\NewEcoExec\codegenerator\Device\EcoBT\Project\b /
+//                          le\CodeGenerator\CC2540DB\..\..\..\..\Components\ /
+//                          ble\hci\ -I D:\NTHU\¬ã¨s\Important\ThesisCode\Cod /
+//                          e\GitLabCloud\NewEcoExec\codegenerator\Device\Eco /
+//                          BT\Project\ble\CodeGenerator\CC2540DB\..\..\..\.. /
+//                          \Components\ble\host\ -I                          /
+//                          D:\NTHU\¬ã¨s\Important\ThesisCode\Code\GitLabClou /
+//                          d\NewEcoExec\codegenerator\Device\EcoBT\Project\b /
+//                          le\CodeGenerator\CC2540DB\..\..\common\cc2540\    /
+//                          -I D:\NTHU\¬ã¨s\Important\ThesisCode\Code\GitLabC /
+//                          loud\NewEcoExec\codegenerator\Device\EcoBT\Projec /
+//                          t\ble\CodeGenerator\CC2540DB\..\..\common\npi\npi /
+//                          _np\ -I D:\NTHU\¬ã¨s\Important\ThesisCode\Code\Gi /
+//                          tLabCloud\NewEcoExec\codegenerator\Device\EcoBT\P /
+//                          roject\ble\CodeGenerator\CC2540DB\..\..\Profiles\ /
+//                          Roles\ -I D:\NTHU\¬ã¨s\Important\ThesisCode\Code\ /
+//                          GitLabCloud\NewEcoExec\codegenerator\Device\EcoBT /
+//                          \Project\ble\CodeGenerator\CC2540DB\..\..\Profile /
+//                          s\SimpleProfile\ -I D:\NTHU\¬ã¨s\Important\Thesis /
+//                          Code\Code\GitLabCloud\NewEcoExec\codegenerator\De /
+//                          vice\EcoBT\Project\ble\CodeGenerator\CC2540DB\..\ /
+//                          ..\Profiles\DevInfo\ -I                           /
+//                          D:\NTHU\¬ã¨s\Important\ThesisCode\Code\GitLabClou /
+//                          d\NewEcoExec\codegenerator\Device\EcoBT\Project\b /
+//                          le\CodeGenerator\CC2540DB\..\..\Profiles\Accelero /
+//                          meter\ -I D:\NTHU\¬ã¨s\Important\ThesisCode\Code\ /
+//                          GitLabCloud\NewEcoExec\codegenerator\Device\EcoBT /
+//                          \Project\ble\CodeGenerator\CC2540DB\..\..\Profile /
+//                          s\EcoExecGATTProfile\ -I                          /
+//                          D:\NTHU\¬ã¨s\Important\ThesisCode\Code\GitLabClou /
+//                          d\NewEcoExec\codegenerator\Device\EcoBT\Project\b /
+//                          le\CodeGenerator\CC2540DB\..\..\Profiles\Batt\    /
+//                          -I D:\NTHU\¬ã¨s\Important\ThesisCode\Code\GitLabC /
+//                          loud\NewEcoExec\codegenerator\Device\EcoBT\Projec /
+//                          t\ble\CodeGenerator\CC2540DB\..\..\Profiles\HIDDe /
+//                          v\ -Ohz                                           /
+//    List file          =  D:\NTHU\¬ã¨s\Important\ThesisCode\Code\GitLabClou /
+//                          d\NewEcoExec\codegenerator\Device\EcoBT\Project\b /
+//                          le\CodeGenerator\CC2540DB\CC2540\List\acceleromet /
+//                          er.s51                                            /
+//                                                                            /
+//                                                                            /
+///////////////////////////////////////////////////////////////////////////////
+
+        NAME accelerometer
+
+        RSEG DOVERLAY:DATA:NOROOT(0)
+        RSEG IOVERLAY:IDATA:NOROOT(0)
+        RSEG ISTACK:IDATA:NOROOT(0)
+        RSEG PSTACK:XDATA:NOROOT(0)
+        RSEG XSTACK:XDATA:NOROOT(0)
+
+        EXTERN ?BANKED_ENTER_XDATA
+        EXTERN ?BANKED_LEAVE_XDATA
+        EXTERN ?BDISPATCH
+        EXTERN ?BRET
+        EXTERN ?CALL_IND
+        EXTERN ?DEALLOC_XSTACK8
+        EXTERN ?PUSH_XSTACK_I_ONE
+        EXTERN ?PUSH_XSTACK_I_TWO
+        EXTERN ?US_SWITCH_DENSE
+        EXTERN ?US_SWITCH_SPARSE
+        EXTERN ?V0
+        EXTERN ?XSTACK_DISP0_8
+        EXTERN __INIT_XDATA_I
+        EXTERN __INIT_XDATA_Z
+
+        PUBLIC ??Accel_AddService?relay
+        PUBLIC ??Accel_GetParameter?relay
+        PUBLIC ??Accel_RegisterAppCBs?relay
+        PUBLIC ??Accel_SetParameter?relay
+        PUBLIC Accel_AddService
+        PUBLIC Accel_GetParameter
+        PUBLIC Accel_RegisterAppCBs
+        PUBLIC Accel_SetParameter
+        PUBWEAK _A_P2
+        PUBLIC accEnablerUUID
+        PUBLIC accServUUID
+        PUBLIC accelCBs
+        PUBLIC rangeUUID
+        PUBLIC xUUID
+        PUBLIC yUUID
+        PUBLIC zUUID
+
+GATTServApp_InitCharCfg SYMBOL "GATTServApp_InitCharCfg"
+??GATTServApp_InitCharCfg?relay SYMBOL "?relay", GATTServApp_InitCharCfg
+GATTServApp_ProcessCCCWriteReq SYMBOL "GATTServApp_ProcessCCCWriteReq"
+??GATTServApp_ProcessCCCWriteReq?relay SYMBOL "?relay", GATTServApp_ProcessCCCWriteReq
+GATTServApp_ProcessCharCfg SYMBOL "GATTServApp_ProcessCharCfg"
+??GATTServApp_ProcessCharCfg?relay SYMBOL "?relay", GATTServApp_ProcessCharCfg
+GATTServApp_RegisterService SYMBOL "GATTServApp_RegisterService"
+??GATTServApp_RegisterService?relay SYMBOL "?relay", GATTServApp_RegisterService
+linkDB_Register     SYMBOL "linkDB_Register"
+??linkDB_Register?relay SYMBOL "?relay", linkDB_Register
+linkDB_State        SYMBOL "linkDB_State"
+??linkDB_State?relay SYMBOL "?relay", linkDB_State
+osal_memcpy         SYMBOL "osal_memcpy"
+??osal_memcpy?relay SYMBOL "?relay", osal_memcpy
+Accel_AddService    SYMBOL "Accel_AddService"
+??Accel_AddService?relay SYMBOL "?relay", Accel_AddService
+Accel_GetParameter  SYMBOL "Accel_GetParameter"
+??Accel_GetParameter?relay SYMBOL "?relay", Accel_GetParameter
+Accel_RegisterAppCBs SYMBOL "Accel_RegisterAppCBs"
+??Accel_RegisterAppCBs?relay SYMBOL "?relay", Accel_RegisterAppCBs
+Accel_SetParameter  SYMBOL "Accel_SetParameter"
+??Accel_SetParameter?relay SYMBOL "?relay", Accel_SetParameter
+
+        EXTERN ??GATTServApp_InitCharCfg?relay
+        EXTERN ??GATTServApp_ProcessCCCWriteReq?relay
+        EXTERN ??GATTServApp_ProcessCharCfg?relay
+        EXTERN ??GATTServApp_RegisterService?relay
+        EXTERN ??linkDB_Register?relay
+        EXTERN ??linkDB_State?relay
+        EXTERN ??osal_memcpy?relay
+        EXTERN GATTServApp_InitCharCfg
+        EXTERN GATTServApp_ProcessCCCWriteReq
+        EXTERN GATTServApp_ProcessCharCfg
+        EXTERN GATTServApp_RegisterService
+        EXTERN charUserDescUUID
+        EXTERN characterUUID
+        EXTERN clientCharCfgUUID
+        EXTERN linkDB_Register
+        EXTERN linkDB_State
+        EXTERN osal_memcpy
+        EXTERN primaryServiceUUID
+
+// D:\NTHU\¬ã¨s\Important\ThesisCode\Code\GitLabCloud\NewEcoExec\codegenerator\Device\EcoBT\Project\ble\Profiles\Accelerometer\accelerometer.c
+//    1 /**************************************************************************************************
+//    2   Filename:       accelerometer.c
+//    3   Revised:        $Date: 2011-11-21 15:26:10 -0800 (Mon, 21 Nov 2011) $
+//    4   Revision:       $Revision: 28439 $
+//    5 
+//    6   Description:    Accelerometer Profile
+//    7 
+//    8 
+//    9   Copyright 2009 Texas Instruments Incorporated. All rights reserved.
+//   10 
+//   11   IMPORTANT: Your use of this Software is limited to those specific rights
+//   12   granted under the terms of a software license agreement between the user
+//   13   who downloaded the software, his/her employer (which must be your employer)
+//   14   and Texas Instruments Incorporated (the "License").  You may not use this
+//   15   Software unless you agree to abide by the terms of the License. The License
+//   16   limits your use, and you acknowledge, that the Software may not be modified,
+//   17   copied or distributed unless embedded on a Texas Instruments microcontroller
+//   18   or used solely and exclusively in conjunction with a Texas Instruments radio
+//   19   frequency transceiver, which is integrated into your product.  Other than for
+//   20   the foregoing purpose, you may not use, reproduce, copy, prepare derivative
+//   21   works of, modify, distribute, perform, display or sell this Software and/or
+//   22   its documentation for any purpose.
+//   23 
+//   24   YOU FURTHER ACKNOWLEDGE AND AGREE THAT THE SOFTWARE AND DOCUMENTATION ARE
+//   25   PROVIDED “AS IS” WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESS OR IMPLIED, 
+//   26   INCLUDING WITHOUT LIMITATION, ANY WARRANTY OF MERCHANTABILITY, TITLE, 
+//   27   NON-INFRINGEMENT AND FITNESS FOR A PARTICULAR PURPOSE. IN NO EVENT SHALL
+//   28   TEXAS INSTRUMENTS OR ITS LICENSORS BE LIABLE OR OBLIGATED UNDER CONTRACT,
+//   29   NEGLIGENCE, STRICT LIABILITY, CONTRIBUTION, BREACH OF WARRANTY, OR OTHER
+//   30   LEGAL EQUITABLE THEORY ANY DIRECT OR INDIRECT DAMAGES OR EXPENSES
+//   31   INCLUDING BUT NOT LIMITED TO ANY INCIDENTAL, SPECIAL, INDIRECT, PUNITIVE
+//   32   OR CONSEQUENTIAL DAMAGES, LOST PROFITS OR LOST DATA, COST OF PROCUREMENT
+//   33   OF SUBSTITUTE GOODS, TECHNOLOGY, SERVICES, OR ANY CLAIMS BY THIRD PARTIES
+//   34   (INCLUDING BUT NOT LIMITED TO ANY DEFENSE THEREOF), OR OTHER SIMILAR COSTS.
+//   35 
+//   36   Should you have any questions regarding your right to use this Software,
+//   37   contact Texas Instruments Incorporated at www.TI.com. 
+//   38 **************************************************************************************************/
+//   39 
+//   40 /*********************************************************************
+//   41  * INCLUDES
+//   42  */
+//   43 #include "bcomdef.h"
+//   44 #include "OSAL.h"
+//   45 #include "linkdb.h"
+//   46 #include "att.h"
+//   47 #include "gatt.h"
+//   48 #include "gatt_uuid.h"
+//   49 #include "gattservapp.h"
+//   50 
+//   51 #include "accelerometer.h"
+//   52 
+//   53 #include "ioCC2541.h"
+
+        ASEGN SFR_AN:DATA:NOROOT,0a0H
+// union <unnamed> volatile __sfr _A_P2
+_A_P2:
+        DATA8
+        DS 1
+//   54 
+//   55 /*********************************************************************
+//   56  * MACROS
+//   57  */
+//   58 
+//   59 /*********************************************************************
+//   60  * CONSTANTS
+//   61  */
+//   62 
+//   63 #define SERVAPP_NUM_ATTR_SUPPORTED        19
+//   64 
+//   65 /*********************************************************************
+//   66  * TYPEDEFS
+//   67  */
+//   68 
+//   69 /*********************************************************************
+//   70  * GLOBAL VARIABLES
+//   71  */
+//   72 
+//   73 // Accelerometer Service UUID
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA16
+//   74 CONST uint8 accServUUID[ATT_BT_UUID_SIZE] =
+accServUUID:
+        DATA8
+        DB 160
+        DB 255
+//   75 { 
+//   76   LO_UINT16(ACCEL_SERVICE_UUID), HI_UINT16(ACCEL_SERVICE_UUID)
+//   77 };
+//   78 
+//   79 // Accelerometer Enabler UUID
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA16
+//   80 CONST uint8 accEnablerUUID[ATT_BT_UUID_SIZE] =
+accEnablerUUID:
+        DATA8
+        DB 161
+        DB 255
+//   81 { 
+//   82   LO_UINT16(ACCEL_ENABLER_UUID), HI_UINT16(ACCEL_ENABLER_UUID)
+//   83 };
+//   84 
+//   85 // Accelerometer Range UUID
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA16
+//   86 CONST uint8 rangeUUID[ATT_BT_UUID_SIZE] =
+rangeUUID:
+        DATA8
+        DB 162
+        DB 255
+//   87 { 
+//   88   LO_UINT16(ACCEL_RANGE_UUID), HI_UINT16(ACCEL_RANGE_UUID)
+//   89 };
+//   90 
+//   91 // Accelerometer X-Axis Data UUID
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA16
+//   92 CONST uint8 xUUID[ATT_BT_UUID_SIZE] =
+xUUID:
+        DATA8
+        DB 163
+        DB 255
+//   93 { 
+//   94   LO_UINT16(ACCEL_X_UUID), HI_UINT16(ACCEL_X_UUID)
+//   95 };
+//   96 
+//   97 // Accelerometer Y-Axis Data UUID
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA16
+//   98 CONST uint8 yUUID[ATT_BT_UUID_SIZE] =
+yUUID:
+        DATA8
+        DB 164
+        DB 255
+//   99 { 
+//  100   LO_UINT16(ACCEL_Y_UUID), HI_UINT16(ACCEL_Y_UUID)
+//  101 };
+//  102 
+//  103 // Accelerometer Z-Axis Data UUID
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA16
+//  104 CONST uint8 zUUID[ATT_BT_UUID_SIZE] =
+zUUID:
+        DATA8
+        DB 165
+        DB 255
+//  105 { 
+//  106   LO_UINT16(ACCEL_Z_UUID), HI_UINT16(ACCEL_Z_UUID)
+//  107 };
+//  108 
+//  109 /*********************************************************************
+//  110  * EXTERNAL VARIABLES
+//  111  */
+//  112 
+//  113 /*********************************************************************
+//  114  * EXTERNAL FUNCTIONS
+//  115  */
+//  116 
+//  117 /*********************************************************************
+//  118  * LOCAL VARIABLES
+//  119  */
+
+        RSEG XDATA_Z:XDATA:NOROOT(0)
+        DATA16
+//  120 static accelCBs_t *accel_AppCBs = NULL;
+accel_AppCBs:
+        DS 2
+        REQUIRE __INIT_XDATA_Z
+//  121 
+//  122 
+//  123 /*********************************************************************
+//  124  * Profile Attributes - variables
+//  125  */
+//  126 
+//  127 // Accelerometer Service attribute
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA8
+//  128 static CONST gattAttrType_t accelService = { ATT_BT_UUID_SIZE, accServUUID };
+accelService:
+        DB 2
+        DATA16
+        DW accServUUID
+//  129 
+//  130 
+//  131 // Enabler Characteristic Properties
+
+        RSEG XDATA_I:XDATA:NOROOT(0)
+//  132 static uint8 accelEnabledCharProps = GATT_PROP_READ | GATT_PROP_WRITE;
+accelEnabledCharProps:
+        DATA8
+        DS 1
+        REQUIRE `?<Initializer for accelEnabledCharProps>`
+        REQUIRE __INIT_XDATA_I
+//  133 
+//  134 // Enabler Characteristic Value
+
+        RSEG XDATA_Z:XDATA:NOROOT(0)
+        DATA8
+//  135 static uint8 accelEnabled = FALSE;
+accelEnabled:
+        DS 1
+        REQUIRE __INIT_XDATA_Z
+//  136 
+//  137 // Enabler Characteristic user description
+
+        RSEG XDATA_I:XDATA:NOROOT(0)
+//  138 static uint8 accelEnabledUserDesc[14] = "Accel Enable\0";
+accelEnabledUserDesc:
+        DATA8
+        DS 14
+        REQUIRE `?<Initializer for accelEnabledUserDesc>`
+        REQUIRE __INIT_XDATA_I
+//  139 
+//  140 
+//  141 // Range Characteristic Properties
+
+        RSEG XDATA_I:XDATA:NOROOT(0)
+//  142 static uint8 accelRangeCharProps = GATT_PROP_READ;
+accelRangeCharProps:
+        DATA8
+        DS 1
+        REQUIRE `?<Initializer for accelRangeCharProps>`
+        REQUIRE __INIT_XDATA_I
+//  143 
+//  144 // Range Characteristic Value
+
+        RSEG XDATA_I:XDATA:NOROOT(0)
+//  145 static uint16 accelRange = ACCEL_RANGE_2G;
+accelRange:
+        DATA16
+        DS 2
+        REQUIRE `?<Initializer for accelRange>`
+        REQUIRE __INIT_XDATA_I
+//  146 
+//  147 // Range Characteristic user description
+
+        RSEG XDATA_I:XDATA:NOROOT(0)
+//  148 static uint8 accelRangeUserDesc[13] = "Accel Range\0";
+accelRangeUserDesc:
+        DATA8
+        DS 13
+        REQUIRE `?<Initializer for accelRangeUserDesc>`
+        REQUIRE __INIT_XDATA_I
+//  149 
+//  150 
+//  151 // Accel Coordinate Characteristic Properties
+
+        RSEG XDATA_I:XDATA:NOROOT(0)
+//  152 static uint8 accelXCharProps = GATT_PROP_NOTIFY;
+accelXCharProps:
+        DATA8
+        DS 1
+        REQUIRE `?<Initializer for accelXCharProps>`
+        REQUIRE __INIT_XDATA_I
+
+        RSEG XDATA_I:XDATA:NOROOT(0)
+//  153 static uint8 accelYCharProps = GATT_PROP_NOTIFY;
+accelYCharProps:
+        DATA8
+        DS 1
+        REQUIRE `?<Initializer for accelYCharProps>`
+        REQUIRE __INIT_XDATA_I
+
+        RSEG XDATA_I:XDATA:NOROOT(0)
+//  154 static uint8 accelZCharProps = GATT_PROP_NOTIFY;
+accelZCharProps:
+        DATA8
+        DS 1
+        REQUIRE `?<Initializer for accelZCharProps>`
+        REQUIRE __INIT_XDATA_I
+//  155 
+//  156 // Accel Coordinate Characteristics
+
+        RSEG XDATA_Z:XDATA:NOROOT(0)
+        DATA16
+//  157 static uint8 accelXCoordinates[2] = { 0, 0 };
+accelXCoordinates:
+        DS 2
+        REQUIRE __INIT_XDATA_Z
+
+        RSEG XDATA_Z:XDATA:NOROOT(0)
+        DATA16
+//  158 static uint8 accelYCoordinates[2] = { 0, 0 };
+accelYCoordinates:
+        DS 2
+        REQUIRE __INIT_XDATA_Z
+
+        RSEG XDATA_Z:XDATA:NOROOT(0)
+        DATA16
+//  159 static uint8 accelZCoordinates[2] = { 0, 0 };
+accelZCoordinates:
+        DS 2
+        REQUIRE __INIT_XDATA_Z
+//  160 
+//  161 // Client Characteristic configuration. Each client has its own instantiation
+//  162 // of the Client Characteristic Configuration. Reads of the Client Characteristic
+//  163 // Configuration only shows the configuration for that client and writes only
+//  164 // affect the configuration of that client.
+//  165 
+//  166 // Accel Coordinate Characteristic Configs
+
+        RSEG XDATA_Z:XDATA:NOROOT(0)
+        DATA8
+//  167 static gattCharCfg_t accelXConfigCoordinates[GATT_MAX_NUM_CONN];
+accelXConfigCoordinates:
+        DS 6
+        REQUIRE __INIT_XDATA_Z
+
+        RSEG XDATA_Z:XDATA:NOROOT(0)
+        DATA8
+//  168 static gattCharCfg_t accelYConfigCoordinates[GATT_MAX_NUM_CONN];
+accelYConfigCoordinates:
+        DS 6
+        REQUIRE __INIT_XDATA_Z
+
+        RSEG XDATA_Z:XDATA:NOROOT(0)
+        DATA8
+//  169 static gattCharCfg_t accelZConfigCoordinates[GATT_MAX_NUM_CONN];
+accelZConfigCoordinates:
+        DS 6
+        REQUIRE __INIT_XDATA_Z
+//  170 
+//  171 // Accel Coordinate Characteristic user descriptions
+
+        RSEG XDATA_I:XDATA:NOROOT(0)
+//  172 static uint8 accelXCharUserDesc[20] = "Accel X-Coordinate\0";
+accelXCharUserDesc:
+        DATA8
+        DS 20
+        REQUIRE `?<Initializer for accelXCharUserDesc>`
+        REQUIRE __INIT_XDATA_I
+
+        RSEG XDATA_I:XDATA:NOROOT(0)
+//  173 static uint8 accelYCharUserDesc[20] = "Accel Y-Coordinate\0";
+accelYCharUserDesc:
+        DATA8
+        DS 20
+        REQUIRE `?<Initializer for accelYCharUserDesc>`
+        REQUIRE __INIT_XDATA_I
+
+        RSEG XDATA_I:XDATA:NOROOT(0)
+//  174 static uint8 accelZCharUserDesc[20] = "Accel Z-Coordinate\0";
+accelZCharUserDesc:
+        DATA8
+        DS 20
+        REQUIRE `?<Initializer for accelZCharUserDesc>`
+        REQUIRE __INIT_XDATA_I
+//  175 
+//  176 
+//  177 /*********************************************************************
+//  178  * Profile Attributes - Table
+//  179  */
+
+        RSEG XDATA_I:XDATA:NOROOT(0)
+//  180 static gattAttribute_t accelAttrTbl[SERVAPP_NUM_ATTR_SUPPORTED] = 
+accelAttrTbl:
+        DATA8
+        DS 152
+        REQUIRE `?<Initializer for accelAttrTbl>`
+        REQUIRE __INIT_XDATA_I
+//  181 {
+//  182   // Accelerometer Service
+//  183   { 
+//  184     { ATT_BT_UUID_SIZE, primaryServiceUUID }, /* type */
+//  185     GATT_PERMIT_READ,                   /* permissions */
+//  186     0,                                  /* handle */
+//  187     (uint8 *)&accelService                /* pValue */
+//  188   },
+//  189   
+//  190     // Accel Enabler Characteristic Declaration
+//  191     { 
+//  192       { ATT_BT_UUID_SIZE, characterUUID },
+//  193       GATT_PERMIT_READ, 
+//  194       0,
+//  195       &accelEnabledCharProps 
+//  196     },
+//  197 
+//  198       // Accelerometer Enable Characteristic Value
+//  199       { 
+//  200         { ATT_BT_UUID_SIZE, accEnablerUUID },
+//  201         GATT_PERMIT_READ | GATT_PERMIT_WRITE, 
+//  202         0,
+//  203         &accelEnabled 
+//  204       },
+//  205 
+//  206       // Accelerometer Enable User Description
+//  207       { 
+//  208         { ATT_BT_UUID_SIZE, charUserDescUUID },
+//  209         GATT_PERMIT_READ, 
+//  210         0,
+//  211         (uint8*)&accelEnabledUserDesc 
+//  212       },
+//  213 
+//  214     // Accel Range Characteristic Declaration
+//  215     { 
+//  216       { ATT_BT_UUID_SIZE, characterUUID },
+//  217       GATT_PERMIT_READ, 
+//  218       0,
+//  219       &accelRangeCharProps 
+//  220     },
+//  221 
+//  222       // Accelerometer Range Char Value
+//  223       { 
+//  224         { ATT_BT_UUID_SIZE, rangeUUID },
+//  225         GATT_PERMIT_READ, 
+//  226         0,
+//  227         (uint8*)&accelRange 
+//  228       },
+//  229 
+//  230       // Accelerometer Range User Description
+//  231       { 
+//  232         { ATT_BT_UUID_SIZE, charUserDescUUID },
+//  233         GATT_PERMIT_READ, 
+//  234         0,
+//  235         accelRangeUserDesc 
+//  236       },
+//  237       
+//  238     // X-Coordinate Characteristic Declaration
+//  239     { 
+//  240       { ATT_BT_UUID_SIZE, characterUUID },
+//  241       GATT_PERMIT_READ, 
+//  242       0,
+//  243       &accelXCharProps 
+//  244     },
+//  245   
+//  246       // X-Coordinate Characteristic Value
+//  247       { 
+//  248         { ATT_BT_UUID_SIZE, xUUID },
+//  249         0, 
+//  250         0, 
+//  251         accelXCoordinates
+//  252       },
+//  253       
+//  254       // X-Coordinate Characteristic configuration
+//  255       { 
+//  256         { ATT_BT_UUID_SIZE, clientCharCfgUUID },
+//  257         GATT_PERMIT_READ | GATT_PERMIT_WRITE, 
+//  258         0, 
+//  259         (uint8 *)accelXConfigCoordinates 
+//  260       },
+//  261 
+//  262       // X-Coordinate Characteristic User Description
+//  263       { 
+//  264         { ATT_BT_UUID_SIZE, charUserDescUUID },
+//  265         GATT_PERMIT_READ, 
+//  266         0, 
+//  267         accelXCharUserDesc
+//  268       },  
+//  269 
+//  270    // Y-Coordinate Characteristic Declaration
+//  271     { 
+//  272       { ATT_BT_UUID_SIZE, characterUUID },
+//  273       GATT_PERMIT_READ, 
+//  274       0,
+//  275       &accelYCharProps 
+//  276     },
+//  277   
+//  278       // Y-Coordinate Characteristic Value
+//  279       { 
+//  280         { ATT_BT_UUID_SIZE, yUUID },
+//  281         0, 
+//  282         0, 
+//  283         accelYCoordinates 
+//  284       },
+//  285       
+//  286       // Y-Coordinate Characteristic configuration
+//  287       { 
+//  288         { ATT_BT_UUID_SIZE, clientCharCfgUUID },
+//  289         GATT_PERMIT_READ | GATT_PERMIT_WRITE, 
+//  290         0, 
+//  291         (uint8 *)accelYConfigCoordinates
+//  292       },
+//  293 
+//  294       // Y-Coordinate Characteristic User Description
+//  295       { 
+//  296         { ATT_BT_UUID_SIZE, charUserDescUUID },
+//  297         GATT_PERMIT_READ, 
+//  298         0, 
+//  299         accelYCharUserDesc
+//  300       },
+//  301 
+//  302    // Z-Coordinate Characteristic Declaration
+//  303     { 
+//  304       { ATT_BT_UUID_SIZE, characterUUID },
+//  305       GATT_PERMIT_READ, 
+//  306       0,
+//  307       &accelZCharProps 
+//  308     },
+//  309   
+//  310       // Z-Coordinate Characteristic Value
+//  311       { 
+//  312         { ATT_BT_UUID_SIZE, zUUID },
+//  313         0, 
+//  314         0, 
+//  315         accelZCoordinates
+//  316       },
+//  317       
+//  318       // Z-Coordinate Characteristic configuration
+//  319       { 
+//  320         { ATT_BT_UUID_SIZE, clientCharCfgUUID },
+//  321         GATT_PERMIT_READ | GATT_PERMIT_WRITE, 
+//  322         0, 
+//  323         (uint8 *)accelZConfigCoordinates 
+//  324       },
+//  325 
+//  326       // Z-Coordinate Characteristic User Description
+//  327       { 
+//  328         { ATT_BT_UUID_SIZE, charUserDescUUID },
+//  329         GATT_PERMIT_READ, 
+//  330         0, 
+//  331         accelZCharUserDesc
+//  332       },  
+//  333 
+//  334 };
+//  335 
+//  336 
+//  337 /*********************************************************************
+//  338  * LOCAL FUNCTIONS
+//  339  */
+//  340 static uint8 accel_ReadAttrCB( uint16 connHandle, gattAttribute_t *pAttr, 
+//  341                                uint8 *pValue, uint8 *pLen, uint16 offset, uint8 maxLen );
+//  342 static bStatus_t accel_WriteAttrCB( uint16 connHandle, gattAttribute_t *pAttr,
+//  343                                     uint8 *pValue, uint8 len, uint16 offset );
+//  344 
+//  345 static void accel_HandleConnStatusCB( uint16 connHandle, uint8 changeType );
+//  346 
+//  347 /*********************************************************************
+//  348  * PROFILE CALLBACKS
+//  349  */
+//  350 //  Accelerometer Service Callbacks
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA8
+//  351 CONST gattServiceCBs_t  accelCBs =
+accelCBs:
+        DATA16
+        DW ??accel_ReadAttrCB?relay
+        DW ??accel_WriteAttrCB?relay
+        DW 0H
+//  352 {
+//  353   accel_ReadAttrCB,  // Read callback function pointer
+//  354   accel_WriteAttrCB, // Write callback function pointer
+//  355   NULL               // Authorization callback function pointer
+//  356 };
+//  357 
+//  358 /*********************************************************************
+//  359  * PUBLIC FUNCTIONS
+//  360  */
+//  361 
+//  362 /*********************************************************************
+//  363  * @fn      Accel_AddService
+//  364  *
+//  365  * @brief   Initializes the Accelerometer service by
+//  366  *          registering GATT attributes with the GATT server. Only
+//  367  *          call this function once.
+//  368  *
+//  369  * @param   services - services to add. This is a bit map and can
+//  370  *                     contain more than one service.
+//  371  *
+//  372  * @return  Success or Failure
+//  373  */
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+//  374 bStatus_t Accel_AddService( uint32 services )
+Accel_AddService:
+        CODE
+//  375 {
+        MOV     A,#-0xc
+        LCALL   ?BANKED_ENTER_XDATA
+        ; Saved register size: 12
+        ; Auto size: 0
+        MOV     ?V0 + 0,R2
+//  376   uint8 status = SUCCESS;
+        MOV     R6,#0x0
+//  377 
+//  378   // Initialize Client Characteristic Configuration attributes
+//  379   GATTServApp_InitCharCfg( INVALID_CONNHANDLE, accelXConfigCoordinates );
+        ; Setup parameters for call to function GATTServApp_InitCharCfg
+        MOV     R4,#accelXConfigCoordinates & 0xff
+        MOV     R5,#(accelXConfigCoordinates >> 8) & 0xff
+        MOV     R2,#-0x1
+        MOV     R3,#-0x1
+        LCALL   ??GATTServApp_InitCharCfg?relay
+//  380   GATTServApp_InitCharCfg( INVALID_CONNHANDLE, accelYConfigCoordinates );
+        ; Setup parameters for call to function GATTServApp_InitCharCfg
+        MOV     R4,#accelYConfigCoordinates & 0xff
+        MOV     R5,#(accelYConfigCoordinates >> 8) & 0xff
+        MOV     R2,#-0x1
+        MOV     R3,#-0x1
+        LCALL   ??GATTServApp_InitCharCfg?relay
+//  381   GATTServApp_InitCharCfg( INVALID_CONNHANDLE, accelZConfigCoordinates );
+        ; Setup parameters for call to function GATTServApp_InitCharCfg
+        MOV     R4,#accelZConfigCoordinates & 0xff
+        MOV     R5,#(accelZConfigCoordinates >> 8) & 0xff
+        MOV     R2,#-0x1
+        MOV     R3,#-0x1
+        LCALL   ??GATTServApp_InitCharCfg?relay
+//  382 
+//  383   // Register with Link DB to receive link status change callback
+//  384   VOID linkDB_Register( accel_HandleConnStatusCB );  
+        ; Setup parameters for call to function linkDB_Register
+        MOV     R2,#??accel_HandleConnStatusCB?relay & 0xff
+        MOV     R3,#(??accel_HandleConnStatusCB?relay >> 8) & 0xff
+        LCALL   ??linkDB_Register?relay
+//  385 
+//  386   if ( services & ACCEL_SERVICE )
+        MOV     A,?V0 + 0
+        MOV     C,0xE0 /* A   */.0
+        JNC     ??Accel_AddService_0
+//  387   {
+//  388     // Register GATT attribute list and CBs with GATT Server App
+//  389     status = GATTServApp_RegisterService( accelAttrTbl, 
+//  390                                           GATT_NUM_ATTRS( accelAttrTbl ),
+//  391                                           &accelCBs );
+        ; Setup parameters for call to function GATTServApp_RegisterService
+        MOV     ?V0 + 0,#accelCBs & 0xff
+        MOV     ?V0 + 1,#(accelCBs >> 8) & 0xff
+        MOV     R0,#?V0 + 0
+        LCALL   ?PUSH_XSTACK_I_TWO
+        MOV     R4,#0x13
+        MOV     R5,#0x0
+        MOV     R2,#accelAttrTbl & 0xff
+        MOV     R3,#(accelAttrTbl >> 8) & 0xff
+        LCALL   ??GATTServApp_RegisterService?relay
+        MOV     A,#0x2
+        LCALL   ?DEALLOC_XSTACK8
+        MOV     A,R1
+        MOV     R6,A
+//  392   }
+//  393 
+//  394   return ( status );
+??Accel_AddService_0:
+        REQUIRE ?Subroutine0
+        ; // Fall through to label ?Subroutine0
+//  395 }
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+?Subroutine0:
+        MOV     A,R6
+        MOV     R1,A
+        MOV     R7,#0x4
+        LJMP    ?BANKED_LEAVE_XDATA
+//  396 
+//  397 /*********************************************************************
+//  398  * @fn      Accel_RegisterAppCBs
+//  399  *
+//  400  * @brief   Does the profile initialization.  Only call this function
+//  401  *          once.
+//  402  *
+//  403  * @param   callbacks - pointer to application callbacks.
+//  404  *
+//  405  * @return  SUCCESS or bleAlreadyInRequestedMode
+//  406  */
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+//  407 bStatus_t Accel_RegisterAppCBs( accelCBs_t *appCallbacks )
+Accel_RegisterAppCBs:
+        CODE
+//  408 {
+        PUSH    DPL
+        PUSH    DPH
+        ; Saved register size: 2
+        ; Auto size: 0
+//  409   if ( appCallbacks )
+        MOV     A,R2
+        ORL     A,R3
+        JZ      ??Accel_RegisterAppCBs_0
+//  410   {
+//  411     accel_AppCBs = appCallbacks;
+        MOV     DPTR,#accel_AppCBs
+        MOV     A,R2
+        MOVX    @DPTR,A
+        INC     DPTR
+        MOV     A,R3
+        MOVX    @DPTR,A
+//  412     
+//  413     return ( SUCCESS );
+        MOV     R1,#0x0
+        SJMP    ??Accel_RegisterAppCBs_1
+//  414   }
+//  415   else
+//  416   {
+//  417     return ( bleAlreadyInRequestedMode );
+??Accel_RegisterAppCBs_0:
+        MOV     R1,#0x11
+??Accel_RegisterAppCBs_1:
+        POP     DPH
+        POP     DPL
+        LJMP    ?BRET
+//  418   }
+//  419 }
+//  420 
+//  421 
+//  422 /*********************************************************************
+//  423  * @fn      Accel_SetParameter
+//  424  *
+//  425  * @brief   Set an Accelerometer Profile parameter.
+//  426  *
+//  427  * @param   param - Profile parameter ID
+//  428  * @param   len - length of data to right
+//  429  * @param   value - pointer to data to write.  This is dependent on
+//  430  *          the parameter ID and WILL be cast to the appropriate 
+//  431  *          data type (example: data type of uint16 will be cast to 
+//  432  *          uint16 pointer).
+//  433  *
+//  434  * @return  bStatus_t
+//  435  */
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+//  436 bStatus_t Accel_SetParameter( uint8 param, uint8 len, void *value )
+Accel_SetParameter:
+        CODE
+//  437 {
+        MOV     A,#-0xc
+        LCALL   ?BANKED_ENTER_XDATA
+        ; Saved register size: 12
+        ; Auto size: 0
+        MOV     A,R2
+        MOV     R7,A
+//  438   bStatus_t ret = SUCCESS;
+        MOV     R6,#0x0
+//  439 
+//  440   switch ( param )
+        MOV     A,R1
+        JZ      ??Accel_SetParameter_0
+        DEC     A
+        JZ      ??Accel_SetParameter_1
+        DEC     A
+        JNZ     $+5
+        LJMP    ??Accel_SetParameter_2 & 0xFFFF
+        DEC     A
+        JNZ     $+5
+        LJMP    ??Accel_SetParameter_3 & 0xFFFF
+        DEC     A
+        JZ      ??Accel_SetParameter_4
+        LJMP    ??Accel_SetParameter_5 & 0xFFFF
+//  441   {
+//  442     case ACCEL_ENABLER:
+//  443       if ( len == sizeof ( uint8 ) ) 
+??Accel_SetParameter_0:
+        MOV     A,#0x1
+        XRL     A,R7
+        JZ      $+5
+        LJMP    ??Accel_SetParameter_6 & 0xFFFF
+//  444       {
+//  445         accelEnabled = *((uint8*)value);
+        MOV     DPL,R4
+        MOV     DPH,R5
+        MOVX    A,@DPTR
+        MOV     DPTR,#accelEnabled
+        SJMP    ??Accel_SetParameter_7
+//  446       }
+//  447       else
+//  448       {
+//  449         ret = bleInvalidRange;
+//  450       }
+//  451       break;
+//  452       
+//  453     case ACCEL_RANGE:
+//  454       if ( (len == sizeof ( uint16 )) && ((*((uint8*)value)) <= ACCEL_RANGE_8G) ) 
+??Accel_SetParameter_4:
+        MOV     A,#0x2
+        XRL     A,R7
+        JZ      $+5
+        LJMP    ??Accel_SetParameter_6 & 0xFFFF
+        MOV     DPL,R4
+        MOV     DPH,R5
+        MOVX    A,@DPTR
+        CLR     C
+        SUBB    A,#0x51
+        JC      $+5
+        LJMP    ??Accel_SetParameter_6 & 0xFFFF
+//  455       {
+//  456         accelRange = *((uint16*)value);
+        LCALL   ??Subroutine5_0 & 0xFFFF
+//  457       }
+??CrossCallReturnLabel_6:
+        MOV     DPTR,#accelRange
+        MOV     A,R0
+        MOVX    @DPTR,A
+        INC     DPTR
+        MOV     A,R1
+??Accel_SetParameter_7:
+        MOVX    @DPTR,A
+        LJMP    ??Accel_SetParameter_8 & 0xFFFF
+//  458       else
+//  459       {
+//  460         ret = bleInvalidRange;
+//  461       }
+//  462       break;
+//  463       
+//  464     case ACCEL_X_ATTR:
+//  465       if ( len == ACCEL_COORDINATES_LEN ) 
+??Accel_SetParameter_1:
+        MOV     A,#0x2
+        XRL     A,R7
+        JZ      $+5
+        LJMP    ??Accel_SetParameter_6 & 0xFFFF
+//  466       {      
+//  467         VOID osal_memcpy( accelXCoordinates, value, ACCEL_COORDINATES_LEN );
+        ; Setup parameters for call to function osal_memcpy
+        MOV     ?V0 + 2,#0x2
+        MOV     ?V0 + 3,R6
+        MOV     R0,#?V0 + 2
+        LCALL   ?PUSH_XSTACK_I_TWO
+        MOV     R2,#accelXCoordinates & 0xff
+        MOV     R3,#(accelXCoordinates >> 8) & 0xff
+        LCALL   ??osal_memcpy?relay
+        MOV     A,#0x2
+        LCALL   ?DEALLOC_XSTACK8
+//  468 
+//  469         // See if Notification has been enabled
+//  470         if( GATTServApp_ProcessCharCfg( accelXConfigCoordinates, accelXCoordinates,
+//  471                                     FALSE, accelAttrTbl, GATT_NUM_ATTRS( accelAttrTbl ),
+//  472                                     INVALID_TASK_ID ) == SUCCESS )
+        ; Setup parameters for call to function GATTServApp_ProcessCharCfg
+        MOV     ?V0 + 1,#-0x1
+        MOV     R0,#?V0 + 1
+        LCALL   ?PUSH_XSTACK_I_ONE
+        MOV     ?V0 + 2,#0x13
+        MOV     R0,#?V0 + 2
+        LCALL   ?PUSH_XSTACK_I_TWO
+        MOV     ?V0 + 2,#accelAttrTbl & 0xff
+        MOV     ?V0 + 3,#(accelAttrTbl >> 8) & 0xff
+        MOV     R0,#?V0 + 2
+        LCALL   ?PUSH_XSTACK_I_TWO
+        MOV     R1,#0x0
+        MOV     R4,#accelXCoordinates & 0xff
+        MOV     R5,#(accelXCoordinates >> 8) & 0xff
+        MOV     R2,#accelXConfigCoordinates & 0xff
+        MOV     R3,#(accelXConfigCoordinates >> 8) & 0xff
+        LCALL   ??GATTServApp_ProcessCharCfg?relay
+        MOV     A,#0x5
+        LCALL   ?DEALLOC_XSTACK8
+        MOV     A,R1
+        JZ      $+5
+        LJMP    ??Accel_SetParameter_8 & 0xFFFF
+//  473             P2_2 ^= 1;
+        XRL     0xa0,#0x4
+        LJMP    ??Accel_SetParameter_8 & 0xFFFF
+//  474       }
+//  475       else
+//  476       {
+//  477         ret = bleInvalidRange;
+//  478       }
+//  479       break;
+//  480 
+//  481     case ACCEL_Y_ATTR:
+//  482       if ( len == ACCEL_COORDINATES_LEN ) 
+??Accel_SetParameter_2:
+        MOV     A,#0x2
+        XRL     A,R7
+        JZ      $+5
+        LJMP    ??Accel_SetParameter_6 & 0xFFFF
+//  483       {      
+//  484         VOID osal_memcpy( accelYCoordinates, value, ACCEL_COORDINATES_LEN );
+        ; Setup parameters for call to function osal_memcpy
+        MOV     ?V0 + 2,#0x2
+        MOV     ?V0 + 3,R6
+        MOV     R0,#?V0 + 2
+        LCALL   ?PUSH_XSTACK_I_TWO
+        MOV     R2,#accelYCoordinates & 0xff
+        MOV     R3,#(accelYCoordinates >> 8) & 0xff
+        LCALL   ??osal_memcpy?relay
+        MOV     A,#0x2
+        LCALL   ?DEALLOC_XSTACK8
+//  485 
+//  486         // See if Notification has been enabled
+//  487         GATTServApp_ProcessCharCfg( accelYConfigCoordinates, accelYCoordinates,
+//  488                                     FALSE, accelAttrTbl, GATT_NUM_ATTRS( accelAttrTbl ),
+//  489                                     INVALID_TASK_ID );
+        ; Setup parameters for call to function GATTServApp_ProcessCharCfg
+        MOV     ?V0 + 1,#-0x1
+        MOV     R0,#?V0 + 1
+        LCALL   ?PUSH_XSTACK_I_ONE
+        MOV     ?V0 + 2,#0x13
+        MOV     R0,#?V0 + 2
+        LCALL   ?PUSH_XSTACK_I_TWO
+        MOV     ?V0 + 2,#accelAttrTbl & 0xff
+        MOV     ?V0 + 3,#(accelAttrTbl >> 8) & 0xff
+        MOV     R0,#?V0 + 2
+        LCALL   ?PUSH_XSTACK_I_TWO
+        MOV     R1,#0x0
+        MOV     R4,#accelYCoordinates & 0xff
+        MOV     R5,#(accelYCoordinates >> 8) & 0xff
+        MOV     R2,#accelYConfigCoordinates & 0xff
+        MOV     R3,#(accelYConfigCoordinates >> 8) & 0xff
+        SJMP    ??Accel_SetParameter_9
+//  490       }
+//  491       else
+//  492       {
+//  493         ret = bleInvalidRange;
+//  494       }
+//  495       break;
+//  496 
+//  497     case ACCEL_Z_ATTR:
+//  498       if ( len == ACCEL_COORDINATES_LEN ) 
+??Accel_SetParameter_3:
+        MOV     A,#0x2
+        XRL     A,R7
+        JNZ     ??Accel_SetParameter_6
+//  499       {      
+//  500         VOID osal_memcpy( accelZCoordinates, value, ACCEL_COORDINATES_LEN );
+        ; Setup parameters for call to function osal_memcpy
+        MOV     ?V0 + 2,#0x2
+        MOV     ?V0 + 3,R6
+        MOV     R0,#?V0 + 2
+        LCALL   ?PUSH_XSTACK_I_TWO
+        MOV     R2,#accelZCoordinates & 0xff
+        MOV     R3,#(accelZCoordinates >> 8) & 0xff
+        LCALL   ??osal_memcpy?relay
+        MOV     A,#0x2
+        LCALL   ?DEALLOC_XSTACK8
+//  501 
+//  502         // See if Notification has been enabled
+//  503         GATTServApp_ProcessCharCfg( accelZConfigCoordinates, accelZCoordinates,
+//  504                                     FALSE, accelAttrTbl, GATT_NUM_ATTRS( accelAttrTbl ),
+//  505                                     INVALID_TASK_ID );
+        ; Setup parameters for call to function GATTServApp_ProcessCharCfg
+        MOV     ?V0 + 1,#-0x1
+        MOV     R0,#?V0 + 1
+        LCALL   ?PUSH_XSTACK_I_ONE
+        MOV     ?V0 + 2,#0x13
+        MOV     R0,#?V0 + 2
+        LCALL   ?PUSH_XSTACK_I_TWO
+        MOV     ?V0 + 2,#accelAttrTbl & 0xff
+        MOV     ?V0 + 3,#(accelAttrTbl >> 8) & 0xff
+        MOV     R0,#?V0 + 2
+        LCALL   ?PUSH_XSTACK_I_TWO
+        MOV     R1,#0x0
+        MOV     R4,#accelZCoordinates & 0xff
+        MOV     R5,#(accelZCoordinates >> 8) & 0xff
+        MOV     R2,#accelZConfigCoordinates & 0xff
+        MOV     R3,#(accelZConfigCoordinates >> 8) & 0xff
+??Accel_SetParameter_9:
+        LCALL   ??GATTServApp_ProcessCharCfg?relay
+        MOV     A,#0x5
+        LCALL   ?DEALLOC_XSTACK8
+        SJMP    ??Accel_SetParameter_8
+//  506       }
+//  507       else
+//  508       {
+//  509         ret = bleInvalidRange;
+??Accel_SetParameter_6:
+        MOV     R6,#0x18
+        SJMP    ??Accel_SetParameter_8
+//  510       }
+//  511       break;
+//  512       
+//  513     default:
+//  514       ret = INVALIDPARAMETER;
+??Accel_SetParameter_5:
+        INC     R6
+        INC     R6
+//  515       break;
+//  516   }
+//  517   
+//  518   return ( ret );
+??Accel_SetParameter_8:
+        LJMP    ?Subroutine0 & 0xFFFF
+        REQUIRE _A_P2
+//  519 }
+//  520 
+//  521 /*********************************************************************
+//  522  * @fn      Accel_GetParameter
+//  523  *
+//  524  * @brief   Get an Accelerometer Profile parameter.
+//  525  *
+//  526  * @param   param - Profile parameter ID
+//  527  * @param   value - pointer to data to put.  This is dependent on
+//  528  *          the parameter ID and WILL be cast to the appropriate 
+//  529  *          data type (example: data type of uint16 will be cast to 
+//  530  *          uint16 pointer).
+//  531  *
+//  532  * @return  bStatus_t
+//  533  */
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+//  534 bStatus_t Accel_GetParameter( uint8 param, void *value )
+Accel_GetParameter:
+        CODE
+//  535 {
+        MOV     A,#-0xa
+        LCALL   ?BANKED_ENTER_XDATA
+        ; Saved register size: 10
+        ; Auto size: 0
+        MOV     A,R1
+//  536   bStatus_t ret = SUCCESS;
+        MOV     R6,#0x0
+//  537   switch ( param )
+        JZ      ??Accel_GetParameter_0
+        DEC     A
+        JZ      ??Accel_GetParameter_1
+        DEC     A
+        JZ      ??Accel_GetParameter_2
+        DEC     A
+        JZ      ??Accel_GetParameter_3
+        DEC     A
+        JZ      ??Accel_GetParameter_4
+        SJMP    ??Accel_GetParameter_5
+//  538   {
+//  539     case ACCEL_ENABLER:
+//  540       *((uint8*)value) = accelEnabled;
+??Accel_GetParameter_0:
+        MOV     DPTR,#accelEnabled
+        MOVX    A,@DPTR
+        MOV     DPL,R2
+        MOV     DPH,R3
+        SJMP    ??Accel_GetParameter_6
+//  541       break;
+//  542       
+//  543     case ACCEL_RANGE:
+//  544       *((uint16*)value) = accelRange;
+??Accel_GetParameter_4:
+        MOV     DPTR,#accelRange
+        LCALL   ??Subroutine5_0 & 0xFFFF
+??CrossCallReturnLabel_7:
+        MOV     DPL,R2
+        MOV     DPH,R3
+        MOV     A,R0
+        MOVX    @DPTR,A
+        INC     DPTR
+        MOV     A,R1
+??Accel_GetParameter_6:
+        MOVX    @DPTR,A
+//  545       break;
+        SJMP    ??Accel_GetParameter_7
+//  546       
+//  547     case ACCEL_X_ATTR:
+//  548       VOID osal_memcpy( value, accelXCoordinates, ACCEL_COORDINATES_LEN );
+??Accel_GetParameter_1:
+        ; Setup parameters for call to function osal_memcpy
+        MOV     ?V0 + 0,#0x2
+        MOV     ?V0 + 1,R6
+        MOV     R0,#?V0 + 0
+        LCALL   ?PUSH_XSTACK_I_TWO
+        MOV     R4,#accelXCoordinates & 0xff
+        MOV     R5,#(accelXCoordinates >> 8) & 0xff
+        SJMP    ??Accel_GetParameter_8
+//  549       break;
+//  550 
+//  551     case ACCEL_Y_ATTR:
+//  552       VOID osal_memcpy( value, accelYCoordinates, ACCEL_COORDINATES_LEN );
+??Accel_GetParameter_2:
+        ; Setup parameters for call to function osal_memcpy
+        MOV     ?V0 + 0,#0x2
+        MOV     ?V0 + 1,R6
+        MOV     R0,#?V0 + 0
+        LCALL   ?PUSH_XSTACK_I_TWO
+        MOV     R4,#accelYCoordinates & 0xff
+        MOV     R5,#(accelYCoordinates >> 8) & 0xff
+        SJMP    ??Accel_GetParameter_8
+//  553       break;
+//  554 
+//  555     case ACCEL_Z_ATTR:
+//  556       VOID osal_memcpy( value, accelZCoordinates, ACCEL_COORDINATES_LEN );
+??Accel_GetParameter_3:
+        ; Setup parameters for call to function osal_memcpy
+        MOV     ?V0 + 0,#0x2
+        MOV     ?V0 + 1,R6
+        MOV     R0,#?V0 + 0
+        LCALL   ?PUSH_XSTACK_I_TWO
+        MOV     R4,#accelZCoordinates & 0xff
+        MOV     R5,#(accelZCoordinates >> 8) & 0xff
+??Accel_GetParameter_8:
+        LCALL   ??osal_memcpy?relay
+        MOV     A,#0x2
+        LCALL   ?DEALLOC_XSTACK8
+//  557       break;
+        SJMP    ??Accel_GetParameter_7
+//  558       
+//  559     default:
+//  560       ret = INVALIDPARAMETER;
+??Accel_GetParameter_5:
+        INC     R6
+        INC     R6
+//  561       break;
+//  562   }
+//  563   
+//  564   return ( ret );
+??Accel_GetParameter_7:
+        MOV     A,R6
+        MOV     R1,A
+        MOV     R7,#0x2
+        LJMP    ?BANKED_LEAVE_XDATA
+//  565 }
+//  566 
+//  567 /*********************************************************************
+//  568  * @fn          accel_ReadAttr
+//  569  *
+//  570  * @brief       Read an attribute.
+//  571  *
+//  572  * @param       pAttr - pointer to attribute
+//  573  * @param       pLen - length of data to be read
+//  574  * @param       pValue - pointer to data to be read
+//  575  * @param       signature - whether to include Authentication Signature
+//  576  *
+//  577  * @return      Success or Failure
+//  578  */
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+//  579 static uint8 accel_ReadAttrCB( uint16 connHandle, gattAttribute_t *pAttr, 
+accel_ReadAttrCB:
+        CODE
+//  580                                uint8 *pValue, uint8 *pLen, uint16 offset, uint8 maxLen )
+//  581 {
+        MOV     A,#-0x10
+        LCALL   ?BANKED_ENTER_XDATA
+        ; Saved register size: 16
+        ; Auto size: 0
+        MOV     A,#0x14
+        LCALL   ?XSTACK_DISP0_8
+        LCALL   ??Subroutine5_0 & 0xFFFF
+//  582   uint16 uuid;
+//  583   bStatus_t status = SUCCESS;
+??CrossCallReturnLabel_8:
+        MOV     ?V0 + 4,#0x0
+//  584 
+//  585   // Make sure it's not a blob operation
+//  586   if ( offset > 0 )
+        MOV     A,R0
+        ORL     A,R1
+        JZ      ??accel_ReadAttrCB_0
+//  587   {
+//  588     return ( ATT_ERR_ATTR_NOT_LONG );
+        MOV     R1,#0xb
+        LJMP    ??accel_ReadAttrCB_1 & 0xFFFF
+//  589   }
+??accel_ReadAttrCB_0:
+        MOV     A,#0x12
+        LCALL   ?XSTACK_DISP0_8
+        LCALL   ??Subroutine5_0 & 0xFFFF
+??CrossCallReturnLabel_9:
+        MOV     A,R0
+        MOV     R2,A
+        MOV     A,R1
+        MOV     R3,A
+//  590 
+//  591   if ( pAttr->type.len == ATT_BT_UUID_SIZE )
+        MOV     DPL,R4
+        MOV     DPH,R5
+        MOVX    A,@DPTR
+        XRL     A,#0x2
+        JZ      $+5
+        LJMP    ??accel_ReadAttrCB_2 & 0xFFFF
+//  592   {    
+//  593     // 16-bit UUID
+//  594     uuid = BUILD_UINT16( pAttr->type.uuid[0], pAttr->type.uuid[1]);
+//  595     switch ( uuid )
+        LCALL   ?Subroutine2 & 0xFFFF
+??CrossCallReturnLabel_13:
+        MOV     ?V0 + 2,R0
+        MOV     ?V0 + 3,R1
+        MOV     A,#0x10
+        LCALL   ?XSTACK_DISP0_8
+        LCALL   ??Subroutine5_0 & 0xFFFF
+??CrossCallReturnLabel_10:
+        MOV     ?V0 + 0,R0
+        MOV     ?V0 + 1,R1
+        MOV     DPL,R0
+        MOV     DPH,A
+        INC     DPTR
+        MOV     R6,DPL
+        MOV     R7,DPH
+        MOV     A,R4
+        ADD     A,#0x6
+        MOV     R0,A
+        MOV     A,R5
+        ADDC    A,#0x0
+        MOV     R1,A
+        MOV     A,R0
+        MOV     R4,A
+        MOV     A,R1
+        MOV     R5,A
+        MOV     DPL,?V0 + 2
+        MOV     DPH,?V0 + 3
+        MOVX    A,@DPTR
+        MOV     ?V0 + 6,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R1,A
+        MOV     A,?V0 + 6
+        ADD     A,#0x0
+        MOV     ?V0 + 2,A
+        CLR     A
+        ADDC    A,R1
+        MOV     ?V0 + 3,A
+        MOV     R0,#?V0 + 2
+        LCALL   ?US_SWITCH_DENSE
+`?<Jumptable for accel_ReadAttrCB>_0`:
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DW        65441
+        DATA
+        DATA8
+        DATA
+        DATA8
+        DB        4
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DW        ??accel_ReadAttrCB_3
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DW        ??accel_ReadAttrCB_4
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DW        ??accel_ReadAttrCB_5
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DW        ??accel_ReadAttrCB_5
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DW        ??accel_ReadAttrCB_5
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DW        ??accel_ReadAttrCB_5
+        CODE
+//  596     {
+//  597       // No need for "GATT_SERVICE_UUID" or "GATT_CLIENT_CHAR_CFG_UUID" cases;
+//  598       // gattserverapp handles those types for reads
+//  599       case ACCEL_RANGE_UUID:
+//  600 
+//  601         *pLen = 2;
+//  602         pValue[0] = LO_UINT16( *((uint16 *)pAttr->pValue) );
+//  603         pValue[1] = HI_UINT16( *((uint16 *)pAttr->pValue) );
+//  604         break;
+//  605       case ACCEL_X_UUID:      
+//  606       case ACCEL_Y_UUID:
+//  607       case ACCEL_Z_UUID:
+//  608         *pLen = 2;
+??accel_ReadAttrCB_5:
+        MOV     DPL,R2
+        MOV     DPH,R3
+        MOV     A,#0x2
+        LCALL   ?Subroutine1 & 0xFFFF
+//  609         pValue[0] = pAttr->pValue[0];
+??CrossCallReturnLabel_0:
+        MOVX    @DPTR,A
+//  610         pValue[1] = pAttr->pValue[1];
+        MOV     DPL,R4
+        MOV     DPH,R5
+        LCALL   ?Subroutine3 & 0xFFFF
+??CrossCallReturnLabel_2:
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     DPL,R6
+        MOV     DPH,R7
+        SJMP    ??CrossCallReturnLabel_1
+//  611         break;
+//  612 
+//  613       case ACCEL_ENABLER_UUID:
+//  614         *pLen = 1;
+??accel_ReadAttrCB_4:
+        MOV     DPL,R2
+        MOV     DPH,R3
+        MOV     A,#0x1
+        LCALL   ?Subroutine1 & 0xFFFF
+//  615         pValue[0] = *pAttr->pValue;
+??CrossCallReturnLabel_1:
+        MOVX    @DPTR,A
+//  616         break;
+        SJMP    ??accel_ReadAttrCB_6
+//  617       
+//  618       default:
+//  619         // Should never get here!
+//  620         *pLen = 0;
+??accel_ReadAttrCB_3:
+        MOV     DPL,R2
+        MOV     DPH,R3
+        CLR     A
+        MOVX    @DPTR,A
+//  621         status = ATT_ERR_ATTR_NOT_FOUND;
+        MOV     ?V0 + 4,#0xa
+//  622         break;
+        SJMP    ??accel_ReadAttrCB_6
+//  623     }
+//  624   }
+//  625   else
+//  626   {
+//  627     // 128-bit UUID
+//  628     *pLen = 0;
+??accel_ReadAttrCB_2:
+        MOV     DPL,R2
+        MOV     DPH,R3
+        CLR     A
+        MOVX    @DPTR,A
+//  629     status = ATT_ERR_INVALID_HANDLE;
+        MOV     ?V0 + 4,#0x1
+//  630   }
+//  631 
+//  632 
+//  633   return ( status );
+??accel_ReadAttrCB_6:
+        MOV     R1,?V0 + 4
+??accel_ReadAttrCB_1:
+        MOV     R7,#0x8
+        LJMP    ?BANKED_LEAVE_XDATA
+//  634 }
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+?Subroutine2:
+        INC     DPTR
+        REQUIRE ??Subroutine5_0
+        ; // Fall through to label ??Subroutine5_0
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+??Subroutine5_0:
+        MOVX    A,@DPTR
+        MOV     R0,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R1,A
+        RET
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+?Subroutine1:
+        MOVX    @DPTR,A
+        MOV     DPL,R4
+        MOV     DPH,R5
+        LCALL   ?Subroutine4 & 0xFFFF
+??CrossCallReturnLabel_4:
+        MOVX    A,@DPTR
+        MOV     DPL,?V0 + 0
+        MOV     DPH,?V0 + 1
+        RET
+//  635 
+//  636 /*********************************************************************
+//  637  * @fn      accel_WriteAttrCB
+//  638  *
+//  639  * @brief   Validate attribute data prior to a write operation
+//  640  *
+//  641  * @param   connHandle – connection message was received on
+//  642  * @param   pReq - pointer to request
+//  643  *
+//  644  * @return  Success or Failure
+//  645  */
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+//  646 static bStatus_t accel_WriteAttrCB( uint16 connHandle, gattAttribute_t *pAttr,
+accel_WriteAttrCB:
+        CODE
+//  647                                     uint8 *pValue, uint8 len, uint16 offset )
+//  648 {
+        MOV     A,#-0xf
+        LCALL   ?BANKED_ENTER_XDATA
+        ; Saved register size: 15
+        ; Auto size: 0
+        MOV     A,R1
+        MOV     R6,A
+//  649   bStatus_t status = SUCCESS;
+        MOV     R7,#0x0
+//  650   uint8 notify = 0xFF;
+//  651 
+//  652   if ( pAttr->type.len == ATT_BT_UUID_SIZE )
+        MOV     DPL,R4
+        MOV     DPH,R5
+        MOVX    A,@DPTR
+        XRL     A,#0x2
+        JZ      $+5
+        LJMP    ??accel_WriteAttrCB_0 & 0xFFFF
+//  653   {
+//  654     
+//  655     uint16 uuid = BUILD_UINT16( pAttr->type.uuid[0], pAttr->type.uuid[1]);
+//  656     switch ( uuid )
+        LCALL   ?Subroutine2 & 0xFFFF
+??CrossCallReturnLabel_14:
+        MOV     A,#0xf
+        LCALL   ?XSTACK_DISP0_8
+        MOVX    A,@DPTR
+        MOV     ?V0 + 2,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     ?V0 + 3,A
+        MOV     A,#0x11
+        LCALL   ?XSTACK_DISP0_8
+        MOVX    A,@DPTR
+        MOV     ?V0 + 0,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     ?V0 + 1,A
+        MOV     DPL,R0
+        MOV     DPH,R1
+        MOVX    A,@DPTR
+        MOV     ?V0 + 4,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R1,A
+        MOV     A,?V0 + 4
+        ADD     A,#0x0
+        CLR     A
+        ADDC    A,R1
+        MOV     ?V0 + 5,A
+        MOV     R0,#?V0 + 4
+        LCALL   ?US_SWITCH_SPARSE
+`?<Jumptable for accel_WriteAttrCB>_0`:
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DW        0
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DW        2
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DW        10498
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DW        ??accel_WriteAttrCB_1
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DW        65441
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DW        ??accel_WriteAttrCB_2
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DW        ??accel_WriteAttrCB_3
+        CODE
+//  657     {
+//  658       case ACCEL_ENABLER_UUID:
+//  659         //Validate the value
+//  660         // Make sure it's not a blob oper
+//  661         if ( offset == 0 )
+??accel_WriteAttrCB_2:
+        MOV     A,?V0 + 0
+        ORL     A,?V0 + 1
+        JNZ     ??accel_WriteAttrCB_4
+//  662         {
+//  663           if ( len > 1 )
+        MOV     A,R6
+        SUBB    A,#0x2
+        JC      ??accel_WriteAttrCB_5
+//  664             status = ATT_ERR_INVALID_VALUE_SIZE;
+        MOV     R7,#0xd
+        SJMP    ??accel_WriteAttrCB_6
+//  665           else if ( pValue[0] != FALSE && pValue[0] != TRUE )
+??accel_WriteAttrCB_5:
+        MOV     DPL,?V0 + 2
+        MOV     DPH,?V0 + 3
+        MOVX    A,@DPTR
+        MOV     R0,A
+        JZ      ??accel_WriteAttrCB_7
+        MOV     A,#0x1
+        XRL     A,R0
+        JZ      ??accel_WriteAttrCB_7
+//  666             status = ATT_ERR_INVALID_VALUE;
+        MOV     R7,#-0x80
+        SJMP    ??accel_WriteAttrCB_6
+//  667         }
+//  668         else
+//  669         {
+//  670           status = ATT_ERR_ATTR_NOT_LONG;
+??accel_WriteAttrCB_4:
+        MOV     R7,#0xb
+        SJMP    ??accel_WriteAttrCB_6
+//  671         }
+//  672         
+//  673         //Write the value
+//  674         if ( status == SUCCESS )
+//  675         {
+//  676           uint8 *pCurValue = (uint8 *)pAttr->pValue;
+//  677           
+//  678           *pCurValue = pValue[0];
+??accel_WriteAttrCB_7:
+        MOV     A,R0
+        PUSH    A
+        MOV     DPL,R4
+        MOV     DPH,R5
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        LCALL   ?Subroutine3 & 0xFFFF
+??CrossCallReturnLabel_3:
+        POP     A
+        MOVX    @DPTR,A
+//  679           notify = ACCEL_ENABLER;        
+        MOV     DPTR,#accel_AppCBs
+        LCALL   ??Subroutine5_0 & 0xFFFF
+//  680         }
+??CrossCallReturnLabel_11:
+        MOV     A,R0
+        ORL     A,R1
+        JZ      ??accel_WriteAttrCB_6
+        MOVX    A,@DPTR
+        MOV     DPH,A
+        MOV     DPL,R0
+        LCALL   ??Subroutine5_0 & 0xFFFF
+??CrossCallReturnLabel_12:
+        MOV     DPL,R0
+        MOV     DPH,R1
+        MOV     A,DPL
+        ORL     A,DPH
+        JZ      ??accel_WriteAttrCB_6
+//  681              
+//  682         break;
+//  683           
+//  684       case GATT_CLIENT_CHAR_CFG_UUID:
+//  685         status = GATTServApp_ProcessCCCWriteReq( connHandle, pAttr, pValue, len,
+//  686                                                  offset, GATT_CLIENT_CFG_NOTIFY );
+//  687         break;      
+//  688           
+//  689       default:
+//  690           // Should never get here!
+//  691           status = ATT_ERR_ATTR_NOT_FOUND;
+//  692     }
+//  693   }
+//  694   else
+//  695   {
+//  696     // 128-bit UUID
+//  697     status = ATT_ERR_INVALID_HANDLE;
+//  698   }  
+//  699 
+//  700   // If an attribute changed then callback function to notify application of change
+//  701   if ( (notify != 0xFF) && accel_AppCBs && accel_AppCBs->pfnAccelEnabler )
+//  702     accel_AppCBs->pfnAccelEnabler();  
+        ; Setup parameters for indirect call
+        LCALL   ?CALL_IND
+//  703   
+//  704   return ( status );
+??accel_WriteAttrCB_6:
+        MOV     A,R7
+        MOV     R1,A
+        MOV     R7,#0x7
+        LJMP    ?BANKED_LEAVE_XDATA
+??accel_WriteAttrCB_1:
+        ; Setup parameters for call to function GATTServApp_ProcessCCCWriteReq
+        MOV     ?V0 + 4,#0x1
+        MOV     ?V0 + 5,R7
+        MOV     R0,#?V0 + 4
+        LCALL   ?PUSH_XSTACK_I_TWO
+        MOV     R0,#?V0 + 0
+        LCALL   ?PUSH_XSTACK_I_TWO
+        MOV     R0,#?V0 + 2
+        LCALL   ?PUSH_XSTACK_I_TWO
+        MOV     A,R6
+        MOV     R1,A
+        LCALL   ??GATTServApp_ProcessCCCWriteReq?relay
+        MOV     A,#0x6
+        LCALL   ?DEALLOC_XSTACK8
+        MOV     A,R1
+        MOV     R7,A
+        SJMP    ??accel_WriteAttrCB_6
+??accel_WriteAttrCB_3:
+        MOV     R7,#0xa
+        SJMP    ??accel_WriteAttrCB_6
+??accel_WriteAttrCB_0:
+        INC     R7
+        SJMP    ??accel_WriteAttrCB_6
+//  705 }
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+?Subroutine3:
+        LCALL   ?Subroutine4 & 0xFFFF
+??CrossCallReturnLabel_5:
+        RET
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+?Subroutine4:
+        MOVX    A,@DPTR
+        MOV     R0,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     DPH,A
+        MOV     DPL,R0
+        RET
+//  706 
+//  707 /*********************************************************************
+//  708  * @fn          accel_HandleConnStatusCB
+//  709  *
+//  710  * @brief       Accelerometer Service link status change handler function.
+//  711  *
+//  712  * @param       connHandle - connection handle
+//  713  * @param       changeType - type of change
+//  714  *
+//  715  * @return      none
+//  716  */
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+//  717 static void accel_HandleConnStatusCB( uint16 connHandle, uint8 changeType )
+accel_HandleConnStatusCB:
+        CODE
+//  718 { 
+        MOV     A,#-0x9
+        LCALL   ?BANKED_ENTER_XDATA
+        ; Saved register size: 9
+        ; Auto size: 0
+        MOV     A,R2
+        MOV     R6,A
+        MOV     A,R3
+        MOV     R7,A
+        MOV     ?V0 + 0,R1
+//  719   // Make sure this is not loopback connection
+//  720   if ( connHandle != LOOPBACK_CONNHANDLE )
+        MOV     A,#-0x2
+        XRL     A,R6
+        JNZ     ??accel_HandleConnStatusCB_0
+        MOV     A,#-0x1
+        XRL     A,R7
+??accel_HandleConnStatusCB_0:
+        JZ      ??accel_HandleConnStatusCB_1
+//  721   {
+//  722     // Reset Client Char Config if connection has dropped
+//  723     if ( ( changeType == LINKDB_STATUS_UPDATE_REMOVED )      ||
+//  724          ( ( changeType == LINKDB_STATUS_UPDATE_STATEFLAGS ) && 
+//  725            ( !linkDB_Up( connHandle ) ) ) )
+        MOV     A,#0x1
+        XRL     A,?V0 + 0
+        JZ      ??accel_HandleConnStatusCB_2
+        MOV     A,#0x2
+        XRL     A,?V0 + 0
+        JNZ     ??accel_HandleConnStatusCB_1
+        ; Setup parameters for call to function linkDB_State
+        MOV     R1,#0x1
+        LCALL   ??linkDB_State?relay
+        MOV     A,R1
+        JNZ     ??accel_HandleConnStatusCB_1
+//  726     { 
+//  727       GATTServApp_InitCharCfg( connHandle, accelXConfigCoordinates );
+??accel_HandleConnStatusCB_2:
+        ; Setup parameters for call to function GATTServApp_InitCharCfg
+        MOV     R4,#accelXConfigCoordinates & 0xff
+        MOV     R5,#(accelXConfigCoordinates >> 8) & 0xff
+        MOV     A,R6
+        MOV     R2,A
+        MOV     A,R7
+        MOV     R3,A
+        LCALL   ??GATTServApp_InitCharCfg?relay
+//  728       GATTServApp_InitCharCfg( connHandle, accelYConfigCoordinates );
+        ; Setup parameters for call to function GATTServApp_InitCharCfg
+        MOV     R4,#accelYConfigCoordinates & 0xff
+        MOV     R5,#(accelYConfigCoordinates >> 8) & 0xff
+        MOV     A,R6
+        MOV     R2,A
+        MOV     A,R7
+        MOV     R3,A
+        LCALL   ??GATTServApp_InitCharCfg?relay
+//  729       GATTServApp_InitCharCfg( connHandle, accelZConfigCoordinates );
+        ; Setup parameters for call to function GATTServApp_InitCharCfg
+        MOV     R4,#accelZConfigCoordinates & 0xff
+        MOV     R5,#(accelZConfigCoordinates >> 8) & 0xff
+        MOV     A,R6
+        MOV     R2,A
+        MOV     A,R7
+        MOV     R3,A
+        LCALL   ??GATTServApp_InitCharCfg?relay
+//  730     }
+//  731   }
+//  732 }
+??accel_HandleConnStatusCB_1:
+        MOV     R7,#0x1
+        LJMP    ?BANKED_LEAVE_XDATA
+
+        RSEG XDATA_ID:CODE:NOROOT(0)
+`?<Initializer for accelEnabledCharProps>`:
+        DATA8
+        DB 10
+
+        RSEG XDATA_ID:CODE:NOROOT(0)
+`?<Initializer for accelEnabledUserDesc>`:
+        DB 41H, 63H, 63H, 65H, 6CH, 20H, 45H, 6EH
+        DB 61H, 62H, 6CH, 65H, 0, 0
+
+        RSEG XDATA_ID:CODE:NOROOT(0)
+`?<Initializer for accelRangeCharProps>`:
+        DATA8
+        DB 2
+
+        RSEG XDATA_ID:CODE:NOROOT(0)
+`?<Initializer for accelRange>`:
+        DATA16
+        DW 20
+
+        RSEG XDATA_ID:CODE:NOROOT(0)
+`?<Initializer for accelRangeUserDesc>`:
+        DB 41H, 63H, 63H, 65H, 6CH, 20H, 52H, 61H
+        DB 6EH, 67H, 65H, 0, 0
+
+        RSEG XDATA_ID:CODE:NOROOT(0)
+`?<Initializer for accelXCharProps>`:
+        DATA8
+        DB 16
+
+        RSEG XDATA_ID:CODE:NOROOT(0)
+`?<Initializer for accelYCharProps>`:
+        DATA8
+        DB 16
+
+        RSEG XDATA_ID:CODE:NOROOT(0)
+`?<Initializer for accelZCharProps>`:
+        DATA8
+        DB 16
+
+        RSEG XDATA_ID:CODE:NOROOT(0)
+`?<Initializer for accelXCharUserDesc>`:
+        DB 41H, 63H, 63H, 65H, 6CH, 20H, 58H, 2DH
+        DB 43H, 6FH, 6FH, 72H, 64H, 69H, 6EH, 61H
+        DB 74H, 65H, 0, 0
+
+        RSEG XDATA_ID:CODE:NOROOT(0)
+`?<Initializer for accelYCharUserDesc>`:
+        DB 41H, 63H, 63H, 65H, 6CH, 20H, 59H, 2DH
+        DB 43H, 6FH, 6FH, 72H, 64H, 69H, 6EH, 61H
+        DB 74H, 65H, 0, 0
+
+        RSEG XDATA_ID:CODE:NOROOT(0)
+`?<Initializer for accelZCharUserDesc>`:
+        DB 41H, 63H, 63H, 65H, 6CH, 20H, 5AH, 2DH
+        DB 43H, 6FH, 6FH, 72H, 64H, 69H, 6EH, 61H
+        DB 74H, 65H, 0, 0
+
+        RSEG XDATA_ID:CODE:NOROOT(0)
+`?<Initializer for accelAttrTbl>`:
+        DATA8
+        DB 2
+        DATA16
+        DW primaryServiceUUID
+        DATA8
+        DB 1
+        DATA16
+        DW 0
+        DW accelService
+        DATA8
+        DB 2
+        DATA16
+        DW characterUUID
+        DATA8
+        DB 1
+        DATA16
+        DW 0
+        DW accelEnabledCharProps
+        DATA8
+        DB 2
+        DATA16
+        DW accEnablerUUID
+        DATA8
+        DB 3
+        DATA16
+        DW 0
+        DW accelEnabled
+        DATA8
+        DB 2
+        DATA16
+        DW charUserDescUUID
+        DATA8
+        DB 1
+        DATA16
+        DW 0
+        DW accelEnabledUserDesc
+        DATA8
+        DB 2
+        DATA16
+        DW characterUUID
+        DATA8
+        DB 1
+        DATA16
+        DW 0
+        DW accelRangeCharProps
+        DATA8
+        DB 2
+        DATA16
+        DW rangeUUID
+        DATA8
+        DB 1
+        DATA16
+        DW 0
+        DW accelRange
+        DATA8
+        DB 2
+        DATA16
+        DW charUserDescUUID
+        DATA8
+        DB 1
+        DATA16
+        DW 0
+        DW accelRangeUserDesc
+        DATA8
+        DB 2
+        DATA16
+        DW characterUUID
+        DATA8
+        DB 1
+        DATA16
+        DW 0
+        DW accelXCharProps
+        DATA8
+        DB 2
+        DATA16
+        DW xUUID
+        DATA8
+        DB 0
+        DATA16
+        DW 0
+        DW accelXCoordinates
+        DATA8
+        DB 2
+        DATA16
+        DW clientCharCfgUUID
+        DATA8
+        DB 3
+        DATA16
+        DW 0
+        DW accelXConfigCoordinates
+        DATA8
+        DB 2
+        DATA16
+        DW charUserDescUUID
+        DATA8
+        DB 1
+        DATA16
+        DW 0
+        DW accelXCharUserDesc
+        DATA8
+        DB 2
+        DATA16
+        DW characterUUID
+        DATA8
+        DB 1
+        DATA16
+        DW 0
+        DW accelYCharProps
+        DATA8
+        DB 2
+        DATA16
+        DW yUUID
+        DATA8
+        DB 0
+        DATA16
+        DW 0
+        DW accelYCoordinates
+        DATA8
+        DB 2
+        DATA16
+        DW clientCharCfgUUID
+        DATA8
+        DB 3
+        DATA16
+        DW 0
+        DW accelYConfigCoordinates
+        DATA8
+        DB 2
+        DATA16
+        DW charUserDescUUID
+        DATA8
+        DB 1
+        DATA16
+        DW 0
+        DW accelYCharUserDesc
+        DATA8
+        DB 2
+        DATA16
+        DW characterUUID
+        DATA8
+        DB 1
+        DATA16
+        DW 0
+        DW accelZCharProps
+        DATA8
+        DB 2
+        DATA16
+        DW zUUID
+        DATA8
+        DB 0
+        DATA16
+        DW 0
+        DW accelZCoordinates
+        DATA8
+        DB 2
+        DATA16
+        DW clientCharCfgUUID
+        DATA8
+        DB 3
+        DATA16
+        DW 0
+        DW accelZConfigCoordinates
+        DATA8
+        DB 2
+        DATA16
+        DW charUserDescUUID
+        DATA8
+        DB 1
+        DATA16
+        DW 0
+        DW accelZCharUserDesc
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??Accel_AddService?relay:
+        CODE
+        LCALL   ?BDISPATCH
+        DATA24
+        DC24    Accel_AddService
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??Accel_RegisterAppCBs?relay:
+        CODE
+        LCALL   ?BDISPATCH
+        DATA24
+        DC24    Accel_RegisterAppCBs
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??Accel_SetParameter?relay:
+        CODE
+        LCALL   ?BDISPATCH
+        DATA24
+        DC24    Accel_SetParameter
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??Accel_GetParameter?relay:
+        CODE
+        LCALL   ?BDISPATCH
+        DATA24
+        DC24    Accel_GetParameter
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??accel_ReadAttrCB?relay:
+        CODE
+        LCALL   ?BDISPATCH
+        DATA24
+        DC24    accel_ReadAttrCB
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??accel_WriteAttrCB?relay:
+        CODE
+        LCALL   ?BDISPATCH
+        DATA24
+        DC24    accel_WriteAttrCB
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??accel_HandleConnStatusCB?relay:
+        CODE
+        LCALL   ?BDISPATCH
+        DATA24
+        DC24    accel_HandleConnStatusCB
+
+        END
+//  733 
+//  734 
+//  735 /*********************************************************************
+//  736 *********************************************************************/
+// 
+// 1 092 bytes in segment BANKED_CODE
+//    42 bytes in segment BANK_RELAYS
+//     1 byte  in segment SFR_AN
+//   246 bytes in segment XDATA_I
+//   246 bytes in segment XDATA_ID
+//    21 bytes in segment XDATA_ROM_C
+//    27 bytes in segment XDATA_Z
+// 
+// 1 380 bytes of CODE  memory
+//    21 bytes of CONST memory
+//     0 bytes of DATA  memory (+ 1 byte shared)
+//   273 bytes of XDATA memory
+//
+//Errors: none
+//Warnings: none

@@ -1,0 +1,26 @@
+what,kind,bundleId,bundleVersion,description,time
+activated,editor,org.eclipse.cdt.ui,5.1.1.200909110608,"org.eclipse.cdt.ui.editor.CEditor",1392616960835
+activated,view,org.eclipse.ui.views.log,1.0.100.v20090731,"org.eclipse.pde.runtime.LogView",1392616960938
+activated,editor,org.eclipse.cdt.ui,5.1.1.200909110608,"org.eclipse.cdt.ui.editor.CEditor",1392616961795
+activated,view,org.eclipse.ui.views.log,1.0.100.v20090731,"org.eclipse.pde.runtime.LogView",1392616961914
+activated,editor,org.eclipse.cdt.ui,5.1.1.200909110608,"org.eclipse.cdt.ui.editor.CEditor",1392616963171
+activated,view,org.eclipse.ui.views.log,1.0.100.v20090731,"org.eclipse.pde.runtime.LogView",1392616963539
+error,log,,,"Unable to create editor ID org.eclipse.cdt.ui.editor.CEditor: The file does not exist.",1392616963547
+opened,editor,org.eclipse.cdt.ui,5.1.1.200909110608,"org.eclipse.cdt.ui.editor.CEditor",1392616963562
+opened,editor,org.eclipse.cdt.ui,5.1.1.200909110608,"org.eclipse.cdt.ui.editor.CEditor",1392616963564
+activated,editor,org.eclipse.cdt.ui,5.1.1.200909110608,"org.eclipse.cdt.ui.editor.CEditor",1392616963582
+no handler,command,org.eclipse.ui,3.5.1.M20090902-1000,"org.eclipse.ui.file.refresh",1392616965768
+no handler,command,org.eclipse.ui,3.5.1.M20090902-1000,"org.eclipse.ui.file.refresh",1392616965916
+no handler,command,org.eclipse.ui,3.5.1.M20090902-1000,"org.eclipse.ui.file.refresh",1392616966317
+no handler,command,org.eclipse.ui,3.5.1.M20090902-1000,"org.eclipse.ui.file.refresh",1392616966557
+activated,editor,org.eclipse.cdt.ui,5.1.1.200909110608,"org.eclipse.cdt.ui.editor.CEditor",1392616966950
+no handler,command,org.eclipse.ui,3.5.1.M20090902-1000,"org.eclipse.ui.file.refresh",1392616966982
+no handler,command,org.eclipse.ui,3.5.1.M20090902-1000,"org.eclipse.ui.file.refresh",1392616967149
+activated,editor,org.eclipse.cdt.ui,5.1.1.200909110608,"org.eclipse.cdt.ui.editor.CEditor",1392616967755
+closed,editor,org.eclipse.cdt.ui,5.1.1.200909110608,"org.eclipse.cdt.ui.editor.CEditor",1392616967756
+activated,view,org.eclipse.ui.views.log,1.0.100.v20090731,"org.eclipse.pde.runtime.LogView",1392616968345
+closed,editor,org.eclipse.cdt.ui,5.1.1.200909110608,"org.eclipse.cdt.ui.editor.CEditor",1392616968345
+activated,view,org.eclipse.ui.navigator.resources,3.4.1.M20090826-0800,"org.eclipse.ui.navigator.ProjectExplorer",1392616968632
+deactivated,workbench,org.eclipse.ui.workbench,3.5.1.M20090826-0800a,"",1392616972171
+executed,command,org.eclipse.ui,3.5.1.M20090902-1000,"org.eclipse.ui.edit.paste",1392616975406
+started,bundle,org.eclipse.cdt.managedbuilder.core,6.0.0.200909110608,"org.eclipse.cdt.managedbuilder.core",1392616977538

@@ -1,0 +1,26 @@
+what,kind,bundleId,bundleVersion,description,time
+java.vm.specification.version,sysinfo,,,"1.7",1392212189829
+java.vm.vendor,sysinfo,,,"Oracle Corporation",1392212189829
+java.vm.version,sysinfo,,,"24.51-b03",1392212189829
+activated,view,org.eclipse.ui.navigator.resources,3.4.1.M20090826-0800,"org.eclipse.ui.navigator.ProjectExplorer",1392212198567
+opened,editor,org.eclipse.cdt.ui,5.1.1.200909110608,"org.eclipse.cdt.ui.editor.CEditor",1392212204609
+activated,editor,org.eclipse.cdt.ui,5.1.1.200909110608,"org.eclipse.cdt.ui.editor.CEditor",1392212204645
+activated,view,org.eclipse.ui.navigator.resources,3.4.1.M20090826-0800,"org.eclipse.ui.navigator.ProjectExplorer",1392212205347
+activated,editor,org.eclipse.cdt.ui,5.1.1.200909110608,"org.eclipse.cdt.ui.editor.CEditor",1392212205512
+activated,view,org.eclipse.ui.navigator.resources,3.4.1.M20090826-0800,"org.eclipse.ui.navigator.ProjectExplorer",1392212217483
+activated,editor,org.eclipse.cdt.ui,5.1.1.200909110608,"org.eclipse.cdt.ui.editor.CEditor",1392212217661
+deactivated,workbench,org.eclipse.ui.workbench,3.5.1.M20090826-0800a,"",1392212237843
+activated,workbench,org.eclipse.ui.workbench,3.5.1.M20090826-0800a,"",1392212240598
+deactivated,workbench,org.eclipse.ui.workbench,3.5.1.M20090826-0800a,"",1392212240636
+activated,workbench,org.eclipse.ui.workbench,3.5.1.M20090826-0800a,"",1392212242669
+deactivated,workbench,org.eclipse.ui.workbench,3.5.1.M20090826-0800a,"",1392212242687
+activated,workbench,org.eclipse.ui.workbench,3.5.1.M20090826-0800a,"",1392212246930
+deactivated,workbench,org.eclipse.ui.workbench,3.5.1.M20090826-0800a,"",1392212247169
+activated,workbench,org.eclipse.ui.workbench,3.5.1.M20090826-0800a,"",1392212297353
+deactivated,workbench,org.eclipse.ui.workbench,3.5.1.M20090826-0800a,"",1392212309921
+activated,workbench,org.eclipse.ui.workbench,3.5.1.M20090826-0800a,"",1392212340640
+deactivated,workbench,org.eclipse.ui.workbench,3.5.1.M20090826-0800a,"",1392212383426
+activated,workbench,org.eclipse.ui.workbench,3.5.1.M20090826-0800a,"",1392212388934
+activated,view,org.eclipse.ui.navigator.resources,3.4.1.M20090826-0800,"org.eclipse.ui.navigator.ProjectExplorer",1392212474650
+activated,editor,org.eclipse.cdt.ui,5.1.1.200909110608,"org.eclipse.cdt.ui.editor.CEditor",1392212474830
+started,bundle,org.eclipse.debug.ui,3.5.1.v20090811_r351,"org.eclipse.debug.ui",1392212477279

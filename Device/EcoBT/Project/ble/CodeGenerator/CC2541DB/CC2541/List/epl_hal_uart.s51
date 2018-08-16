@@ -1,0 +1,601 @@
+///////////////////////////////////////////////////////////////////////////////
+//                                                                            /
+// IAR C/C++ Compiler V8.20.1.40829 for 8051            10/Jul/2014  13:44:08 /
+// Copyright 2004-2012 IAR Systems AB.                                        /
+//                                                                            /
+//    Core               =  plain                                             /
+//    Code model         =  banked                                            /
+//    Data model         =  large                                             /
+//    Calling convention =  xdata reentrant                                   /
+//    Constant location  =  data_rom                                          /
+//    Dptr setup         =  1,16                                              /
+//                                                                            /
+//    Source file        =  D:\NTHU\研究\Important\ThesisCode\Code\GitLabClou /
+//                          d\NewEcoExec\codegenerator\Device\EcoBT\Project\b /
+//                          le\CodeGenerator\Source\epl_hal_uart.c            /
+//    Command line       =  -f D:\NTHU\研究\Important\ThesisCode\Code\GitLabC /
+//                          loud\NewEcoExec\codegenerator\Device\EcoBT\Projec /
+//                          t\ble\CodeGenerator\CC2541DB\..\..\config\buildCo /
+//                          mponents.cfg (-DBROADCASTER_CFG=0x01              /
+//                          -DOBSERVER_CFG=0x02 -DPERIPHERAL_CFG=0x04         /
+//                          -DCENTRAL_CFG=0x08 -DADV_NCONN_CFG=0x01           /
+//                          -DADV_CONN_CFG=0x02 -DSCAN_CFG=0x04               /
+//                          -DINIT_CFG=0x08 -DADV_CFG=ADV_NCONN_CFG+ADV_CONN_ /
+//                          CFG -DLINK_CFG=ADV_CONN_CFG+INIT_CFG              /
+//                          -DFULL_CFG=INIT_CFG+SCAN_CFG+ADV_NCONN_CFG+ADV_CO /
+//                          NN_CFG) -f D:\NTHU\研究\Important\ThesisCode\Code /
+//                          \GitLabCloud\NewEcoExec\codegenerator\Device\EcoB /
+//                          T\Project\ble\CodeGenerator\CC2541DB\buildConfig. /
+//                          cfg (-DHOST_CONFIG=PERIPHERAL_CFG                 /
+//                          -DGAP_PRIVACY_RECONNECT -DCC2541                  /
+//                          -DOAD_IMAGE_VERSION=0x0000                        /
+//                          "-DOAD_IMAGE_A_USER_ID='A', 'A', 'A', 'A'"        /
+//                          "-DOAD_IMAGE_B_USER_ID='B', 'B', 'B', 'B'")       /
+//                          D:\NTHU\研究\Important\ThesisCode\Code\GitLabClou /
+//                          d\NewEcoExec\codegenerator\Device\EcoBT\Project\b /
+//                          le\CodeGenerator\Source\epl_hal_uart.c -D         /
+//                          INT_HEAP_LEN=900 -D HALNODEBUG -D                 /
+//                          OSAL_CBTIMER_NUM_TASKS=1 -D HAL_AES_DMA=TRUE -D   /
+//                          HAL_DMA=TRUE -D xPOWER_SAVING -D                  /
+//                          xPLUS_BROADCASTER -D HAL_LCD=FALSE -D             /
+//                          HAL_LED=TRUE -D HAL_ADC=TRUE -lB                  /
+//                          D:\NTHU\研究\Important\ThesisCode\Code\GitLabClou /
+//                          d\NewEcoExec\codegenerator\Device\EcoBT\Project\b /
+//                          le\CodeGenerator\CC2541DB\CC2541\List\ -o         /
+//                          D:\NTHU\研究\Important\ThesisCode\Code\GitLabClou /
+//                          d\NewEcoExec\codegenerator\Device\EcoBT\Project\b /
+//                          le\CodeGenerator\CC2541DB\CC2541\Obj\ -e --debug  /
+//                          --core=plain --dptr=16,1 --data_model=large       /
+//                          --code_model=banked --calling_convention=xdata_re /
+//                          entrant --place_constants=data_rom                /
+//                          --nr_virtual_regs 16 -I                           /
+//                          D:\NTHU\研究\Important\ThesisCode\Code\GitLabClou /
+//                          d\NewEcoExec\codegenerator\Device\EcoBT\Project\b /
+//                          le\CodeGenerator\CC2541DB\..\..\common\ -I        /
+//                          D:\NTHU\研究\Important\ThesisCode\Code\GitLabClou /
+//                          d\NewEcoExec\codegenerator\Device\EcoBT\Project\b /
+//                          le\CodeGenerator\CC2541DB\..\..\include\ -I       /
+//                          D:\NTHU\研究\Important\ThesisCode\Code\GitLabClou /
+//                          d\NewEcoExec\codegenerator\Device\EcoBT\Project\b /
+//                          le\CodeGenerator\CC2541DB\..\..\..\..\Components\ /
+//                          hal\include\ -I D:\NTHU\研究\Important\ThesisCode /
+//                          \Code\GitLabCloud\NewEcoExec\codegenerator\Device /
+//                          \EcoBT\Project\ble\CodeGenerator\CC2541DB\..\..\. /
+//                          .\..\Components\hal\target\CC2540EB\ -I           /
+//                          D:\NTHU\研究\Important\ThesisCode\Code\GitLabClou /
+//                          d\NewEcoExec\codegenerator\Device\EcoBT\Project\b /
+//                          le\CodeGenerator\CC2541DB\..\..\..\..\Components\ /
+//                          osal\include\ -I D:\NTHU\研究\Important\ThesisCod /
+//                          e\Code\GitLabCloud\NewEcoExec\codegenerator\Devic /
+//                          e\EcoBT\Project\ble\CodeGenerator\CC2541DB\..\..\ /
+//                          ..\..\Components\services\saddr\ -I               /
+//                          D:\NTHU\研究\Important\ThesisCode\Code\GitLabClou /
+//                          d\NewEcoExec\codegenerator\Device\EcoBT\Project\b /
+//                          le\CodeGenerator\CC2541DB\..\..\..\..\Components\ /
+//                          ble\include\ -I D:\NTHU\研究\Important\ThesisCode /
+//                          \Code\GitLabCloud\NewEcoExec\codegenerator\Device /
+//                          \EcoBT\Project\ble\CodeGenerator\CC2541DB\..\..\. /
+//                          .\..\Components\ble\controller\phy\ -I            /
+//                          D:\NTHU\研究\Important\ThesisCode\Code\GitLabClou /
+//                          d\NewEcoExec\codegenerator\Device\EcoBT\Project\b /
+//                          le\CodeGenerator\CC2541DB\..\..\..\..\Components\ /
+//                          ble\controller\include\ -I                        /
+//                          D:\NTHU\研究\Important\ThesisCode\Code\GitLabClou /
+//                          d\NewEcoExec\codegenerator\Device\EcoBT\Project\b /
+//                          le\CodeGenerator\CC2541DB\..\..\..\..\Components\ /
+//                          ble\hci\ -I D:\NTHU\研究\Important\ThesisCode\Cod /
+//                          e\GitLabCloud\NewEcoExec\codegenerator\Device\Eco /
+//                          BT\Project\ble\CodeGenerator\CC2541DB\..\..\..\.. /
+//                          \Components\ble\host\ -I                          /
+//                          D:\NTHU\研究\Important\ThesisCode\Code\GitLabClou /
+//                          d\NewEcoExec\codegenerator\Device\EcoBT\Project\b /
+//                          le\CodeGenerator\CC2541DB\..\..\common\cc2540\    /
+//                          -I D:\NTHU\研究\Important\ThesisCode\Code\GitLabC /
+//                          loud\NewEcoExec\codegenerator\Device\EcoBT\Projec /
+//                          t\ble\CodeGenerator\CC2541DB\..\..\common\npi\npi /
+//                          _np\ -I D:\NTHU\研究\Important\ThesisCode\Code\Gi /
+//                          tLabCloud\NewEcoExec\codegenerator\Device\EcoBT\P /
+//                          roject\ble\CodeGenerator\CC2541DB\..\..\Profiles\ /
+//                          Roles\ -I D:\NTHU\研究\Important\ThesisCode\Code\ /
+//                          GitLabCloud\NewEcoExec\codegenerator\Device\EcoBT /
+//                          \Project\ble\CodeGenerator\CC2541DB\..\..\Profile /
+//                          s\SimpleProfile\ -I D:\NTHU\研究\Important\Thesis /
+//                          Code\Code\GitLabCloud\NewEcoExec\codegenerator\De /
+//                          vice\EcoBT\Project\ble\CodeGenerator\CC2541DB\..\ /
+//                          ..\Profiles\DevInfo\ -I                           /
+//                          D:\NTHU\研究\Important\ThesisCode\Code\GitLabClou /
+//                          d\NewEcoExec\codegenerator\Device\EcoBT\Project\b /
+//                          le\CodeGenerator\CC2541DB\..\..\Profiles\Accelero /
+//                          meter\ -I D:\NTHU\研究\Important\ThesisCode\Code\ /
+//                          GitLabCloud\NewEcoExec\codegenerator\Device\EcoBT /
+//                          \Project\ble\CodeGenerator\CC2541DB\..\..\Profile /
+//                          s\EcoExecGATTProfile\ -I                          /
+//                          D:\NTHU\研究\Important\ThesisCode\Code\GitLabClou /
+//                          d\NewEcoExec\codegenerator\Device\EcoBT\Project\b /
+//                          le\CodeGenerator\CC2541DB\..\..\Profiles\timeserv /
+//                          ice\ -I D:\NTHU\研究\Important\ThesisCode\Code\Gi /
+//                          tLabCloud\NewEcoExec\codegenerator\Device\EcoBT\P /
+//                          roject\ble\CodeGenerator\CC2541DB\..\..\Profiles\ /
+//                          Batt\ -I D:\NTHU\研究\Important\ThesisCode\Code\G /
+//                          itLabCloud\NewEcoExec\codegenerator\Device\EcoBT\ /
+//                          Project\ble\CodeGenerator\CC2541DB\..\..\Profiles /
+//                          \HIDDev\ -I D:\NTHU\研究\Important\ThesisCode\Cod /
+//                          e\GitLabCloud\NewEcoExec\codegenerator\Device\Eco /
+//                          BT\Project\ble\CodeGenerator\CC2541DB\..\..\Profi /
+//                          les\ScanParam\ -Ohz                               /
+//    List file          =  D:\NTHU\研究\Important\ThesisCode\Code\GitLabClou /
+//                          d\NewEcoExec\codegenerator\Device\EcoBT\Project\b /
+//                          le\CodeGenerator\CC2541DB\CC2541\List\epl_hal_uar /
+//                          t.s51                                             /
+//                                                                            /
+//                                                                            /
+///////////////////////////////////////////////////////////////////////////////
+
+        NAME epl_hal_uart
+
+        RSEG DOVERLAY:DATA:NOROOT(0)
+        RSEG IOVERLAY:IDATA:NOROOT(0)
+        RSEG ISTACK:IDATA:NOROOT(0)
+        RSEG PSTACK:XDATA:NOROOT(0)
+        RSEG XSTACK:XDATA:NOROOT(0)
+
+        EXTERN ?BANKED_ENTER_XDATA
+        EXTERN ?BANKED_LEAVE_XDATA
+        EXTERN ?BDISPATCH
+        EXTERN ?BRET
+        EXTERN ?US_SWITCH_DENSE
+        EXTERN ?V0
+
+        PUBLIC ??uartInit?relay
+        PUBLIC ??uartReadByte?relay
+        PUBLIC ??uartReadString?relay
+        PUBLIC ??uartWriteByte?relay
+        PUBLIC ??uartWriteHex?relay
+        PUBLIC ??uartWriteString?relay
+        PUBWEAK P0SEL
+        PUBWEAK PERCFG
+        PUBWEAK U0BAUD
+        PUBWEAK U0CSR
+        PUBWEAK U0DBUF
+        PUBWEAK U0GCR
+        PUBLIC uartInit
+        PUBLIC uartReadByte
+        PUBLIC uartReadString
+        PUBLIC uartWriteByte
+        PUBLIC uartWriteHex
+        PUBLIC uartWriteString
+
+uartInit            SYMBOL "uartInit"
+??uartInit?relay    SYMBOL "?relay", uartInit
+uartReadByte        SYMBOL "uartReadByte"
+??uartReadByte?relay SYMBOL "?relay", uartReadByte
+uartReadString      SYMBOL "uartReadString"
+??uartReadString?relay SYMBOL "?relay", uartReadString
+uartWriteByte       SYMBOL "uartWriteByte"
+??uartWriteByte?relay SYMBOL "?relay", uartWriteByte
+uartWriteHex        SYMBOL "uartWriteHex"
+??uartWriteHex?relay SYMBOL "?relay", uartWriteHex
+uartWriteString     SYMBOL "uartWriteString"
+??uartWriteString?relay SYMBOL "?relay", uartWriteString
+
+// D:\NTHU\研究\Important\ThesisCode\Code\GitLabCloud\NewEcoExec\codegenerator\Device\EcoBT\Project\ble\CodeGenerator\Source\epl_hal_uart.c
+//    1 #if defined( CC2541) || defined( CC2541S )
+//    2 #include <ioCC2541.h>
+
+        ASEGN SFR_AN:DATA:NOROOT,086H
+// unsigned char volatile __sfr U0CSR
+U0CSR:
+        DATA8
+        DS 1
+
+        ASEGN SFR_AN:DATA:NOROOT,0c1H
+// unsigned char volatile __sfr U0DBUF
+U0DBUF:
+        DATA8
+        DS 1
+
+        ASEGN SFR_AN:DATA:NOROOT,0c2H
+// unsigned char volatile __sfr U0BAUD
+U0BAUD:
+        DATA8
+        DS 1
+
+        ASEGN SFR_AN:DATA:NOROOT,0c5H
+// unsigned char volatile __sfr U0GCR
+U0GCR:
+        DATA8
+        DS 1
+
+        ASEGN SFR_AN:DATA:NOROOT,0f1H
+// unsigned char volatile __sfr PERCFG
+PERCFG:
+        DATA8
+        DS 1
+
+        ASEGN SFR_AN:DATA:NOROOT,0f3H
+// unsigned char volatile __sfr P0SEL
+P0SEL:
+        DATA8
+        DS 1
+//    3 #else // CC2540
+//    4 #include <ioCC2540.h>
+//    5 #endif // CC2541 || CC2541S
+//    6 
+//    7 #include "epl_hal_uart.h"
+//    8 
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+//    9 void uartInit(int BaudRate)
+uartInit:
+        CODE
+//   10 {
+        MOV     A,#-0xa
+        LCALL   ?BANKED_ENTER_XDATA
+        ; Saved register size: 10
+        ; Auto size: 0
+//   11   PERCFG &= ~0x01;
+        ANL     0xf1,#0xfe
+//   12   P0SEL |=0x0C;
+        ORL     0xf3,#0xc
+//   13   U0CSR |=0xC0;
+        ORL     0x86,#0xc0
+//   14   switch(BaudRate)
+        MOV     ?V0 + 0,R2
+        MOV     ?V0 + 1,R3
+        MOV     R0,#?V0 + 0
+        LCALL   ?US_SWITCH_DENSE
+`?<Jumptable for uartInit>_0`:
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DW        0
+        DATA
+        DATA8
+        DATA
+        DATA8
+        DB        4
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DW        ??uartInit_0
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DW        ??uartInit_1
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DW        ??uartInit_2
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DW        ??uartInit_3
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DW        ??uartInit_4
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DW        ??uartInit_5
+        CODE
+//   15   {
+//   16   case HAL_UART_BR_9600:
+//   17     U0GCR |=0x08;
+??uartInit_1:
+        ORL     0xc5,#0x8
+//   18     U0BAUD = 0x3B;
+        SJMP    ??uartInit_6
+//   19     break;
+//   20   case HAL_UART_BR_19200:
+//   21     U0GCR |=0x09;
+??uartInit_2:
+        ORL     0xc5,#0x9
+//   22     U0BAUD = 0x3B;
+        SJMP    ??uartInit_6
+//   23     break;
+//   24   case HAL_UART_BR_38400:
+//   25     U0GCR |=0x0A;
+??uartInit_3:
+        ORL     0xc5,#0xa
+//   26     U0BAUD = 0x3B;
+??uartInit_6:
+        MOV     0xc2,#0x3b
+//   27     break;
+        SJMP    ??uartInit_0
+//   28   case HAL_UART_BR_57600:
+//   29     U0GCR |=0x0A;
+??uartInit_4:
+        ORL     0xc5,#0xa
+//   30     U0BAUD = 0xD8;
+        SJMP    ??uartInit_7
+//   31     break;
+//   32   case HAL_UART_BR_115200:
+//   33     U0GCR |=0x0B;
+??uartInit_5:
+        ORL     0xc5,#0xb
+//   34     U0BAUD = 0xD8;
+??uartInit_7:
+        MOV     0xc2,#-0x28
+//   35     break;
+//   36   default:
+//   37     break;
+//   38   }
+//   39 
+//   40   
+//   41 }
+??uartInit_0:
+        MOV     R7,#0x2
+        LJMP    ?BANKED_LEAVE_XDATA
+        REQUIRE PERCFG
+        REQUIRE P0SEL
+        REQUIRE U0CSR
+        REQUIRE U0GCR
+        REQUIRE U0BAUD
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+//   42 void uartWriteByte(char write)
+uartWriteByte:
+        CODE
+//   43 {
+        ; Saved register size: 0
+        ; Auto size: 0
+//   44   U0DBUF = write;
+        MOV     0xc1,R1
+//   45   while((U0CSR&0x01) || !(U0CSR&0x02));
+??uartWriteByte_0:
+        MOV     A,0x86
+        MOV     C,0xE0 /* A   */.0
+        JC      ??uartWriteByte_0
+        MOV     A,0x86
+        MOV     C,0xE0 /* A   */.1
+        JNC     ??uartWriteByte_0
+//   46   U0CSR&=~0x02;
+        ANL     0x86,#0xfd
+//   47 }
+        LJMP    ?BRET
+        REQUIRE U0DBUF
+        REQUIRE U0CSR
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+//   48 void uartReadByte(char *read)
+uartReadByte:
+        CODE
+//   49 {
+        PUSH    DPL
+        PUSH    DPH
+        ; Saved register size: 2
+        ; Auto size: 0
+//   50   while((U0CSR&0x01) || !(U0CSR&0x04));
+??uartReadByte_0:
+        MOV     A,0x86
+        MOV     C,0xE0 /* A   */.0
+        JC      ??uartReadByte_0
+        MOV     A,0x86
+        MOV     C,0xE0 /* A   */.2
+        JNC     ??uartReadByte_0
+//   51   *read=U0DBUF;
+        MOV     A,0xc1
+        MOV     DPL,R2
+        MOV     DPH,R3
+        MOVX    @DPTR,A
+//   52 }
+        POP     DPH
+        POP     DPL
+        LJMP    ?BRET
+        REQUIRE U0CSR
+        REQUIRE U0DBUF
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+//   53 void uartWriteString(char *str)
+uartWriteString:
+        CODE
+//   54 {
+        MOV     A,#-0x9
+        LCALL   ?BANKED_ENTER_XDATA
+        ; Saved register size: 9
+        ; Auto size: 0
+        MOV     A,R2
+        MOV     R6,A
+        MOV     A,R3
+        MOV     R7,A
+        SJMP    ??uartWriteString_0
+//   55   while(*str != 0)
+//   56   {
+//   57     uartWriteByte(*str++);
+??uartWriteString_1:
+        ; Setup parameters for call to function uartWriteByte
+        LCALL   ??uartWriteByte?relay
+        MOV     DPL,R6
+        MOV     DPH,R7
+        INC     DPTR
+        MOV     R6,DPL
+        MOV     R7,DPH
+//   58   }
+??uartWriteString_0:
+        MOV     DPL,R6
+        MOV     DPH,R7
+        MOVX    A,@DPTR
+        MOV     R1,A
+        JNZ     ??uartWriteString_1
+//   59 }
+        REQUIRE ?Subroutine0
+        ; // Fall through to label ?Subroutine0
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+?Subroutine0:
+        MOV     R7,#0x1
+        LJMP    ?BANKED_LEAVE_XDATA
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+//   60 void uartReadString(char *str)
+uartReadString:
+        CODE
+//   61 {
+        MOV     A,#-0x9
+        LCALL   ?BANKED_ENTER_XDATA
+        ; Saved register size: 9
+        ; Auto size: 0
+        MOV     A,R2
+        MOV     R6,A
+        MOV     A,R3
+        MOV     R7,A
+//   62   do{
+//   63     uartReadByte(str);
+??uartReadString_0:
+        ; Setup parameters for call to function uartReadByte
+        MOV     A,R6
+        MOV     R2,A
+        MOV     A,R7
+        MOV     R3,A
+        LCALL   ??uartReadByte?relay
+//   64   }while(*str++ != '\r');
+        MOV     A,R6
+        MOV     R0,A
+        MOV     A,R7
+        MOV     R1,A
+        MOV     DPL,R0
+        MOV     DPH,R1
+        INC     DPTR
+        MOV     R6,DPL
+        MOV     R7,DPH
+        MOV     DPL,R0
+        MOV     DPH,R1
+        MOVX    A,@DPTR
+        XRL     A,#0xd
+        JNZ     ??uartReadString_0
+//   65 }
+        SJMP    ?Subroutine0
+//   66 
+//   67   
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+//   68 void uartWriteHex(uint8 *ptr)
+uartWriteHex:
+        CODE
+//   69 {
+        MOV     A,#-0x9
+        LCALL   ?BANKED_ENTER_XDATA
+        ; Saved register size: 9
+        ; Auto size: 0
+        MOV     A,R2
+        MOV     R6,A
+        MOV     A,R3
+        MOV     R7,A
+//   70   if( HI_UINT8(*ptr) < 10 )
+        MOV     DPL,R6
+        MOV     DPH,R7
+        MOVX    A,@DPTR
+        SWAP    A
+        ANL     A,#0xf
+        MOV     R0,A
+        CLR     C
+        SUBB    A,#0xa
+        JNC     ??uartWriteHex_0
+//   71     uartWriteByte(48+HI_UINT8(*ptr));
+        ; Setup parameters for call to function uartWriteByte
+        MOV     A,#0x30
+        SJMP    ??uartWriteHex_1
+//   72   else
+//   73     uartWriteByte(55+HI_UINT8(*ptr));
+??uartWriteHex_0:
+        ; Setup parameters for call to function uartWriteByte
+        MOV     A,#0x37
+??uartWriteHex_1:
+        ADD     A,R0
+        MOV     R1,A
+        LCALL   ??uartWriteByte?relay
+//   74   
+//   75   if( LO_UINT8(*ptr) < 10 )
+        MOV     DPL,R6
+        MOV     DPH,R7
+        MOVX    A,@DPTR
+        ANL     A,#0xf
+        MOV     R0,A
+        CLR     C
+        SUBB    A,#0xa
+        JNC     ??uartWriteHex_2
+//   76   {
+//   77     uartWriteByte(48+LO_UINT8(*ptr));
+        ; Setup parameters for call to function uartWriteByte
+        MOV     A,#0x30
+        SJMP    ??uartWriteHex_3
+//   78     //uartWriteString("small than 10.");
+//   79   }
+//   80   else
+//   81     uartWriteByte(55+LO_UINT8(*ptr));
+??uartWriteHex_2:
+        ; Setup parameters for call to function uartWriteByte
+        MOV     A,#0x37
+??uartWriteHex_3:
+        ADD     A,R0
+        MOV     R1,A
+        LCALL   ??uartWriteByte?relay
+//   82   
+//   83   uartWriteByte(' ');  
+        ; Setup parameters for call to function uartWriteByte
+        MOV     R1,#0x20
+        LCALL   ??uartWriteByte?relay
+//   84 }
+        SJMP    ?Subroutine0
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??uartInit?relay:
+        CODE
+        LCALL   ?BDISPATCH
+        DATA24
+        DC24    uartInit
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??uartWriteByte?relay:
+        CODE
+        LCALL   ?BDISPATCH
+        DATA24
+        DC24    uartWriteByte
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??uartReadByte?relay:
+        CODE
+        LCALL   ?BDISPATCH
+        DATA24
+        DC24    uartReadByte
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??uartWriteString?relay:
+        CODE
+        LCALL   ?BDISPATCH
+        DATA24
+        DC24    uartWriteString
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??uartReadString?relay:
+        CODE
+        LCALL   ?BDISPATCH
+        DATA24
+        DC24    uartReadString
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??uartWriteHex?relay:
+        CODE
+        LCALL   ?BDISPATCH
+        DATA24
+        DC24    uartWriteHex
+
+        END
+// 
+// 263 bytes in segment BANKED_CODE
+//  36 bytes in segment BANK_RELAYS
+//   6 bytes in segment SFR_AN
+// 
+// 299 bytes of CODE memory
+//   0 bytes of DATA memory (+ 6 bytes shared)
+//
+//Errors: none
+//Warnings: none

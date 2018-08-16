@@ -1,0 +1,26 @@
+################################################################################
+# Automatically-generated file. Do not edit!
+################################################################################
+
+# Add inputs and outputs from these tool invocations to the build variables 
+C_SRCS += \
+../src/main.c 
+
+C_DEPS += \
+./src/main.d 
+
+RELS += \
+./src/main.rel 
+
+
+# Each subdirectory must supply rules for building sources it contributes
+src/main.rel: ../src/main.c
+	@echo 'Building file: $<'
+	@echo 'Invoking: SDCC Compiler'
+	sdcc -c -I"C:\Program Files\EPL_LIB" -I"C:\Program Files\EPL_LIB\E1_LIB\include" --model-small -o"$@" "$<" && \
+	echo -n $(@:%.rel=%.d) $(dir $@) > $(@:%.rel=%.d) && \
+	sdcc -c -MM -MG -P -w -I"C:\Program Files\EPL_LIB" -I"C:\Program Files\EPL_LIB\E1_LIB\include" --model-small  "$<" >> $(@:%.rel=%.d)
+	@echo 'Finished building: $<'
+	@echo ' '
+
+

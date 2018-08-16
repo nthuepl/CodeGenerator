@@ -1,0 +1,156 @@
+/*
+ * main.c
+ *
+ *  Created on: 2014/1/21
+ *      Author: EPL
+ */
+
+#include <eco/reg24e1.h>
+#include <eco/eco_sys.h>
+#include <rf/rf.h>
+#include <spi/spi.h>
+#include <serial/serial.h>
+
+/* code generator status define */
+#define IDLE		  0x00
+#define HEADERPACKET  0x01
+#define CODEPACKET    0x02
+#define RUNCODE       0x04
+
+#define RF_LENGTH 28
+#define MESSAGE_LENGTH 40
+
+void puts(char *s);
+
+void store_cpu_rate(unsigned long hz);
+void mdelay(unsigned int msec);
+void interrupt_rf() interrupt 10;
+/*NOTE:
+		The total number of bits in a ShockBurst RF package may not exceed 256!
+		Maximum length of payload section is hence given by:
+				DATAx_W(bits) = 256 - ADDR_W - CRC
+Where:
+	ADDR_W: length of RX address set in configuration word bit [23:18]
+	CRC: check sum, 8 or 16 bits set in configuration word bit [17]
+	PRE: preamble, 8 bits are automatically included
+*/
+struct rf_config rf_data = {
+{ 0x00 }, /* data2 width */
+//{ 0x08 }, /* data1 width */
+{ 0xE0 }, /* 256 - 24 - 8 = 224 - code generator data1 width in bits */
+{ 0x00, 0x00, 0x00, 0x00, 0x00 }, /* addr2 */
+{ 0x00, 0x00, 0x0f, 0x01, 0x01 }, /* addr1, host addr */
+{ 0x61 }, /* 24-bit address, 8-bit CRC */
+{ 0x6f, 0x15 } };
+struct rf_config *cfg = &rf_data;
+char dst_addr[3] = { 0x02, 0x02, 0x02 };
+//extern char rf_buf[RF_BUF_LEN];
+unsigned char codegenerator_status;
+unsigned char HeaderFile[4];
+unsigned char xdata Message[MESSAGE_LENGTH];
+//unsigned char Message[MESSAGE_LENGTH];
+
+void main()
+{
+	int i;
+
+	store_cpu_rate(16);
+	/* init serial */
+	serial_init(19200);
+	/* init led */
+	P0_DIR &= ~0x28;
+	P0_ALT &= ~0x28;
+	/* init rf */
+	rf_init();
+	rf_configure(cfg);
+
+	/* code generator status initial */
+	codegenerator_status = IDLE;
+
+	EA = 1;
+	EX4 = 1;
+	for(i=0;i<6;i++)
+	{
+		blink_led();
+		mdelay(500);
+	}
+
+	puts("wait for header packet\n");
+	while(1) {
+		CE = 1; /* Activate RX or TX mode */
+
+		if( codegenerator_status == RUNCODE )
+		{
+			/* P0 ^= 0x20 */
+			//asm("LCALL 003B" );
+			puts("Start\n\r");
+			_asm
+				//xrl	_P0,#0x20
+				lcall #_Message
+			_endasm ;
+			puts("ret\n\r");
+			codegenerator_status = IDLE;
+
+		}
+	}
+}
+
+void interrupt_rf() interrupt 10
+{
+
+	static char counter;
+	//blink_led();
+	while (DR1) {
+		//rf_buf[i++] = spi_write_then_read(0);	/* clock in data */
+
+		switch( codegenerator_status )
+		{
+			case IDLE:
+				puts("idle\n");
+				counter=0;
+				codegenerator_status = HEADERPACKET;
+				puts("header\n");
+			case HEADERPACKET:
+				if( counter < 4 ){ /* header buffer length 4 bytes */
+					HeaderFile[counter++] = spi_write_then_read(0);
+					putc( ( (HeaderFile[counter-1]>>4) & 0xff ) + 48 );
+					putc( ( HeaderFile[counter-1] & 0x0f ) + 48 );
+					putc(' ' );
+				}
+				else
+					if( counter < RF_LENGTH ){
+						spi_write_then_read(0);
+						counter++;
+					}
+					else{
+						counter = 0;
+						codegenerator_status = CODEPACKET;
+						puts("\n\rcode\n");
+					}
+				break;
+			case CODEPACKET:
+				if( counter < (RF_LENGTH-1) ){ /* code buffer length 41 bytes */
+					Message[counter++] = spi_write_then_read(0);
+					putc( ( (Message[counter-1]>>4) & 0xff ) + 48 );
+					putc( ( Message[counter-1] & 0x0f ) + 48 );
+					putc(' ' );
+				}
+				else{
+					spi_write_then_read(0);
+					Message[counter++] = spi_write_then_read(0);
+					putc( ( (Message[counter-1]>>4) & 0xff ) + 48 );
+					putc( ( Message[counter-1] & 0x0f ) + 48 );
+					putc( ' ' );
+					counter = 0;
+					codegenerator_status = RUNCODE;
+					puts("\n\rRun\n");
+					}
+				break;
+		} /* end switch case */
+
+	} // DR1, data ready from receiver 1
+
+	/* clean up rf interrupt */
+	CE = 0;
+	EXIF &= ~0x40;
+}

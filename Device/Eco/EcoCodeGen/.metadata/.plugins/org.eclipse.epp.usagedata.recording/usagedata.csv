@@ -1,0 +1,6 @@
+what,kind,bundleId,bundleVersion,description,time
+java.vm.specification.version,sysinfo,,,"1.7",1398241806344
+java.vm.vendor,sysinfo,,,"Oracle Corporation",1398241806344
+java.vm.version,sysinfo,,,"24.55-b03",1398241806344
+started,bundle,org.eclipse.epp.usagedata.ui,1.1.0.R200906100410,"org.eclipse.epp.usagedata.ui",1398241807638
+deactivated,workbench,org.eclipse.ui.workbench,3.5.1.M20090826-0800a,"",1398241808088

@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;LED_BLINK_ASM/src/BLINK_main&apos; to &apos;BLINK_main.c&apos;" description="Rename resource &apos;BLINK_main&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="src/BLINK_main" name="BLINK_main.c" stamp="1392628341248" updateReferences="true"/>
+</session>

@@ -1,0 +1,26 @@
+what,kind,bundleId,bundleVersion,description,time
+java.vm.name,sysinfo,,,"Java HotSpot(TM) Client VM",1390282944770
+java.vm.specification.name,sysinfo,,,"Java Virtual Machine Specification",1390282944770
+java.vm.specification.vendor,sysinfo,,,"Oracle Corporation",1390282944770
+java.vm.specification.version,sysinfo,,,"1.7",1390282944770
+java.vm.vendor,sysinfo,,,"Oracle Corporation",1390282944770
+java.vm.version,sysinfo,,,"24.45-b08",1390282944770
+activated,view,org.eclipse.ui.navigator.resources,3.4.1.M20090826-0800,"org.eclipse.ui.navigator.ProjectExplorer",1390282946356
+activated,editor,org.eclipse.ui.editors,3.5.0.v20090527-2000,"org.eclipse.ui.DefaultTextEditor",1390282948803
+deactivated,workbench,org.eclipse.ui.workbench,3.5.1.M20090826-0800a,"",1390282952113
+activated,workbench,org.eclipse.ui.workbench,3.5.1.M20090826-0800a,"",1390282969646
+activated,view,org.eclipse.ui.navigator.resources,3.4.1.M20090826-0800,"org.eclipse.ui.navigator.ProjectExplorer",1390282973994
+started,bundle,org.eclipse.compare,3.5.0.I20090514-0808,"org.eclipse.compare",1390282974171
+started,bundle,org.eclipse.ltk.ui.refactoring,3.4.100.v20090604,"org.eclipse.ltk.ui.refactoring",1390282976463
+deactivated,workbench,org.eclipse.ui.workbench,3.5.1.M20090826-0800a,"",1390282976555
+closed,editor,org.eclipse.ui.editors,3.5.0.v20090527-2000,"org.eclipse.ui.DefaultTextEditor",1390282978045
+activated,workbench,org.eclipse.ui.workbench,3.5.1.M20090826-0800a,"",1390282978093
+executed,command,org.eclipse.ltk.ui.refactoring,3.4.100.v20090604,"org.eclipse.ltk.ui.refactoring.commands.deleteResources",1390282978104
+executed,command,org.eclipse.ui,3.5.1.M20090902-1000,"org.eclipse.ui.edit.delete",1390282978104
+deactivated,workbench,org.eclipse.ui.workbench,3.5.1.M20090826-0800a,"",1390282982113
+activated,workbench,org.eclipse.ui.workbench,3.5.1.M20090826-0800a,"",1390282983126
+executed,command,org.eclipse.ltk.ui.refactoring,3.4.100.v20090604,"org.eclipse.ltk.ui.refactoring.commands.deleteResources",1390282983154
+executed,command,org.eclipse.ui,3.5.1.M20090902-1000,"org.eclipse.ui.edit.delete",1390282983154
+deactivated,workbench,org.eclipse.ui.workbench,3.5.1.M20090826-0800a,"",1390282986639
+activated,workbench,org.eclipse.ui.workbench,3.5.1.M20090826-0800a,"",1390282987653
+executed,command,org.eclipse.ltk.ui.refactoring,3.4.100.v20090604,"org.eclipse.ltk.ui.refactoring.commands.deleteResources",1390282987665

@@ -1,0 +1,26 @@
+what,kind,bundleId,bundleVersion,description,time
+java.vm.specification.version,sysinfo,,,"1.7",1394518079428
+java.vm.vendor,sysinfo,,,"Oracle Corporation",1394518079428
+java.vm.version,sysinfo,,,"24.51-b03",1394518079428
+activated,view,org.eclipse.ui.navigator.resources,3.4.1.M20090826-0800,"org.eclipse.ui.navigator.ProjectExplorer",1394518081054
+started,bundle,org.eclipse.compare,3.5.0.I20090514-0808,"org.eclipse.compare",1394518083906
+deactivated,workbench,org.eclipse.ui.workbench,3.5.1.M20090826-0800a,"",1394518129317
+activated,workbench,org.eclipse.ui.workbench,3.5.1.M20090826-0800a,"",1394518185354
+deactivated,workbench,org.eclipse.ui.workbench,3.5.1.M20090826-0800a,"",1394518186645
+activated,workbench,org.eclipse.ui.workbench,3.5.1.M20090826-0800a,"",1394518191594
+activated,editor,org.eclipse.cdt.ui,5.1.1.200909110608,"org.eclipse.cdt.ui.editor.CEditor",1394518191656
+deactivated,workbench,org.eclipse.ui.workbench,3.5.1.M20090826-0800a,"",1394518192412
+activated,workbench,org.eclipse.ui.workbench,3.5.1.M20090826-0800a,"",1394518863648
+activated,view,org.eclipse.ui.navigator.resources,3.4.1.M20090826-0800,"org.eclipse.ui.navigator.ProjectExplorer",1394518867854
+opened,editor,org.eclipse.cdt.ui,5.1.1.200909110608,"org.eclipse.cdt.ui.editor.CEditor",1394518869762
+activated,editor,org.eclipse.cdt.ui,5.1.1.200909110608,"org.eclipse.cdt.ui.editor.CEditor",1394518869803
+activated,view,org.eclipse.ui.navigator.resources,3.4.1.M20090826-0800,"org.eclipse.ui.navigator.ProjectExplorer",1394518870323
+opened,editor,org.eclipse.cdt.ui,5.1.1.200909110608,"org.eclipse.cdt.ui.editor.CEditor",1394518870979
+activated,editor,org.eclipse.cdt.ui,5.1.1.200909110608,"org.eclipse.cdt.ui.editor.CEditor",1394518871018
+closed,editor,org.eclipse.cdt.ui,5.1.1.200909110608,"org.eclipse.cdt.ui.editor.CEditor",1394518873078
+activated,editor,org.eclipse.cdt.ui,5.1.1.200909110608,"org.eclipse.cdt.ui.editor.CEditor",1394518873406
+opened,view,org.eclipse.ui.ide,3.5.1.M20090826-0800,"org.eclipse.ui.views.ProblemView",1394518875224
+activated,editor,org.eclipse.cdt.ui,5.1.1.200909110608,"org.eclipse.cdt.ui.editor.CEditor",1394518876323
+closed,editor,org.eclipse.cdt.ui,5.1.1.200909110608,"org.eclipse.cdt.ui.editor.CEditor",1394518876323
+activated,view,org.eclipse.ui.navigator.resources,3.4.1.M20090826-0800,"org.eclipse.ui.navigator.ProjectExplorer",1394518877516
+closed,editor,org.eclipse.cdt.ui,5.1.1.200909110608,"org.eclipse.cdt.ui.editor.CEditor",1394518877516

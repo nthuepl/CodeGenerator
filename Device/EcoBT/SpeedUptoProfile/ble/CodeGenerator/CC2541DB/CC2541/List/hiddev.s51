@@ -1,0 +1,4081 @@
+///////////////////////////////////////////////////////////////////////////////
+//                                                                            /
+// IAR C/C++ Compiler V8.20.1.40829 for 8051            30/May/2014  17:59:44 /
+// Copyright 2004-2012 IAR Systems AB.                                        /
+//                                                                            /
+//    Core               =  plain                                             /
+//    Code model         =  banked                                            /
+//    Data model         =  large                                             /
+//    Calling convention =  xdata reentrant                                   /
+//    Constant location  =  data_rom                                          /
+//    Dptr setup         =  1,16                                              /
+//                                                                            /
+//    Source file        =  D:\NTHU\¬ã¨s\Important\ThesisCode\Code\GitLabClou /
+//                          d\NewEcoExec\codegenerator\Device\EcoBT\Project\b /
+//                          le\Profiles\HIDDev\hiddev.c                       /
+//    Command line       =  -f D:\NTHU\¬ã¨s\Important\ThesisCode\Code\GitLabC /
+//                          loud\NewEcoExec\codegenerator\Device\EcoBT\Projec /
+//                          t\ble\CodeGenerator\CC2541DB\..\..\config\buildCo /
+//                          mponents.cfg (-DBROADCASTER_CFG=0x01              /
+//                          -DOBSERVER_CFG=0x02 -DPERIPHERAL_CFG=0x04         /
+//                          -DCENTRAL_CFG=0x08 -DADV_NCONN_CFG=0x01           /
+//                          -DADV_CONN_CFG=0x02 -DSCAN_CFG=0x04               /
+//                          -DINIT_CFG=0x08 -DADV_CFG=ADV_NCONN_CFG+ADV_CONN_ /
+//                          CFG -DLINK_CFG=ADV_CONN_CFG+INIT_CFG              /
+//                          -DFULL_CFG=INIT_CFG+SCAN_CFG+ADV_NCONN_CFG+ADV_CO /
+//                          NN_CFG) -f D:\NTHU\¬ã¨s\Important\ThesisCode\Code /
+//                          \GitLabCloud\NewEcoExec\codegenerator\Device\EcoB /
+//                          T\Project\ble\CodeGenerator\CC2541DB\buildConfig. /
+//                          cfg (-DHOST_CONFIG=PERIPHERAL_CFG                 /
+//                          -DGAP_PRIVACY_RECONNECT -DCC2541                  /
+//                          -DOAD_IMAGE_VERSION=0x0000                        /
+//                          "-DOAD_IMAGE_A_USER_ID='A', 'A', 'A', 'A'"        /
+//                          "-DOAD_IMAGE_B_USER_ID='B', 'B', 'B', 'B'")       /
+//                          D:\NTHU\¬ã¨s\Important\ThesisCode\Code\GitLabClou /
+//                          d\NewEcoExec\codegenerator\Device\EcoBT\Project\b /
+//                          le\Profiles\HIDDev\hiddev.c -D INT_HEAP_LEN=900   /
+//                          -D HALNODEBUG -D OSAL_CBTIMER_NUM_TASKS=1 -D      /
+//                          HAL_AES_DMA=TRUE -D HAL_DMA=TRUE -D               /
+//                          xPOWER_SAVING -D xPLUS_BROADCASTER -D             /
+//                          HAL_LCD=FALSE -D HAL_LED=TRUE -D HAL_ADC=TRUE     /
+//                          -lB D:\NTHU\¬ã¨s\Important\ThesisCode\Code\GitLab /
+//                          Cloud\NewEcoExec\codegenerator\Device\EcoBT\Proje /
+//                          ct\ble\CodeGenerator\CC2541DB\CC2541\List\ -o     /
+//                          D:\NTHU\¬ã¨s\Important\ThesisCode\Code\GitLabClou /
+//                          d\NewEcoExec\codegenerator\Device\EcoBT\Project\b /
+//                          le\CodeGenerator\CC2541DB\CC2541\Obj\ -e --debug  /
+//                          --core=plain --dptr=16,1 --data_model=large       /
+//                          --code_model=banked --calling_convention=xdata_re /
+//                          entrant --place_constants=data_rom                /
+//                          --nr_virtual_regs 16 -I                           /
+//                          D:\NTHU\¬ã¨s\Important\ThesisCode\Code\GitLabClou /
+//                          d\NewEcoExec\codegenerator\Device\EcoBT\Project\b /
+//                          le\CodeGenerator\CC2541DB\..\..\common\ -I        /
+//                          D:\NTHU\¬ã¨s\Important\ThesisCode\Code\GitLabClou /
+//                          d\NewEcoExec\codegenerator\Device\EcoBT\Project\b /
+//                          le\CodeGenerator\CC2541DB\..\..\include\ -I       /
+//                          D:\NTHU\¬ã¨s\Important\ThesisCode\Code\GitLabClou /
+//                          d\NewEcoExec\codegenerator\Device\EcoBT\Project\b /
+//                          le\CodeGenerator\CC2541DB\..\..\..\..\Components\ /
+//                          hal\include\ -I D:\NTHU\¬ã¨s\Important\ThesisCode /
+//                          \Code\GitLabCloud\NewEcoExec\codegenerator\Device /
+//                          \EcoBT\Project\ble\CodeGenerator\CC2541DB\..\..\. /
+//                          .\..\Components\hal\target\CC2540EB\ -I           /
+//                          D:\NTHU\¬ã¨s\Important\ThesisCode\Code\GitLabClou /
+//                          d\NewEcoExec\codegenerator\Device\EcoBT\Project\b /
+//                          le\CodeGenerator\CC2541DB\..\..\..\..\Components\ /
+//                          osal\include\ -I D:\NTHU\¬ã¨s\Important\ThesisCod /
+//                          e\Code\GitLabCloud\NewEcoExec\codegenerator\Devic /
+//                          e\EcoBT\Project\ble\CodeGenerator\CC2541DB\..\..\ /
+//                          ..\..\Components\services\saddr\ -I               /
+//                          D:\NTHU\¬ã¨s\Important\ThesisCode\Code\GitLabClou /
+//                          d\NewEcoExec\codegenerator\Device\EcoBT\Project\b /
+//                          le\CodeGenerator\CC2541DB\..\..\..\..\Components\ /
+//                          ble\include\ -I D:\NTHU\¬ã¨s\Important\ThesisCode /
+//                          \Code\GitLabCloud\NewEcoExec\codegenerator\Device /
+//                          \EcoBT\Project\ble\CodeGenerator\CC2541DB\..\..\. /
+//                          .\..\Components\ble\controller\phy\ -I            /
+//                          D:\NTHU\¬ã¨s\Important\ThesisCode\Code\GitLabClou /
+//                          d\NewEcoExec\codegenerator\Device\EcoBT\Project\b /
+//                          le\CodeGenerator\CC2541DB\..\..\..\..\Components\ /
+//                          ble\controller\include\ -I                        /
+//                          D:\NTHU\¬ã¨s\Important\ThesisCode\Code\GitLabClou /
+//                          d\NewEcoExec\codegenerator\Device\EcoBT\Project\b /
+//                          le\CodeGenerator\CC2541DB\..\..\..\..\Components\ /
+//                          ble\hci\ -I D:\NTHU\¬ã¨s\Important\ThesisCode\Cod /
+//                          e\GitLabCloud\NewEcoExec\codegenerator\Device\Eco /
+//                          BT\Project\ble\CodeGenerator\CC2541DB\..\..\..\.. /
+//                          \Components\ble\host\ -I                          /
+//                          D:\NTHU\¬ã¨s\Important\ThesisCode\Code\GitLabClou /
+//                          d\NewEcoExec\codegenerator\Device\EcoBT\Project\b /
+//                          le\CodeGenerator\CC2541DB\..\..\common\cc2540\    /
+//                          -I D:\NTHU\¬ã¨s\Important\ThesisCode\Code\GitLabC /
+//                          loud\NewEcoExec\codegenerator\Device\EcoBT\Projec /
+//                          t\ble\CodeGenerator\CC2541DB\..\..\common\npi\npi /
+//                          _np\ -I D:\NTHU\¬ã¨s\Important\ThesisCode\Code\Gi /
+//                          tLabCloud\NewEcoExec\codegenerator\Device\EcoBT\P /
+//                          roject\ble\CodeGenerator\CC2541DB\..\..\Profiles\ /
+//                          Roles\ -I D:\NTHU\¬ã¨s\Important\ThesisCode\Code\ /
+//                          GitLabCloud\NewEcoExec\codegenerator\Device\EcoBT /
+//                          \Project\ble\CodeGenerator\CC2541DB\..\..\Profile /
+//                          s\SimpleProfile\ -I D:\NTHU\¬ã¨s\Important\Thesis /
+//                          Code\Code\GitLabCloud\NewEcoExec\codegenerator\De /
+//                          vice\EcoBT\Project\ble\CodeGenerator\CC2541DB\..\ /
+//                          ..\Profiles\DevInfo\ -I                           /
+//                          D:\NTHU\¬ã¨s\Important\ThesisCode\Code\GitLabClou /
+//                          d\NewEcoExec\codegenerator\Device\EcoBT\Project\b /
+//                          le\CodeGenerator\CC2541DB\..\..\Profiles\Accelero /
+//                          meter\ -I D:\NTHU\¬ã¨s\Important\ThesisCode\Code\ /
+//                          GitLabCloud\NewEcoExec\codegenerator\Device\EcoBT /
+//                          \Project\ble\CodeGenerator\CC2541DB\..\..\Profile /
+//                          s\EcoExecGATTProfile\ -I                          /
+//                          D:\NTHU\¬ã¨s\Important\ThesisCode\Code\GitLabClou /
+//                          d\NewEcoExec\codegenerator\Device\EcoBT\Project\b /
+//                          le\CodeGenerator\CC2541DB\..\..\Profiles\timeserv /
+//                          ice\ -I D:\NTHU\¬ã¨s\Important\ThesisCode\Code\Gi /
+//                          tLabCloud\NewEcoExec\codegenerator\Device\EcoBT\P /
+//                          roject\ble\CodeGenerator\CC2541DB\..\..\Profiles\ /
+//                          Batt\ -I D:\NTHU\¬ã¨s\Important\ThesisCode\Code\G /
+//                          itLabCloud\NewEcoExec\codegenerator\Device\EcoBT\ /
+//                          Project\ble\CodeGenerator\CC2541DB\..\..\Profiles /
+//                          \HIDDev\ -I D:\NTHU\¬ã¨s\Important\ThesisCode\Cod /
+//                          e\GitLabCloud\NewEcoExec\codegenerator\Device\Eco /
+//                          BT\Project\ble\CodeGenerator\CC2541DB\..\..\Profi /
+//                          les\ScanParam\ -Ohz                               /
+//    List file          =  D:\NTHU\¬ã¨s\Important\ThesisCode\Code\GitLabClou /
+//                          d\NewEcoExec\codegenerator\Device\EcoBT\Project\b /
+//                          le\CodeGenerator\CC2541DB\CC2541\List\hiddev.s51  /
+//                                                                            /
+//                                                                            /
+///////////////////////////////////////////////////////////////////////////////
+
+        NAME hiddev
+
+        RSEG DOVERLAY:DATA:NOROOT(0)
+        RSEG IOVERLAY:IDATA:NOROOT(0)
+        RSEG ISTACK:IDATA:NOROOT(0)
+        RSEG PSTACK:XDATA:NOROOT(0)
+        RSEG XSTACK:XDATA:NOROOT(0)
+
+        EXTERN ?ALLOC_XSTACK8
+        EXTERN ?BANKED_ENTER_XDATA
+        EXTERN ?BANKED_LEAVE_XDATA
+        EXTERN ?BDISPATCH
+        EXTERN ?BRET
+        EXTERN ?CALL_IND
+        EXTERN ?DEALLOC_XSTACK8
+        EXTERN ?PUSH_XSTACK8_X_FOUR
+        EXTERN ?PUSH_XSTACK_I_FOUR
+        EXTERN ?PUSH_XSTACK_I_ONE
+        EXTERN ?PUSH_XSTACK_I_TWO
+        EXTERN ?S_DIV_MOD
+        EXTERN ?V0
+        EXTERN ?XLOAD_R2345
+        EXTERN ?XSP
+        EXTERN ?XSTACK_DISP0_8
+        EXTERN __INIT_XDATA_I
+        EXTERN __INIT_XDATA_Z
+
+        PUBLIC ??HidDev_Close?relay
+        PUBLIC ??HidDev_GetParameter?relay
+        PUBLIC ??HidDev_Init?relay
+        PUBLIC ??HidDev_PasscodeRsp?relay
+        PUBLIC ??HidDev_ProcessEvent?relay
+        PUBLIC ??HidDev_ReadAttrCB?relay
+        PUBLIC ??HidDev_Register?relay
+        PUBLIC ??HidDev_RegisterReports?relay
+        PUBLIC ??HidDev_Report?relay
+        PUBLIC ??HidDev_SetParameter?relay
+        PUBLIC ??HidDev_WriteAttrCB?relay
+        PUBLIC HidDev_Close
+        PUBLIC HidDev_GetParameter
+        PUBLIC HidDev_Init
+        PUBLIC HidDev_PasscodeRsp
+        PUBLIC HidDev_ProcessEvent
+        PUBLIC HidDev_ReadAttrCB
+        PUBLIC HidDev_Register
+        PUBLIC HidDev_RegisterReports
+        PUBLIC HidDev_Report
+        PUBLIC HidDev_SetParameter
+        PUBLIC HidDev_WriteAttrCB
+        PUBWEAK __Constant_0
+        PUBWEAK __Constant_3a98
+        PUBWEAK __Constant_ffffffff
+        PUBLIC hidDevTaskId
+
+Batt_AddService     SYMBOL "Batt_AddService"
+??Batt_AddService?relay SYMBOL "?relay", Batt_AddService
+Batt_HandleConnStatusCB SYMBOL "Batt_HandleConnStatusCB"
+??Batt_HandleConnStatusCB?relay SYMBOL "?relay", Batt_HandleConnStatusCB
+Batt_MeasLevel      SYMBOL "Batt_MeasLevel"
+??Batt_MeasLevel?relay SYMBOL "?relay", Batt_MeasLevel
+Batt_Register       SYMBOL "Batt_Register"
+??Batt_Register?relay SYMBOL "?relay", Batt_Register
+DevInfo_AddService  SYMBOL "DevInfo_AddService"
+??DevInfo_AddService?relay SYMBOL "?relay", DevInfo_AddService
+GAPBondMgr_GetParameter SYMBOL "GAPBondMgr_GetParameter"
+??GAPBondMgr_GetParameter?relay SYMBOL "?relay", GAPBondMgr_GetParameter
+GAPBondMgr_PasscodeRsp SYMBOL "GAPBondMgr_PasscodeRsp"
+??GAPBondMgr_PasscodeRsp?relay SYMBOL "?relay", GAPBondMgr_PasscodeRsp
+GAPBondMgr_Register SYMBOL "GAPBondMgr_Register"
+??GAPBondMgr_Register?relay SYMBOL "?relay", GAPBondMgr_Register
+GAPBondMgr_SetParameter SYMBOL "GAPBondMgr_SetParameter"
+??GAPBondMgr_SetParameter?relay SYMBOL "?relay", GAPBondMgr_SetParameter
+GAPRole_GetParameter SYMBOL "GAPRole_GetParameter"
+??GAPRole_GetParameter?relay SYMBOL "?relay", GAPRole_GetParameter
+GAPRole_SetParameter SYMBOL "GAPRole_SetParameter"
+??GAPRole_SetParameter?relay SYMBOL "?relay", GAPRole_SetParameter
+GAPRole_StartDevice SYMBOL "GAPRole_StartDevice"
+??GAPRole_StartDevice?relay SYMBOL "?relay", GAPRole_StartDevice
+GAPRole_TerminateConnection SYMBOL "GAPRole_TerminateConnection"
+??GAPRole_TerminateConnection?relay SYMBOL "?relay", GAPRole_TerminateConnection
+GAP_SetParamValue   SYMBOL "GAP_SetParamValue"
+??GAP_SetParamValue?relay SYMBOL "?relay", GAP_SetParamValue
+GATTServApp_AddService SYMBOL "GATTServApp_AddService"
+??GATTServApp_AddService?relay SYMBOL "?relay", GATTServApp_AddService
+GATTServApp_InitCharCfg SYMBOL "GATTServApp_InitCharCfg"
+??GATTServApp_InitCharCfg?relay SYMBOL "?relay", GATTServApp_InitCharCfg
+GATTServApp_ProcessCCCWriteReq SYMBOL "GATTServApp_ProcessCCCWriteReq"
+??GATTServApp_ProcessCCCWriteReq?relay SYMBOL "?relay", GATTServApp_ProcessCCCWriteReq
+GATTServApp_ReadCharCfg SYMBOL "GATTServApp_ReadCharCfg"
+??GATTServApp_ReadCharCfg?relay SYMBOL "?relay", GATTServApp_ReadCharCfg
+GATT_FindHandle     SYMBOL "GATT_FindHandle"
+??GATT_FindHandle?relay SYMBOL "?relay", GATT_FindHandle
+GATT_Notification   SYMBOL "GATT_Notification"
+??GATT_Notification?relay SYMBOL "?relay", GATT_Notification
+GGS_AddService      SYMBOL "GGS_AddService"
+??GGS_AddService?relay SYMBOL "?relay", GGS_AddService
+ScanParam_AddService SYMBOL "ScanParam_AddService"
+??ScanParam_AddService?relay SYMBOL "?relay", ScanParam_AddService
+ScanParam_HandleConnStatusCB SYMBOL "ScanParam_HandleConnStatusCB"
+??ScanParam_HandleConnStatusCB?relay SYMBOL "?relay", ScanParam_HandleConnStatusCB
+ScanParam_RefreshNotify SYMBOL "ScanParam_RefreshNotify"
+??ScanParam_RefreshNotify?relay SYMBOL "?relay", ScanParam_RefreshNotify
+ScanParam_Register  SYMBOL "ScanParam_Register"
+??ScanParam_Register?relay SYMBOL "?relay", ScanParam_Register
+osal_memcpy         SYMBOL "osal_memcpy"
+??osal_memcpy?relay SYMBOL "?relay", osal_memcpy
+osal_msg_deallocate SYMBOL "osal_msg_deallocate"
+??osal_msg_deallocate?relay SYMBOL "?relay", osal_msg_deallocate
+osal_msg_receive    SYMBOL "osal_msg_receive"
+??osal_msg_receive?relay SYMBOL "?relay", osal_msg_receive
+osal_set_event      SYMBOL "osal_set_event"
+??osal_set_event?relay SYMBOL "?relay", osal_set_event
+osal_start_timerEx  SYMBOL "osal_start_timerEx"
+??osal_start_timerEx?relay SYMBOL "?relay", osal_start_timerEx
+osal_stop_timerEx   SYMBOL "osal_stop_timerEx"
+??osal_stop_timerEx?relay SYMBOL "?relay", osal_stop_timerEx
+HidDev_Close        SYMBOL "HidDev_Close"
+??HidDev_Close?relay SYMBOL "?relay", HidDev_Close
+HidDev_GetParameter SYMBOL "HidDev_GetParameter"
+??HidDev_GetParameter?relay SYMBOL "?relay", HidDev_GetParameter
+HidDev_Init         SYMBOL "HidDev_Init"
+??HidDev_Init?relay SYMBOL "?relay", HidDev_Init
+HidDev_PasscodeRsp  SYMBOL "HidDev_PasscodeRsp"
+??HidDev_PasscodeRsp?relay SYMBOL "?relay", HidDev_PasscodeRsp
+HidDev_ProcessEvent SYMBOL "HidDev_ProcessEvent"
+??HidDev_ProcessEvent?relay SYMBOL "?relay", HidDev_ProcessEvent
+HidDev_ReadAttrCB   SYMBOL "HidDev_ReadAttrCB"
+??HidDev_ReadAttrCB?relay SYMBOL "?relay", HidDev_ReadAttrCB
+HidDev_Register     SYMBOL "HidDev_Register"
+??HidDev_Register?relay SYMBOL "?relay", HidDev_Register
+HidDev_RegisterReports SYMBOL "HidDev_RegisterReports"
+??HidDev_RegisterReports?relay SYMBOL "?relay", HidDev_RegisterReports
+HidDev_Report       SYMBOL "HidDev_Report"
+??HidDev_Report?relay SYMBOL "?relay", HidDev_Report
+HidDev_SetParameter SYMBOL "HidDev_SetParameter"
+??HidDev_SetParameter?relay SYMBOL "?relay", HidDev_SetParameter
+HidDev_WriteAttrCB  SYMBOL "HidDev_WriteAttrCB"
+??HidDev_WriteAttrCB?relay SYMBOL "?relay", HidDev_WriteAttrCB
+
+        EXTERN ??Batt_AddService?relay
+        EXTERN ??Batt_HandleConnStatusCB?relay
+        EXTERN ??Batt_MeasLevel?relay
+        EXTERN ??Batt_Register?relay
+        EXTERN ??DevInfo_AddService?relay
+        EXTERN ??GAPBondMgr_GetParameter?relay
+        EXTERN ??GAPBondMgr_PasscodeRsp?relay
+        EXTERN ??GAPBondMgr_Register?relay
+        EXTERN ??GAPBondMgr_SetParameter?relay
+        EXTERN ??GAPRole_GetParameter?relay
+        EXTERN ??GAPRole_SetParameter?relay
+        EXTERN ??GAPRole_StartDevice?relay
+        EXTERN ??GAPRole_TerminateConnection?relay
+        EXTERN ??GAP_SetParamValue?relay
+        EXTERN ??GATTServApp_AddService?relay
+        EXTERN ??GATTServApp_InitCharCfg?relay
+        EXTERN ??GATTServApp_ProcessCCCWriteReq?relay
+        EXTERN ??GATTServApp_ReadCharCfg?relay
+        EXTERN ??GATT_FindHandle?relay
+        EXTERN ??GATT_Notification?relay
+        EXTERN ??GGS_AddService?relay
+        EXTERN ??ScanParam_AddService?relay
+        EXTERN ??ScanParam_HandleConnStatusCB?relay
+        EXTERN ??ScanParam_RefreshNotify?relay
+        EXTERN ??ScanParam_Register?relay
+        EXTERN ??osal_memcpy?relay
+        EXTERN ??osal_msg_deallocate?relay
+        EXTERN ??osal_msg_receive?relay
+        EXTERN ??osal_set_event?relay
+        EXTERN ??osal_start_timerEx?relay
+        EXTERN ??osal_stop_timerEx?relay
+        EXTERN Batt_AddService
+        EXTERN Batt_HandleConnStatusCB
+        EXTERN Batt_MeasLevel
+        EXTERN Batt_Register
+        EXTERN DevInfo_AddService
+        EXTERN GAPBondMgr_GetParameter
+        EXTERN GAPBondMgr_PasscodeRsp
+        EXTERN GAPBondMgr_Register
+        EXTERN GAPBondMgr_SetParameter
+        EXTERN GAPRole_GetParameter
+        EXTERN GAPRole_SetParameter
+        EXTERN GAPRole_StartDevice
+        EXTERN GAPRole_TerminateConnection
+        EXTERN GAP_SetParamValue
+        EXTERN GATTServApp_AddService
+        EXTERN GATTServApp_InitCharCfg
+        EXTERN GATTServApp_ProcessCCCWriteReq
+        EXTERN GATTServApp_ReadCharCfg
+        EXTERN GATT_FindHandle
+        EXTERN GATT_Notification
+        EXTERN GGS_AddService
+        EXTERN ScanParam_AddService
+        EXTERN ScanParam_HandleConnStatusCB
+        EXTERN ScanParam_RefreshNotify
+        EXTERN ScanParam_Register
+        EXTERN hidProtocolMode
+        EXTERN hidReportMapLen
+        EXTERN osal_memcpy
+        EXTERN osal_msg_deallocate
+        EXTERN osal_msg_receive
+        EXTERN osal_set_event
+        EXTERN osal_start_timerEx
+        EXTERN osal_stop_timerEx
+
+// D:\NTHU\¬ã¨s\Important\ThesisCode\Code\GitLabCloud\NewEcoExec\codegenerator\Device\EcoBT\Project\ble\Profiles\HIDDev\hiddev.c
+//    1 /**************************************************************************************************
+//    2   Filename:       hiddev.c
+//    3 
+//    4   Revised:        $Date: 2012-01-26 13:42:33 -0800 (Thu, 26 Jan 2012) $
+//    5   Revision:       $Revision: 64 $
+//    6 
+//    7   Description:    This file contains the common HID Device profile
+//    8                   for use with the CC2540 Bluetooth Low Energy Protocol Stack.
+//    9 
+//   10   Copyright 2011-2012 Texas Instruments Incorporated. All rights reserved.
+//   11 
+//   12   IMPORTANT: Your use of this Software is limited to those specific rights
+//   13   granted under the terms of a software license agreement between the user
+//   14   who downloaded the software, his/her employer (which must be your employer)
+//   15   and Texas Instruments Incorporated (the "License").  You may not use this
+//   16   Software unless you agree to abide by the terms of the License. The License
+//   17   limits your use, and you acknowledge, that the Software may not be modified,
+//   18   copied or distributed unless embedded on a Texas Instruments microcontroller
+//   19   or used solely and exclusively in conjunction with a Texas Instruments radio
+//   20   frequency transceiver, which is integrated into your product.  Other than for
+//   21   the foregoing purpose, you may not use, reproduce, copy, prepare derivative
+//   22   works of, modify, distribute, perform, display or sell this Software and/or
+//   23   its documentation for any purpose.
+//   24 
+//   25   YOU FURTHER ACKNOWLEDGE AND AGREE THAT THE SOFTWARE AND DOCUMENTATION ARE
+//   26   PROVIDED “AS IS” WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESS OR IMPLIED,
+//   27   INCLUDING WITHOUT LIMITATION, ANY WARRANTY OF MERCHANTABILITY, TITLE,
+//   28   NON-INFRINGEMENT AND FITNESS FOR A PARTICULAR PURPOSE. IN NO EVENT SHALL
+//   29   TEXAS INSTRUMENTS OR ITS LICENSORS BE LIABLE OR OBLIGATED UNDER CONTRACT,
+//   30   NEGLIGENCE, STRICT LIABILITY, CONTRIBUTION, BREACH OF WARRANTY, OR OTHER
+//   31   LEGAL EQUITABLE THEORY ANY DIRECT OR INDIRECT DAMAGES OR EXPENSES
+//   32   INCLUDING BUT NOT LIMITED TO ANY INCIDENTAL, SPECIAL, INDIRECT, PUNITIVE
+//   33   OR CONSEQUENTIAL DAMAGES, LOST PROFITS OR LOST DATA, COST OF PROCUREMENT
+//   34   OF SUBSTITUTE GOODS, TECHNOLOGY, SERVICES, OR ANY CLAIMS BY THIRD PARTIES
+//   35   (INCLUDING BUT NOT LIMITED TO ANY DEFENSE THEREOF), OR OTHER SIMILAR COSTS.
+//   36 
+//   37   Should you have any questions regarding your right to use this Software,
+//   38   contact Texas Instruments Incorporated at www.TI.com.
+//   39 **************************************************************************************************/
+//   40 
+//   41 
+//   42 /*********************************************************************
+//   43  * INCLUDES
+//   44  */
+//   45 
+//   46 #include "bcomdef.h"
+//   47 #include "OSAL.h"
+//   48 #include "OnBoard.h"
+//   49 #include "gatt.h"
+//   50 #include "hci.h"
+//   51 #include "gapgattserver.h"
+//   52 #include "gattservapp.h"
+//   53 #include "gatt_uuid.h"
+//   54 #include "linkdb.h"
+//   55 #include "peripheral.h"
+//   56 #include "gapbondmgr.h"
+//   57 #include "devinfoservice.h"
+//   58 #include "battservice.h"
+//   59 #include "scanparamservice.h"
+//   60 #include "hiddev.h"
+//   61 
+//   62 /*********************************************************************
+//   63  * MACROS
+//   64  */
+//   65 
+//   66 // Battery measurement period in ms
+//   67 #define DEFAULT_BATT_PERIOD                   15000
+//   68 
+//   69 // TRUE to run scan parameters refresh notify test
+//   70 #define DEFAULT_SCAN_PARAM_NOTIFY_TEST        TRUE
+//   71 
+//   72 // Advertising intervals (units of 625us, 160=100ms)
+//   73 #define HID_INITIAL_ADV_INT_MIN               48
+//   74 #define HID_INITIAL_ADV_INT_MAX               80
+//   75 #define HID_HIGH_ADV_INT_MIN                  32
+//   76 #define HID_HIGH_ADV_INT_MAX                  48
+//   77 #define HID_LOW_ADV_INT_MIN                   1600
+//   78 #define HID_LOW_ADV_INT_MAX                   1600
+//   79 
+//   80 // Advertising timeouts in msec
+//   81 #define HID_INITIAL_ADV_TIMEOUT               60000
+//   82 #define HID_HIGH_ADV_TIMEOUT                  5000
+//   83 #define HID_LOW_ADV_TIMEOUT                   0
+//   84 
+//   85 // Heart Rate Task Events
+//   86 #define START_DEVICE_EVT                      0x0001
+//   87 #define BATT_PERIODIC_EVT                     0x0002
+//   88 #define HID_IDLE_EVT                          0x0004
+//   89 #define HID_SEND_REPORT_EVT                   0x0008
+//   90 
+//   91 #define reportQEmpty()                        ( firstQIdx == lastQIdx )
+//   92 
+//   93 /*********************************************************************
+//   94  * CONSTANTS
+//   95  */
+//   96 
+//   97 #define HID_DEV_DATA_LEN                      8
+//   98 
+//   99 #ifdef HID_DEV_RPT_QUEUE_LEN
+//  100   #define HID_DEV_REPORT_Q_SIZE               (HID_DEV_RPT_QUEUE_LEN+1)
+//  101 #else
+//  102   #define HID_DEV_REPORT_Q_SIZE               (10+1)
+//  103 #endif
+//  104 
+//  105 /*********************************************************************
+//  106  * TYPEDEFS
+//  107  */
+//  108 
+//  109 typedef struct
+//  110 {
+//  111  uint8 id;
+//  112  uint8 type;
+//  113  uint8 len;
+//  114  uint8 data[HID_DEV_DATA_LEN];
+//  115 } hidDevReport_t;
+//  116 
+//  117 /*********************************************************************
+//  118  * GLOBAL VARIABLES
+//  119  */
+//  120 
+//  121 // Task ID
+
+        RSEG XDATA_Z:XDATA:NOROOT(0)
+        DATA8
+//  122 uint8 hidDevTaskId;
+hidDevTaskId:
+        DS 1
+        REQUIRE __INIT_XDATA_Z
+//  123 
+//  124 /*********************************************************************
+//  125  * EXTERNAL VARIABLES
+//  126  */
+//  127 
+//  128 /*********************************************************************
+//  129  * EXTERNAL FUNCTIONS
+//  130  */
+//  131 
+//  132 /*********************************************************************
+//  133  * LOCAL VARIABLES
+//  134  */
+//  135 
+//  136 // GAP State
+
+        RSEG XDATA_Z:XDATA:NOROOT(0)
+        DATA8
+//  137 static gaprole_States_t hidDevGapState = GAPROLE_INIT;
+hidDevGapState:
+        DS 1
+        REQUIRE __INIT_XDATA_Z
+//  138 
+//  139 // TRUE if connection is secure
+
+        RSEG XDATA_Z:XDATA:NOROOT(0)
+        DATA8
+//  140 static uint8 hidDevConnSecure = FALSE;
+hidDevConnSecure:
+        DS 1
+        REQUIRE __INIT_XDATA_Z
+//  141 
+//  142 // GAP connection handle
+
+        RSEG XDATA_Z:XDATA:NOROOT(0)
+        DATA16
+//  143 static uint16 gapConnHandle;
+gapConnHandle:
+        DS 2
+        REQUIRE __INIT_XDATA_Z
+//  144 
+//  145 // TRUE if pairing in progress
+
+        RSEG XDATA_Z:XDATA:NOROOT(0)
+        DATA8
+//  146 static uint8 hidDevPairingStarted = FALSE;
+hidDevPairingStarted:
+        DS 1
+        REQUIRE __INIT_XDATA_Z
+//  147 
+//  148 // Status of last pairing
+
+        RSEG XDATA_Z:XDATA:NOROOT(0)
+        DATA8
+//  149 static uint8 pairingStatus = SUCCESS;
+pairingStatus:
+        DS 1
+        REQUIRE __INIT_XDATA_Z
+//  150 
+
+        RSEG XDATA_Z:XDATA:NOROOT(0)
+        DATA16
+//  151 static hidRptMap_t *pHidDevRptTbl;
+pHidDevRptTbl:
+        DS 2
+        REQUIRE __INIT_XDATA_Z
+//  152 
+
+        RSEG XDATA_Z:XDATA:NOROOT(0)
+        DATA8
+//  153 static uint8 hidDevRptTblLen;
+hidDevRptTblLen:
+        DS 1
+        REQUIRE __INIT_XDATA_Z
+//  154 
+
+        RSEG XDATA_Z:XDATA:NOROOT(0)
+        DATA16
+//  155 static hidDevCB_t *pHidDevCB;
+pHidDevCB:
+        DS 2
+        REQUIRE __INIT_XDATA_Z
+//  156 
+
+        RSEG XDATA_Z:XDATA:NOROOT(0)
+        DATA16
+//  157 static hidDevCfg_t *pHidDevCfg;
+pHidDevCfg:
+        DS 2
+        REQUIRE __INIT_XDATA_Z
+//  158 
+//  159 // Whether to change to the preferred connection parameters
+
+        RSEG XDATA_I:XDATA:NOROOT(0)
+//  160 static uint8 updateConnParams = TRUE;
+updateConnParams:
+        DATA8
+        DS 1
+        REQUIRE `?<Initializer for updateConnParams>`
+        REQUIRE __INIT_XDATA_I
+//  161 
+//  162 // Pending reports
+
+        RSEG XDATA_Z:XDATA:NOROOT(0)
+        DATA8
+//  163 static uint8 firstQIdx = 0;
+firstQIdx:
+        DS 1
+        REQUIRE __INIT_XDATA_Z
+
+        RSEG XDATA_Z:XDATA:NOROOT(0)
+        DATA8
+//  164 static uint8 lastQIdx = 0;
+lastQIdx:
+        DS 1
+        REQUIRE __INIT_XDATA_Z
+
+        RSEG XDATA_Z:XDATA:NOROOT(0)
+        DATA8
+//  165 static hidDevReport_t hidDevReportQ[HID_DEV_REPORT_Q_SIZE];
+hidDevReportQ:
+        DS 121
+        REQUIRE __INIT_XDATA_Z
+//  166 
+//  167 /*********************************************************************
+//  168  * LOCAL FUNCTIONS
+//  169  */
+//  170 
+//  171 static void hidDev_ProcessOSALMsg( osal_event_hdr_t *pMsg );
+//  172 static void hidDevProcessGattMsg( gattMsgEvent_t *pMsg );
+//  173 static void hidDevDisconnected( void );
+//  174 static void hidDevGapStateCB( gaprole_States_t newState );
+//  175 static void hidDevPairStateCB( uint16 connHandle, uint8 state, uint8 status );
+//  176 static void hidDevPasscodeCB( uint8 *deviceAddr, uint16 connectionHandle,
+//  177                               uint8 uiInputs, uint8 uiOutputs );
+//  178 static void hidDevBattCB( uint8 event );
+//  179 static void hidDevScanParamCB( uint8 event );
+//  180 static void hidDevBattPeriodicTask( void );
+//  181 static hidRptMap_t *hidDevRptByHandle( uint16 handle );
+//  182 static hidRptMap_t *hidDevRptById( uint8 id, uint8 type );
+//  183 static hidRptMap_t *hidDevRptByCccdHandle( uint16 handle );
+//  184 static void hidDevEnqueueReport( uint8 id, uint8 type, uint8 len, uint8 *pData );
+//  185 static hidDevReport_t *hidDevDequeueReport( void );
+//  186 static void hidDevSendReport( uint8 id, uint8 type, uint8 len, uint8 *pData );
+//  187 static void hidDevHighAdvertising( void );
+//  188 static void hidDevLowAdvertising( void );
+//  189 static void hidDevInitialAdvertising( void );
+//  190 static uint8 hidDevBondCount( void );
+//  191 static void hidDevStartIdleTimer( void );
+//  192 static void hidDevStopIdleTimer( void );
+//  193 
+//  194 /*********************************************************************
+//  195  * PROFILE CALLBACKS
+//  196  */
+//  197 
+//  198 // GAP Role Callbacks
+
+        RSEG XDATA_I:XDATA:NOROOT(0)
+//  199 static gapRolesCBs_t hidDev_PeripheralCBs =
+hidDev_PeripheralCBs:
+        DATA32
+        DS 4
+        REQUIRE `?<Initializer for hidDev_PeripheralCBs>`
+        REQUIRE __INIT_XDATA_I
+//  200 {
+//  201   hidDevGapStateCB,   // Profile State Change Callbacks
+//  202   NULL                // When a valid RSSI is read from controller
+//  203 };
+//  204 
+//  205 // Bond Manager Callbacks
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA32
+//  206 static const gapBondCBs_t hidDevBondCB =
+hidDevBondCB:
+        DATA16
+        DW ??hidDevPasscodeCB?relay
+        DW ??hidDevPairStateCB?relay
+//  207 {
+//  208   hidDevPasscodeCB,
+//  209   hidDevPairStateCB
+//  210 };
+//  211 
+//  212 /*********************************************************************
+//  213  * PUBLIC FUNCTIONS
+//  214  */
+//  215 
+//  216 /*********************************************************************
+//  217  * @fn      HidDev_Init
+//  218  *
+//  219  * @brief   Initialization function for the Hid Dev Task.
+//  220  *          This is called during initialization and should contain
+//  221  *          any application specific initialization (ie. hardware
+//  222  *          initialization/setup, table initialization, power up
+//  223  *          notificaiton ... ).
+//  224  *
+//  225  * @param   task_id - the ID assigned by OSAL.  This ID should be
+//  226  *                    used to send messages and set timers.
+//  227  *
+//  228  * @return  none
+//  229  */
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+//  230 void HidDev_Init( uint8 task_id )
+HidDev_Init:
+        CODE
+//  231 {
+        MOV     A,#-0x9
+        LCALL   ?BANKED_ENTER_XDATA
+        ; Saved register size: 9
+        ; Auto size: 1
+        MOV     A,#-0x1
+        LCALL   ?ALLOC_XSTACK8
+        MOV     A,R1
+//  232   hidDevTaskId = task_id;
+        MOV     DPTR,#hidDevTaskId
+        MOVX    @DPTR,A
+//  233 
+//  234   // Setup the GAP Bond Manager
+//  235   {
+//  236     uint8 syncWL = TRUE;
+        LCALL   ?Subroutine19 & 0xFFFF
+//  237 
+//  238     // If a bond is created, the HID Device should write the address of the
+//  239     // HID Host in the HID Device controller's white list and set the HID
+//  240     // Device controller's advertising filter policy to 'process scan and
+//  241     // connection requests only from devices in the White List'.
+//  242     VOID GAPBondMgr_SetParameter( GAPBOND_AUTO_SYNC_WL, sizeof( uint8 ), &syncWL );
+//  243   }
+??CrossCallReturnLabel_31:
+        MOV     R1,A
+        MOV     R2,#0xd
+        MOV     R3,#0x4
+        LCALL   ??GAPBondMgr_SetParameter?relay
+//  244 
+//  245   // Set up services
+//  246   GGS_AddService( GATT_ALL_SERVICES );         // GAP
+        ; Setup parameters for call to function GGS_AddService
+        MOV     DPTR,#__Constant_ffffffff
+        LCALL   ?XLOAD_R2345
+        LCALL   ??GGS_AddService?relay
+//  247   GATTServApp_AddService( GATT_ALL_SERVICES ); // GATT attributes
+        ; Setup parameters for call to function GATTServApp_AddService
+        MOV     DPTR,#__Constant_ffffffff
+        LCALL   ?XLOAD_R2345
+        LCALL   ??GATTServApp_AddService?relay
+//  248   DevInfo_AddService( );
+        ; Setup parameters for call to function DevInfo_AddService
+        LCALL   ??DevInfo_AddService?relay
+//  249   Batt_AddService( );
+        ; Setup parameters for call to function Batt_AddService
+        LCALL   ??Batt_AddService?relay
+//  250   ScanParam_AddService( );
+        ; Setup parameters for call to function ScanParam_AddService
+        LCALL   ??ScanParam_AddService?relay
+//  251 
+//  252   // Register for Battery service callback
+//  253   Batt_Register( hidDevBattCB );
+        ; Setup parameters for call to function Batt_Register
+        MOV     R2,#??hidDevBattCB?relay & 0xff
+        MOV     R3,#(??hidDevBattCB?relay >> 8) & 0xff
+        LCALL   ??Batt_Register?relay
+//  254 
+//  255   // Register for Scan Parameters service callback
+//  256   ScanParam_Register( hidDevScanParamCB );
+        ; Setup parameters for call to function ScanParam_Register
+        MOV     R2,#??hidDevScanParamCB?relay & 0xff
+        MOV     R3,#(??hidDevScanParamCB?relay >> 8) & 0xff
+        LCALL   ??ScanParam_Register?relay
+//  257 
+//  258   // Setup a delayed profile startup
+//  259   osal_set_event( hidDevTaskId, START_DEVICE_EVT );
+        ; Setup parameters for call to function osal_set_event
+        MOV     R2,#0x1
+        MOV     R3,#0x0
+        MOV     DPTR,#hidDevTaskId
+        MOVX    A,@DPTR
+        MOV     R1,A
+        LCALL   ??osal_set_event?relay
+//  260 }
+        LJMP    ?Subroutine0 & 0xFFFF
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+?Subroutine19:
+        MOV     DPL,?XSP + 0
+        MOV     DPH,?XSP + 1
+        MOV     A,#0x1
+        REQUIRE ??Subroutine21_0
+        ; // Fall through to label ??Subroutine21_0
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+??Subroutine21_0:
+        MOVX    @DPTR,A
+        ; Setup parameters for call to function GAPBondMgr_SetParameter
+        ; Setup parameters for call to function GAPRole_SetParameter
+        ; Setup parameters for call to function GAPRole_SetParameter
+        ; Setup parameters for call to function GAPRole_SetParameter
+        ; Setup parameters for call to function GAPRole_SetParameter
+        ; Setup parameters for call to function GAPRole_SetParameter
+        ; Setup parameters for call to function GAPBondMgr_GetParameter
+        MOV     R4,DPL
+        MOV     R5,DPH
+        RET
+//  261 
+//  262 /*********************************************************************
+//  263  * @fn      HidDev_ProcessEvent
+//  264  *
+//  265  * @brief   Hid Dev Task event processor.  This function
+//  266  *          is called to process all events for the task.  Events
+//  267  *          include timers, messages and any other user defined events.
+//  268  *
+//  269  * @param   task_id  - The OSAL assigned task ID.
+//  270  * @param   events - events to process.  This is a bit map and can
+//  271  *                   contain more than one event.
+//  272  *
+//  273  * @return  events not processed
+//  274  */
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+//  275 uint16 HidDev_ProcessEvent( uint8 task_id, uint16 events )
+HidDev_ProcessEvent:
+        CODE
+//  276 {
+        MOV     A,#-0xb
+        LCALL   ?BANKED_ENTER_XDATA
+        ; Saved register size: 11
+        ; Auto size: 0
+        MOV     A,R2
+        MOV     R6,A
+        MOV     A,R3
+        MOV     R7,A
+//  277 
+//  278   VOID task_id; // OSAL required parameter that isn't used in this function
+//  279 
+//  280   if ( events & SYS_EVENT_MSG )
+        ANL     A,#0x80
+        JZ      ??HidDev_ProcessEvent_0
+//  281   {
+//  282     uint8 *pMsg;
+//  283 
+//  284     if ( (pMsg = osal_msg_receive( hidDevTaskId )) != NULL )
+        ; Setup parameters for call to function osal_msg_receive
+        MOV     DPTR,#hidDevTaskId
+        MOVX    A,@DPTR
+        MOV     R1,A
+        LCALL   ??osal_msg_receive?relay
+        MOV     A,R2
+        ORL     A,R3
+        JZ      ??HidDev_ProcessEvent_1
+//  285     {
+//  286       hidDev_ProcessOSALMsg( (osal_event_hdr_t *)pMsg );
+//  287 
+//  288       // Release the OSAL message
+//  289       VOID osal_msg_deallocate( pMsg );
+        ; Setup parameters for call to function osal_msg_deallocate
+        LCALL   ??osal_msg_deallocate?relay
+//  290     }
+//  291 
+//  292     // return unprocessed events
+//  293     return (events ^ SYS_EVENT_MSG);
+??HidDev_ProcessEvent_1:
+        MOV     A,R6
+        MOV     R2,A
+        MOV     A,R7
+        XRL     A,#0x80
+        LJMP    ??HidDev_ProcessEvent_2 & 0xFFFF
+//  294   }
+//  295 
+//  296   if ( events & START_DEVICE_EVT )
+??HidDev_ProcessEvent_0:
+        MOV     A,R6
+        MOV     C,0xE0 /* A   */.0
+        JNC     ??HidDev_ProcessEvent_3
+//  297   {
+//  298     // Start the Device
+//  299     VOID GAPRole_StartDevice( &hidDev_PeripheralCBs );
+        ; Setup parameters for call to function GAPRole_StartDevice
+        MOV     R2,#hidDev_PeripheralCBs & 0xff
+        MOV     R3,#(hidDev_PeripheralCBs >> 8) & 0xff
+        LCALL   ??GAPRole_StartDevice?relay
+//  300 
+//  301     // Register with bond manager after starting device
+//  302     GAPBondMgr_Register( (gapBondCBs_t *) &hidDevBondCB );
+        ; Setup parameters for call to function GAPBondMgr_Register
+        MOV     R2,#hidDevBondCB & 0xff
+        MOV     R3,#(hidDevBondCB >> 8) & 0xff
+        LCALL   ??GAPBondMgr_Register?relay
+//  303 
+//  304     return ( events ^ START_DEVICE_EVT );
+        MOV     A,R6
+        XRL     A,#0x1
+        LJMP    ??HidDev_ProcessEvent_4 & 0xFFFF
+//  305   }
+//  306 
+//  307   if ( events & HID_IDLE_EVT )
+??HidDev_ProcessEvent_3:
+        ANL     A,#0x4
+        JZ      ??HidDev_ProcessEvent_5
+//  308   {
+//  309     if ( hidDevGapState == GAPROLE_CONNECTED )
+        MOV     DPTR,#hidDevGapState
+        MOVX    A,@DPTR
+        XRL     A,#0x5
+        JNZ     ??HidDev_ProcessEvent_6
+//  310     {
+//  311       // if pairing in progress then restart timer
+//  312       if ( hidDevPairingStarted )
+        MOV     DPTR,#hidDevPairingStarted
+        MOVX    A,@DPTR
+        JZ      ??HidDev_ProcessEvent_7
+//  313       {
+//  314         hidDevStartIdleTimer();
+        ; Setup parameters for call to function hidDevStartIdleTimer
+        LCALL   ??hidDevStartIdleTimer?relay
+        SJMP    ??HidDev_ProcessEvent_6
+//  315       }
+//  316       // else disconnect
+//  317       else
+//  318       {
+//  319         GAPRole_TerminateConnection();
+??HidDev_ProcessEvent_7:
+        ; Setup parameters for call to function GAPRole_TerminateConnection
+        LCALL   ??GAPRole_TerminateConnection?relay
+//  320       }
+//  321     }
+//  322 
+//  323     return ( events ^ HID_IDLE_EVT );
+??HidDev_ProcessEvent_6:
+        MOV     A,R6
+        XRL     A,#0x4
+        LJMP    ??HidDev_ProcessEvent_4 & 0xFFFF
+//  324   }
+//  325 
+//  326   if ( events & BATT_PERIODIC_EVT )
+??HidDev_ProcessEvent_5:
+        MOV     A,R6
+        ANL     A,#0x2
+        JZ      ??HidDev_ProcessEvent_8
+//  327   {
+//  328     // Perform periodic battery task
+//  329     hidDevBattPeriodicTask();
+        MOV     DPTR,#hidDevGapState
+        MOVX    A,@DPTR
+        XRL     A,#0x5
+        JNZ     ??HidDev_ProcessEvent_9
+        ; Setup parameters for call to function Batt_MeasLevel
+        LCALL   ??Batt_MeasLevel?relay
+        ; Setup parameters for call to function osal_start_timerEx
+        MOV     DPTR,#__Constant_3a98
+        LCALL   ?PUSH_XSTACK8_X_FOUR
+        MOV     R2,#0x2
+        MOV     R3,#0x0
+        MOV     DPTR,#hidDevTaskId
+        MOVX    A,@DPTR
+        MOV     R1,A
+        LCALL   ??osal_start_timerEx?relay
+        MOV     A,#0x4
+        LCALL   ?DEALLOC_XSTACK8
+//  330 
+//  331     return ( events ^ BATT_PERIODIC_EVT );
+??HidDev_ProcessEvent_9:
+        MOV     A,R6
+        XRL     A,#0x2
+        SJMP    ??HidDev_ProcessEvent_4
+//  332   }
+//  333 
+//  334   if ( events & HID_SEND_REPORT_EVT )
+??HidDev_ProcessEvent_8:
+        MOV     A,R6
+        ANL     A,#0x8
+        JZ      ??HidDev_ProcessEvent_10
+//  335   {
+//  336     // if connection is secure
+//  337     if ( hidDevConnSecure )
+        MOV     A,R6
+        XRL     A,#0x8
+        MOV     ?V0 + 0,A
+        MOV     A,R7
+        MOV     ?V0 + 1,A
+        MOV     DPTR,#hidDevConnSecure
+        MOVX    A,@DPTR
+        JZ      ??HidDev_ProcessEvent_11
+//  338     {
+//  339       hidDevReport_t *pReport = hidDevDequeueReport();
+        LCALL   ?Subroutine10 & 0xFFFF
+??CrossCallReturnLabel_9:
+        JZ      ??HidDev_ProcessEvent_12
+        MOV     DPTR,#firstQIdx
+        MOVX    A,@DPTR
+        ADD     A,#0x1
+        INC     R0
+        CLR     A
+        ADDC    A,#0x0
+        MOV     R1,A
+        MOV     R2,#0xb
+        MOV     R3,#0x0
+        LCALL   ?S_DIV_MOD
+        MOV     A,R2
+        MOVX    @DPTR,A
+        MOV     B,#0xb
+        MUL     AB
+        MOV     R0,A
+        MOV     R1,B
+        MOV     A,#hidDevReportQ & 0xff
+        ADD     A,R0
+        MOV     R0,A
+        MOV     A,#(hidDevReportQ >> 8) & 0xff
+        ADDC    A,R1
+        MOV     R1,A
+//  340 
+//  341       if ( pReport != NULL )
+//  342       {
+//  343         // Send report
+//  344         hidDevSendReport( pReport->id, pReport->type, pReport->len, pReport->data );
+        ; Setup parameters for call to function hidDevSendReport
+        MOV     A,R0
+        ADD     A,#0x3
+        MOV     R4,A
+        MOV     A,R1
+        ADDC    A,#0x0
+        MOV     R5,A
+        MOV     DPL,R0
+        MOV     DPH,R1
+        INC     DPTR
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R3,A
+        MOV     DPL,R0
+        MOV     DPH,R1
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R2,A
+        MOV     DPL,R0
+        MOV     DPH,R1
+        MOVX    A,@DPTR
+        MOV     R1,A
+        LCALL   ??hidDevSendReport?relay
+//  345       }
+//  346 
+//  347       return ( reportQEmpty() ? events ^ HID_SEND_REPORT_EVT : events );
+??HidDev_ProcessEvent_12:
+        LCALL   ?Subroutine10 & 0xFFFF
+//  348     }
+??CrossCallReturnLabel_10:
+        JNZ     ??HidDev_ProcessEvent_13
+        MOV     R2,?V0 + 0
+        MOV     R3,?V0 + 1
+        SJMP    ??HidDev_ProcessEvent_14
+??HidDev_ProcessEvent_13:
+        MOV     A,R6
+??HidDev_ProcessEvent_4:
+        MOV     R2,A
+        MOV     A,R7
+??HidDev_ProcessEvent_2:
+        MOV     R3,A
+        SJMP    ??HidDev_ProcessEvent_14
+//  349 
+//  350     return ( events ^ HID_SEND_REPORT_EVT );
+??HidDev_ProcessEvent_11:
+        MOV     R2,?V0 + 0
+        SJMP    ??HidDev_ProcessEvent_14
+//  351   }
+//  352 
+//  353   return 0;
+??HidDev_ProcessEvent_10:
+        MOV     R2,#0x0
+        MOV     R3,#0x0
+??HidDev_ProcessEvent_14:
+        MOV     R7,#0x3
+        LJMP    ?BANKED_LEAVE_XDATA
+//  354 }
+//  355 
+//  356 /*********************************************************************
+//  357  * @fn      HidDev_Register
+//  358  *
+//  359  * @brief   Register a callback function with HID Dev.
+//  360  *
+//  361  * @param   pCfg - Parameter configuration.
+//  362  * @param   pfnServiceCB - Callback function.
+//  363  *
+//  364  * @return  None.
+//  365  */
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+//  366 void HidDev_Register( hidDevCfg_t *pCfg, hidDevCB_t *pCBs )
+HidDev_Register:
+        CODE
+//  367 {
+        PUSH    DPL
+        PUSH    DPH
+        ; Saved register size: 2
+        ; Auto size: 0
+//  368   pHidDevCB = pCBs;
+        MOV     DPTR,#pHidDevCB
+        MOV     A,R4
+        MOVX    @DPTR,A
+        INC     DPTR
+        MOV     A,R5
+        MOVX    @DPTR,A
+//  369   pHidDevCfg = pCfg;
+        MOV     DPTR,#pHidDevCfg
+        MOV     A,R2
+        MOVX    @DPTR,A
+        INC     DPTR
+        MOV     A,R3
+        MOVX    @DPTR,A
+//  370 }
+        SJMP    ??Subroutine22_0
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+?Subroutine1:
+        MOV     A,#0x1
+        LCALL   ?DEALLOC_XSTACK8
+        REQUIRE ??Subroutine22_0
+        ; // Fall through to label ??Subroutine22_0
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+??Subroutine22_0:
+        POP     DPH
+        POP     DPL
+        LJMP    ?BRET
+//  371 
+//  372 /*********************************************************************
+//  373  * @fn      HidDev_RegisterReports
+//  374  *
+//  375  * @brief   Register the report table with HID Dev.
+//  376  *
+//  377  * @param   numReports - Length of report table.
+//  378  * @param   pRpt - Report table.
+//  379  *
+//  380  * @return  None.
+//  381  */
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+//  382 void HidDev_RegisterReports( uint8 numReports, hidRptMap_t *pRpt )
+HidDev_RegisterReports:
+        CODE
+//  383 {
+        PUSH    DPL
+        PUSH    DPH
+        ; Saved register size: 2
+        ; Auto size: 0
+//  384   pHidDevRptTbl = pRpt;
+        MOV     DPTR,#pHidDevRptTbl
+        MOV     A,R2
+        MOVX    @DPTR,A
+        INC     DPTR
+        MOV     A,R3
+        MOVX    @DPTR,A
+//  385   hidDevRptTblLen = numReports;
+        MOV     A,R1
+        MOV     DPTR,#hidDevRptTblLen
+        MOVX    @DPTR,A
+//  386 }
+        SJMP    ??Subroutine22_0
+//  387 
+//  388 /*********************************************************************
+//  389  * @fn      HidDev_Report
+//  390  *
+//  391  * @brief   Send a HID report.
+//  392  *
+//  393  * @param   id - HID report ID.
+//  394  * @param   type - HID report type.
+//  395  * @param   len - Length of report.
+//  396  * @param   pData - Report data.
+//  397  *
+//  398  * @return  None.
+//  399  */
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+//  400 void HidDev_Report( uint8 id, uint8 type, uint8 len, uint8*pData )
+HidDev_Report:
+        CODE
+//  401 {
+        MOV     A,#-0xe
+        LCALL   ?BANKED_ENTER_XDATA
+        ; Saved register size: 14
+        ; Auto size: 1
+        MOV     A,#-0x1
+        LCALL   ?ALLOC_XSTACK8
+        MOV     ?V0 + 0,R1
+        MOV     A,R2
+        MOV     R7,A
+        MOV     A,R3
+        MOV     R6,A
+        MOV     ?V0 + 2,R4
+        MOV     ?V0 + 3,R5
+//  402   // if connected
+//  403   if ( hidDevGapState == GAPROLE_CONNECTED )
+        MOV     DPTR,#hidDevGapState
+        MOVX    A,@DPTR
+        XRL     A,#0x5
+        JNZ     ??HidDev_Report_0
+//  404   {
+//  405     // if connection is secure
+//  406     if ( hidDevConnSecure )
+        MOV     DPTR,#hidDevConnSecure
+        MOVX    A,@DPTR
+        JZ      ??HidDev_Report_1
+//  407     {
+//  408       // After service discovery and encryption, the HID Device should request to
+//  409       // change to the preferred connection parameters that best suit its use case.
+//  410       if ( updateConnParams )
+        MOV     DPTR,#updateConnParams
+        MOVX    A,@DPTR
+        JZ      ??HidDev_Report_2
+//  411       {
+//  412         GAPRole_SetParameter( GAPROLE_PARAM_UPDATE_REQ, sizeof( uint8 ), &updateConnParams );
+        ; Setup parameters for call to function GAPRole_SetParameter
+        MOV     R4,#updateConnParams & 0xff
+        MOV     R5,#(updateConnParams >> 8) & 0xff
+        MOV     R1,#0x1
+        MOV     R2,#0x19
+        MOV     R3,#0x3
+        LCALL   ??GAPRole_SetParameter?relay
+//  413         updateConnParams = FALSE;
+        MOV     DPTR,#updateConnParams
+        CLR     A
+        MOVX    @DPTR,A
+//  414       }
+//  415 
+//  416       // Make sure there're no pending reports
+//  417       if ( reportQEmpty() )
+??HidDev_Report_2:
+        LCALL   ?Subroutine10 & 0xFFFF
+??CrossCallReturnLabel_11:
+        JNZ     ??HidDev_Report_1
+//  418       {
+//  419         // send report
+//  420         hidDevSendReport( id, type, len, pData );
+        ; Setup parameters for call to function hidDevSendReport
+        MOV     R4,?V0 + 2
+        MOV     R5,?V0 + 3
+        MOV     A,R6
+        MOV     R3,A
+        MOV     A,R7
+        MOV     R2,A
+        MOV     R1,?V0 + 0
+        LCALL   ??hidDevSendReport?relay
+//  421 
+//  422         return; // we're done
+        LJMP    ??HidDev_Report_3 & 0xFFFF
+//  423       }
+//  424     }
+//  425   }
+//  426   // else if not already advertising
+//  427   else if ( hidDevGapState != GAPROLE_ADVERTISING )
+??HidDev_Report_0:
+        MOVX    A,@DPTR
+        XRL     A,#0x2
+        JZ      ??HidDev_Report_1
+//  428   {
+//  429     // if bonded
+//  430     if ( hidDevBondCount() > 0 )
+        ; Setup parameters for call to function hidDevBondCount
+        LCALL   ??hidDevBondCount?relay
+        MOV     A,R1
+        JZ      ??HidDev_Report_4
+//  431     {
+//  432       // start high duty cycle advertising
+//  433       hidDevHighAdvertising();
+        ; Setup parameters for call to function GAP_SetParamValue
+        MOV     R4,#0x20
+        MOV     R5,#0x0
+        MOV     R2,#0x6
+        MOV     R3,#0x0
+        LCALL   ??GAP_SetParamValue?relay
+        ; Setup parameters for call to function GAP_SetParamValue
+        MOV     R4,#0x30
+        MOV     R5,#0x0
+        MOV     R2,#0x7
+        MOV     R3,#0x0
+        LCALL   ??GAP_SetParamValue?relay
+        ; Setup parameters for call to function GAP_SetParamValue
+        MOV     R4,#-0x78
+        MOV     R5,#0x13
+        MOV     R2,#0x1
+        MOV     R3,#0x0
+        LCALL   ??GAP_SetParamValue?relay
+        LCALL   ?Subroutine6 & 0xFFFF
+??CrossCallReturnLabel_5:
+        LCALL   ??GAPRole_SetParameter?relay
+        LCALL   ?Subroutine4 & 0xFFFF
+??CrossCallReturnLabel_0:
+        LCALL   ??GAPRole_SetParameter?relay
+//  434     }
+        SJMP    ??HidDev_Report_1
+//  435     // else not bonded
+//  436     else
+//  437     {
+//  438       // start initial advertising
+//  439       hidDevInitialAdvertising();
+??HidDev_Report_4:
+        ; Setup parameters for call to function hidDevInitialAdvertising
+        LCALL   ??hidDevInitialAdvertising?relay
+//  440     }
+//  441   }
+//  442 
+//  443   // hidDev task will send report when secure connection is established
+//  444   hidDevEnqueueReport( id, type, len, pData );
+??HidDev_Report_1:
+        ; Setup parameters for call to function hidDevBondCount
+        LCALL   ??hidDevBondCount?relay
+        MOV     A,R1
+        JZ      ??HidDev_Report_3
+        MOV     DPTR,#lastQIdx
+        LCALL   ?Subroutine11 & 0xFFFF
+??CrossCallReturnLabel_13:
+        LCALL   ?S_DIV_MOD
+        MOV     A,R2
+        MOVX    @DPTR,A
+        MOV     R0,A
+        MOV     DPTR,#firstQIdx
+        MOVX    A,@DPTR
+        XRL     A,R0
+        JNZ     ??HidDev_Report_5
+        LCALL   ?Subroutine11 & 0xFFFF
+??CrossCallReturnLabel_14:
+        LCALL   ?S_DIV_MOD
+        MOV     A,R2
+        MOVX    @DPTR,A
+??HidDev_Report_5:
+        MOV     DPTR,#lastQIdx
+        MOVX    A,@DPTR
+        MOV     B,#0xb
+        MUL     AB
+        MOV     R0,A
+        MOV     R1,B
+        MOV     A,#hidDevReportQ & 0xff
+        ADD     A,R0
+        MOV     R0,A
+        MOV     A,#(hidDevReportQ >> 8) & 0xff
+        ADDC    A,R1
+        MOV     R1,A
+        MOV     A,R0
+        MOV     R2,A
+        MOV     A,R1
+        MOV     R3,A
+        MOV     DPL,R2
+        MOV     DPH,R3
+        MOV     A,?V0 + 0
+        MOVX    @DPTR,A
+        MOV     A,R7
+        INC     DPTR
+        MOVX    @DPTR,A
+        MOV     A,R6
+        MOV     DPL,R2
+        MOV     DPH,R3
+        INC     DPTR
+        INC     DPTR
+        MOVX    @DPTR,A
+        ; Setup parameters for call to function osal_memcpy
+        MOV     ?V0 + 4,R6
+        MOV     ?V0 + 5,#0x0
+        MOV     R0,#?V0 + 4
+        LCALL   ?PUSH_XSTACK_I_TWO
+        MOV     R4,?V0 + 2
+        MOV     R5,?V0 + 3
+        MOV     A,R2
+        ADD     A,#0x3
+        MOV     R2,A
+        MOV     A,R3
+        ADDC    A,#0x0
+        MOV     R3,A
+        LCALL   ??osal_memcpy?relay
+        MOV     A,#0x2
+        LCALL   ?DEALLOC_XSTACK8
+        MOV     DPTR,#hidDevConnSecure
+        MOVX    A,@DPTR
+        JZ      ??HidDev_Report_3
+        ; Setup parameters for call to function osal_set_event
+        MOV     R2,#0x8
+        MOV     R3,#0x0
+        MOV     DPTR,#hidDevTaskId
+        MOVX    A,@DPTR
+        MOV     R1,A
+        LCALL   ??osal_set_event?relay
+??HidDev_Report_3:
+        LJMP    ?Subroutine2 & 0xFFFF
+//  445 }
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+?Subroutine11:
+        MOVX    A,@DPTR
+        ADD     A,#0x1
+        MOV     R0,A
+        CLR     A
+        ADDC    A,#0x0
+        MOV     R1,A
+        MOV     R2,#0xb
+        MOV     R3,#0x0
+        RET
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+?Subroutine10:
+        MOV     DPTR,#firstQIdx
+        MOVX    A,@DPTR
+        MOV     R0,A
+        MOV     DPTR,#lastQIdx
+        MOVX    A,@DPTR
+        XRL     A,R0
+        RET
+//  446 
+//  447 /*********************************************************************
+//  448  * @fn      HidDev_Close
+//  449  *
+//  450  * @brief   Close the connection or stop advertising.
+//  451  *
+//  452  * @return  None.
+//  453  */
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+//  454 void HidDev_Close( void )
+HidDev_Close:
+        CODE
+//  455 {
+        PUSH    DPL
+        PUSH    DPH
+        ; Saved register size: 2
+        ; Auto size: 1
+        MOV     A,#-0x1
+        LCALL   ?ALLOC_XSTACK8
+//  456   uint8 param;
+//  457 
+//  458   // if connected then disconnect
+//  459   if ( hidDevGapState == GAPROLE_CONNECTED )
+        MOV     DPTR,#hidDevGapState
+        MOVX    A,@DPTR
+        XRL     A,#0x5
+        JNZ     ??HidDev_Close_0
+//  460   {
+//  461     GAPRole_TerminateConnection();
+        ; Setup parameters for call to function GAPRole_TerminateConnection
+        LCALL   ??GAPRole_TerminateConnection?relay
+        SJMP    ??HidDev_Close_1
+//  462   }
+//  463   // else stop advertising
+//  464   else
+//  465   {
+//  466     param = FALSE;
+??HidDev_Close_0:
+        MOV     DPL,?XSP + 0
+        MOV     DPH,?XSP + 1
+        CLR     A
+        LCALL   ?Subroutine5 & 0xFFFF
+//  467     GAPRole_SetParameter( GAPROLE_ADVERT_ENABLED, sizeof( uint8 ), &param );
+//  468   }
+??CrossCallReturnLabel_3:
+        LCALL   ??GAPRole_SetParameter?relay
+//  469 }
+??HidDev_Close_1:
+        LJMP    ?Subroutine1 & 0xFFFF
+//  470 
+//  471 /*********************************************************************
+//  472  * @fn      HidDev_SetParameter
+//  473  *
+//  474  * @brief   Set a HID Dev parameter.
+//  475  *
+//  476  * @param   param - Profile parameter ID
+//  477  * @param   len - length of data to right
+//  478  * @param   pValue - pointer to data to write.  This is dependent on
+//  479  *          the parameter ID and WILL be cast to the appropriate
+//  480  *          data type (example: data type of uint16 will be cast to
+//  481  *          uint16 pointer).
+//  482  *
+//  483  * @return  bStatus_t
+//  484  */
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+//  485 bStatus_t HidDev_SetParameter( uint8 param, uint8 len, void *pValue )
+HidDev_SetParameter:
+        CODE
+//  486 {
+        MOV     A,#-0x9
+        LCALL   ?BANKED_ENTER_XDATA
+        ; Saved register size: 9
+        ; Auto size: 0
+        MOV     A,R1
+//  487   bStatus_t ret = SUCCESS;
+        MOV     R6,#0x0
+//  488 
+//  489   switch ( param )
+        JNZ     ??HidDev_SetParameter_0
+//  490   {
+//  491     case HIDDEV_ERASE_ALLBONDS:
+//  492       if ( len == 0 )
+        MOV     A,R2
+        JNZ     ??HidDev_SetParameter_1
+//  493       {
+//  494         // Drop connection
+//  495         if ( hidDevGapState == GAPROLE_CONNECTED )
+        MOV     DPTR,#hidDevGapState
+        MOVX    A,@DPTR
+        XRL     A,#0x5
+        JNZ     ??HidDev_SetParameter_2
+//  496         {
+//  497           GAPRole_TerminateConnection();
+        ; Setup parameters for call to function GAPRole_TerminateConnection
+        LCALL   ??GAPRole_TerminateConnection?relay
+//  498         }
+//  499 
+//  500         // Erase bonding info
+//  501         GAPBondMgr_SetParameter( GAPBOND_ERASE_ALLBONDS, 0, NULL );
+??HidDev_SetParameter_2:
+        ; Setup parameters for call to function GAPBondMgr_SetParameter
+        MOV     R4,#0x0
+        MOV     R5,#0x0
+        MOV     R1,#0x0
+        MOV     R2,#0x9
+        MOV     R3,#0x4
+        LCALL   ??GAPBondMgr_SetParameter?relay
+//  502 
+//  503         // Flush report queue
+//  504         firstQIdx = lastQIdx = 0;
+        MOV     DPTR,#lastQIdx
+        CLR     A
+        MOVX    @DPTR,A
+        MOV     DPTR,#firstQIdx
+        MOVX    @DPTR,A
+        SJMP    ??HidDev_SetParameter_3
+//  505       }
+//  506       else
+//  507       {
+//  508         ret = bleInvalidRange;
+??HidDev_SetParameter_1:
+        MOV     R6,#0x18
+        SJMP    ??HidDev_SetParameter_3
+//  509       }
+//  510       break;
+//  511 
+//  512     default:
+//  513       ret = INVALIDPARAMETER;
+??HidDev_SetParameter_0:
+        INC     R6
+        INC     R6
+//  514       break;
+//  515   }
+//  516 
+//  517   return ( ret );
+??HidDev_SetParameter_3:
+        MOV     A,R6
+        MOV     R1,A
+        SJMP    ??Subroutine23_0
+//  518 }
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+?Subroutine0:
+        MOV     A,#0x1
+        LCALL   ?DEALLOC_XSTACK8
+        REQUIRE ??Subroutine23_0
+        ; // Fall through to label ??Subroutine23_0
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+??Subroutine23_0:
+        MOV     R7,#0x1
+        LJMP    ?BANKED_LEAVE_XDATA
+//  519 
+//  520 /*********************************************************************
+//  521  * @fn      HidDev_GetParameter
+//  522  *
+//  523  * @brief   Get a HID Dev parameter.
+//  524  *
+//  525  * @param   param - Profile parameter ID
+//  526  * @param   pValue - pointer to data to get.  This is dependent on
+//  527  *          the parameter ID and WILL be cast to the appropriate
+//  528  *          data type (example: data type of uint16 will be cast to
+//  529  *          uint16 pointer).
+//  530  *
+//  531  * @return  bStatus_t
+//  532  */
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+//  533 bStatus_t HidDev_GetParameter( uint8 param, void *pValue )
+HidDev_GetParameter:
+        CODE
+//  534 {
+        ; Saved register size: 0
+        ; Auto size: 0
+//  535   bStatus_t ret = SUCCESS;
+//  536 
+//  537   switch ( param )
+//  538   {
+//  539 
+//  540     default:
+//  541       ret = INVALIDPARAMETER;
+//  542       break;
+//  543   }
+//  544 
+//  545   return ( ret );
+        MOV     R1,#0x2
+        LJMP    ?BRET
+//  546 }
+//  547 
+//  548 /*********************************************************************
+//  549  * @fn      HidDev_PasscodeRsp
+//  550  *
+//  551  * @brief   Respond to a passcode request.
+//  552  *
+//  553  * @param   status - SUCCESS if passcode is available, otherwise
+//  554  *                   see @ref SMP_PAIRING_FAILED_DEFINES.
+//  555  * @param   passcode - integer value containing the passcode.
+//  556  *
+//  557  * @return  none
+//  558  */
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+//  559 void HidDev_PasscodeRsp( uint8 status, uint32 passcode )
+HidDev_PasscodeRsp:
+        CODE
+//  560 {
+        MOV     A,#-0xc
+        LCALL   ?BANKED_ENTER_XDATA
+        ; Saved register size: 12
+        ; Auto size: 0
+        MOV     ?V0 + 0,R2
+        MOV     ?V0 + 1,R3
+        MOV     ?V0 + 2,R4
+        MOV     ?V0 + 3,R5
+//  561   // Send passcode response
+//  562   GAPBondMgr_PasscodeRsp( gapConnHandle, status, passcode );
+        ; Setup parameters for call to function GAPBondMgr_PasscodeRsp
+        MOV     R0,#?V0 + 0
+        LCALL   ?PUSH_XSTACK_I_FOUR
+        LCALL   ??Subroutine27_0 & 0xFFFF
+??CrossCallReturnLabel_50:
+        LCALL   ??GAPBondMgr_PasscodeRsp?relay
+        MOV     A,#0x4
+        LCALL   ?DEALLOC_XSTACK8
+//  563 }
+        REQUIRE ?Subroutine3
+        ; // Fall through to label ?Subroutine3
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+?Subroutine3:
+        MOV     R7,#0x4
+        LJMP    ?BANKED_LEAVE_XDATA
+//  564 
+//  565 /*********************************************************************
+//  566  * @fn          HidDev_ReadAttrCB
+//  567  *
+//  568  * @brief       HID Dev attribute read callback.
+//  569  *
+//  570  * @param       connHandle - connection message was received on
+//  571  * @param       pAttr - pointer to attribute
+//  572  * @param       pValue - pointer to data to be read
+//  573  * @param       pLen - length of data to be read
+//  574  * @param       offset - offset of the first octet to be read
+//  575  * @param       maxLen - maximum length of data to be read
+//  576  *
+//  577  * @return      Success or Failure
+//  578  */
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+//  579 uint8 HidDev_ReadAttrCB( uint16 connHandle, gattAttribute_t *pAttr,
+HidDev_ReadAttrCB:
+        CODE
+//  580                          uint8 *pValue, uint8 *pLen, uint16 offset, uint8 maxLen )
+//  581 {
+        MOV     A,#-0x12
+        LCALL   ?BANKED_ENTER_XDATA
+        ; Saved register size: 18
+        ; Auto size: 0
+        MOV     ?V0 + 3,R1
+//  582   bStatus_t   status = SUCCESS;
+        MOV     ?V0 + 2,#0x0
+//  583   hidRptMap_t *pRpt;
+//  584 
+//  585   uint16 uuid = BUILD_UINT16( pAttr->type.uuid[0], pAttr->type.uuid[1]);
+        LCALL   ?Subroutine14 & 0xFFFF
+??CrossCallReturnLabel_17:
+        MOV     R2,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R1,A
+        MOV     A,R2
+        MOV     R0,A
+//  586 
+//  587   // Only report map is long
+//  588   if ( offset > 0 && uuid != HID_REPORT_MAP_UUID )
+        MOV     A,R4
+        ADD     A,#0x6
+        MOV     R2,A
+        MOV     A,R5
+        ADDC    A,#0x0
+        MOV     R3,A
+        MOV     A,#0x12
+        LCALL   ?XSTACK_DISP0_8
+        MOVX    A,@DPTR
+        MOV     ?V0 + 0,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     ?V0 + 1,A
+        MOV     A,#0x14
+        LCALL   ?XSTACK_DISP0_8
+        LCALL   ?Subroutine15 & 0xFFFF
+??CrossCallReturnLabel_19:
+        MOV     A,#0x16
+        LCALL   ?XSTACK_DISP0_8
+        MOVX    A,@DPTR
+        MOV     ?V0 + 6,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     ?V0 + 7,A
+        MOV     A,?V0 + 6
+        ORL     A,?V0 + 7
+        JZ      ??HidDev_ReadAttrCB_0
+        MOV     A,#0x4b
+        XRL     A,R0
+        JNZ     ??HidDev_ReadAttrCB_1
+        MOV     A,#0x2a
+        XRL     A,R1
+??HidDev_ReadAttrCB_1:
+        JNZ     $+5
+        LJMP    ??HidDev_ReadAttrCB_2 & 0xFFFF
+//  589   {
+//  590     return ( ATT_ERR_ATTR_NOT_LONG );
+        MOV     R1,#0xb
+        LJMP    ??HidDev_ReadAttrCB_3 & 0xFFFF
+//  591   }
+//  592 
+//  593   if ( uuid == HID_REPORT_UUID ||
+//  594        uuid == HID_BOOT_KEY_INPUT_UUID ||
+//  595        uuid == HID_BOOT_KEY_OUTPUT_UUID ||
+//  596        uuid == HID_BOOT_MOUSE_INPUT_UUID )
+??HidDev_ReadAttrCB_0:
+        MOV     A,#0x4d
+        XRL     A,R0
+        JNZ     ??HidDev_ReadAttrCB_4
+        MOV     A,#0x2a
+        XRL     A,R1
+??HidDev_ReadAttrCB_4:
+        JZ      ??HidDev_ReadAttrCB_5
+        MOV     A,#0x22
+        XRL     A,R0
+        JNZ     ??HidDev_ReadAttrCB_6
+        MOV     A,#0x2a
+        XRL     A,R1
+??HidDev_ReadAttrCB_6:
+        JZ      ??HidDev_ReadAttrCB_5
+        MOV     A,#0x32
+        XRL     A,R0
+        JNZ     ??HidDev_ReadAttrCB_7
+        MOV     A,#0x2a
+        XRL     A,R1
+??HidDev_ReadAttrCB_7:
+        JZ      ??HidDev_ReadAttrCB_5
+        MOV     A,#0x33
+        XRL     A,R0
+        JNZ     ??HidDev_ReadAttrCB_8
+        MOV     A,#0x2a
+        XRL     A,R1
+??HidDev_ReadAttrCB_8:
+        JNZ     ??HidDev_ReadAttrCB_9
+//  597   {
+//  598     // require encryption
+//  599     if ( hidDevConnSecure == FALSE )
+??HidDev_ReadAttrCB_5:
+        MOV     DPTR,#hidDevConnSecure
+        MOVX    A,@DPTR
+        JNZ     $+5
+        LJMP    ??HidDev_ReadAttrCB_10 & 0xFFFF
+//  600     {
+//  601       return ( ATT_ERR_INSUFFICIENT_ENCRYPT );
+//  602     }
+//  603 
+//  604     // find report ID in table
+//  605     if ( (pRpt = hidDevRptByHandle(pAttr->handle)) != NULL )
+        ; Setup parameters for call to function hidDevRptByHandle
+        MOV     DPL,R4
+        MOV     DPH,R5
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        LCALL   ??Subroutine28_0 & 0xFFFF
+??CrossCallReturnLabel_46:
+        LCALL   ??hidDevRptByHandle?relay
+        MOV     ?V0 + 4,R2
+        MOV     ?V0 + 5,R3
+        MOV     A,R2
+        ORL     A,?V0 + 5
+        JZ      ??HidDev_ReadAttrCB_11
+//  606     {
+//  607       // execute report callback
+//  608       status  = (*pHidDevCB->reportCB)( pRpt->id, pRpt->type, HID_DEV_OPER_READ,
+//  609                                         pLen, pValue );
+        ; Setup parameters for indirect call
+        MOV     R0,#?V0 + 0
+        LCALL   ?PUSH_XSTACK_I_TWO
+        MOV     A,R6
+        MOV     R4,A
+        MOV     A,R7
+        MOV     R5,A
+        MOV     R3,#0x1
+        MOV     DPL,R2
+        MOV     DPH,?V0 + 5
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R2,A
+        MOV     DPL,?V0 + 4
+        MOV     DPH,?V0 + 5
+        LCALL   ??Subroutine24_0 & 0xFFFF
+//  610     }
+??CrossCallReturnLabel_35:
+        LCALL   ?CALL_IND
+        MOV     A,#0x2
+        LCALL   ?DEALLOC_XSTACK8
+        MOV     A,R1
+        MOV     ?V0 + 2,A
+//  611     else
+//  612     {
+//  613       *pLen = 0;
+//  614     }
+//  615   }
+//  616   else if ( uuid == HID_REPORT_MAP_UUID )
+//  617   {
+//  618     // verify offset
+//  619     if ( offset >= hidReportMapLen )
+//  620     {
+//  621       status = ATT_ERR_INVALID_OFFSET;
+//  622     }
+//  623     else
+//  624     {
+//  625       // determine read length
+//  626       *pLen = MIN( maxLen, (hidReportMapLen - offset) );
+//  627 
+//  628       // copy data
+//  629       osal_memcpy( pValue, pAttr->pValue + offset, *pLen );
+//  630     }
+//  631   }
+//  632   else if ( uuid == HID_INFORMATION_UUID )
+//  633   {
+//  634     // require encryption
+//  635     if ( hidDevConnSecure == FALSE )
+//  636     {
+//  637       return ( ATT_ERR_INSUFFICIENT_ENCRYPT );
+//  638     }
+//  639 
+//  640     *pLen = HID_INFORMATION_LEN;
+//  641     osal_memcpy( pValue, pAttr->pValue, HID_INFORMATION_LEN );
+//  642   }
+//  643   else if ( uuid == GATT_REPORT_REF_UUID )
+//  644   {
+//  645     *pLen = HID_REPORT_REF_LEN;
+//  646     osal_memcpy( pValue, pAttr->pValue, HID_REPORT_REF_LEN );
+//  647   }
+//  648   else if ( uuid == HID_PROTOCOL_MODE_UUID )
+//  649   {
+//  650     // require encryption
+//  651     if ( hidDevConnSecure == FALSE )
+//  652     {
+//  653       return ( ATT_ERR_INSUFFICIENT_ENCRYPT );
+//  654     }
+//  655 
+//  656     *pLen = HID_PROTOCOL_MODE_LEN;
+//  657     pValue[0] = pAttr->pValue[0];
+//  658   }
+//  659   else if ( uuid == GATT_EXT_REPORT_REF_UUID )
+//  660   {
+//  661     *pLen = HID_EXT_REPORT_REF_LEN;
+//  662     osal_memcpy( pValue, pAttr->pValue, HID_EXT_REPORT_REF_LEN );
+//  663   }
+//  664 
+//  665   // restart idle timer
+//  666   if ( status == SUCCESS )
+        JZ      $+5
+        LJMP    ??HidDev_ReadAttrCB_12 & 0xFFFF
+        LJMP    ??HidDev_ReadAttrCB_13 & 0xFFFF
+??HidDev_ReadAttrCB_11:
+        MOV     DPL,R6
+        MOV     DPH,R7
+        CLR     A
+        LJMP    ??HidDev_ReadAttrCB_14 & 0xFFFF
+??HidDev_ReadAttrCB_9:
+        MOV     A,#0x4b
+        XRL     A,R0
+        JNZ     ??HidDev_ReadAttrCB_15
+        MOV     A,#0x2a
+        XRL     A,R1
+??HidDev_ReadAttrCB_15:
+        JNZ     ??HidDev_ReadAttrCB_16
+??HidDev_ReadAttrCB_2:
+        MOV     DPTR,#hidReportMapLen
+        MOVX    A,@DPTR
+        MOV     R0,A
+        CLR     C
+        MOV     A,?V0 + 6
+        SUBB    A,R0
+        MOV     A,?V0 + 7
+        SUBB    A,#0x0
+        JC      ??HidDev_ReadAttrCB_17
+        MOV     ?V0 + 2,#0x7
+        LJMP    ??HidDev_ReadAttrCB_12 & 0xFFFF
+??HidDev_ReadAttrCB_17:
+        MOV     ?V0 + 4,?V0 + 3
+        MOV     A,R0
+        CLR     C
+        SUBB    A,?V0 + 6
+        MOV     R0,A
+        CLR     A
+        SUBB    A,?V0 + 7
+        MOV     R1,A
+        CLR     C
+        MOV     A,?V0 + 4
+        SUBB    A,R0
+        CLR     A
+        SUBB    A,R1
+        JC      ??HidDev_ReadAttrCB_18
+        MOV     R0,?V0 + 6
+        MOVX    A,@DPTR
+        CLR     C
+        SUBB    A,R0
+        MOV     ?V0 + 4,A
+??HidDev_ReadAttrCB_18:
+        MOV     DPL,R6
+        MOV     DPH,R7
+        MOV     A,?V0 + 4
+        MOVX    @DPTR,A
+        ; Setup parameters for call to function osal_memcpy
+        MOV     ?V0 + 8,A
+        MOV     ?V0 + 9,#0x0
+        MOV     R0,#?V0 + 8
+        LCALL   ?PUSH_XSTACK_I_TWO
+        MOV     DPL,R2
+        MOV     DPH,R3
+        MOVX    A,@DPTR
+        ADD     A,?V0 + 6
+        MOV     R4,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        ADDC    A,?V0 + 7
+        SJMP    ??HidDev_ReadAttrCB_19
+??HidDev_ReadAttrCB_16:
+        MOV     A,#0x4a
+        XRL     A,R0
+        JNZ     ??HidDev_ReadAttrCB_20
+        MOV     A,#0x2a
+        XRL     A,R1
+??HidDev_ReadAttrCB_20:
+        JNZ     ??HidDev_ReadAttrCB_21
+        MOV     DPTR,#hidDevConnSecure
+        MOVX    A,@DPTR
+        JZ      ??HidDev_ReadAttrCB_10
+        MOV     DPL,R6
+        MOV     DPH,R7
+        MOV     A,#0x4
+        SJMP    ??HidDev_ReadAttrCB_22
+??HidDev_ReadAttrCB_21:
+        MOV     A,#0x8
+        XRL     A,R0
+        JNZ     ??HidDev_ReadAttrCB_23
+        MOV     A,#0x29
+        XRL     A,R1
+??HidDev_ReadAttrCB_23:
+        JZ      ??HidDev_ReadAttrCB_24
+        MOV     A,#0x4e
+        XRL     A,R0
+        JNZ     ??HidDev_ReadAttrCB_25
+        MOV     A,#0x2a
+        XRL     A,R1
+??HidDev_ReadAttrCB_25:
+        JNZ     ??HidDev_ReadAttrCB_26
+        MOV     DPTR,#hidDevConnSecure
+        MOVX    A,@DPTR
+        JNZ     ??HidDev_ReadAttrCB_27
+??HidDev_ReadAttrCB_10:
+        MOV     R1,#0xf
+        SJMP    ??HidDev_ReadAttrCB_3
+??HidDev_ReadAttrCB_27:
+        MOV     DPL,R6
+        MOV     DPH,R7
+        MOV     A,#0x1
+        MOVX    @DPTR,A
+        MOV     DPL,R2
+        MOV     DPH,R3
+        LCALL   ?Subroutine13 & 0xFFFF
+??CrossCallReturnLabel_42:
+        MOVX    A,@DPTR
+        MOV     DPL,?V0 + 0
+        MOV     DPH,?V0 + 1
+??HidDev_ReadAttrCB_14:
+        MOVX    @DPTR,A
+        SJMP    ??HidDev_ReadAttrCB_13
+??HidDev_ReadAttrCB_26:
+        MOV     A,#0x7
+        XRL     A,R0
+        JNZ     ??HidDev_ReadAttrCB_28
+        MOV     A,#0x29
+        XRL     A,R1
+??HidDev_ReadAttrCB_28:
+        JNZ     ??HidDev_ReadAttrCB_13
+??HidDev_ReadAttrCB_24:
+        MOV     DPL,R6
+        MOV     DPH,R7
+        MOV     A,#0x2
+??HidDev_ReadAttrCB_22:
+        LCALL   ?Subroutine7 & 0xFFFF
+??CrossCallReturnLabel_7:
+        LCALL   ?PUSH_XSTACK_I_TWO
+        MOV     DPL,R2
+        MOV     DPH,R3
+        MOVX    A,@DPTR
+        MOV     R4,A
+        INC     DPTR
+        MOVX    A,@DPTR
+??HidDev_ReadAttrCB_19:
+        MOV     R5,A
+        MOV     R2,?V0 + 0
+        MOV     R3,?V0 + 1
+        LCALL   ??osal_memcpy?relay
+        MOV     A,#0x2
+        LCALL   ?DEALLOC_XSTACK8
+//  667   {
+//  668     hidDevStartIdleTimer();
+??HidDev_ReadAttrCB_13:
+        ; Setup parameters for call to function hidDevStartIdleTimer
+        LCALL   ??hidDevStartIdleTimer?relay
+//  669   }
+//  670 
+//  671   return ( status );
+??HidDev_ReadAttrCB_12:
+        MOV     R1,?V0 + 2
+??HidDev_ReadAttrCB_3:
+        MOV     R7,#0xa
+        LJMP    ?BANKED_LEAVE_XDATA
+//  672 }
+//  673 
+//  674 /*********************************************************************
+//  675  * @fn      HidDev_WriteAttrCB
+//  676  *
+//  677  * @brief   HID Dev attribute read callback.
+//  678  *
+//  679  * @param   connHandle - connection message was received on
+//  680  * @param   pAttr - pointer to attribute
+//  681  * @param   pValue - pointer to data to be written
+//  682  * @param   len - length of data
+//  683  * @param   offset - offset of the first octet to be written
+//  684  * @param   complete - whether this is the last packet
+//  685  * @param   oper - whether to validate and/or write attribute value
+//  686  *
+//  687  * @return  Success or Failure
+//  688  */
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+//  689 bStatus_t HidDev_WriteAttrCB( uint16 connHandle, gattAttribute_t *pAttr,
+HidDev_WriteAttrCB:
+        CODE
+//  690                               uint8 *pValue, uint8 len, uint16 offset )
+//  691 {
+        MOV     A,#-0xe
+        LCALL   ?BANKED_ENTER_XDATA
+        ; Saved register size: 14
+        ; Auto size: 1
+        MOV     A,#-0x1
+        LCALL   ?ALLOC_XSTACK8
+        MOV     A,R1
+        MOV     DPL,?XSP + 0
+        MOV     DPH,?XSP + 1
+        MOVX    @DPTR,A
+        MOV     A,#0x11
+        LCALL   ?XSTACK_DISP0_8
+        LCALL   ?Subroutine17 & 0xFFFF
+//  692   bStatus_t status = SUCCESS;
+??CrossCallReturnLabel_25:
+        MOV     ?V0 + 0,#0x0
+//  693   hidRptMap_t *pRpt;
+//  694 
+//  695   // Make sure it's not a blob operation (no attributes in the profile are long)
+//  696   if ( offset > 0 )
+        MOV     A,R0
+        ORL     A,R1
+        JZ      ??HidDev_WriteAttrCB_0
+//  697   {
+//  698     return ( ATT_ERR_ATTR_NOT_LONG );
+        MOV     R1,#0xb
+        SJMP    ??HidDev_WriteAttrCB_1
+//  699   }
+//  700 
+//  701   uint16 uuid = BUILD_UINT16( pAttr->type.uuid[0], pAttr->type.uuid[1]);
+??HidDev_WriteAttrCB_0:
+        LCALL   ?Subroutine14 & 0xFFFF
+??CrossCallReturnLabel_18:
+        MOV     R6,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R1,A
+        MOV     A,R6
+        MOV     R0,A
+//  702 
+//  703   if ( uuid == HID_REPORT_UUID ||
+//  704        uuid == HID_BOOT_KEY_OUTPUT_UUID )
+        MOV     A,R4
+        ADD     A,#0x4
+        MOV     R6,A
+        MOV     A,R5
+        ADDC    A,#0x0
+        MOV     R7,A
+        MOV     A,#0xf
+        LCALL   ?XSTACK_DISP0_8
+        MOVX    A,@DPTR
+        MOV     ?V0 + 2,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     ?V0 + 3,A
+        MOV     A,#0x4d
+        XRL     A,R0
+        JNZ     ??HidDev_WriteAttrCB_2
+        MOV     A,#0x2a
+        XRL     A,R1
+??HidDev_WriteAttrCB_2:
+        JZ      ??HidDev_WriteAttrCB_3
+        MOV     A,#0x32
+        XRL     A,R0
+        JNZ     ??HidDev_WriteAttrCB_4
+        MOV     A,#0x2a
+        XRL     A,R1
+??HidDev_WriteAttrCB_4:
+        JNZ     ??HidDev_WriteAttrCB_5
+//  705   {
+//  706     // require encryption
+//  707     if ( hidDevConnSecure == FALSE )
+??HidDev_WriteAttrCB_3:
+        MOV     DPTR,#hidDevConnSecure
+        MOVX    A,@DPTR
+        JNZ     $+5
+        LJMP    ??HidDev_WriteAttrCB_6 & 0xFFFF
+//  708     {
+//  709       return ( ATT_ERR_INSUFFICIENT_ENCRYPT );
+//  710     }
+//  711 
+//  712     // find report ID in table
+//  713     if ((pRpt = hidDevRptByHandle(pAttr->handle)) != NULL)
+        ; Setup parameters for call to function hidDevRptByHandle
+        MOV     DPL,R6
+        MOV     DPH,R7
+        LCALL   ??Subroutine28_0 & 0xFFFF
+??CrossCallReturnLabel_47:
+        LCALL   ??hidDevRptByHandle?relay
+        MOV     ?V0 + 4,R2
+        MOV     ?V0 + 5,R3
+        MOV     R6,?V0 + 4
+        MOV     R7,?V0 + 5
+        MOV     A,R6
+        ORL     A,R7
+        JZ      ??HidDev_WriteAttrCB_7
+//  714     {
+//  715       // execute report callback
+//  716       status  = (*pHidDevCB->reportCB)( pRpt->id, pRpt->type, HID_DEV_OPER_WRITE,
+//  717                                         &len, pValue );
+        ; Setup parameters for indirect call
+        MOV     R0,#?V0 + 2
+        LCALL   ?PUSH_XSTACK_I_TWO
+        MOV     A,#0x2
+        LCALL   ?XSTACK_DISP0_8
+        MOV     R4,DPL
+        MOV     R5,DPH
+        MOV     R3,#0x0
+        LCALL   ?Subroutine8 & 0xFFFF
+//  718     }
+//  719   }
+??CrossCallReturnLabel_36:
+        LCALL   ?CALL_IND
+        MOV     A,#0x2
+        LCALL   ?DEALLOC_XSTACK8
+        MOV     A,R1
+        MOV     ?V0 + 0,A
+//  720   else if ( uuid == HID_CONTROL_POINT_UUID )
+//  721   {
+//  722     // require encryption
+//  723     if ( hidDevConnSecure == FALSE )
+//  724     {
+//  725       return ( ATT_ERR_INSUFFICIENT_ENCRYPT );
+//  726     }
+//  727 
+//  728     // Validate length and value range
+//  729     if ( len == 1 )
+//  730     {
+//  731       if ( pValue[0] == HID_CMD_SUSPEND ||  pValue[0] == HID_CMD_EXIT_SUSPEND )
+//  732       {
+//  733         // execute HID app event callback
+//  734         (*pHidDevCB->evtCB)( (pValue[0] == HID_CMD_SUSPEND) ?
+//  735                              HID_DEV_SUSPEND_EVT : HID_DEV_EXIT_SUSPEND_EVT );
+//  736       }
+//  737       else
+//  738       {
+//  739         status = ATT_ERR_INVALID_VALUE;
+//  740       }
+//  741     }
+//  742     else
+//  743     {
+//  744       status = ATT_ERR_INVALID_VALUE_SIZE;
+//  745     }
+//  746   }
+//  747   else if ( uuid == GATT_CLIENT_CHAR_CFG_UUID )
+//  748   {
+//  749     status = GATTServApp_ProcessCCCWriteReq( connHandle, pAttr, pValue, len,
+//  750                                              offset, GATT_CLIENT_CFG_NOTIFY );
+//  751     if ( status == SUCCESS )
+//  752     {
+//  753       uint16 charCfg = BUILD_UINT16( pValue[0], pValue[1] );
+//  754 
+//  755       // find report ID in table
+//  756       if ( (pRpt = hidDevRptByCccdHandle(pAttr->handle)) != NULL )
+//  757       {
+//  758         // execute report callback
+//  759         (*pHidDevCB->reportCB)( pRpt->id, pRpt->type,
+//  760                                 (charCfg == GATT_CLIENT_CFG_NOTIFY) ?
+//  761                                   HID_DEV_OPER_ENABLE : HID_DEV_OPER_DISABLE,
+//  762                                   &len, pValue );
+//  763       }
+//  764     }
+//  765   }
+//  766   else if ( uuid == HID_PROTOCOL_MODE_UUID )
+//  767   {
+//  768     // require encryption
+//  769     if ( hidDevConnSecure == FALSE )
+//  770     {
+//  771       return ( ATT_ERR_INSUFFICIENT_ENCRYPT );
+//  772     }
+//  773 
+//  774     if ( len == HID_PROTOCOL_MODE_LEN )
+//  775     {
+//  776       if ( pValue[0] == HID_PROTOCOL_MODE_BOOT ||
+//  777            pValue[0] == HID_PROTOCOL_MODE_REPORT )
+//  778       {
+//  779         pAttr->pValue[0] = pValue[0];
+//  780 
+//  781         // execute HID app event callback
+//  782         (*pHidDevCB->evtCB)( (pValue[0] == HID_PROTOCOL_MODE_BOOT) ?
+//  783                              HID_DEV_SET_BOOT_EVT : HID_DEV_SET_REPORT_EVT );
+//  784       }
+//  785       else
+//  786       {
+//  787         status = ATT_ERR_INVALID_VALUE;
+//  788       }
+//  789     }
+//  790     else
+//  791     {
+//  792       status = ATT_ERR_INVALID_VALUE_SIZE;
+//  793     }
+//  794   }
+//  795 
+//  796   // restart idle timer
+//  797   if (status == SUCCESS)
+??HidDev_WriteAttrCB_8:
+        MOV     A,?V0 + 0
+        JNZ     ??HidDev_WriteAttrCB_9
+//  798   {
+//  799     hidDevStartIdleTimer();
+??HidDev_WriteAttrCB_7:
+        ; Setup parameters for call to function hidDevStartIdleTimer
+        LCALL   ??hidDevStartIdleTimer?relay
+//  800   }
+//  801 
+//  802   return ( status );
+??HidDev_WriteAttrCB_9:
+        MOV     R1,?V0 + 0
+??HidDev_WriteAttrCB_1:
+        LJMP    ?Subroutine2 & 0xFFFF
+??HidDev_WriteAttrCB_5:
+        MOV     A,#0x4c
+        XRL     A,R0
+        JNZ     ??HidDev_WriteAttrCB_10
+        MOV     A,#0x2a
+        XRL     A,R1
+??HidDev_WriteAttrCB_10:
+        JNZ     ??HidDev_WriteAttrCB_11
+        MOV     DPTR,#hidDevConnSecure
+        MOVX    A,@DPTR
+        JNZ     $+5
+        LJMP    ??HidDev_WriteAttrCB_6 & 0xFFFF
+        MOV     DPL,?XSP + 0
+        MOV     DPH,?XSP + 1
+        MOVX    A,@DPTR
+        XRL     A,#0x1
+        JZ      $+5
+        LJMP    ??HidDev_WriteAttrCB_12 & 0xFFFF
+        MOV     DPL,?V0 + 2
+        MOV     DPH,?V0 + 3
+        MOVX    A,@DPTR
+        MOV     R0,A
+        JZ      ??HidDev_WriteAttrCB_13
+        MOV     A,#0x1
+        XRL     A,R0
+        JZ      $+5
+        LJMP    ??HidDev_WriteAttrCB_14 & 0xFFFF
+        MOV     R1,#0x1
+??HidDev_WriteAttrCB_15:
+        ; Setup parameters for indirect call
+        MOV     DPTR,#pHidDevCB
+        LCALL   ?Subroutine12 & 0xFFFF
+??CrossCallReturnLabel_15:
+        LCALL   ??Subroutine26_0 & 0xFFFF
+??CrossCallReturnLabel_41:
+        LCALL   ?CALL_IND
+        SJMP    ??HidDev_WriteAttrCB_7
+??HidDev_WriteAttrCB_13:
+        MOV     R1,#0x0
+        SJMP    ??HidDev_WriteAttrCB_15
+??HidDev_WriteAttrCB_11:
+        MOV     A,#0x2
+        XRL     A,R0
+        JNZ     ??HidDev_WriteAttrCB_16
+        MOV     A,#0x29
+        XRL     A,R1
+??HidDev_WriteAttrCB_16:
+        JZ      $+5
+        LJMP    ??HidDev_WriteAttrCB_17 & 0xFFFF
+        ; Setup parameters for call to function GATTServApp_ProcessCCCWriteReq
+        MOV     ?V0 + 0,#0x1
+        MOV     ?V0 + 1,#0x0
+        MOV     R0,#?V0 + 0
+        LCALL   ?PUSH_XSTACK_I_TWO
+        CLR     A
+        MOV     ?V0 + 0,A
+        MOV     R0,#?V0 + 0
+        LCALL   ?PUSH_XSTACK_I_TWO
+        MOV     R0,#?V0 + 2
+        LCALL   ?PUSH_XSTACK_I_TWO
+        MOV     A,#0x6
+        LCALL   ?XSTACK_DISP0_8
+        MOVX    A,@DPTR
+        MOV     R1,A
+        LCALL   ??GATTServApp_ProcessCCCWriteReq?relay
+        MOV     A,#0x6
+        LCALL   ?DEALLOC_XSTACK8
+        MOV     A,R1
+        MOV     ?V0 + 0,A
+        JZ      $+5
+        LJMP    ??HidDev_WriteAttrCB_8 & 0xFFFF
+        MOV     DPL,?V0 + 2
+        MOV     DPH,?V0 + 3
+        MOVX    A,@DPTR
+        MOV     R2,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R1,A
+        MOV     A,R2
+        ADD     A,#0x0
+        CLR     A
+        ADDC    A,R1
+        MOV     R3,A
+        MOV     DPL,R6
+        MOV     DPH,R7
+        MOVX    A,@DPTR
+        MOV     R4,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R5,A
+        LCALL   ?Subroutine16 & 0xFFFF
+??CrossCallReturnLabel_23:
+        MOV     R6,A
+        SJMP    ??HidDev_WriteAttrCB_18
+??HidDev_WriteAttrCB_19:
+        DEC     R6
+        MOV     A,R0
+        ADD     A,#0x7
+        MOV     R0,A
+        MOV     A,R1
+        ADDC    A,#0x0
+        MOV     R1,A
+??HidDev_WriteAttrCB_18:
+        MOV     A,R6
+        JNZ     $+5
+        LJMP    ??HidDev_WriteAttrCB_7 & 0xFFFF
+        MOV     DPL,R0
+        MOV     DPH,R1
+        INC     DPTR
+        INC     DPTR
+        MOVX    A,@DPTR
+        XRL     A,R4
+        JNZ     ??HidDev_WriteAttrCB_20
+        INC     DPTR
+        MOVX    A,@DPTR
+        XRL     A,R5
+??HidDev_WriteAttrCB_20:
+        JNZ     ??HidDev_WriteAttrCB_19
+        MOV     A,R0
+        MOV     R6,A
+        MOV     A,R1
+        MOV     R7,A
+        MOV     A,R6
+        ORL     A,R7
+        JNZ     $+5
+        LJMP    ??HidDev_WriteAttrCB_7 & 0xFFFF
+        MOV     A,#0x1
+        XRL     A,R2
+        JNZ     ??HidDev_WriteAttrCB_21
+        MOV     A,R3
+??HidDev_WriteAttrCB_21:
+        JNZ     ??HidDev_WriteAttrCB_22
+        MOV     R3,#0x2
+        SJMP    ??HidDev_WriteAttrCB_23
+??HidDev_WriteAttrCB_22:
+        MOV     R3,#0x3
+??HidDev_WriteAttrCB_23:
+        ; Setup parameters for indirect call
+        MOV     R0,#?V0 + 2
+        LCALL   ?PUSH_XSTACK_I_TWO
+        MOV     A,#0x2
+        LCALL   ?XSTACK_DISP0_8
+        MOV     R4,DPL
+        MOV     R5,DPH
+        LCALL   ?Subroutine8 & 0xFFFF
+??CrossCallReturnLabel_37:
+        LCALL   ?CALL_IND
+        MOV     A,#0x2
+        LCALL   ?DEALLOC_XSTACK8
+        LJMP    ??HidDev_WriteAttrCB_7 & 0xFFFF
+??HidDev_WriteAttrCB_17:
+        MOV     A,#0x4e
+        XRL     A,R0
+        JNZ     ??HidDev_WriteAttrCB_24
+        MOV     A,#0x2a
+        XRL     A,R1
+??HidDev_WriteAttrCB_24:
+        JZ      $+5
+        LJMP    ??HidDev_WriteAttrCB_7 & 0xFFFF
+        MOV     DPTR,#hidDevConnSecure
+        MOVX    A,@DPTR
+        JNZ     ??HidDev_WriteAttrCB_25
+??HidDev_WriteAttrCB_6:
+        MOV     R1,#0xf
+        LJMP    ??HidDev_WriteAttrCB_1 & 0xFFFF
+??HidDev_WriteAttrCB_25:
+        MOV     DPL,?XSP + 0
+        MOV     DPH,?XSP + 1
+        MOVX    A,@DPTR
+        XRL     A,#0x1
+        JNZ     ??HidDev_WriteAttrCB_12
+        MOV     DPL,?V0 + 2
+        MOV     DPH,?V0 + 3
+        MOVX    A,@DPTR
+        MOV     R0,A
+        JZ      ??HidDev_WriteAttrCB_26
+        MOV     A,#0x1
+        XRL     A,R0
+        JNZ     ??HidDev_WriteAttrCB_14
+??HidDev_WriteAttrCB_26:
+        MOV     A,R0
+        PUSH    A
+        MOV     DPL,R4
+        MOV     DPH,R5
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        LCALL   ?Subroutine13 & 0xFFFF
+??CrossCallReturnLabel_43:
+        POP     A
+        MOVX    @DPTR,A
+        MOV     DPL,?V0 + 2
+        MOV     DPH,?V0 + 3
+        MOVX    A,@DPTR
+        JNZ     ??HidDev_WriteAttrCB_27
+        MOV     R1,#0x2
+        SJMP    ??HidDev_WriteAttrCB_28
+??HidDev_WriteAttrCB_27:
+        MOV     R1,#0x3
+??HidDev_WriteAttrCB_28:
+        ; Setup parameters for indirect call
+        LJMP    ??HidDev_WriteAttrCB_15 & 0xFFFF
+??HidDev_WriteAttrCB_14:
+        MOV     ?V0 + 0,#-0x80
+        LJMP    ??HidDev_WriteAttrCB_9 & 0xFFFF
+??HidDev_WriteAttrCB_12:
+        MOV     ?V0 + 0,#0xd
+        LJMP    ??HidDev_WriteAttrCB_9 & 0xFFFF
+//  803 }
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+?Subroutine14:
+        MOV     DPL,R4
+        MOV     DPH,R5
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R0,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R1,A
+        MOV     DPL,R0
+        MOV     DPH,R1
+        MOVX    A,@DPTR
+        RET
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+?Subroutine8:
+        MOV     DPL,R6
+        MOV     DPH,R7
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R2,A
+        MOV     DPL,R6
+        MOV     DPH,R7
+        REQUIRE ??Subroutine24_0
+        ; // Fall through to label ??Subroutine24_0
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+??Subroutine24_0:
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R1,A
+        MOV     DPTR,#pHidDevCB
+        LCALL   ?Subroutine20 & 0xFFFF
+??CrossCallReturnLabel_39:
+        LCALL   ?Subroutine20 & 0xFFFF
+??CrossCallReturnLabel_40:
+        RET
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+?Subroutine20:
+        MOVX    A,@DPTR
+        MOV     R0,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     DPH,A
+        MOV     DPL,R0
+        RET
+//  804 
+//  805 /*********************************************************************
+//  806  * @fn      hidDev_ProcessOSALMsg
+//  807  *
+//  808  * @brief   Process an incoming task message.
+//  809  *
+//  810  * @param   pMsg - message to process
+//  811  *
+//  812  * @return  none
+//  813  */
+//  814 static void hidDev_ProcessOSALMsg( osal_event_hdr_t *pMsg )
+//  815 {
+//  816   switch ( pMsg->event )
+//  817   {
+//  818   case GATT_MSG_EVENT:
+//  819       hidDevProcessGattMsg( (gattMsgEvent_t *) pMsg );
+//  820       break;
+//  821 
+//  822   default:
+//  823       break;
+//  824   }
+//  825 }
+//  826 
+//  827 /*********************************************************************
+//  828  * @fn      hidDevProcessGattMsg
+//  829  *
+//  830  * @brief   Process GATT messages
+//  831  *
+//  832  * @return  none
+//  833  */
+//  834 static void hidDevProcessGattMsg( gattMsgEvent_t *pMsg )
+//  835 {
+//  836 
+//  837 }
+//  838 
+//  839 /*********************************************************************
+//  840  * @fn          hidDevHandleConnStatusCB
+//  841  *
+//  842  * @brief       Reset client char config.
+//  843  *
+//  844  * @param       connHandle - connection handle
+//  845  * @param       changeType - type of change
+//  846  *
+//  847  * @return      none
+//  848  */
+//  849 static void hidDevHandleConnStatusCB( uint16 connHandle, uint8 changeType )
+//  850 {
+//  851   uint8           i;
+//  852   hidRptMap_t     *p = pHidDevRptTbl;
+//  853   uint16          retHandle;
+//  854   gattAttribute_t *pAttr;
+//  855 
+//  856   // Make sure this is not loopback connection
+//  857   if ( connHandle != LOOPBACK_CONNHANDLE )
+//  858   {
+//  859     if ( ( changeType == LINKDB_STATUS_UPDATE_REMOVED )      ||
+//  860          ( ( changeType == LINKDB_STATUS_UPDATE_STATEFLAGS ) &&
+//  861            ( !linkDB_Up( connHandle ) ) ) )
+//  862     {
+//  863       for ( i = hidDevRptTblLen; i > 0; i--, p++ )
+//  864       {
+//  865         if ( p->cccdHandle != 0 )
+//  866         {
+//  867           if ( (pAttr = GATT_FindHandle(p->cccdHandle, &retHandle)) != NULL )
+//  868           {
+//  869             GATTServApp_InitCharCfg( connHandle, (gattCharCfg_t *) pAttr->pValue );
+//  870           }
+//  871         }
+//  872       }
+//  873     }
+//  874   }
+//  875 }
+//  876 
+//  877 /*********************************************************************
+//  878  * @fn      hidDevDisconnected
+//  879  *
+//  880  * @brief   Handle disconnect.
+//  881  *
+//  882  * @return  none
+//  883  */
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+//  884 static void hidDevDisconnected( void )
+hidDevDisconnected:
+        CODE
+//  885 {
+        MOV     A,#-0xe
+        LCALL   ?BANKED_ENTER_XDATA
+        ; Saved register size: 14
+        ; Auto size: 3
+        MOV     A,#-0x3
+        LCALL   ?ALLOC_XSTACK8
+//  886   // Stop idle timer
+//  887   hidDevStopIdleTimer();
+        ; Setup parameters for call to function osal_stop_timerEx
+        MOV     R2,#0x4
+        MOV     R3,#0x0
+        MOV     DPTR,#hidDevTaskId
+        MOVX    A,@DPTR
+        MOV     R1,A
+        LCALL   ??osal_stop_timerEx?relay
+//  888 
+//  889   // Reset client characteristic configuration descriptors
+//  890   Batt_HandleConnStatusCB( gapConnHandle, LINKDB_STATUS_UPDATE_REMOVED );
+        ; Setup parameters for call to function Batt_HandleConnStatusCB
+        LCALL   ?Subroutine9 & 0xFFFF
+??CrossCallReturnLabel_54:
+        LCALL   ??Batt_HandleConnStatusCB?relay
+//  891   ScanParam_HandleConnStatusCB( gapConnHandle, LINKDB_STATUS_UPDATE_REMOVED );
+        ; Setup parameters for call to function ScanParam_HandleConnStatusCB
+        LCALL   ?Subroutine9 & 0xFFFF
+??CrossCallReturnLabel_55:
+        LCALL   ??ScanParam_HandleConnStatusCB?relay
+//  892   hidDevHandleConnStatusCB( gapConnHandle, LINKDB_STATUS_UPDATE_REMOVED );
+        MOV     DPTR,#gapConnHandle
+        LCALL   ?Subroutine15 & 0xFFFF
+??CrossCallReturnLabel_20:
+        MOV     DPTR,#pHidDevRptTbl
+        LCALL   ?Subroutine17 & 0xFFFF
+??CrossCallReturnLabel_26:
+        MOV     ?V0 + 0,R0
+        MOV     ?V0 + 1,R1
+        MOV     A,#-0x2
+        XRL     A,R6
+        JNZ     ??hidDevDisconnected_0
+        MOV     A,#-0x1
+        XRL     A,R7
+??hidDevDisconnected_0:
+        JZ      ??hidDevDisconnected_1
+        MOV     DPTR,#hidDevRptTblLen
+        MOVX    A,@DPTR
+        MOV     ?V0 + 2,A
+        SJMP    ??hidDevDisconnected_2
+??hidDevDisconnected_3:
+        MOV     DPL,?V0 + 0
+        MOV     DPH,?V0 + 1
+        INC     DPTR
+        INC     DPTR
+        LCALL   ??Subroutine28_0 & 0xFFFF
+??CrossCallReturnLabel_48:
+        MOV     A,R2
+        ORL     A,R3
+        JZ      ??hidDevDisconnected_4
+        ; Setup parameters for call to function GATT_FindHandle
+        MOV     A,#0x1
+        LCALL   ?XSTACK_DISP0_8
+        MOV     R4,DPL
+        MOV     R5,DPH
+        LCALL   ??GATT_FindHandle?relay
+        MOV     DPL,R2
+        MOV     DPH,R3
+        MOV     A,DPL
+        ORL     A,DPH
+        JZ      ??hidDevDisconnected_4
+        ; Setup parameters for call to function GATTServApp_InitCharCfg
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R4,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R5,A
+        MOV     A,R6
+        MOV     R2,A
+        MOV     A,R7
+        MOV     R3,A
+        LCALL   ??GATTServApp_InitCharCfg?relay
+??hidDevDisconnected_4:
+        DEC     ?V0 + 2
+        MOV     A,?V0 + 0
+        ADD     A,#0x7
+        MOV     ?V0 + 0,A
+        MOV     A,?V0 + 1
+        ADDC    A,#0x0
+        MOV     ?V0 + 1,A
+??hidDevDisconnected_2:
+        MOV     A,?V0 + 2
+        JNZ     ??hidDevDisconnected_3
+//  893 
+//  894   // Reset state variables
+//  895   hidDevConnSecure = FALSE;
+??hidDevDisconnected_1:
+        MOV     DPTR,#hidDevConnSecure
+        CLR     A
+        MOVX    @DPTR,A
+//  896   hidProtocolMode = HID_PROTOCOL_MODE_REPORT;
+        MOV     DPTR,#hidProtocolMode
+        INC     A
+        MOVX    @DPTR,A
+//  897   hidDevPairingStarted = FALSE;
+        MOV     DPTR,#hidDevPairingStarted
+        CLR     A
+        MOVX    @DPTR,A
+//  898 
+//  899   // if bonded and normally connectable start advertising
+//  900   if ( ( hidDevBondCount() > 0 ) &&
+//  901        ( pHidDevCfg->hidFlags & HID_FLAGS_NORMALLY_CONNECTABLE ) )
+        ; Setup parameters for call to function hidDevBondCount
+        LCALL   ??hidDevBondCount?relay
+        MOV     A,R1
+        JZ      ??hidDevDisconnected_5
+        MOV     DPTR,#pHidDevCfg
+        LCALL   ?Subroutine12 & 0xFFFF
+??CrossCallReturnLabel_16:
+        MOV     C,0xE0 /* A   */.1
+        JNC     ??hidDevDisconnected_5
+//  902   {
+//  903     hidDevLowAdvertising();
+        ; Setup parameters for call to function GAP_SetParamValue
+        MOV     R4,#0x40
+        MOV     R5,#0x6
+        MOV     R2,#0x6
+        MOV     R3,#0x0
+        LCALL   ??GAP_SetParamValue?relay
+        ; Setup parameters for call to function GAP_SetParamValue
+        MOV     R4,#0x40
+        MOV     R5,#0x6
+        MOV     R2,#0x7
+        MOV     R3,#0x0
+        LCALL   ??GAP_SetParamValue?relay
+        ; Setup parameters for call to function GAP_SetParamValue
+        MOV     R4,#0x0
+        MOV     R5,#0x0
+        MOV     R2,#0x1
+        MOV     R3,#0x0
+        LCALL   ??GAP_SetParamValue?relay
+        LCALL   ?Subroutine6 & 0xFFFF
+??CrossCallReturnLabel_6:
+        LCALL   ??GAPRole_SetParameter?relay
+        LCALL   ?Subroutine4 & 0xFFFF
+??CrossCallReturnLabel_1:
+        LCALL   ??GAPRole_SetParameter?relay
+//  904   }
+//  905 }
+??hidDevDisconnected_5:
+        MOV     A,#0x3
+        SJMP    ??Subroutine25_0
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+?Subroutine12:
+        LCALL   ?Subroutine20 & 0xFFFF
+??CrossCallReturnLabel_38:
+        INC     DPTR
+        INC     DPTR
+        MOVX    A,@DPTR
+        RET
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+?Subroutine6:
+        MOV     DPL,?XSP + 0
+        MOV     DPH,?XSP + 1
+        MOV     A,#0x3
+        LCALL   ?Subroutine18 & 0xFFFF
+??CrossCallReturnLabel_29:
+        MOV     R3,A
+        RET
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+?Subroutine4:
+        LCALL   ?Subroutine19 & 0xFFFF
+??CrossCallReturnLabel_32:
+        MOV     R1,A
+        MOV     R2,#0x5
+        MOV     R3,#0x3
+        RET
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+?Subroutine2:
+        MOV     A,#0x1
+        REQUIRE ??Subroutine25_0
+        ; // Fall through to label ??Subroutine25_0
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+??Subroutine25_0:
+        LCALL   ?DEALLOC_XSTACK8
+        MOV     R7,#0x6
+        LJMP    ?BANKED_LEAVE_XDATA
+//  906 
+//  907 /*********************************************************************
+//  908  * @fn      hidDevGapStateCB
+//  909  *
+//  910  * @brief   Notification from the profile of a state change.
+//  911  *
+//  912  * @param   newState - new state
+//  913  *
+//  914  * @return  none
+//  915  */
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+//  916 static void hidDevGapStateCB( gaprole_States_t newState )
+hidDevGapStateCB:
+        CODE
+//  917 {
+        MOV     A,#-0x9
+        LCALL   ?BANKED_ENTER_XDATA
+        ; Saved register size: 9
+        ; Auto size: 1
+        MOV     A,#-0x1
+        LCALL   ?ALLOC_XSTACK8
+        MOV     A,R1
+        MOV     R6,A
+//  918   // if connected
+//  919   if ( newState == GAPROLE_CONNECTED )
+        MOV     A,#0x5
+        XRL     A,R6
+        JNZ     ??hidDevGapStateCB_0
+//  920   {
+//  921     // get connection handle
+//  922     GAPRole_GetParameter( GAPROLE_CONNHANDLE, &gapConnHandle );
+        ; Setup parameters for call to function GAPRole_GetParameter
+        MOV     R4,#gapConnHandle & 0xff
+        MOV     R5,#(gapConnHandle >> 8) & 0xff
+        MOV     R2,#0xe
+        MOV     R3,#0x3
+        LCALL   ??GAPRole_GetParameter?relay
+//  923 
+//  924     // connection not secure yet
+//  925     hidDevConnSecure = FALSE;
+        MOV     DPTR,#hidDevConnSecure
+        CLR     A
+        MOVX    @DPTR,A
+//  926 
+//  927     // don't start advertising when connection is closed
+//  928     uint8 param = FALSE;
+        MOV     DPL,?XSP + 0
+        MOV     DPH,?XSP + 1
+        LCALL   ?Subroutine5 & 0xFFFF
+//  929     GAPRole_SetParameter( GAPROLE_ADVERT_ENABLED, sizeof( uint8 ), &param );
+??CrossCallReturnLabel_4:
+        LCALL   ??GAPRole_SetParameter?relay
+//  930 
+//  931     // start idle timer
+//  932     hidDevStartIdleTimer();
+        ; Setup parameters for call to function hidDevStartIdleTimer
+        LCALL   ??hidDevStartIdleTimer?relay
+        SJMP    ??hidDevGapStateCB_1
+//  933   }
+//  934   // if disconnected
+//  935   else if ( hidDevGapState == GAPROLE_CONNECTED &&
+//  936             newState != GAPROLE_CONNECTED )
+??hidDevGapStateCB_0:
+        MOV     DPTR,#hidDevGapState
+        MOVX    A,@DPTR
+        XRL     A,#0x5
+        JNZ     ??hidDevGapStateCB_1
+//  937   {
+//  938     hidDevDisconnected();
+        ; Setup parameters for call to function hidDevDisconnected
+        LCALL   ??hidDevDisconnected?relay
+//  939     updateConnParams = TRUE;
+        MOV     DPTR,#updateConnParams
+        MOV     A,#0x1
+        MOVX    @DPTR,A
+//  940 
+//  941     if ( pairingStatus == SMP_PAIRING_FAILED_CONFIRM_VALUE )
+        MOV     DPTR,#pairingStatus
+        MOVX    A,@DPTR
+        XRL     A,#0x4
+        JNZ     ??hidDevGapStateCB_1
+//  942     {
+//  943       // bonding failed due to mismatched confirm values
+//  944       hidDevInitialAdvertising();
+        ; Setup parameters for call to function hidDevInitialAdvertising
+        LCALL   ??hidDevInitialAdvertising?relay
+//  945 
+//  946       pairingStatus = SUCCESS;
+        MOV     DPTR,#pairingStatus
+        CLR     A
+        MOVX    @DPTR,A
+//  947     }
+//  948   }
+//  949   // if started
+//  950   else if ( newState == GAPROLE_STARTED )
+//  951   {
+//  952     // nothing to do for now!
+//  953   }
+//  954 
+//  955   hidDevGapState = newState;
+??hidDevGapStateCB_1:
+        MOV     A,R6
+        MOV     DPTR,#hidDevGapState
+        MOVX    @DPTR,A
+//  956 }
+        LJMP    ?Subroutine0 & 0xFFFF
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+?Subroutine5:
+        LCALL   ??Subroutine21_0 & 0xFFFF
+??CrossCallReturnLabel_33:
+        MOV     R1,#0x1
+        MOV     R2,#0x5
+        MOV     R3,#0x3
+        RET
+//  957 
+//  958 /*********************************************************************
+//  959  * @fn      hidDevPairStateCB
+//  960  *
+//  961  * @brief   Pairing state callback.
+//  962  *
+//  963  * @return  none
+//  964  */
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+//  965 static void hidDevPairStateCB( uint16 connHandle, uint8 state, uint8 status )
+hidDevPairStateCB:
+        CODE
+//  966 {
+        MOV     A,#-0x9
+        LCALL   ?BANKED_ENTER_XDATA
+        ; Saved register size: 9
+        ; Auto size: 0
+        MOV     A,R1
+        MOV     R6,A
+        MOV     A,R4
+        MOV     R7,A
+//  967   if ( state == GAPBOND_PAIRING_STATE_STARTED )
+        MOV     A,R6
+        JNZ     ??hidDevPairStateCB_0
+//  968   {
+//  969     hidDevPairingStarted = TRUE;
+        MOV     DPTR,#hidDevPairingStarted
+        MOV     A,#0x1
+        SJMP    ??hidDevPairStateCB_1
+//  970   }
+//  971   else if ( state == GAPBOND_PAIRING_STATE_COMPLETE )
+??hidDevPairStateCB_0:
+        MOV     A,#0x1
+        XRL     A,R6
+        JNZ     ??hidDevPairStateCB_2
+//  972   {
+//  973     hidDevPairingStarted = FALSE;
+        MOV     DPTR,#hidDevPairingStarted
+        CLR     A
+        MOVX    @DPTR,A
+//  974 
+//  975     if ( status == SUCCESS )
+        MOV     A,R7
+        JNZ     ??hidDevPairStateCB_3
+//  976     {
+//  977       hidDevConnSecure = TRUE;
+        MOV     DPTR,#hidDevConnSecure
+        MOV     A,#0x1
+        MOVX    @DPTR,A
+//  978     }
+//  979 
+//  980     pairingStatus = status;
+??hidDevPairStateCB_3:
+        MOV     A,R7
+        MOV     DPTR,#pairingStatus
+??hidDevPairStateCB_1:
+        MOVX    @DPTR,A
+        SJMP    ??hidDevPairStateCB_4
+//  981   }
+//  982   else if ( state == GAPBOND_PAIRING_STATE_BONDED )
+??hidDevPairStateCB_2:
+        MOV     A,#0x2
+        XRL     A,R6
+        JNZ     ??hidDevPairStateCB_4
+//  983   {
+//  984     if ( status == SUCCESS )
+        MOV     A,R7
+        JNZ     ??hidDevPairStateCB_4
+//  985     {
+//  986       hidDevConnSecure = TRUE;
+        MOV     DPTR,#hidDevConnSecure
+        MOV     A,#0x1
+        MOVX    @DPTR,A
+//  987 
+//  988 #if DEFAULT_SCAN_PARAM_NOTIFY_TEST == TRUE
+//  989       ScanParam_RefreshNotify( gapConnHandle );
+        ; Setup parameters for call to function ScanParam_RefreshNotify
+        LCALL   ??Subroutine27_0 & 0xFFFF
+//  990 #endif
+//  991     }
+//  992   }
+??CrossCallReturnLabel_51:
+        LCALL   ??ScanParam_RefreshNotify?relay
+//  993 
+//  994   if ( !reportQEmpty() && hidDevConnSecure )
+??hidDevPairStateCB_4:
+        LCALL   ?Subroutine10 & 0xFFFF
+??CrossCallReturnLabel_12:
+        JZ      ??hidDevPairStateCB_5
+        MOV     DPTR,#hidDevConnSecure
+        MOVX    A,@DPTR
+        JZ      ??hidDevPairStateCB_5
+//  995   {
+//  996     // Notify our task to send out pending reports
+//  997     osal_set_event( hidDevTaskId, HID_SEND_REPORT_EVT );
+        ; Setup parameters for call to function osal_set_event
+        MOV     R2,#0x8
+        MOV     R3,#0x0
+        MOV     DPTR,#hidDevTaskId
+        MOVX    A,@DPTR
+        MOV     R1,A
+        LCALL   ??osal_set_event?relay
+//  998   }
+//  999 }
+??hidDevPairStateCB_5:
+        LJMP    ??Subroutine23_0 & 0xFFFF
+// 1000 
+// 1001 /*********************************************************************
+// 1002  * @fn      hidDevPasscodeCB
+// 1003  *
+// 1004  * @brief   Passcode callback.
+// 1005  *
+// 1006  * @param   deviceAddr - address of device to pair with, and could be either public or random.
+// 1007  * @param   connectionHandle - connection handle
+// 1008  * @param   uiInputs - pairing User Interface Inputs - Ask user to input passcode
+// 1009  * @param   uiOutputs - pairing User Interface Outputs - Display passcode
+// 1010  *
+// 1011  * @return  none
+// 1012  */
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+// 1013 static void hidDevPasscodeCB( uint8 *deviceAddr, uint16 connectionHandle,
+hidDevPasscodeCB:
+        CODE
+// 1014                                         uint8 uiInputs, uint8 uiOutputs )
+// 1015 {
+        MOV     A,#-0xa
+        LCALL   ?BANKED_ENTER_XDATA
+        ; Saved register size: 10
+        ; Auto size: 0
+        MOV     ?V0 + 0,R1
+        MOV     A,#0xa
+        LCALL   ?XSTACK_DISP0_8
+        MOVX    A,@DPTR
+        MOV     ?V0 + 1,A
+// 1016   if ( pHidDevCB && pHidDevCB->passcodeCB )
+        MOV     DPTR,#pHidDevCB
+        LCALL   ?Subroutine17 & 0xFFFF
+??CrossCallReturnLabel_27:
+        MOV     A,R0
+        ORL     A,R1
+        JZ      ??hidDevPasscodeCB_0
+        MOV     DPTR,#pHidDevCB
+        LCALL   ?Subroutine13 & 0xFFFF
+??CrossCallReturnLabel_44:
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        LCALL   ?Subroutine15 & 0xFFFF
+??CrossCallReturnLabel_21:
+        MOV     A,R6
+        ORL     A,R7
+        JZ      ??hidDevPasscodeCB_0
+// 1017   {
+// 1018     // execute HID app passcode callback
+// 1019     (*pHidDevCB->passcodeCB)( deviceAddr, connectionHandle, uiInputs, uiOutputs );
+        ; Setup parameters for indirect call
+        MOV     R0,#?V0 + 1
+        LCALL   ?PUSH_XSTACK_I_ONE
+        MOV     R1,?V0 + 0
+        MOV     DPL,R6
+        MOV     DPH,R7
+        LCALL   ?CALL_IND
+        MOV     A,#0x1
+        LCALL   ?DEALLOC_XSTACK8
+        SJMP    ??hidDevPasscodeCB_1
+// 1020   }
+// 1021   else
+// 1022   {
+// 1023     // Send passcode response
+// 1024     GAPBondMgr_PasscodeRsp( connectionHandle, SUCCESS, 0 );
+??hidDevPasscodeCB_0:
+        ; Setup parameters for call to function GAPBondMgr_PasscodeRsp
+        MOV     DPTR,#__Constant_0
+        LCALL   ?PUSH_XSTACK8_X_FOUR
+        MOV     R1,#0x0
+        MOV     A,R4
+        MOV     R2,A
+        MOV     A,R5
+        MOV     R3,A
+        LCALL   ??GAPBondMgr_PasscodeRsp?relay
+        MOV     A,#0x4
+        LCALL   ?DEALLOC_XSTACK8
+// 1025   }
+// 1026 }
+??hidDevPasscodeCB_1:
+        MOV     R7,#0x2
+        LJMP    ?BANKED_LEAVE_XDATA
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+?Subroutine17:
+        MOVX    A,@DPTR
+        MOV     R0,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R1,A
+        RET
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+?Subroutine15:
+        MOVX    A,@DPTR
+        MOV     R6,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R7,A
+        RET
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+?Subroutine13:
+        MOVX    A,@DPTR
+        REQUIRE ??Subroutine26_0
+        ; // Fall through to label ??Subroutine26_0
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+??Subroutine26_0:
+        MOV     R0,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     DPH,A
+        MOV     DPL,R0
+        RET
+// 1027 
+// 1028 /*********************************************************************
+// 1029  * @fn      hidDevBattCB
+// 1030  *
+// 1031  * @brief   Callback function for battery service.
+// 1032  *
+// 1033  * @param   event - service event
+// 1034  *
+// 1035  * @return  none
+// 1036  */
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+// 1037 static void hidDevBattCB( uint8 event )
+hidDevBattCB:
+        CODE
+// 1038 {
+        MOV     A,#-0x9
+        LCALL   ?BANKED_ENTER_XDATA
+        ; Saved register size: 9
+        ; Auto size: 0
+        MOV     A,R1
+        MOV     R6,A
+// 1039   if ( event == BATT_LEVEL_NOTI_ENABLED )
+        MOV     A,#0x1
+        XRL     A,R6
+        JNZ     ??hidDevBattCB_0
+// 1040   {
+// 1041     // if connected start periodic measurement
+// 1042     if ( hidDevGapState == GAPROLE_CONNECTED )
+        MOV     DPTR,#hidDevGapState
+        MOVX    A,@DPTR
+        XRL     A,#0x5
+        JNZ     ??hidDevBattCB_1
+// 1043     {
+// 1044       osal_start_timerEx( hidDevTaskId, BATT_PERIODIC_EVT, DEFAULT_BATT_PERIOD );
+        ; Setup parameters for call to function osal_start_timerEx
+        MOV     DPTR,#__Constant_3a98
+        LCALL   ?PUSH_XSTACK8_X_FOUR
+        MOV     R2,#0x2
+        MOV     R3,#0x0
+        MOV     DPTR,#hidDevTaskId
+        MOVX    A,@DPTR
+        MOV     R1,A
+        LCALL   ??osal_start_timerEx?relay
+        MOV     A,#0x4
+        LCALL   ?DEALLOC_XSTACK8
+        SJMP    ??hidDevBattCB_1
+// 1045     }
+// 1046   }
+// 1047   else if ( event == BATT_LEVEL_NOTI_DISABLED )
+??hidDevBattCB_0:
+        MOV     A,#0x2
+        XRL     A,R6
+        JNZ     ??hidDevBattCB_1
+// 1048   {
+// 1049     // stop periodic measurement
+// 1050     osal_stop_timerEx( hidDevTaskId, BATT_PERIODIC_EVT );
+        ; Setup parameters for call to function osal_stop_timerEx
+        MOV     R2,#0x2
+        MOV     R3,#0x0
+        MOV     DPTR,#hidDevTaskId
+        MOVX    A,@DPTR
+        MOV     R1,A
+        LCALL   ??osal_stop_timerEx?relay
+// 1051   }
+// 1052 }
+??hidDevBattCB_1:
+        LJMP    ??Subroutine23_0 & 0xFFFF
+// 1053 
+// 1054 /*********************************************************************
+// 1055  * @fn      hidDevScanParamCB
+// 1056  *
+// 1057  * @brief   Callback function for scan parameter service.
+// 1058  *
+// 1059  * @param   event - service event
+// 1060  *
+// 1061  * @return  none
+// 1062  */
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+// 1063 static void hidDevScanParamCB( uint8 event )
+hidDevScanParamCB:
+        CODE
+// 1064 {
+        ; Saved register size: 0
+        ; Auto size: 0
+// 1065 
+// 1066 }
+        LJMP    ?BRET
+// 1067 
+// 1068 /*********************************************************************
+// 1069  * @fn      hidDevBattPeriodicTask
+// 1070  *
+// 1071  * @brief   Perform a periodic task for battery measurement.
+// 1072  *
+// 1073  * @param   none
+// 1074  *
+// 1075  * @return  none
+// 1076  */
+// 1077 static void hidDevBattPeriodicTask( void )
+// 1078 {
+// 1079   if ( hidDevGapState == GAPROLE_CONNECTED )
+// 1080   {
+// 1081     // perform battery level check
+// 1082     Batt_MeasLevel( );
+// 1083 
+// 1084     // Restart timer
+// 1085     osal_start_timerEx( hidDevTaskId, BATT_PERIODIC_EVT, DEFAULT_BATT_PERIOD );
+// 1086   }
+// 1087 }
+// 1088 
+// 1089 /*********************************************************************
+// 1090  * @fn      hidDevRptByHandle
+// 1091  *
+// 1092  * @brief   Find the HID report structure for the given handle.
+// 1093  *
+// 1094  * @param   handle - ATT handle
+// 1095  *
+// 1096  * @return  Pointer to HID report structure
+// 1097  */
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+// 1098 static hidRptMap_t *hidDevRptByHandle( uint16 handle )
+hidDevRptByHandle:
+        CODE
+// 1099 {
+        PUSH    DPL
+        PUSH    DPH
+        ; Saved register size: 2
+        ; Auto size: 0
+// 1100   uint8       i;
+// 1101   hidRptMap_t *p = pHidDevRptTbl;
+        LCALL   ?Subroutine16 & 0xFFFF
+// 1102 
+// 1103   for ( i = hidDevRptTblLen; i > 0; i--, p++ )
+??CrossCallReturnLabel_24:
+        MOV     R4,A
+        SJMP    ??hidDevRptByHandle_0
+??hidDevRptByHandle_1:
+        DEC     R4
+        MOV     A,R0
+        ADD     A,#0x7
+        MOV     R0,A
+        MOV     A,R1
+        ADDC    A,#0x0
+        MOV     R1,A
+??hidDevRptByHandle_0:
+        MOV     A,R4
+        JZ      ??hidDevRptByHandle_2
+// 1104   {
+// 1105     if ( p->handle == handle && p->mode == hidProtocolMode)
+        MOV     DPL,R0
+        MOV     DPH,R1
+        MOVX    A,@DPTR
+        XRL     A,R2
+        JNZ     ??hidDevRptByHandle_3
+        INC     DPTR
+        MOVX    A,@DPTR
+        XRL     A,R3
+??hidDevRptByHandle_3:
+        JNZ     ??hidDevRptByHandle_1
+        MOV     DPL,R0
+        MOV     DPH,R1
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R5,A
+        MOV     DPTR,#hidProtocolMode
+        MOVX    A,@DPTR
+        XRL     A,R5
+        JNZ     ??hidDevRptByHandle_1
+// 1106     {
+// 1107       return p;
+        MOV     A,R0
+        MOV     R2,A
+        MOV     A,R1
+        MOV     R3,A
+        SJMP    ??hidDevRptByHandle_4
+// 1108     }
+// 1109   }
+// 1110 
+// 1111   return NULL;
+??hidDevRptByHandle_2:
+        MOV     R2,#0x0
+        MOV     R3,#0x0
+??hidDevRptByHandle_4:
+        LJMP    ??Subroutine22_0 & 0xFFFF
+// 1112 }
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+?Subroutine16:
+        MOV     DPTR,#pHidDevRptTbl
+        MOVX    A,@DPTR
+        MOV     R0,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R1,A
+        MOV     DPTR,#hidDevRptTblLen
+        MOVX    A,@DPTR
+        RET
+// 1113 
+// 1114 /*********************************************************************
+// 1115  * @fn      hidDevRptByCccdHandle
+// 1116  *
+// 1117  * @brief   Find the HID report structure for the given CCC handle.
+// 1118  *
+// 1119  * @param   handle - ATT handle
+// 1120  *
+// 1121  * @return  Pointer to HID report structure
+// 1122  */
+// 1123 static hidRptMap_t *hidDevRptByCccdHandle( uint16 handle )
+// 1124 {
+// 1125   uint8       i;
+// 1126   hidRptMap_t *p = pHidDevRptTbl;
+// 1127 
+// 1128   for ( i = hidDevRptTblLen; i > 0; i--, p++ )
+// 1129   {
+// 1130     if ( p->cccdHandle == handle)
+// 1131     {
+// 1132       return p;
+// 1133     }
+// 1134   }
+// 1135 
+// 1136   return NULL;
+// 1137 }
+// 1138 
+// 1139 /*********************************************************************
+// 1140  * @fn      hidDevRptById
+// 1141  *
+// 1142  * @brief   Find the HID report structure for the Report ID and type.
+// 1143  *
+// 1144  * @param   id - HID report ID
+// 1145  * @param   type - HID report type
+// 1146  *
+// 1147  * @return  Pointer to HID report structure
+// 1148  */
+// 1149 static hidRptMap_t *hidDevRptById( uint8 id, uint8 type )
+// 1150 {
+// 1151   uint8       i;
+// 1152   hidRptMap_t *p = pHidDevRptTbl;
+// 1153 
+// 1154   for ( i = hidDevRptTblLen; i > 0; i--, p++ )
+// 1155   {
+// 1156     if ( p->id == id && p->type == type && p->mode == hidProtocolMode )
+// 1157     {
+// 1158       return p;
+// 1159     }
+// 1160   }
+// 1161 
+// 1162   return NULL;
+// 1163 }
+// 1164 
+// 1165 /*********************************************************************
+// 1166  * @fn      hidDevSendReport
+// 1167  *
+// 1168  * @brief   Send a HID report.
+// 1169  *
+// 1170  * @param   id - HID report ID.
+// 1171  * @param   type - HID report type.
+// 1172  * @param   len - Length of report.
+// 1173  * @param   pData - Report data.
+// 1174  *
+// 1175  * @return  None.
+// 1176  */
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+// 1177 static void hidDevSendReport( uint8 id, uint8 type, uint8 len, uint8 *pData )
+hidDevSendReport:
+        CODE
+// 1178 {
+        MOV     A,#-0x10
+        LCALL   ?BANKED_ENTER_XDATA
+        ; Saved register size: 16
+        ; Auto size: 25
+        MOV     A,#-0x19
+        LCALL   ?ALLOC_XSTACK8
+        MOV     ?V0 + 0,R1
+        MOV     ?V0 + 1,R2
+        MOV     ?V0 + 2,R3
+        MOV     ?V0 + 4,R4
+        MOV     ?V0 + 5,R5
+// 1179   hidRptMap_t           *pRpt;
+// 1180   gattAttribute_t       *pAttr;
+// 1181   attHandleValueNoti_t  noti;
+// 1182   uint16                retHandle;
+// 1183 
+// 1184   // get att handle for report
+// 1185   if ( (pRpt = hidDevRptById(id, type)) != NULL )
+        MOV     DPTR,#pHidDevRptTbl
+        LCALL   ?Subroutine15 & 0xFFFF
+??CrossCallReturnLabel_22:
+        MOV     DPTR,#hidDevRptTblLen
+        MOVX    A,@DPTR
+        MOV     R0,A
+        SJMP    ??hidDevSendReport_0
+??hidDevSendReport_1:
+        DEC     R0
+        MOV     A,R6
+        ADD     A,#0x7
+        MOV     R6,A
+        MOV     A,R7
+        ADDC    A,#0x0
+        MOV     R7,A
+??hidDevSendReport_0:
+        MOV     A,R0
+        JNZ     $+5
+        LJMP    ??hidDevSendReport_2 & 0xFFFF
+        MOV     DPL,R6
+        MOV     DPH,R7
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        MOVX    A,@DPTR
+        XRL     A,?V0 + 0
+        JNZ     ??hidDevSendReport_1
+        MOV     DPL,R6
+        MOV     DPH,R7
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        MOVX    A,@DPTR
+        XRL     A,?V0 + 1
+        JNZ     ??hidDevSendReport_1
+        MOV     DPL,R6
+        MOV     DPH,R7
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R1,A
+        MOV     DPTR,#hidProtocolMode
+        MOVX    A,@DPTR
+        XRL     A,R1
+        JNZ     ??hidDevSendReport_1
+        MOV     A,R6
+        ORL     A,R7
+        JZ      ??hidDevSendReport_2
+// 1186   {
+// 1187     // if notifications are enabled
+// 1188     if ( (pAttr = GATT_FindHandle(pRpt->cccdHandle, &retHandle)) != NULL )
+        ; Setup parameters for call to function GATT_FindHandle
+        MOV     DPL,?XSP + 0
+        MOV     DPH,?XSP + 1
+        MOV     R4,DPL
+        MOV     R5,DPH
+        MOV     DPL,R6
+        MOV     DPH,R7
+        INC     DPTR
+        INC     DPTR
+        LCALL   ??Subroutine28_0 & 0xFFFF
+??CrossCallReturnLabel_49:
+        LCALL   ??GATT_FindHandle?relay
+        MOV     DPL,R2
+        MOV     DPH,R3
+        MOV     A,DPL
+        ORL     A,DPH
+        JZ      ??hidDevSendReport_2
+// 1189     {
+// 1190       uint16 value;
+// 1191 
+// 1192       value  = GATTServApp_ReadCharCfg( gapConnHandle, (gattCharCfg_t *) pAttr->pValue );
+// 1193       if ( value & GATT_CLIENT_CFG_NOTIFY )
+        ; Setup parameters for call to function GATTServApp_ReadCharCfg
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R4,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R5,A
+        LCALL   ??Subroutine27_0 & 0xFFFF
+??CrossCallReturnLabel_52:
+        LCALL   ??GATTServApp_ReadCharCfg?relay
+        MOV     A,R2
+        MOV     C,0xE0 /* A   */.0
+        JNC     ??hidDevSendReport_2
+// 1194       {
+// 1195         // send notification
+// 1196         noti.handle = pRpt->handle;
+        MOV     DPL,R6
+        MOV     DPH,R7
+        LCALL   ?Subroutine17 & 0xFFFF
+??CrossCallReturnLabel_28:
+        MOV     A,#0x2
+        LCALL   ?XSTACK_DISP0_8
+        MOV     A,R0
+        MOVX    @DPTR,A
+        INC     DPTR
+        MOV     A,R1
+        MOVX    @DPTR,A
+// 1197         noti.len = len;
+        MOV     A,#0x4
+        LCALL   ?XSTACK_DISP0_8
+        MOV     A,?V0 + 2
+        LCALL   ?Subroutine7 & 0xFFFF
+// 1198         osal_memcpy(noti.value, pData, len);
+??CrossCallReturnLabel_8:
+        LCALL   ?PUSH_XSTACK_I_TWO
+        MOV     R4,?V0 + 4
+        MOV     R5,?V0 + 5
+        MOV     A,#0x7
+        LCALL   ?XSTACK_DISP0_8
+        MOV     R2,DPL
+        MOV     R3,DPH
+        LCALL   ??osal_memcpy?relay
+        MOV     A,#0x2
+        LCALL   ?DEALLOC_XSTACK8
+// 1199         GATT_Notification( gapConnHandle, &noti, FALSE );
+        ; Setup parameters for call to function GATT_Notification
+        MOV     R1,#0x0
+        MOV     A,#0x2
+        LCALL   ?XSTACK_DISP0_8
+        MOV     R4,DPL
+        MOV     R5,DPH
+        LCALL   ??Subroutine27_0 & 0xFFFF
+??CrossCallReturnLabel_53:
+        LCALL   ??GATT_Notification?relay
+// 1200 
+// 1201         // start idle timer
+// 1202         hidDevStartIdleTimer();
+        ; Setup parameters for call to function hidDevStartIdleTimer
+        LCALL   ??hidDevStartIdleTimer?relay
+// 1203       }
+// 1204     }
+// 1205   }
+// 1206 }
+??hidDevSendReport_2:
+        MOV     A,#0x19
+        LCALL   ?DEALLOC_XSTACK8
+        MOV     R7,#0x8
+        LJMP    ?BANKED_LEAVE_XDATA
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+?Subroutine9:
+        MOV     R1,#0x1
+        REQUIRE ??Subroutine27_0
+        ; // Fall through to label ??Subroutine27_0
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+??Subroutine27_0:
+        MOV     DPTR,#gapConnHandle
+        REQUIRE ??Subroutine28_0
+        ; // Fall through to label ??Subroutine28_0
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+??Subroutine28_0:
+        MOVX    A,@DPTR
+        MOV     R2,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R3,A
+        RET
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+?Subroutine7:
+        MOVX    @DPTR,A
+        ; Setup parameters for call to function osal_memcpy
+        ; Setup parameters for call to function osal_memcpy
+        MOV     ?V0 + 6,A
+        MOV     ?V0 + 7,#0x0
+        MOV     R0,#?V0 + 6
+        RET
+// 1207 
+// 1208 /*********************************************************************
+// 1209  * @fn      hidDevEnqueueReport
+// 1210  *
+// 1211  * @brief   Enqueue a HID report to be sent later.
+// 1212  *
+// 1213  * @param   id - HID report ID.
+// 1214  * @param   type - HID report type.
+// 1215  * @param   len - Length of report.
+// 1216  * @param   pData - Report data.
+// 1217  *
+// 1218  * @return  None.
+// 1219  */
+// 1220 static void hidDevEnqueueReport( uint8 id, uint8 type, uint8 len, uint8 *pData )
+// 1221 {
+// 1222   // Enqueue only if bonded
+// 1223   if ( hidDevBondCount() > 0 )
+// 1224   {
+// 1225     // Update last index
+// 1226     lastQIdx = ( lastQIdx + 1 ) % HID_DEV_REPORT_Q_SIZE;
+// 1227 
+// 1228     if ( lastQIdx == firstQIdx )
+// 1229     {
+// 1230       // Queue overflow; discard oldest report
+// 1231       firstQIdx = ( firstQIdx + 1 ) % HID_DEV_REPORT_Q_SIZE;
+// 1232     }
+// 1233 
+// 1234     // Save report
+// 1235     hidDevReportQ[lastQIdx].id = id;
+// 1236     hidDevReportQ[lastQIdx].type = type;
+// 1237     hidDevReportQ[lastQIdx].len = len;
+// 1238     osal_memcpy( hidDevReportQ[lastQIdx].data, pData, len );
+// 1239 
+// 1240     if ( hidDevConnSecure )
+// 1241     {
+// 1242       // Notify our task to send out pending reports
+// 1243       osal_set_event( hidDevTaskId, HID_SEND_REPORT_EVT );
+// 1244     }
+// 1245   }
+// 1246 }
+// 1247 
+// 1248 /*********************************************************************
+// 1249  * @fn      hidDevDequeueReport
+// 1250  *
+// 1251  * @brief   Dequeue a HID report to be sent out.
+// 1252  *
+// 1253  * @param   id - HID report ID.
+// 1254  * @param   type - HID report type.
+// 1255  * @param   len - Length of report.
+// 1256  * @param   pData - Report data.
+// 1257  *
+// 1258  * @return  None.
+// 1259  */
+// 1260 static hidDevReport_t *hidDevDequeueReport( void )
+// 1261 {
+// 1262   if ( reportQEmpty() )
+// 1263   {
+// 1264     return NULL;
+// 1265   }
+// 1266 
+// 1267   // Update first index
+// 1268   firstQIdx = ( firstQIdx + 1 ) % HID_DEV_REPORT_Q_SIZE;
+// 1269 
+// 1270   return ( &(hidDevReportQ[firstQIdx]) );
+// 1271 }
+// 1272 
+// 1273 /*********************************************************************
+// 1274  * @fn      hidDevHighAdvertising
+// 1275  *
+// 1276  * @brief   Start advertising at a high duty cycle.
+// 1277 
+// 1278  * @param   None.
+// 1279  *
+// 1280  * @return  None.
+// 1281  */
+// 1282 static void hidDevHighAdvertising( void )
+// 1283 {
+// 1284   uint8 param;
+// 1285 
+// 1286   VOID GAP_SetParamValue( TGAP_LIM_DISC_ADV_INT_MIN, HID_HIGH_ADV_INT_MIN );
+// 1287   VOID GAP_SetParamValue( TGAP_LIM_DISC_ADV_INT_MAX, HID_HIGH_ADV_INT_MAX );
+// 1288   VOID GAP_SetParamValue( TGAP_LIM_ADV_TIMEOUT, HID_HIGH_ADV_TIMEOUT );
+// 1289 
+// 1290   // Setup adverstising filter policy first
+// 1291   param = GAP_FILTER_POLICY_WHITE;
+// 1292   VOID GAPRole_SetParameter( GAPROLE_ADV_FILTER_POLICY, sizeof( uint8 ), &param );
+// 1293 
+// 1294   param = TRUE;
+// 1295   GAPRole_SetParameter( GAPROLE_ADVERT_ENABLED, sizeof( uint8 ), &param );
+// 1296 }
+// 1297 
+// 1298 /*********************************************************************
+// 1299  * @fn      hidDevLowAdvertising
+// 1300  *
+// 1301  * @brief   Start advertising at a low duty cycle.
+// 1302  *
+// 1303  * @param   None.
+// 1304  *
+// 1305  * @return  None.
+// 1306  */
+// 1307 static void hidDevLowAdvertising( void )
+// 1308 {
+// 1309   uint8 param;
+// 1310 
+// 1311   VOID GAP_SetParamValue( TGAP_LIM_DISC_ADV_INT_MIN, HID_LOW_ADV_INT_MIN );
+// 1312   VOID GAP_SetParamValue( TGAP_LIM_DISC_ADV_INT_MAX, HID_LOW_ADV_INT_MAX );
+// 1313   VOID GAP_SetParamValue( TGAP_LIM_ADV_TIMEOUT, HID_LOW_ADV_TIMEOUT );
+// 1314 
+// 1315   // Setup adverstising filter policy first
+// 1316   param = GAP_FILTER_POLICY_WHITE;
+// 1317   VOID GAPRole_SetParameter( GAPROLE_ADV_FILTER_POLICY, sizeof( uint8 ), &param );
+// 1318 
+// 1319   param = TRUE;
+// 1320   VOID GAPRole_SetParameter( GAPROLE_ADVERT_ENABLED, sizeof( uint8 ), &param );
+// 1321 }
+// 1322 
+// 1323 /*********************************************************************
+// 1324  * @fn      hidDevInitialAdvertising
+// 1325  *
+// 1326  * @brief   Start advertising for initial connection
+// 1327  *
+// 1328  * @return  None.
+// 1329  */
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+// 1330 static void hidDevInitialAdvertising( void )
+hidDevInitialAdvertising:
+        CODE
+// 1331 {
+        PUSH    DPL
+        PUSH    DPH
+        ; Saved register size: 2
+        ; Auto size: 1
+        MOV     A,#-0x1
+        LCALL   ?ALLOC_XSTACK8
+// 1332   uint8 param;
+// 1333 
+// 1334   VOID GAP_SetParamValue( TGAP_LIM_DISC_ADV_INT_MIN, HID_INITIAL_ADV_INT_MIN );
+        ; Setup parameters for call to function GAP_SetParamValue
+        MOV     R4,#0x30
+        MOV     R5,#0x0
+        MOV     R2,#0x6
+        MOV     R3,#0x0
+        LCALL   ??GAP_SetParamValue?relay
+// 1335   VOID GAP_SetParamValue( TGAP_LIM_DISC_ADV_INT_MAX, HID_INITIAL_ADV_INT_MAX );
+        ; Setup parameters for call to function GAP_SetParamValue
+        MOV     R4,#0x50
+        MOV     R5,#0x0
+        MOV     R2,#0x7
+        MOV     R3,#0x0
+        LCALL   ??GAP_SetParamValue?relay
+// 1336   VOID GAP_SetParamValue( TGAP_LIM_ADV_TIMEOUT, HID_INITIAL_ADV_TIMEOUT );
+        ; Setup parameters for call to function GAP_SetParamValue
+        MOV     R4,#0x60
+        MOV     R5,#-0x16
+        MOV     R2,#0x1
+        MOV     R3,#0x0
+        LCALL   ??GAP_SetParamValue?relay
+// 1337 
+// 1338   // Setup adverstising filter policy first
+// 1339   param = GAP_FILTER_POLICY_ALL;
+        MOV     DPL,?XSP + 0
+        MOV     DPH,?XSP + 1
+        CLR     A
+        LCALL   ?Subroutine18 & 0xFFFF
+// 1340   VOID GAPRole_SetParameter( GAPROLE_ADV_FILTER_POLICY, sizeof( uint8 ), &param );
+??CrossCallReturnLabel_30:
+        MOV     R3,#0x3
+        LCALL   ??GAPRole_SetParameter?relay
+// 1341 
+// 1342   param = TRUE;
+        LCALL   ?Subroutine4 & 0xFFFF
+// 1343   VOID GAPRole_SetParameter( GAPROLE_ADVERT_ENABLED, sizeof( uint8 ), &param );
+??CrossCallReturnLabel_2:
+        LCALL   ??GAPRole_SetParameter?relay
+// 1344 }
+        LJMP    ?Subroutine1 & 0xFFFF
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+?Subroutine18:
+        MOVX    @DPTR,A
+        ; Setup parameters for call to function GAPRole_SetParameter
+        ; Setup parameters for call to function GAPRole_SetParameter
+        ; Setup parameters for call to function GAPRole_SetParameter
+        MOV     R4,DPL
+        MOV     R5,DPH
+        MOV     R1,#0x1
+        MOV     R2,#0xd
+        RET
+// 1345 
+// 1346 /*********************************************************************
+// 1347  * @fn      hidDevBondCount
+// 1348  *
+// 1349  * @brief   Gets the total number of bonded devices.
+// 1350  *
+// 1351  * @param   None.
+// 1352  *
+// 1353  * @return  number of bonded devices.
+// 1354  */
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+// 1355 static uint8 hidDevBondCount( void )
+hidDevBondCount:
+        CODE
+// 1356 {
+        PUSH    DPL
+        PUSH    DPH
+        ; Saved register size: 2
+        ; Auto size: 1
+        MOV     A,#-0x1
+        LCALL   ?ALLOC_XSTACK8
+// 1357   uint8 bondCnt = 0;
+        MOV     DPL,?XSP + 0
+        MOV     DPH,?XSP + 1
+        CLR     A
+        LCALL   ??Subroutine21_0 & 0xFFFF
+// 1358 
+// 1359   VOID GAPBondMgr_GetParameter( GAPBOND_BOND_COUNT, &bondCnt );
+??CrossCallReturnLabel_34:
+        MOV     R2,#0xe
+        MOV     R3,#0x4
+        LCALL   ??GAPBondMgr_GetParameter?relay
+// 1360 
+// 1361   return ( bondCnt );
+        MOV     DPL,?XSP + 0
+        MOV     DPH,?XSP + 1
+        MOVX    A,@DPTR
+        MOV     R1,A
+        LJMP    ?Subroutine1 & 0xFFFF
+// 1362 }
+// 1363 
+// 1364 /*********************************************************************
+// 1365  * @fn      hidDevStartIdleTimer
+// 1366  *
+// 1367  * @brief   Start the idle timer.
+// 1368  *
+// 1369  * @return  None.
+// 1370  */
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+// 1371 static void hidDevStartIdleTimer( void )
+hidDevStartIdleTimer:
+        CODE
+// 1372 {
+        MOV     A,#-0xc
+        LCALL   ?BANKED_ENTER_XDATA
+        ; Saved register size: 12
+        ; Auto size: 0
+// 1373   if ( pHidDevCfg->idleTimeout > 0 )
+        MOV     DPTR,#pHidDevCfg
+        LCALL   ?Subroutine13 & 0xFFFF
+??CrossCallReturnLabel_45:
+        MOVX    A,@DPTR
+        MOV     ?V0 + 0,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     ?V0 + 1,A
+        MOV     A,?V0 + 0
+        ORL     A,?V0 + 1
+        JZ      ??hidDevStartIdleTimer_0
+// 1374   {
+// 1375     osal_start_timerEx( hidDevTaskId, HID_IDLE_EVT, pHidDevCfg->idleTimeout );
+        ; Setup parameters for call to function osal_start_timerEx
+        CLR     A
+        MOV     ?V0 + 2,A
+        MOV     ?V0 + 3,A
+        MOV     R0,#?V0 + 0
+        LCALL   ?PUSH_XSTACK_I_FOUR
+        MOV     R2,#0x4
+        MOV     R3,#0x0
+        MOV     DPTR,#hidDevTaskId
+        MOVX    A,@DPTR
+        MOV     R1,A
+        LCALL   ??osal_start_timerEx?relay
+        MOV     A,#0x4
+        LCALL   ?DEALLOC_XSTACK8
+// 1376   }
+// 1377 }
+??hidDevStartIdleTimer_0:
+        LJMP    ?Subroutine3 & 0xFFFF
+
+        RSEG XDATA_ID:CODE:NOROOT(0)
+`?<Initializer for updateConnParams>`:
+        DATA8
+        DB 1
+
+        RSEG XDATA_ID:CODE:NOROOT(0)
+`?<Initializer for hidDev_PeripheralCBs>`:
+        DATA16
+        DW ??hidDevGapStateCB?relay
+        DW 0H
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA32
+__Constant_ffffffff:
+        DD 4294967295
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA32
+__Constant_3a98:
+        DD 15000
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA32
+__Constant_0:
+        DD 0
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??HidDev_Init?relay:
+        CODE
+        LCALL   ?BDISPATCH
+        DATA24
+        DC24    HidDev_Init
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??HidDev_ProcessEvent?relay:
+        CODE
+        LCALL   ?BDISPATCH
+        DATA24
+        DC24    HidDev_ProcessEvent
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??HidDev_Register?relay:
+        CODE
+        LCALL   ?BDISPATCH
+        DATA24
+        DC24    HidDev_Register
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??HidDev_RegisterReports?relay:
+        CODE
+        LCALL   ?BDISPATCH
+        DATA24
+        DC24    HidDev_RegisterReports
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??HidDev_Report?relay:
+        CODE
+        LCALL   ?BDISPATCH
+        DATA24
+        DC24    HidDev_Report
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??HidDev_Close?relay:
+        CODE
+        LCALL   ?BDISPATCH
+        DATA24
+        DC24    HidDev_Close
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??HidDev_SetParameter?relay:
+        CODE
+        LCALL   ?BDISPATCH
+        DATA24
+        DC24    HidDev_SetParameter
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??HidDev_GetParameter?relay:
+        CODE
+        LCALL   ?BDISPATCH
+        DATA24
+        DC24    HidDev_GetParameter
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??HidDev_PasscodeRsp?relay:
+        CODE
+        LCALL   ?BDISPATCH
+        DATA24
+        DC24    HidDev_PasscodeRsp
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??HidDev_ReadAttrCB?relay:
+        CODE
+        LCALL   ?BDISPATCH
+        DATA24
+        DC24    HidDev_ReadAttrCB
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??HidDev_WriteAttrCB?relay:
+        CODE
+        LCALL   ?BDISPATCH
+        DATA24
+        DC24    HidDev_WriteAttrCB
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??hidDevDisconnected?relay:
+        CODE
+        LCALL   ?BDISPATCH
+        DATA24
+        DC24    hidDevDisconnected
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??hidDevGapStateCB?relay:
+        CODE
+        LCALL   ?BDISPATCH
+        DATA24
+        DC24    hidDevGapStateCB
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??hidDevPairStateCB?relay:
+        CODE
+        LCALL   ?BDISPATCH
+        DATA24
+        DC24    hidDevPairStateCB
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??hidDevPasscodeCB?relay:
+        CODE
+        LCALL   ?BDISPATCH
+        DATA24
+        DC24    hidDevPasscodeCB
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??hidDevBattCB?relay:
+        CODE
+        LCALL   ?BDISPATCH
+        DATA24
+        DC24    hidDevBattCB
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??hidDevScanParamCB?relay:
+        CODE
+        LCALL   ?BDISPATCH
+        DATA24
+        DC24    hidDevScanParamCB
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??hidDevRptByHandle?relay:
+        CODE
+        LCALL   ?BDISPATCH
+        DATA24
+        DC24    hidDevRptByHandle
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??hidDevSendReport?relay:
+        CODE
+        LCALL   ?BDISPATCH
+        DATA24
+        DC24    hidDevSendReport
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??hidDevInitialAdvertising?relay:
+        CODE
+        LCALL   ?BDISPATCH
+        DATA24
+        DC24    hidDevInitialAdvertising
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??hidDevBondCount?relay:
+        CODE
+        LCALL   ?BDISPATCH
+        DATA24
+        DC24    hidDevBondCount
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??hidDevStartIdleTimer?relay:
+        CODE
+        LCALL   ?BDISPATCH
+        DATA24
+        DC24    hidDevStartIdleTimer
+
+        END
+// 1378 
+// 1379 /*********************************************************************
+// 1380  * @fn      hidDevStopIdleTimer
+// 1381  *
+// 1382  * @brief   Stop the idle timer.
+// 1383  *
+// 1384  * @return  None.
+// 1385  */
+// 1386 static void hidDevStopIdleTimer( void )
+// 1387 {
+// 1388   osal_stop_timerEx( hidDevTaskId, HID_IDLE_EVT );
+// 1389 }
+// 1390 
+// 1391 /*********************************************************************
+// 1392 *********************************************************************/
+// 
+// 2 964 bytes in segment BANKED_CODE
+//   132 bytes in segment BANK_RELAYS
+//     5 bytes in segment XDATA_I
+//     5 bytes in segment XDATA_ID
+//    16 bytes in segment XDATA_ROM_C
+//   137 bytes in segment XDATA_Z
+// 
+// 3 101 bytes of CODE  memory
+//     4 bytes of CONST memory (+ 12 bytes shared)
+//   142 bytes of XDATA memory
+//
+//Errors: none
+//Warnings: none

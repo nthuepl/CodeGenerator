@@ -1,0 +1,789 @@
+///////////////////////////////////////////////////////////////////////////////
+//                                                                            /
+// IAR C/C++ Compiler V8.20.1.40829 for 8051            30/May/2014  17:59:42 /
+// Copyright 2004-2012 IAR Systems AB.                                        /
+//                                                                            /
+//    Core               =  plain                                             /
+//    Code model         =  banked                                            /
+//    Data model         =  large                                             /
+//    Calling convention =  xdata reentrant                                   /
+//    Constant location  =  data_rom                                          /
+//    Dptr setup         =  1,16                                              /
+//                                                                            /
+//    Source file        =  D:\NTHU\¬ã¨s\Important\ThesisCode\Code\GitLabClou /
+//                          d\NewEcoExec\codegenerator\Device\EcoBT\Project\b /
+//                          le\CodeGenerator\Source\hal_i2c.c                 /
+//    Command line       =  -f D:\NTHU\¬ã¨s\Important\ThesisCode\Code\GitLabC /
+//                          loud\NewEcoExec\codegenerator\Device\EcoBT\Projec /
+//                          t\ble\CodeGenerator\CC2541DB\..\..\config\buildCo /
+//                          mponents.cfg (-DBROADCASTER_CFG=0x01              /
+//                          -DOBSERVER_CFG=0x02 -DPERIPHERAL_CFG=0x04         /
+//                          -DCENTRAL_CFG=0x08 -DADV_NCONN_CFG=0x01           /
+//                          -DADV_CONN_CFG=0x02 -DSCAN_CFG=0x04               /
+//                          -DINIT_CFG=0x08 -DADV_CFG=ADV_NCONN_CFG+ADV_CONN_ /
+//                          CFG -DLINK_CFG=ADV_CONN_CFG+INIT_CFG              /
+//                          -DFULL_CFG=INIT_CFG+SCAN_CFG+ADV_NCONN_CFG+ADV_CO /
+//                          NN_CFG) -f D:\NTHU\¬ã¨s\Important\ThesisCode\Code /
+//                          \GitLabCloud\NewEcoExec\codegenerator\Device\EcoB /
+//                          T\Project\ble\CodeGenerator\CC2541DB\buildConfig. /
+//                          cfg (-DHOST_CONFIG=PERIPHERAL_CFG                 /
+//                          -DGAP_PRIVACY_RECONNECT -DCC2541                  /
+//                          -DOAD_IMAGE_VERSION=0x0000                        /
+//                          "-DOAD_IMAGE_A_USER_ID='A', 'A', 'A', 'A'"        /
+//                          "-DOAD_IMAGE_B_USER_ID='B', 'B', 'B', 'B'")       /
+//                          D:\NTHU\¬ã¨s\Important\ThesisCode\Code\GitLabClou /
+//                          d\NewEcoExec\codegenerator\Device\EcoBT\Project\b /
+//                          le\CodeGenerator\Source\hal_i2c.c -D              /
+//                          INT_HEAP_LEN=900 -D HALNODEBUG -D                 /
+//                          OSAL_CBTIMER_NUM_TASKS=1 -D HAL_AES_DMA=TRUE -D   /
+//                          HAL_DMA=TRUE -D xPOWER_SAVING -D                  /
+//                          xPLUS_BROADCASTER -D HAL_LCD=FALSE -D             /
+//                          HAL_LED=TRUE -D HAL_ADC=TRUE -lB                  /
+//                          D:\NTHU\¬ã¨s\Important\ThesisCode\Code\GitLabClou /
+//                          d\NewEcoExec\codegenerator\Device\EcoBT\Project\b /
+//                          le\CodeGenerator\CC2541DB\CC2541\List\ -o         /
+//                          D:\NTHU\¬ã¨s\Important\ThesisCode\Code\GitLabClou /
+//                          d\NewEcoExec\codegenerator\Device\EcoBT\Project\b /
+//                          le\CodeGenerator\CC2541DB\CC2541\Obj\ -e --debug  /
+//                          --core=plain --dptr=16,1 --data_model=large       /
+//                          --code_model=banked --calling_convention=xdata_re /
+//                          entrant --place_constants=data_rom                /
+//                          --nr_virtual_regs 16 -I                           /
+//                          D:\NTHU\¬ã¨s\Important\ThesisCode\Code\GitLabClou /
+//                          d\NewEcoExec\codegenerator\Device\EcoBT\Project\b /
+//                          le\CodeGenerator\CC2541DB\..\..\common\ -I        /
+//                          D:\NTHU\¬ã¨s\Important\ThesisCode\Code\GitLabClou /
+//                          d\NewEcoExec\codegenerator\Device\EcoBT\Project\b /
+//                          le\CodeGenerator\CC2541DB\..\..\include\ -I       /
+//                          D:\NTHU\¬ã¨s\Important\ThesisCode\Code\GitLabClou /
+//                          d\NewEcoExec\codegenerator\Device\EcoBT\Project\b /
+//                          le\CodeGenerator\CC2541DB\..\..\..\..\Components\ /
+//                          hal\include\ -I D:\NTHU\¬ã¨s\Important\ThesisCode /
+//                          \Code\GitLabCloud\NewEcoExec\codegenerator\Device /
+//                          \EcoBT\Project\ble\CodeGenerator\CC2541DB\..\..\. /
+//                          .\..\Components\hal\target\CC2540EB\ -I           /
+//                          D:\NTHU\¬ã¨s\Important\ThesisCode\Code\GitLabClou /
+//                          d\NewEcoExec\codegenerator\Device\EcoBT\Project\b /
+//                          le\CodeGenerator\CC2541DB\..\..\..\..\Components\ /
+//                          osal\include\ -I D:\NTHU\¬ã¨s\Important\ThesisCod /
+//                          e\Code\GitLabCloud\NewEcoExec\codegenerator\Devic /
+//                          e\EcoBT\Project\ble\CodeGenerator\CC2541DB\..\..\ /
+//                          ..\..\Components\services\saddr\ -I               /
+//                          D:\NTHU\¬ã¨s\Important\ThesisCode\Code\GitLabClou /
+//                          d\NewEcoExec\codegenerator\Device\EcoBT\Project\b /
+//                          le\CodeGenerator\CC2541DB\..\..\..\..\Components\ /
+//                          ble\include\ -I D:\NTHU\¬ã¨s\Important\ThesisCode /
+//                          \Code\GitLabCloud\NewEcoExec\codegenerator\Device /
+//                          \EcoBT\Project\ble\CodeGenerator\CC2541DB\..\..\. /
+//                          .\..\Components\ble\controller\phy\ -I            /
+//                          D:\NTHU\¬ã¨s\Important\ThesisCode\Code\GitLabClou /
+//                          d\NewEcoExec\codegenerator\Device\EcoBT\Project\b /
+//                          le\CodeGenerator\CC2541DB\..\..\..\..\Components\ /
+//                          ble\controller\include\ -I                        /
+//                          D:\NTHU\¬ã¨s\Important\ThesisCode\Code\GitLabClou /
+//                          d\NewEcoExec\codegenerator\Device\EcoBT\Project\b /
+//                          le\CodeGenerator\CC2541DB\..\..\..\..\Components\ /
+//                          ble\hci\ -I D:\NTHU\¬ã¨s\Important\ThesisCode\Cod /
+//                          e\GitLabCloud\NewEcoExec\codegenerator\Device\Eco /
+//                          BT\Project\ble\CodeGenerator\CC2541DB\..\..\..\.. /
+//                          \Components\ble\host\ -I                          /
+//                          D:\NTHU\¬ã¨s\Important\ThesisCode\Code\GitLabClou /
+//                          d\NewEcoExec\codegenerator\Device\EcoBT\Project\b /
+//                          le\CodeGenerator\CC2541DB\..\..\common\cc2540\    /
+//                          -I D:\NTHU\¬ã¨s\Important\ThesisCode\Code\GitLabC /
+//                          loud\NewEcoExec\codegenerator\Device\EcoBT\Projec /
+//                          t\ble\CodeGenerator\CC2541DB\..\..\common\npi\npi /
+//                          _np\ -I D:\NTHU\¬ã¨s\Important\ThesisCode\Code\Gi /
+//                          tLabCloud\NewEcoExec\codegenerator\Device\EcoBT\P /
+//                          roject\ble\CodeGenerator\CC2541DB\..\..\Profiles\ /
+//                          Roles\ -I D:\NTHU\¬ã¨s\Important\ThesisCode\Code\ /
+//                          GitLabCloud\NewEcoExec\codegenerator\Device\EcoBT /
+//                          \Project\ble\CodeGenerator\CC2541DB\..\..\Profile /
+//                          s\SimpleProfile\ -I D:\NTHU\¬ã¨s\Important\Thesis /
+//                          Code\Code\GitLabCloud\NewEcoExec\codegenerator\De /
+//                          vice\EcoBT\Project\ble\CodeGenerator\CC2541DB\..\ /
+//                          ..\Profiles\DevInfo\ -I                           /
+//                          D:\NTHU\¬ã¨s\Important\ThesisCode\Code\GitLabClou /
+//                          d\NewEcoExec\codegenerator\Device\EcoBT\Project\b /
+//                          le\CodeGenerator\CC2541DB\..\..\Profiles\Accelero /
+//                          meter\ -I D:\NTHU\¬ã¨s\Important\ThesisCode\Code\ /
+//                          GitLabCloud\NewEcoExec\codegenerator\Device\EcoBT /
+//                          \Project\ble\CodeGenerator\CC2541DB\..\..\Profile /
+//                          s\EcoExecGATTProfile\ -I                          /
+//                          D:\NTHU\¬ã¨s\Important\ThesisCode\Code\GitLabClou /
+//                          d\NewEcoExec\codegenerator\Device\EcoBT\Project\b /
+//                          le\CodeGenerator\CC2541DB\..\..\Profiles\timeserv /
+//                          ice\ -I D:\NTHU\¬ã¨s\Important\ThesisCode\Code\Gi /
+//                          tLabCloud\NewEcoExec\codegenerator\Device\EcoBT\P /
+//                          roject\ble\CodeGenerator\CC2541DB\..\..\Profiles\ /
+//                          Batt\ -I D:\NTHU\¬ã¨s\Important\ThesisCode\Code\G /
+//                          itLabCloud\NewEcoExec\codegenerator\Device\EcoBT\ /
+//                          Project\ble\CodeGenerator\CC2541DB\..\..\Profiles /
+//                          \HIDDev\ -I D:\NTHU\¬ã¨s\Important\ThesisCode\Cod /
+//                          e\GitLabCloud\NewEcoExec\codegenerator\Device\Eco /
+//                          BT\Project\ble\CodeGenerator\CC2541DB\..\..\Profi /
+//                          les\ScanParam\ -Ohz                               /
+//    List file          =  D:\NTHU\¬ã¨s\Important\ThesisCode\Code\GitLabClou /
+//                          d\NewEcoExec\codegenerator\Device\EcoBT\Project\b /
+//                          le\CodeGenerator\CC2541DB\CC2541\List\hal_i2c.s51 /
+//                                                                            /
+//                                                                            /
+///////////////////////////////////////////////////////////////////////////////
+
+        NAME hal_i2c
+
+        RSEG DOVERLAY:DATA:NOROOT(0)
+        RSEG IOVERLAY:IDATA:NOROOT(0)
+        RSEG ISTACK:IDATA:NOROOT(0)
+        RSEG PSTACK:XDATA:NOROOT(0)
+        RSEG XSTACK:XDATA:NOROOT(0)
+
+        EXTERN ?BANKED_ENTER_XDATA
+        EXTERN ?BANKED_LEAVE_XDATA
+        EXTERN ?BDISPATCH
+        EXTERN ?BRET
+        EXTERN ?V0
+        EXTERN __INIT_XDATA_Z
+
+        PUBLIC ??HalI2CDisable?relay
+        PUBLIC ??HalI2CInit?relay
+        PUBLIC ??HalI2CRead?relay
+        PUBLIC ??HalI2CWrite?relay
+        PUBLIC HalI2CDisable
+        PUBLIC HalI2CInit
+        PUBLIC HalI2CRead
+        PUBLIC HalI2CWrite
+
+HalI2CDisable       SYMBOL "HalI2CDisable"
+??HalI2CDisable?relay SYMBOL "?relay", HalI2CDisable
+HalI2CInit          SYMBOL "HalI2CInit"
+??HalI2CInit?relay  SYMBOL "?relay", HalI2CInit
+HalI2CRead          SYMBOL "HalI2CRead"
+??HalI2CRead?relay  SYMBOL "?relay", HalI2CRead
+HalI2CWrite         SYMBOL "HalI2CWrite"
+??HalI2CWrite?relay SYMBOL "?relay", HalI2CWrite
+
+// D:\NTHU\¬ã¨s\Important\ThesisCode\Code\GitLabCloud\NewEcoExec\codegenerator\Device\EcoBT\Project\ble\CodeGenerator\Source\hal_i2c.c
+//    1 /**************************************************************************************************
+//    2   Filename:       hal_i2c.c
+//    3   Revised:        $Date: 2012-09-21 06:30:38 -0700 (Fri, 21 Sep 2012) $
+//    4   Revision:       $Revision: 31581 $
+//    5 
+//    6   Description:    This module defines the HAL I2C API for the CC2541ST. It
+//    7                   implements the I2C master.
+//    8 
+//    9 
+//   10   Copyright 2012 Texas Instruments Incorporated. All rights reserved.
+//   11 
+//   12   IMPORTANT: Your use of this Software is limited to those specific rights
+//   13   granted under the terms of a software license agreement between the user
+//   14   who downloaded the software, his/her employer (which must be your employer)
+//   15   and Texas Instruments Incorporated (the "License").  You may not use this
+//   16   Software unless you agree to abide by the terms of the License. The License
+//   17   limits your use, and you acknowledge, that the Software may not be modified,
+//   18   copied or distributed unless embedded on a Texas Instruments microcontroller
+//   19   or used solely and exclusively in conjunction with a Texas Instruments radio
+//   20   frequency transceiver, which is integrated into your product.  Other than for
+//   21   the foregoing purpose, you may not use, reproduce, copy, prepare derivative
+//   22   works of, modify, distribute, perform, display or sell this Software and/or
+//   23   its documentation for any purpose.
+//   24 
+//   25   YOU FURTHER ACKNOWLEDGE AND AGREE THAT THE SOFTWARE AND DOCUMENTATION ARE
+//   26   PROVIDED “AS IS” WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESS OR IMPLIED,
+//   27   INCLUDING WITHOUT LIMITATION, ANY WARRANTY OF MERCHANTABILITY, TITLE,
+//   28   NON-INFRINGEMENT AND FITNESS FOR A PARTICULAR PURPOSE. IN NO EVENT SHALL
+//   29   TEXAS INSTRUMENTS OR ITS LICENSORS BE LIABLE OR OBLIGATED UNDER CONTRACT,
+//   30   NEGLIGENCE, STRICT LIABILITY, CONTRIBUTION, BREACH OF WARRANTY, OR OTHER
+//   31   LEGAL EQUITABLE THEORY ANY DIRECT OR INDIRECT DAMAGES OR EXPENSES
+//   32   INCLUDING BUT NOT LIMITED TO ANY INCIDENTAL, SPECIAL, INDIRECT, PUNITIVE
+//   33   OR CONSEQUENTIAL DAMAGES, LOST PROFITS OR LOST DATA, COST OF PROCUREMENT
+//   34   OF SUBSTITUTE GOODS, TECHNOLOGY, SERVICES, OR ANY CLAIMS BY THIRD PARTIES
+//   35   (INCLUDING BUT NOT LIMITED TO ANY DEFENSE THEREOF), OR OTHER SIMILAR COSTS.
+//   36 
+//   37   Should you have any questions regarding your right to use this Software,
+//   38   contact Texas Instruments Incorporated at www.TI.com.
+//   39 **************************************************************************************************/
+//   40 
+//   41 /* ------------------------------------------------------------------------------------------------
+//   42  *                                          Includes
+//   43  * ------------------------------------------------------------------------------------------------
+//   44  */
+//   45 #include "hal_assert.h"
+//   46 #include "hal_board_cfg.h"
+//   47 #include "hal_i2c.h"
+//   48 #include "gatt.h"
+//   49 
+//   50 /* ------------------------------------------------------------------------------------------------
+//   51  *                                          Constants
+//   52  * ------------------------------------------------------------------------------------------------
+//   53  */
+//   54 #define I2C_ENS1            BV(6)
+//   55 #define I2C_STA             BV(5)
+//   56 #define I2C_STO             BV(4)
+//   57 #define I2C_SI              BV(3)
+//   58 #define I2C_AA              BV(2)
+//   59 #define I2C_MST_RD_BIT      BV(0)  // Master RD/WRn bit to be OR'ed with Slave address.
+//   60 
+//   61 #define I2C_CLOCK_MASK      0x83
+//   62 
+//   63 #define I2C_PXIFG           P2IFG
+//   64 #define I2C_IF              P2IF
+//   65 #define I2C_IE              BV(1)
+//   66 
+//   67 /* ------------------------------------------------------------------------------------------------
+//   68  *                                           Typedefs
+//   69  * ------------------------------------------------------------------------------------------------
+//   70  */
+//   71 
+//   72 typedef enum
+//   73 {
+//   74   // HAL_I2C_MASTER mode statuses.
+//   75   mstStarted   = 0x08,
+//   76   mstRepStart  = 0x10,
+//   77   mstAddrAckW  = 0x18,
+//   78   mstAddrNackW = 0x20,
+//   79   mstDataAckW  = 0x28,
+//   80   mstDataNackW = 0x30,
+//   81   mstLostArb   = 0x38,
+//   82   mstAddrAckR  = 0x40,
+//   83   mstAddrNackR = 0x48,
+//   84   mstDataAckR  = 0x50,
+//   85   mstDataNackR = 0x58,
+//   86 } i2cStatus_t;
+//   87 
+//   88 /* ------------------------------------------------------------------------------------------------
+//   89  *                                           Macros
+//   90  * ------------------------------------------------------------------------------------------------
+//   91  */
+//   92 
+//   93 #define I2C_WRAPPER_DISABLE() st( I2CWC    =     0x0C;              )
+//   94 #define I2C_CLOCK_RATE(x)     st( I2CCFG  &=    ~I2C_CLOCK_MASK;    \ 
+//   95                                   I2CCFG  |=     x;                 )
+//   96 #define I2C_SET_NACK()        st( I2CCFG &= ~I2C_AA; )
+//   97 #define I2C_SET_ACK()         st( I2CCFG |=  I2C_AA; )
+//   98 
+//   99 // Enable I2C bus
+//  100 #define I2C_ENABLE()          st( I2CCFG |= (I2C_ENS1); )
+//  101 #define I2C_DISABLE()         st( I2CCFG &= ~(I2C_ENS1); )
+//  102 
+//  103 // Must clear SI before setting STA and then STA must be manually cleared.
+//  104 #define I2C_STRT() st (             \ 
+//  105   I2CCFG &= ~I2C_SI;                \ 
+//  106   I2CCFG |= I2C_STA;                \ 
+//  107   while ((I2CCFG & I2C_SI) == 0);   \ 
+//  108   I2CCFG &= ~I2C_STA; \ 
+//  109 )
+//  110 
+//  111 // Must set STO before clearing SI.
+//  112 #define I2C_STOP() st (             \ 
+//  113   I2CCFG |= I2C_STO;                \ 
+//  114   I2CCFG &= ~I2C_SI;                \ 
+//  115   while ((I2CCFG & I2C_STO) != 0);  \ 
+//  116 )
+//  117 
+//  118 // Stop clock-stretching and then read when it arrives.
+//  119 #define I2C_READ(_X_) st (          \ 
+//  120   I2CCFG &= ~I2C_SI;                \ 
+//  121   while ((I2CCFG & I2C_SI) == 0);   \ 
+//  122   (_X_) = I2CDATA;                  \ 
+//  123 )
+//  124 
+//  125 // First write new data and then stop clock-stretching.
+//  126 #define I2C_WRITE(_X_) st (         \ 
+//  127   I2CDATA = (_X_);                  \ 
+//  128   I2CCFG &= ~I2C_SI;                \ 
+//  129   while ((I2CCFG & I2C_SI) == 0);   \ 
+//  130 )
+//  131 
+//  132 
+//  133 /* ------------------------------------------------------------------------------------------------
+//  134  *                                       Local Variables
+//  135  * ------------------------------------------------------------------------------------------------
+//  136  */
+
+        RSEG XDATA_Z:XDATA:NOROOT(0)
+        DATA8
+//  137 static uint8 i2cAddr;  // Target Slave address pre-shifted up by one leaving RD/WRn LSB as zero.
+i2cAddr:
+        DS 1
+        REQUIRE __INIT_XDATA_Z
+//  138 
+//  139 /**************************************************************************************************
+//  140  * @fn          i2cMstStrt
+//  141  *
+//  142  * @brief       Attempt to send an I2C bus START and Slave Address as an I2C bus Master.
+//  143  *
+//  144  * input parameters
+//  145  *
+//  146  * @param       RD_WRn - The LSB of the Slave Address as Read/~Write.
+//  147  *
+//  148  * @return      The I2C status of the START request or of the Slave Address Ack.
+//  149  */
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+//  150 static uint8 i2cMstStrt(uint8 RD_WRn)
+i2cMstStrt:
+        CODE
+//  151 {
+        PUSH    DPL
+        PUSH    DPH
+        ; Saved register size: 2
+        ; Auto size: 0
+        MOV     A,R1
+        MOV     R0,A
+//  152   I2C_STRT();
+        LCALL   ?Subroutine1 & 0xFFFF
+??CrossCallReturnLabel_2:
+        MOVX    A,@DPTR
+        SETB    0xE0 /* A   */.5
+        MOVX    @DPTR,A
+??i2cMstStrt_0:
+        MOVX    A,@DPTR
+        MOV     C,0xE0 /* A   */.3
+        JNC     ??i2cMstStrt_0
+        MOVX    A,@DPTR
+        CLR     0xE0 /* A   */.5
+        MOVX    @DPTR,A
+//  153 
+//  154   if (I2CSTAT == mstStarted) /* A start condition has been transmitted */
+        INC     DPTR
+        MOVX    A,@DPTR
+        XRL     A,#0x8
+        JNZ     ??i2cMstStrt_1
+//  155   {      
+//  156      // while(I2CSTAT != 0x40)
+//  157      //{
+//  158        I2C_WRITE(i2cAddr | RD_WRn);
+        MOV     DPTR,#i2cAddr
+        MOVX    A,@DPTR
+        ORL     A,R0
+        MOV     DPTR,#0x6232
+        MOVX    @DPTR,A
+        LCALL   ?Subroutine1 & 0xFFFF
+??CrossCallReturnLabel_3:
+        MOVX    A,@DPTR
+        MOV     C,0xE0 /* A   */.3
+        JNC     ??CrossCallReturnLabel_3
+//  159      //}
+//  160     
+//  161   }     
+//  162      return I2CSTAT;
+??i2cMstStrt_1:
+        MOV     DPTR,#0x6231
+        MOVX    A,@DPTR
+        MOV     R1,A
+        SJMP    ??Subroutine2_0
+//  163 }
+//  164 
+//  165 /**************************************************************************************************
+//  166  * @fn          HalI2CInit
+//  167  *
+//  168  * @brief       Initialize the I2C bus as a Master.
+//  169  *
+//  170  * input parameters
+//  171  *
+//  172  * @param       address - I2C slave address.
+//  173  * @param       clockRate - I2C clock rate.
+//  174  *
+//  175  * output parameters
+//  176  *
+//  177  * None.
+//  178  *
+//  179  * @return      None.
+//  180  */
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+//  181 void HalI2CInit(uint8 address, i2cClock_t clockRate)
+HalI2CInit:
+        CODE
+//  182 {
+        PUSH    DPL
+        PUSH    DPH
+        ; Saved register size: 2
+        ; Auto size: 0
+//  183   i2cAddr = address<<1;
+        MOV     A,R1
+        CLR     C
+        RLC     A
+        MOV     DPTR,#i2cAddr
+        MOVX    @DPTR,A
+//  184   I2C_WRAPPER_DISABLE();
+        MOV     DPTR,#0x6234
+        MOV     A,#0xc
+        MOVX    @DPTR,A
+//  185   I2C_CLOCK_RATE(clockRate);
+        MOV     DPTR,#0x6230
+        MOVX    A,@DPTR
+        ANL     A,#0x7c
+        MOVX    @DPTR,A
+        MOVX    A,@DPTR
+        ORL     A,R2
+        MOVX    @DPTR,A
+//  186   I2C_ENABLE();
+        MOVX    A,@DPTR
+        SETB    0xE0 /* A   */.6
+        REQUIRE ?Subroutine0
+        ; // Fall through to label ?Subroutine0
+//  187 }
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+?Subroutine0:
+        MOVX    @DPTR,A
+        REQUIRE ??Subroutine2_0
+        ; // Fall through to label ??Subroutine2_0
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+??Subroutine2_0:
+        POP     DPH
+        POP     DPL
+        LJMP    ?BRET
+//  188 
+//  189 /**************************************************************************************************
+//  190  * @fn          HalI2CRead
+//  191  *
+//  192  * @brief       Read from the I2C bus as a Master.
+//  193  *
+//  194  * input parameters
+//  195  *
+//  196  * @param       len - Number of bytes to read.
+//  197  * @param       pBuf - Pointer to the data buffer to put read bytes.
+//  198  *
+//  199  * output parameters
+//  200  *
+//  201  * None.
+//  202  *
+//  203  * @return      The number of bytes successfully read.
+//  204  */
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+//  205 uint8 HalI2CRead(uint8 len, uint8 *pBuf)
+HalI2CRead:
+        CODE
+//  206 {
+        MOV     A,#-0xa
+        LCALL   ?BANKED_ENTER_XDATA
+        ; Saved register size: 10
+        ; Auto size: 0
+        MOV     ?V0 + 1,R1
+        MOV     A,R2
+        MOV     R6,A
+        MOV     A,R3
+        MOV     R7,A
+//  207   uint8 cnt = 0;
+        MOV     ?V0 + 0,#0x0
+//  208 
+//  209   if (i2cMstStrt(I2C_MST_RD_BIT) != mstAddrAckR)
+        ; Setup parameters for call to function i2cMstStrt
+        MOV     R1,#0x1
+        LCALL   ??i2cMstStrt?relay
+        MOV     A,R1
+        XRL     A,#0x40
+        JNZ     ??HalI2CRead_0
+//  210   {
+//  211     len = 0;
+//  212    }
+//  213 
+//  214   // All bytes are ACK'd except for the last one which is NACK'd. If only
+//  215   // 1 byte is being read, a single NACK will be sent. Thus, we only want
+//  216   // to enable ACK if more than 1 byte is going to be read.
+//  217   if (len > 1)
+        MOV     A,?V0 + 1
+        CLR     C
+        SUBB    A,#0x2
+        JC      ??HalI2CRead_1
+//  218   {
+//  219     I2C_SET_ACK();
+        MOV     DPTR,#0x6230
+        MOVX    A,@DPTR
+        SETB    0xE0 /* A   */.2
+        SJMP    ??HalI2CRead_2
+//  220    
+//  221   }
+//  222 
+//  223   while (len > 0)
+??HalI2CRead_1:
+        MOV     A,?V0 + 1
+        JZ      ??HalI2CRead_0
+//  224   {
+//  225     // slave devices require NACK to be sent after reading last byte
+//  226     if (len == 1)
+        MOV     A,#0x1
+        XRL     A,?V0 + 1
+        JNZ     ??HalI2CRead_3
+//  227     {
+//  228       I2C_SET_NACK();
+        MOV     DPTR,#0x6230
+        MOVX    A,@DPTR
+        CLR     0xE0 /* A   */.2
+??HalI2CRead_2:
+        MOVX    @DPTR,A
+//  229     }
+//  230 
+//  231     // read a byte from the I2C interface
+//  232     I2C_READ(*pBuf++);
+??HalI2CRead_3:
+        LCALL   ?Subroutine1 & 0xFFFF
+??CrossCallReturnLabel_4:
+        MOVX    A,@DPTR
+        MOV     C,0xE0 /* A   */.3
+        JNC     ??CrossCallReturnLabel_4
+        MOV     DPTR,#0x6232
+        MOVX    A,@DPTR
+        MOV     DPL,R6
+        MOV     DPH,R7
+        MOVX    @DPTR,A
+        INC     DPTR
+        MOV     R6,DPL
+        MOV     R7,DPH
+//  233     cnt++;
+        INC     ?V0 + 0
+//  234     len--;
+        DEC     ?V0 + 1
+//  235 
+//  236     if (I2CSTAT != mstDataAckR)
+        MOV     DPTR,#0x6231
+        MOVX    A,@DPTR
+        XRL     A,#0x50
+        JZ      ??HalI2CRead_1
+//  237     {
+//  238       if (I2CSTAT != mstDataNackR)
+        MOVX    A,@DPTR
+        XRL     A,#0x58
+        JZ      ??HalI2CRead_0
+//  239       {
+//  240         // something went wrong, so don't count last byte
+//  241         cnt--;
+        DEC     ?V0 + 0
+//  242       }
+//  243       break;
+//  244     }
+//  245   }
+//  246   I2C_STOP();
+??HalI2CRead_0:
+        MOV     DPTR,#0x6230
+        MOVX    A,@DPTR
+        SETB    0xE0 /* A   */.4
+        MOVX    @DPTR,A
+        LCALL   ??Subroutine3_0 & 0xFFFF
+??CrossCallReturnLabel_0:
+        MOVX    A,@DPTR
+        MOV     C,0xE0 /* A   */.4
+        JC      ??CrossCallReturnLabel_0
+//  247 
+//  248   return cnt;
+        MOV     R1,?V0 + 0
+        MOV     R7,#0x2
+        LJMP    ?BANKED_LEAVE_XDATA
+//  249 }
+//  250 
+//  251 /**************************************************************************************************
+//  252  * @fn          HalI2CWrite
+//  253  *
+//  254  * @brief       Write to the I2C bus as a Master.
+//  255  *
+//  256  * input parameters
+//  257  *
+//  258  * @param       len - Number of bytes to write.
+//  259  * @param       pBuf - Pointer to the data buffer to write.
+//  260  *
+//  261  * output parameters
+//  262  *
+//  263  * None.
+//  264  *
+//  265  * @return      The number of bytes successfully written.
+//  266  */
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+//  267 uint8 HalI2CWrite(uint8 len, uint8 *pBuf)
+HalI2CWrite:
+        CODE
+//  268 {
+        MOV     A,#-0x9
+        LCALL   ?BANKED_ENTER_XDATA
+        ; Saved register size: 9
+        ; Auto size: 0
+        MOV     ?V0 + 0,R1
+        MOV     A,R2
+        MOV     R6,A
+        MOV     A,R3
+        MOV     R7,A
+//  269   if (i2cMstStrt(0) != mstAddrAckW)
+        ; Setup parameters for call to function i2cMstStrt
+        MOV     R1,#0x0
+        LCALL   ??i2cMstStrt?relay
+        MOV     A,R1
+        XRL     A,#0x18
+        JZ      ??HalI2CWrite_0
+//  270   {
+//  271     len = 0;
+        MOV     ?V0 + 0,#0x0
+//  272   }
+//  273 
+//  274   for (uint8 cnt = 0; cnt < len; cnt++)
+??HalI2CWrite_0:
+        MOV     R0,#0x0
+        SJMP    ??HalI2CWrite_1
+??HalI2CWrite_2:
+        INC     R0
+??HalI2CWrite_1:
+        MOV     A,R0
+        CLR     C
+        SUBB    A,?V0 + 0
+        JNC     ??HalI2CWrite_3
+//  275   {
+//  276     I2C_WRITE(*pBuf++);
+        MOV     DPL,R6
+        MOV     DPH,R7
+        MOVX    A,@DPTR
+        MOV     DPTR,#0x6232
+        MOVX    @DPTR,A
+        MOV     DPL,R6
+        MOV     DPH,R7
+        INC     DPTR
+        MOV     R6,DPL
+        MOV     R7,DPH
+        LCALL   ?Subroutine1 & 0xFFFF
+??CrossCallReturnLabel_5:
+        MOVX    A,@DPTR
+        MOV     C,0xE0 /* A   */.3
+        JNC     ??CrossCallReturnLabel_5
+//  277 
+//  278     if (I2CSTAT != mstDataAckW)
+        INC     DPTR
+        MOVX    A,@DPTR
+        XRL     A,#0x28
+        JZ      ??HalI2CWrite_2
+//  279     {
+//  280       if (I2CSTAT == mstDataNackW)
+        MOVX    A,@DPTR
+        XRL     A,#0x30
+        JNZ     ??HalI2CWrite_4
+//  281       {
+//  282         len = cnt + 1;
+        MOV     A,#0x1
+        ADD     A,R0
+        MOV     ?V0 + 0,A
+        SJMP    ??HalI2CWrite_3
+//  283       }
+//  284       else
+//  285       {
+//  286         len = cnt;
+??HalI2CWrite_4:
+        MOV     ?V0 + 0,R0
+//  287       }
+//  288       break;
+//  289     }
+//  290   }
+//  291  
+//  292   I2C_STOP();
+??HalI2CWrite_3:
+        MOV     DPTR,#0x6230
+        MOVX    A,@DPTR
+        SETB    0xE0 /* A   */.4
+        MOVX    @DPTR,A
+        LCALL   ??Subroutine3_0 & 0xFFFF
+??CrossCallReturnLabel_1:
+        MOVX    A,@DPTR
+        MOV     C,0xE0 /* A   */.4
+        JC      ??CrossCallReturnLabel_1
+//  293 
+//  294   return len;
+        MOV     R1,?V0 + 0
+        MOV     R7,#0x1
+        LJMP    ?BANKED_LEAVE_XDATA
+//  295 }
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+?Subroutine1:
+        MOV     DPTR,#0x6230
+        REQUIRE ??Subroutine3_0
+        ; // Fall through to label ??Subroutine3_0
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+??Subroutine3_0:
+        MOVX    A,@DPTR
+        CLR     0xE0 /* A   */.3
+        MOVX    @DPTR,A
+        RET
+//  296 
+//  297 /**************************************************************************************************
+//  298  * @fn          HalI2CDisable
+//  299  *
+//  300  * @brief       Places the I2C bus in inactive mode
+//  301  *
+//  302  * input parameters
+//  303  *
+//  304  * None.
+//  305  *
+//  306  * output parameters
+//  307  *
+//  308  * None.
+//  309  *
+//  310  * @return      None.
+//  311  */
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+//  312 void HalI2CDisable(void)
+HalI2CDisable:
+        CODE
+//  313 {
+        PUSH    DPL
+        PUSH    DPH
+        ; Saved register size: 2
+        ; Auto size: 0
+//  314   I2C_DISABLE();
+        MOV     DPTR,#0x6230
+        MOVX    A,@DPTR
+        CLR     0xE0 /* A   */.6
+        LJMP    ?Subroutine0 & 0xFFFF
+//  315 }
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??i2cMstStrt?relay:
+        CODE
+        LCALL   ?BDISPATCH
+        DATA24
+        DC24    i2cMstStrt
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??HalI2CInit?relay:
+        CODE
+        LCALL   ?BDISPATCH
+        DATA24
+        DC24    HalI2CInit
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??HalI2CRead?relay:
+        CODE
+        LCALL   ?BDISPATCH
+        DATA24
+        DC24    HalI2CRead
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??HalI2CWrite?relay:
+        CODE
+        LCALL   ?BDISPATCH
+        DATA24
+        DC24    HalI2CWrite
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??HalI2CDisable?relay:
+        CODE
+        LCALL   ?BDISPATCH
+        DATA24
+        DC24    HalI2CDisable
+
+        END
+//  316 
+//  317 /*********************************************************************
+//  318 *********************************************************************/
+// 
+// 333 bytes in segment BANKED_CODE
+//  30 bytes in segment BANK_RELAYS
+//   1 byte  in segment XDATA_Z
+// 
+// 363 bytes of CODE  memory
+//   1 byte  of XDATA memory
+//
+//Errors: none
+//Warnings: none

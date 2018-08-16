@@ -1,0 +1,927 @@
+///////////////////////////////////////////////////////////////////////////////
+//                                                                            /
+// IAR C/C++ Compiler V8.20.1.40829 for 8051            10/Jul/2014  13:44:15 /
+// Copyright 2004-2012 IAR Systems AB.                                        /
+//                                                                            /
+//    Core               =  plain                                             /
+//    Code model         =  banked                                            /
+//    Data model         =  large                                             /
+//    Calling convention =  xdata reentrant                                   /
+//    Constant location  =  data_rom                                          /
+//    Dptr setup         =  1,16                                              /
+//                                                                            /
+//    Source file        =  D:\NTHU\¬ã¨s\Important\ThesisCode\Code\GitLabClou /
+//                          d\NewEcoExec\codegenerator\Device\EcoBT\Project\b /
+//                          le\CodeGenerator\Source\epl_acc_lis331dl.c        /
+//    Command line       =  -f D:\NTHU\¬ã¨s\Important\ThesisCode\Code\GitLabC /
+//                          loud\NewEcoExec\codegenerator\Device\EcoBT\Projec /
+//                          t\ble\CodeGenerator\CC2541DB\..\..\config\buildCo /
+//                          mponents.cfg (-DBROADCASTER_CFG=0x01              /
+//                          -DOBSERVER_CFG=0x02 -DPERIPHERAL_CFG=0x04         /
+//                          -DCENTRAL_CFG=0x08 -DADV_NCONN_CFG=0x01           /
+//                          -DADV_CONN_CFG=0x02 -DSCAN_CFG=0x04               /
+//                          -DINIT_CFG=0x08 -DADV_CFG=ADV_NCONN_CFG+ADV_CONN_ /
+//                          CFG -DLINK_CFG=ADV_CONN_CFG+INIT_CFG              /
+//                          -DFULL_CFG=INIT_CFG+SCAN_CFG+ADV_NCONN_CFG+ADV_CO /
+//                          NN_CFG) -f D:\NTHU\¬ã¨s\Important\ThesisCode\Code /
+//                          \GitLabCloud\NewEcoExec\codegenerator\Device\EcoB /
+//                          T\Project\ble\CodeGenerator\CC2541DB\buildConfig. /
+//                          cfg (-DHOST_CONFIG=PERIPHERAL_CFG                 /
+//                          -DGAP_PRIVACY_RECONNECT -DCC2541                  /
+//                          -DOAD_IMAGE_VERSION=0x0000                        /
+//                          "-DOAD_IMAGE_A_USER_ID='A', 'A', 'A', 'A'"        /
+//                          "-DOAD_IMAGE_B_USER_ID='B', 'B', 'B', 'B'")       /
+//                          D:\NTHU\¬ã¨s\Important\ThesisCode\Code\GitLabClou /
+//                          d\NewEcoExec\codegenerator\Device\EcoBT\Project\b /
+//                          le\CodeGenerator\Source\epl_acc_lis331dl.c -D     /
+//                          INT_HEAP_LEN=900 -D HALNODEBUG -D                 /
+//                          OSAL_CBTIMER_NUM_TASKS=1 -D HAL_AES_DMA=TRUE -D   /
+//                          HAL_DMA=TRUE -D xPOWER_SAVING -D                  /
+//                          xPLUS_BROADCASTER -D HAL_LCD=FALSE -D             /
+//                          HAL_LED=TRUE -D HAL_ADC=TRUE -lB                  /
+//                          D:\NTHU\¬ã¨s\Important\ThesisCode\Code\GitLabClou /
+//                          d\NewEcoExec\codegenerator\Device\EcoBT\Project\b /
+//                          le\CodeGenerator\CC2541DB\CC2541\List\ -o         /
+//                          D:\NTHU\¬ã¨s\Important\ThesisCode\Code\GitLabClou /
+//                          d\NewEcoExec\codegenerator\Device\EcoBT\Project\b /
+//                          le\CodeGenerator\CC2541DB\CC2541\Obj\ -e --debug  /
+//                          --core=plain --dptr=16,1 --data_model=large       /
+//                          --code_model=banked --calling_convention=xdata_re /
+//                          entrant --place_constants=data_rom                /
+//                          --nr_virtual_regs 16 -I                           /
+//                          D:\NTHU\¬ã¨s\Important\ThesisCode\Code\GitLabClou /
+//                          d\NewEcoExec\codegenerator\Device\EcoBT\Project\b /
+//                          le\CodeGenerator\CC2541DB\..\..\common\ -I        /
+//                          D:\NTHU\¬ã¨s\Important\ThesisCode\Code\GitLabClou /
+//                          d\NewEcoExec\codegenerator\Device\EcoBT\Project\b /
+//                          le\CodeGenerator\CC2541DB\..\..\include\ -I       /
+//                          D:\NTHU\¬ã¨s\Important\ThesisCode\Code\GitLabClou /
+//                          d\NewEcoExec\codegenerator\Device\EcoBT\Project\b /
+//                          le\CodeGenerator\CC2541DB\..\..\..\..\Components\ /
+//                          hal\include\ -I D:\NTHU\¬ã¨s\Important\ThesisCode /
+//                          \Code\GitLabCloud\NewEcoExec\codegenerator\Device /
+//                          \EcoBT\Project\ble\CodeGenerator\CC2541DB\..\..\. /
+//                          .\..\Components\hal\target\CC2540EB\ -I           /
+//                          D:\NTHU\¬ã¨s\Important\ThesisCode\Code\GitLabClou /
+//                          d\NewEcoExec\codegenerator\Device\EcoBT\Project\b /
+//                          le\CodeGenerator\CC2541DB\..\..\..\..\Components\ /
+//                          osal\include\ -I D:\NTHU\¬ã¨s\Important\ThesisCod /
+//                          e\Code\GitLabCloud\NewEcoExec\codegenerator\Devic /
+//                          e\EcoBT\Project\ble\CodeGenerator\CC2541DB\..\..\ /
+//                          ..\..\Components\services\saddr\ -I               /
+//                          D:\NTHU\¬ã¨s\Important\ThesisCode\Code\GitLabClou /
+//                          d\NewEcoExec\codegenerator\Device\EcoBT\Project\b /
+//                          le\CodeGenerator\CC2541DB\..\..\..\..\Components\ /
+//                          ble\include\ -I D:\NTHU\¬ã¨s\Important\ThesisCode /
+//                          \Code\GitLabCloud\NewEcoExec\codegenerator\Device /
+//                          \EcoBT\Project\ble\CodeGenerator\CC2541DB\..\..\. /
+//                          .\..\Components\ble\controller\phy\ -I            /
+//                          D:\NTHU\¬ã¨s\Important\ThesisCode\Code\GitLabClou /
+//                          d\NewEcoExec\codegenerator\Device\EcoBT\Project\b /
+//                          le\CodeGenerator\CC2541DB\..\..\..\..\Components\ /
+//                          ble\controller\include\ -I                        /
+//                          D:\NTHU\¬ã¨s\Important\ThesisCode\Code\GitLabClou /
+//                          d\NewEcoExec\codegenerator\Device\EcoBT\Project\b /
+//                          le\CodeGenerator\CC2541DB\..\..\..\..\Components\ /
+//                          ble\hci\ -I D:\NTHU\¬ã¨s\Important\ThesisCode\Cod /
+//                          e\GitLabCloud\NewEcoExec\codegenerator\Device\Eco /
+//                          BT\Project\ble\CodeGenerator\CC2541DB\..\..\..\.. /
+//                          \Components\ble\host\ -I                          /
+//                          D:\NTHU\¬ã¨s\Important\ThesisCode\Code\GitLabClou /
+//                          d\NewEcoExec\codegenerator\Device\EcoBT\Project\b /
+//                          le\CodeGenerator\CC2541DB\..\..\common\cc2540\    /
+//                          -I D:\NTHU\¬ã¨s\Important\ThesisCode\Code\GitLabC /
+//                          loud\NewEcoExec\codegenerator\Device\EcoBT\Projec /
+//                          t\ble\CodeGenerator\CC2541DB\..\..\common\npi\npi /
+//                          _np\ -I D:\NTHU\¬ã¨s\Important\ThesisCode\Code\Gi /
+//                          tLabCloud\NewEcoExec\codegenerator\Device\EcoBT\P /
+//                          roject\ble\CodeGenerator\CC2541DB\..\..\Profiles\ /
+//                          Roles\ -I D:\NTHU\¬ã¨s\Important\ThesisCode\Code\ /
+//                          GitLabCloud\NewEcoExec\codegenerator\Device\EcoBT /
+//                          \Project\ble\CodeGenerator\CC2541DB\..\..\Profile /
+//                          s\SimpleProfile\ -I D:\NTHU\¬ã¨s\Important\Thesis /
+//                          Code\Code\GitLabCloud\NewEcoExec\codegenerator\De /
+//                          vice\EcoBT\Project\ble\CodeGenerator\CC2541DB\..\ /
+//                          ..\Profiles\DevInfo\ -I                           /
+//                          D:\NTHU\¬ã¨s\Important\ThesisCode\Code\GitLabClou /
+//                          d\NewEcoExec\codegenerator\Device\EcoBT\Project\b /
+//                          le\CodeGenerator\CC2541DB\..\..\Profiles\Accelero /
+//                          meter\ -I D:\NTHU\¬ã¨s\Important\ThesisCode\Code\ /
+//                          GitLabCloud\NewEcoExec\codegenerator\Device\EcoBT /
+//                          \Project\ble\CodeGenerator\CC2541DB\..\..\Profile /
+//                          s\EcoExecGATTProfile\ -I                          /
+//                          D:\NTHU\¬ã¨s\Important\ThesisCode\Code\GitLabClou /
+//                          d\NewEcoExec\codegenerator\Device\EcoBT\Project\b /
+//                          le\CodeGenerator\CC2541DB\..\..\Profiles\timeserv /
+//                          ice\ -I D:\NTHU\¬ã¨s\Important\ThesisCode\Code\Gi /
+//                          tLabCloud\NewEcoExec\codegenerator\Device\EcoBT\P /
+//                          roject\ble\CodeGenerator\CC2541DB\..\..\Profiles\ /
+//                          Batt\ -I D:\NTHU\¬ã¨s\Important\ThesisCode\Code\G /
+//                          itLabCloud\NewEcoExec\codegenerator\Device\EcoBT\ /
+//                          Project\ble\CodeGenerator\CC2541DB\..\..\Profiles /
+//                          \HIDDev\ -I D:\NTHU\¬ã¨s\Important\ThesisCode\Cod /
+//                          e\GitLabCloud\NewEcoExec\codegenerator\Device\Eco /
+//                          BT\Project\ble\CodeGenerator\CC2541DB\..\..\Profi /
+//                          les\ScanParam\ -Ohz                               /
+//    List file          =  D:\NTHU\¬ã¨s\Important\ThesisCode\Code\GitLabClou /
+//                          d\NewEcoExec\codegenerator\Device\EcoBT\Project\b /
+//                          le\CodeGenerator\CC2541DB\CC2541\List\epl_acc_lis /
+//                          331dl.s51                                         /
+//                                                                            /
+//                                                                            /
+///////////////////////////////////////////////////////////////////////////////
+
+        NAME epl_acc_lis331dl
+
+        RSEG DOVERLAY:DATA:NOROOT(0)
+        RSEG IOVERLAY:IDATA:NOROOT(0)
+        RSEG ISTACK:IDATA:NOROOT(0)
+        RSEG PSTACK:XDATA:NOROOT(0)
+        RSEG XSTACK:XDATA:NOROOT(0)
+
+        EXTERN ?ALLOC_XSTACK8
+        EXTERN ?BANKED_ENTER_XDATA
+        EXTERN ?BANKED_LEAVE_XDATA
+        EXTERN ?BDISPATCH
+        EXTERN ?BRET
+        EXTERN ?DEALLOC_XSTACK8
+        EXTERN ?V0
+        EXTERN ?XSP
+        EXTERN ?XSTACK_DISP0_8
+
+        PUBLIC ??accInit?relay
+        PUBLIC ??accReadAcc?relay
+        PUBLIC ??accReadAllAcc?relay
+        PUBLIC ??accReadMultiReg?relay
+        PUBLIC ??accReadReg?relay
+        PUBLIC ??accSetFreeFallEvent?relay
+        PUBLIC ??accWriteReg?relay
+        PUBWEAK IEN2
+        PUBWEAK P1DIR
+        PUBWEAK P1IEN
+        PUBWEAK P1IFG
+        PUBWEAK P1SEL
+        PUBWEAK PERCFG
+        PUBWEAK PICTL
+        PUBWEAK U1BAUD
+        PUBWEAK U1GCR
+        PUBWEAK _A_IEN0
+        PUBWEAK _A_IRCON2
+        PUBWEAK _A_P1
+        PUBWEAK _A_U1CSR
+        PUBLIC accInit
+        PUBLIC accReadAcc
+        PUBLIC accReadAllAcc
+        PUBLIC accReadMultiReg
+        PUBLIC accReadReg
+        PUBLIC accSetFreeFallEvent
+        PUBLIC accWriteReg
+
+spiInit             SYMBOL "spiInit"
+??spiInit?relay     SYMBOL "?relay", spiInit
+spiReadByte         SYMBOL "spiReadByte"
+??spiReadByte?relay SYMBOL "?relay", spiReadByte
+spiWriteByte        SYMBOL "spiWriteByte"
+??spiWriteByte?relay SYMBOL "?relay", spiWriteByte
+accInit             SYMBOL "accInit"
+??accInit?relay     SYMBOL "?relay", accInit
+accReadAcc          SYMBOL "accReadAcc"
+??accReadAcc?relay  SYMBOL "?relay", accReadAcc
+accReadAllAcc       SYMBOL "accReadAllAcc"
+??accReadAllAcc?relay SYMBOL "?relay", accReadAllAcc
+accReadMultiReg     SYMBOL "accReadMultiReg"
+??accReadMultiReg?relay SYMBOL "?relay", accReadMultiReg
+accReadReg          SYMBOL "accReadReg"
+??accReadReg?relay  SYMBOL "?relay", accReadReg
+accSetFreeFallEvent SYMBOL "accSetFreeFallEvent"
+??accSetFreeFallEvent?relay SYMBOL "?relay", accSetFreeFallEvent
+accWriteReg         SYMBOL "accWriteReg"
+??accWriteReg?relay SYMBOL "?relay", accWriteReg
+
+        EXTERN ??spiInit?relay
+        EXTERN ??spiReadByte?relay
+        EXTERN ??spiWriteByte?relay
+        EXTERN spiInit
+        EXTERN spiReadByte
+        EXTERN spiWriteByte
+
+// D:\NTHU\¬ã¨s\Important\ThesisCode\Code\GitLabCloud\NewEcoExec\codegenerator\Device\EcoBT\Project\ble\CodeGenerator\Source\epl_acc_lis331dl.c
+//    1 /**************************************************************************************************
+//    2   Filename:       cma3000d.c
+//    3   Revised:        $Date: 2010-09-29 11:12:58 -0700 (Wed, 29 Sep 2010) $
+//    4   Revision:       $Revision: 23938 $
+//    5 
+//    6   Description:    Control of the accelerometer on the keyfob board in the CC2540DK-mini
+//    7                   kit.
+//    8 
+//    9   Copyright 2009 - 2010 Texas Instruments Incorporated. All rights reserved.
+//   10 
+//   11   IMPORTANT: Your use of this Software is limited to those specific rights
+//   12   granted under the terms of a software license agreement between the user
+//   13   who downloaded the software, his/her employer (which must be your employer)
+//   14   and Texas Instruments Incorporated (the "License").  You may not use this
+//   15   Software unless you agree to abide by the terms of the License. The License
+//   16   limits your use, and you acknowledge, that the Software may not be modified,
+//   17   copied or distributed unless embedded on a Texas Instruments microcontroller
+//   18   or used solely and exclusively in conjunction with a Texas Instruments radio
+//   19   frequency transceiver, which is integrated into your product.  Other than for
+//   20   the foregoing purpose, you may not use, reproduce, copy, prepare derivative
+//   21   works of, modify, distribute, perform, display or sell this Software and/or
+//   22   its documentation for any purpose.
+//   23 
+//   24   YOU FURTHER ACKNOWLEDGE AND AGREE THAT THE SOFTWARE AND DOCUMENTATION ARE
+//   25   PROVIDED “AS IS” WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESS OR IMPLIED,
+//   26   INCLUDING WITHOUT LIMITATION, ANY WARRANTY OF MERCHANTABILITY, TITLE,
+//   27   NON-INFRINGEMENT AND FITNESS FOR A PARTICULAR PURPOSE. IN NO EVENT SHALL
+//   28   TEXAS INSTRUMENTS OR ITS LICENSORS BE LIABLE OR OBLIGATED UNDER CONTRACT,
+//   29   NEGLIGENCE, STRICT LIABILITY, CONTRIBUTION, BREACH OF WARRANTY, OR OTHER
+//   30   LEGAL EQUITABLE THEORY ANY DIRECT OR INDIRECT DAMAGES OR EXPENSES
+//   31   INCLUDING BUT NOT LIMITED TO ANY INCIDENTAL, SPECIAL, INDIRECT, PUNITIVE
+//   32   OR CONSEQUENTIAL DAMAGES, LOST PROFITS OR LOST DATA, COST OF PROCUREMENT
+//   33   OF SUBSTITUTE GOODS, TECHNOLOGY, SERVICES, OR ANY CLAIMS BY THIRD PARTIES
+//   34   (INCLUDING BUT NOT LIMITED TO ANY DEFENSE THEREOF), OR OTHER SIMILAR COSTS.
+//   35 
+//   36   Should you have any questions regarding your right to use this Software,
+//   37   contact Texas Instruments Incorporated at www.TI.com.
+//   38 **************************************************************************************************/
+//   39 
+//   40 #if defined( CC2541) || defined( CC2541S )
+//   41 #include <ioCC2541.h>
+
+        ASEGN SFR_AN:DATA:NOROOT,08aH
+// unsigned char volatile __sfr P1IFG
+P1IFG:
+        DATA8
+        DS 1
+
+        ASEGN SFR_AN:DATA:NOROOT,08cH
+// unsigned char volatile __sfr PICTL
+PICTL:
+        DATA8
+        DS 1
+
+        ASEGN SFR_AN:DATA:NOROOT,08dH
+// unsigned char volatile __sfr P1IEN
+P1IEN:
+        DATA8
+        DS 1
+
+        ASEGN SFR_AN:DATA:NOROOT,090H
+// union <unnamed> volatile __sfr _A_P1
+_A_P1:
+        DATA8
+        DS 1
+
+        ASEGN SFR_AN:DATA:NOROOT,09aH
+// unsigned char volatile __sfr IEN2
+IEN2:
+        DATA8
+        DS 1
+
+        ASEGN SFR_AN:DATA:NOROOT,0a8H
+// union <unnamed> volatile __sfr _A_IEN0
+_A_IEN0:
+        DATA8
+        DS 1
+
+        ASEGN SFR_AN:DATA:NOROOT,0e8H
+// union <unnamed> volatile __sfr _A_IRCON2
+_A_IRCON2:
+        DATA8
+        DS 1
+
+        ASEGN SFR_AN:DATA:NOROOT,0f1H
+// unsigned char volatile __sfr PERCFG
+PERCFG:
+        DATA8
+        DS 1
+
+        ASEGN SFR_AN:DATA:NOROOT,0f4H
+// unsigned char volatile __sfr P1SEL
+P1SEL:
+        DATA8
+        DS 1
+
+        ASEGN SFR_AN:DATA:NOROOT,0f8H
+// union <unnamed> volatile __sfr _A_U1CSR
+_A_U1CSR:
+        DATA8
+        DS 1
+
+        ASEGN SFR_AN:DATA:NOROOT,0faH
+// unsigned char volatile __sfr U1BAUD
+U1BAUD:
+        DATA8
+        DS 1
+
+        ASEGN SFR_AN:DATA:NOROOT,0fcH
+// unsigned char volatile __sfr U1GCR
+U1GCR:
+        DATA8
+        DS 1
+
+        ASEGN SFR_AN:DATA:NOROOT,0feH
+// unsigned char volatile __sfr P1DIR
+P1DIR:
+        DATA8
+        DS 1
+//   42 #else // CC2540
+//   43 #include <ioCC2540.h>
+//   44 #endif // CC2541 || CC2541S
+//   45 
+//   46 #include "OSAL.h"
+//   47 #include "epl_acc_lis331dl.h"
+//   48 #include "epl_hal_spi.h"
+//   49 
+//   50 /** \brief	Initialize SPI interface and LIS331DL-H accelerometer
+//   51 *
+//   52 * This will initialize the SPI interface and LIS331DL-H accelerometer
+//   53 *
+//   54 */
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+//   55 void accInit(void)
+accInit:
+        CODE
+//   56 {
+        PUSH    DPL
+        PUSH    DPH
+        ; Saved register size: 2
+        ; Auto size: 0
+//   57     //*** Setup USART 1 SPI at alternate location 2 ***
+//   58     spiInit(SPI_MASTER);
+        ; Setup parameters for call to function spiInit
+        MOV     R1,#0x1
+        LCALL   ??spiInit?relay
+//   59     // USART 1 at alternate location 2
+//   60     PERCFG |= 0x02;
+        ORL     0xf1,#0x2
+//   61     // Peripheral function on SCK, MISO and MOSI (P1_5-7)
+//   62     P1SEL |= 0xE0;
+        ORL     0xf4,#0xe0
+//   63     // Configure CS (P1_1) as output
+//   64     P1DIR |= 0x02;
+        ORL     0xfe,#0x2
+//   65 
+//   66     CS = CS_DISABLED;
+        SETB    0x90.1
+//   67 
+//   68     //*** Setup the SPI interface ***
+//   69     // SPI master mode
+//   70     U1CSR = 0x00;
+        MOV     0xf8,#0x0
+//   71     // Negative clock polarity, Phase: data out on CPOL -> CPOL-inv
+//   72     //                                 data in on CPOL-inv -> CPOL
+//   73     // MSB first
+//   74     U1GCR = 0x20;
+        MOV     0xfc,#0x20
+//   75     // SCK frequency = 1MHz
+//   76     //U1GCR |= 0x0F;
+//   77     //U1BAUD = 0x00;
+//   78     // SCK frequency = 4MHz
+//   79     U1GCR |= 0x11;
+        ORL     0xfc,#0x11
+//   80     U1BAUD = 0x00;
+        MOV     0xfa,#0x0
+//   81 
+//   82 
+//   83     // Turn LIS331DL into active mode (0X40) ,enable X,Y,Z (0X07) and setup measurement scale 2G and output data rate 100Hz.
+//   84     accWriteReg(ACC_LIS331DL_CTRL_REG1, 0x3F | (ACC_LIS331DL_2G_SCALE<<5) | (ACC_LIS331DL_DATA_RATE_100HZ <<7));
+        ; Setup parameters for call to function accWriteReg
+        MOV     R2,#0x3f
+        MOV     R1,#0x20
+        LCALL   ??accWriteReg?relay
+//   85                                        /* 0x3F | 0x00<<5 | 0x00 << 7 */
+//   86     // Assigned INT1 as data ready pin.
+//   87     //accWriteReg(ACC_LIS331DL_CTRL_REG3, 0x02);	
+//   88     
+//   89     accSetFreeFallEvent();
+        ; Setup parameters for call to function accSetFreeFallEvent
+        LCALL   ??accSetFreeFallEvent?relay
+//   90 }
+        REQUIRE ?Subroutine0
+        REQUIRE PERCFG
+        REQUIRE P1SEL
+        REQUIRE P1DIR
+        REQUIRE _A_P1
+        REQUIRE _A_U1CSR
+        REQUIRE U1GCR
+        REQUIRE U1BAUD
+        ; // Fall through to label ?Subroutine0
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+?Subroutine0:
+        POP     DPH
+        POP     DPL
+        LJMP    ?BRET
+//   91 
+//   92 /** \brief	Write one byte to a sensor register
+//   93 *
+//   94 * Write one byte to a sensor register
+//   95 *
+//   96 * \param[in]       reg
+//   97 *     Register address
+//   98 * \param[in]       val
+//   99 *     Value to write
+//  100 */
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+//  101 void accWriteReg(uint8 reg, uint8 val)
+accWriteReg:
+        CODE
+//  102 {
+        MOV     A,#-0x9
+        LCALL   ?BANKED_ENTER_XDATA
+        ; Saved register size: 9
+        ; Auto size: 0
+        MOV     A,R2
+        MOV     R6,A
+//  103     CS = CS_ENABLED;
+        CLR     0x90.1
+//  104     spiWriteByte(reg);
+        ; Setup parameters for call to function spiWriteByte
+        LCALL   ??spiWriteByte?relay
+//  105     spiWriteByte(val);
+        ; Setup parameters for call to function spiWriteByte
+        MOV     A,R6
+        MOV     R1,A
+        LCALL   ??spiWriteByte?relay
+//  106     CS = CS_DISABLED;
+        REQUIRE ?Subroutine1
+        REQUIRE _A_P1
+        ; // Fall through to label ?Subroutine1
+//  107 }
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+?Subroutine1:
+        SETB    0x90.1
+        MOV     R7,#0x1
+        LJMP    ?BANKED_LEAVE_XDATA
+//  108 
+//  109 
+//  110 /** \brief	Read one byte from a sensor register
+//  111 *
+//  112 * Read one byte from a sensor register
+//  113 *
+//  114 * \param[in]       reg
+//  115 *     Register address
+//  116 * \param[in]       *pVal
+//  117 *     Pointer to variable to put read out value
+//  118 */
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+//  119 void accReadReg(uint8 reg, uint8 *pVal)
+accReadReg:
+        CODE
+//  120 {
+        MOV     A,#-0x9
+        LCALL   ?BANKED_ENTER_XDATA
+        ; Saved register size: 9
+        ; Auto size: 0
+        MOV     ?V0 + 0,R1
+        MOV     A,R2
+        MOV     R6,A
+        MOV     A,R3
+        MOV     R7,A
+//  121     CS = CS_ENABLED;
+        CLR     0x90.1
+//  122     WAIT_1_3US(2);
+        NOP
+        NOP
+//  123     spiWriteByte(reg | 0x80);
+        ; Setup parameters for call to function spiWriteByte
+        MOV     A,#-0x80
+        ORL     A,?V0 + 0
+        MOV     R1,A
+        LCALL   ??spiWriteByte?relay
+//  124     spiReadByte(pVal, 0xFF);
+        ; Setup parameters for call to function spiReadByte
+        MOV     R1,#-0x1
+        MOV     A,R6
+        MOV     R2,A
+        MOV     A,R7
+        MOV     R3,A
+        LCALL   ??spiReadByte?relay
+//  125     CS = CS_DISABLED;
+        SJMP    ?Subroutine1
+        REQUIRE _A_P1
+//  126 }
+//  127 
+//  128 /** \brief	Read multi byte from a sensor register
+//  129 *
+//  130 * Read multi byte from a sensor register
+//  131 *
+//  132 * \param[in]       reg
+//  133 *     Register address
+//  134 * \param[in]       *pVal
+//  135 *     Pointer to variable to put read out value
+//  136 * \param[in]       count
+//  137 *     read bytes count
+//  138 */
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+//  139 void accReadMultiReg(uint8 reg, uint8 *pVal, uint8 count)
+accReadMultiReg:
+        CODE
+//  140 {
+        MOV     A,#-0xa
+        LCALL   ?BANKED_ENTER_XDATA
+        ; Saved register size: 10
+        ; Auto size: 0
+        MOV     ?V0 + 0,R1
+        MOV     A,R2
+        MOV     R6,A
+        MOV     A,R3
+        MOV     R7,A
+        MOV     ?V0 + 1,R4
+//  141     CS = CS_ENABLED;
+        CLR     0x90.1
+//  142     WAIT_1_3US(2);
+        NOP
+        NOP
+//  143     spiWriteByte(reg | 0xC0);
+        ; Setup parameters for call to function spiWriteByte
+        MOV     A,#-0x40
+        ORL     A,?V0 + 0
+        MOV     R1,A
+        LCALL   ??spiWriteByte?relay
+        SJMP    ??accReadMultiReg_0
+//  144     while(count--){
+//  145 	spiReadByte(pVal++, 0xFF);
+??accReadMultiReg_1:
+        ; Setup parameters for call to function spiReadByte
+        MOV     R1,#-0x1
+        MOV     A,R6
+        MOV     R2,A
+        MOV     A,R7
+        MOV     R3,A
+        LCALL   ??spiReadByte?relay
+        MOV     DPL,R6
+        MOV     DPH,R7
+        INC     DPTR
+        MOV     R6,DPL
+        MOV     R7,DPH
+//  146     }
+??accReadMultiReg_0:
+        MOV     R0,?V0 + 1
+        MOV     A,#-0x1
+        ADD     A,R0
+        MOV     ?V0 + 1,A
+        INC     A
+        JNZ     ??accReadMultiReg_1
+//  147     CS = CS_DISABLED;
+        SETB    0x90.1
+//  148 }
+        MOV     R7,#0x2
+        LJMP    ?BANKED_LEAVE_XDATA
+        REQUIRE _A_P1
+//  149 
+//  150 /** \brief	Read x, y and z acceleration data
+//  151 *
+//  152 * Read x, y and z acceleration data in one operation.
+//  153 * NOTE: No sensor access must be made immidiately folloing this operation
+//  154 * without enabling the last Wait call.
+//  155 *
+//  156 * \param[in]       *pXVal
+//  157 *     Pointer to variable to put read out X acceleration
+//  158 * \param[in]       *pYVal
+//  159 *     Pointer to variable to put read out Y acceleration
+//  160 * \param[in]       *pZVal
+//  161 *     Pointer to variable to put read out Z acceleration
+//  162 */
+//  163 
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+//  164 void accReadAcc(int16 *pXVal, int16 *pYVal, int16 *pZVal)
+accReadAcc:
+        CODE
+//  165 {
+        MOV     A,#-0xc
+        LCALL   ?BANKED_ENTER_XDATA
+        ; Saved register size: 12
+        ; Auto size: 2
+        MOV     A,#-0x2
+        LCALL   ?ALLOC_XSTACK8
+        MOV     A,R2
+        MOV     R6,A
+        MOV     A,R3
+        MOV     R7,A
+        MOV     ?V0 + 0,R4
+        MOV     ?V0 + 1,R5
+        MOV     A,#0xe
+        LCALL   ?XSTACK_DISP0_8
+        MOVX    A,@DPTR
+        MOV     R0,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R1,A
+        MOV     ?V0 + 2,R0
+        MOV     ?V0 + 3,R1
+//  166 
+//  167     uint8 XH,XL;
+//  168     // X
+//  169     accReadReg(ACC_LIS331DL_OUT_XH, (uint8*)&XH);
+        ; Setup parameters for call to function accReadReg
+        MOV     A,#0x1
+        LCALL   ?XSTACK_DISP0_8
+        MOV     R2,DPL
+        MOV     R3,DPH
+        MOV     R1,#0x29
+        LCALL   ??accReadReg?relay
+//  170     WAIT_1_3US(80);
+        MOV     A,#0x50
+??accReadAcc_0:
+        NOP
+        DEC     A
+        JNZ     ??accReadAcc_0
+//  171     accReadReg(ACC_LIS331DL_OUT_XL, (uint8*)&XL);
+        ; Setup parameters for call to function accReadReg
+        MOV     DPL,?XSP + 0
+        MOV     DPH,?XSP + 1
+        MOV     R2,DPL
+        MOV     R3,DPH
+        MOV     R1,#0x28
+        LCALL   ??accReadReg?relay
+//  172     WAIT_1_3US(80);
+        MOV     A,#0x50
+??accReadAcc_1:
+        NOP
+        DEC     A
+        JNZ     ??accReadAcc_1
+//  173     *pXVal = (int16)((XL & 0x00FF) + ((XH & 0x00FF) << 8));
+        MOV     DPL,?XSP + 0
+        MOV     DPH,?XSP + 1
+        MOVX    A,@DPTR
+        MOV     R2,A
+        MOV     A,#0x1
+        LCALL   ?XSTACK_DISP0_8
+        MOVX    A,@DPTR
+        MOV     R1,A
+        MOV     A,R2
+        MOV     DPL,R6
+        MOV     DPH,R7
+        MOVX    @DPTR,A
+        INC     DPTR
+        MOV     A,R1
+        MOVX    @DPTR,A
+//  174 
+//  175     // Y
+//  176     accReadReg(ACC_LIS331DL_OUT_YH, (uint8*)&XH);
+        ; Setup parameters for call to function accReadReg
+        MOV     A,#0x1
+        LCALL   ?XSTACK_DISP0_8
+        MOV     R2,DPL
+        MOV     R3,DPH
+        MOV     R1,#0x2b
+        LCALL   ??accReadReg?relay
+//  177     WAIT_1_3US(80);
+        MOV     A,#0x50
+??accReadAcc_2:
+        NOP
+        DEC     A
+        JNZ     ??accReadAcc_2
+//  178     accReadReg(ACC_LIS331DL_OUT_YL, (uint8*)&XL);
+        ; Setup parameters for call to function accReadReg
+        MOV     DPL,?XSP + 0
+        MOV     DPH,?XSP + 1
+        MOV     R2,DPL
+        MOV     R3,DPH
+        MOV     R1,#0x2a
+        LCALL   ??accReadReg?relay
+//  179     WAIT_1_3US(80);
+        MOV     A,#0x50
+??accReadAcc_3:
+        NOP
+        DEC     A
+        JNZ     ??accReadAcc_3
+//  180     *pYVal = (int16)((XL & 0x00FF) + ((XH & 0x00FF) << 8));
+        MOV     DPL,?XSP + 0
+        MOV     DPH,?XSP + 1
+        MOVX    A,@DPTR
+        MOV     R2,A
+        MOV     A,#0x1
+        LCALL   ?XSTACK_DISP0_8
+        MOVX    A,@DPTR
+        MOV     R1,A
+        MOV     A,R2
+        MOV     DPL,?V0 + 0
+        MOV     DPH,?V0 + 1
+        MOVX    @DPTR,A
+        INC     DPTR
+        MOV     A,R1
+        MOVX    @DPTR,A
+//  181 
+//  182     //Z
+//  183     accReadReg(ACC_LIS331DL_OUT_ZH, (uint8*)&XH);
+        ; Setup parameters for call to function accReadReg
+        MOV     A,#0x1
+        LCALL   ?XSTACK_DISP0_8
+        MOV     R2,DPL
+        MOV     R3,DPH
+        MOV     R1,#0x2d
+        LCALL   ??accReadReg?relay
+//  184     WAIT_1_3US(80);
+        MOV     A,#0x50
+??accReadAcc_4:
+        NOP
+        DEC     A
+        JNZ     ??accReadAcc_4
+//  185     accReadReg(ACC_LIS331DL_OUT_ZL, (uint8*)&XL);
+        ; Setup parameters for call to function accReadReg
+        MOV     DPL,?XSP + 0
+        MOV     DPH,?XSP + 1
+        MOV     R2,DPL
+        MOV     R3,DPH
+        MOV     R1,#0x2c
+        LCALL   ??accReadReg?relay
+//  186     WAIT_1_3US(80);
+        MOV     A,#0x50
+??accReadAcc_5:
+        NOP
+        DEC     A
+        JNZ     ??accReadAcc_5
+//  187     *pZVal = (int16)((XL & 0x00FF) + ((XH & 0x00FF) << 8));
+        MOV     DPL,?XSP + 0
+        MOV     DPH,?XSP + 1
+        MOVX    A,@DPTR
+        MOV     R2,A
+        MOV     A,#0x1
+        LCALL   ?XSTACK_DISP0_8
+        MOVX    A,@DPTR
+        MOV     R1,A
+        MOV     A,R2
+        MOV     DPL,?V0 + 2
+        MOV     DPH,?V0 + 3
+        MOVX    @DPTR,A
+        INC     DPTR
+        MOV     A,R1
+        MOVX    @DPTR,A
+//  188 }
+        MOV     A,#0x2
+        LCALL   ?DEALLOC_XSTACK8
+        MOV     R7,#0x4
+        LJMP    ?BANKED_LEAVE_XDATA
+//  189 
+//  190 /** \brief	Read x, y and z acceleration data
+//  191 *
+//  192 * Read x, y and z acceleration data in one operation.
+//  193 * NOTE: No sensor access must be made immidiately folloing this operation
+//  194 * without enabling the last Wait call.
+//  195 *
+//  196 * \param[in]       *pXVal
+//  197 *     Pointer to variable to put read out X,Y and Z acceleration
+//  198 */
+//  199 
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+//  200 void accReadAllAcc(uint8 *pVal)
+accReadAllAcc:
+        CODE
+//  201 {
+        PUSH    DPL
+        PUSH    DPH
+        ; Saved register size: 2
+        ; Auto size: 0
+//  202     accReadMultiReg(ACC_LIS331DL_OUT_XL, (uint8*)pVal, 6);
+        ; Setup parameters for call to function accReadMultiReg
+        MOV     R4,#0x6
+        MOV     R1,#0x28
+        LCALL   ??accReadMultiReg?relay
+//  203 }
+        LJMP    ?Subroutine0 & 0xFFFF
+//  204 
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+//  205 void accSetFreeFallEvent( void )
+accSetFreeFallEvent:
+        CODE
+//  206 {
+        PUSH    DPL
+        PUSH    DPH
+        ; Saved register size: 2
+        ; Auto size: 0
+//  207   /* High Pass filter disabled */
+//  208   accWriteReg( ACC_LIS331DL_CTRL_REG2, 0x00 );
+        ; Setup parameters for call to function accWriteReg
+        MOV     R2,#0x0
+        MOV     R1,#0x21
+        LCALL   ??accWriteReg?relay
+//  209   
+//  210   /* Assigned INT1 as Free Fall 1 interrupt pin */
+//  211   accWriteReg( ACC_LIS331DL_CTRL_REG3, 0x01);
+        ; Setup parameters for call to function accWriteReg
+        MOV     R2,#0x1
+        MOV     R1,#0x22
+        LCALL   ??accWriteReg?relay
+//  212   
+//  213   /* Set Free Fall 1 threshold 350mg */
+//  214   accWriteReg( ACC_LIS331DL_FF_WU_THS_1, 0x16);
+        ; Setup parameters for call to function accWriteReg
+        MOV     R2,#0x16
+        MOV     R1,#0x32
+        LCALL   ??accWriteReg?relay
+//  215   
+//  216   /* Set minimum evnet duration 90ms */
+//  217   accWriteReg( ACC_LIS331DL_FF_WU_DURATION_1, 0x01);
+        ; Setup parameters for call to function accWriteReg
+        MOV     R2,#0x1
+        MOV     R1,#0x33
+        LCALL   ??accWriteReg?relay
+//  218   
+//  219   /* Free Fall 1 interrupt configuration */
+//  220   accWriteReg( ACC_LIS331DL_FF_WU_CFG_1, 0xD5 );
+        ; Setup parameters for call to function accWriteReg
+        MOV     R2,#-0x2b
+        MOV     R1,#0x30
+        LCALL   ??accWriteReg?relay
+//  221   
+//  222   /*****INT1 on P1_2 setting*****/
+//  223   P1SEL &= ~0x04;        // port 1.2as GPIO 0
+        ANL     0xf4,#0xfb
+//  224   P1DIR &= ~0x04;        // port 1.2 as input 0
+        ANL     0xfe,#0xfb
+//  225   PICTL |= 0x02;        // port interrupt control, 0 rising edge, 1 falling edge
+        ORL     0x8c,#0x2
+//  226   P1IEN |= 0x04;        // IOC module, prot 0 interrupt mask, 0 interrupts are disabled, 1 interrupt s are enabled.
+        ORL     0x8d,#0x4
+//  227   /*P1IE*/  
+//  228   IEN2  |= 0x10;           // CPU module, prot 0 interrupt mask, 0 interrupts are disabled, 1 interrupt s are enabled.
+        ORL     0x9a,#0x10
+//  229   P1IFG  = 0x00;        // P1 interrupt Flag Status
+        MOV     0x8a,#0x0
+//  230   P1IF   = 0;           // port 1 interrupt status flag
+        CLR     0xe8.3
+//  231   EA     = 1;           // enable interrupt
+        SETB    0xa8.7
+//  232 }
+        LJMP    ?Subroutine0 & 0xFFFF
+        REQUIRE P1SEL
+        REQUIRE P1DIR
+        REQUIRE PICTL
+        REQUIRE P1IEN
+        REQUIRE IEN2
+        REQUIRE P1IFG
+        REQUIRE _A_IRCON2
+        REQUIRE _A_IEN0
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??accInit?relay:
+        CODE
+        LCALL   ?BDISPATCH
+        DATA24
+        DC24    accInit
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??accWriteReg?relay:
+        CODE
+        LCALL   ?BDISPATCH
+        DATA24
+        DC24    accWriteReg
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??accReadReg?relay:
+        CODE
+        LCALL   ?BDISPATCH
+        DATA24
+        DC24    accReadReg
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??accReadMultiReg?relay:
+        CODE
+        LCALL   ?BDISPATCH
+        DATA24
+        DC24    accReadMultiReg
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??accReadAcc?relay:
+        CODE
+        LCALL   ?BDISPATCH
+        DATA24
+        DC24    accReadAcc
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??accReadAllAcc?relay:
+        CODE
+        LCALL   ?BDISPATCH
+        DATA24
+        DC24    accReadAllAcc
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??accSetFreeFallEvent?relay:
+        CODE
+        LCALL   ?BDISPATCH
+        DATA24
+        DC24    accSetFreeFallEvent
+
+        END
+//  233 
+// 
+// 488 bytes in segment BANKED_CODE
+//  42 bytes in segment BANK_RELAYS
+//  13 bytes in segment SFR_AN
+// 
+// 530 bytes of CODE memory
+//   0 bytes of DATA memory (+ 13 bytes shared)
+//
+//Errors: none
+//Warnings: none

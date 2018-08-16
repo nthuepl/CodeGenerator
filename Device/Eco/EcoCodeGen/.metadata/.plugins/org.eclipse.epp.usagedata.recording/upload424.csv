@@ -1,0 +1,26 @@
+what,kind,bundleId,bundleVersion,description,time
+java.runtime.name,sysinfo,,,"Java(TM) SE Runtime Environment",1396010516299
+java.runtime.version,sysinfo,,,"1.7.0_51-b13",1396010516299
+java.specification.name,sysinfo,,,"Java Platform API Specification",1396010516299
+java.specification.vendor,sysinfo,,,"Oracle Corporation",1396010516299
+java.specification.version,sysinfo,,,"1.7",1396010516299
+java.vendor,sysinfo,,,"Oracle Corporation",1396010516299
+java.version,sysinfo,,,"1.7.0_51",1396010516299
+java.vm.info,sysinfo,,,"mixed mode, sharing",1396010516299
+java.vm.name,sysinfo,,,"Java HotSpot(TM) Client VM",1396010516299
+java.vm.specification.name,sysinfo,,,"Java Virtual Machine Specification",1396010516299
+java.vm.specification.vendor,sysinfo,,,"Oracle Corporation",1396010516299
+java.vm.specification.version,sysinfo,,,"1.7",1396010516299
+java.vm.vendor,sysinfo,,,"Oracle Corporation",1396010516299
+java.vm.version,sysinfo,,,"24.51-b03",1396010516299
+started,bundle,org.eclipse.mylyn.commons.ui,3.2.2.v20090912-0400-e3x,"org.eclipse.mylyn.commons.ui",1396010516485
+started,bundle,org.eclipse.team.ui,3.5.0.I20090430-0408,"org.eclipse.team.ui",1396010516775
+started,bundle,org.eclipse.mylyn.bugzilla.core,3.2.2.v20090912-0400-e3x,"org.eclipse.mylyn.bugzilla.core",1396010516867
+started,bundle,org.eclipse.mylyn.bugzilla.ui,3.2.2.v20090912-0400-e3x,"org.eclipse.mylyn.bugzilla.ui",1396010517122
+started,bundle,org.eclipse.team.cvs.ui,3.3.201.R35x_v20090826-0905,"org.eclipse.team.cvs.ui",1396010517221
+started,bundle,org.eclipse.mylyn.context.core,3.2.2.v20090912-0400-e3x,"org.eclipse.mylyn.context.core",1396010517738
+started,bundle,org.eclipse.mylyn.context.ui,3.2.2.v20090912-0400-e3x,"org.eclipse.mylyn.context.ui",1396010517752
+started,bundle,org.eclipse.mylyn.tasks.ui,3.2.2.v20090912-0400-e3x,"org.eclipse.mylyn.tasks.ui",1396010518204
+started,bundle,org.eclipse.mylyn.team.ui,3.2.2.v20090912-0400-e3x,"org.eclipse.mylyn.team.ui",1396010518209
+started,bundle,org.eclipse.update.scheduler,3.2.200.v20081127,"org.eclipse.update.scheduler",1396010518227
+started,bundle,org.eclipse.update.core,3.2.300.v20090525,"org.eclipse.update.core",1396010518378

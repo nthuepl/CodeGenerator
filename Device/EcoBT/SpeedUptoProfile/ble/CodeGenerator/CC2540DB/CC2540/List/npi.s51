@@ -1,0 +1,592 @@
+///////////////////////////////////////////////////////////////////////////////
+//                                                                            /
+// IAR C/C++ Compiler V8.20.1.40829 for 8051            23/May/2014  20:10:31 /
+// Copyright 2004-2012 IAR Systems AB.                                        /
+//                                                                            /
+//    Core               =  plain                                             /
+//    Code model         =  banked                                            /
+//    Data model         =  large                                             /
+//    Calling convention =  xdata reentrant                                   /
+//    Constant location  =  data_rom                                          /
+//    Dptr setup         =  1,16                                              /
+//                                                                            /
+//    Source file        =  D:\NTHU\¬ã¨s\Important\ThesisCode\Code\GitLabClou /
+//                          d\NewEcoExec\codegenerator\Device\EcoBT\Project\b /
+//                          le\common\npi\npi_np\npi.c                        /
+//    Command line       =  -f D:\NTHU\¬ã¨s\Important\ThesisCode\Code\GitLabC /
+//                          loud\NewEcoExec\codegenerator\Device\EcoBT\Projec /
+//                          t\ble\CodeGenerator\CC2540DB\..\..\config\buildCo /
+//                          mponents.cfg (-DBROADCASTER_CFG=0x01              /
+//                          -DOBSERVER_CFG=0x02 -DPERIPHERAL_CFG=0x04         /
+//                          -DCENTRAL_CFG=0x08 -DADV_NCONN_CFG=0x01           /
+//                          -DADV_CONN_CFG=0x02 -DSCAN_CFG=0x04               /
+//                          -DINIT_CFG=0x08 -DADV_CFG=ADV_NCONN_CFG+ADV_CONN_ /
+//                          CFG -DLINK_CFG=ADV_CONN_CFG+INIT_CFG              /
+//                          -DFULL_CFG=INIT_CFG+SCAN_CFG+ADV_NCONN_CFG+ADV_CO /
+//                          NN_CFG) -f D:\NTHU\¬ã¨s\Important\ThesisCode\Code /
+//                          \GitLabCloud\NewEcoExec\codegenerator\Device\EcoB /
+//                          T\Project\ble\CodeGenerator\CC2540DB\buildConfig. /
+//                          cfg (-DHOST_CONFIG=PERIPHERAL_CFG                 /
+//                          -DGAP_PRIVACY_RECONNECT)                          /
+//                          D:\NTHU\¬ã¨s\Important\ThesisCode\Code\GitLabClou /
+//                          d\NewEcoExec\codegenerator\Device\EcoBT\Project\b /
+//                          le\common\npi\npi_np\npi.c -D INT_HEAP_LEN=900    /
+//                          -D HALNODEBUG -D OSAL_CBTIMER_NUM_TASKS=1 -D      /
+//                          HAL_AES_DMA=TRUE -D HAL_DMA=TRUE -D               /
+//                          xPOWER_SAVING -D xPLUS_BROADCASTER -D             /
+//                          HAL_LCD=FALSE -D HAL_LED=TRUE -D HAL_ADC=TRUE     /
+//                          -lB D:\NTHU\¬ã¨s\Important\ThesisCode\Code\GitLab /
+//                          Cloud\NewEcoExec\codegenerator\Device\EcoBT\Proje /
+//                          ct\ble\CodeGenerator\CC2540DB\CC2540\List\ -o     /
+//                          D:\NTHU\¬ã¨s\Important\ThesisCode\Code\GitLabClou /
+//                          d\NewEcoExec\codegenerator\Device\EcoBT\Project\b /
+//                          le\CodeGenerator\CC2540DB\CC2540\Obj\ -e --debug  /
+//                          --core=plain --dptr=16,1 --data_model=large       /
+//                          --code_model=banked --calling_convention=xdata_re /
+//                          entrant --place_constants=data_rom                /
+//                          --nr_virtual_regs 16 -I                           /
+//                          D:\NTHU\¬ã¨s\Important\ThesisCode\Code\GitLabClou /
+//                          d\NewEcoExec\codegenerator\Device\EcoBT\Project\b /
+//                          le\CodeGenerator\CC2540DB\..\..\common\ -I        /
+//                          D:\NTHU\¬ã¨s\Important\ThesisCode\Code\GitLabClou /
+//                          d\NewEcoExec\codegenerator\Device\EcoBT\Project\b /
+//                          le\CodeGenerator\CC2540DB\..\..\include\ -I       /
+//                          D:\NTHU\¬ã¨s\Important\ThesisCode\Code\GitLabClou /
+//                          d\NewEcoExec\codegenerator\Device\EcoBT\Project\b /
+//                          le\CodeGenerator\CC2540DB\..\..\..\..\Components\ /
+//                          hal\include\ -I D:\NTHU\¬ã¨s\Important\ThesisCode /
+//                          \Code\GitLabCloud\NewEcoExec\codegenerator\Device /
+//                          \EcoBT\Project\ble\CodeGenerator\CC2540DB\..\..\. /
+//                          .\..\Components\hal\target\CC2540EB\ -I           /
+//                          D:\NTHU\¬ã¨s\Important\ThesisCode\Code\GitLabClou /
+//                          d\NewEcoExec\codegenerator\Device\EcoBT\Project\b /
+//                          le\CodeGenerator\CC2540DB\..\..\..\..\Components\ /
+//                          osal\include\ -I D:\NTHU\¬ã¨s\Important\ThesisCod /
+//                          e\Code\GitLabCloud\NewEcoExec\codegenerator\Devic /
+//                          e\EcoBT\Project\ble\CodeGenerator\CC2540DB\..\..\ /
+//                          ..\..\Components\services\saddr\ -I               /
+//                          D:\NTHU\¬ã¨s\Important\ThesisCode\Code\GitLabClou /
+//                          d\NewEcoExec\codegenerator\Device\EcoBT\Project\b /
+//                          le\CodeGenerator\CC2540DB\..\..\..\..\Components\ /
+//                          ble\include\ -I D:\NTHU\¬ã¨s\Important\ThesisCode /
+//                          \Code\GitLabCloud\NewEcoExec\codegenerator\Device /
+//                          \EcoBT\Project\ble\CodeGenerator\CC2540DB\..\..\. /
+//                          .\..\Components\ble\controller\phy\ -I            /
+//                          D:\NTHU\¬ã¨s\Important\ThesisCode\Code\GitLabClou /
+//                          d\NewEcoExec\codegenerator\Device\EcoBT\Project\b /
+//                          le\CodeGenerator\CC2540DB\..\..\..\..\Components\ /
+//                          ble\controller\include\ -I                        /
+//                          D:\NTHU\¬ã¨s\Important\ThesisCode\Code\GitLabClou /
+//                          d\NewEcoExec\codegenerator\Device\EcoBT\Project\b /
+//                          le\CodeGenerator\CC2540DB\..\..\..\..\Components\ /
+//                          ble\hci\ -I D:\NTHU\¬ã¨s\Important\ThesisCode\Cod /
+//                          e\GitLabCloud\NewEcoExec\codegenerator\Device\Eco /
+//                          BT\Project\ble\CodeGenerator\CC2540DB\..\..\..\.. /
+//                          \Components\ble\host\ -I                          /
+//                          D:\NTHU\¬ã¨s\Important\ThesisCode\Code\GitLabClou /
+//                          d\NewEcoExec\codegenerator\Device\EcoBT\Project\b /
+//                          le\CodeGenerator\CC2540DB\..\..\common\cc2540\    /
+//                          -I D:\NTHU\¬ã¨s\Important\ThesisCode\Code\GitLabC /
+//                          loud\NewEcoExec\codegenerator\Device\EcoBT\Projec /
+//                          t\ble\CodeGenerator\CC2540DB\..\..\common\npi\npi /
+//                          _np\ -I D:\NTHU\¬ã¨s\Important\ThesisCode\Code\Gi /
+//                          tLabCloud\NewEcoExec\codegenerator\Device\EcoBT\P /
+//                          roject\ble\CodeGenerator\CC2540DB\..\..\Profiles\ /
+//                          Roles\ -I D:\NTHU\¬ã¨s\Important\ThesisCode\Code\ /
+//                          GitLabCloud\NewEcoExec\codegenerator\Device\EcoBT /
+//                          \Project\ble\CodeGenerator\CC2540DB\..\..\Profile /
+//                          s\SimpleProfile\ -I D:\NTHU\¬ã¨s\Important\Thesis /
+//                          Code\Code\GitLabCloud\NewEcoExec\codegenerator\De /
+//                          vice\EcoBT\Project\ble\CodeGenerator\CC2540DB\..\ /
+//                          ..\Profiles\DevInfo\ -I                           /
+//                          D:\NTHU\¬ã¨s\Important\ThesisCode\Code\GitLabClou /
+//                          d\NewEcoExec\codegenerator\Device\EcoBT\Project\b /
+//                          le\CodeGenerator\CC2540DB\..\..\Profiles\Accelero /
+//                          meter\ -I D:\NTHU\¬ã¨s\Important\ThesisCode\Code\ /
+//                          GitLabCloud\NewEcoExec\codegenerator\Device\EcoBT /
+//                          \Project\ble\CodeGenerator\CC2540DB\..\..\Profile /
+//                          s\EcoExecGATTProfile\ -I                          /
+//                          D:\NTHU\¬ã¨s\Important\ThesisCode\Code\GitLabClou /
+//                          d\NewEcoExec\codegenerator\Device\EcoBT\Project\b /
+//                          le\CodeGenerator\CC2540DB\..\..\Profiles\Batt\    /
+//                          -I D:\NTHU\¬ã¨s\Important\ThesisCode\Code\GitLabC /
+//                          loud\NewEcoExec\codegenerator\Device\EcoBT\Projec /
+//                          t\ble\CodeGenerator\CC2540DB\..\..\Profiles\HIDDe /
+//                          v\ -Ohz                                           /
+//    List file          =  D:\NTHU\¬ã¨s\Important\ThesisCode\Code\GitLabClou /
+//                          d\NewEcoExec\codegenerator\Device\EcoBT\Project\b /
+//                          le\CodeGenerator\CC2540DB\CC2540\List\npi.s51     /
+//                                                                            /
+//                                                                            /
+///////////////////////////////////////////////////////////////////////////////
+
+        NAME npi
+
+        RSEG DOVERLAY:DATA:NOROOT(0)
+        RSEG IOVERLAY:IDATA:NOROOT(0)
+        RSEG ISTACK:IDATA:NOROOT(0)
+        RSEG PSTACK:XDATA:NOROOT(0)
+        RSEG XSTACK:XDATA:NOROOT(0)
+
+        EXTERN ?ALLOC_XSTACK8
+        EXTERN ?BDISPATCH
+        EXTERN ?BRET
+        EXTERN ?DEALLOC_XSTACK8
+        EXTERN ?XSP
+        EXTERN ?XSTACK_DISP0_8
+
+        PUBLIC ??NPI_GetMaxRxBufSize?relay
+        PUBLIC ??NPI_GetMaxTxBufSize?relay
+        PUBLIC ??NPI_InitTransport?relay
+        PUBLIC ??NPI_ReadTransport?relay
+        PUBLIC ??NPI_RxBufLen?relay
+        PUBLIC ??NPI_WriteTransport?relay
+        PUBLIC NPI_GetMaxRxBufSize
+        PUBLIC NPI_GetMaxTxBufSize
+        PUBLIC NPI_InitTransport
+        PUBLIC NPI_ReadTransport
+        PUBLIC NPI_RxBufLen
+        PUBLIC NPI_WriteTransport
+
+HalUARTOpen         SYMBOL "HalUARTOpen"
+??HalUARTOpen?relay SYMBOL "?relay", HalUARTOpen
+HalUARTRead         SYMBOL "HalUARTRead"
+??HalUARTRead?relay SYMBOL "?relay", HalUARTRead
+HalUARTWrite        SYMBOL "HalUARTWrite"
+??HalUARTWrite?relay SYMBOL "?relay", HalUARTWrite
+Hal_UART_RxBufLen   SYMBOL "Hal_UART_RxBufLen"
+??Hal_UART_RxBufLen?relay SYMBOL "?relay", Hal_UART_RxBufLen
+NPI_GetMaxRxBufSize SYMBOL "NPI_GetMaxRxBufSize"
+??NPI_GetMaxRxBufSize?relay SYMBOL "?relay", NPI_GetMaxRxBufSize
+NPI_GetMaxTxBufSize SYMBOL "NPI_GetMaxTxBufSize"
+??NPI_GetMaxTxBufSize?relay SYMBOL "?relay", NPI_GetMaxTxBufSize
+NPI_InitTransport   SYMBOL "NPI_InitTransport"
+??NPI_InitTransport?relay SYMBOL "?relay", NPI_InitTransport
+NPI_ReadTransport   SYMBOL "NPI_ReadTransport"
+??NPI_ReadTransport?relay SYMBOL "?relay", NPI_ReadTransport
+NPI_RxBufLen        SYMBOL "NPI_RxBufLen"
+??NPI_RxBufLen?relay SYMBOL "?relay", NPI_RxBufLen
+NPI_WriteTransport  SYMBOL "NPI_WriteTransport"
+??NPI_WriteTransport?relay SYMBOL "?relay", NPI_WriteTransport
+
+        EXTERN ??HalUARTOpen?relay
+        EXTERN ??HalUARTRead?relay
+        EXTERN ??HalUARTWrite?relay
+        EXTERN ??Hal_UART_RxBufLen?relay
+        EXTERN HalUARTOpen
+        EXTERN HalUARTRead
+        EXTERN HalUARTWrite
+        EXTERN Hal_UART_RxBufLen
+
+// D:\NTHU\¬ã¨s\Important\ThesisCode\Code\GitLabCloud\NewEcoExec\codegenerator\Device\EcoBT\Project\ble\common\npi\npi_np\npi.c
+//    1 /*******************************************************************************
+//    2   Filename:       npi.c
+//    3   Revised:        $Date: 2008-06-11 14:30:47 -0700 (Wed, 11 Jun 2008) $
+//    4   Revision:       $Revision: 17210 $
+//    5 
+//    6   Description:    This file contains the Network Processor Interface (NPI),
+//    7                   which abstracts the physical link between the Application
+//    8                   Processor (AP) and the Network Processor (NP). The NPI
+//    9                   serves as the HAL's client for the SPI and UART drivers, and
+//   10                   provides API and callback services for its client.
+//   11 
+//   12   Copyright 2006-2012 Texas Instruments Incorporated. All rights reserved.
+//   13 
+//   14   IMPORTANT: Your use of this Software is limited to those specific rights
+//   15   granted under the terms of a software license agreement between the user
+//   16   who downloaded the software, his/her employer (which must be your employer)
+//   17   and Texas Instruments Incorporated (the "License").  You may not use this
+//   18   Software unless you agree to abide by the terms of the License. The License
+//   19   limits your use, and you acknowledge, that the Software may not be modified,
+//   20   copied or distributed unless embedded on a Texas Instruments microcontroller
+//   21   or used solely and exclusively in conjunction with a Texas Instruments radio
+//   22   frequency transceiver, which is integrated into your product.  Other than for
+//   23   the foregoing purpose, you may not use, reproduce, copy, prepare derivative
+//   24   works of, modify, distribute, perform, display or sell this Software and/or
+//   25   its documentation for any purpose.
+//   26 
+//   27   YOU FURTHER ACKNOWLEDGE AND AGREE THAT THE SOFTWARE AND DOCUMENTATION ARE
+//   28   PROVIDED “AS IS” WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESS OR IMPLIED,
+//   29   INCLUDING WITHOUT LIMITATION, ANY WARRANTY OF MERCHANTABILITY, TITLE,
+//   30   NON-INFRINGEMENT AND FITNESS FOR A PARTICULAR PURPOSE. IN NO EVENT SHALL
+//   31   TEXAS INSTRUMENTS OR ITS LICENSORS BE LIABLE OR OBLIGATED UNDER CONTRACT,
+//   32   NEGLIGENCE, STRICT LIABILITY, CONTRIBUTION, BREACH OF WARRANTY, OR OTHER
+//   33   LEGAL EQUITABLE THEORY ANY DIRECT OR INDIRECT DAMAGES OR EXPENSES
+//   34   INCLUDING BUT NOT LIMITED TO ANY INCIDENTAL, SPECIAL, INDIRECT, PUNITIVE
+//   35   OR CONSEQUENTIAL DAMAGES, LOST PROFITS OR LOST DATA, COST OF PROCUREMENT
+//   36   OF SUBSTITUTE GOODS, TECHNOLOGY, SERVICES, OR ANY CLAIMS BY THIRD PARTIES
+//   37   (INCLUDING BUT NOT LIMITED TO ANY DEFENSE THEREOF), OR OTHER SIMILAR COSTS.
+//   38 
+//   39   Should you have any questions regarding your right to use this Software,
+//   40   contact Texas Instruments Incorporated at www.TI.com.
+//   41 *******************************************************************************/
+//   42 
+//   43 /*******************************************************************************
+//   44  * INCLUDES
+//   45  */
+//   46 
+//   47 #include "hal_types.h"
+//   48 #include "hal_board.h"
+//   49 #include "npi.h"
+//   50 
+//   51 /*******************************************************************************
+//   52  * MACROS
+//   53  */
+//   54 
+//   55 /*******************************************************************************
+//   56  * CONSTANTS
+//   57  */
+//   58 
+//   59 /*******************************************************************************
+//   60  * TYPEDEFS
+//   61  */
+//   62 
+//   63 /*******************************************************************************
+//   64  * LOCAL VARIABLES
+//   65  */
+//   66 
+//   67 /*******************************************************************************
+//   68  * GLOBAL VARIABLES
+//   69  */
+//   70 
+//   71 /*******************************************************************************
+//   72  * PROTOTYPES
+//   73  */
+//   74 
+//   75 /*******************************************************************************
+//   76  * FUNCTIONS
+//   77  */
+//   78 
+//   79 /*******************************************************************************
+//   80  * @fn          NPI_InitTransport
+//   81  *
+//   82  * @brief       This routine initializes the transport layer and opens the port
+//   83  *              of the device. Note that based on project defines, either the
+//   84  *              UART, USB (CDC), or SPI driver can be used.
+//   85  *
+//   86  * input parameters
+//   87  *
+//   88  * @param       npiCback - User callback function when data is available.
+//   89  *
+//   90  * output parameters
+//   91  *
+//   92  * @param       None.
+//   93  *
+//   94  * @return      None.
+//   95  */
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+//   96 void NPI_InitTransport( npiCBack_t npiCBack )
+NPI_InitTransport:
+        CODE
+//   97 {
+        PUSH    DPL
+        PUSH    DPH
+        ; Saved register size: 2
+        ; Auto size: 29
+        MOV     A,#-0x1d
+        LCALL   ?ALLOC_XSTACK8
+//   98   halUARTCfg_t uartConfig;
+//   99 
+//  100   // configure UART
+//  101   uartConfig.configured           = TRUE;
+        MOV     DPL,?XSP + 0
+        MOV     DPH,?XSP + 1
+        MOV     A,#0x1
+        MOVX    @DPTR,A
+//  102   uartConfig.baudRate             = NPI_UART_BR;
+        LCALL   ?XSTACK_DISP0_8
+        MOV     A,#0x4
+        MOVX    @DPTR,A
+//  103   uartConfig.flowControl          = NPI_UART_FC;
+        MOV     A,#0x2
+        LCALL   ?XSTACK_DISP0_8
+        MOV     A,#0x1
+        MOVX    @DPTR,A
+//  104   uartConfig.flowControlThreshold = NPI_UART_FC_THRESHOLD;
+        MOV     A,#0x3
+        LCALL   ?XSTACK_DISP0_8
+        MOV     A,#0x30
+        MOVX    @DPTR,A
+        INC     DPTR
+        CLR     A
+        MOVX    @DPTR,A
+//  105   uartConfig.rx.maxBufSize        = NPI_UART_RX_BUF_SIZE;
+        MOV     A,#0xa
+        LCALL   ?XSTACK_DISP0_8
+        MOV     A,#-0x80
+        MOVX    @DPTR,A
+        INC     DPTR
+        CLR     A
+        MOVX    @DPTR,A
+//  106   uartConfig.tx.maxBufSize        = NPI_UART_TX_BUF_SIZE;
+        MOV     A,#0x12
+        LCALL   ?XSTACK_DISP0_8
+        MOV     A,#-0x80
+        MOVX    @DPTR,A
+        INC     DPTR
+        CLR     A
+        MOVX    @DPTR,A
+//  107   uartConfig.idleTimeout          = NPI_UART_IDLE_TIMEOUT;
+        MOV     A,#0x5
+        LCALL   ?XSTACK_DISP0_8
+        MOV     A,#0x6
+        MOVX    @DPTR,A
+//  108   uartConfig.intEnable            = NPI_UART_INT_ENABLE;
+        MOV     A,#0x16
+        LCALL   ?XSTACK_DISP0_8
+        MOV     A,#0x1
+        MOVX    @DPTR,A
+//  109   uartConfig.callBackFunc         = (halUARTCBack_t)npiCBack;
+        MOV     A,#0x1b
+        LCALL   ?XSTACK_DISP0_8
+        MOV     A,R2
+        MOVX    @DPTR,A
+        INC     DPTR
+        MOV     A,R3
+        MOVX    @DPTR,A
+//  110 
+//  111   // start UART
+//  112   // Note: Assumes no issue opening UART port.
+//  113   (void)HalUARTOpen( NPI_UART_PORT, &uartConfig );
+        ; Setup parameters for call to function HalUARTOpen
+        MOV     DPL,?XSP + 0
+        MOV     DPH,?XSP + 1
+        MOV     R2,DPL
+        MOV     R3,DPH
+        MOV     R1,#0x0
+        LCALL   ??HalUARTOpen?relay
+//  114 
+//  115   return;
+        MOV     A,#0x1d
+        LCALL   ?DEALLOC_XSTACK8
+        SJMP    ?Subroutine0
+//  116 }
+//  117 
+//  118 
+//  119 /*******************************************************************************
+//  120  * @fn          NPI_ReadTransport
+//  121  *
+//  122  * @brief       This routine reads data from the transport layer based on len,
+//  123  *              and places it into the buffer.
+//  124  *
+//  125  * input parameters
+//  126  *
+//  127  * @param       buf - Pointer to buffer to place read data.
+//  128  * @param       len - Number of bytes to read.
+//  129  *
+//  130  * output parameters
+//  131  *
+//  132  * @param       None.
+//  133  *
+//  134  * @return      Returns the number of bytes read from transport.
+//  135  */
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+//  136 uint16 NPI_ReadTransport( uint8 *buf, uint16 len )
+NPI_ReadTransport:
+        CODE
+//  137 {
+        PUSH    DPL
+        PUSH    DPH
+        ; Saved register size: 2
+        ; Auto size: 0
+//  138   return( HalUARTRead( NPI_UART_PORT, buf, len ) );
+        ; Setup parameters for call to function HalUARTRead
+        MOV     R1,#0x0
+        LCALL   ??HalUARTRead?relay
+        SJMP    ?Subroutine0
+//  139 }
+//  140 
+//  141 
+//  142 /*******************************************************************************
+//  143  * @fn          NPI_WriteTransport
+//  144  *
+//  145  * @brief       This routine writes data from the buffer to the transport layer.
+//  146  *
+//  147  * input parameters
+//  148  *
+//  149  * @param       buf - Pointer to buffer to write data from.
+//  150  * @param       len - Number of bytes to write.
+//  151  *
+//  152  * output parameters
+//  153  *
+//  154  * @param       None.
+//  155  *
+//  156  * @return      Returns the number of bytes written to transport.
+//  157  */
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+//  158 uint16 NPI_WriteTransport( uint8 *buf, uint16 len )
+NPI_WriteTransport:
+        CODE
+//  159 {
+        PUSH    DPL
+        PUSH    DPH
+        ; Saved register size: 2
+        ; Auto size: 0
+//  160   return( HalUARTWrite( NPI_UART_PORT, buf, len ) );
+        ; Setup parameters for call to function HalUARTWrite
+        MOV     R1,#0x0
+        LCALL   ??HalUARTWrite?relay
+        REQUIRE ?Subroutine0
+        ; // Fall through to label ?Subroutine0
+//  161 }
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+?Subroutine0:
+        POP     DPH
+        POP     DPL
+        LJMP    ?BRET
+//  162 
+//  163 
+//  164 /*******************************************************************************
+//  165  * @fn          NPI_RxBufLen
+//  166  *
+//  167  * @brief       This routine returns the number of bytes in the receive buffer.
+//  168  *
+//  169  * input parameters
+//  170  *
+//  171  * @param       None.
+//  172  *
+//  173  * output parameters
+//  174  *
+//  175  * @param       None.
+//  176  *
+//  177  * @return      Returns the number of bytes in the receive buffer.
+//  178  */
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+//  179 uint16 NPI_RxBufLen( void )
+NPI_RxBufLen:
+        CODE
+//  180 {
+        PUSH    DPL
+        PUSH    DPH
+        ; Saved register size: 2
+        ; Auto size: 0
+//  181   return( Hal_UART_RxBufLen( NPI_UART_PORT ) );
+        ; Setup parameters for call to function Hal_UART_RxBufLen
+        MOV     R1,#0x0
+        LCALL   ??Hal_UART_RxBufLen?relay
+        SJMP    ?Subroutine0
+//  182 }
+//  183 
+//  184 
+//  185 /*******************************************************************************
+//  186  * @fn          NPI_GetMaxRxBufSize
+//  187  *
+//  188  * @brief       This routine returns the max size receive buffer.
+//  189  *
+//  190  * input parameters
+//  191  *
+//  192  * @param       None.
+//  193  *
+//  194  * output parameters
+//  195  *
+//  196  * @param       None.
+//  197  *
+//  198  * @return      Returns the max size of the receive buffer.
+//  199  */
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+//  200 uint16 NPI_GetMaxRxBufSize( void )
+NPI_GetMaxRxBufSize:
+        CODE
+//  201 {
+        ; Saved register size: 0
+        ; Auto size: 0
+//  202   return( NPI_UART_RX_BUF_SIZE );
+        REQUIRE ?Subroutine1
+        ; // Fall through to label ?Subroutine1
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+?Subroutine1:
+        MOV     R2,#-0x80
+        MOV     R3,#0x0
+        LJMP    ?BRET
+//  203 }
+//  204 
+//  205 
+//  206 /*******************************************************************************
+//  207  * @fn          NPI_GetMaxTxBufSize
+//  208  *
+//  209  * @brief       This routine returns the max size transmit buffer.
+//  210  *
+//  211  * input parameters
+//  212  *
+//  213  * @param       None.
+//  214  *
+//  215  * output parameters
+//  216  *
+//  217  * @param       None.
+//  218  *
+//  219  * @return      Returns the max size of the transmit buffer.
+//  220  */
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+//  221 uint16 NPI_GetMaxTxBufSize( void )
+NPI_GetMaxTxBufSize:
+        CODE
+//  222 {
+        ; Saved register size: 0
+        ; Auto size: 0
+//  223   return( NPI_UART_TX_BUF_SIZE );
+        SJMP    ?Subroutine1
+//  224 }
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??NPI_InitTransport?relay:
+        CODE
+        LCALL   ?BDISPATCH
+        DATA24
+        DC24    NPI_InitTransport
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??NPI_ReadTransport?relay:
+        CODE
+        LCALL   ?BDISPATCH
+        DATA24
+        DC24    NPI_ReadTransport
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??NPI_WriteTransport?relay:
+        CODE
+        LCALL   ?BDISPATCH
+        DATA24
+        DC24    NPI_WriteTransport
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??NPI_RxBufLen?relay:
+        CODE
+        LCALL   ?BDISPATCH
+        DATA24
+        DC24    NPI_RxBufLen
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??NPI_GetMaxRxBufSize?relay:
+        CODE
+        LCALL   ?BDISPATCH
+        DATA24
+        DC24    NPI_GetMaxRxBufSize
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??NPI_GetMaxTxBufSize?relay:
+        CODE
+        LCALL   ?BDISPATCH
+        DATA24
+        DC24    NPI_GetMaxTxBufSize
+
+        END
+//  225 
+//  226 
+//  227 /*******************************************************************************
+//  228  ******************************************************************************/
+// 
+// 160 bytes in segment BANKED_CODE
+//  36 bytes in segment BANK_RELAYS
+// 
+// 196 bytes of CODE memory
+//
+//Errors: none
+//Warnings: none

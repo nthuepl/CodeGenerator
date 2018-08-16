@@ -1,0 +1,2025 @@
+///////////////////////////////////////////////////////////////////////////////
+//                                                                            /
+// IAR C/C++ Compiler V8.20.1.40829 for 8051            30/May/2014  17:59:47 /
+// Copyright 2004-2012 IAR Systems AB.                                        /
+//                                                                            /
+//    Core               =  plain                                             /
+//    Code model         =  banked                                            /
+//    Data model         =  large                                             /
+//    Calling convention =  xdata reentrant                                   /
+//    Constant location  =  data_rom                                          /
+//    Dptr setup         =  1,16                                              /
+//                                                                            /
+//    Source file        =  D:\NTHU\研究\Important\ThesisCode\Code\GitLabClou /
+//                          d\NewEcoExec\codegenerator\Device\EcoBT\Project\b /
+//                          le\Profiles\timeservice\timeservice.c             /
+//    Command line       =  -f D:\NTHU\研究\Important\ThesisCode\Code\GitLabC /
+//                          loud\NewEcoExec\codegenerator\Device\EcoBT\Projec /
+//                          t\ble\CodeGenerator\CC2541DB\..\..\config\buildCo /
+//                          mponents.cfg (-DBROADCASTER_CFG=0x01              /
+//                          -DOBSERVER_CFG=0x02 -DPERIPHERAL_CFG=0x04         /
+//                          -DCENTRAL_CFG=0x08 -DADV_NCONN_CFG=0x01           /
+//                          -DADV_CONN_CFG=0x02 -DSCAN_CFG=0x04               /
+//                          -DINIT_CFG=0x08 -DADV_CFG=ADV_NCONN_CFG+ADV_CONN_ /
+//                          CFG -DLINK_CFG=ADV_CONN_CFG+INIT_CFG              /
+//                          -DFULL_CFG=INIT_CFG+SCAN_CFG+ADV_NCONN_CFG+ADV_CO /
+//                          NN_CFG) -f D:\NTHU\研究\Important\ThesisCode\Code /
+//                          \GitLabCloud\NewEcoExec\codegenerator\Device\EcoB /
+//                          T\Project\ble\CodeGenerator\CC2541DB\buildConfig. /
+//                          cfg (-DHOST_CONFIG=PERIPHERAL_CFG                 /
+//                          -DGAP_PRIVACY_RECONNECT -DCC2541                  /
+//                          -DOAD_IMAGE_VERSION=0x0000                        /
+//                          "-DOAD_IMAGE_A_USER_ID='A', 'A', 'A', 'A'"        /
+//                          "-DOAD_IMAGE_B_USER_ID='B', 'B', 'B', 'B'")       /
+//                          D:\NTHU\研究\Important\ThesisCode\Code\GitLabClou /
+//                          d\NewEcoExec\codegenerator\Device\EcoBT\Project\b /
+//                          le\Profiles\timeservice\timeservice.c -D          /
+//                          INT_HEAP_LEN=900 -D HALNODEBUG -D                 /
+//                          OSAL_CBTIMER_NUM_TASKS=1 -D HAL_AES_DMA=TRUE -D   /
+//                          HAL_DMA=TRUE -D xPOWER_SAVING -D                  /
+//                          xPLUS_BROADCASTER -D HAL_LCD=FALSE -D             /
+//                          HAL_LED=TRUE -D HAL_ADC=TRUE -lB                  /
+//                          D:\NTHU\研究\Important\ThesisCode\Code\GitLabClou /
+//                          d\NewEcoExec\codegenerator\Device\EcoBT\Project\b /
+//                          le\CodeGenerator\CC2541DB\CC2541\List\ -o         /
+//                          D:\NTHU\研究\Important\ThesisCode\Code\GitLabClou /
+//                          d\NewEcoExec\codegenerator\Device\EcoBT\Project\b /
+//                          le\CodeGenerator\CC2541DB\CC2541\Obj\ -e --debug  /
+//                          --core=plain --dptr=16,1 --data_model=large       /
+//                          --code_model=banked --calling_convention=xdata_re /
+//                          entrant --place_constants=data_rom                /
+//                          --nr_virtual_regs 16 -I                           /
+//                          D:\NTHU\研究\Important\ThesisCode\Code\GitLabClou /
+//                          d\NewEcoExec\codegenerator\Device\EcoBT\Project\b /
+//                          le\CodeGenerator\CC2541DB\..\..\common\ -I        /
+//                          D:\NTHU\研究\Important\ThesisCode\Code\GitLabClou /
+//                          d\NewEcoExec\codegenerator\Device\EcoBT\Project\b /
+//                          le\CodeGenerator\CC2541DB\..\..\include\ -I       /
+//                          D:\NTHU\研究\Important\ThesisCode\Code\GitLabClou /
+//                          d\NewEcoExec\codegenerator\Device\EcoBT\Project\b /
+//                          le\CodeGenerator\CC2541DB\..\..\..\..\Components\ /
+//                          hal\include\ -I D:\NTHU\研究\Important\ThesisCode /
+//                          \Code\GitLabCloud\NewEcoExec\codegenerator\Device /
+//                          \EcoBT\Project\ble\CodeGenerator\CC2541DB\..\..\. /
+//                          .\..\Components\hal\target\CC2540EB\ -I           /
+//                          D:\NTHU\研究\Important\ThesisCode\Code\GitLabClou /
+//                          d\NewEcoExec\codegenerator\Device\EcoBT\Project\b /
+//                          le\CodeGenerator\CC2541DB\..\..\..\..\Components\ /
+//                          osal\include\ -I D:\NTHU\研究\Important\ThesisCod /
+//                          e\Code\GitLabCloud\NewEcoExec\codegenerator\Devic /
+//                          e\EcoBT\Project\ble\CodeGenerator\CC2541DB\..\..\ /
+//                          ..\..\Components\services\saddr\ -I               /
+//                          D:\NTHU\研究\Important\ThesisCode\Code\GitLabClou /
+//                          d\NewEcoExec\codegenerator\Device\EcoBT\Project\b /
+//                          le\CodeGenerator\CC2541DB\..\..\..\..\Components\ /
+//                          ble\include\ -I D:\NTHU\研究\Important\ThesisCode /
+//                          \Code\GitLabCloud\NewEcoExec\codegenerator\Device /
+//                          \EcoBT\Project\ble\CodeGenerator\CC2541DB\..\..\. /
+//                          .\..\Components\ble\controller\phy\ -I            /
+//                          D:\NTHU\研究\Important\ThesisCode\Code\GitLabClou /
+//                          d\NewEcoExec\codegenerator\Device\EcoBT\Project\b /
+//                          le\CodeGenerator\CC2541DB\..\..\..\..\Components\ /
+//                          ble\controller\include\ -I                        /
+//                          D:\NTHU\研究\Important\ThesisCode\Code\GitLabClou /
+//                          d\NewEcoExec\codegenerator\Device\EcoBT\Project\b /
+//                          le\CodeGenerator\CC2541DB\..\..\..\..\Components\ /
+//                          ble\hci\ -I D:\NTHU\研究\Important\ThesisCode\Cod /
+//                          e\GitLabCloud\NewEcoExec\codegenerator\Device\Eco /
+//                          BT\Project\ble\CodeGenerator\CC2541DB\..\..\..\.. /
+//                          \Components\ble\host\ -I                          /
+//                          D:\NTHU\研究\Important\ThesisCode\Code\GitLabClou /
+//                          d\NewEcoExec\codegenerator\Device\EcoBT\Project\b /
+//                          le\CodeGenerator\CC2541DB\..\..\common\cc2540\    /
+//                          -I D:\NTHU\研究\Important\ThesisCode\Code\GitLabC /
+//                          loud\NewEcoExec\codegenerator\Device\EcoBT\Projec /
+//                          t\ble\CodeGenerator\CC2541DB\..\..\common\npi\npi /
+//                          _np\ -I D:\NTHU\研究\Important\ThesisCode\Code\Gi /
+//                          tLabCloud\NewEcoExec\codegenerator\Device\EcoBT\P /
+//                          roject\ble\CodeGenerator\CC2541DB\..\..\Profiles\ /
+//                          Roles\ -I D:\NTHU\研究\Important\ThesisCode\Code\ /
+//                          GitLabCloud\NewEcoExec\codegenerator\Device\EcoBT /
+//                          \Project\ble\CodeGenerator\CC2541DB\..\..\Profile /
+//                          s\SimpleProfile\ -I D:\NTHU\研究\Important\Thesis /
+//                          Code\Code\GitLabCloud\NewEcoExec\codegenerator\De /
+//                          vice\EcoBT\Project\ble\CodeGenerator\CC2541DB\..\ /
+//                          ..\Profiles\DevInfo\ -I                           /
+//                          D:\NTHU\研究\Important\ThesisCode\Code\GitLabClou /
+//                          d\NewEcoExec\codegenerator\Device\EcoBT\Project\b /
+//                          le\CodeGenerator\CC2541DB\..\..\Profiles\Accelero /
+//                          meter\ -I D:\NTHU\研究\Important\ThesisCode\Code\ /
+//                          GitLabCloud\NewEcoExec\codegenerator\Device\EcoBT /
+//                          \Project\ble\CodeGenerator\CC2541DB\..\..\Profile /
+//                          s\EcoExecGATTProfile\ -I                          /
+//                          D:\NTHU\研究\Important\ThesisCode\Code\GitLabClou /
+//                          d\NewEcoExec\codegenerator\Device\EcoBT\Project\b /
+//                          le\CodeGenerator\CC2541DB\..\..\Profiles\timeserv /
+//                          ice\ -I D:\NTHU\研究\Important\ThesisCode\Code\Gi /
+//                          tLabCloud\NewEcoExec\codegenerator\Device\EcoBT\P /
+//                          roject\ble\CodeGenerator\CC2541DB\..\..\Profiles\ /
+//                          Batt\ -I D:\NTHU\研究\Important\ThesisCode\Code\G /
+//                          itLabCloud\NewEcoExec\codegenerator\Device\EcoBT\ /
+//                          Project\ble\CodeGenerator\CC2541DB\..\..\Profiles /
+//                          \HIDDev\ -I D:\NTHU\研究\Important\ThesisCode\Cod /
+//                          e\GitLabCloud\NewEcoExec\codegenerator\Device\Eco /
+//                          BT\Project\ble\CodeGenerator\CC2541DB\..\..\Profi /
+//                          les\ScanParam\ -Ohz                               /
+//    List file          =  D:\NTHU\研究\Important\ThesisCode\Code\GitLabClou /
+//                          d\NewEcoExec\codegenerator\Device\EcoBT\Project\b /
+//                          le\CodeGenerator\CC2541DB\CC2541\List\timeservice /
+//                          .s51                                              /
+//                                                                            /
+//                                                                            /
+///////////////////////////////////////////////////////////////////////////////
+
+        NAME timeservice
+
+        RSEG DOVERLAY:DATA:NOROOT(0)
+        RSEG IOVERLAY:IDATA:NOROOT(0)
+        RSEG ISTACK:IDATA:NOROOT(0)
+        RSEG PSTACK:XDATA:NOROOT(0)
+        RSEG XSTACK:XDATA:NOROOT(0)
+
+        EXTERN ?BANKED_ENTER_XDATA
+        EXTERN ?BANKED_LEAVE_XDATA
+        EXTERN ?BDISPATCH
+        EXTERN ?BRET
+        EXTERN ?CALL_IND
+        EXTERN ?DEALLOC_XSTACK8
+        EXTERN ?PUSH_XSTACK_I_TWO
+        EXTERN ?US_SWITCH_DENSE
+        EXTERN ?US_SWITCH_SPARSE
+        EXTERN ?V0
+        EXTERN ?XSTACK_DISP0_8
+        EXTERN __INIT_XDATA_I
+        EXTERN __INIT_XDATA_Z
+
+        PUBLIC ??timeservice_AddService?relay
+        PUBLIC ??timeservice_GetParameter?relay
+        PUBLIC ??timeservice_RegisterAppCBs?relay
+        PUBLIC ??timeservice_SetParameter?relay
+        PUBLIC ALARMUUID
+        PUBLIC DATEUUID
+        PUBLIC TIMEUUID
+        PUBLIC TIME_ENABLERUUID
+        PUBLIC timeserviceCBs
+        PUBLIC timeserviceServUUID
+        PUBLIC timeservice_AddService
+        PUBLIC timeservice_GetParameter
+        PUBLIC timeservice_RegisterAppCBs
+        PUBLIC timeservice_SetParameter
+
+GATTServApp_ProcessCCCWriteReq SYMBOL "GATTServApp_ProcessCCCWriteReq"
+??GATTServApp_ProcessCCCWriteReq?relay SYMBOL "?relay", GATTServApp_ProcessCCCWriteReq
+GATTServApp_RegisterService SYMBOL "GATTServApp_RegisterService"
+??GATTServApp_RegisterService?relay SYMBOL "?relay", GATTServApp_RegisterService
+linkDB_Register     SYMBOL "linkDB_Register"
+??linkDB_Register?relay SYMBOL "?relay", linkDB_Register
+linkDB_State        SYMBOL "linkDB_State"
+??linkDB_State?relay SYMBOL "?relay", linkDB_State
+osal_memcpy         SYMBOL "osal_memcpy"
+??osal_memcpy?relay SYMBOL "?relay", osal_memcpy
+timeservice_AddService SYMBOL "timeservice_AddService"
+??timeservice_AddService?relay SYMBOL "?relay", timeservice_AddService
+timeservice_GetParameter SYMBOL "timeservice_GetParameter"
+??timeservice_GetParameter?relay SYMBOL "?relay", timeservice_GetParameter
+timeservice_RegisterAppCBs SYMBOL "timeservice_RegisterAppCBs"
+??timeservice_RegisterAppCBs?relay SYMBOL "?relay", timeservice_RegisterAppCBs
+timeservice_SetParameter SYMBOL "timeservice_SetParameter"
+??timeservice_SetParameter?relay SYMBOL "?relay", timeservice_SetParameter
+
+        EXTERN ??GATTServApp_ProcessCCCWriteReq?relay
+        EXTERN ??GATTServApp_RegisterService?relay
+        EXTERN ??linkDB_Register?relay
+        EXTERN ??linkDB_State?relay
+        EXTERN ??osal_memcpy?relay
+        EXTERN GATTServApp_ProcessCCCWriteReq
+        EXTERN GATTServApp_RegisterService
+        EXTERN charUserDescUUID
+        EXTERN characterUUID
+        EXTERN linkDB_Register
+        EXTERN linkDB_State
+        EXTERN osal_memcpy
+        EXTERN primaryServiceUUID
+
+// D:\NTHU\研究\Important\ThesisCode\Code\GitLabCloud\NewEcoExec\codegenerator\Device\EcoBT\Project\ble\Profiles\timeservice\timeservice.c
+//    1 /**************************************************************************************************
+//    2 	Filename:       timeservice.h
+//    3 	Revised:        $Date:2014-03-13 16:50:14 $
+//    4 
+//    5 	Description:    This file contains the GATT profile definitions and prototypes..
+//    6 
+//    7 	Copyright 2013 EPLAB National Tsing Hua University. All rights reserved.
+//    8 	The information contained herein is confidential property of NTHU. 	The material may be used for a personal and non-commercial use only in connection with 	a legitimate academic research purpose. Any attempt to copy, modify, and distribute any portion of this source code or derivative thereof for commercial, political, or propaganda purposes is strictly prohibited. All other uses require explicit written permission from the authors and copyright holders. This copyright statement must be retained in its entirety and displayed in the copyright statement of derived source code or systems.
+//    9 **************************************************************************************************/
+//   10 /*********************************************************************
+//   11  * INCLUDES
+//   12  */
+//   13 #include "bcomdef.h"
+//   14 #include "OSAL.h"
+//   15 #include "linkdb.h"
+//   16 #include "att.h"
+//   17 #include "gatt.h"
+//   18 #include "gatt_uuid.h"
+//   19 #include "gattservapp.h"
+//   20 #include "gapbondmgr.h"
+//   21 
+//   22 #include "timeservice.h"
+//   23 
+//   24 /*********************************************************************
+//   25  * MACROS
+//   26  */
+//   27 
+//   28 /*********************************************************************
+//   29  * CONSTANTS
+//   30  */
+//   31 
+//   32 #define SERVAPP_NUM_ATTR_SUPPORTED        46
+//   33 
+//   34 /*********************************************************************
+//   35  * TYPEDEFS
+//   36  */
+//   37 
+//   38 /*********************************************************************
+//   39  * GLOBAL VARIABLES
+//   40  */
+//   41 
+//   42 // GATT Profile Service UUID: 0xFDF0
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA16
+//   43 CONST uint8 timeserviceServUUID[ATT_BT_UUID_SIZE] =
+timeserviceServUUID:
+        DATA8
+        DB 240
+        DB 253
+//   44 {
+//   45   LO_UINT16(TIMESERVICE_SERV_UUID), HI_UINT16(TIMESERVICE_SERV_UUID)
+//   46 };
+//   47 
+//   48 // TIME_ENABLER UUID: 0xFDF1
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA16
+//   49 CONST uint8 TIME_ENABLERUUID[ATT_BT_UUID_SIZE] =
+TIME_ENABLERUUID:
+        DATA8
+        DB 241
+        DB 253
+//   50 {
+//   51   LO_UINT16(TIME_ENABLER_UUID), HI_UINT16(TIME_ENABLER_UUID)
+//   52 };
+//   53 
+//   54 // TIME UUID: 0xFDF2
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA16
+//   55 CONST uint8 TIMEUUID[ATT_BT_UUID_SIZE] =
+TIMEUUID:
+        DATA8
+        DB 242
+        DB 253
+//   56 {
+//   57   LO_UINT16(TIME_UUID), HI_UINT16(TIME_UUID)
+//   58 };
+//   59 
+//   60 // DATE UUID: 0xFDF3
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA16
+//   61 CONST uint8 DATEUUID[ATT_BT_UUID_SIZE] =
+DATEUUID:
+        DATA8
+        DB 243
+        DB 253
+//   62 {
+//   63   LO_UINT16(DATE_UUID), HI_UINT16(DATE_UUID)
+//   64 };
+//   65 
+//   66 // ALARM UUID: 0xFDF4
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA16
+//   67 CONST uint8 ALARMUUID[ATT_BT_UUID_SIZE] =
+ALARMUUID:
+        DATA8
+        DB 244
+        DB 253
+//   68 {
+//   69   LO_UINT16(ALARM_UUID), HI_UINT16(ALARM_UUID)
+//   70 };
+//   71 
+//   72 
+//   73 /*********************************************************************
+//   74  * EXTERNAL VARIABLES
+//   75  */
+//   76 
+//   77 /*********************************************************************
+//   78  * EXTERNAL FUNCTIONS
+//   79  */
+//   80 
+//   81 /*********************************************************************
+//   82  * LOCAL VARIABLES
+//   83  */
+//   84 
+
+        RSEG XDATA_Z:XDATA:NOROOT(0)
+        DATA16
+//   85 static timeserviceCBs_t *timeservice_AppCBs = NULL;
+timeservice_AppCBs:
+        DS 2
+        REQUIRE __INIT_XDATA_Z
+//   86 
+//   87 /*********************************************************************
+//   88  * Profile Attributes - variables
+//   89  */
+//   90 
+//   91 // Profile Service attribute
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA8
+//   92 static CONST gattAttrType_t timeserviceService = { ATT_BT_UUID_SIZE, timeserviceServUUID };
+timeserviceService:
+        DB 2
+        DATA16
+        DW timeserviceServUUID
+//   93 
+//   94 // Profile TIME_ENABLER Properties
+
+        RSEG XDATA_I:XDATA:NOROOT(0)
+//   95 static uint8 TIME_ENABLERProps = GATT_PROP_READ | GATT_PROP_WRITE;
+TIME_ENABLERProps:
+        DATA8
+        DS 1
+        REQUIRE `?<Initializer for TIME_ENABLERProps>`
+        REQUIRE __INIT_XDATA_I
+//   96 
+//   97 // TIME_ENABLER Value
+
+        RSEG XDATA_Z:XDATA:NOROOT(0)
+        DATA8
+//   98 static uint8 TIME_ENABLERValue = 0;// Profile TIME_ENABLER User Description
+TIME_ENABLERValue:
+        DS 1
+        REQUIRE __INIT_XDATA_Z
+
+        RSEG XDATA_I:XDATA:NOROOT(0)
+//   99 static uint8 TIME_ENABLERUserDesp[13] = "time_enabler\0";
+TIME_ENABLERUserDesp:
+        DATA8
+        DS 13
+        REQUIRE `?<Initializer for TIME_ENABLERUserDesp>`
+        REQUIRE __INIT_XDATA_I
+//  100 
+//  101 // Profile TIME Properties
+
+        RSEG XDATA_I:XDATA:NOROOT(0)
+//  102 static uint8 TIMEProps = GATT_PROP_READ | GATT_PROP_WRITE;
+TIMEProps:
+        DATA8
+        DS 1
+        REQUIRE `?<Initializer for TIMEProps>`
+        REQUIRE __INIT_XDATA_I
+//  103 
+//  104 // TIME Value
+
+        RSEG XDATA_Z:XDATA:NOROOT(0)
+        DATA8
+//  105 static uint8 TIMEValue[TIME_LEN] = { 0, 0, 0 };// Profile HOUR User Description
+TIMEValue:
+        DS 3
+        REQUIRE __INIT_XDATA_Z
+
+        RSEG XDATA_I:XDATA:NOROOT(0)
+//  106 static uint8 TIMEUserDesp[5] = "time\0";
+TIMEUserDesp:
+        DATA8
+        DS 5
+        REQUIRE `?<Initializer for TIMEUserDesp>`
+        REQUIRE __INIT_XDATA_I
+//  107 
+//  108 // Profile DATE Properties
+
+        RSEG XDATA_I:XDATA:NOROOT(0)
+//  109 static uint8 DATEProps = GATT_PROP_READ | GATT_PROP_WRITE;
+DATEProps:
+        DATA8
+        DS 1
+        REQUIRE `?<Initializer for DATEProps>`
+        REQUIRE __INIT_XDATA_I
+//  110 
+//  111 // DATE Value
+
+        RSEG XDATA_Z:XDATA:NOROOT(0)
+        DATA8
+//  112 static uint8 DATEValue[DATE_LEN] = {0, 0, 0, 0, 0 };// Profile MINUTE User Description
+DATEValue:
+        DS 5
+        REQUIRE __INIT_XDATA_Z
+
+        RSEG XDATA_I:XDATA:NOROOT(0)
+//  113 static uint8 DATEUserDesp[7] = "date\0";
+DATEUserDesp:
+        DATA8
+        DS 7
+        REQUIRE `?<Initializer for DATEUserDesp>`
+        REQUIRE __INIT_XDATA_I
+//  114 
+//  115 // Profile ALARM Properties
+
+        RSEG XDATA_I:XDATA:NOROOT(0)
+//  116 static uint8 ALARMProps = GATT_PROP_READ | GATT_PROP_WRITE;
+ALARMProps:
+        DATA8
+        DS 1
+        REQUIRE `?<Initializer for ALARMProps>`
+        REQUIRE __INIT_XDATA_I
+//  117 
+//  118 // ALARM Value
+
+        RSEG XDATA_Z:XDATA:NOROOT(0)
+        DATA8
+//  119 static uint8 ALARMValue[ALARM_LEN] = { 0, 0, 0, 0, 0, 0 };// Profile SECOND User Description
+ALARMValue:
+        DS 6
+        REQUIRE __INIT_XDATA_Z
+
+        RSEG XDATA_I:XDATA:NOROOT(0)
+//  120 static uint8 ALARMUserDesp[7] = "alarm\0";
+ALARMUserDesp:
+        DATA8
+        DS 7
+        REQUIRE `?<Initializer for ALARMUserDesp>`
+        REQUIRE __INIT_XDATA_I
+//  121 
+//  122 
+//  123 /*********************************************************************
+//  124  * Profile Attributes - Table
+//  125  */
+//  126 
+
+        RSEG XDATA_I:XDATA:NOROOT(0)
+//  127 static gattAttribute_t timeserviceAttrTbl[SERVAPP_NUM_ATTR_SUPPORTED] = 
+timeserviceAttrTbl:
+        DATA8
+        DS 368
+        REQUIRE `?<Initializer for timeserviceAttrTbl>`
+        REQUIRE __INIT_XDATA_I
+//  128 {
+//  129   // Simple Profile Service
+//  130   {
+//  131     { ATT_BT_UUID_SIZE, primaryServiceUUID }, /* type */
+//  132     GATT_PERMIT_READ,                         /* permissions */
+//  133     0,                                        /* handle */
+//  134     (uint8 *)&timeserviceService           /* pValue */
+//  135   },
+//  136 
+//  137     // TIME_ENABLER Declaration
+//  138     {
+//  139       { ATT_BT_UUID_SIZE, characterUUID },
+//  140       GATT_PERMIT_READ,
+//  141       0,
+//  142       &TIME_ENABLERProps
+//  143     },
+//  144 
+//  145       // TIME_ENABLER Value
+//  146       {
+//  147         { ATT_BT_UUID_SIZE, TIME_ENABLERUUID },
+//  148         GATT_PERMIT_READ | GATT_PERMIT_WRITE,
+//  149         0,
+//  150         &TIME_ENABLERValue
+//  151       },
+//  152 
+//  153       // TIME_ENABLER User Description
+//  154       {
+//  155         { ATT_BT_UUID_SIZE, charUserDescUUID },
+//  156         GATT_PERMIT_READ, 
+//  157         0,
+//  158         TIME_ENABLERUserDesp
+//  159       },
+//  160 
+//  161     // TIME Declaration
+//  162     {
+//  163       { ATT_BT_UUID_SIZE, characterUUID },
+//  164       GATT_PERMIT_READ,
+//  165       0,
+//  166       &TIMEProps
+//  167     },
+//  168 
+//  169       // TIME Value
+//  170       {
+//  171         { ATT_BT_UUID_SIZE, TIMEUUID },
+//  172         GATT_PERMIT_READ | GATT_PERMIT_WRITE,
+//  173         0,
+//  174         TIMEValue
+//  175       },
+//  176 
+//  177       // TIME User Description
+//  178       {
+//  179         { ATT_BT_UUID_SIZE, charUserDescUUID },
+//  180         GATT_PERMIT_READ, 
+//  181         0,
+//  182         TIMEUserDesp
+//  183       },
+//  184 
+//  185     // DATE Declaration
+//  186     {
+//  187       { ATT_BT_UUID_SIZE, characterUUID },
+//  188       GATT_PERMIT_READ,
+//  189       0,
+//  190       &DATEProps
+//  191     },
+//  192 
+//  193       // DATE Value
+//  194       {
+//  195         { ATT_BT_UUID_SIZE, DATEUUID },
+//  196         GATT_PERMIT_READ | GATT_PERMIT_WRITE,
+//  197         0,
+//  198         DATEValue
+//  199       },
+//  200 
+//  201       // DATE User Description
+//  202       {
+//  203         { ATT_BT_UUID_SIZE, charUserDescUUID },
+//  204         GATT_PERMIT_READ, 
+//  205         0,
+//  206         DATEUserDesp
+//  207       },
+//  208 
+//  209     // ALARM Declaration
+//  210     {
+//  211       { ATT_BT_UUID_SIZE, characterUUID },
+//  212       GATT_PERMIT_READ,
+//  213       0,
+//  214       &ALARMProps
+//  215     },
+//  216 
+//  217       // ALARM Value
+//  218       {
+//  219         { ATT_BT_UUID_SIZE, ALARMUUID },
+//  220         GATT_PERMIT_READ | GATT_PERMIT_WRITE,
+//  221         0,
+//  222         ALARMValue
+//  223       },
+//  224 
+//  225       // ALARM User Description
+//  226       {
+//  227         { ATT_BT_UUID_SIZE, charUserDescUUID },
+//  228         GATT_PERMIT_READ, 
+//  229         0,
+//  230         ALARMUserDesp
+//  231       },
+//  232 };
+//  233 
+//  234 
+//  235 /*********************************************************************
+//  236  * LOCAL FUNCTIONS
+//  237  */
+//  238 static uint8 timeservice_ReadAttrCB( uint16 connHandle, gattAttribute_t *pAttr, 
+//  239                             uint8 *pValue, uint8 *pLen, uint16 offset, uint8 maxLen );
+//  240 static bStatus_t timeservice_WriteAttrCB( uint16 connHandle, gattAttribute_t *pAttr,
+//  241                                  uint8 *pValue, uint8 len, uint16 offset );
+//  242 
+//  243 static void timeservice_HandleConnStatusCB( uint16 connHandle, uint8 changeType );
+//  244 
+//  245 
+//  246 /*********************************************************************
+//  247  * PROFILE CALLBACKS
+//  248  */
+//  249 // timeserviceService Callbacks
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA8
+//  250 CONST gattServiceCBs_t timeserviceCBs =
+timeserviceCBs:
+        DATA16
+        DW ??timeservice_ReadAttrCB?relay
+        DW ??timeservice_WriteAttrCB?relay
+        DW 0H
+//  251 {
+//  252   timeservice_ReadAttrCB,  // Read callback function pointer
+//  253   timeservice_WriteAttrCB, // Write callback function pointer
+//  254   NULL                       // Authorization callback function pointer
+//  255 };
+//  256 
+//  257 /*********************************************************************
+//  258  * PUBLIC FUNCTIONS
+//  259  */
+//  260 
+//  261 /*********************************************************************
+//  262  * @fn      timeservice_AddService
+//  263  *
+//  264  * @brief   Initializes the timeservice service by registering
+//  265  *          GATT attributes with the GATT server.
+//  266  *
+//  267  * @param   services - services to add. This is a bit map and can
+//  268  *                     contain more than one service.
+//  269  *
+//  270  * @return  Success or Failure
+//  271  */
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+//  272 bStatus_t timeservice_AddService( uint32 services )
+timeservice_AddService:
+        CODE
+//  273 {
+        MOV     A,#-0xc
+        LCALL   ?BANKED_ENTER_XDATA
+        ; Saved register size: 12
+        ; Auto size: 0
+        MOV     ?V0 + 0,R2
+//  274   uint8 status = SUCCESS;
+        MOV     R6,#0x0
+//  275 
+//  276   // Register with Link DB to receive link status change callback
+//  277   VOID linkDB_Register( timeservice_HandleConnStatusCB );
+        ; Setup parameters for call to function linkDB_Register
+        MOV     R2,#??timeservice_HandleConnStatusCB?relay & 0xff
+        MOV     R3,#(??timeservice_HandleConnStatusCB?relay >> 8) & 0xff
+        LCALL   ??linkDB_Register?relay
+//  278 
+//  279   if ( services & TIMESERVICE_SERVICE )
+        MOV     A,?V0 + 0
+        MOV     C,0xE0 /* A   */.0
+        JNC     ??timeservice_AddService_0
+//  280   {
+//  281     // Register GATT attribute list and CBs with GATT Server App
+//  282     status = GATTServApp_RegisterService( timeserviceAttrTbl, 
+//  283                                           GATT_NUM_ATTRS( timeserviceAttrTbl ),
+//  284                                           &timeserviceCBs );
+        ; Setup parameters for call to function GATTServApp_RegisterService
+        MOV     ?V0 + 0,#timeserviceCBs & 0xff
+        MOV     ?V0 + 1,#(timeserviceCBs >> 8) & 0xff
+        MOV     R0,#?V0 + 0
+        LCALL   ?PUSH_XSTACK_I_TWO
+        MOV     R4,#0x2e
+        MOV     R5,#0x0
+        MOV     R2,#timeserviceAttrTbl & 0xff
+        MOV     R3,#(timeserviceAttrTbl >> 8) & 0xff
+        LCALL   ??GATTServApp_RegisterService?relay
+        MOV     A,#0x2
+        LCALL   ?DEALLOC_XSTACK8
+        MOV     A,R1
+        MOV     R6,A
+//  285   }
+//  286 
+//  287   return ( status );
+??timeservice_AddService_0:
+        REQUIRE ?Subroutine0
+        ; // Fall through to label ?Subroutine0
+//  288 }
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+?Subroutine0:
+        MOV     A,R6
+        MOV     R1,A
+        MOV     R7,#0x4
+        LJMP    ?BANKED_LEAVE_XDATA
+//  289 
+//  290 
+//  291 /*********************************************************************
+//  292  * @fn      timeservice_RegisterAppCBs
+//  293  *
+//  294  * @brief   Registers the application callback function. Only call
+//  295  *          this function once.
+//  296  *
+//  297  * @param   callbacks - pointer to application callbacks.
+//  298  *
+//  299  * @return  SUCCESS or bleAlreadyInRequestedMode
+//  300  */
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+//  301 bStatus_t timeservice_RegisterAppCBs( timeserviceCBs_t *appCallbacks )
+timeservice_RegisterAppCBs:
+        CODE
+//  302 {
+        PUSH    DPL
+        PUSH    DPH
+        ; Saved register size: 2
+        ; Auto size: 0
+//  303   if ( appCallbacks )
+        MOV     A,R2
+        ORL     A,R3
+        JZ      ??timeservice_RegisterAppCBs_0
+//  304   {
+//  305     timeservice_AppCBs = appCallbacks;
+        MOV     DPTR,#timeservice_AppCBs
+        MOV     A,R2
+        MOVX    @DPTR,A
+        INC     DPTR
+        MOV     A,R3
+        MOVX    @DPTR,A
+//  306 
+//  307     return ( SUCCESS );
+        MOV     R1,#0x0
+        SJMP    ??timeservice_RegisterAppCBs_1
+//  308   }
+//  309   else
+//  310   {
+//  311     return ( bleAlreadyInRequestedMode );
+??timeservice_RegisterAppCBs_0:
+        MOV     R1,#0x11
+??timeservice_RegisterAppCBs_1:
+        POP     DPH
+        POP     DPL
+        LJMP    ?BRET
+//  312   }
+//  313 }
+//  314 
+//  315 
+//  316 /*********************************************************************
+//  317  * @fn      timeservice_SetParameter
+//  318  *
+//  319  * @brief   Set a timeservice parameter.
+//  320  *
+//  321  * @param   param - Profile parameter ID
+//  322  * @param   len - length of data to right
+//  323  * @param   value - pointer to data to write.  This is dependent on
+//  324  *          the parameter ID and WILL be cast to the appropriate
+//  325  *          data type (example: data type of uint16 will be cast to
+//  326  *          uint16 pointer).
+//  327  *
+//  328  * @return  bStatus_t
+//  329  */
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+//  330 bStatus_t timeservice_SetParameter( uint8 param, uint8 len, void *value )
+timeservice_SetParameter:
+        CODE
+//  331 {
+        MOV     A,#-0xc
+        LCALL   ?BANKED_ENTER_XDATA
+        ; Saved register size: 12
+        ; Auto size: 0
+        MOV     A,R1
+        MOV     ?V0 + 0,R2
+//  332   bStatus_t ret = SUCCESS;
+        MOV     R6,#0x0
+//  333   switch ( param )
+        JZ      ??timeservice_SetParameter_0
+        DEC     A
+        JZ      ??timeservice_SetParameter_1
+        DEC     A
+        JZ      ??timeservice_SetParameter_2
+        DEC     A
+        JZ      ??timeservice_SetParameter_3
+        SJMP    ??timeservice_SetParameter_4
+//  334   {
+//  335     case TIME_ENABLER:
+//  336       if ( len == TIME_ENABLER_LEN )
+??timeservice_SetParameter_0:
+        MOV     A,#0x1
+        XRL     A,?V0 + 0
+        JNZ     ??timeservice_SetParameter_5
+//  337       {
+//  338         VOID osal_memcpy( &TIME_ENABLERValue, value, TIME_ENABLER_LEN );
+        ; Setup parameters for call to function osal_memcpy
+        MOV     ?V0 + 2,#0x1
+        MOV     ?V0 + 3,R6
+        MOV     R0,#?V0 + 2
+        LCALL   ?PUSH_XSTACK_I_TWO
+        MOV     R2,#TIME_ENABLERValue & 0xff
+        MOV     R3,#(TIME_ENABLERValue >> 8) & 0xff
+        SJMP    ??timeservice_SetParameter_6
+//  339       }
+//  340       else
+//  341       {
+//  342         ret = bleInvalidRange;
+//  343       }
+//  344       break;
+//  345 
+//  346     case TIME:
+//  347       if ( len == TIME_LEN )
+??timeservice_SetParameter_1:
+        MOV     A,#0x3
+        XRL     A,?V0 + 0
+        JNZ     ??timeservice_SetParameter_5
+//  348       {
+//  349         VOID osal_memcpy( TIMEValue, value, TIME_LEN );
+        ; Setup parameters for call to function osal_memcpy
+        MOV     ?V0 + 2,#0x3
+        MOV     ?V0 + 3,R6
+        MOV     R0,#?V0 + 2
+        LCALL   ?PUSH_XSTACK_I_TWO
+        MOV     R2,#TIMEValue & 0xff
+        MOV     R3,#(TIMEValue >> 8) & 0xff
+        SJMP    ??timeservice_SetParameter_6
+//  350       }
+//  351       else
+//  352       {
+//  353         ret = bleInvalidRange;
+//  354       }
+//  355       break;
+//  356 
+//  357     case DATE:
+//  358       if ( len == DATE_LEN )
+??timeservice_SetParameter_2:
+        MOV     A,#0x5
+        XRL     A,?V0 + 0
+        JNZ     ??timeservice_SetParameter_5
+//  359       {
+//  360         VOID osal_memcpy( DATEValue, value, DATE_LEN );
+        ; Setup parameters for call to function osal_memcpy
+        MOV     ?V0 + 2,#0x5
+        MOV     ?V0 + 3,R6
+        MOV     R0,#?V0 + 2
+        LCALL   ?PUSH_XSTACK_I_TWO
+        MOV     R2,#DATEValue & 0xff
+        MOV     R3,#(DATEValue >> 8) & 0xff
+        SJMP    ??timeservice_SetParameter_6
+//  361       }
+//  362       else
+//  363       {
+//  364         ret = bleInvalidRange;
+//  365       }
+//  366       break;
+//  367 
+//  368     case ALARM:
+//  369       if ( len == ALARM_LEN )
+??timeservice_SetParameter_3:
+        MOV     A,#0x6
+        XRL     A,?V0 + 0
+        JNZ     ??timeservice_SetParameter_5
+//  370       {
+//  371         VOID osal_memcpy( ALARMValue, value, ALARM_LEN );
+        ; Setup parameters for call to function osal_memcpy
+        MOV     ?V0 + 2,#0x6
+        MOV     ?V0 + 3,R6
+        MOV     R0,#?V0 + 2
+        LCALL   ?PUSH_XSTACK_I_TWO
+        MOV     R2,#ALARMValue & 0xff
+        MOV     R3,#(ALARMValue >> 8) & 0xff
+??timeservice_SetParameter_6:
+        LCALL   ??osal_memcpy?relay
+        MOV     A,#0x2
+        LCALL   ?DEALLOC_XSTACK8
+        SJMP    ??timeservice_SetParameter_7
+//  372       }
+//  373       else
+//  374       {
+//  375         ret = bleInvalidRange;
+??timeservice_SetParameter_5:
+        MOV     R6,#0x18
+        SJMP    ??timeservice_SetParameter_7
+//  376       }
+//  377       break;
+//  378 
+//  379     default:
+//  380       ret = INVALIDPARAMETER;
+??timeservice_SetParameter_4:
+        INC     R6
+        INC     R6
+//  381       break;
+//  382   }
+//  383 
+//  384   return ( ret );
+??timeservice_SetParameter_7:
+        LJMP    ?Subroutine0 & 0xFFFF
+//  385 }
+//  386 
+//  387 /*********************************************************************
+//  388  * @fn      timeservice_GetParameter
+//  389  *
+//  390  * @brief   Get a timeservice parameter.
+//  391  *
+//  392  * @param   param - Profile parameter ID
+//  393  * @param   value - pointer to data to put.  This is dependent on
+//  394  *          the parameter ID and WILL be cast to the appropriate
+//  395  *          data type (example: data type of uint16 will be cast to
+//  396  *          uint16 pointer).
+//  397  *
+//  398  * @return  bStatus_t
+//  399  */
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+//  400 bStatus_t timeservice_GetParameter( uint8 param, void *value )
+timeservice_GetParameter:
+        CODE
+//  401 {
+        MOV     A,#-0xa
+        LCALL   ?BANKED_ENTER_XDATA
+        ; Saved register size: 10
+        ; Auto size: 0
+        MOV     A,R1
+//  402   bStatus_t ret = SUCCESS;
+        MOV     R6,#0x0
+//  403   switch ( param )
+        JZ      ??timeservice_GetParameter_0
+        DEC     A
+        JZ      ??timeservice_GetParameter_1
+        DEC     A
+        JZ      ??timeservice_GetParameter_2
+        DEC     A
+        JZ      ??timeservice_GetParameter_3
+        SJMP    ??timeservice_GetParameter_4
+//  404   {
+//  405     case TIME_ENABLER:
+//  406       VOID osal_memcpy( value, &TIME_ENABLERValue, TIME_ENABLER_LEN );
+??timeservice_GetParameter_0:
+        ; Setup parameters for call to function osal_memcpy
+        MOV     ?V0 + 0,#0x1
+        MOV     ?V0 + 1,R6
+        MOV     R0,#?V0 + 0
+        LCALL   ?PUSH_XSTACK_I_TWO
+        MOV     R4,#TIME_ENABLERValue & 0xff
+        MOV     R5,#(TIME_ENABLERValue >> 8) & 0xff
+        SJMP    ??timeservice_GetParameter_5
+//  407       break;
+//  408 
+//  409     case TIME:
+//  410       VOID osal_memcpy( value, TIMEValue, TIME_LEN );
+??timeservice_GetParameter_1:
+        ; Setup parameters for call to function osal_memcpy
+        MOV     ?V0 + 0,#0x3
+        MOV     ?V0 + 1,R6
+        MOV     R0,#?V0 + 0
+        LCALL   ?PUSH_XSTACK_I_TWO
+        MOV     R4,#TIMEValue & 0xff
+        MOV     R5,#(TIMEValue >> 8) & 0xff
+        SJMP    ??timeservice_GetParameter_5
+//  411       break;
+//  412 
+//  413     case DATE:
+//  414       VOID osal_memcpy( value, DATEValue, DATE_LEN );
+??timeservice_GetParameter_2:
+        ; Setup parameters for call to function osal_memcpy
+        MOV     ?V0 + 0,#0x5
+        MOV     ?V0 + 1,R6
+        MOV     R0,#?V0 + 0
+        LCALL   ?PUSH_XSTACK_I_TWO
+        MOV     R4,#DATEValue & 0xff
+        MOV     R5,#(DATEValue >> 8) & 0xff
+        SJMP    ??timeservice_GetParameter_5
+//  415       break;
+//  416 
+//  417     case ALARM:
+//  418       VOID osal_memcpy( value, ALARMValue, ALARM_LEN );
+??timeservice_GetParameter_3:
+        ; Setup parameters for call to function osal_memcpy
+        MOV     ?V0 + 0,#0x6
+        MOV     ?V0 + 1,R6
+        MOV     R0,#?V0 + 0
+        LCALL   ?PUSH_XSTACK_I_TWO
+        MOV     R4,#ALARMValue & 0xff
+        MOV     R5,#(ALARMValue >> 8) & 0xff
+??timeservice_GetParameter_5:
+        LCALL   ??osal_memcpy?relay
+        MOV     A,#0x2
+        LCALL   ?DEALLOC_XSTACK8
+//  419       break;
+        SJMP    ??timeservice_GetParameter_6
+//  420 
+//  421     default:
+//  422       ret = INVALIDPARAMETER;
+??timeservice_GetParameter_4:
+        INC     R6
+        INC     R6
+//  423       break;
+//  424   }
+//  425 
+//  426   return ( ret );
+??timeservice_GetParameter_6:
+        MOV     A,R6
+        MOV     R1,A
+        MOV     R7,#0x2
+        LJMP    ?BANKED_LEAVE_XDATA
+//  427 }
+//  428 
+//  429 /*********************************************************************
+//  430  * @fn          timeservice_ReadAttrCB
+//  431  *
+//  432  * @brief       Read an attribute.
+//  433  *
+//  434  * @param       connHandle - connection message was received on
+//  435  * @param       pAttr - pointer to attribute
+//  436  * @param       pValue - pointer to data to be read
+//  437  * @param       pLen - length of data to be read
+//  438  * @param       offset - offset of the first octet to be read
+//  439  * @param       maxLen - maximum length of data to be read
+//  440  *
+//  441  * @return      Success or Failure
+//  442  */
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+//  443 static uint8 timeservice_ReadAttrCB( uint16 connHandle, gattAttribute_t *pAttr, 
+timeservice_ReadAttrCB:
+        CODE
+//  444                             uint8 *pValue, uint8 *pLen, uint16 offset, uint8 maxLen )
+//  445 {
+        MOV     A,#-0xe
+        LCALL   ?BANKED_ENTER_XDATA
+        ; Saved register size: 14
+        ; Auto size: 0
+        MOV     A,#0x12
+        LCALL   ?XSTACK_DISP0_8
+        LCALL   ??Subroutine3_0 & 0xFFFF
+//  446   bStatus_t status = SUCCESS;
+??CrossCallReturnLabel_0:
+        MOV     ?V0 + 0,#0x0
+//  447 
+//  448   // If attribute permissions require authorization to read, return error
+//  449   if ( gattPermitAuthorRead( pAttr->permissions ) )
+        MOV     DPL,R4
+        MOV     DPH,R5
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     C,0xE0 /* A   */.4
+        JNC     ??timeservice_ReadAttrCB_0
+//  450   {
+//  451     // Insufficient authorization
+//  452     return ( ATT_ERR_INSUFFICIENT_AUTHOR );
+        MOV     R1,#0x8
+        LJMP    ??timeservice_ReadAttrCB_1 & 0xFFFF
+//  453   }
+//  454 
+//  455   // Make sure it's not a blob operation (no attributes in the profile are long)
+//  456   if ( offset > 0 )
+??timeservice_ReadAttrCB_0:
+        MOV     A,R0
+        ORL     A,R1
+        JZ      ??timeservice_ReadAttrCB_2
+//  457   {
+//  458     return ( ATT_ERR_ATTR_NOT_LONG );
+        MOV     R1,#0xb
+        LJMP    ??timeservice_ReadAttrCB_1 & 0xFFFF
+//  459   }
+??timeservice_ReadAttrCB_2:
+        MOV     A,#0x10
+        LCALL   ?XSTACK_DISP0_8
+        LCALL   ??Subroutine3_0 & 0xFFFF
+??CrossCallReturnLabel_1:
+        MOV     A,R0
+        MOV     R6,A
+        MOV     A,R1
+        MOV     R7,A
+//  460 
+//  461   if ( pAttr->type.len == ATT_BT_UUID_SIZE )
+        MOV     DPL,R4
+        MOV     DPH,R5
+        MOVX    A,@DPTR
+        XRL     A,#0x2
+        JZ      $+5
+        LJMP    ??timeservice_ReadAttrCB_3 & 0xFFFF
+//  462   {
+//  463     // 16-bit UUID
+//  464     uint16 uuid = BUILD_UINT16( pAttr->type.uuid[0], pAttr->type.uuid[1]);
+//  465     switch ( uuid )
+        LCALL   ?Subroutine2 & 0xFFFF
+??CrossCallReturnLabel_2:
+        MOV     ?V0 + 2,R0
+        MOV     ?V0 + 3,R1
+        MOV     A,R4
+        ADD     A,#0x6
+        MOV     R0,A
+        MOV     A,R5
+        ADDC    A,#0x0
+        MOV     R1,A
+        MOV     A,R0
+        MOV     R4,A
+        MOV     A,R1
+        MOV     R5,A
+        MOV     A,#0xe
+        LCALL   ?XSTACK_DISP0_8
+        LCALL   ??Subroutine4_0 & 0xFFFF
+??CrossCallReturnLabel_4:
+        MOV     DPL,?V0 + 2
+        MOV     DPH,?V0 + 3
+        MOVX    A,@DPTR
+        MOV     ?V0 + 4,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R1,A
+        MOV     A,?V0 + 4
+        ADD     A,#0x0
+        MOV     ?V0 + 2,A
+        CLR     A
+        ADDC    A,R1
+        MOV     ?V0 + 3,A
+        MOV     R0,#?V0 + 2
+        LCALL   ?US_SWITCH_DENSE
+`?<Jumptable for timeservice_ReadAttrCB>_0`:
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DW        65009
+        DATA
+        DATA8
+        DATA
+        DATA8
+        DB        3
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DW        ??timeservice_ReadAttrCB_4
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DW        ??timeservice_ReadAttrCB_5
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DW        ??timeservice_ReadAttrCB_6
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DW        ??timeservice_ReadAttrCB_7
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DW        ??timeservice_ReadAttrCB_8
+        CODE
+//  466     {
+//  467       // No need for "GATT_SERVICE_UUID" or "GATT_CLIENT_CHAR_CFG_UUID" cases;
+//  468       // gattserverapp handles those reads
+//  469 
+//  470       case TIME_ENABLER_UUID:
+//  471         *pLen = TIME_ENABLER_LEN;
+??timeservice_ReadAttrCB_5:
+        MOV     DPL,R6
+        MOV     DPH,R7
+        MOV     A,#0x1
+        SJMP    ??timeservice_ReadAttrCB_9
+//  472         VOID osal_memcpy( pValue, pAttr->pValue, TIME_ENABLER_LEN );
+//  473         break;
+//  474 
+//  475       case TIME_UUID:
+//  476         *pLen = TIME_LEN;
+??timeservice_ReadAttrCB_6:
+        MOV     DPL,R6
+        MOV     DPH,R7
+        MOV     A,#0x3
+        SJMP    ??timeservice_ReadAttrCB_9
+//  477         VOID osal_memcpy( pValue, pAttr->pValue, TIME_LEN );
+//  478         break;
+//  479 
+//  480       case DATE_UUID:
+//  481         *pLen = DATE_LEN;
+??timeservice_ReadAttrCB_7:
+        MOV     DPL,R6
+        MOV     DPH,R7
+        MOV     A,#0x5
+        SJMP    ??timeservice_ReadAttrCB_9
+//  482         VOID osal_memcpy( pValue, pAttr->pValue, DATE_LEN );
+//  483         break;
+//  484 
+//  485       case ALARM_UUID:
+//  486         *pLen = ALARM_LEN;
+??timeservice_ReadAttrCB_8:
+        MOV     DPL,R6
+        MOV     DPH,R7
+        MOV     A,#0x6
+??timeservice_ReadAttrCB_9:
+        MOVX    @DPTR,A
+//  487         VOID osal_memcpy( pValue, pAttr->pValue, ALARM_LEN );
+        ; Setup parameters for call to function osal_memcpy
+        MOV     ?V0 + 2,A
+        MOV     ?V0 + 3,#0x0
+        MOV     R0,#?V0 + 2
+        LCALL   ?PUSH_XSTACK_I_TWO
+        MOV     DPL,R4
+        MOV     DPH,R5
+        MOVX    A,@DPTR
+        MOV     R4,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R5,A
+        LCALL   ??osal_memcpy?relay
+        MOV     A,#0x2
+        LCALL   ?DEALLOC_XSTACK8
+//  488         break;
+        SJMP    ??timeservice_ReadAttrCB_10
+//  489 
+//  490       default:
+//  491         // Should never get here!
+//  492         *pLen = 0;
+??timeservice_ReadAttrCB_4:
+        MOV     DPL,R6
+        MOV     DPH,R7
+        CLR     A
+        MOVX    @DPTR,A
+//  493         status = ATT_ERR_ATTR_NOT_FOUND;
+        MOV     ?V0 + 0,#0xa
+//  494         break;
+        SJMP    ??timeservice_ReadAttrCB_10
+//  495     }
+//  496   }
+//  497   else
+//  498   {
+//  499     // 128-bit UUID
+//  500     *pLen = 0;
+??timeservice_ReadAttrCB_3:
+        MOV     DPL,R6
+        MOV     DPH,R7
+        CLR     A
+        MOVX    @DPTR,A
+//  501     status = ATT_ERR_INVALID_HANDLE;
+        MOV     ?V0 + 0,#0x1
+//  502   }
+//  503 
+//  504   return ( status );
+??timeservice_ReadAttrCB_10:
+        MOV     R1,?V0 + 0
+??timeservice_ReadAttrCB_1:
+        MOV     R7,#0x6
+        LJMP    ?BANKED_LEAVE_XDATA
+//  505 }
+//  506 
+//  507 /*********************************************************************
+//  508  * @fn      timeservice_WriteAttrCB
+//  509  *
+//  510  * @brief   Validate attribute data prior to a write operation
+//  511  *
+//  512  * @param   connHandle - connection message was received on
+//  513  * @param   pAttr - pointer to attribute
+//  514  * @param   pValue - pointer to data to be written
+//  515  * @param   len - length of data
+//  516  * @param   offset - offset of the first octet to be written
+//  517  * @param   complete - whether this is the last packet
+//  518  * @param   oper - whether to validate and/or write attribute value
+//  519  *
+//  520  * @return  Success or Failure
+//  521  */
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+//  522 static bStatus_t timeservice_WriteAttrCB( uint16 connHandle, gattAttribute_t *pAttr,
+timeservice_WriteAttrCB:
+        CODE
+//  523                                  uint8 *pValue, uint8 len, uint16 offset )
+//  524 {
+        MOV     A,#-0x10
+        LCALL   ?BANKED_ENTER_XDATA
+        ; Saved register size: 16
+        ; Auto size: 0
+        MOV     A,R4
+        MOV     R6,A
+        MOV     A,R5
+        MOV     R7,A
+        MOV     ?V0 + 0,R1
+//  525   bStatus_t status = SUCCESS;
+        MOV     ?V0 + 1,#0x0
+//  526   uint8 notifyApp = 0xFF;
+//  527 
+//  528   // If attribute permissions require authorization to write, return error
+//  529   if ( gattPermitAuthorWrite( pAttr->permissions ) )
+        MOV     DPL,R6
+        MOV     DPH,R7
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     C,0xE0 /* A   */.5
+        JNC     ??timeservice_WriteAttrCB_0
+//  530   {
+//  531     // Insufficient authorization
+//  532     return ( ATT_ERR_INSUFFICIENT_AUTHOR );
+        MOV     R1,#0x8
+        LJMP    ??timeservice_WriteAttrCB_1 & 0xFFFF
+//  533   }
+//  534 
+//  535   if ( pAttr->type.len == ATT_BT_UUID_SIZE )
+??timeservice_WriteAttrCB_0:
+        MOV     DPL,R6
+        MOV     DPH,R7
+        MOVX    A,@DPTR
+        XRL     A,#0x2
+        JZ      $+5
+        LJMP    ??timeservice_WriteAttrCB_2 & 0xFFFF
+//  536   {
+//  537     // 16-bit UUID
+//  538     uint16 uuid = BUILD_UINT16( pAttr->type.uuid[0], pAttr->type.uuid[1]);
+//  539     switch ( uuid )
+        LCALL   ?Subroutine2 & 0xFFFF
+??CrossCallReturnLabel_3:
+        MOV     A,#0x10
+        LCALL   ?XSTACK_DISP0_8
+        MOVX    A,@DPTR
+        MOV     ?V0 + 4,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     ?V0 + 5,A
+        MOV     A,#0x12
+        LCALL   ?XSTACK_DISP0_8
+        MOVX    A,@DPTR
+        MOV     ?V0 + 2,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     ?V0 + 3,A
+        MOV     DPL,R0
+        MOV     DPH,R1
+        MOVX    A,@DPTR
+        MOV     R4,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R1,A
+        MOV     A,R4
+        ADD     A,#0x0
+        MOV     ?V0 + 6,A
+        CLR     A
+        ADDC    A,R1
+        MOV     ?V0 + 7,A
+        MOV     R0,#?V0 + 6
+        LCALL   ?US_SWITCH_SPARSE
+`?<Jumptable for timeservice_WriteAttrCB>_0`:
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DW        0
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DW        5
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DW        10498
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DW        ??timeservice_WriteAttrCB_3
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DW        65009
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DW        ??timeservice_WriteAttrCB_4
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DW        65010
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DW        ??timeservice_WriteAttrCB_5
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DW        65011
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DW        ??timeservice_WriteAttrCB_6
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DW        65012
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DW        ??timeservice_WriteAttrCB_7
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DW        ??timeservice_WriteAttrCB_8
+        CODE
+//  540     {
+//  541       case TIME_ENABLER_UUID:
+//  542         //Validate the value
+//  543         // Make sure it's not a blob oper
+//  544         if ( offset == 0 )
+??timeservice_WriteAttrCB_4:
+        MOV     A,?V0 + 2
+        ORL     A,?V0 + 3
+        JZ      $+5
+        LJMP    ??timeservice_WriteAttrCB_9 & 0xFFFF
+//  545         {
+//  546           if ( len != TIME_ENABLER_LEN )
+        MOV     A,#0x1
+        XRL     A,?V0 + 0
+        JZ      $+5
+        LJMP    ??timeservice_WriteAttrCB_10 & 0xFFFF
+//  547           {
+//  548             status = ATT_ERR_INVALID_VALUE_SIZE;
+//  549           }
+//  550         }
+//  551         else
+//  552         {
+//  553           status = ATT_ERR_ATTR_NOT_LONG;
+//  554         }
+//  555 
+//  556         //Write the value
+//  557         if ( status == SUCCESS )
+//  558         {
+//  559           VOID osal_memcpy( pAttr->pValue, pValue, TIME_ENABLER_LEN );
+        ; Setup parameters for call to function osal_memcpy
+        MOV     ?V0 + 2,#0x1
+        MOV     ?V0 + 3,#0x0
+        MOV     R0,#?V0 + 2
+        LCALL   ?PUSH_XSTACK_I_TWO
+        LCALL   ?Subroutine1 & 0xFFFF
+??CrossCallReturnLabel_7:
+        LCALL   ??osal_memcpy?relay
+        MOV     A,#0x2
+        LCALL   ?DEALLOC_XSTACK8
+//  560           notifyApp = TIME_ENABLER;
+        MOV     R1,#0x0
+??timeservice_WriteAttrCB_11:
+        MOV     DPTR,#timeservice_AppCBs
+//  561         }
+        LCALL   ??Subroutine4_0 & 0xFFFF
+??CrossCallReturnLabel_5:
+        MOV     A,R2
+        ORL     A,R3
+        JZ      ??timeservice_WriteAttrCB_12
+        MOV     DPTR,#timeservice_AppCBs
+        MOVX    A,@DPTR
+        MOV     R0,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     DPH,A
+        MOV     DPL,R0
+        LCALL   ??Subroutine4_0 & 0xFFFF
+??CrossCallReturnLabel_6:
+        MOV     DPL,R2
+        MOV     DPH,R3
+        MOV     A,DPL
+        ORL     A,DPH
+        JZ      ??timeservice_WriteAttrCB_12
+//  562         break;
+//  563 
+//  564       case TIME_UUID:
+//  565         //Validate the value
+//  566         // Make sure it's not a blob oper
+//  567         if ( offset == 0 )
+//  568         {
+//  569           if ( len != TIME_LEN )
+//  570           {
+//  571             status = ATT_ERR_INVALID_VALUE_SIZE;
+//  572           }
+//  573         }
+//  574         else
+//  575         {
+//  576           status = ATT_ERR_ATTR_NOT_LONG;
+//  577         }
+//  578 
+//  579         //Write the value
+//  580         if ( status == SUCCESS )
+//  581         {
+//  582           VOID osal_memcpy( pAttr->pValue, pValue, TIME_LEN );
+//  583           notifyApp = TIME;
+//  584         }
+//  585         break;
+//  586 
+//  587       case DATE_UUID:
+//  588         //Validate the value
+//  589         // Make sure it's not a blob oper
+//  590         if ( offset == 0 )
+//  591         {
+//  592           if ( len != DATE_LEN )
+//  593           {
+//  594             status = ATT_ERR_INVALID_VALUE_SIZE;
+//  595           }
+//  596         }
+//  597         else
+//  598         {
+//  599           status = ATT_ERR_ATTR_NOT_LONG;
+//  600         }
+//  601 
+//  602         //Write the value
+//  603         if ( status == SUCCESS )
+//  604         {
+//  605           VOID osal_memcpy( pAttr->pValue, pValue, DATE_LEN );
+//  606           notifyApp = DATE;
+//  607         }
+//  608         break;
+//  609 
+//  610       case ALARM_UUID:
+//  611         //Validate the value
+//  612         // Make sure it's not a blob oper
+//  613         if ( offset == 0 )
+//  614         {
+//  615           if ( len != ALARM_LEN )
+//  616           {
+//  617             status = ATT_ERR_INVALID_VALUE_SIZE;
+//  618           }
+//  619         }
+//  620         else
+//  621         {
+//  622           status = ATT_ERR_ATTR_NOT_LONG;
+//  623         }
+//  624 
+//  625         //Write the value
+//  626         if ( status == SUCCESS )
+//  627         {
+//  628           VOID osal_memcpy( pAttr->pValue, pValue, ALARM_LEN );
+//  629           notifyApp = ALARM;
+//  630         }
+//  631         break;
+//  632 
+//  633       case GATT_CLIENT_CHAR_CFG_UUID:
+//  634         status = GATTServApp_ProcessCCCWriteReq( connHandle, pAttr, pValue, len,
+//  635                                                  offset, GATT_CLIENT_CFG_NOTIFY );
+//  636         break;
+//  637 
+//  638       default:
+//  639         status = ATT_ERR_ATTR_NOT_FOUND;
+//  640         break;
+//  641     }
+//  642   }
+//  643   else
+//  644   {
+//  645     // 128-bit UUID
+//  646     status = ATT_ERR_INVALID_HANDLE;
+//  647   }
+//  648 
+//  649   // If a charactersitic value changed then callback function to notify application of change
+//  650   if ( (notifyApp != 0xFF ) && timeservice_AppCBs && timeservice_AppCBs->pfntimeserviceChange )
+//  651   {
+//  652     timeservice_AppCBs->pfntimeserviceChange( notifyApp );  
+        ; Setup parameters for indirect call
+        LCALL   ?CALL_IND
+//  653   }
+//  654 
+//  655   return ( status );
+??timeservice_WriteAttrCB_12:
+        MOV     R1,?V0 + 1
+??timeservice_WriteAttrCB_1:
+        MOV     R7,#0x8
+        LJMP    ?BANKED_LEAVE_XDATA
+??timeservice_WriteAttrCB_5:
+        MOV     A,?V0 + 2
+        ORL     A,?V0 + 3
+        JNZ     ??timeservice_WriteAttrCB_9
+        MOV     A,#0x3
+        XRL     A,?V0 + 0
+        JNZ     ??timeservice_WriteAttrCB_10
+        ; Setup parameters for call to function osal_memcpy
+        MOV     ?V0 + 2,#0x3
+        MOV     ?V0 + 3,#0x0
+        MOV     R0,#?V0 + 2
+        LCALL   ?PUSH_XSTACK_I_TWO
+        LCALL   ?Subroutine1 & 0xFFFF
+??CrossCallReturnLabel_8:
+        LCALL   ??osal_memcpy?relay
+        MOV     A,#0x2
+        LCALL   ?DEALLOC_XSTACK8
+        MOV     R1,#0x1
+        SJMP    ??timeservice_WriteAttrCB_11
+??timeservice_WriteAttrCB_6:
+        MOV     A,?V0 + 2
+        ORL     A,?V0 + 3
+        JNZ     ??timeservice_WriteAttrCB_9
+        MOV     A,#0x5
+        XRL     A,?V0 + 0
+        JNZ     ??timeservice_WriteAttrCB_10
+        ; Setup parameters for call to function osal_memcpy
+        MOV     ?V0 + 2,#0x5
+        MOV     ?V0 + 3,#0x0
+        MOV     R0,#?V0 + 2
+        LCALL   ?PUSH_XSTACK_I_TWO
+        LCALL   ?Subroutine1 & 0xFFFF
+??CrossCallReturnLabel_9:
+        LCALL   ??osal_memcpy?relay
+        MOV     A,#0x2
+        LCALL   ?DEALLOC_XSTACK8
+        MOV     R1,#0x2
+        SJMP    ??timeservice_WriteAttrCB_11
+??timeservice_WriteAttrCB_7:
+        MOV     A,?V0 + 2
+        ORL     A,?V0 + 3
+        JNZ     ??timeservice_WriteAttrCB_9
+        MOV     A,#0x6
+        XRL     A,?V0 + 0
+        JZ      ??timeservice_WriteAttrCB_13
+??timeservice_WriteAttrCB_10:
+        MOV     ?V0 + 1,#0xd
+        SJMP    ??timeservice_WriteAttrCB_12
+??timeservice_WriteAttrCB_9:
+        MOV     ?V0 + 1,#0xb
+        SJMP    ??timeservice_WriteAttrCB_12
+??timeservice_WriteAttrCB_13:
+        ; Setup parameters for call to function osal_memcpy
+        MOV     ?V0 + 2,#0x6
+        MOV     ?V0 + 3,#0x0
+        MOV     R0,#?V0 + 2
+        LCALL   ?PUSH_XSTACK_I_TWO
+        LCALL   ?Subroutine1 & 0xFFFF
+??CrossCallReturnLabel_10:
+        LCALL   ??osal_memcpy?relay
+        MOV     A,#0x2
+        LCALL   ?DEALLOC_XSTACK8
+        MOV     R1,#0x3
+        LJMP    ??timeservice_WriteAttrCB_11 & 0xFFFF
+??timeservice_WriteAttrCB_3:
+        ; Setup parameters for call to function GATTServApp_ProcessCCCWriteReq
+        MOV     ?V0 + 6,#0x1
+        MOV     ?V0 + 7,#0x0
+        MOV     R0,#?V0 + 6
+        LCALL   ?PUSH_XSTACK_I_TWO
+        MOV     R0,#?V0 + 2
+        LCALL   ?PUSH_XSTACK_I_TWO
+        MOV     R0,#?V0 + 4
+        LCALL   ?PUSH_XSTACK_I_TWO
+        MOV     R1,?V0 + 0
+        MOV     A,R6
+        MOV     R4,A
+        LCALL   ??GATTServApp_ProcessCCCWriteReq?relay
+        MOV     A,#0x6
+        LCALL   ?DEALLOC_XSTACK8
+        MOV     A,R1
+        MOV     ?V0 + 1,A
+        LJMP    ??timeservice_WriteAttrCB_12 & 0xFFFF
+??timeservice_WriteAttrCB_8:
+        MOV     ?V0 + 1,#0xa
+        LJMP    ??timeservice_WriteAttrCB_12 & 0xFFFF
+??timeservice_WriteAttrCB_2:
+        MOV     ?V0 + 1,#0x1
+        LJMP    ??timeservice_WriteAttrCB_12 & 0xFFFF
+//  656 }
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+?Subroutine2:
+        INC     DPTR
+        REQUIRE ??Subroutine3_0
+        ; // Fall through to label ??Subroutine3_0
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+??Subroutine3_0:
+        MOVX    A,@DPTR
+        MOV     R0,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R1,A
+        RET
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+?Subroutine1:
+        MOV     R4,?V0 + 4
+        MOV     R5,?V0 + 5
+        MOV     DPL,R6
+        MOV     DPH,R7
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        REQUIRE ??Subroutine4_0
+        ; // Fall through to label ??Subroutine4_0
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+??Subroutine4_0:
+        MOVX    A,@DPTR
+        MOV     R2,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R3,A
+        RET
+//  657 
+//  658 /*********************************************************************
+//  659  * @fn          timeservice_HandleConnStatusCB
+//  660  *
+//  661  * @brief       timeservice link status change handler function.
+//  662  *
+//  663  * @param       connHandle - connection handle
+//  664  * @param       changeType - type of change
+//  665  *
+//  666  * @return      none
+//  667  */
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+//  668 static void timeservice_HandleConnStatusCB( uint16 connHandle, uint8 changeType )
+timeservice_HandleConnStatusCB:
+        CODE
+//  669 {
+        MOV     A,#-0x9
+        LCALL   ?BANKED_ENTER_XDATA
+        ; Saved register size: 9
+        ; Auto size: 0
+        MOV     A,R1
+        MOV     R6,A
+//  670   // Make sure this is not loopback connection
+//  671   if ( connHandle != LOOPBACK_CONNHANDLE )
+        MOV     A,#-0x2
+        XRL     A,R2
+        JNZ     ??timeservice_HandleConnStatusCB_0
+        MOV     A,#-0x1
+        XRL     A,R3
+??timeservice_HandleConnStatusCB_0:
+        JZ      ??timeservice_HandleConnStatusCB_1
+//  672   {
+//  673     // Reset Client Char Config if connection has dropped
+//  674     if ( ( changeType == LINKDB_STATUS_UPDATE_REMOVED )      ||
+//  675          ( ( changeType == LINKDB_STATUS_UPDATE_STATEFLAGS ) && 
+//  676            ( !linkDB_Up( connHandle ) ) ) )
+        MOV     A,#0x1
+        XRL     A,R6
+        JZ      ??timeservice_HandleConnStatusCB_1
+        MOV     A,#0x2
+        XRL     A,R6
+        JNZ     ??timeservice_HandleConnStatusCB_1
+        ; Setup parameters for call to function linkDB_State
+        MOV     R1,#0x1
+        LCALL   ??linkDB_State?relay
+//  677     {
+//  678     }
+//  679   }
+//  680 }
+??timeservice_HandleConnStatusCB_1:
+        MOV     R7,#0x1
+        LJMP    ?BANKED_LEAVE_XDATA
+
+        RSEG XDATA_ID:CODE:NOROOT(0)
+`?<Initializer for TIME_ENABLERProps>`:
+        DATA8
+        DB 10
+
+        RSEG XDATA_ID:CODE:NOROOT(0)
+`?<Initializer for TIME_ENABLERUserDesp>`:
+        DB "time_enabler"
+
+        RSEG XDATA_ID:CODE:NOROOT(0)
+`?<Initializer for TIMEProps>`:
+        DATA8
+        DB 10
+
+        RSEG XDATA_ID:CODE:NOROOT(0)
+`?<Initializer for TIMEUserDesp>`:
+        DB "time"
+
+        RSEG XDATA_ID:CODE:NOROOT(0)
+`?<Initializer for DATEProps>`:
+        DATA8
+        DB 10
+
+        RSEG XDATA_ID:CODE:NOROOT(0)
+`?<Initializer for DATEUserDesp>`:
+        DB 64H, 61H, 74H, 65H, 0, 0
+        DB 0
+
+        RSEG XDATA_ID:CODE:NOROOT(0)
+`?<Initializer for ALARMProps>`:
+        DATA8
+        DB 10
+
+        RSEG XDATA_ID:CODE:NOROOT(0)
+`?<Initializer for ALARMUserDesp>`:
+        DB 61H, 6CH, 61H, 72H, 6DH, 0, 0
+
+        RSEG XDATA_ID:CODE:NOROOT(0)
+`?<Initializer for timeserviceAttrTbl>`:
+        DATA8
+        DB 2
+        DATA16
+        DW primaryServiceUUID
+        DATA8
+        DB 1
+        DATA16
+        DW 0
+        DW timeserviceService
+        DATA8
+        DB 2
+        DATA16
+        DW characterUUID
+        DATA8
+        DB 1
+        DATA16
+        DW 0
+        DW TIME_ENABLERProps
+        DATA8
+        DB 2
+        DATA16
+        DW TIME_ENABLERUUID
+        DATA8
+        DB 3
+        DATA16
+        DW 0
+        DW TIME_ENABLERValue
+        DATA8
+        DB 2
+        DATA16
+        DW charUserDescUUID
+        DATA8
+        DB 1
+        DATA16
+        DW 0
+        DW TIME_ENABLERUserDesp
+        DATA8
+        DB 2
+        DATA16
+        DW characterUUID
+        DATA8
+        DB 1
+        DATA16
+        DW 0
+        DW TIMEProps
+        DATA8
+        DB 2
+        DATA16
+        DW TIMEUUID
+        DATA8
+        DB 3
+        DATA16
+        DW 0
+        DW TIMEValue
+        DATA8
+        DB 2
+        DATA16
+        DW charUserDescUUID
+        DATA8
+        DB 1
+        DATA16
+        DW 0
+        DW TIMEUserDesp
+        DATA8
+        DB 2
+        DATA16
+        DW characterUUID
+        DATA8
+        DB 1
+        DATA16
+        DW 0
+        DW DATEProps
+        DATA8
+        DB 2
+        DATA16
+        DW DATEUUID
+        DATA8
+        DB 3
+        DATA16
+        DW 0
+        DW DATEValue
+        DATA8
+        DB 2
+        DATA16
+        DW charUserDescUUID
+        DATA8
+        DB 1
+        DATA16
+        DW 0
+        DW DATEUserDesp
+        DATA8
+        DB 2
+        DATA16
+        DW characterUUID
+        DATA8
+        DB 1
+        DATA16
+        DW 0
+        DW ALARMProps
+        DATA8
+        DB 2
+        DATA16
+        DW ALARMUUID
+        DATA8
+        DB 3
+        DATA16
+        DW 0
+        DW ALARMValue
+        DATA8
+        DB 2
+        DATA16
+        DW charUserDescUUID
+        DATA8
+        DB 1
+        DATA16
+        DW 0
+        DW ALARMUserDesp
+        DB 0, 0, 0, 0, 0, 0, 0, 0
+        DB 0, 0, 0, 0, 0, 0, 0, 0
+        DB 0, 0, 0, 0, 0, 0, 0, 0
+        DB 0, 0, 0, 0, 0, 0, 0, 0
+        DB 0, 0, 0, 0, 0, 0, 0, 0
+        DB 0, 0, 0, 0, 0, 0, 0, 0
+        DB 0, 0, 0, 0, 0, 0, 0, 0
+        DB 0, 0, 0, 0, 0, 0, 0, 0
+        DB 0, 0, 0, 0, 0, 0, 0, 0
+        DB 0, 0, 0, 0, 0, 0, 0, 0
+        DB 0, 0, 0, 0, 0, 0, 0, 0
+        DB 0, 0, 0, 0, 0, 0, 0, 0
+        DB 0, 0, 0, 0, 0, 0, 0, 0
+        DB 0, 0, 0, 0, 0, 0, 0, 0
+        DB 0, 0, 0, 0, 0, 0, 0, 0
+        DB 0, 0, 0, 0, 0, 0, 0, 0
+        DB 0, 0, 0, 0, 0, 0, 0, 0
+        DB 0, 0, 0, 0, 0, 0, 0, 0
+        DB 0, 0, 0, 0, 0, 0, 0, 0
+        DB 0, 0, 0, 0, 0, 0, 0, 0
+        DB 0, 0, 0, 0, 0, 0, 0, 0
+        DB 0, 0, 0, 0, 0, 0, 0, 0
+        DB 0, 0, 0, 0, 0, 0, 0, 0
+        DB 0, 0, 0, 0, 0, 0, 0, 0
+        DB 0, 0, 0, 0, 0, 0, 0, 0
+        DB 0, 0, 0, 0, 0, 0, 0, 0
+        DB 0, 0, 0, 0, 0, 0, 0, 0
+        DB 0, 0, 0, 0, 0, 0, 0, 0
+        DB 0, 0, 0, 0, 0, 0, 0, 0
+        DB 0, 0, 0, 0, 0, 0, 0, 0
+        DB 0, 0, 0, 0, 0, 0, 0, 0
+        DB 0, 0, 0, 0, 0, 0, 0, 0
+        DB 0, 0, 0, 0, 0, 0, 0, 0
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??timeservice_AddService?relay:
+        CODE
+        LCALL   ?BDISPATCH
+        DATA24
+        DC24    timeservice_AddService
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??timeservice_RegisterAppCBs?relay:
+        CODE
+        LCALL   ?BDISPATCH
+        DATA24
+        DC24    timeservice_RegisterAppCBs
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??timeservice_SetParameter?relay:
+        CODE
+        LCALL   ?BDISPATCH
+        DATA24
+        DC24    timeservice_SetParameter
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??timeservice_GetParameter?relay:
+        CODE
+        LCALL   ?BDISPATCH
+        DATA24
+        DC24    timeservice_GetParameter
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??timeservice_ReadAttrCB?relay:
+        CODE
+        LCALL   ?BDISPATCH
+        DATA24
+        DC24    timeservice_ReadAttrCB
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??timeservice_WriteAttrCB?relay:
+        CODE
+        LCALL   ?BDISPATCH
+        DATA24
+        DC24    timeservice_WriteAttrCB
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??timeservice_HandleConnStatusCB?relay:
+        CODE
+        LCALL   ?BDISPATCH
+        DATA24
+        DC24    timeservice_HandleConnStatusCB
+
+        END
+//  681 
+//  682 
+//  683 
+//  684 /*********************************************************************
+//  685 *********************************************************************/
+// 
+// 982 bytes in segment BANKED_CODE
+//  42 bytes in segment BANK_RELAYS
+// 404 bytes in segment XDATA_I
+// 404 bytes in segment XDATA_ID
+//  19 bytes in segment XDATA_ROM_C
+//  17 bytes in segment XDATA_Z
+// 
+// 1 428 bytes of CODE  memory
+//    19 bytes of CONST memory
+//   421 bytes of XDATA memory
+//
+//Errors: none
+//Warnings: none

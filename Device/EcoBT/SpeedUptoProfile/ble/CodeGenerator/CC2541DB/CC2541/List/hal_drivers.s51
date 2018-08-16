@@ -1,0 +1,669 @@
+///////////////////////////////////////////////////////////////////////////////
+//                                                                            /
+// IAR C/C++ Compiler V8.20.1.40829 for 8051            30/May/2014  17:59:42 /
+// Copyright 2004-2012 IAR Systems AB.                                        /
+//                                                                            /
+//    Core               =  plain                                             /
+//    Code model         =  banked                                            /
+//    Data model         =  large                                             /
+//    Calling convention =  xdata reentrant                                   /
+//    Constant location  =  data_rom                                          /
+//    Dptr setup         =  1,16                                              /
+//                                                                            /
+//    Source file        =  D:\NTHU\¬ã¨s\Important\ThesisCode\Code\GitLabClou /
+//                          d\NewEcoExec\codegenerator\Device\EcoBT\Component /
+//                          s\hal\common\hal_drivers.c                        /
+//    Command line       =  -f D:\NTHU\¬ã¨s\Important\ThesisCode\Code\GitLabC /
+//                          loud\NewEcoExec\codegenerator\Device\EcoBT\Projec /
+//                          t\ble\CodeGenerator\CC2541DB\..\..\config\buildCo /
+//                          mponents.cfg (-DBROADCASTER_CFG=0x01              /
+//                          -DOBSERVER_CFG=0x02 -DPERIPHERAL_CFG=0x04         /
+//                          -DCENTRAL_CFG=0x08 -DADV_NCONN_CFG=0x01           /
+//                          -DADV_CONN_CFG=0x02 -DSCAN_CFG=0x04               /
+//                          -DINIT_CFG=0x08 -DADV_CFG=ADV_NCONN_CFG+ADV_CONN_ /
+//                          CFG -DLINK_CFG=ADV_CONN_CFG+INIT_CFG              /
+//                          -DFULL_CFG=INIT_CFG+SCAN_CFG+ADV_NCONN_CFG+ADV_CO /
+//                          NN_CFG) -f D:\NTHU\¬ã¨s\Important\ThesisCode\Code /
+//                          \GitLabCloud\NewEcoExec\codegenerator\Device\EcoB /
+//                          T\Project\ble\CodeGenerator\CC2541DB\buildConfig. /
+//                          cfg (-DHOST_CONFIG=PERIPHERAL_CFG                 /
+//                          -DGAP_PRIVACY_RECONNECT -DCC2541                  /
+//                          -DOAD_IMAGE_VERSION=0x0000                        /
+//                          "-DOAD_IMAGE_A_USER_ID='A', 'A', 'A', 'A'"        /
+//                          "-DOAD_IMAGE_B_USER_ID='B', 'B', 'B', 'B'")       /
+//                          D:\NTHU\¬ã¨s\Important\ThesisCode\Code\GitLabClou /
+//                          d\NewEcoExec\codegenerator\Device\EcoBT\Component /
+//                          s\hal\common\hal_drivers.c -D INT_HEAP_LEN=900    /
+//                          -D HALNODEBUG -D OSAL_CBTIMER_NUM_TASKS=1 -D      /
+//                          HAL_AES_DMA=TRUE -D HAL_DMA=TRUE -D               /
+//                          xPOWER_SAVING -D xPLUS_BROADCASTER -D             /
+//                          HAL_LCD=FALSE -D HAL_LED=TRUE -D HAL_ADC=TRUE     /
+//                          -lB D:\NTHU\¬ã¨s\Important\ThesisCode\Code\GitLab /
+//                          Cloud\NewEcoExec\codegenerator\Device\EcoBT\Proje /
+//                          ct\ble\CodeGenerator\CC2541DB\CC2541\List\ -o     /
+//                          D:\NTHU\¬ã¨s\Important\ThesisCode\Code\GitLabClou /
+//                          d\NewEcoExec\codegenerator\Device\EcoBT\Project\b /
+//                          le\CodeGenerator\CC2541DB\CC2541\Obj\ -e --debug  /
+//                          --core=plain --dptr=16,1 --data_model=large       /
+//                          --code_model=banked --calling_convention=xdata_re /
+//                          entrant --place_constants=data_rom                /
+//                          --nr_virtual_regs 16 -I                           /
+//                          D:\NTHU\¬ã¨s\Important\ThesisCode\Code\GitLabClou /
+//                          d\NewEcoExec\codegenerator\Device\EcoBT\Project\b /
+//                          le\CodeGenerator\CC2541DB\..\..\common\ -I        /
+//                          D:\NTHU\¬ã¨s\Important\ThesisCode\Code\GitLabClou /
+//                          d\NewEcoExec\codegenerator\Device\EcoBT\Project\b /
+//                          le\CodeGenerator\CC2541DB\..\..\include\ -I       /
+//                          D:\NTHU\¬ã¨s\Important\ThesisCode\Code\GitLabClou /
+//                          d\NewEcoExec\codegenerator\Device\EcoBT\Project\b /
+//                          le\CodeGenerator\CC2541DB\..\..\..\..\Components\ /
+//                          hal\include\ -I D:\NTHU\¬ã¨s\Important\ThesisCode /
+//                          \Code\GitLabCloud\NewEcoExec\codegenerator\Device /
+//                          \EcoBT\Project\ble\CodeGenerator\CC2541DB\..\..\. /
+//                          .\..\Components\hal\target\CC2540EB\ -I           /
+//                          D:\NTHU\¬ã¨s\Important\ThesisCode\Code\GitLabClou /
+//                          d\NewEcoExec\codegenerator\Device\EcoBT\Project\b /
+//                          le\CodeGenerator\CC2541DB\..\..\..\..\Components\ /
+//                          osal\include\ -I D:\NTHU\¬ã¨s\Important\ThesisCod /
+//                          e\Code\GitLabCloud\NewEcoExec\codegenerator\Devic /
+//                          e\EcoBT\Project\ble\CodeGenerator\CC2541DB\..\..\ /
+//                          ..\..\Components\services\saddr\ -I               /
+//                          D:\NTHU\¬ã¨s\Important\ThesisCode\Code\GitLabClou /
+//                          d\NewEcoExec\codegenerator\Device\EcoBT\Project\b /
+//                          le\CodeGenerator\CC2541DB\..\..\..\..\Components\ /
+//                          ble\include\ -I D:\NTHU\¬ã¨s\Important\ThesisCode /
+//                          \Code\GitLabCloud\NewEcoExec\codegenerator\Device /
+//                          \EcoBT\Project\ble\CodeGenerator\CC2541DB\..\..\. /
+//                          .\..\Components\ble\controller\phy\ -I            /
+//                          D:\NTHU\¬ã¨s\Important\ThesisCode\Code\GitLabClou /
+//                          d\NewEcoExec\codegenerator\Device\EcoBT\Project\b /
+//                          le\CodeGenerator\CC2541DB\..\..\..\..\Components\ /
+//                          ble\controller\include\ -I                        /
+//                          D:\NTHU\¬ã¨s\Important\ThesisCode\Code\GitLabClou /
+//                          d\NewEcoExec\codegenerator\Device\EcoBT\Project\b /
+//                          le\CodeGenerator\CC2541DB\..\..\..\..\Components\ /
+//                          ble\hci\ -I D:\NTHU\¬ã¨s\Important\ThesisCode\Cod /
+//                          e\GitLabCloud\NewEcoExec\codegenerator\Device\Eco /
+//                          BT\Project\ble\CodeGenerator\CC2541DB\..\..\..\.. /
+//                          \Components\ble\host\ -I                          /
+//                          D:\NTHU\¬ã¨s\Important\ThesisCode\Code\GitLabClou /
+//                          d\NewEcoExec\codegenerator\Device\EcoBT\Project\b /
+//                          le\CodeGenerator\CC2541DB\..\..\common\cc2540\    /
+//                          -I D:\NTHU\¬ã¨s\Important\ThesisCode\Code\GitLabC /
+//                          loud\NewEcoExec\codegenerator\Device\EcoBT\Projec /
+//                          t\ble\CodeGenerator\CC2541DB\..\..\common\npi\npi /
+//                          _np\ -I D:\NTHU\¬ã¨s\Important\ThesisCode\Code\Gi /
+//                          tLabCloud\NewEcoExec\codegenerator\Device\EcoBT\P /
+//                          roject\ble\CodeGenerator\CC2541DB\..\..\Profiles\ /
+//                          Roles\ -I D:\NTHU\¬ã¨s\Important\ThesisCode\Code\ /
+//                          GitLabCloud\NewEcoExec\codegenerator\Device\EcoBT /
+//                          \Project\ble\CodeGenerator\CC2541DB\..\..\Profile /
+//                          s\SimpleProfile\ -I D:\NTHU\¬ã¨s\Important\Thesis /
+//                          Code\Code\GitLabCloud\NewEcoExec\codegenerator\De /
+//                          vice\EcoBT\Project\ble\CodeGenerator\CC2541DB\..\ /
+//                          ..\Profiles\DevInfo\ -I                           /
+//                          D:\NTHU\¬ã¨s\Important\ThesisCode\Code\GitLabClou /
+//                          d\NewEcoExec\codegenerator\Device\EcoBT\Project\b /
+//                          le\CodeGenerator\CC2541DB\..\..\Profiles\Accelero /
+//                          meter\ -I D:\NTHU\¬ã¨s\Important\ThesisCode\Code\ /
+//                          GitLabCloud\NewEcoExec\codegenerator\Device\EcoBT /
+//                          \Project\ble\CodeGenerator\CC2541DB\..\..\Profile /
+//                          s\EcoExecGATTProfile\ -I                          /
+//                          D:\NTHU\¬ã¨s\Important\ThesisCode\Code\GitLabClou /
+//                          d\NewEcoExec\codegenerator\Device\EcoBT\Project\b /
+//                          le\CodeGenerator\CC2541DB\..\..\Profiles\timeserv /
+//                          ice\ -I D:\NTHU\¬ã¨s\Important\ThesisCode\Code\Gi /
+//                          tLabCloud\NewEcoExec\codegenerator\Device\EcoBT\P /
+//                          roject\ble\CodeGenerator\CC2541DB\..\..\Profiles\ /
+//                          Batt\ -I D:\NTHU\¬ã¨s\Important\ThesisCode\Code\G /
+//                          itLabCloud\NewEcoExec\codegenerator\Device\EcoBT\ /
+//                          Project\ble\CodeGenerator\CC2541DB\..\..\Profiles /
+//                          \HIDDev\ -I D:\NTHU\¬ã¨s\Important\ThesisCode\Cod /
+//                          e\GitLabCloud\NewEcoExec\codegenerator\Device\Eco /
+//                          BT\Project\ble\CodeGenerator\CC2541DB\..\..\Profi /
+//                          les\ScanParam\ -Ohz                               /
+//    List file          =  D:\NTHU\¬ã¨s\Important\ThesisCode\Code\GitLabClou /
+//                          d\NewEcoExec\codegenerator\Device\EcoBT\Project\b /
+//                          le\CodeGenerator\CC2541DB\CC2541\List\hal_drivers /
+//                          .s51                                              /
+//                                                                            /
+//                                                                            /
+///////////////////////////////////////////////////////////////////////////////
+
+        NAME hal_drivers
+
+        RSEG DOVERLAY:DATA:NOROOT(0)
+        RSEG IOVERLAY:IDATA:NOROOT(0)
+        RSEG ISTACK:IDATA:NOROOT(0)
+        RSEG PSTACK:XDATA:NOROOT(0)
+        RSEG XSTACK:XDATA:NOROOT(0)
+
+        EXTERN ?BANKED_ENTER_XDATA
+        EXTERN ?BANKED_LEAVE_XDATA
+        EXTERN ?BDISPATCH
+        EXTERN ?BRET
+        EXTERN ?DEALLOC_XSTACK8
+        EXTERN ?PUSH_XSTACK8_X_FOUR
+        EXTERN __INIT_XDATA_Z
+
+        PUBLIC ??HalDriverInit?relay
+        PUBLIC ??Hal_Init?relay
+        PUBLIC ??Hal_ProcessEvent?relay
+        PUBLIC ??Hal_ProcessPoll?relay
+        PUBLIC HalDriverInit
+        PUBLIC Hal_Init
+        PUBLIC Hal_ProcessEvent
+        PUBLIC Hal_ProcessPoll
+        PUBLIC Hal_TaskID
+        PUBWEAK __Constant_64
+
+HalAdcInit          SYMBOL "HalAdcInit"
+??HalAdcInit?relay  SYMBOL "?relay", HalAdcInit
+HalAesInit          SYMBOL "HalAesInit"
+??HalAesInit?relay  SYMBOL "?relay", HalAesInit
+HalDmaInit          SYMBOL "HalDmaInit"
+??HalDmaInit?relay  SYMBOL "?relay", HalDmaInit
+HalKeyInit          SYMBOL "HalKeyInit"
+??HalKeyInit?relay  SYMBOL "?relay", HalKeyInit
+HalKeyPoll          SYMBOL "HalKeyPoll"
+??HalKeyPoll?relay  SYMBOL "?relay", HalKeyPoll
+HalLedInit          SYMBOL "HalLedInit"
+??HalLedInit?relay  SYMBOL "?relay", HalLedInit
+HalLedUpdate        SYMBOL "HalLedUpdate"
+??HalLedUpdate?relay SYMBOL "?relay", HalLedUpdate
+osal_msg_deallocate SYMBOL "osal_msg_deallocate"
+??osal_msg_deallocate?relay SYMBOL "?relay", osal_msg_deallocate
+osal_msg_receive    SYMBOL "osal_msg_receive"
+??osal_msg_receive?relay SYMBOL "?relay", osal_msg_receive
+osal_start_timerEx  SYMBOL "osal_start_timerEx"
+??osal_start_timerEx?relay SYMBOL "?relay", osal_start_timerEx
+HalDriverInit       SYMBOL "HalDriverInit"
+??HalDriverInit?relay SYMBOL "?relay", HalDriverInit
+Hal_Init            SYMBOL "Hal_Init"
+??Hal_Init?relay    SYMBOL "?relay", Hal_Init
+Hal_ProcessEvent    SYMBOL "Hal_ProcessEvent"
+??Hal_ProcessEvent?relay SYMBOL "?relay", Hal_ProcessEvent
+Hal_ProcessPoll     SYMBOL "Hal_ProcessPoll"
+??Hal_ProcessPoll?relay SYMBOL "?relay", Hal_ProcessPoll
+
+        EXTERN ??HalAdcInit?relay
+        EXTERN ??HalAesInit?relay
+        EXTERN ??HalDmaInit?relay
+        EXTERN ??HalKeyInit?relay
+        EXTERN ??HalKeyPoll?relay
+        EXTERN ??HalLedInit?relay
+        EXTERN ??HalLedUpdate?relay
+        EXTERN ??osal_msg_deallocate?relay
+        EXTERN ??osal_msg_receive?relay
+        EXTERN ??osal_start_timerEx?relay
+        EXTERN HalAdcInit
+        EXTERN HalAesInit
+        EXTERN HalDmaInit
+        EXTERN HalKeyInit
+        EXTERN HalKeyPoll
+        EXTERN HalLedInit
+        EXTERN HalLedUpdate
+        EXTERN Hal_KeyIntEnable
+        EXTERN osal_msg_deallocate
+        EXTERN osal_msg_receive
+        EXTERN osal_start_timerEx
+
+// D:\NTHU\¬ã¨s\Important\ThesisCode\Code\GitLabCloud\NewEcoExec\codegenerator\Device\EcoBT\Components\hal\common\hal_drivers.c
+//    1 /**************************************************************************************************
+//    2   Filename:       hal_drivers.c
+//    3   Revised:        $Date: 2007-07-06 10:42:24 -0700 (Fri, 06 Jul 2007) $
+//    4   Revision:       $Revision: 13579 $
+//    5 
+//    6   Description:    This file contains the interface to the Drivers Service.
+//    7 
+//    8 
+//    9   Copyright 2005-2012 Texas Instruments Incorporated. All rights reserved.
+//   10 
+//   11   IMPORTANT: Your use of this Software is limited to those specific rights
+//   12   granted under the terms of a software license agreement between the user
+//   13   who downloaded the software, his/her employer (which must be your employer)
+//   14   and Texas Instruments Incorporated (the "License").  You may not use this
+//   15   Software unless you agree to abide by the terms of the License. The License
+//   16   limits your use, and you acknowledge, that the Software may not be modified,
+//   17   copied or distributed unless embedded on a Texas Instruments microcontroller
+//   18   or used solely and exclusively in conjunction with a Texas Instruments radio
+//   19   frequency transceiver, which is integrated into your product.  Other than for
+//   20   the foregoing purpose, you may not use, reproduce, copy, prepare derivative
+//   21   works of, modify, distribute, perform, display or sell this Software and/or
+//   22   its documentation for any purpose.
+//   23 
+//   24   YOU FURTHER ACKNOWLEDGE AND AGREE THAT THE SOFTWARE AND DOCUMENTATION ARE
+//   25   PROVIDED “AS IS” WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESS OR IMPLIED,
+//   26   INCLUDING WITHOUT LIMITATION, ANY WARRANTY OF MERCHANTABILITY, TITLE,
+//   27   NON-INFRINGEMENT AND FITNESS FOR A PARTICULAR PURPOSE. IN NO EVENT SHALL
+//   28   TEXAS INSTRUMENTS OR ITS LICENSORS BE LIABLE OR OBLIGATED UNDER CONTRACT,
+//   29   NEGLIGENCE, STRICT LIABILITY, CONTRIBUTION, BREACH OF WARRANTY, OR OTHER
+//   30   LEGAL EQUITABLE THEORY ANY DIRECT OR INDIRECT DAMAGES OR EXPENSES
+//   31   INCLUDING BUT NOT LIMITED TO ANY INCIDENTAL, SPECIAL, INDIRECT, PUNITIVE
+//   32   OR CONSEQUENTIAL DAMAGES, LOST PROFITS OR LOST DATA, COST OF PROCUREMENT
+//   33   OF SUBSTITUTE GOODS, TECHNOLOGY, SERVICES, OR ANY CLAIMS BY THIRD PARTIES
+//   34   (INCLUDING BUT NOT LIMITED TO ANY DEFENSE THEREOF), OR OTHER SIMILAR COSTS.
+//   35 
+//   36   Should you have any questions regarding your right to use this Software,
+//   37   contact Texas Instruments Incorporated at www.TI.com.
+//   38 **************************************************************************************************/
+//   39 
+//   40 /**************************************************************************************************
+//   41  *                                            INCLUDES
+//   42  **************************************************************************************************/
+//   43 
+//   44 #include "hal_adc.h"
+//   45 #if (defined HAL_AES) && (HAL_AES == TRUE)
+//   46 #include "hal_aes.h"
+//   47 #endif
+//   48 #if (defined HAL_BUZZER) && (HAL_BUZZER == TRUE)
+//   49 #include "hal_buzzer.h"
+//   50 #endif
+//   51 #if (defined HAL_DMA) && (HAL_DMA == TRUE)
+//   52 #include "hal_dma.h"
+//   53 #endif
+//   54 #include "hal_drivers.h"
+//   55 #include "hal_key.h"
+//   56 #include "hal_lcd.h"
+//   57 #include "hal_led.h"
+//   58 #include "hal_sleep.h"
+//   59 #include "hal_timer.h"
+//   60 #include "hal_types.h"
+//   61 #include "hal_uart.h"
+//   62 #ifdef CC2591_COMPRESSION_WORKAROUND
+//   63 #include "mac_rx.h"
+//   64 #endif
+//   65 #include "OSAL.h"
+//   66 #if defined POWER_SAVING
+//   67 #include "OSAL_PwrMgr.h"
+//   68 #endif
+//   69 #if (defined HAL_HID) && (HAL_HID == TRUE)
+//   70 #include "usb_hid.h"
+//   71 #endif
+//   72 
+//   73 /**************************************************************************************************
+//   74  *                                      GLOBAL VARIABLES
+//   75  **************************************************************************************************/
+
+        RSEG XDATA_Z:XDATA:NOROOT(0)
+        DATA8
+//   76 uint8 Hal_TaskID;
+Hal_TaskID:
+        DS 1
+        REQUIRE __INIT_XDATA_Z
+//   77 
+//   78 extern void HalLedUpdate( void ); /* Notes: This for internal only so it shouldn't be in hal_led.h */
+//   79 
+//   80 /**************************************************************************************************
+//   81  * @fn      Hal_Init
+//   82  *
+//   83  * @brief   Hal Initialization function.
+//   84  *
+//   85  * @param   task_id - Hal TaskId
+//   86  *
+//   87  * @return  None
+//   88  **************************************************************************************************/
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+//   89 void Hal_Init( uint8 task_id )
+Hal_Init:
+        CODE
+//   90 {
+        PUSH    DPL
+        PUSH    DPH
+        ; Saved register size: 2
+        ; Auto size: 0
+//   91   /* Register task ID */
+//   92   Hal_TaskID = task_id;
+        MOV     A,R1
+        MOV     DPTR,#Hal_TaskID
+        MOVX    @DPTR,A
+//   93 
+//   94 #ifdef CC2591_COMPRESSION_WORKAROUND
+//   95   osal_start_reload_timer( Hal_TaskID, PERIOD_RSSI_RESET_EVT, PERIOD_RSSI_RESET_TIMEOUT );
+//   96 #endif
+//   97 }
+        REQUIRE ?Subroutine0
+        ; // Fall through to label ?Subroutine0
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+?Subroutine0:
+        POP     DPH
+        POP     DPL
+        LJMP    ?BRET
+//   98 
+//   99 /**************************************************************************************************
+//  100  * @fn      Hal_DriverInit
+//  101  *
+//  102  * @brief   Initialize HW - These need to be initialized before anyone.
+//  103  *
+//  104  * @param   task_id - Hal TaskId
+//  105  *
+//  106  * @return  None
+//  107  **************************************************************************************************/
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+//  108 void HalDriverInit (void)
+HalDriverInit:
+        CODE
+//  109 {
+        PUSH    DPL
+        PUSH    DPH
+        ; Saved register size: 2
+        ; Auto size: 0
+//  110   /* TIMER */
+//  111 #if (defined HAL_TIMER) && (HAL_TIMER == TRUE)
+//  112 #endif
+//  113 
+//  114   /* ADC */
+//  115 #if (defined HAL_ADC) && (HAL_ADC == TRUE)
+//  116   HalAdcInit();
+        ; Setup parameters for call to function HalAdcInit
+        LCALL   ??HalAdcInit?relay
+//  117 #endif
+//  118 
+//  119   /* DMA */
+//  120 #if (defined HAL_DMA) && (HAL_DMA == TRUE)
+//  121   // Must be called before the init call to any module that uses DMA.
+//  122   HalDmaInit();
+        ; Setup parameters for call to function HalDmaInit
+        LCALL   ??HalDmaInit?relay
+//  123 #endif
+//  124 
+//  125   /* AES */
+//  126 #if (defined HAL_AES) && (HAL_AES == TRUE)
+//  127   HalAesInit();
+        ; Setup parameters for call to function HalAesInit
+        LCALL   ??HalAesInit?relay
+//  128 #endif
+//  129 
+//  130   /* LCD */
+//  131 #if (defined HAL_LCD) && (HAL_LCD == TRUE)
+//  132   HalLcdInit();
+//  133 #endif
+//  134 
+//  135   /* LED */
+//  136 #if (defined HAL_LED) && (HAL_LED == TRUE)
+//  137   HalLedInit();
+        ; Setup parameters for call to function HalLedInit
+        LCALL   ??HalLedInit?relay
+//  138 #endif
+//  139 
+//  140   /* UART */
+//  141 #if (defined HAL_UART) && (HAL_UART == TRUE)
+//  142   HalUARTInit();
+//  143 #endif
+//  144 
+//  145   /* KEY */
+//  146 #if (defined HAL_KEY) && (HAL_KEY == TRUE)
+//  147   HalKeyInit();
+        ; Setup parameters for call to function HalKeyInit
+        LCALL   ??HalKeyInit?relay
+//  148 #endif
+//  149 
+//  150   /* HID */
+//  151 #if (defined HAL_HID) && (HAL_HID == TRUE)
+//  152   usbHidInit();
+//  153 #endif
+//  154 }
+        SJMP    ?Subroutine0
+//  155 
+//  156 /**************************************************************************************************
+//  157  * @fn      Hal_ProcessEvent
+//  158  *
+//  159  * @brief   Hal Process Event
+//  160  *
+//  161  * @param   task_id - Hal TaskId
+//  162  *          events - events
+//  163  *
+//  164  * @return  None
+//  165  **************************************************************************************************/
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+//  166 uint16 Hal_ProcessEvent( uint8 task_id, uint16 events )
+Hal_ProcessEvent:
+        CODE
+//  167 {
+        MOV     A,#-0xa
+        LCALL   ?BANKED_ENTER_XDATA
+        ; Saved register size: 10
+        ; Auto size: 0
+        MOV     A,R2
+        MOV     R6,A
+        MOV     A,R3
+        MOV     R7,A
+//  168   uint8 *msgPtr;
+//  169 
+//  170   (void)task_id;  // Intentionally unreferenced parameter
+//  171 
+//  172   if ( events & SYS_EVENT_MSG )
+        ANL     A,#0x80
+        JZ      ??Hal_ProcessEvent_0
+//  173   {
+//  174     msgPtr = osal_msg_receive(Hal_TaskID);
+        ; Setup parameters for call to function osal_msg_receive
+        SJMP    ??Hal_ProcessEvent_1
+//  175 
+//  176     while (msgPtr)
+//  177     {
+//  178       /* Do something here - for now, just deallocate the msg and move on */
+//  179 
+//  180       /* De-allocate */
+//  181       osal_msg_deallocate( msgPtr );
+??Hal_ProcessEvent_2:
+        ; Setup parameters for call to function osal_msg_deallocate
+        LCALL   ??osal_msg_deallocate?relay
+//  182       /* Next */
+//  183       msgPtr = osal_msg_receive( Hal_TaskID );
+        ; Setup parameters for call to function osal_msg_receive
+??Hal_ProcessEvent_1:
+        MOV     DPTR,#Hal_TaskID
+        MOVX    A,@DPTR
+        MOV     R1,A
+        LCALL   ??osal_msg_receive?relay
+//  184     }
+        MOV     A,R2
+        ORL     A,R3
+        JNZ     ??Hal_ProcessEvent_2
+//  185     return events ^ SYS_EVENT_MSG;
+        MOV     A,R6
+        MOV     R2,A
+        MOV     A,R7
+        XRL     A,#0x80
+        SJMP    ??Hal_ProcessEvent_3
+//  186   }
+//  187 
+//  188 #if (defined HAL_BUZZER) && (HAL_BUZZER == TRUE)
+//  189   if (events & HAL_BUZZER_EVENT)
+//  190   {
+//  191     HalBuzzerStop();
+//  192     return events ^ HAL_BUZZER_EVENT;
+//  193   }
+//  194 #endif
+//  195 
+//  196 #ifdef CC2591_COMPRESSION_WORKAROUND
+//  197   if ( events & PERIOD_RSSI_RESET_EVT )
+//  198   {
+//  199     macRxResetRssi();
+//  200     return (events ^ PERIOD_RSSI_RESET_EVT);
+//  201   }
+//  202 #endif
+//  203 
+//  204   if ( events & HAL_LED_BLINK_EVENT )
+??Hal_ProcessEvent_0:
+        MOV     A,R6
+        ANL     A,#0x20
+        JZ      ??Hal_ProcessEvent_4
+//  205   {
+//  206 #if (defined (BLINK_LEDS)) && (HAL_LED == TRUE)
+//  207     HalLedUpdate();
+        ; Setup parameters for call to function HalLedUpdate
+        LCALL   ??HalLedUpdate?relay
+//  208 #endif /* BLINK_LEDS && HAL_LED */
+//  209     return events ^ HAL_LED_BLINK_EVENT;
+        MOV     A,R6
+        XRL     A,#0x20
+        SJMP    ??Hal_ProcessEvent_5
+//  210   }
+//  211 
+//  212   if (events & HAL_KEY_EVENT)
+??Hal_ProcessEvent_4:
+        MOV     A,R6
+        ANL     A,#0x10
+        JZ      ??Hal_ProcessEvent_6
+//  213   {
+//  214 #if (defined HAL_KEY) && (HAL_KEY == TRUE)
+//  215     /* Check for keys */
+//  216     HalKeyPoll();
+        ; Setup parameters for call to function HalKeyPoll
+        LCALL   ??HalKeyPoll?relay
+//  217 
+//  218     /* if interrupt disabled, do next polling */
+//  219     if (!Hal_KeyIntEnable)
+        MOV     DPTR,#Hal_KeyIntEnable
+        MOVX    A,@DPTR
+        JNZ     ??Hal_ProcessEvent_7
+//  220     {
+//  221       osal_start_timerEx( Hal_TaskID, HAL_KEY_EVENT, 100);
+        ; Setup parameters for call to function osal_start_timerEx
+        MOV     DPTR,#__Constant_64
+        LCALL   ?PUSH_XSTACK8_X_FOUR
+        MOV     R2,#0x10
+        MOV     R3,#0x0
+        MOV     DPTR,#Hal_TaskID
+        MOVX    A,@DPTR
+        MOV     R1,A
+        LCALL   ??osal_start_timerEx?relay
+        MOV     A,#0x4
+        LCALL   ?DEALLOC_XSTACK8
+//  222     }
+//  223 #endif
+//  224     return events ^ HAL_KEY_EVENT;
+??Hal_ProcessEvent_7:
+        MOV     A,R6
+        XRL     A,#0x10
+??Hal_ProcessEvent_5:
+        MOV     R2,A
+        MOV     A,R7
+??Hal_ProcessEvent_3:
+        MOV     R3,A
+        SJMP    ??Hal_ProcessEvent_8
+//  225   }
+//  226 
+//  227 #if defined POWER_SAVING
+//  228   if ( events & HAL_SLEEP_TIMER_EVENT )
+//  229   {
+//  230     halRestoreSleepLevel();
+//  231     return events ^ HAL_SLEEP_TIMER_EVENT;
+//  232   }
+//  233 
+//  234   if ( events & HAL_PWRMGR_HOLD_EVENT )
+//  235   {
+//  236     (void)osal_pwrmgr_task_state(Hal_TaskID, PWRMGR_HOLD);
+//  237 
+//  238     (void)osal_stop_timerEx(Hal_TaskID, HAL_PWRMGR_CONSERVE_EVENT);
+//  239     (void)osal_clear_event(Hal_TaskID, HAL_PWRMGR_CONSERVE_EVENT);
+//  240 
+//  241     return (events & ~(HAL_PWRMGR_HOLD_EVENT | HAL_PWRMGR_CONSERVE_EVENT));
+//  242   }
+//  243 
+//  244   if ( events & HAL_PWRMGR_CONSERVE_EVENT )
+//  245   {
+//  246     (void)osal_pwrmgr_task_state(Hal_TaskID, PWRMGR_CONSERVE);
+//  247     return events ^ HAL_PWRMGR_CONSERVE_EVENT;
+//  248   }
+//  249 #endif
+//  250 
+//  251   return 0;
+??Hal_ProcessEvent_6:
+        MOV     R2,#0x0
+        MOV     R3,#0x0
+??Hal_ProcessEvent_8:
+        MOV     R7,#0x2
+        LJMP    ?BANKED_LEAVE_XDATA
+//  252 }
+//  253 
+//  254 /**************************************************************************************************
+//  255  * @fn      Hal_ProcessPoll
+//  256  *
+//  257  * @brief   This routine will be called by OSAL to poll UART, TIMER...
+//  258  *
+//  259  * @param   task_id - Hal TaskId
+//  260  *
+//  261  * @return  None
+//  262  **************************************************************************************************/
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+//  263 void Hal_ProcessPoll ()
+Hal_ProcessPoll:
+        CODE
+//  264 {
+        ; Saved register size: 0
+        ; Auto size: 0
+//  265   /* UART Poll */
+//  266 #if (defined HAL_UART) && (HAL_UART == TRUE)
+//  267   HalUARTPoll();
+//  268 #endif
+//  269 
+//  270   /* HID poll */
+//  271 #if (defined HAL_HID) && (HAL_HID == TRUE)
+//  272   usbHidProcessEvents();
+//  273 #endif
+//  274 
+//  275 #if defined( POWER_SAVING )
+//  276   /* Allow sleep before the next OSAL event loop */
+//  277   ALLOW_SLEEP_MODE();
+//  278 #endif
+//  279 }
+        LJMP    ?BRET
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA32
+__Constant_64:
+        DD 100
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??Hal_Init?relay:
+        CODE
+        LCALL   ?BDISPATCH
+        DATA24
+        DC24    Hal_Init
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??HalDriverInit?relay:
+        CODE
+        LCALL   ?BDISPATCH
+        DATA24
+        DC24    HalDriverInit
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??Hal_ProcessEvent?relay:
+        CODE
+        LCALL   ?BDISPATCH
+        DATA24
+        DC24    Hal_ProcessEvent
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??Hal_ProcessPoll?relay:
+        CODE
+        LCALL   ?BDISPATCH
+        DATA24
+        DC24    Hal_ProcessPoll
+
+        END
+//  280 
+//  281 /**************************************************************************************************
+//  282 **************************************************************************************************/
+//  283 
+// 
+// 144 bytes in segment BANKED_CODE
+//  24 bytes in segment BANK_RELAYS
+//   4 bytes in segment XDATA_ROM_C
+//   1 byte  in segment XDATA_Z
+// 
+// 168 bytes of CODE  memory
+//   0 bytes of CONST memory (+ 4 bytes shared)
+//   1 byte  of XDATA memory
+//
+//Errors: none
+//Warnings: none

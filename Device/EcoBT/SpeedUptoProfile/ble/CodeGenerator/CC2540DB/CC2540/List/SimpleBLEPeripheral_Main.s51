@@ -1,0 +1,390 @@
+///////////////////////////////////////////////////////////////////////////////
+//                                                                            /
+// IAR C/C++ Compiler V8.20.1.40829 for 8051            23/May/2014  20:10:25 /
+// Copyright 2004-2012 IAR Systems AB.                                        /
+//                                                                            /
+//    Core               =  plain                                             /
+//    Code model         =  banked                                            /
+//    Data model         =  large                                             /
+//    Calling convention =  xdata reentrant                                   /
+//    Constant location  =  data_rom                                          /
+//    Dptr setup         =  1,16                                              /
+//                                                                            /
+//    Source file        =  D:\NTHU\¬ã¨s\Important\ThesisCode\Code\GitLabClou /
+//                          d\NewEcoExec\codegenerator\Device\EcoBT\Project\b /
+//                          le\CodeGenerator\Source\SimpleBLEPeripheral_Main. /
+//                          c                                                 /
+//    Command line       =  -f D:\NTHU\¬ã¨s\Important\ThesisCode\Code\GitLabC /
+//                          loud\NewEcoExec\codegenerator\Device\EcoBT\Projec /
+//                          t\ble\CodeGenerator\CC2540DB\..\..\config\buildCo /
+//                          mponents.cfg (-DBROADCASTER_CFG=0x01              /
+//                          -DOBSERVER_CFG=0x02 -DPERIPHERAL_CFG=0x04         /
+//                          -DCENTRAL_CFG=0x08 -DADV_NCONN_CFG=0x01           /
+//                          -DADV_CONN_CFG=0x02 -DSCAN_CFG=0x04               /
+//                          -DINIT_CFG=0x08 -DADV_CFG=ADV_NCONN_CFG+ADV_CONN_ /
+//                          CFG -DLINK_CFG=ADV_CONN_CFG+INIT_CFG              /
+//                          -DFULL_CFG=INIT_CFG+SCAN_CFG+ADV_NCONN_CFG+ADV_CO /
+//                          NN_CFG) -f D:\NTHU\¬ã¨s\Important\ThesisCode\Code /
+//                          \GitLabCloud\NewEcoExec\codegenerator\Device\EcoB /
+//                          T\Project\ble\CodeGenerator\CC2540DB\buildConfig. /
+//                          cfg (-DHOST_CONFIG=PERIPHERAL_CFG                 /
+//                          -DGAP_PRIVACY_RECONNECT)                          /
+//                          D:\NTHU\¬ã¨s\Important\ThesisCode\Code\GitLabClou /
+//                          d\NewEcoExec\codegenerator\Device\EcoBT\Project\b /
+//                          le\CodeGenerator\Source\SimpleBLEPeripheral_Main. /
+//                          c -D INT_HEAP_LEN=900 -D HALNODEBUG -D            /
+//                          OSAL_CBTIMER_NUM_TASKS=1 -D HAL_AES_DMA=TRUE -D   /
+//                          HAL_DMA=TRUE -D xPOWER_SAVING -D                  /
+//                          xPLUS_BROADCASTER -D HAL_LCD=FALSE -D             /
+//                          HAL_LED=TRUE -D HAL_ADC=TRUE -lB                  /
+//                          D:\NTHU\¬ã¨s\Important\ThesisCode\Code\GitLabClou /
+//                          d\NewEcoExec\codegenerator\Device\EcoBT\Project\b /
+//                          le\CodeGenerator\CC2540DB\CC2540\List\ -o         /
+//                          D:\NTHU\¬ã¨s\Important\ThesisCode\Code\GitLabClou /
+//                          d\NewEcoExec\codegenerator\Device\EcoBT\Project\b /
+//                          le\CodeGenerator\CC2540DB\CC2540\Obj\ -e --debug  /
+//                          --core=plain --dptr=16,1 --data_model=large       /
+//                          --code_model=banked --calling_convention=xdata_re /
+//                          entrant --place_constants=data_rom                /
+//                          --nr_virtual_regs 16 -I                           /
+//                          D:\NTHU\¬ã¨s\Important\ThesisCode\Code\GitLabClou /
+//                          d\NewEcoExec\codegenerator\Device\EcoBT\Project\b /
+//                          le\CodeGenerator\CC2540DB\..\..\common\ -I        /
+//                          D:\NTHU\¬ã¨s\Important\ThesisCode\Code\GitLabClou /
+//                          d\NewEcoExec\codegenerator\Device\EcoBT\Project\b /
+//                          le\CodeGenerator\CC2540DB\..\..\include\ -I       /
+//                          D:\NTHU\¬ã¨s\Important\ThesisCode\Code\GitLabClou /
+//                          d\NewEcoExec\codegenerator\Device\EcoBT\Project\b /
+//                          le\CodeGenerator\CC2540DB\..\..\..\..\Components\ /
+//                          hal\include\ -I D:\NTHU\¬ã¨s\Important\ThesisCode /
+//                          \Code\GitLabCloud\NewEcoExec\codegenerator\Device /
+//                          \EcoBT\Project\ble\CodeGenerator\CC2540DB\..\..\. /
+//                          .\..\Components\hal\target\CC2540EB\ -I           /
+//                          D:\NTHU\¬ã¨s\Important\ThesisCode\Code\GitLabClou /
+//                          d\NewEcoExec\codegenerator\Device\EcoBT\Project\b /
+//                          le\CodeGenerator\CC2540DB\..\..\..\..\Components\ /
+//                          osal\include\ -I D:\NTHU\¬ã¨s\Important\ThesisCod /
+//                          e\Code\GitLabCloud\NewEcoExec\codegenerator\Devic /
+//                          e\EcoBT\Project\ble\CodeGenerator\CC2540DB\..\..\ /
+//                          ..\..\Components\services\saddr\ -I               /
+//                          D:\NTHU\¬ã¨s\Important\ThesisCode\Code\GitLabClou /
+//                          d\NewEcoExec\codegenerator\Device\EcoBT\Project\b /
+//                          le\CodeGenerator\CC2540DB\..\..\..\..\Components\ /
+//                          ble\include\ -I D:\NTHU\¬ã¨s\Important\ThesisCode /
+//                          \Code\GitLabCloud\NewEcoExec\codegenerator\Device /
+//                          \EcoBT\Project\ble\CodeGenerator\CC2540DB\..\..\. /
+//                          .\..\Components\ble\controller\phy\ -I            /
+//                          D:\NTHU\¬ã¨s\Important\ThesisCode\Code\GitLabClou /
+//                          d\NewEcoExec\codegenerator\Device\EcoBT\Project\b /
+//                          le\CodeGenerator\CC2540DB\..\..\..\..\Components\ /
+//                          ble\controller\include\ -I                        /
+//                          D:\NTHU\¬ã¨s\Important\ThesisCode\Code\GitLabClou /
+//                          d\NewEcoExec\codegenerator\Device\EcoBT\Project\b /
+//                          le\CodeGenerator\CC2540DB\..\..\..\..\Components\ /
+//                          ble\hci\ -I D:\NTHU\¬ã¨s\Important\ThesisCode\Cod /
+//                          e\GitLabCloud\NewEcoExec\codegenerator\Device\Eco /
+//                          BT\Project\ble\CodeGenerator\CC2540DB\..\..\..\.. /
+//                          \Components\ble\host\ -I                          /
+//                          D:\NTHU\¬ã¨s\Important\ThesisCode\Code\GitLabClou /
+//                          d\NewEcoExec\codegenerator\Device\EcoBT\Project\b /
+//                          le\CodeGenerator\CC2540DB\..\..\common\cc2540\    /
+//                          -I D:\NTHU\¬ã¨s\Important\ThesisCode\Code\GitLabC /
+//                          loud\NewEcoExec\codegenerator\Device\EcoBT\Projec /
+//                          t\ble\CodeGenerator\CC2540DB\..\..\common\npi\npi /
+//                          _np\ -I D:\NTHU\¬ã¨s\Important\ThesisCode\Code\Gi /
+//                          tLabCloud\NewEcoExec\codegenerator\Device\EcoBT\P /
+//                          roject\ble\CodeGenerator\CC2540DB\..\..\Profiles\ /
+//                          Roles\ -I D:\NTHU\¬ã¨s\Important\ThesisCode\Code\ /
+//                          GitLabCloud\NewEcoExec\codegenerator\Device\EcoBT /
+//                          \Project\ble\CodeGenerator\CC2540DB\..\..\Profile /
+//                          s\SimpleProfile\ -I D:\NTHU\¬ã¨s\Important\Thesis /
+//                          Code\Code\GitLabCloud\NewEcoExec\codegenerator\De /
+//                          vice\EcoBT\Project\ble\CodeGenerator\CC2540DB\..\ /
+//                          ..\Profiles\DevInfo\ -I                           /
+//                          D:\NTHU\¬ã¨s\Important\ThesisCode\Code\GitLabClou /
+//                          d\NewEcoExec\codegenerator\Device\EcoBT\Project\b /
+//                          le\CodeGenerator\CC2540DB\..\..\Profiles\Accelero /
+//                          meter\ -I D:\NTHU\¬ã¨s\Important\ThesisCode\Code\ /
+//                          GitLabCloud\NewEcoExec\codegenerator\Device\EcoBT /
+//                          \Project\ble\CodeGenerator\CC2540DB\..\..\Profile /
+//                          s\EcoExecGATTProfile\ -I                          /
+//                          D:\NTHU\¬ã¨s\Important\ThesisCode\Code\GitLabClou /
+//                          d\NewEcoExec\codegenerator\Device\EcoBT\Project\b /
+//                          le\CodeGenerator\CC2540DB\..\..\Profiles\Batt\    /
+//                          -I D:\NTHU\¬ã¨s\Important\ThesisCode\Code\GitLabC /
+//                          loud\NewEcoExec\codegenerator\Device\EcoBT\Projec /
+//                          t\ble\CodeGenerator\CC2540DB\..\..\Profiles\HIDDe /
+//                          v\ -Ohz                                           /
+//    List file          =  D:\NTHU\¬ã¨s\Important\ThesisCode\Code\GitLabClou /
+//                          d\NewEcoExec\codegenerator\Device\EcoBT\Project\b /
+//                          le\CodeGenerator\CC2540DB\CC2540\List\SimpleBLEPe /
+//                          ripheral_Main.s51                                 /
+//                                                                            /
+//                                                                            /
+///////////////////////////////////////////////////////////////////////////////
+
+        NAME SimpleBLEPeripheral_Main
+
+        RSEG DOVERLAY:DATA:NOROOT(0)
+        RSEG IOVERLAY:IDATA:NOROOT(0)
+        RSEG ISTACK:IDATA:NOROOT(0)
+        RSEG PSTACK:XDATA:NOROOT(0)
+        RSEG XSTACK:XDATA:NOROOT(0)
+
+        EXTERN ?BDISPATCH
+        EXTERN ?BRET
+
+        PUBLIC ??main?relay
+        PUBWEAK CLKCONCMD
+        PUBWEAK CLKCONSTA
+        PUBWEAK SLEEPCMD
+        PUBWEAK SLEEPSTA
+        PUBWEAK _A_IEN0
+        PUBLIC main
+
+HalDriverInit       SYMBOL "HalDriverInit"
+??HalDriverInit?relay SYMBOL "?relay", HalDriverInit
+InitBoard           SYMBOL "InitBoard"
+??InitBoard?relay   SYMBOL "?relay", InitBoard
+osal_init_system    SYMBOL "osal_init_system"
+??osal_init_system?relay SYMBOL "?relay", osal_init_system
+osal_snv_init       SYMBOL "osal_snv_init"
+??osal_snv_init?relay SYMBOL "?relay", osal_snv_init
+osal_start_system   SYMBOL "osal_start_system"
+??osal_start_system?relay SYMBOL "?relay", osal_start_system
+main                SYMBOL "main"
+??main?relay        SYMBOL "?relay", main
+
+        EXTERN ??HalDriverInit?relay
+        EXTERN ??InitBoard?relay
+        EXTERN ??osal_init_system?relay
+        EXTERN ??osal_snv_init?relay
+        EXTERN ??osal_start_system?relay
+        EXTERN HalDriverInit
+        EXTERN InitBoard
+        EXTERN osal_init_system
+        EXTERN osal_snv_init
+        EXTERN osal_start_system
+
+// D:\NTHU\¬ã¨s\Important\ThesisCode\Code\GitLabCloud\NewEcoExec\codegenerator\Device\EcoBT\Project\ble\CodeGenerator\Source\SimpleBLEPeripheral_Main.c
+//    1 /**************************************************************************************************
+//    2   Filename:       SimpleBLEPeripheral_Main.c
+//    3   Revised:        $Date: 2010-07-06 15:39:18 -0700 (Tue, 06 Jul 2010) $
+//    4   Revision:       $Revision: 22902 $
+//    5 
+//    6   Description:    This file contains the main and callback functions for
+//    7                   the Simple BLE Peripheral sample application.
+//    8 
+//    9   Copyright 2010 - 2011 Texas Instruments Incorporated. All rights reserved.
+//   10 
+//   11   IMPORTANT: Your use of this Software is limited to those specific rights
+//   12   granted under the terms of a software license agreement between the user
+//   13   who downloaded the software, his/her employer (which must be your employer)
+//   14   and Texas Instruments Incorporated (the "License").  You may not use this
+//   15   Software unless you agree to abide by the terms of the License. The License
+//   16   limits your use, and you acknowledge, that the Software may not be modified,
+//   17   copied or distributed unless embedded on a Texas Instruments microcontroller
+//   18   or used solely and exclusively in conjunction with a Texas Instruments radio
+//   19   frequency transceiver, which is integrated into your product.  Other than for
+//   20   the foregoing purpose, you may not use, reproduce, copy, prepare derivative
+//   21   works of, modify, distribute, perform, display or sell this Software and/or
+//   22   its documentation for any purpose.
+//   23 
+//   24   YOU FURTHER ACKNOWLEDGE AND AGREE THAT THE SOFTWARE AND DOCUMENTATION ARE
+//   25   PROVIDED “AS IS" WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESS OR IMPLIED,
+//   26   INCLUDING WITHOUT LIMITATION, ANY WARRANTY OF MERCHANTABILITY, TITLE,
+//   27   NON-INFRINGEMENT AND FITNESS FOR A PARTICULAR PURPOSE. IN NO EVENT SHALL
+//   28   TEXAS INSTRUMENTS OR ITS LICENSORS BE LIABLE OR OBLIGATED UNDER CONTRACT,
+//   29   NEGLIGENCE, STRICT LIABILITY, CONTRIBUTION, BREACH OF WARRANTY, OR OTHER
+//   30   LEGAL EQUITABLE THEORY ANY DIRECT OR INDIRECT DAMAGES OR EXPENSES
+//   31   INCLUDING BUT NOT LIMITED TO ANY INCIDENTAL, SPECIAL, INDIRECT, PUNITIVE
+//   32   OR CONSEQUENTIAL DAMAGES, LOST PROFITS OR LOST DATA, COST OF PROCUREMENT
+//   33   OF SUBSTITUTE GOODS, TECHNOLOGY, SERVICES, OR ANY CLAIMS BY THIRD PARTIES
+//   34   (INCLUDING BUT NOT LIMITED TO ANY DEFENSE THEREOF), OR OTHER SIMILAR COSTS.
+//   35 
+//   36   Should you have any questions regarding your right to use this Software,
+//   37   contact Texas Instruments Incorporated at www.TI.com.
+//   38 **************************************************************************************************/
+//   39 
+//   40 /**************************************************************************************************
+//   41  *                                           Includes
+//   42  **************************************************************************************************/
+//   43 /* Hal Drivers */
+//   44 #include "hal_types.h"
+//   45 #include "hal_key.h"
+
+        ASEGN SFR_AN:DATA:NOROOT,09dH
+// unsigned char volatile __sfr SLEEPSTA
+SLEEPSTA:
+        DATA8
+        DS 1
+
+        ASEGN SFR_AN:DATA:NOROOT,09eH
+// unsigned char volatile __sfr CLKCONSTA
+CLKCONSTA:
+        DATA8
+        DS 1
+
+        ASEGN SFR_AN:DATA:NOROOT,0a8H
+// union <unnamed> volatile __sfr _A_IEN0
+_A_IEN0:
+        DATA8
+        DS 1
+
+        ASEGN SFR_AN:DATA:NOROOT,0beH
+// unsigned char volatile __sfr SLEEPCMD
+SLEEPCMD:
+        DATA8
+        DS 1
+
+        ASEGN SFR_AN:DATA:NOROOT,0c6H
+// unsigned char volatile __sfr CLKCONCMD
+CLKCONCMD:
+        DATA8
+        DS 1
+//   46 #include "hal_timer.h"
+//   47 #include "hal_drivers.h"
+//   48 #include "hal_led.h"
+//   49 
+//   50 /* OSAL */
+//   51 #include "OSAL.h"
+//   52 #include "OSAL_Tasks.h"
+//   53 #include "OSAL_PwrMgr.h"
+//   54 #include "osal_snv.h"
+//   55 #include "OnBoard.h"
+//   56 
+//   57 /**************************************************************************************************
+//   58  * FUNCTIONS
+//   59  **************************************************************************************************/
+//   60 
+//   61 /* This callback is triggered when a key is pressed */
+//   62 void MSA_Main_KeyCallback(uint8 keys, uint8 state);
+//   63 
+//   64 /**************************************************************************************************
+//   65  * @fn          main
+//   66  *
+//   67  * @brief       Start of application.
+//   68  *
+//   69  * @param       none
+//   70  *
+//   71  * @return      none
+//   72  **************************************************************************************************
+//   73  */
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+//   74 int main(void)
+main:
+        CODE
+//   75 {
+        ; Auto size: 0
+//   76 
+//   77   /* Initialize hardware */
+//   78   HAL_BOARD_INIT();
+        ANL     0xbe,#0xfb
+??main_0:
+        MOV     A,0x9d
+        MOV     C,0xE0 /* A   */.6
+        JNC     ??main_0
+        MOV     A,0xc6
+        ANL     A,#0x80
+        ORL     A,#0x49
+        MOV     0xc6,A
+??main_1:
+        MOV     A,0x9e
+        ANL     A,#0x7f
+        XRL     A,#0x49
+        JNZ     ??main_1
+        ANL     0xc6,#0x7f
+??main_2:
+        MOV     A,0x9e
+        MOV     C,0xE0 /* A   */.7
+        JC      ??main_2
+        ANL     0xc6,#0x80
+??main_3:
+        MOV     A,0x9e
+        ANL     A,#0x7f
+        JNZ     ??main_3
+        ORL     0xbe,#0x4
+        MOV     DPTR,#0x6270
+        MOV     A,#0x8
+        MOVX    @DPTR,A
+//   79 
+//   80   // Initialize board I/O
+//   81   InitBoard( OB_COLD );
+        ; Setup parameters for call to function InitBoard
+        MOV     R1,#0x0
+        LCALL   ??InitBoard?relay
+//   82 
+//   83   /* Initialze the HAL driver */
+//   84   HalDriverInit();
+        ; Setup parameters for call to function HalDriverInit
+        LCALL   ??HalDriverInit?relay
+//   85 
+//   86   /* Initialize NV system */
+//   87   osal_snv_init();
+        ; Setup parameters for call to function osal_snv_init
+        LCALL   ??osal_snv_init?relay
+//   88 
+//   89   /* Initialize LL */
+//   90 
+//   91   /* Initialize the operating system */
+//   92   osal_init_system();
+        ; Setup parameters for call to function osal_init_system
+        LCALL   ??osal_init_system?relay
+//   93 
+//   94   /* Enable interrupts */
+//   95   HAL_ENABLE_INTERRUPTS();
+        SETB    0xa8.7
+//   96 
+//   97   // Final board initialization
+//   98   InitBoard( OB_READY );
+        ; Setup parameters for call to function InitBoard
+        MOV     R1,#0x2
+        LCALL   ??InitBoard?relay
+//   99 
+//  100   //#if defined ( POWER_SAVING )
+//  101   //  osal_pwrmgr_device( PWRMGR_BATTERY );
+//  102   //#endif
+//  103 
+//  104   /* Start OSAL */
+//  105   osal_start_system(); // No Return from here
+        ; Setup parameters for call to function osal_start_system
+        LCALL   ??osal_start_system?relay
+//  106 
+//  107   return 0;
+        MOV     R2,#0x0
+        MOV     R3,#0x0
+        LJMP    ?BRET
+        REQUIRE SLEEPCMD
+        REQUIRE SLEEPSTA
+        REQUIRE CLKCONCMD
+        REQUIRE CLKCONSTA
+        REQUIRE _A_IEN0
+//  108 }
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??main?relay:
+        CODE
+        LCALL   ?BDISPATCH
+        DATA24
+        DC24    main
+
+        END
+//  109 
+//  110 /**************************************************************************************************
+//  111                                            CALL-BACKS
+//  112 **************************************************************************************************/
+//  113 
+//  114 
+//  115 /*************************************************************************************************
+//  116 **************************************************************************************************/
+// 
+// 83 bytes in segment BANKED_CODE
+//  6 bytes in segment BANK_RELAYS
+//  5 bytes in segment SFR_AN
+// 
+// 89 bytes of CODE memory
+//  0 bytes of DATA memory (+ 5 bytes shared)
+//
+//Errors: none
+//Warnings: none

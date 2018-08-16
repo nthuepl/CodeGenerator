@@ -1,0 +1,701 @@
+///////////////////////////////////////////////////////////////////////////////
+//                                                                            /
+// IAR C/C++ Compiler V8.20.1.40829 for 8051            28/May/2014  18:44:06 /
+// Copyright 2004-2012 IAR Systems AB.                                        /
+//                                                                            /
+//    Core               =  plain                                             /
+//    Code model         =  banked                                            /
+//    Data model         =  large                                             /
+//    Calling convention =  xdata reentrant                                   /
+//    Constant location  =  data_rom                                          /
+//    Dptr setup         =  1,16                                              /
+//                                                                            /
+//    Source file        =  D:\NTHU\¬ã¨s\Important\ThesisCode\Code\GitLabClou /
+//                          d\NewEcoExec\codegenerator\Device\EcoBT\Component /
+//                          s\hal\target\CC2540EB\hal_uart.c                  /
+//    Command line       =  -f D:\NTHU\¬ã¨s\Important\ThesisCode\Code\GitLabC /
+//                          loud\NewEcoExec\codegenerator\Device\EcoBT\Projec /
+//                          t\ble\CodeGenerator\CC2541DB\..\..\config\buildCo /
+//                          mponents.cfg (-DBROADCASTER_CFG=0x01              /
+//                          -DOBSERVER_CFG=0x02 -DPERIPHERAL_CFG=0x04         /
+//                          -DCENTRAL_CFG=0x08 -DADV_NCONN_CFG=0x01           /
+//                          -DADV_CONN_CFG=0x02 -DSCAN_CFG=0x04               /
+//                          -DINIT_CFG=0x08 -DADV_CFG=ADV_NCONN_CFG+ADV_CONN_ /
+//                          CFG -DLINK_CFG=ADV_CONN_CFG+INIT_CFG              /
+//                          -DFULL_CFG=INIT_CFG+SCAN_CFG+ADV_NCONN_CFG+ADV_CO /
+//                          NN_CFG) -f D:\NTHU\¬ã¨s\Important\ThesisCode\Code /
+//                          \GitLabCloud\NewEcoExec\codegenerator\Device\EcoB /
+//                          T\Project\ble\CodeGenerator\CC2541DB\buildConfig. /
+//                          cfg (-DHOST_CONFIG=PERIPHERAL_CFG                 /
+//                          -DGAP_PRIVACY_RECONNECT -DCC2541                  /
+//                          -DOAD_IMAGE_VERSION=0x0000                        /
+//                          "-DOAD_IMAGE_A_USER_ID='A', 'A', 'A', 'A'"        /
+//                          "-DOAD_IMAGE_B_USER_ID='B', 'B', 'B', 'B'")       /
+//                          D:\NTHU\¬ã¨s\Important\ThesisCode\Code\GitLabClou /
+//                          d\NewEcoExec\codegenerator\Device\EcoBT\Component /
+//                          s\hal\target\CC2540EB\hal_uart.c -D               /
+//                          INT_HEAP_LEN=900 -D HALNODEBUG -D                 /
+//                          OSAL_CBTIMER_NUM_TASKS=1 -D HAL_AES_DMA=TRUE -D   /
+//                          HAL_DMA=TRUE -D xPOWER_SAVING -D                  /
+//                          xPLUS_BROADCASTER -D HAL_LCD=FALSE -D             /
+//                          HAL_LED=TRUE -D HAL_ADC=TRUE -lB                  /
+//                          D:\NTHU\¬ã¨s\Important\ThesisCode\Code\GitLabClou /
+//                          d\NewEcoExec\codegenerator\Device\EcoBT\Project\b /
+//                          le\CodeGenerator\CC2541DB\CC2541\List\ -o         /
+//                          D:\NTHU\¬ã¨s\Important\ThesisCode\Code\GitLabClou /
+//                          d\NewEcoExec\codegenerator\Device\EcoBT\Project\b /
+//                          le\CodeGenerator\CC2541DB\CC2541\Obj\ -e --debug  /
+//                          --core=plain --dptr=16,1 --data_model=large       /
+//                          --code_model=banked --calling_convention=xdata_re /
+//                          entrant --place_constants=data_rom                /
+//                          --nr_virtual_regs 16 -I                           /
+//                          D:\NTHU\¬ã¨s\Important\ThesisCode\Code\GitLabClou /
+//                          d\NewEcoExec\codegenerator\Device\EcoBT\Project\b /
+//                          le\CodeGenerator\CC2541DB\..\..\common\ -I        /
+//                          D:\NTHU\¬ã¨s\Important\ThesisCode\Code\GitLabClou /
+//                          d\NewEcoExec\codegenerator\Device\EcoBT\Project\b /
+//                          le\CodeGenerator\CC2541DB\..\..\include\ -I       /
+//                          D:\NTHU\¬ã¨s\Important\ThesisCode\Code\GitLabClou /
+//                          d\NewEcoExec\codegenerator\Device\EcoBT\Project\b /
+//                          le\CodeGenerator\CC2541DB\..\..\..\..\Components\ /
+//                          hal\include\ -I D:\NTHU\¬ã¨s\Important\ThesisCode /
+//                          \Code\GitLabCloud\NewEcoExec\codegenerator\Device /
+//                          \EcoBT\Project\ble\CodeGenerator\CC2541DB\..\..\. /
+//                          .\..\Components\hal\target\CC2540EB\ -I           /
+//                          D:\NTHU\¬ã¨s\Important\ThesisCode\Code\GitLabClou /
+//                          d\NewEcoExec\codegenerator\Device\EcoBT\Project\b /
+//                          le\CodeGenerator\CC2541DB\..\..\..\..\Components\ /
+//                          osal\include\ -I D:\NTHU\¬ã¨s\Important\ThesisCod /
+//                          e\Code\GitLabCloud\NewEcoExec\codegenerator\Devic /
+//                          e\EcoBT\Project\ble\CodeGenerator\CC2541DB\..\..\ /
+//                          ..\..\Components\services\saddr\ -I               /
+//                          D:\NTHU\¬ã¨s\Important\ThesisCode\Code\GitLabClou /
+//                          d\NewEcoExec\codegenerator\Device\EcoBT\Project\b /
+//                          le\CodeGenerator\CC2541DB\..\..\..\..\Components\ /
+//                          ble\include\ -I D:\NTHU\¬ã¨s\Important\ThesisCode /
+//                          \Code\GitLabCloud\NewEcoExec\codegenerator\Device /
+//                          \EcoBT\Project\ble\CodeGenerator\CC2541DB\..\..\. /
+//                          .\..\Components\ble\controller\phy\ -I            /
+//                          D:\NTHU\¬ã¨s\Important\ThesisCode\Code\GitLabClou /
+//                          d\NewEcoExec\codegenerator\Device\EcoBT\Project\b /
+//                          le\CodeGenerator\CC2541DB\..\..\..\..\Components\ /
+//                          ble\controller\include\ -I                        /
+//                          D:\NTHU\¬ã¨s\Important\ThesisCode\Code\GitLabClou /
+//                          d\NewEcoExec\codegenerator\Device\EcoBT\Project\b /
+//                          le\CodeGenerator\CC2541DB\..\..\..\..\Components\ /
+//                          ble\hci\ -I D:\NTHU\¬ã¨s\Important\ThesisCode\Cod /
+//                          e\GitLabCloud\NewEcoExec\codegenerator\Device\Eco /
+//                          BT\Project\ble\CodeGenerator\CC2541DB\..\..\..\.. /
+//                          \Components\ble\host\ -I                          /
+//                          D:\NTHU\¬ã¨s\Important\ThesisCode\Code\GitLabClou /
+//                          d\NewEcoExec\codegenerator\Device\EcoBT\Project\b /
+//                          le\CodeGenerator\CC2541DB\..\..\common\cc2540\    /
+//                          -I D:\NTHU\¬ã¨s\Important\ThesisCode\Code\GitLabC /
+//                          loud\NewEcoExec\codegenerator\Device\EcoBT\Projec /
+//                          t\ble\CodeGenerator\CC2541DB\..\..\common\npi\npi /
+//                          _np\ -I D:\NTHU\¬ã¨s\Important\ThesisCode\Code\Gi /
+//                          tLabCloud\NewEcoExec\codegenerator\Device\EcoBT\P /
+//                          roject\ble\CodeGenerator\CC2541DB\..\..\Profiles\ /
+//                          Roles\ -I D:\NTHU\¬ã¨s\Important\ThesisCode\Code\ /
+//                          GitLabCloud\NewEcoExec\codegenerator\Device\EcoBT /
+//                          \Project\ble\CodeGenerator\CC2541DB\..\..\Profile /
+//                          s\SimpleProfile\ -I D:\NTHU\¬ã¨s\Important\Thesis /
+//                          Code\Code\GitLabCloud\NewEcoExec\codegenerator\De /
+//                          vice\EcoBT\Project\ble\CodeGenerator\CC2541DB\..\ /
+//                          ..\Profiles\DevInfo\ -I                           /
+//                          D:\NTHU\¬ã¨s\Important\ThesisCode\Code\GitLabClou /
+//                          d\NewEcoExec\codegenerator\Device\EcoBT\Project\b /
+//                          le\CodeGenerator\CC2541DB\..\..\Profiles\Accelero /
+//                          meter\ -I D:\NTHU\¬ã¨s\Important\ThesisCode\Code\ /
+//                          GitLabCloud\NewEcoExec\codegenerator\Device\EcoBT /
+//                          \Project\ble\CodeGenerator\CC2541DB\..\..\Profile /
+//                          s\EcoExecGATTProfile\ -I                          /
+//                          D:\NTHU\¬ã¨s\Important\ThesisCode\Code\GitLabClou /
+//                          d\NewEcoExec\codegenerator\Device\EcoBT\Project\b /
+//                          le\CodeGenerator\CC2541DB\..\..\Profiles\timeserv /
+//                          ice\ -I D:\NTHU\¬ã¨s\Important\ThesisCode\Code\Gi /
+//                          tLabCloud\NewEcoExec\codegenerator\Device\EcoBT\P /
+//                          roject\ble\CodeGenerator\CC2541DB\..\..\Profiles\ /
+//                          Batt\ -I D:\NTHU\¬ã¨s\Important\ThesisCode\Code\G /
+//                          itLabCloud\NewEcoExec\codegenerator\Device\EcoBT\ /
+//                          Project\ble\CodeGenerator\CC2541DB\..\..\Profiles /
+//                          \HIDDev\ -I D:\NTHU\¬ã¨s\Important\ThesisCode\Cod /
+//                          e\GitLabCloud\NewEcoExec\codegenerator\Device\Eco /
+//                          BT\Project\ble\CodeGenerator\CC2541DB\..\..\Profi /
+//                          les\ScanParam\ -Ohz                               /
+//    List file          =  D:\NTHU\¬ã¨s\Important\ThesisCode\Code\GitLabClou /
+//                          d\NewEcoExec\codegenerator\Device\EcoBT\Project\b /
+//                          le\CodeGenerator\CC2541DB\CC2541\List\hal_uart.s5 /
+//                          1                                                 /
+//                                                                            /
+//                                                                            /
+///////////////////////////////////////////////////////////////////////////////
+
+        NAME hal_uart
+
+        RSEG DOVERLAY:DATA:NOROOT(0)
+        RSEG IOVERLAY:IDATA:NOROOT(0)
+        RSEG ISTACK:IDATA:NOROOT(0)
+        RSEG PSTACK:XDATA:NOROOT(0)
+        RSEG XSTACK:XDATA:NOROOT(0)
+
+        EXTERN ?BDISPATCH
+        EXTERN ?BRET
+
+        PUBLIC ??HalUARTInit?relay
+        PUBLIC ??HalUARTIsrDMA?relay
+        PUBLIC ??HalUARTOpen?relay
+        PUBLIC ??HalUARTPoll?relay
+        PUBLIC ??HalUARTRead?relay
+        PUBLIC ??HalUARTResume?relay
+        PUBLIC ??HalUARTSuspend?relay
+        PUBLIC ??HalUARTWrite?relay
+        PUBLIC ??Hal_UART_RxBufLen?relay
+        PUBLIC HalUARTInit
+        PUBLIC HalUARTIsrDMA
+        PUBLIC HalUARTOpen
+        PUBLIC HalUARTPoll
+        PUBLIC HalUARTRead
+        PUBLIC HalUARTResume
+        PUBLIC HalUARTSuspend
+        PUBLIC HalUARTWrite
+        PUBLIC Hal_UART_RxBufLen
+
+HalUARTInit         SYMBOL "HalUARTInit"
+??HalUARTInit?relay SYMBOL "?relay", HalUARTInit
+HalUARTIsrDMA       SYMBOL "HalUARTIsrDMA"
+??HalUARTIsrDMA?relay SYMBOL "?relay", HalUARTIsrDMA
+HalUARTOpen         SYMBOL "HalUARTOpen"
+??HalUARTOpen?relay SYMBOL "?relay", HalUARTOpen
+HalUARTPoll         SYMBOL "HalUARTPoll"
+??HalUARTPoll?relay SYMBOL "?relay", HalUARTPoll
+HalUARTRead         SYMBOL "HalUARTRead"
+??HalUARTRead?relay SYMBOL "?relay", HalUARTRead
+HalUARTResume       SYMBOL "HalUARTResume"
+??HalUARTResume?relay SYMBOL "?relay", HalUARTResume
+HalUARTSuspend      SYMBOL "HalUARTSuspend"
+??HalUARTSuspend?relay SYMBOL "?relay", HalUARTSuspend
+HalUARTWrite        SYMBOL "HalUARTWrite"
+??HalUARTWrite?relay SYMBOL "?relay", HalUARTWrite
+Hal_UART_RxBufLen   SYMBOL "Hal_UART_RxBufLen"
+??Hal_UART_RxBufLen?relay SYMBOL "?relay", Hal_UART_RxBufLen
+
+// D:\NTHU\¬ã¨s\Important\ThesisCode\Code\GitLabCloud\NewEcoExec\codegenerator\Device\EcoBT\Components\hal\target\CC2540EB\hal_uart.c
+//    1 /**************************************************************************************************
+//    2   Filename:     hal_uart.c
+//    3   Revised:      $Date: 2012-08-01 14:42:41 -0700 (Wed, 01 Aug 2012) $
+//    4   Revision:     $Revision: 31065 $
+//    5 
+//    6   Description:  This file contains the interface to the H/W UART driver.
+//    7 
+//    8 
+//    9   Copyright 2006-2012 Texas Instruments Incorporated. All rights reserved.
+//   10 
+//   11   IMPORTANT: Your use of this Software is limited to those specific rights
+//   12   granted under the terms of a software license agreement between the user
+//   13   who downloaded the software, his/her employer (which must be your employer)
+//   14   and Texas Instruments Incorporated (the "License").  You may not use this
+//   15   Software unless you agree to abide by the terms of the License. The License
+//   16   limits your use, and you acknowledge, that the Software may not be modified,
+//   17   copied or distributed unless embedded on a Texas Instruments microcontroller
+//   18   or used solely and exclusively in conjunction with a Texas Instruments radio
+//   19   frequency transceiver, which is integrated into your product.  Other than for
+//   20   the foregoing purpose, you may not use, reproduce, copy, prepare derivative
+//   21   works of, modify, distribute, perform, display or sell this Software and/or
+//   22   its documentation for any purpose.
+//   23 
+//   24   YOU FURTHER ACKNOWLEDGE AND AGREE THAT THE SOFTWARE AND DOCUMENTATION ARE
+//   25   PROVIDED “AS IS” WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESS OR IMPLIED,
+//   26   INCLUDING WITHOUT LIMITATION, ANY WARRANTY OF MERCHANTABILITY, TITLE,
+//   27   NON-INFRINGEMENT AND FITNESS FOR A PARTICULAR PURPOSE. IN NO EVENT SHALL
+//   28   TEXAS INSTRUMENTS OR ITS LICENSORS BE LIABLE OR OBLIGATED UNDER CONTRACT,
+//   29   NEGLIGENCE, STRICT LIABILITY, CONTRIBUTION, BREACH OF WARRANTY, OR OTHER
+//   30   LEGAL EQUITABLE THEORY ANY DIRECT OR INDIRECT DAMAGES OR EXPENSES
+//   31   INCLUDING BUT NOT LIMITED TO ANY INCIDENTAL, SPECIAL, INDIRECT, PUNITIVE
+//   32   OR CONSEQUENTIAL DAMAGES, LOST PROFITS OR LOST DATA, COST OF PROCUREMENT
+//   33   OF SUBSTITUTE GOODS, TECHNOLOGY, SERVICES, OR ANY CLAIMS BY THIRD PARTIES
+//   34   (INCLUDING BUT NOT LIMITED TO ANY DEFENSE THEREOF), OR OTHER SIMILAR COSTS.
+//   35 
+//   36   Should you have any questions regarding your right to use this Software,
+//   37   contact Texas Instruments Incorporated at www.TI.com.
+//   38 **************************************************************************************************/
+//   39 
+//   40 /*********************************************************************
+//   41  * INCLUDES
+//   42  */
+//   43 
+//   44 #include "hal_board_cfg.h"
+//   45 #include "hal_defs.h"
+//   46 #include "hal_drivers.h"
+//   47 #include "hal_types.h"
+//   48 #include "hal_uart.h"
+//   49 #if defined POWER_SAVING
+//   50 #include "OSAL.h"
+//   51 #include "OSAL_PwrMgr.h"
+//   52 #endif
+//   53 
+//   54 /*********************************************************************
+//   55  * GLOBAL FUNCTIONS
+//   56  */
+//   57 
+//   58 void HalUARTIsrDMA(void);
+//   59 
+//   60 /*********************************************************************
+//   61  * LOCAL FUNCTIONS
+//   62  */
+//   63 
+//   64 #if HAL_UART_DMA
+//   65 #include "_hal_uart_dma.c"
+//   66 #endif
+//   67 #if HAL_UART_ISR
+//   68 #include "_hal_uart_isr.c"
+//   69 #endif
+//   70 #if HAL_UART_SPI
+//   71 #include "_hal_uart_spi.c"
+//   72 #endif
+//   73 #if HAL_UART_USB
+//   74 #include "_hal_uart_usb.c"
+//   75 #endif
+//   76 
+//   77 /******************************************************************************
+//   78  * @fn      HalUARTInit
+//   79  *
+//   80  * @brief   Initialize the UART
+//   81  *
+//   82  * @param   none
+//   83  *
+//   84  * @return  none
+//   85  *****************************************************************************/
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+//   86 void HalUARTInit(void)
+HalUARTInit:
+        CODE
+//   87 {
+        ; Saved register size: 0
+        ; Auto size: 0
+//   88 #if (HAL_UART_DMA && HAL_UART_SPI)  // When both are defined, port is run-time choice.
+//   89   if (HAL_UART_PORT)
+//   90   {
+//   91     HalUARTInitSPI();
+//   92   }
+//   93   else
+//   94   {
+//   95     HalUARTInitDMA();
+//   96   }
+//   97 #else
+//   98 #if HAL_UART_DMA
+//   99   HalUARTInitDMA();
+//  100 #endif
+//  101 #if HAL_UART_ISR
+//  102   HalUARTInitISR();
+//  103 #endif
+//  104 #if HAL_UART_SPI
+//  105   HalUARTInitSPI();
+//  106 #endif
+//  107 #if HAL_UART_USB
+//  108   HalUARTInitUSB();
+//  109 #endif
+//  110 #endif
+//  111 }
+        LJMP    ?BRET
+//  112 
+//  113 /******************************************************************************
+//  114  * @fn      HalUARTOpen
+//  115  *
+//  116  * @brief   Open a port according tp the configuration specified by parameter.
+//  117  *
+//  118  * @param   port   - UART port
+//  119  *          config - contains configuration information
+//  120  *
+//  121  * @return  Status of the function call
+//  122  *****************************************************************************/
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+//  123 uint8 HalUARTOpen(uint8 port, halUARTCfg_t *config)
+HalUARTOpen:
+        CODE
+//  124 {
+        ; Saved register size: 0
+        ; Auto size: 0
+//  125 #if (HAL_UART_DMA == 1)
+//  126   if (port == HAL_UART_PORT_0)  HalUARTOpenDMA(config);
+//  127 #endif
+//  128 #if (HAL_UART_DMA == 2)
+//  129   if (port == HAL_UART_PORT_1)  HalUARTOpenDMA(config);
+//  130 #endif
+//  131 #if (HAL_UART_ISR == 1)
+//  132   if (port == HAL_UART_PORT_0)  HalUARTOpenISR(config);
+//  133 #endif
+//  134 #if (HAL_UART_ISR == 2)
+//  135   if (port == HAL_UART_PORT_1)  HalUARTOpenISR(config);
+//  136 #endif
+//  137 #if (HAL_UART_SPI == 1)
+//  138   if (port == HAL_UART_PORT_0)  HalUARTOpenSPI(config);
+//  139 #endif
+//  140 #if (HAL_UART_SPI == 2)
+//  141   if (port == HAL_UART_PORT_1)  HalUARTOpenSPI(config);
+//  142 #endif
+//  143 #if (HAL_UART_USB)
+//  144   HalUARTOpenUSB(config);
+//  145 #endif
+//  146 #if (HAL_UART_DMA == 0) && (HAL_UART_ISR == 0) && (HAL_UART_SPI == 0)
+//  147   // UART is not enabled. Do nothing.
+//  148   (void) port;   // unused argument
+//  149   (void) config; // unused argument
+//  150 #endif
+//  151 
+//  152   return HAL_UART_SUCCESS;
+        MOV     R1,#0x0
+        LJMP    ?BRET
+//  153 }
+//  154 
+//  155 /*****************************************************************************
+//  156  * @fn      HalUARTRead
+//  157  *
+//  158  * @brief   Read a buffer from the UART
+//  159  *
+//  160  * @param   port - USART module designation
+//  161  *          buf  - valid data buffer at least 'len' bytes in size
+//  162  *          len  - max length number of bytes to copy to 'buf'
+//  163  *
+//  164  * @return  length of buffer that was read
+//  165  *****************************************************************************/
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+//  166 uint16 HalUARTRead(uint8 port, uint8 *buf, uint16 len)
+HalUARTRead:
+        CODE
+//  167 {
+        ; Saved register size: 0
+        ; Auto size: 0
+//  168 #if (HAL_UART_DMA == 1)
+//  169   if (port == HAL_UART_PORT_0)  return HalUARTReadDMA(buf, len);
+//  170 #endif
+//  171 #if (HAL_UART_DMA == 2)
+//  172   if (port == HAL_UART_PORT_1)  return HalUARTReadDMA(buf, len);
+//  173 #endif
+//  174 #if (HAL_UART_ISR == 1)
+//  175   if (port == HAL_UART_PORT_0)  return HalUARTReadISR(buf, len);
+//  176 #endif
+//  177 #if (HAL_UART_ISR == 2)
+//  178   if (port == HAL_UART_PORT_1)  return HalUARTReadISR(buf, len);
+//  179 #endif
+//  180 #if (HAL_UART_SPI == 1)
+//  181   if (port == HAL_UART_PORT_0)  return HalUARTReadSPI(buf, len);
+//  182 #endif
+//  183 #if (HAL_UART_SPI == 2)
+//  184   if (port == HAL_UART_PORT_1)  return HalUARTReadSPI(buf, len);
+//  185 #endif
+//  186 
+//  187 #if HAL_UART_USB
+//  188   return HalUARTRx(buf, len);
+//  189 #else
+//  190   #if (HAL_UART_DMA == 0) && (HAL_UART_ISR == 0) && (HAL_UART_SPI == 0)
+//  191     // UART is not enabled. Do nothing.
+//  192     (void) port;   // unused argument
+//  193     (void) buf;   // unused argument
+//  194     (void) len;   // unused argument
+//  195   #endif
+//  196   return 0;
+        REQUIRE ?Subroutine0
+        ; // Fall through to label ?Subroutine0
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+?Subroutine0:
+        MOV     R2,#0x0
+        MOV     R3,#0x0
+        LJMP    ?BRET
+//  197 #endif
+//  198 }
+//  199 
+//  200 /******************************************************************************
+//  201  * @fn      HalUARTWrite
+//  202  *
+//  203  * @brief   Write a buffer to the UART.
+//  204  *
+//  205  * @param   port - UART port
+//  206  *          buf  - pointer to the buffer that will be written, not freed
+//  207  *          len  - length of
+//  208  *
+//  209  * @return  length of the buffer that was sent
+//  210  *****************************************************************************/
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+//  211 uint16 HalUARTWrite(uint8 port, uint8 *buf, uint16 len)
+HalUARTWrite:
+        CODE
+//  212 {
+        ; Saved register size: 0
+        ; Auto size: 0
+//  213 #if (HAL_UART_DMA == 1)
+//  214   if (port == HAL_UART_PORT_0)  return HalUARTWriteDMA(buf, len);
+//  215 #endif
+//  216 #if (HAL_UART_DMA == 2)
+//  217   if (port == HAL_UART_PORT_1)  return HalUARTWriteDMA(buf, len);
+//  218 #endif
+//  219 #if (HAL_UART_ISR == 1)
+//  220   if (port == HAL_UART_PORT_0)  return HalUARTWriteISR(buf, len);
+//  221 #endif
+//  222 #if (HAL_UART_ISR == 2)
+//  223   if (port == HAL_UART_PORT_1)  return HalUARTWriteISR(buf, len);
+//  224 #endif
+//  225 #if (HAL_UART_SPI == 1)
+//  226   if (port == HAL_UART_PORT_0)  return HalUARTWriteSPI(buf, len);
+//  227 #endif
+//  228 #if (HAL_UART_SPI == 2)
+//  229   if (port == HAL_UART_PORT_1)  return HalUARTWriteSPI(buf, len);
+//  230 #endif
+//  231 
+//  232 #if HAL_UART_USB
+//  233   HalUARTTx(buf, len);
+//  234   return len;
+//  235 #else
+//  236   #if (HAL_UART_DMA == 0) && (HAL_UART_ISR == 0) && (HAL_UART_SPI == 0)
+//  237     // UART is not enabled. Do nothing.
+//  238     (void) port;   // unused argument
+//  239     (void) buf;   // unused argument
+//  240     (void) len;   // unused argument
+//  241   #endif
+//  242   return 0;
+        SJMP    ?Subroutine0
+//  243 #endif
+//  244 }
+//  245 
+//  246 /******************************************************************************
+//  247  * @fn      HalUARTSuspend
+//  248  *
+//  249  * @brief   Suspend UART hardware before entering PM mode 1, 2 or 3.
+//  250  *
+//  251  * @param   None
+//  252  *
+//  253  * @return  None
+//  254  *****************************************************************************/
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+//  255 void HalUARTSuspend( void )
+HalUARTSuspend:
+        CODE
+//  256 {
+        ; Saved register size: 0
+        ; Auto size: 0
+//  257 #if HAL_UART_ISR
+//  258   HalUARTSuspendISR();
+//  259 #endif
+//  260 }
+        LJMP    ?BRET
+//  261 
+//  262 /******************************************************************************
+//  263  * @fn      HalUARTResume
+//  264  *
+//  265  * @brief   Resume UART hardware after exiting PM mode 1, 2 or 3.
+//  266  *
+//  267  * @param   None
+//  268  *
+//  269  * @return  None
+//  270  *****************************************************************************/
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+//  271 void HalUARTResume( void )
+HalUARTResume:
+        CODE
+//  272 {
+        ; Saved register size: 0
+        ; Auto size: 0
+//  273 #if HAL_UART_ISR
+//  274   HalUARTResumeISR();
+//  275 #endif
+//  276 }
+        LJMP    ?BRET
+//  277 
+//  278 /***************************************************************************************************
+//  279  * @fn      HalUARTPoll
+//  280  *
+//  281  * @brief   Poll the UART.
+//  282  *
+//  283  * @param   none
+//  284  *
+//  285  * @return  none
+//  286  *****************************************************************************/
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+//  287 void HalUARTPoll(void)
+HalUARTPoll:
+        CODE
+//  288 {
+        ; Saved register size: 0
+        ; Auto size: 0
+//  289 #if (HAL_UART_DMA && HAL_UART_SPI)  // When both are defined, port is run-time choice.
+//  290   if (HAL_UART_PORT)
+//  291   {
+//  292     HalUARTPollSPI();
+//  293   }
+//  294   else
+//  295   {
+//  296     HalUARTPollDMA();
+//  297   }
+//  298 #else
+//  299 #if HAL_UART_DMA
+//  300   HalUARTPollDMA();
+//  301 #endif
+//  302 #if HAL_UART_ISR
+//  303   HalUARTPollISR();
+//  304 #endif
+//  305 #if HAL_UART_SPI
+//  306   HalUARTPollSPI();
+//  307 #endif
+//  308 #if HAL_UART_USB
+//  309   HalUARTPollUSB();
+//  310 #endif
+//  311 #endif
+//  312 }
+        LJMP    ?BRET
+//  313 
+//  314 /**************************************************************************************************
+//  315  * @fn      Hal_UART_RxBufLen()
+//  316  *
+//  317  * @brief   Calculate Rx Buffer length - the number of bytes in the buffer.
+//  318  *
+//  319  * @param   port - UART port
+//  320  *
+//  321  * @return  length of current Rx Buffer
+//  322  **************************************************************************************************/
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+//  323 uint16 Hal_UART_RxBufLen( uint8 port )
+Hal_UART_RxBufLen:
+        CODE
+//  324 {
+        ; Saved register size: 0
+        ; Auto size: 0
+//  325 #if (HAL_UART_DMA == 1)
+//  326   if (port == HAL_UART_PORT_0)  return HalUARTRxAvailDMA();
+//  327 #endif
+//  328 #if (HAL_UART_DMA == 2)
+//  329   if (port == HAL_UART_PORT_1)  return HalUARTRxAvailDMA();
+//  330 #endif
+//  331 #if (HAL_UART_ISR == 1)
+//  332   if (port == HAL_UART_PORT_0)  return HalUARTRxAvailISR();
+//  333 #endif
+//  334 #if (HAL_UART_ISR == 2)
+//  335   if (port == HAL_UART_PORT_1)  return HalUARTRxAvailISR();
+//  336 #endif
+//  337 #if (HAL_UART_SPI == 1)
+//  338   if (port == HAL_UART_PORT_0)  return HalUARTRxAvailSPI();
+//  339 #endif
+//  340 #if (HAL_UART_SPI == 2)
+//  341   if (port == HAL_UART_PORT_1)  return HalUARTRxAvailSPI();
+//  342 #endif
+//  343 
+//  344 #if HAL_UART_USB
+//  345   return HalUARTRxAvailUSB();
+//  346 #else
+//  347   #if (HAL_UART_DMA == 0) && (HAL_UART_ISR == 0) && (HAL_UART_SPI == 0)
+//  348     // UART is not enabled. Do nothing.
+//  349     (void) port;   // unused argument
+//  350   #endif
+//  351   return 0;
+        SJMP    ?Subroutine0
+//  352 #endif
+//  353 }
+//  354 
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+//  355 void HalUARTIsrDMA(void)
+HalUARTIsrDMA:
+        CODE
+//  356 {
+        ; Saved register size: 0
+        ; Auto size: 0
+//  357 #if (HAL_UART_DMA && HAL_UART_SPI)  // When both are defined, port is run-time choice.
+//  358   if (HAL_UART_PORT)
+//  359   {
+//  360     HalUART_DMAIsrSPI();
+//  361   }
+//  362   else
+//  363   {
+//  364     HalUART_DMAIsrDMA();
+//  365   }
+//  366 #elif HAL_UART_DMA
+//  367   HalUART_DMAIsrDMA();
+//  368 #elif HAL_UART_SPI
+//  369   HalUART_DMAIsrSPI();
+//  370 #endif
+//  371 }
+        LJMP    ?BRET
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??HalUARTInit?relay:
+        CODE
+        LCALL   ?BDISPATCH
+        DATA24
+        DC24    HalUARTInit
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??HalUARTOpen?relay:
+        CODE
+        LCALL   ?BDISPATCH
+        DATA24
+        DC24    HalUARTOpen
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??HalUARTRead?relay:
+        CODE
+        LCALL   ?BDISPATCH
+        DATA24
+        DC24    HalUARTRead
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??HalUARTWrite?relay:
+        CODE
+        LCALL   ?BDISPATCH
+        DATA24
+        DC24    HalUARTWrite
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??HalUARTSuspend?relay:
+        CODE
+        LCALL   ?BDISPATCH
+        DATA24
+        DC24    HalUARTSuspend
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??HalUARTResume?relay:
+        CODE
+        LCALL   ?BDISPATCH
+        DATA24
+        DC24    HalUARTResume
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??HalUARTPoll?relay:
+        CODE
+        LCALL   ?BDISPATCH
+        DATA24
+        DC24    HalUARTPoll
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??Hal_UART_RxBufLen?relay:
+        CODE
+        LCALL   ?BDISPATCH
+        DATA24
+        DC24    Hal_UART_RxBufLen
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??HalUARTIsrDMA?relay:
+        CODE
+        LCALL   ?BDISPATCH
+        DATA24
+        DC24    HalUARTIsrDMA
+
+        END
+//  372 
+//  373 /******************************************************************************
+//  374 ******************************************************************************/
+// 
+// 31 bytes in segment BANKED_CODE
+// 54 bytes in segment BANK_RELAYS
+// 
+// 85 bytes of CODE memory
+//
+//Errors: none
+//Warnings: none

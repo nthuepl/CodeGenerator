@@ -1,0 +1,2086 @@
+///////////////////////////////////////////////////////////////////////////////
+//                                                                            /
+// IAR C/C++ Compiler V8.20.1.40829 for 8051            10/Jul/2014  13:44:15 /
+// Copyright 2004-2012 IAR Systems AB.                                        /
+//                                                                            /
+//    Core               =  plain                                             /
+//    Code model         =  banked                                            /
+//    Data model         =  large                                             /
+//    Calling convention =  xdata reentrant                                   /
+//    Constant location  =  data_rom                                          /
+//    Dptr setup         =  1,16                                              /
+//                                                                            /
+//    Source file        =  D:\NTHU\¬ã¨s\Important\ThesisCode\Code\GitLabClou /
+//                          d\NewEcoExec\codegenerator\Device\EcoBT\Project\b /
+//                          le\Profiles\DevInfo\devinfoservice.c              /
+//    Command line       =  -f D:\NTHU\¬ã¨s\Important\ThesisCode\Code\GitLabC /
+//                          loud\NewEcoExec\codegenerator\Device\EcoBT\Projec /
+//                          t\ble\CodeGenerator\CC2541DB\..\..\config\buildCo /
+//                          mponents.cfg (-DBROADCASTER_CFG=0x01              /
+//                          -DOBSERVER_CFG=0x02 -DPERIPHERAL_CFG=0x04         /
+//                          -DCENTRAL_CFG=0x08 -DADV_NCONN_CFG=0x01           /
+//                          -DADV_CONN_CFG=0x02 -DSCAN_CFG=0x04               /
+//                          -DINIT_CFG=0x08 -DADV_CFG=ADV_NCONN_CFG+ADV_CONN_ /
+//                          CFG -DLINK_CFG=ADV_CONN_CFG+INIT_CFG              /
+//                          -DFULL_CFG=INIT_CFG+SCAN_CFG+ADV_NCONN_CFG+ADV_CO /
+//                          NN_CFG) -f D:\NTHU\¬ã¨s\Important\ThesisCode\Code /
+//                          \GitLabCloud\NewEcoExec\codegenerator\Device\EcoB /
+//                          T\Project\ble\CodeGenerator\CC2541DB\buildConfig. /
+//                          cfg (-DHOST_CONFIG=PERIPHERAL_CFG                 /
+//                          -DGAP_PRIVACY_RECONNECT -DCC2541                  /
+//                          -DOAD_IMAGE_VERSION=0x0000                        /
+//                          "-DOAD_IMAGE_A_USER_ID='A', 'A', 'A', 'A'"        /
+//                          "-DOAD_IMAGE_B_USER_ID='B', 'B', 'B', 'B'")       /
+//                          D:\NTHU\¬ã¨s\Important\ThesisCode\Code\GitLabClou /
+//                          d\NewEcoExec\codegenerator\Device\EcoBT\Project\b /
+//                          le\Profiles\DevInfo\devinfoservice.c -D           /
+//                          INT_HEAP_LEN=900 -D HALNODEBUG -D                 /
+//                          OSAL_CBTIMER_NUM_TASKS=1 -D HAL_AES_DMA=TRUE -D   /
+//                          HAL_DMA=TRUE -D xPOWER_SAVING -D                  /
+//                          xPLUS_BROADCASTER -D HAL_LCD=FALSE -D             /
+//                          HAL_LED=TRUE -D HAL_ADC=TRUE -lB                  /
+//                          D:\NTHU\¬ã¨s\Important\ThesisCode\Code\GitLabClou /
+//                          d\NewEcoExec\codegenerator\Device\EcoBT\Project\b /
+//                          le\CodeGenerator\CC2541DB\CC2541\List\ -o         /
+//                          D:\NTHU\¬ã¨s\Important\ThesisCode\Code\GitLabClou /
+//                          d\NewEcoExec\codegenerator\Device\EcoBT\Project\b /
+//                          le\CodeGenerator\CC2541DB\CC2541\Obj\ -e --debug  /
+//                          --core=plain --dptr=16,1 --data_model=large       /
+//                          --code_model=banked --calling_convention=xdata_re /
+//                          entrant --place_constants=data_rom                /
+//                          --nr_virtual_regs 16 -I                           /
+//                          D:\NTHU\¬ã¨s\Important\ThesisCode\Code\GitLabClou /
+//                          d\NewEcoExec\codegenerator\Device\EcoBT\Project\b /
+//                          le\CodeGenerator\CC2541DB\..\..\common\ -I        /
+//                          D:\NTHU\¬ã¨s\Important\ThesisCode\Code\GitLabClou /
+//                          d\NewEcoExec\codegenerator\Device\EcoBT\Project\b /
+//                          le\CodeGenerator\CC2541DB\..\..\include\ -I       /
+//                          D:\NTHU\¬ã¨s\Important\ThesisCode\Code\GitLabClou /
+//                          d\NewEcoExec\codegenerator\Device\EcoBT\Project\b /
+//                          le\CodeGenerator\CC2541DB\..\..\..\..\Components\ /
+//                          hal\include\ -I D:\NTHU\¬ã¨s\Important\ThesisCode /
+//                          \Code\GitLabCloud\NewEcoExec\codegenerator\Device /
+//                          \EcoBT\Project\ble\CodeGenerator\CC2541DB\..\..\. /
+//                          .\..\Components\hal\target\CC2540EB\ -I           /
+//                          D:\NTHU\¬ã¨s\Important\ThesisCode\Code\GitLabClou /
+//                          d\NewEcoExec\codegenerator\Device\EcoBT\Project\b /
+//                          le\CodeGenerator\CC2541DB\..\..\..\..\Components\ /
+//                          osal\include\ -I D:\NTHU\¬ã¨s\Important\ThesisCod /
+//                          e\Code\GitLabCloud\NewEcoExec\codegenerator\Devic /
+//                          e\EcoBT\Project\ble\CodeGenerator\CC2541DB\..\..\ /
+//                          ..\..\Components\services\saddr\ -I               /
+//                          D:\NTHU\¬ã¨s\Important\ThesisCode\Code\GitLabClou /
+//                          d\NewEcoExec\codegenerator\Device\EcoBT\Project\b /
+//                          le\CodeGenerator\CC2541DB\..\..\..\..\Components\ /
+//                          ble\include\ -I D:\NTHU\¬ã¨s\Important\ThesisCode /
+//                          \Code\GitLabCloud\NewEcoExec\codegenerator\Device /
+//                          \EcoBT\Project\ble\CodeGenerator\CC2541DB\..\..\. /
+//                          .\..\Components\ble\controller\phy\ -I            /
+//                          D:\NTHU\¬ã¨s\Important\ThesisCode\Code\GitLabClou /
+//                          d\NewEcoExec\codegenerator\Device\EcoBT\Project\b /
+//                          le\CodeGenerator\CC2541DB\..\..\..\..\Components\ /
+//                          ble\controller\include\ -I                        /
+//                          D:\NTHU\¬ã¨s\Important\ThesisCode\Code\GitLabClou /
+//                          d\NewEcoExec\codegenerator\Device\EcoBT\Project\b /
+//                          le\CodeGenerator\CC2541DB\..\..\..\..\Components\ /
+//                          ble\hci\ -I D:\NTHU\¬ã¨s\Important\ThesisCode\Cod /
+//                          e\GitLabCloud\NewEcoExec\codegenerator\Device\Eco /
+//                          BT\Project\ble\CodeGenerator\CC2541DB\..\..\..\.. /
+//                          \Components\ble\host\ -I                          /
+//                          D:\NTHU\¬ã¨s\Important\ThesisCode\Code\GitLabClou /
+//                          d\NewEcoExec\codegenerator\Device\EcoBT\Project\b /
+//                          le\CodeGenerator\CC2541DB\..\..\common\cc2540\    /
+//                          -I D:\NTHU\¬ã¨s\Important\ThesisCode\Code\GitLabC /
+//                          loud\NewEcoExec\codegenerator\Device\EcoBT\Projec /
+//                          t\ble\CodeGenerator\CC2541DB\..\..\common\npi\npi /
+//                          _np\ -I D:\NTHU\¬ã¨s\Important\ThesisCode\Code\Gi /
+//                          tLabCloud\NewEcoExec\codegenerator\Device\EcoBT\P /
+//                          roject\ble\CodeGenerator\CC2541DB\..\..\Profiles\ /
+//                          Roles\ -I D:\NTHU\¬ã¨s\Important\ThesisCode\Code\ /
+//                          GitLabCloud\NewEcoExec\codegenerator\Device\EcoBT /
+//                          \Project\ble\CodeGenerator\CC2541DB\..\..\Profile /
+//                          s\SimpleProfile\ -I D:\NTHU\¬ã¨s\Important\Thesis /
+//                          Code\Code\GitLabCloud\NewEcoExec\codegenerator\De /
+//                          vice\EcoBT\Project\ble\CodeGenerator\CC2541DB\..\ /
+//                          ..\Profiles\DevInfo\ -I                           /
+//                          D:\NTHU\¬ã¨s\Important\ThesisCode\Code\GitLabClou /
+//                          d\NewEcoExec\codegenerator\Device\EcoBT\Project\b /
+//                          le\CodeGenerator\CC2541DB\..\..\Profiles\Accelero /
+//                          meter\ -I D:\NTHU\¬ã¨s\Important\ThesisCode\Code\ /
+//                          GitLabCloud\NewEcoExec\codegenerator\Device\EcoBT /
+//                          \Project\ble\CodeGenerator\CC2541DB\..\..\Profile /
+//                          s\EcoExecGATTProfile\ -I                          /
+//                          D:\NTHU\¬ã¨s\Important\ThesisCode\Code\GitLabClou /
+//                          d\NewEcoExec\codegenerator\Device\EcoBT\Project\b /
+//                          le\CodeGenerator\CC2541DB\..\..\Profiles\timeserv /
+//                          ice\ -I D:\NTHU\¬ã¨s\Important\ThesisCode\Code\Gi /
+//                          tLabCloud\NewEcoExec\codegenerator\Device\EcoBT\P /
+//                          roject\ble\CodeGenerator\CC2541DB\..\..\Profiles\ /
+//                          Batt\ -I D:\NTHU\¬ã¨s\Important\ThesisCode\Code\G /
+//                          itLabCloud\NewEcoExec\codegenerator\Device\EcoBT\ /
+//                          Project\ble\CodeGenerator\CC2541DB\..\..\Profiles /
+//                          \HIDDev\ -I D:\NTHU\¬ã¨s\Important\ThesisCode\Cod /
+//                          e\GitLabCloud\NewEcoExec\codegenerator\Device\Eco /
+//                          BT\Project\ble\CodeGenerator\CC2541DB\..\..\Profi /
+//                          les\ScanParam\ -Ohz                               /
+//    List file          =  D:\NTHU\¬ã¨s\Important\ThesisCode\Code\GitLabClou /
+//                          d\NewEcoExec\codegenerator\Device\EcoBT\Project\b /
+//                          le\CodeGenerator\CC2541DB\CC2541\List\devinfoserv /
+//                          ice.s51                                           /
+//                                                                            /
+//                                                                            /
+///////////////////////////////////////////////////////////////////////////////
+
+        NAME devinfoservice
+
+        RSEG DOVERLAY:DATA:NOROOT(0)
+        RSEG IOVERLAY:IDATA:NOROOT(0)
+        RSEG ISTACK:IDATA:NOROOT(0)
+        RSEG PSTACK:XDATA:NOROOT(0)
+        RSEG XSTACK:XDATA:NOROOT(0)
+
+        EXTERN ?ALLOC_XSTACK8
+        EXTERN ?BANKED_ENTER_XDATA
+        EXTERN ?BANKED_LEAVE_XDATA
+        EXTERN ?BDISPATCH
+        EXTERN ?DEALLOC_XSTACK8
+        EXTERN ?PUSH_XSTACK_I_TWO
+        EXTERN ?US_SWITCH_SPARSE
+        EXTERN ?V0
+        EXTERN ?XSP
+        EXTERN ?XSTACK_DISP0_8
+        EXTERN __INIT_XDATA_I
+        EXTERN __INIT_XDATA_Z
+
+        PUBLIC ??DevInfo_AddService?relay
+        PUBLIC ??DevInfo_GetParameter?relay
+        PUBLIC ??DevInfo_SetParameter?relay
+        PUBLIC DevInfo_AddService
+        PUBLIC DevInfo_GetParameter
+        PUBLIC DevInfo_SetParameter
+        PUBLIC devInfo11073CertUUID
+        PUBLIC devInfoCBs
+        PUBLIC devInfoFirmwareRevUUID
+        PUBLIC devInfoHardwareRevUUID
+        PUBLIC devInfoMfrNameUUID
+        PUBLIC devInfoModelNumberUUID
+        PUBLIC devInfoPnpIdUUID
+        PUBLIC devInfoSerialNumberUUID
+        PUBLIC devInfoServUUID
+        PUBLIC devInfoSoftwareRevUUID
+        PUBLIC devInfoSystemIdUUID
+
+GATTServApp_RegisterService SYMBOL "GATTServApp_RegisterService"
+??GATTServApp_RegisterService?relay SYMBOL "?relay", GATTServApp_RegisterService
+osal_memcpy         SYMBOL "osal_memcpy"
+??osal_memcpy?relay SYMBOL "?relay", osal_memcpy
+DevInfo_AddService  SYMBOL "DevInfo_AddService"
+??DevInfo_AddService?relay SYMBOL "?relay", DevInfo_AddService
+DevInfo_GetParameter SYMBOL "DevInfo_GetParameter"
+??DevInfo_GetParameter?relay SYMBOL "?relay", DevInfo_GetParameter
+DevInfo_SetParameter SYMBOL "DevInfo_SetParameter"
+??DevInfo_SetParameter?relay SYMBOL "?relay", DevInfo_SetParameter
+
+        EXTERN ??GATTServApp_RegisterService?relay
+        EXTERN ??osal_memcpy?relay
+        EXTERN GATTServApp_RegisterService
+        EXTERN characterUUID
+        EXTERN osal_memcpy
+        EXTERN primaryServiceUUID
+
+// D:\NTHU\¬ã¨s\Important\ThesisCode\Code\GitLabCloud\NewEcoExec\codegenerator\Device\EcoBT\Project\ble\Profiles\DevInfo\devinfoservice.c
+//    1 /**************************************************************************************************
+//    2   Filename:       devinfoservice.c
+//    3   Revised:        $Date $
+//    4   Revision:       $Revision $
+//    5 
+//    6   Description:    This file contains the Device Information service.
+//    7 
+//    8 
+//    9   Copyright 2012  Texas Instruments Incorporated. All rights reserved.
+//   10 
+//   11   IMPORTANT: Your use of this Software is limited to those specific rights
+//   12   granted under the terms of a software license agreement between the user
+//   13   who downloaded the software, his/her employer (which must be your employer)
+//   14   and Texas Instruments Incorporated (the "License").  You may not use this
+//   15   Software unless you agree to abide by the terms of the License. The License
+//   16   limits your use, and you acknowledge, that the Software may not be modified,
+//   17   copied or distributed unless embedded on a Texas Instruments microcontroller
+//   18   or used solely and exclusively in conjunction with a Texas Instruments radio
+//   19   frequency transceiver, which is integrated into your product.  Other than for
+//   20   the foregoing purpose, you may not use, reproduce, copy, prepare derivative
+//   21   works of, modify, distribute, perform, display or sell this Software and/or
+//   22   its documentation for any purpose.
+//   23 
+//   24   YOU FURTHER ACKNOWLEDGE AND AGREE THAT THE SOFTWARE AND DOCUMENTATION ARE
+//   25   PROVIDED “AS IS” WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESS OR IMPLIED,
+//   26   INCLUDING WITHOUT LIMITATION, ANY WARRANTY OF MERCHANTABILITY, TITLE,
+//   27   NON-INFRINGEMENT AND FITNESS FOR A PARTICULAR PURPOSE. IN NO EVENT SHALL
+//   28   TEXAS INSTRUMENTS OR ITS LICENSORS BE LIABLE OR OBLIGATED UNDER CONTRACT,
+//   29   NEGLIGENCE, STRICT LIABILITY, CONTRIBUTION, BREACH OF WARRANTY, OR OTHER
+//   30   LEGAL EQUITABLE THEORY ANY DIRECT OR INDIRECT DAMAGES OR EXPENSES
+//   31   INCLUDING BUT NOT LIMITED TO ANY INCIDENTAL, SPECIAL, INDIRECT, PUNITIVE
+//   32   OR CONSEQUENTIAL DAMAGES, LOST PROFITS OR LOST DATA, COST OF PROCUREMENT
+//   33   OF SUBSTITUTE GOODS, TECHNOLOGY, SERVICES, OR ANY CLAIMS BY THIRD PARTIES
+//   34   (INCLUDING BUT NOT LIMITED TO ANY DEFENSE THEREOF), OR OTHER SIMILAR COSTS.
+//   35 
+//   36   Should you have any questions regarding your right to use this Software,
+//   37   contact Texas Instruments Incorporated at www.TI.com.
+//   38 **************************************************************************************************/
+//   39 
+//   40 /*********************************************************************
+//   41  * INCLUDES
+//   42  */
+//   43 #include "bcomdef.h"
+//   44 #include "OSAL.h"
+//   45 #include "linkdb.h"
+//   46 #include "att.h"
+//   47 #include "gatt.h"
+//   48 #include "gatt_uuid.h"
+//   49 #include "gattservapp.h"
+//   50 
+//   51 #include "devinfoservice.h"
+//   52 
+//   53 /*********************************************************************
+//   54  * MACROS
+//   55  */
+//   56 
+//   57 /*********************************************************************
+//   58  * CONSTANTS
+//   59  */
+//   60 
+//   61 /*********************************************************************
+//   62  * TYPEDEFS
+//   63  */
+//   64 
+//   65 /*********************************************************************
+//   66  * GLOBAL VARIABLES
+//   67  */
+//   68 // Device information service
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA16
+//   69 CONST uint8 devInfoServUUID[ATT_BT_UUID_SIZE] =
+devInfoServUUID:
+        DATA8
+        DB 10
+        DB 24
+//   70 {
+//   71   LO_UINT16(DEVINFO_SERV_UUID), HI_UINT16(DEVINFO_SERV_UUID)
+//   72 };
+//   73 
+//   74 // System ID
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA16
+//   75 CONST uint8 devInfoSystemIdUUID[ATT_BT_UUID_SIZE] =
+devInfoSystemIdUUID:
+        DATA8
+        DB 35
+        DB 42
+//   76 {
+//   77   LO_UINT16(DEVINFO_SYSTEM_ID_UUID), HI_UINT16(DEVINFO_SYSTEM_ID_UUID)
+//   78 };
+//   79 
+//   80 // Model Number String
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA16
+//   81 CONST uint8 devInfoModelNumberUUID[ATT_BT_UUID_SIZE] =
+devInfoModelNumberUUID:
+        DATA8
+        DB 36
+        DB 42
+//   82 {
+//   83   LO_UINT16(DEVINFO_MODEL_NUMBER_UUID), HI_UINT16(DEVINFO_MODEL_NUMBER_UUID)
+//   84 };
+//   85 
+//   86 // Serial Number String
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA16
+//   87 CONST uint8 devInfoSerialNumberUUID[ATT_BT_UUID_SIZE] =
+devInfoSerialNumberUUID:
+        DATA8
+        DB 37
+        DB 42
+//   88 {
+//   89   LO_UINT16(DEVINFO_SERIAL_NUMBER_UUID), HI_UINT16(DEVINFO_SERIAL_NUMBER_UUID)
+//   90 };
+//   91 
+//   92 // Firmware Revision String
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA16
+//   93 CONST uint8 devInfoFirmwareRevUUID[ATT_BT_UUID_SIZE] =
+devInfoFirmwareRevUUID:
+        DATA8
+        DB 38
+        DB 42
+//   94 {
+//   95   LO_UINT16(DEVINFO_FIRMWARE_REV_UUID), HI_UINT16(DEVINFO_FIRMWARE_REV_UUID)
+//   96 };
+//   97 
+//   98 // Hardware Revision String
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA16
+//   99 CONST uint8 devInfoHardwareRevUUID[ATT_BT_UUID_SIZE] =
+devInfoHardwareRevUUID:
+        DATA8
+        DB 39
+        DB 42
+//  100 {
+//  101   LO_UINT16(DEVINFO_HARDWARE_REV_UUID), HI_UINT16(DEVINFO_HARDWARE_REV_UUID)
+//  102 };
+//  103 
+//  104 // Software Revision String
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA16
+//  105 CONST uint8 devInfoSoftwareRevUUID[ATT_BT_UUID_SIZE] =
+devInfoSoftwareRevUUID:
+        DATA8
+        DB 40
+        DB 42
+//  106 {
+//  107   LO_UINT16(DEVINFO_SOFTWARE_REV_UUID), HI_UINT16(DEVINFO_SOFTWARE_REV_UUID)
+//  108 };
+//  109 
+//  110 // Manufacturer Name String
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA16
+//  111 CONST uint8 devInfoMfrNameUUID[ATT_BT_UUID_SIZE] =
+devInfoMfrNameUUID:
+        DATA8
+        DB 41
+        DB 42
+//  112 {
+//  113   LO_UINT16(DEVINFO_MANUFACTURER_NAME_UUID), HI_UINT16(DEVINFO_MANUFACTURER_NAME_UUID)
+//  114 };
+//  115 
+//  116 // IEEE 11073-20601 Regulatory Certification Data List
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA16
+//  117 CONST uint8 devInfo11073CertUUID[ATT_BT_UUID_SIZE] =
+devInfo11073CertUUID:
+        DATA8
+        DB 42
+        DB 42
+//  118 {
+//  119   LO_UINT16(DEVINFO_11073_CERT_DATA_UUID), HI_UINT16(DEVINFO_11073_CERT_DATA_UUID)
+//  120 };
+//  121 
+//  122 // PnP ID
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA16
+//  123 CONST uint8 devInfoPnpIdUUID[ATT_BT_UUID_SIZE] =
+devInfoPnpIdUUID:
+        DATA8
+        DB 80
+        DB 42
+//  124 {
+//  125   LO_UINT16(DEVINFO_PNP_ID_UUID), HI_UINT16(DEVINFO_PNP_ID_UUID)
+//  126 };
+//  127 
+//  128 
+//  129 /*********************************************************************
+//  130  * EXTERNAL VARIABLES
+//  131  */
+//  132 
+//  133 /*********************************************************************
+//  134  * EXTERNAL FUNCTIONS
+//  135  */
+//  136 
+//  137 /*********************************************************************
+//  138  * LOCAL VARIABLES
+//  139  */
+//  140 
+//  141 /*********************************************************************
+//  142  * Profile Attributes - variables
+//  143  */
+//  144 
+//  145 // Device Information Service attribute
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA8
+//  146 static CONST gattAttrType_t devInfoService = { ATT_BT_UUID_SIZE, devInfoServUUID };
+devInfoService:
+        DB 2
+        DATA16
+        DW devInfoServUUID
+//  147 
+//  148 // System ID characteristic
+
+        RSEG XDATA_I:XDATA:NOROOT(0)
+//  149 static uint8 devInfoSystemIdProps = GATT_PROP_READ;
+devInfoSystemIdProps:
+        DATA8
+        DS 1
+        REQUIRE `?<Initializer for devInfoSystemIdProps>`
+        REQUIRE __INIT_XDATA_I
+
+        RSEG XDATA_Z:XDATA:NOROOT(0)
+        DATA8
+//  150 static uint8 devInfoSystemId[DEVINFO_SYSTEM_ID_LEN] = {0, 0, 0, 0, 0, 0, 0, 0};
+devInfoSystemId:
+        DS 8
+        REQUIRE __INIT_XDATA_Z
+//  151 
+//  152 // Model Number String characteristic
+
+        RSEG XDATA_I:XDATA:NOROOT(0)
+//  153 static uint8 devInfoModelNumberProps = GATT_PROP_READ;
+devInfoModelNumberProps:
+        DATA8
+        DS 1
+        REQUIRE `?<Initializer for devInfoModelNumberProps>`
+        REQUIRE __INIT_XDATA_I
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA8
+//  154 static const uint8 devInfoModelNumber[] = "Model Number";
+devInfoModelNumber:
+        DB "Model Number"
+//  155 
+//  156 // Serial Number String characteristic
+
+        RSEG XDATA_I:XDATA:NOROOT(0)
+//  157 static uint8 devInfoSerialNumberProps = GATT_PROP_READ;
+devInfoSerialNumberProps:
+        DATA8
+        DS 1
+        REQUIRE `?<Initializer for devInfoSerialNumberProps>`
+        REQUIRE __INIT_XDATA_I
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA8
+//  158 static const uint8 devInfoSerialNumber[] = "Serial Number";
+devInfoSerialNumber:
+        DB "Serial Number"
+//  159 
+//  160 // Firmware Revision String characteristic
+
+        RSEG XDATA_I:XDATA:NOROOT(0)
+//  161 static uint8 devInfoFirmwareRevProps = GATT_PROP_READ;
+devInfoFirmwareRevProps:
+        DATA8
+        DS 1
+        REQUIRE `?<Initializer for devInfoFirmwareRevProps>`
+        REQUIRE __INIT_XDATA_I
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA8
+//  162 static const uint8 devInfoFirmwareRev[] = "Firmware Revision";
+devInfoFirmwareRev:
+        DB "Firmware Revision"
+//  163 
+//  164 // Hardware Revision String characteristic
+
+        RSEG XDATA_I:XDATA:NOROOT(0)
+//  165 static uint8 devInfoHardwareRevProps = GATT_PROP_READ;
+devInfoHardwareRevProps:
+        DATA8
+        DS 1
+        REQUIRE `?<Initializer for devInfoHardwareRevProps>`
+        REQUIRE __INIT_XDATA_I
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA8
+//  166 static const uint8 devInfoHardwareRev[] = "Hardware Revision";
+devInfoHardwareRev:
+        DB "Hardware Revision"
+//  167 
+//  168 // Software Revision String characteristic
+
+        RSEG XDATA_I:XDATA:NOROOT(0)
+//  169 static uint8 devInfoSoftwareRevProps = GATT_PROP_READ;
+devInfoSoftwareRevProps:
+        DATA8
+        DS 1
+        REQUIRE `?<Initializer for devInfoSoftwareRevProps>`
+        REQUIRE __INIT_XDATA_I
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA8
+//  170 static const uint8 devInfoSoftwareRev[] = "Software Revision";
+devInfoSoftwareRev:
+        DB "Software Revision"
+//  171 
+//  172 // Manufacturer Name String characteristic
+
+        RSEG XDATA_I:XDATA:NOROOT(0)
+//  173 static uint8 devInfoMfrNameProps = GATT_PROP_READ;
+devInfoMfrNameProps:
+        DATA8
+        DS 1
+        REQUIRE `?<Initializer for devInfoMfrNameProps>`
+        REQUIRE __INIT_XDATA_I
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA8
+//  174 static const uint8 devInfoMfrName[] = "Manufacturer Name";
+devInfoMfrName:
+        DB "Manufacturer Name"
+//  175 
+//  176 // IEEE 11073-20601 Regulatory Certification Data List characteristic
+
+        RSEG XDATA_I:XDATA:NOROOT(0)
+//  177 static uint8 devInfo11073CertProps = GATT_PROP_READ;
+devInfo11073CertProps:
+        DATA8
+        DS 1
+        REQUIRE `?<Initializer for devInfo11073CertProps>`
+        REQUIRE __INIT_XDATA_I
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA8
+//  178 static const uint8 devInfo11073Cert[] =
+devInfo11073Cert:
+        DB 254
+        DB 0
+        DB 101
+        DB 120
+        DB 112
+        DB 101
+        DB 114
+        DB 105
+        DB 109
+        DB 101
+        DB 110
+        DB 116
+        DB 97
+        DB 108
+//  179 {
+//  180   DEVINFO_11073_BODY_EXP,      // authoritative body type
+//  181   0x00,                       // authoritative body structure type
+//  182                               // authoritative body data follows below:
+//  183   'e', 'x', 'p', 'e', 'r', 'i', 'm', 'e', 'n', 't', 'a', 'l'
+//  184 };
+//  185 
+//  186 // System ID characteristic
+
+        RSEG XDATA_I:XDATA:NOROOT(0)
+//  187 static uint8 devInfoPnpIdProps = GATT_PROP_READ;
+devInfoPnpIdProps:
+        DATA8
+        DS 1
+        REQUIRE `?<Initializer for devInfoPnpIdProps>`
+        REQUIRE __INIT_XDATA_I
+
+        RSEG XDATA_I:XDATA:NOROOT(0)
+//  188 static uint8 devInfoPnpId[DEVINFO_PNP_ID_LEN] =
+devInfoPnpId:
+        DATA8
+        DS 7
+        REQUIRE `?<Initializer for devInfoPnpId>`
+        REQUIRE __INIT_XDATA_I
+//  189 {
+//  190   1,                                      // Vendor ID source (1=Bluetooth SIG)
+//  191   LO_UINT16(0x000D), HI_UINT16(0x000D),   // Vendor ID (Texas Instruments)
+//  192   LO_UINT16(0x0000), HI_UINT16(0x0000),   // Product ID (vendor-specific)
+//  193   LO_UINT16(0x0110), HI_UINT16(0x0110)    // Product version (JJ.M.N)
+//  194 };
+//  195 
+//  196 /*********************************************************************
+//  197  * Profile Attributes - Table
+//  198  */
+//  199 
+
+        RSEG XDATA_I:XDATA:NOROOT(0)
+//  200 static gattAttribute_t devInfoAttrTbl[] =
+devInfoAttrTbl:
+        DATA8
+        DS 152
+        REQUIRE `?<Initializer for devInfoAttrTbl>`
+        REQUIRE __INIT_XDATA_I
+//  201 {
+//  202   // Device Information Service
+//  203   {
+//  204     { ATT_BT_UUID_SIZE, primaryServiceUUID }, /* type */
+//  205     GATT_PERMIT_READ,                         /* permissions */
+//  206     0,                                        /* handle */
+//  207     (uint8 *)&devInfoService                /* pValue */
+//  208   },
+//  209 
+//  210     // System ID Declaration
+//  211     {
+//  212       { ATT_BT_UUID_SIZE, characterUUID },
+//  213       GATT_PERMIT_READ,
+//  214       0,
+//  215       &devInfoSystemIdProps
+//  216     },
+//  217 
+//  218       // System ID Value
+//  219       {
+//  220         { ATT_BT_UUID_SIZE, devInfoSystemIdUUID },
+//  221         GATT_PERMIT_READ,
+//  222         0,
+//  223         (uint8 *) devInfoSystemId
+//  224       },
+//  225 
+//  226     // Model Number String Declaration
+//  227     {
+//  228       { ATT_BT_UUID_SIZE, characterUUID },
+//  229       GATT_PERMIT_READ,
+//  230       0,
+//  231       &devInfoModelNumberProps
+//  232     },
+//  233 
+//  234       // Model Number Value
+//  235       {
+//  236         { ATT_BT_UUID_SIZE, devInfoModelNumberUUID },
+//  237         GATT_PERMIT_READ,
+//  238         0,
+//  239         (uint8 *) devInfoModelNumber
+//  240       },
+//  241 
+//  242     // Serial Number String Declaration
+//  243     {
+//  244       { ATT_BT_UUID_SIZE, characterUUID },
+//  245       GATT_PERMIT_READ,
+//  246       0,
+//  247       &devInfoSerialNumberProps
+//  248     },
+//  249 
+//  250       // Serial Number Value
+//  251       {
+//  252         { ATT_BT_UUID_SIZE, devInfoSerialNumberUUID },
+//  253         GATT_PERMIT_READ,
+//  254         0,
+//  255         (uint8 *) devInfoSerialNumber
+//  256       },
+//  257 
+//  258     // Firmware Revision String Declaration
+//  259     {
+//  260       { ATT_BT_UUID_SIZE, characterUUID },
+//  261       GATT_PERMIT_READ,
+//  262       0,
+//  263       &devInfoFirmwareRevProps
+//  264     },
+//  265 
+//  266       // Firmware Revision Value
+//  267       {
+//  268         { ATT_BT_UUID_SIZE, devInfoFirmwareRevUUID },
+//  269         GATT_PERMIT_READ,
+//  270         0,
+//  271         (uint8 *) devInfoFirmwareRev
+//  272       },
+//  273 
+//  274     // Hardware Revision String Declaration
+//  275     {
+//  276       { ATT_BT_UUID_SIZE, characterUUID },
+//  277       GATT_PERMIT_READ,
+//  278       0,
+//  279       &devInfoHardwareRevProps
+//  280     },
+//  281 
+//  282       // Hardware Revision Value
+//  283       {
+//  284         { ATT_BT_UUID_SIZE, devInfoHardwareRevUUID },
+//  285         GATT_PERMIT_READ,
+//  286         0,
+//  287         (uint8 *) devInfoHardwareRev
+//  288       },
+//  289 
+//  290     // Software Revision String Declaration
+//  291     {
+//  292       { ATT_BT_UUID_SIZE, characterUUID },
+//  293       GATT_PERMIT_READ,
+//  294       0,
+//  295       &devInfoSoftwareRevProps
+//  296     },
+//  297 
+//  298       // Software Revision Value
+//  299       {
+//  300         { ATT_BT_UUID_SIZE, devInfoSoftwareRevUUID },
+//  301         GATT_PERMIT_READ,
+//  302         0,
+//  303         (uint8 *) devInfoSoftwareRev
+//  304       },
+//  305 
+//  306     // Manufacturer Name String Declaration
+//  307     {
+//  308       { ATT_BT_UUID_SIZE, characterUUID },
+//  309       GATT_PERMIT_READ,
+//  310       0,
+//  311       &devInfoMfrNameProps
+//  312     },
+//  313 
+//  314       // Manufacturer Name Value
+//  315       {
+//  316         { ATT_BT_UUID_SIZE, devInfoMfrNameUUID },
+//  317         GATT_PERMIT_READ,
+//  318         0,
+//  319         (uint8 *) devInfoMfrName
+//  320       },
+//  321 
+//  322     // IEEE 11073-20601 Regulatory Certification Data List Declaration
+//  323     {
+//  324       { ATT_BT_UUID_SIZE, characterUUID },
+//  325       GATT_PERMIT_READ,
+//  326       0,
+//  327       &devInfo11073CertProps
+//  328     },
+//  329 
+//  330       // IEEE 11073-20601 Regulatory Certification Data List Value
+//  331       {
+//  332         { ATT_BT_UUID_SIZE, devInfo11073CertUUID },
+//  333         GATT_PERMIT_READ,
+//  334         0,
+//  335         (uint8 *) devInfo11073Cert
+//  336       },
+//  337 
+//  338     // PnP ID Declaration
+//  339     {
+//  340       { ATT_BT_UUID_SIZE, characterUUID },
+//  341       GATT_PERMIT_READ,
+//  342       0,
+//  343       &devInfoPnpIdProps
+//  344     },
+//  345 
+//  346       // PnP ID Value
+//  347       {
+//  348         { ATT_BT_UUID_SIZE, devInfoPnpIdUUID },
+//  349         GATT_PERMIT_READ,
+//  350         0,
+//  351         (uint8 *) devInfoPnpId
+//  352       }
+//  353 };
+//  354 
+//  355 
+//  356 /*********************************************************************
+//  357  * LOCAL FUNCTIONS
+//  358  */
+//  359 static uint8 devInfo_ReadAttrCB( uint16 connHandle, gattAttribute_t *pAttr,
+//  360                             uint8 *pValue, uint8 *pLen, uint16 offset, uint8 maxLen );
+//  361 
+//  362 /*********************************************************************
+//  363  * PROFILE CALLBACKS
+//  364  */
+//  365 // Device Info Service Callbacks
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA8
+//  366 CONST gattServiceCBs_t devInfoCBs =
+devInfoCBs:
+        DATA16
+        DW ??devInfo_ReadAttrCB?relay
+        DW 0H
+        DW 0H
+//  367 {
+//  368   devInfo_ReadAttrCB, // Read callback function pointer
+//  369   NULL,               // Write callback function pointer
+//  370   NULL                // Authorization callback function pointer
+//  371 };
+//  372 
+//  373 /*********************************************************************
+//  374  * NETWORK LAYER CALLBACKS
+//  375  */
+//  376 
+//  377 /*********************************************************************
+//  378  * PUBLIC FUNCTIONS
+//  379  */
+//  380 
+//  381 /*********************************************************************
+//  382  * @fn      DevInfo_AddService
+//  383  *
+//  384  * @brief   Initializes the Device Information service by registering
+//  385  *          GATT attributes with the GATT server.
+//  386  *
+//  387  * @return  Success or Failure
+//  388  */
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+//  389 bStatus_t DevInfo_AddService( void )
+DevInfo_AddService:
+        CODE
+//  390 {
+        MOV     A,#-0xa
+        LCALL   ?BANKED_ENTER_XDATA
+        ; Saved register size: 10
+        ; Auto size: 0
+//  391   // Register GATT attribute list and CBs with GATT Server App
+//  392   return GATTServApp_RegisterService( devInfoAttrTbl,
+//  393                                       GATT_NUM_ATTRS( devInfoAttrTbl ),
+//  394                                       &devInfoCBs );
+        ; Setup parameters for call to function GATTServApp_RegisterService
+        MOV     ?V0 + 0,#devInfoCBs & 0xff
+        MOV     ?V0 + 1,#(devInfoCBs >> 8) & 0xff
+        MOV     R0,#?V0 + 0
+        LCALL   ?PUSH_XSTACK_I_TWO
+        MOV     R4,#0x13
+        MOV     R5,#0x0
+        MOV     R2,#devInfoAttrTbl & 0xff
+        MOV     R3,#(devInfoAttrTbl >> 8) & 0xff
+        LCALL   ??GATTServApp_RegisterService?relay
+        MOV     A,#0x2
+        LCALL   ?DEALLOC_XSTACK8
+        REQUIRE ?Subroutine0
+        ; // Fall through to label ?Subroutine0
+//  395 }
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+?Subroutine0:
+        MOV     R7,#0x2
+        LJMP    ?BANKED_LEAVE_XDATA
+//  396 
+//  397 /*********************************************************************
+//  398  * @fn      DevInfo_SetParameter
+//  399  *
+//  400  * @brief   Set a Device Information parameter.
+//  401  *
+//  402  * @param   param - Profile parameter ID
+//  403  * @param   len - length of data to write
+//  404  * @param   value - pointer to data to write.  This is dependent on
+//  405  *          the parameter ID and WILL be cast to the appropriate
+//  406  *          data type (example: data type of uint16 will be cast to
+//  407  *          uint16 pointer).
+//  408  *
+//  409  * @return  bStatus_t
+//  410  */
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+//  411 bStatus_t DevInfo_SetParameter( uint8 param, uint8 len, void *value )
+DevInfo_SetParameter:
+        CODE
+//  412 {
+        MOV     A,#-0xb
+        LCALL   ?BANKED_ENTER_XDATA
+        ; Saved register size: 11
+        ; Auto size: 0
+        MOV     A,R1
+//  413   bStatus_t ret = SUCCESS;
+        MOV     R6,#0x0
+//  414 
+//  415   switch ( param )
+        JNZ     ??DevInfo_SetParameter_0
+//  416   {
+//  417      case DEVINFO_SYSTEM_ID:
+//  418       osal_memcpy(devInfoSystemId, value, len);
+        ; Setup parameters for call to function osal_memcpy
+        MOV     ?V0 + 0,R2
+        MOV     ?V0 + 1,R6
+        MOV     R0,#?V0 + 0
+        LCALL   ?PUSH_XSTACK_I_TWO
+        MOV     R2,#devInfoSystemId & 0xff
+        MOV     R3,#(devInfoSystemId >> 8) & 0xff
+        LCALL   ??osal_memcpy?relay
+        MOV     A,#0x2
+        LCALL   ?DEALLOC_XSTACK8
+//  419       break;
+        SJMP    ??DevInfo_SetParameter_1
+//  420 
+//  421     default:
+//  422       ret = INVALIDPARAMETER;
+??DevInfo_SetParameter_0:
+        INC     R6
+        INC     R6
+//  423       break;
+//  424   }
+//  425 
+//  426   return ( ret );
+??DevInfo_SetParameter_1:
+        MOV     A,R6
+        MOV     R1,A
+        MOV     R7,#0x3
+        LJMP    ?BANKED_LEAVE_XDATA
+//  427 }
+//  428 
+//  429 /*********************************************************************
+//  430  * @fn      DevInfo_GetParameter
+//  431  *
+//  432  * @brief   Get a Device Information parameter.
+//  433  *
+//  434  * @param   param - Profile parameter ID
+//  435  * @param   value - pointer to data to get.  This is dependent on
+//  436  *          the parameter ID and WILL be cast to the appropriate
+//  437  *          data type (example: data type of uint16 will be cast to
+//  438  *          uint16 pointer).
+//  439  *
+//  440  * @return  bStatus_t
+//  441  */
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+//  442 bStatus_t DevInfo_GetParameter( uint8 param, void *value )
+DevInfo_GetParameter:
+        CODE
+//  443 {
+        MOV     A,#-0xa
+        LCALL   ?BANKED_ENTER_XDATA
+        ; Saved register size: 10
+        ; Auto size: 0
+        MOV     A,R1
+//  444   bStatus_t ret = SUCCESS;
+        MOV     R6,#0x0
+//  445 
+//  446   switch ( param )
+        JZ      ??DevInfo_GetParameter_0
+        DEC     A
+        JZ      ??DevInfo_GetParameter_1
+        DEC     A
+        JZ      ??DevInfo_GetParameter_2
+        DEC     A
+        JZ      ??DevInfo_GetParameter_3
+        DEC     A
+        JZ      ??DevInfo_GetParameter_4
+        DEC     A
+        JZ      ??DevInfo_GetParameter_5
+        DEC     A
+        JZ      ??DevInfo_GetParameter_6
+        DEC     A
+        JZ      ??DevInfo_GetParameter_7
+        DEC     A
+        JNZ     $+5
+        LJMP    ??DevInfo_GetParameter_8 & 0xFFFF
+        LJMP    ??DevInfo_GetParameter_9 & 0xFFFF
+//  447   {
+//  448     case DEVINFO_SYSTEM_ID:
+//  449       osal_memcpy(value, devInfoSystemId, sizeof(devInfoSystemId));
+??DevInfo_GetParameter_0:
+        ; Setup parameters for call to function osal_memcpy
+        MOV     ?V0 + 0,#0x8
+        MOV     ?V0 + 1,R6
+        MOV     R0,#?V0 + 0
+        LCALL   ?PUSH_XSTACK_I_TWO
+        MOV     R4,#devInfoSystemId & 0xff
+        MOV     R5,#(devInfoSystemId >> 8) & 0xff
+        SJMP    ??DevInfo_GetParameter_10
+//  450       break;
+//  451 
+//  452     case DEVINFO_MODEL_NUMBER:
+//  453       osal_memcpy(value, devInfoModelNumber, sizeof(devInfoModelNumber));
+??DevInfo_GetParameter_1:
+        ; Setup parameters for call to function osal_memcpy
+        MOV     ?V0 + 0,#0xd
+        MOV     ?V0 + 1,R6
+        MOV     R0,#?V0 + 0
+        LCALL   ?PUSH_XSTACK_I_TWO
+        MOV     R4,#devInfoModelNumber & 0xff
+        MOV     R5,#(devInfoModelNumber >> 8) & 0xff
+        SJMP    ??DevInfo_GetParameter_10
+//  454       break;
+//  455     case DEVINFO_SERIAL_NUMBER:
+//  456       osal_memcpy(value, devInfoSerialNumber, sizeof(devInfoSerialNumber));
+??DevInfo_GetParameter_2:
+        ; Setup parameters for call to function osal_memcpy
+        MOV     ?V0 + 0,#0xe
+        MOV     ?V0 + 1,R6
+        MOV     R0,#?V0 + 0
+        LCALL   ?PUSH_XSTACK_I_TWO
+        MOV     R4,#devInfoSerialNumber & 0xff
+        MOV     R5,#(devInfoSerialNumber >> 8) & 0xff
+        SJMP    ??DevInfo_GetParameter_10
+//  457       break;
+//  458 
+//  459     case DEVINFO_FIRMWARE_REV:
+//  460       osal_memcpy(value, devInfoFirmwareRev, sizeof(devInfoFirmwareRev));
+??DevInfo_GetParameter_3:
+        ; Setup parameters for call to function osal_memcpy
+        MOV     ?V0 + 0,#0x12
+        MOV     ?V0 + 1,R6
+        MOV     R0,#?V0 + 0
+        LCALL   ?PUSH_XSTACK_I_TWO
+        MOV     R4,#devInfoFirmwareRev & 0xff
+        MOV     R5,#(devInfoFirmwareRev >> 8) & 0xff
+        SJMP    ??DevInfo_GetParameter_10
+//  461       break;
+//  462 
+//  463     case DEVINFO_HARDWARE_REV:
+//  464       osal_memcpy(value, devInfoHardwareRev, sizeof(devInfoHardwareRev));
+??DevInfo_GetParameter_4:
+        ; Setup parameters for call to function osal_memcpy
+        MOV     ?V0 + 0,#0x12
+        MOV     ?V0 + 1,R6
+        MOV     R0,#?V0 + 0
+        LCALL   ?PUSH_XSTACK_I_TWO
+        MOV     R4,#devInfoHardwareRev & 0xff
+        MOV     R5,#(devInfoHardwareRev >> 8) & 0xff
+        SJMP    ??DevInfo_GetParameter_10
+//  465       break;
+//  466 
+//  467     case DEVINFO_SOFTWARE_REV:
+//  468       osal_memcpy(value, devInfoSoftwareRev, sizeof(devInfoSoftwareRev));
+??DevInfo_GetParameter_5:
+        ; Setup parameters for call to function osal_memcpy
+        MOV     ?V0 + 0,#0x12
+        MOV     ?V0 + 1,R6
+        MOV     R0,#?V0 + 0
+        LCALL   ?PUSH_XSTACK_I_TWO
+        MOV     R4,#devInfoSoftwareRev & 0xff
+        MOV     R5,#(devInfoSoftwareRev >> 8) & 0xff
+        SJMP    ??DevInfo_GetParameter_10
+//  469       break;
+//  470 
+//  471     case DEVINFO_MANUFACTURER_NAME:
+//  472       osal_memcpy(value, devInfoMfrName, sizeof(devInfoMfrName));
+??DevInfo_GetParameter_6:
+        ; Setup parameters for call to function osal_memcpy
+        MOV     ?V0 + 0,#0x12
+        MOV     ?V0 + 1,R6
+        MOV     R0,#?V0 + 0
+        LCALL   ?PUSH_XSTACK_I_TWO
+        MOV     R4,#devInfoMfrName & 0xff
+        MOV     R5,#(devInfoMfrName >> 8) & 0xff
+        SJMP    ??DevInfo_GetParameter_10
+//  473       break;
+//  474 
+//  475     case DEVINFO_11073_CERT_DATA:
+//  476       osal_memcpy(value, devInfo11073Cert, sizeof(devInfo11073Cert));
+??DevInfo_GetParameter_7:
+        ; Setup parameters for call to function osal_memcpy
+        MOV     ?V0 + 0,#0xe
+        MOV     ?V0 + 1,R6
+        MOV     R0,#?V0 + 0
+        LCALL   ?PUSH_XSTACK_I_TWO
+        MOV     R4,#devInfo11073Cert & 0xff
+        MOV     R5,#(devInfo11073Cert >> 8) & 0xff
+        SJMP    ??DevInfo_GetParameter_10
+//  477       break;
+//  478 
+//  479     case DEVINFO_PNP_ID:
+//  480       osal_memcpy(value, devInfoPnpId, sizeof(devInfoPnpId));
+??DevInfo_GetParameter_8:
+        ; Setup parameters for call to function osal_memcpy
+        MOV     ?V0 + 0,#0x7
+        MOV     ?V0 + 1,R6
+        MOV     R0,#?V0 + 0
+        LCALL   ?PUSH_XSTACK_I_TWO
+        MOV     R4,#devInfoPnpId & 0xff
+        MOV     R5,#(devInfoPnpId >> 8) & 0xff
+??DevInfo_GetParameter_10:
+        LCALL   ??osal_memcpy?relay
+        MOV     A,#0x2
+        LCALL   ?DEALLOC_XSTACK8
+//  481       break;
+        SJMP    ??DevInfo_GetParameter_11
+//  482 
+//  483     default:
+//  484       ret = INVALIDPARAMETER;
+??DevInfo_GetParameter_9:
+        INC     R6
+        INC     R6
+//  485       break;
+//  486   }
+//  487 
+//  488   return ( ret );
+??DevInfo_GetParameter_11:
+        MOV     A,R6
+        MOV     R1,A
+        LJMP    ?Subroutine0 & 0xFFFF
+//  489 }
+//  490 
+//  491 /*********************************************************************
+//  492  * @fn          devInfo_ReadAttrCB
+//  493  *
+//  494  * @brief       Read an attribute.
+//  495  *
+//  496  * @param       connHandle - connection message was received on
+//  497  * @param       pAttr - pointer to attribute
+//  498  * @param       pValue - pointer to data to be read
+//  499  * @param       pLen - length of data to be read
+//  500  * @param       offset - offset of the first octet to be read
+//  501  * @param       maxLen - maximum length of data to be read
+//  502  *
+//  503  * @return      Success or Failure
+//  504  */
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+//  505 static uint8 devInfo_ReadAttrCB( uint16 connHandle, gattAttribute_t *pAttr,
+devInfo_ReadAttrCB:
+        CODE
+//  506                             uint8 *pValue, uint8 *pLen, uint16 offset, uint8 maxLen )
+//  507 {
+        MOV     A,#-0x17
+        LCALL   ?BANKED_ENTER_XDATA
+        ; Saved register size: 23
+        ; Auto size: 1
+        MOV     A,#-0x1
+        LCALL   ?ALLOC_XSTACK8
+        MOV     A,R4
+        MOV     R2,A
+        MOV     A,R5
+        MOV     R3,A
+        MOV     A,R1
+        MOV     R6,A
+//  508   bStatus_t status = SUCCESS;
+        MOV     ?V0 + 2,#0x0
+        MOV     A,#0x1c
+        LCALL   ?XSTACK_DISP0_8
+        MOVX    A,@DPTR
+        MOV     R4,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R5,A
+//  509   uint16 uuid = BUILD_UINT16( pAttr->type.uuid[0], pAttr->type.uuid[1]);
+//  510 
+//  511   switch (uuid)
+        MOV     A,R4
+        MOV     R0,A
+        MOV     A,#0x12
+        CLR     C
+        SUBB    A,R0
+        MOV     ?V0 + 3,A
+        MOV     A,#0xe
+        CLR     C
+        SUBB    A,R0
+        MOV     R1,A
+        MOV     DPL,R2
+        MOV     DPH,R3
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     ?V0 + 0,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     ?V0 + 1,A
+        MOV     A,#0x12
+        CLR     C
+        SUBB    A,R4
+        MOV     ?V0 + 10,A
+        CLR     A
+        SUBB    A,R5
+        MOV     ?V0 + 11,A
+        MOV     A,#0xe
+        CLR     C
+        SUBB    A,R4
+        MOV     ?V0 + 8,A
+        CLR     A
+        SUBB    A,R5
+        MOV     ?V0 + 9,A
+        MOV     DPL,R6
+        MOV     ?V0 + 6,DPL
+        MOV     A,#0x18
+        LCALL   ?XSTACK_DISP0_8
+        MOVX    A,@DPTR
+        MOV     R2,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R3,A
+        MOV     A,#0x1a
+        LCALL   ?XSTACK_DISP0_8
+        MOVX    A,@DPTR
+        MOV     ?V0 + 4,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     ?V0 + 5,A
+        MOV     DPL,?V0 + 0
+        MOV     DPH,?V0 + 1
+        MOVX    A,@DPTR
+        MOV     ?V0 + 12,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     ?V0 + 1,A
+        MOV     A,?V0 + 12
+        ADD     A,#0x0
+        MOV     ?V0 + 0,A
+        MOV     R0,#?V0 + 0
+        LCALL   ?US_SWITCH_SPARSE
+`?<Jumptable for devInfo_ReadAttrCB>_0`:
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DW        0
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DW        9
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DW        10787
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DW        ??devInfo_ReadAttrCB_0
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DW        10788
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DW        ??devInfo_ReadAttrCB_1
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DW        10789
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DW        ??devInfo_ReadAttrCB_2
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DW        10790
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DW        ??devInfo_ReadAttrCB_3
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DW        10791
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DW        ??devInfo_ReadAttrCB_4
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DW        10792
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DW        ??devInfo_ReadAttrCB_5
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DW        10793
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DW        ??devInfo_ReadAttrCB_6
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DW        10794
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DW        ??devInfo_ReadAttrCB_7
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DW        10832
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DW        ??devInfo_ReadAttrCB_8
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DW        ??devInfo_ReadAttrCB_9
+        CODE
+//  512   {
+//  513     case DEVINFO_SYSTEM_ID_UUID:
+//  514       // verify offset
+//  515       if (offset >= sizeof(devInfoSystemId))
+??devInfo_ReadAttrCB_0:
+        MOV     A,R4
+        SUBB    A,#0x8
+        MOV     A,R5
+        SUBB    A,#0x0
+        JC      $+5
+        LJMP    ??devInfo_ReadAttrCB_10 & 0xFFFF
+//  516       {
+//  517         status = ATT_ERR_INVALID_OFFSET;
+//  518       }
+//  519       else
+//  520       {
+//  521         // determine read length
+//  522         *pLen = MIN(maxLen, (sizeof(devInfoSystemId) - offset));
+        MOV     A,#0x8
+        LCALL   ?Subroutine3 & 0xFFFF
+//  523 
+//  524         // copy data
+//  525         osal_memcpy(pValue, &devInfoSystemId[offset], *pLen);
+//  526       }
+??CrossCallReturnLabel_4:
+        JNC     ??devInfo_ReadAttrCB_11
+        MOV     A,R6
+        SJMP    ??devInfo_ReadAttrCB_12
+??devInfo_ReadAttrCB_11:
+        MOV     A,R4
+        MOV     R0,A
+        MOV     A,#0x8
+        CLR     C
+        SUBB    A,R0
+??devInfo_ReadAttrCB_12:
+        MOV     DPL,?XSP + 0
+        MOV     DPH,?XSP + 1
+        MOVX    @DPTR,A
+        MOVX    A,@DPTR
+        LCALL   ?Subroutine1 & 0xFFFF
+??CrossCallReturnLabel_15:
+        LCALL   ?PUSH_XSTACK_I_TWO
+        MOV     A,#devInfoSystemId & 0xff
+        ADD     A,R4
+        MOV     R4,A
+        MOV     A,#(devInfoSystemId >> 8) & 0xff
+        LJMP    ??devInfo_ReadAttrCB_13 & 0xFFFF
+//  527       break;
+//  528 
+//  529     case DEVINFO_MODEL_NUMBER_UUID:
+//  530       // verify offset
+//  531       if (offset >= sizeof(devInfoModelNumber))
+??devInfo_ReadAttrCB_1:
+        MOV     A,R4
+        SUBB    A,#0xd
+        MOV     A,R5
+        SUBB    A,#0x0
+        JC      $+5
+        LJMP    ??devInfo_ReadAttrCB_10 & 0xFFFF
+//  532       {
+//  533         status = ATT_ERR_INVALID_OFFSET;
+//  534       }
+//  535       else
+//  536       {
+//  537         // determine read length
+//  538         *pLen = MIN(maxLen, (sizeof(devInfoModelNumber) - offset));
+        MOV     A,#0xd
+        LCALL   ?Subroutine3 & 0xFFFF
+//  539 
+//  540         // copy data
+//  541         osal_memcpy(pValue, &devInfoModelNumber[offset], *pLen);
+//  542       }
+??CrossCallReturnLabel_5:
+        JNC     ??devInfo_ReadAttrCB_14
+        MOV     ?V0 + 14,R6
+        SJMP    ??devInfo_ReadAttrCB_15
+??devInfo_ReadAttrCB_14:
+        MOV     A,R4
+        MOV     R0,A
+        MOV     A,#0xd
+        CLR     C
+        SUBB    A,R0
+        MOV     ?V0 + 14,A
+??devInfo_ReadAttrCB_15:
+        MOV     DPL,?V0 + 4
+        MOV     DPH,?V0 + 5
+        MOV     A,?V0 + 14
+        LCALL   ??Subroutine6_0 & 0xFFFF
+??CrossCallReturnLabel_17:
+        LCALL   ?PUSH_XSTACK_I_TWO
+        MOV     A,#devInfoModelNumber & 0xff
+        ADD     A,R4
+        MOV     R4,A
+        MOV     A,#(devInfoModelNumber >> 8) & 0xff
+        LJMP    ??devInfo_ReadAttrCB_13 & 0xFFFF
+//  543       break;
+//  544 
+//  545     case DEVINFO_SERIAL_NUMBER_UUID:
+//  546       // verify offset
+//  547       if (offset >= sizeof(devInfoSerialNumber))
+??devInfo_ReadAttrCB_2:
+        MOV     A,R4
+        SUBB    A,#0xe
+        MOV     A,R5
+        SUBB    A,#0x0
+        JC      $+5
+        LJMP    ??devInfo_ReadAttrCB_10 & 0xFFFF
+//  548       {
+//  549         status = ATT_ERR_INVALID_OFFSET;
+//  550       }
+//  551       else
+//  552       {
+//  553         // determine read length
+//  554         *pLen = MIN(maxLen, (sizeof(devInfoSerialNumber) - offset));
+        CLR     C
+        MOV     A,R6
+        SUBB    A,?V0 + 8
+        CLR     A
+        SUBB    A,?V0 + 9
+        JNC     ??devInfo_ReadAttrCB_16
+        MOV     ?V0 + 13,R6
+        SJMP    ??devInfo_ReadAttrCB_17
+??devInfo_ReadAttrCB_16:
+        MOV     ?V0 + 13,R1
+??devInfo_ReadAttrCB_17:
+        MOV     DPL,?V0 + 4
+        MOV     DPH,?V0 + 5
+        MOV     A,?V0 + 13
+        LCALL   ??Subroutine6_0 & 0xFFFF
+//  555 
+//  556         // copy data
+//  557         osal_memcpy(pValue, &devInfoSerialNumber[offset], *pLen);
+//  558       }
+??CrossCallReturnLabel_18:
+        LCALL   ?PUSH_XSTACK_I_TWO
+        MOV     A,#devInfoSerialNumber & 0xff
+        ADD     A,R4
+        MOV     R4,A
+        MOV     A,#(devInfoSerialNumber >> 8) & 0xff
+        LJMP    ??devInfo_ReadAttrCB_13 & 0xFFFF
+//  559       break;
+//  560 
+//  561     case DEVINFO_FIRMWARE_REV_UUID:
+//  562       // verify offset
+//  563       if (offset >= sizeof(devInfoFirmwareRev))
+??devInfo_ReadAttrCB_3:
+        LCALL   ?Subroutine4 & 0xFFFF
+??CrossCallReturnLabel_7:
+        JC      $+5
+        LJMP    ??devInfo_ReadAttrCB_10 & 0xFFFF
+//  564       {
+//  565         status = ATT_ERR_INVALID_OFFSET;
+//  566       }
+//  567       else
+//  568       {
+//  569         // determine read length
+//  570         *pLen = MIN(maxLen, (sizeof(devInfoFirmwareRev) - offset));
+        LCALL   ?Subroutine5 & 0xFFFF
+//  571 
+//  572         // copy data
+//  573         osal_memcpy(pValue, &devInfoFirmwareRev[offset], *pLen);
+//  574       }
+??CrossCallReturnLabel_11:
+        JNC     ??devInfo_ReadAttrCB_18
+        MOV     ?V0 + 12,R6
+        SJMP    ??devInfo_ReadAttrCB_19
+??devInfo_ReadAttrCB_18:
+        MOV     ?V0 + 12,?V0 + 3
+??devInfo_ReadAttrCB_19:
+        MOV     DPL,?V0 + 4
+        MOV     DPH,?V0 + 5
+        MOV     A,?V0 + 12
+        LCALL   ??Subroutine6_0 & 0xFFFF
+??CrossCallReturnLabel_19:
+        LCALL   ?PUSH_XSTACK_I_TWO
+        MOV     A,#devInfoFirmwareRev & 0xff
+        ADD     A,R4
+        MOV     R4,A
+        MOV     A,#(devInfoFirmwareRev >> 8) & 0xff
+        LJMP    ??devInfo_ReadAttrCB_13 & 0xFFFF
+//  575       break;
+//  576 
+//  577     case DEVINFO_HARDWARE_REV_UUID:
+//  578       // verify offset
+//  579       if (offset >= sizeof(devInfoHardwareRev))
+??devInfo_ReadAttrCB_4:
+        LCALL   ?Subroutine4 & 0xFFFF
+??CrossCallReturnLabel_8:
+        JC      $+5
+        LJMP    ??devInfo_ReadAttrCB_10 & 0xFFFF
+//  580       {
+//  581         status = ATT_ERR_INVALID_OFFSET;
+//  582       }
+//  583       else
+//  584       {
+//  585         // determine read length
+//  586         *pLen = MIN(maxLen, (sizeof(devInfoHardwareRev) - offset));
+        LCALL   ?Subroutine5 & 0xFFFF
+//  587 
+//  588         // copy data
+//  589         osal_memcpy(pValue, &devInfoHardwareRev[offset], *pLen);
+//  590       }
+??CrossCallReturnLabel_12:
+        JNC     ??devInfo_ReadAttrCB_20
+        MOV     A,R6
+        MOV     R7,A
+        SJMP    ??devInfo_ReadAttrCB_21
+??devInfo_ReadAttrCB_20:
+        MOV     R7,?V0 + 3
+??devInfo_ReadAttrCB_21:
+        MOV     A,R7
+        LCALL   ?Subroutine1 & 0xFFFF
+??CrossCallReturnLabel_16:
+        LCALL   ?PUSH_XSTACK_I_TWO
+        MOV     A,#devInfoHardwareRev & 0xff
+        ADD     A,R4
+        MOV     R4,A
+        MOV     A,#(devInfoHardwareRev >> 8) & 0xff
+        LJMP    ??devInfo_ReadAttrCB_13 & 0xFFFF
+//  591       break;
+//  592 
+//  593     case DEVINFO_SOFTWARE_REV_UUID:
+//  594       // verify offset
+//  595       if (offset >= sizeof(devInfoSoftwareRev))
+??devInfo_ReadAttrCB_5:
+        LCALL   ?Subroutine4 & 0xFFFF
+??CrossCallReturnLabel_9:
+        JNC     ??devInfo_ReadAttrCB_10
+//  596       {
+//  597         status = ATT_ERR_INVALID_OFFSET;
+//  598       }
+//  599       else
+//  600       {
+//  601         // determine read length
+//  602         *pLen = MIN(maxLen, (sizeof(devInfoSoftwareRev) - offset));
+        LCALL   ?Subroutine5 & 0xFFFF
+//  603 
+//  604         // copy data
+//  605         osal_memcpy(pValue, &devInfoSoftwareRev[offset], *pLen);
+//  606       }
+??CrossCallReturnLabel_13:
+        JNC     ??devInfo_ReadAttrCB_22
+        MOV     ?V0 + 0,R6
+        SJMP    ??devInfo_ReadAttrCB_23
+??devInfo_ReadAttrCB_22:
+        MOV     ?V0 + 0,?V0 + 3
+??devInfo_ReadAttrCB_23:
+        MOV     DPL,?V0 + 4
+        MOV     DPH,?V0 + 5
+        MOV     A,?V0 + 0
+        LCALL   ?Subroutine2 & 0xFFFF
+??CrossCallReturnLabel_0:
+        LCALL   ?PUSH_XSTACK_I_TWO
+        MOV     A,#devInfoSoftwareRev & 0xff
+        ADD     A,R4
+        MOV     R4,A
+        MOV     A,#(devInfoSoftwareRev >> 8) & 0xff
+        LJMP    ??devInfo_ReadAttrCB_13 & 0xFFFF
+//  607       break;
+//  608 
+//  609     case DEVINFO_MANUFACTURER_NAME_UUID:
+//  610       // verify offset
+//  611       if (offset >= sizeof(devInfoMfrName))
+??devInfo_ReadAttrCB_6:
+        LCALL   ?Subroutine4 & 0xFFFF
+??CrossCallReturnLabel_10:
+        JNC     ??devInfo_ReadAttrCB_10
+//  612       {
+//  613         status = ATT_ERR_INVALID_OFFSET;
+//  614       }
+//  615       else
+//  616       {
+//  617         // determine read length
+//  618         *pLen = MIN(maxLen, (sizeof(devInfoMfrName) - offset));
+        LCALL   ?Subroutine5 & 0xFFFF
+//  619 
+//  620         // copy data
+//  621         osal_memcpy(pValue, &devInfoMfrName[offset], *pLen);
+//  622       }
+??CrossCallReturnLabel_14:
+        JNC     ??devInfo_ReadAttrCB_24
+        MOV     ?V0 + 1,R6
+        SJMP    ??devInfo_ReadAttrCB_25
+??devInfo_ReadAttrCB_24:
+        MOV     ?V0 + 1,?V0 + 3
+??devInfo_ReadAttrCB_25:
+        MOV     DPL,?V0 + 4
+        MOV     DPH,?V0 + 5
+        MOV     A,?V0 + 1
+        LCALL   ?Subroutine2 & 0xFFFF
+??CrossCallReturnLabel_1:
+        LCALL   ?PUSH_XSTACK_I_TWO
+        MOV     A,#devInfoMfrName & 0xff
+        ADD     A,R4
+        MOV     R4,A
+        MOV     A,#(devInfoMfrName >> 8) & 0xff
+        SJMP    ??devInfo_ReadAttrCB_13
+//  623       break;
+//  624 
+//  625     case DEVINFO_11073_CERT_DATA_UUID:
+//  626       // verify offset
+//  627       if (offset >= sizeof(devInfo11073Cert))
+??devInfo_ReadAttrCB_7:
+        MOV     A,R4
+        SUBB    A,#0xe
+        MOV     A,R5
+        SUBB    A,#0x0
+        JNC     ??devInfo_ReadAttrCB_10
+//  628       {
+//  629         status = ATT_ERR_INVALID_OFFSET;
+//  630       }
+//  631       else
+//  632       {
+//  633         // determine read length
+//  634         *pLen = MIN(maxLen, (sizeof(devInfo11073Cert) - offset));
+        CLR     C
+        MOV     A,R6
+        SUBB    A,?V0 + 8
+        CLR     A
+        SUBB    A,?V0 + 9
+        JNC     ??devInfo_ReadAttrCB_26
+        MOV     ?V0 + 3,R6
+        SJMP    ??devInfo_ReadAttrCB_27
+??devInfo_ReadAttrCB_26:
+        MOV     ?V0 + 3,R1
+??devInfo_ReadAttrCB_27:
+        MOV     DPL,?V0 + 4
+        MOV     DPH,?V0 + 5
+        MOV     A,?V0 + 3
+        LCALL   ?Subroutine2 & 0xFFFF
+//  635 
+//  636         // copy data
+//  637         osal_memcpy(pValue, &devInfo11073Cert[offset], *pLen);
+//  638       }
+??CrossCallReturnLabel_2:
+        LCALL   ?PUSH_XSTACK_I_TWO
+        MOV     A,#devInfo11073Cert & 0xff
+        ADD     A,R4
+        MOV     R4,A
+        MOV     A,#(devInfo11073Cert >> 8) & 0xff
+        SJMP    ??devInfo_ReadAttrCB_13
+//  639       break;
+//  640 
+//  641     case DEVINFO_PNP_ID_UUID:
+//  642       // verify offset
+//  643       if (offset >= sizeof(devInfoPnpId))
+??devInfo_ReadAttrCB_8:
+        MOV     A,R4
+        SUBB    A,#0x7
+        MOV     A,R5
+        SUBB    A,#0x0
+        JC      ??devInfo_ReadAttrCB_28
+//  644       {
+//  645         status = ATT_ERR_INVALID_OFFSET;
+??devInfo_ReadAttrCB_10:
+        MOV     ?V0 + 2,#0x7
+        SJMP    ??devInfo_ReadAttrCB_29
+//  646       }
+//  647       else
+//  648       {
+//  649         // determine read length
+//  650         *pLen = MIN(maxLen, (sizeof(devInfoPnpId) - offset));
+??devInfo_ReadAttrCB_28:
+        MOV     A,#0x7
+        LCALL   ?Subroutine3 & 0xFFFF
+//  651 
+//  652         // copy data
+//  653         osal_memcpy(pValue, &devInfoPnpId[offset], *pLen);
+//  654       }
+??CrossCallReturnLabel_6:
+        JC      ??devInfo_ReadAttrCB_30
+        MOV     A,R4
+        MOV     R0,A
+        MOV     A,#0x7
+        CLR     C
+        SUBB    A,R0
+        MOV     ?V0 + 6,A
+??devInfo_ReadAttrCB_30:
+        MOV     DPL,?V0 + 4
+        MOV     DPH,?V0 + 5
+        MOV     A,?V0 + 6
+        LCALL   ?Subroutine2 & 0xFFFF
+??CrossCallReturnLabel_3:
+        LCALL   ?PUSH_XSTACK_I_TWO
+        MOV     A,#devInfoPnpId & 0xff
+        ADD     A,R4
+        MOV     R4,A
+        MOV     A,#(devInfoPnpId >> 8) & 0xff
+??devInfo_ReadAttrCB_13:
+        ADDC    A,R5
+        MOV     R5,A
+        LCALL   ??osal_memcpy?relay
+        MOV     A,#0x2
+        LCALL   ?DEALLOC_XSTACK8
+        SJMP    ??devInfo_ReadAttrCB_29
+//  655       break;
+//  656 
+//  657     default:
+//  658       *pLen = 0;
+??devInfo_ReadAttrCB_9:
+        MOV     DPL,?V0 + 4
+        MOV     DPH,?V0 + 5
+        CLR     A
+        MOVX    @DPTR,A
+//  659       status = ATT_ERR_ATTR_NOT_FOUND;
+        MOV     ?V0 + 2,#0xa
+//  660       break;
+//  661   }
+//  662 
+//  663   return ( status );
+??devInfo_ReadAttrCB_29:
+        MOV     R1,?V0 + 2
+        MOV     A,#0x1
+        LCALL   ?DEALLOC_XSTACK8
+        MOV     R7,#0xf
+        LJMP    ?BANKED_LEAVE_XDATA
+//  664 }
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+?Subroutine5:
+        CLR     C
+        MOV     A,R6
+        SUBB    A,?V0 + 10
+        CLR     A
+        SUBB    A,?V0 + 11
+        RET
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+?Subroutine4:
+        MOV     A,R4
+        SUBB    A,#0x12
+        MOV     A,R5
+        SUBB    A,#0x0
+        RET
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+?Subroutine3:
+        CLR     C
+        SUBB    A,R4
+        MOV     R0,A
+        CLR     A
+        SUBB    A,R5
+        MOV     R1,A
+        CLR     C
+        MOV     A,R6
+        SUBB    A,R0
+        CLR     A
+        SUBB    A,R1
+        RET
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+?Subroutine2:
+        MOVX    @DPTR,A
+        ; Setup parameters for call to function osal_memcpy
+        ; Setup parameters for call to function osal_memcpy
+        ; Setup parameters for call to function osal_memcpy
+        ; Setup parameters for call to function osal_memcpy
+        MOV     ?V0 + 4,A
+        MOV     ?V0 + 5,#0x0
+        MOV     R0,#?V0 + 4
+        RET
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+?Subroutine1:
+        MOV     DPL,?V0 + 4
+        MOV     DPH,?V0 + 5
+        REQUIRE ??Subroutine6_0
+        ; // Fall through to label ??Subroutine6_0
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+??Subroutine6_0:
+        MOVX    @DPTR,A
+        ; Setup parameters for call to function osal_memcpy
+        ; Setup parameters for call to function osal_memcpy
+        ; Setup parameters for call to function osal_memcpy
+        ; Setup parameters for call to function osal_memcpy
+        ; Setup parameters for call to function osal_memcpy
+        MOV     ?V0 + 0,A
+        MOV     ?V0 + 1,#0x0
+        MOV     R0,#?V0 + 0
+        RET
+
+        RSEG XDATA_ID:CODE:NOROOT(0)
+`?<Initializer for devInfoSystemIdProps>`:
+        DATA8
+        DB 2
+
+        RSEG XDATA_ID:CODE:NOROOT(0)
+`?<Initializer for devInfoModelNumberProps>`:
+        DATA8
+        DB 2
+
+        RSEG XDATA_ID:CODE:NOROOT(0)
+`?<Initializer for devInfoSerialNumberProps>`:
+        DATA8
+        DB 2
+
+        RSEG XDATA_ID:CODE:NOROOT(0)
+`?<Initializer for devInfoFirmwareRevProps>`:
+        DATA8
+        DB 2
+
+        RSEG XDATA_ID:CODE:NOROOT(0)
+`?<Initializer for devInfoHardwareRevProps>`:
+        DATA8
+        DB 2
+
+        RSEG XDATA_ID:CODE:NOROOT(0)
+`?<Initializer for devInfoSoftwareRevProps>`:
+        DATA8
+        DB 2
+
+        RSEG XDATA_ID:CODE:NOROOT(0)
+`?<Initializer for devInfoMfrNameProps>`:
+        DATA8
+        DB 2
+
+        RSEG XDATA_ID:CODE:NOROOT(0)
+`?<Initializer for devInfo11073CertProps>`:
+        DATA8
+        DB 2
+
+        RSEG XDATA_ID:CODE:NOROOT(0)
+`?<Initializer for devInfoPnpIdProps>`:
+        DATA8
+        DB 2
+
+        RSEG XDATA_ID:CODE:NOROOT(0)
+`?<Initializer for devInfoPnpId>`:
+        DATA8
+        DB 1
+        DB 13
+        DB 0
+        DB 0
+        DB 0
+        DB 16
+        DB 1
+
+        RSEG XDATA_ID:CODE:NOROOT(0)
+`?<Initializer for devInfoAttrTbl>`:
+        DATA8
+        DB 2
+        DATA16
+        DW primaryServiceUUID
+        DATA8
+        DB 1
+        DATA16
+        DW 0
+        DW devInfoService
+        DATA8
+        DB 2
+        DATA16
+        DW characterUUID
+        DATA8
+        DB 1
+        DATA16
+        DW 0
+        DW devInfoSystemIdProps
+        DATA8
+        DB 2
+        DATA16
+        DW devInfoSystemIdUUID
+        DATA8
+        DB 1
+        DATA16
+        DW 0
+        DW devInfoSystemId
+        DATA8
+        DB 2
+        DATA16
+        DW characterUUID
+        DATA8
+        DB 1
+        DATA16
+        DW 0
+        DW devInfoModelNumberProps
+        DATA8
+        DB 2
+        DATA16
+        DW devInfoModelNumberUUID
+        DATA8
+        DB 1
+        DATA16
+        DW 0
+        DW devInfoModelNumber
+        DATA8
+        DB 2
+        DATA16
+        DW characterUUID
+        DATA8
+        DB 1
+        DATA16
+        DW 0
+        DW devInfoSerialNumberProps
+        DATA8
+        DB 2
+        DATA16
+        DW devInfoSerialNumberUUID
+        DATA8
+        DB 1
+        DATA16
+        DW 0
+        DW devInfoSerialNumber
+        DATA8
+        DB 2
+        DATA16
+        DW characterUUID
+        DATA8
+        DB 1
+        DATA16
+        DW 0
+        DW devInfoFirmwareRevProps
+        DATA8
+        DB 2
+        DATA16
+        DW devInfoFirmwareRevUUID
+        DATA8
+        DB 1
+        DATA16
+        DW 0
+        DW devInfoFirmwareRev
+        DATA8
+        DB 2
+        DATA16
+        DW characterUUID
+        DATA8
+        DB 1
+        DATA16
+        DW 0
+        DW devInfoHardwareRevProps
+        DATA8
+        DB 2
+        DATA16
+        DW devInfoHardwareRevUUID
+        DATA8
+        DB 1
+        DATA16
+        DW 0
+        DW devInfoHardwareRev
+        DATA8
+        DB 2
+        DATA16
+        DW characterUUID
+        DATA8
+        DB 1
+        DATA16
+        DW 0
+        DW devInfoSoftwareRevProps
+        DATA8
+        DB 2
+        DATA16
+        DW devInfoSoftwareRevUUID
+        DATA8
+        DB 1
+        DATA16
+        DW 0
+        DW devInfoSoftwareRev
+        DATA8
+        DB 2
+        DATA16
+        DW characterUUID
+        DATA8
+        DB 1
+        DATA16
+        DW 0
+        DW devInfoMfrNameProps
+        DATA8
+        DB 2
+        DATA16
+        DW devInfoMfrNameUUID
+        DATA8
+        DB 1
+        DATA16
+        DW 0
+        DW devInfoMfrName
+        DATA8
+        DB 2
+        DATA16
+        DW characterUUID
+        DATA8
+        DB 1
+        DATA16
+        DW 0
+        DW devInfo11073CertProps
+        DATA8
+        DB 2
+        DATA16
+        DW devInfo11073CertUUID
+        DATA8
+        DB 1
+        DATA16
+        DW 0
+        DW devInfo11073Cert
+        DATA8
+        DB 2
+        DATA16
+        DW characterUUID
+        DATA8
+        DB 1
+        DATA16
+        DW 0
+        DW devInfoPnpIdProps
+        DATA8
+        DB 2
+        DATA16
+        DW devInfoPnpIdUUID
+        DATA8
+        DB 1
+        DATA16
+        DW 0
+        DW devInfoPnpId
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??DevInfo_AddService?relay:
+        CODE
+        LCALL   ?BDISPATCH
+        DATA24
+        DC24    DevInfo_AddService
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??DevInfo_SetParameter?relay:
+        CODE
+        LCALL   ?BDISPATCH
+        DATA24
+        DC24    DevInfo_SetParameter
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??DevInfo_GetParameter?relay:
+        CODE
+        LCALL   ?BDISPATCH
+        DATA24
+        DC24    DevInfo_GetParameter
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??devInfo_ReadAttrCB?relay:
+        CODE
+        LCALL   ?BDISPATCH
+        DATA24
+        DC24    devInfo_ReadAttrCB
+
+        END
+//  665 
+//  666 
+//  667 /*********************************************************************
+//  668 *********************************************************************/
+// 
+// 933 bytes in segment BANKED_CODE
+//  24 bytes in segment BANK_RELAYS
+// 168 bytes in segment XDATA_I
+// 168 bytes in segment XDATA_ID
+// 142 bytes in segment XDATA_ROM_C
+//   8 bytes in segment XDATA_Z
+// 
+// 1 125 bytes of CODE  memory
+//   142 bytes of CONST memory
+//   176 bytes of XDATA memory
+//
+//Errors: none
+//Warnings: none
